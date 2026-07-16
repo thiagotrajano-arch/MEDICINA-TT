@@ -161,4 +161,235 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
     ],
   },
+
+  "inf--infeccoes-sexualmente-transmissiveis--sifilis": {
+    subtemaId: "inf--infeccoes-sexualmente-transmissiveis--sifilis",
+    titulo: "Sífilis (adquirida, gestacional e congênita)",
+    atualizadoEm: "2026-07-16",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "IST (e infecção **verticalmente transmissível**) causada pela espiroqueta **Treponema pallidum**. Doença **sistêmica, em estágios**, com apresentações muito variáveis — \"a grande imitadora\".\n\n⭐ **Tema-curinga da OMED:** apareceu em **3 das 4 últimas edições** da prova.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "O T. pallidum penetra por mucosas ou pele com solução de continuidade durante o contato sexual, multiplica-se localmente (**cancro**) e dissemina-se por via **linfo-hematogênica**.\n\n- Atravessa a **barreira placentária em qualquer fase gestacional** — o risco de transmissão vertical é **maior quanto mais recente** a infecção materna;\n- Cruza a **barreira hematoencefálica em qualquer estágio** — a neurossífilis pode ser precoce ou tardia (não é exclusiva da fase terciária).",
+      },
+      {
+        secao: "Quadro clínico (estágios)",
+        corpo:
+          "**Primária** — **cancro duro**: úlcera **única, indolor**, bordos endurecidos, base limpa, com adenopatia satélite não dolorosa. **Resolve espontaneamente em 3–8 semanas mesmo sem tratamento** (o que dá falsa sensação de cura).\n\n**Secundária** (6–8 sem após o cancro) — roséola/exantema maculopapular que tipicamente acomete **palmas e plantas**, **condiloma plano**, **alopecia em clareira**, madarose, linfadenopatia generalizada, sintomas gripais.\n\n**Latente** — assintomática, com sorologia reagente. **Recente (< 1 ano)** ou **tardia (> 1 ano ou duração indeterminada)** — essa divisão **define o esquema terapêutico**.\n\n**Terciária** (anos depois) — **goma sifilítica**; **cardiovascular** (aortite/aneurisma de aorta **ascendente**); **neurossífilis tardia** (tabes dorsalis com ataxia sensitiva; **pupila de Argyll-Robertson** — acomoda mas não reage à luz; paralisia geral progressiva).",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "Exige **dois testes**: um treponêmico + um não-treponêmico.\n\n- **Treponêmicos** (FTA-Abs, teste rápido, ELISA): tornam-se reagentes **primeiro** e permanecem reagentes **pela vida toda**, mesmo após cura → **não servem para seguimento**.\n- **Não-treponêmicos** (VDRL, RPR): **quantificáveis em títulos** (ex.: 1:16) → usados para **atividade e seguimento**. **Queda de ≥ 2 diluições em 3 meses** (ou 4 em 6 meses) indica sucesso terapêutico. Podem dar **falso-positivo biológico** (gestação, LES, HIV, hanseníase, malária).\n\n**Fluxograma tradicional:** treponêmico (triagem) → se reagente, não-treponêmico (título/atividade). O MS também aceita o **fluxograma inverso** (VDRL primeiro).\n\n**Neurossífilis:** **VDRL no líquor** (alta especificidade, baixa sensibilidade) + pleocitose/hiperproteinorraquia.",
+      },
+      {
+        secao: "Exames de imagem",
+        corpo:
+          "- **Sífilis congênita:** radiografia de ossos longos com **periostite** e **metafisite** (bandas de rarefação; **sinal de Wimberger** — rarefação da metáfise proximal da tíbia); **pseudoparalisia de Parrot** (a criança \"poupa\" o membro pela dor).\n- **Sífilis cardiovascular terciária:** **aneurisma sacular de aorta ascendente** — **poupa tipicamente a aorta abdominal** (ao contrário do aneurisma aterosclerótico).\n- **Neurossífilis:** RM pode mostrar realce meníngeo ou gomas; frequentemente inespecífica.",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "- **Cancro mole** (*H. ducreyi*): úlceras **múltiplas e dolorosas**, bordos irregulares, fundo sujo — o oposto do cancro duro;\n- **Herpes genital:** múltiplas vesículas/úlceras dolorosas;\n- Linfogranuloma venéreo;\n- **Farmacodermia:** o secundarismo pode mimetizar exantema medicamentoso — o acometimento **palmoplantar favorece sífilis**.",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "⚠️ **A penicilina G benzatina é o único tratamento validado na gestação** — não há alternativa equivalente para prevenir a transmissão vertical. **Mesmo com relato de alergia, indica-se dessensibilização.**\n\n| Estágio | Esquema |\n|---|---|\n| Primária, secundária, latente **recente** (< 1 a) | Penicilina G benzatina **2,4 milhões UI IM, dose única** |\n| Latente **tardia**/indeterminada, terciária (exceto neuro) | Penicilina G benzatina **2,4 milhões UI IM, semanal por 3 semanas** |\n| **Neurossífilis** (qualquer fase) | Penicilina G **cristalina** 18–24 milhões UI/dia EV (3–4 mi 4/4h), **10–14 dias** — a benzatina **não atinge níveis liquóricos** |\n\nTratar sempre a(s) **parceria(s) sexual(is)**.",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "- **Pré-natal adequado com testagem** (1º trimestre, 3º trimestre e no parto) é o principal determinante evitável da sífilis congênita;\n- **Sífilis congênita é evento sentinela de falha assistencial** — **notificação compulsória**;\n- Preservativo e rastreio de ISTs concomitantes.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Cancro duro = indolor**; **cancro mole = doloroso**. Inverter é a pegadinha clássica.\n- ★ **Exantema palmoplantar** = sífilis secundária até prova em contrário.\n- ★ **Treponêmico não serve para seguimento** — fica reagente a vida toda. Seguimento é com **VDRL em títulos**.\n- ★ **Neurossífilis não é exclusiva da terciária** — pode ocorrer em qualquer fase, e exige **penicilina cristalina EV**, nunca benzatina.\n- ★ **Alergia à penicilina na gestante ⇒ dessensibilizar**, não trocar a droga.\n- ★ O cancro **some sozinho** — o desaparecimento **não** significa cura.\n- ★ **Argyll-Robertson:** acomoda, mas não reage à luz.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Protocolo Clínico e Diretrizes Terapêuticas para IST",
+      "Ministério da Saúde — Guia de Vigilância em Saúde (sífilis congênita)",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--hiv-aids--diagnostico-e-tarv": {
+    subtemaId: "inf--hiv-aids--diagnostico-e-tarv",
+    titulo: "HIV/AIDS — diagnóstico e TARV",
+    atualizadoEm: "2026-07-16",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Infecção crônica pelo **HIV**, retrovírus que infecta linfócitos **T-CD4+**, macrófagos e células dendríticas, levando à depleção progressiva de CD4 e **imunodeficiência celular**.\n\n**AIDS** = HIV + **CD4 < 200 células/mm³** e/ou **doença definidora de aids**.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "O HIV liga-se ao receptor **CD4** e aos correceptores **CCR5/CXCR4**, e integra seu genoma ao DNA do hospedeiro via **transcriptase reversa** e **integrase**.\n\nA replicação contínua causa ativação imune crônica e exaustão/depleção de CD4, com **destruição precoce e maciça dos linfócitos T de memória da mucosa intestinal (GALT)** já nas primeiras semanas. A imunossupressão progressiva abre espaço para as **infecções oportunistas típicas de cada faixa de CD4**.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "- **Infecção aguda** (2–4 sem após exposição): síndrome **mononucleose-like** — febre, faringite, linfadenopatia, exantema, mialgia. **Carga viral altíssima e sorologia possivelmente negativa** (janela imunológica) — momento de altíssima transmissibilidade.\n- **Latência clínica:** anos assintomáticos, com replicação viral persistente.\n- **Sintomática/AIDS:** infecções oportunistas e neoplasias definidoras conforme a faixa de CD4.",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "**Fluxograma MS:** teste rápido ou **imunoensaio de 4ª geração** (detecta **antígeno p24 + anticorpos**, reduzindo a janela para ~2–3 semanas) → se reagente, confirmar com **2º teste rápido de fabricante diferente** OU **carga viral (RNA-HIV)**.\n\n- **CD4** define o estadiamento imunológico e o risco de oportunistas;\n- **Carga viral** monitora a resposta terapêutica (meta: **indetectável**);\n- ⚠️ A **genotipagem pré-tratamento não é mais obrigatória** em virgens de tratamento na era do dolutegravir (alta barreira genética).",
+      },
+      {
+        secao: "Infecções oportunistas — imagem",
+        corpo:
+          "| Oportunista | Achado |\n|---|---|\n| **Pneumocistose** (*P. jirovecii*) | Infiltrado **intersticial bilateral em vidro fosco, poupando os ápices**, padrão \"asa de morcego\" perihilar |\n| **Neurotoxoplasmose** | RM: lesões **múltiplas com realce anelar** e edema perilesional, predomínio em núcleos da base |\n| **Linfoma primário de SNC** | RM: lesão **única**, realce **homogêneo** (diferencia da toxo pela **não resposta** ao tratamento empírico em 2 semanas) |\n| **Criptococose de SNC** | RM pode ser normal; a chave é a **pressão de abertura liquórica elevada** |\n| **Tuberculose** | Em imunossupressão avançada **pode não cavitar** — padrão atípico/miliar |",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**\"Treat all\":** TARV indicada para **todo paciente HIV+**, independentemente de CD4 e carga viral, iniciada o mais precocemente possível — reduz transmissibilidade e morbimortalidade.\n\n**Esquema preferencial de 1ª linha (adulto virgem de tratamento) — \"rapid start\":**\n**TDF + 3TC + DTG** (tenofovir + lamivudina + **dolutegravir**), dose fixa combinada, **1×/dia**, idealmente **no mesmo dia do diagnóstico**.\n\n**Coinfecção TB-HIV:** tratar a **TB imediatamente**; a TARV entra conforme o CD4:\n- **CD4 < 50:** TARV em **até 2 semanas** (o benefício supera o risco de SIRI);\n- **CD4 ≥ 50:** TARV entre **8–12 semanas** (menor risco de SIRI grave).",
+      },
+      {
+        secao: "Profilaxias primárias",
+        corpo:
+          "| Situação | Profilaxia | Limiar de CD4 |\n|---|---|---|\n| **Pneumocistose** | **SMX-TMP** | CD4 < 200 |\n| **Neurotoxoplasmose** | **SMX-TMP** (mesma droga cobre ambas) | CD4 < 100 **+ IgG antitoxo reagente** |\n| **Complexo M. avium (MAC)** | Azitromicina semanal | CD4 < 50 |\n| Criptococose/Histoplasmose | Não se indica profilaxia primária de rotina | — |\n\nSuspender as profilaxias quando o CD4 recuperar acima do limiar por **≥ 3–6 meses** em TARV com carga indetectável.",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "- **SIRI (síndrome de reconstituição imune inflamatória):** piora **paradoxal** de infecção oportunista preexistente após o início da TARV, pela resposta imune restaurada;\n- **Neoplasias definidoras:** sarcoma de Kaposi (HHV-8), linfoma não-Hodgkin, câncer de colo do útero invasivo;\n- Nefropatia e cardiomiopatia associadas ao HIV;\n- Falência terapêutica por má adesão → resistência.",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "- **PrEP** (pré-exposição): tenofovir + entricitabina contínuo para grupos de alto risco;\n- **PEP** (pós-exposição): iniciar em **até 72 h** (idealmente 2 h), por **28 dias**, com o esquema TARV preferencial;\n- **Transmissão vertical:** TARV na gestação com meta de **carga indetectável no parto**; AZT intraparto se carga desconhecida/detectável; **cesárea eletiva se > 1000 cópias/mL** ou desconhecida perto do parto; AZT no RN por 4 semanas; **contraindicação absoluta de amamentação**;\n- **I = I (Indetectável = Intransmissível):** carga viral indetectável sustentada **elimina o risco de transmissão sexual**.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Treat all** — não existe mais \"esperar o CD4 cair\" para iniciar TARV.\n- ★ Esquema atual: **TDF + 3TC + DTG**, rapid start no dia do diagnóstico.\n- ★ **TB-HIV:** CD4 < 50 → TARV em **2 semanas**; CD4 ≥ 50 → **8 semanas**. (Não é \"no mesmo dia\" — equilíbrio com o risco de SIRI.)\n- ★ **Lesão anelar múltipla em RM de HIV+ = neurotoxoplasmose** até prova em contrário; se **não responder em 2 semanas**, pensar em **linfoma primário de SNC**.\n- ★ **SMX-TMP** trata **e** previne pneumocistose e toxoplasmose (mesma droga, dois limiares de CD4).\n- ★ **Amamentação é contraindicação ABSOLUTA no Brasil**, independentemente da carga viral — o \"I=I\" **não** libera amamentar.\n- ★ **Genotipagem pré-TARV não é mais rotina** em virgem de tratamento.\n- ★ Na aguda, a **sorologia pode ser negativa** com carga viral altíssima (janela).",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — PCDT para Manejo da Infecção pelo HIV em Adultos",
+      "Ministério da Saúde — PCDT para Prevenção da Transmissão Vertical do HIV",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--arboviroses--dengue-classificacao-e-manejo": {
+    subtemaId: "inf--arboviroses--dengue-classificacao-e-manejo",
+    titulo: "Dengue — classificação e manejo",
+    atualizadoEm: "2026-07-16",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Arbovirose causada pelo **vírus da dengue** (DENV 1–4, *Flavivirus*), transmitida pela fêmea do **Aedes aegypti**. A infecção por um sorotipo confere imunidade **permanente contra aquele sorotipo** e apenas **transitória (e parcial) contra os demais** — por isso é possível adoecer até 4 vezes.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "O evento central da dengue grave é o **aumento súbito da permeabilidade capilar** com **extravasamento de plasma** — não é sangramento primário.\n\nA **infecção secundária por sorotipo diferente** aumenta o risco de gravidade pelo fenômeno de **amplificação dependente de anticorpos (ADE)**: anticorpos heterotípicos não neutralizantes facilitam a entrada viral em macrófagos, ampliando a resposta inflamatória e a disfunção endotelial.\n\nA plaquetopenia e o sangramento são consequências; **o que mata é o choque por extravasamento**.",
+      },
+      {
+        secao: "Fases da doença",
+        corpo:
+          "1. **Febril** (1º–3º dia): febre alta, cefaleia, dor retro-orbitária, mialgia/artralgia, exantema.\n2. **Crítica** (⚠️ **por volta da defervescência, 3º–6º dia**): é **quando a febre cai** que o extravasamento acontece — janela de 24–48 h em que o paciente pode chocar.\n3. **Recuperação:** reabsorção do plasma extravasado (risco de **hipervolemia** se a hidratação não for reduzida); pode surgir exantema \"ilhas de branco em mar vermelho\" e prurido.\n\n⚠️ **A queda da febre NÃO é melhora** — é o sinal de entrada na fase crítica.",
+      },
+      {
+        secao: "Sinais de alarme",
+        corpo:
+          "- **Dor abdominal intensa e contínua** ou dor à palpação;\n- **Vômitos persistentes**;\n- **Acúmulo de líquidos** (ascite, derrame pleural/pericárdico);\n- **Sangramento de mucosas**;\n- **Letargia ou irritabilidade**;\n- **Hipotensão postural / lipotimia**;\n- **Hepatomegalia > 2 cm**;\n- **Aumento progressivo do hematócrito** (hemoconcentração).",
+      },
+      {
+        secao: "Classificação e conduta (grupos MS)",
+        corpo:
+          "| Grupo | Definição | Conduta |\n|---|---|---|\n| **A** | Sem sinais de alarme, sem comorbidade/risco social | Hidratação **oral** domiciliar (60 mL/kg/dia, 1/3 com SRO); retorno se sinais de alarme |\n| **B** | Sem sinais de alarme, **com** sangramento espontâneo de pele (prova do laço +) **ou** condição de risco (gestante, < 2 a, > 65 a, comorbidade) | Hemograma; observação até resultado; hidratação oral |\n| **C** | **Com sinais de alarme** | **Internar**; hidratação **EV 10 mL/kg em 1 h**, reavaliando e repetindo até 3× |\n| **D** | **Choque / dengue grave** | **UTI**; expansão **20 mL/kg em até 20 min**; reavaliar |",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "- **Até o 5º dia:** **NS1** (antígeno) ou **RT-PCR**;\n- **A partir do 6º dia:** **sorologia IgM** (ELISA);\n- **Hemograma seriado** é o exame de acompanhamento essencial: **hematócrito subindo + plaquetas caindo** = extravasamento;\n- **Prova do laço:** triagem de fragilidade capilar (integra o grupo B).",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "- **Hidratação é o pilar** — não existe antiviral.\n- **Sintomático:** **dipirona ou paracetamol**.\n- ⚠️ **Contraindicados: AAS e AINEs** (risco de sangramento e de síndrome de Reye em crianças).\n- **Transfusão de plaquetas NÃO é indicada** pela plaquetopenia isolada — apenas em sangramento grave com instabilidade.\n- Na fase de **recuperação**, **reduzir a hidratação** para não causar congestão/edema agudo de pulmão.",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "- **Chikungunya:** **artralgia intensa e incapacitante**, frequentemente **crônica** (meses); febre alta e exantema precoce;\n- **Zika:** exantema **pruriginoso precoce**, febre baixa ou ausente, **conjuntivite não purulenta**; risco de **microcefalia** (vertical) e **Guillain-Barré**;\n- Leptospirose, malária, febre amarela, sepse bacteriana, riquetsioses.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **A defervescência marca o início da fase crítica** — nunca dar alta \"porque a febre baixou\".\n- ★ **O problema é extravasamento plasmático, não plaquetopenia** → trata-se com **volume**, não com plaqueta.\n- ★ **Não transfundir plaquetas** por número isolado.\n- ★ **AAS e AINE são proibidos.**\n- ★ Dengue grave por **infecção secundária com outro sorotipo** (ADE).\n- ★ **NS1 até o 5º dia; IgM a partir do 6º.**\n- ★ Na **recuperação**, reduzir volume — o risco vira **hipervolemia**.\n- ★ **Artralgia crônica = chikungunya**; **exantema pruriginoso + conjuntivite = zika**.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Dengue: diagnóstico e manejo clínico (adulto e criança)",
+      "OMS — Dengue Guidelines for Diagnosis, Treatment, Prevention and Control",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--sepse--reconhecimento-e-surviving-sepsis": {
+    subtemaId: "inf--sepse--reconhecimento-e-surviving-sepsis",
+    titulo: "Sepse e choque séptico",
+    atualizadoEm: "2026-07-16",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição (Sepsis-3)",
+        corpo:
+          "- **Sepse:** **disfunção orgânica ameaçadora à vida** causada por **resposta desregulada do hospedeiro** à infecção. Operacionalmente: infecção suspeita/confirmada **+ aumento ≥ 2 pontos no SOFA**.\n- **Choque séptico:** sepse com **necessidade de vasopressor** para manter **PAM ≥ 65 mmHg** **E** **lactato > 2 mmol/L**, **apesar de reposição volêmica adequada**. Mortalidade > 40%.\n\n⚠️ O conceito de **SIRS foi abandonado** como definidor (baixa especificidade) — a marca da sepse é a **disfunção orgânica**, não a resposta inflamatória.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "A resposta desregulada combina inflamação exuberante e imunossupressão:\n\n- **Vasodilatação/vasoplegia** com má distribuição de fluxo;\n- **Lesão endotelial** e **extravasamento capilar** → hipovolemia relativa e absoluta;\n- **Disfunção microcirculatória** e **coagulopatia** (ativação da coagulação com consumo → CIVD);\n- **Disfunção mitocondrial** → hipóxia citopática (a célula não usa o O₂ mesmo com oferta).\n\nO **lactato** elevado reflete hipoperfusão **e** estresse adrenérgico/disfunção mitocondrial — não é apenas marcador de hipóxia.",
+      },
+      {
+        secao: "Reconhecimento",
+        corpo:
+          "- **qSOFA** (≥ 2 sugere risco, à beira do leito): **FR ≥ 22**, **alteração do estado mental (Glasgow < 15)**, **PAS ≤ 100 mmHg**. É ferramenta de **alerta**, não de diagnóstico — a Surviving Sepsis **desaconselha usá-lo como triagem única**.\n- **SOFA:** avalia 6 sistemas (respiratório, coagulação, hepático, cardiovascular, SNC, renal).\n- **NEWS/MEWS** são alternativas de triagem com melhor sensibilidade.",
+      },
+      {
+        secao: "Conduta — pacote da 1ª hora",
+        corpo:
+          "1. **Dosar lactato** (repetir em 2–4 h se > 2);\n2. **Colher hemoculturas ANTES do antibiótico** — desde que **não atrase** o ATB em mais de ~45 min;\n3. **Antibiótico de amplo espectro na 1ª hora** (no choque séptico; na sepse sem choque, idealmente em até 1 h, aceitável até 3 h após avaliação);\n4. **Cristaloide 30 mL/kg** na hipotensão ou lactato ≥ 4 (⚠️ preferir **balanceado** — Ringer lactato — a soro fisiológico, pelo risco de acidose hiperclorêmica);\n5. **Vasopressor** se a PAM permanecer < 65 apesar do volume — **noradrenalina é a 1ª escolha**.\n\n⚠️ **Controle do foco** (drenagem de abscesso, retirada de cateter, desbridamento) é tão importante quanto o antibiótico — sepse com foco não controlado não melhora.",
+      },
+      {
+        secao: "Tratamento avançado",
+        corpo:
+          "- **Alvo de PAM ≥ 65 mmHg**; noradrenalina; **vasopressina** como 2ª droga (poupadora de catecolamina);\n- **Dobutamina** se disfunção miocárdica com hipoperfusão persistente apesar de volume e PAM adequados;\n- **Hidrocortisona** (200 mg/dia) no **choque refratário** com necessidade crescente de vasopressor;\n- **Transfusão** apenas se **Hb < 7 g/dL** (estratégia restritiva), salvo isquemia ativa;\n- **Ventilação protetora** se SDRA: **volume corrente 6 mL/kg** de peso predito, pressão de platô < 30.",
+      },
+      {
+        secao: "Metas e reavaliação",
+        corpo:
+          "- **Clareamento do lactato** (norteia a ressuscitação);\n- **Tempo de enchimento capilar** — reabilitado como meta simples e útil;\n- Diurese, nível de consciência, perfusão periférica;\n- ⚠️ **PVC e SvcO₂ isolados foram abandonados** como metas obrigatórias (após ProCESS/ARISE/ProMISe).",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Sepse = infecção + disfunção orgânica.** SIRS **não** define mais.\n- ★ **Choque séptico = vasopressor para PAM ≥ 65 + lactato > 2 apesar de volume.**\n- ★ **Noradrenalina é o vasopressor de 1ª escolha** (não dopamina — maior arritmia).\n- ★ **Hemocultura antes do ATB, mas nunca atrasar o ATB por ela.**\n- ★ **30 mL/kg** de cristaloide; **balanceado > SF 0,9%**.\n- ★ **Controle do foco** é indispensável.\n- ★ **qSOFA é alerta, não diagnóstico** — e não deve ser triagem única.\n- ★ **Hidrocortisona só no choque refratário**, não em toda sepse.\n- ★ Transfundir só com **Hb < 7**.",
+      },
+    ],
+    referencias: [
+      "Surviving Sepsis Campaign — International Guidelines for Management of Sepsis and Septic Shock",
+      "Singer M. et al. — The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3), JAMA",
+      "Instituto Latino-Americano de Sepse (ILAS) — protocolos",
+    ],
+  },
 };

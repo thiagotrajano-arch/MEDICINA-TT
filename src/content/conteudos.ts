@@ -1,6 +1,9 @@
 import type { ConteudoSubtema } from "@/domain/content/types";
 import { CONTEUDOS_GO } from "./conteudos/go";
+import { CONTEUDOS_PED } from "./conteudos/pediatria";
 import { CONTEUDOS_INF } from "./conteudos/infectologia";
+import { CONTEUDOS_CIR } from "./conteudos/cirurgia";
+import { CONTEUDOS_MFC } from "./conteudos/mfc";
 
 /**
  * Resumos — agregador.
@@ -18,5 +21,8 @@ import { CONTEUDOS_INF } from "./conteudos/infectologia";
  */
 export const CONTEUDOS: Record<string, ConteudoSubtema> = {
   ...CONTEUDOS_GO,
+  ...CONTEUDOS_PED,
   ...CONTEUDOS_INF,
+  ...CONTEUDOS_CIR,
+  ...CONTEUDOS_MFC,
 };
