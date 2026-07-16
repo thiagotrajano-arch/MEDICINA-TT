@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─────────────────────────────────────────────
+   Design tokens — Codex Medicus
+   Premium, minimal, calm. Light + dark.
+   ───────────────────────────────────────────── */
+:root {
+  --bg: #f7f8f8;
+  --surface: #ffffff;
+  --surface-2: #f1f3f3;
+  --border: #e4e7e7;
+  --border-strong: #d3d8d8;
+  --text: #10201f;
+  --text-muted: #5b6b69;
+  --text-faint: #8a9997;
+  --accent: #0f766e;
+  --accent-soft: #d7efe9;
+  --accent-contrast: #ffffff;
+  --gold: #b7862f;
+  --danger: #b4342b;
+  --danger-soft: #fbeae8;
+  --shadow: 0 1px 2px rgba(16, 32, 31, 0.04), 0 8px 24px rgba(16, 32, 31, 0.06);
+  --sidebar-w: 288px;
+}
+
+.dark {
+  --bg: #0a0c0c;
+  --surface: #121516;
+  --surface-2: #181c1d;
+  --border: #242a2b;
+  --border-strong: #333b3c;
+  --text: #e8eded;
+  --text-muted: #9aa8a6;
+  --text-faint: #6b7a78;
+  --accent: #2dd4bf;
+  --accent-soft: #10312e;
+  --accent-contrast: #06110f;
+  --gold: #d7b673;
+  --danger: #f2837a;
+  --danger-soft: #2a1614;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-gold: var(--gold);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --radius: 0.75rem;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+/* Refined scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* Prose for study content */
+.prose-med {
+  color: var(--text);
+  line-height: 1.72;
+  font-size: 0.975rem;
+}
+.prose-med p { margin: 0.7em 0; }
+.prose-med strong { color: var(--text); font-weight: 650; }
+.prose-med ul { margin: 0.6em 0; padding-left: 1.25em; }
+.prose-med li { margin: 0.3em 0; }
+.prose-med li::marker { color: var(--accent); }
