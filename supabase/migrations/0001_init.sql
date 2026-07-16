@@ -12,10 +12,18 @@ create extension if not exists pg_trgm;        -- busca aproximada / typo-tolera
 create extension if not exists unaccent;       -- busca sem acento
 create extension if not exists vector;         -- pgvector (busca semântica)
 
--- Configuração de FTS em português sem acento (imutável p/ índices).
-create or replace function public.imutavel_unaccent(text)
+-- Remoção de acentos determinística e IMUTÁVEL (requisito para uso em índices).
+-- Usa translate() em vez da extensão unaccent: o unaccent de 1 argumento é
+-- apenas STABLE (depende do dicionário) e a forma de 2 argumentos exige o
+-- schema da extensão, que varia no Supabase. translate() é imutável e cobre
+-- os acentos do português.
+create or replace function public.imutavel_unaccent(txt text)
 returns text language sql immutable parallel safe strict as $$
-  select unaccent('unaccent', $1)
+  select translate(
+    txt,
+    'áàâãäéèêëíìîïóòôõöúùûüçñÁÀÂÃÄÉÈÊËÍÌÎÏÓÒÔÕÖÚÙÛÜÇÑ',
+    'aaaaaeeeeiiiiooooouuuucnAAAAAEEEEIIIIOOOOOUUUUCN'
+  )
 $$;
 
 -- Timestamp updated_at automático.
@@ -257,6 +265,7 @@ alter table public.resumo_versao
 
 create table public.proposta_atualizacao (
   id             uuid primary key default gen_random_uuid(),
+  owner_id       uuid not null default auth.uid(),  -- fila de revisão do usuário
   resumo_id      uuid not null references public.resumo(id) on delete cascade,
   fonte_id       uuid references public.fonte(id) on delete set null,
   o_que_mudou    text not null,

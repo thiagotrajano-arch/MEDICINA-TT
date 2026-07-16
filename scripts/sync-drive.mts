@@ -7,9 +7,11 @@
  * before credentials exist. Heavy AI processing (extract → classify) is a
  * separate step; this job only detects changes and records received files.
  */
-import "dotenv/config";
+import { loadEnv } from "./load-env.mjs";
 import { isDriveConfigured } from "../src/infra/drive/config";
 import { isSupabaseConfigured } from "../src/infra/supabase/config";
+
+loadEnv();
 
 async function main() {
   if (!isDriveConfigured() || !isSupabaseConfigured()) {

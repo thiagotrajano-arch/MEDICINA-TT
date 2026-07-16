@@ -7,11 +7,13 @@
  * Supabase. O material do usuário entra como resumo_versao(origem=usuario_original,
  * imutavel=true) — nunca sobrescrito depois. Requer SUPABASE_SERVICE_ROLE_KEY.
  */
-import "dotenv/config";
+import { loadEnv } from "./load-env.mjs";
 import { DISCIPLINAS } from "../src/content/taxonomy";
 import { CONTEUDOS } from "../src/content/conteudos";
 import { QUESTOES } from "../src/content/questoes";
 import { getSupabaseAdmin, isSupabaseConfigured } from "../src/infra/supabase/client";
+
+loadEnv();
 
 async function main() {
   if (!isSupabaseConfigured()) {

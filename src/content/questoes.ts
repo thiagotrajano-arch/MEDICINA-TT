@@ -1,6 +1,7 @@
 import type { Questao } from "@/domain/content/types";
 import { QUESTOES_GO } from "./questoes/go";
 import { QUESTOES_PED } from "./questoes/pediatria";
+import { QUESTOES_CIR } from "./questoes/cirurgia";
 
 /**
  * Banco de questões — agregador.
@@ -15,4 +16,5 @@ import { QUESTOES_PED } from "./questoes/pediatria";
 export const QUESTOES: Questao[] = [
   ...QUESTOES_GO,
   ...QUESTOES_PED,
+  ...QUESTOES_CIR,
 ];
