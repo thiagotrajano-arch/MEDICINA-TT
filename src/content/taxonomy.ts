@@ -1,4 +1,5 @@
 import type { Disciplina, Tema, Subtema } from "@/domain/content/types";
+import { CONTEUDOS } from "./conteudos";
 
 /**
  * The knowledge tree (seed).
@@ -11,20 +12,22 @@ import type { Disciplina, Tema, Subtema } from "@/domain/content/types";
  * `temConteudo: true` marks a subtema whose study content already exists.
  */
 
-let _sid = 0;
 const sub = (
   temaId: string,
   nome: string,
   opts: Partial<Subtema> = {}
 ): Subtema => {
   const slug = slugify(nome);
+  const id = `${temaId}--${slug}`;
   return {
-    id: `${temaId}--${slug}`,
+    id,
     slug,
     nome,
     temaId,
     dificuldade: opts.dificuldade ?? "intermediaria",
-    temConteudo: opts.temConteudo ?? false,
+    // Fonte única de verdade: um subtema "tem conteúdo" se, e somente se,
+    // existe um resumo para ele. Evita o flag dessincronizar do conteúdo real.
+    temConteudo: CONTEUDOS[id] !== undefined,
     altoRendimento: opts.altoRendimento,
   };
 };
@@ -68,12 +71,12 @@ const ginecoObst: Disciplina = {
   omed: true,
   temas: [
     tema("go", "Pré-natal", [
-      ["Roteiro e consultas do pré-natal", { altoRendimento: true, temConteudo: true }],
+      ["Roteiro e consultas do pré-natal", { altoRendimento: true }],
       "Exames por trimestre",
       "Suplementação e imunização na gestação",
     ]),
     tema("go", "Síndromes hipertensivas da gestação", [
-      ["Pré-eclâmpsia e eclâmpsia", { altoRendimento: true, dificuldade: "avancada", temConteudo: true }],
+      ["Pré-eclâmpsia e eclâmpsia", { altoRendimento: true, dificuldade: "avancada" }],
       "Hipertensão gestacional vs. crônica",
       "Síndrome HELLP",
     ]),
