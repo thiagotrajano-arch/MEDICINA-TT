@@ -109,8 +109,16 @@ const pediatria: Disciplina = {
     tema("ped", "Crescimento e desenvolvimento", ["Marcos do desenvolvimento", "Curvas de crescimento"]),
     tema("ped", "Imunização", [["Calendário vacinal", { altoRendimento: true }]]),
     tema("ped", "Doenças exantemáticas", ["Sarampo, rubéola, exantema súbito, escarlatina"]),
-    tema("ped", "Infecções respiratórias na infância", ["Pneumonia", "Bronquiolite"]),
-    tema("ped", "Emergências pediátricas", ["Desidratação e reidratação", "Choque na criança"]),
+    tema("ped", "Infecções respiratórias na infância", [
+      "Pneumonia",
+      ["Bronquiolite", { altoRendimento: true }],
+      "Crupe (laringotraqueobronquite)",
+    ]),
+    tema("ped", "Emergências pediátricas", [
+      ["Desidratação e reidratação", { altoRendimento: true }],
+      "Choque na criança",
+      ["Convulsão febril", { altoRendimento: true }],
+    ]),
     tema("ped", "Puericultura", ["Consulta de puericultura"]),
   ],
 };

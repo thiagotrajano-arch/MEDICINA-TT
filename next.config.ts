@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   basePath: isPages ? `/${repo}` : undefined,
   assetPrefix: isPages ? `/${repo}/` : undefined,
-  eslint: { ignoreDuringBuilds: true },
   // Type safety is enforced by the separate `npm run typecheck` step / CI, not
   // during the build — this keeps the build's memory footprint low.
   typescript: { ignoreBuildErrors: true },
