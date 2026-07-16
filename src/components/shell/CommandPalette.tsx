@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search, CornerDownLeft, FileText, BookOpen, ListChecks, Layers } from "lucide-react";
-import { searchContent } from "@/app/actions/search";
+import { searchStatic } from "@/lib/search-static";
 import type { SearchHit } from "@/application/ports/content-repository";
 import { cn } from "@/lib/cn";
 
@@ -36,27 +36,11 @@ export function CommandPalette({
     }
   }, [open]);
 
-  // Debounced search against the live backend (static or Supabase).
+  // Instant client-side search over the bundled index (works offline/static).
   useEffect(() => {
     setActive(0);
     if (!open) return;
-    if (q.trim().length < 2) {
-      setHits([]);
-      return;
-    }
-    let cancelled = false;
-    const t = setTimeout(async () => {
-      try {
-        const result = await searchContent(q);
-        if (!cancelled) setHits(result);
-      } catch {
-        if (!cancelled) setHits([]);
-      }
-    }, 120);
-    return () => {
-      cancelled = true;
-      clearTimeout(t);
-    };
+    setHits(q.trim().length < 2 ? [] : searchStatic(q));
   }, [q, open]);
 
   if (!open) return null;

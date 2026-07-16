@@ -4,6 +4,14 @@ import { ChevronRight, ListChecks, BookMarked, Sparkles, FileClock } from "lucid
 import { getContentRepository } from "@/infra/content";
 import { MiniMarkdown } from "@/components/content/MiniMarkdown";
 
+export async function generateStaticParams() {
+  const repo = await getContentRepository();
+  const disciplinas = await repo.getDisciplinas();
+  return disciplinas.flatMap((d) =>
+    d.temas.flatMap((t) => t.subtemas.map((s) => ({ subtemaId: s.id })))
+  );
+}
+
 export default async function EstudarPage({
   params,
 }: {
