@@ -6,7 +6,7 @@ import type { Questao } from "@/domain/content/types";
  * Comentado)" do usuário, via scripts/extract-pdf.mts. Conferidas com o
  * material e com as diretrizes do MS.
  *
- * Lote 1: Temas 01–03 (Tuberculose, Meningites, Sífilis) — Q1–Q13.
+ * Lote 1: Temas 01–04 (Tuberculose, Meningites, Sífilis, HIV/AIDS) — Q1–Q24.
  */
 
 const SUB = {
@@ -14,6 +14,7 @@ const SUB = {
   tbLatente: "inf--tuberculose--tb-latente",
   meningite: "inf--meningites--bacteriana-vs-viral",
   sifilis: "inf--infeccoes-sexualmente-transmissiveis--sifilis",
+  hiv: "inf--hiv-aids--diagnostico-e-tarv",
 } as const;
 
 const FONTE = "Simulado OMED Infectologia — 160 questões comentadas (material do usuário)";
@@ -240,6 +241,187 @@ export const QUESTOES_INF: Questao[] = [
     dificuldade: "fixacao",
     estilo: "diagnostico",
     tags: ["sífilis", "cancro duro", "cancro mole"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-sif-014",
+    subtemaId: SUB.sifilis,
+    disciplinaId: "inf",
+    enunciado: "Sobre os testes sorológicos para sífilis, qual afirmativa está correta?",
+    alternativas: [
+      { letra: "A", texto: "Os testes não-treponêmicos (VDRL/RPR) permanecem reagentes para sempre, mesmo após o tratamento.", correta: false, comentario: "É o oposto: os testes NÃO-treponêmicos caem com o tratamento; são os treponêmicos que permanecem reagentes pela vida toda." },
+      { letra: "B", texto: "Os testes treponêmicos (FTA-Abs) servem para seguimento de cura, pois seus títulos caem com o tratamento.", correta: false, comentario: "Os treponêmicos não são usados para seguimento — permanecem reagentes mesmo após cura." },
+      { letra: "C", texto: "O VDRL é usado para diagnóstico de atividade e seguimento de resposta terapêutica, sendo quantificável em títulos.", correta: true, comentario: "VDRL/RPR são quantificáveis; queda de pelo menos 2 diluições em 3 meses indica sucesso terapêutico." },
+      { letra: "D", texto: "Testes treponêmicos não podem apresentar falso-positivo em nenhuma situação clínica.", correta: false, comentario: "Nenhum teste é infalível; a afirmativa absoluta já a torna incorreta." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "diagnostico",
+    tags: ["sífilis", "VDRL", "sorologia"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-sif-015",
+    subtemaId: SUB.sifilis,
+    disciplinaId: "inf",
+    enunciado: "Qual é o tratamento de escolha para neurossífilis, em qualquer fase da doença?",
+    alternativas: [
+      { letra: "A", texto: "Penicilina G benzatina 2,4 milhões UI IM, dose única.", correta: false, comentario: "A benzatina não atinge concentrações liquóricas adequadas — não trata neurossífilis." },
+      { letra: "B", texto: "Penicilina G benzatina 2,4 milhões UI IM, semanal por 3 semanas.", correta: false, comentario: "Esse é o esquema para sífilis latente tardia, não para neurossífilis." },
+      { letra: "C", texto: "Penicilina G cristalina EV, 18–24 milhões UI/dia, por 10–14 dias.", correta: true, comentario: "A via endovenosa fracionada a cada 4h é necessária para atingir concentração liquórica terapêutica." },
+      { letra: "D", texto: "Doxiciclina 100 mg 12/12h por 28 dias.", correta: false, comentario: "Não é o tratamento de escolha para neurossífilis; penicilina cristalina EV é insubstituível nesse contexto." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["sífilis", "neurossífilis", "penicilina"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-sif-016",
+    subtemaId: SUB.sifilis,
+    disciplinaId: "inf",
+    enunciado:
+      "A reação de Jarisch-Herxheimer, que pode ocorrer nas primeiras 24 horas após a primeira dose de penicilina no tratamento da sífilis, caracteriza-se por:",
+    alternativas: [
+      { letra: "A", texto: "Reação alérgica grave que contraindica a continuidade do tratamento com penicilina.", correta: false, comentario: "Não é reação alérgica — é causada pela lise maciça de espiroquetas." },
+      { letra: "B", texto: "Reação febril aguda por lise maciça de espiroquetas, que não contraindica a continuidade do tratamento.", correta: true, comentario: "Febre, mialgia, cefaleia e piora transitória das lesões; manejo é sintomático, sem suspender a penicilina." },
+      { letra: "C", texto: "Sinal de resistência bacteriana à penicilina, exigindo troca imediata para doxiciclina.", correta: false, comentario: "Não indica resistência — o T. pallidum não desenvolveu resistência documentada à penicilina." },
+      { letra: "D", texto: "Evento exclusivo da sífilis terciária, nunca observado em fases mais precoces.", correta: false, comentario: "Pode ocorrer em qualquer fase tratada, não é exclusivo da terciária." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "diagnostico",
+    tags: ["sífilis", "Jarisch-Herxheimer"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-sif-017",
+    subtemaId: SUB.sifilis,
+    disciplinaId: "inf",
+    enunciado: "Qual dos seguintes é um achado clássico de sífilis congênita na radiografia de ossos longos?",
+    alternativas: [
+      { letra: "A", texto: "Sinal de Wimberger (rarefação da metáfise proximal da tíbia).", correta: true, comentario: "Junto à pseudoparalisia de Parrot, reflete periostite/metafisite da sífilis congênita." },
+      { letra: "B", texto: "Sinal do duplo contorno.", correta: false, comentario: "Não é achado de sífilis congênita — é descrito em outros contextos radiológicos." },
+      { letra: "C", texto: "Sinal de Codman.", correta: false, comentario: "Achado clássico de osteossarcoma, não de sífilis congênita." },
+      { letra: "D", texto: "Triângulo de Codman com reação periosteal em 'casca de cebola'.", correta: false, comentario: "Padrão de sarcoma de Ewing, não de sífilis congênita." },
+    ],
+    dificuldade: "avancada",
+    estilo: "diagnostico",
+    tags: ["sífilis congênita", "radiografia", "sinal de Wimberger"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-sif-018",
+    subtemaId: SUB.sifilis,
+    disciplinaId: "inf",
+    enunciado:
+      "Para que o tratamento da sífilis na gestação seja considerado adequado, evitando a notificação da criança como sífilis congênita, quais critérios devem ser cumpridos simultaneamente?",
+    alternativas: [
+      { letra: "A", texto: "Apenas o uso de penicilina benzatina, independentemente do momento da gestação.", correta: false, comentario: "O momento importa: precisa ser iniciado até 30 dias antes do parto." },
+      { letra: "B", texto: "Esquema completo com penicilina benzatina para o estágio, iniciado até 30 dias antes do parto, com queda documentada de titulação e parceiro tratado.", correta: true, comentario: "Todos os critérios devem ser cumpridos simultaneamente; a falta de qualquer um leva à notificação da criança como sífilis congênita." },
+      { letra: "C", texto: "Uso de doxiciclina como alternativa válida em qualquer trimestre, desde que o parceiro seja tratado.", correta: false, comentario: "Doxiciclina é contraindicada na gestação — não atravessa a placenta de forma eficaz para proteger o feto." },
+      { letra: "D", texto: "Apenas a queda do título de VDRL, independentemente do tratamento do parceiro.", correta: false, comentario: "O tratamento do parceiro é critério obrigatório, não dispensável." },
+    ],
+    dificuldade: "avancada",
+    estilo: "conduta",
+    tags: ["sífilis gestacional", "sífilis congênita", "tratamento adequado"],
+    fonte: FONTE,
+  },
+
+  // ── HIV/AIDS ─────────────────────────────────────────────────────
+  {
+    id: "inf-hiv-019",
+    subtemaId: SUB.hiv,
+    disciplinaId: "inf",
+    enunciado: "Segundo a estratégia 'treat all' atualmente recomendada, qual é o critério de CD4 para indicação de início de TARV?",
+    alternativas: [
+      { letra: "A", texto: "CD4 < 500 células/mm³.", correta: false, comentario: "Não há mais corte de CD4 para indicar TARV." },
+      { letra: "B", texto: "CD4 < 350 células/mm³.", correta: false, comentario: "Critério de estratégias antigas, superado pelo 'treat all'." },
+      { letra: "C", texto: "TARV indicada para todo paciente HIV positivo, independentemente do valor de CD4 ou carga viral.", correta: true, comentario: "O 'treat all' recomenda início o mais precocemente possível para todo HIV+, reduzindo transmissibilidade e morbimortalidade." },
+      { letra: "D", texto: "CD4 < 200 células/mm³, correspondendo à definição de AIDS.", correta: false, comentario: "Esse é o corte para definição de AIDS, não o critério de início de TARV hoje." },
+    ],
+    dificuldade: "fixacao",
+    estilo: "fixacao",
+    tags: ["HIV", "TARV", "treat all"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-hiv-020",
+    subtemaId: SUB.hiv,
+    disciplinaId: "inf",
+    enunciado: "Qual é o esquema antirretroviral preferencial de primeira linha para adultos virgens de tratamento no Brasil atualmente?",
+    alternativas: [
+      { letra: "A", texto: "Zidovudina + lamivudina + efavirenz.", correta: false, comentario: "Esquema antigo, substituído pelo esquema com dolutegravir." },
+      { letra: "B", texto: "Tenofovir + lamivudina + dolutegravir (TDF+3TC+DTG).", correta: true, comentario: "Comprimido de dose fixa combinada, 1x/dia; dolutegravir tem alta barreira genética à resistência." },
+      { letra: "C", texto: "Tenofovir + entricitabina + ritonavir.", correta: false, comentario: "Ritonavir é usado como booster de inibidores de protease, não faz parte do esquema preferencial atual." },
+      { letra: "D", texto: "Abacavir + lamivudina + darunavir.", correta: false, comentario: "Não é o esquema de primeira linha preferencial no Brasil." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["HIV", "TARV", "dolutegravir"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-hiv-021",
+    subtemaId: SUB.hiv,
+    disciplinaId: "inf",
+    enunciado: "Em relação à coinfecção TB-HIV, qual o momento correto para início da TARV conforme o valor de CD4?",
+    alternativas: [
+      { letra: "A", texto: "CD4 < 50: iniciar TARV em até 2 semanas do início do tratamento de TB; CD4 ≥ 50: iniciar entre 8-12 semanas.", correta: true, comentario: "Quanto mais imunossuprimido, mais precoce a TARV, apesar do risco de síndrome de reconstituição imune (SIRI) — o benefício supera o risco." },
+      { letra: "B", texto: "TARV deve sempre ser iniciada no mesmo dia do diagnóstico de TB, independentemente do CD4.", correta: false, comentario: "Início simultâneo aumenta muito o risco de SIRI grave; o momento depende do CD4." },
+      { letra: "C", texto: "TARV deve ser postergada até o término completo do tratamento de TB, para evitar SIRI.", correta: false, comentario: "Postergar tanto aumenta a mortalidade, especialmente em CD4 baixo." },
+      { letra: "D", texto: "CD4 < 50: iniciar TARV apenas após 8 semanas; CD4 ≥ 50: iniciar imediatamente.", correta: false, comentario: "Está invertido — quanto menor o CD4, mais precoce deve ser o início." },
+    ],
+    dificuldade: "avancada",
+    estilo: "conduta",
+    tags: ["HIV", "tuberculose", "coinfecção", "SIRI"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-hiv-022",
+    subtemaId: SUB.hiv,
+    disciplinaId: "inf",
+    enunciado: "Qual profilaxia primária é indicada para pneumocistose em pacientes HIV positivos com CD4 < 200 células/mm³?",
+    alternativas: [
+      { letra: "A", texto: "Azitromicina semanal.", correta: false, comentario: "Azitromicina é usada na profilaxia de complexo Mycobacterium avium, não de pneumocistose." },
+      { letra: "B", texto: "Sulfametoxazol-trimetoprima (SMX-TMP).", correta: true, comentario: "Mesma droga também previne neurotoxoplasmose (indicada se CD4 < 100 e IgG antitoxoplasma reagente)." },
+      { letra: "C", texto: "Fluconazol diário.", correta: false, comentario: "Fluconazol é usado no tratamento/profilaxia de candidíase e criptococose, não de pneumocistose." },
+      { letra: "D", texto: "Ganciclovir profilático.", correta: false, comentario: "Ganciclovir é usado para citomegalovírus, não para pneumocistose." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["HIV", "pneumocistose", "profilaxia"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-hiv-023",
+    subtemaId: SUB.hiv,
+    disciplinaId: "inf",
+    enunciado: "Sobre o conceito 'Indetectável = Intransmissível (I=I)', assinale a alternativa correta.",
+    alternativas: [
+      { letra: "A", texto: "Elimina o risco de transmissão sexual quando a carga viral está indetectável de forma sustentada, mas não altera a contraindicação absoluta de amamentação em mães HIV positivas no Brasil.", correta: true, comentario: "I=I vale para transmissão sexual; a amamentação continua contraindicada no Brasil independentemente da carga viral materna, substituída por fórmula." },
+      { letra: "B", texto: "Permite a amamentação segura em mães HIV positivas com carga viral indetectável.", correta: false, comentario: "A contraindicação à amamentação é absoluta no Brasil, mesmo com carga viral indetectável." },
+      { letra: "C", texto: "Aplica-se apenas à transmissão vertical, não à transmissão sexual.", correta: false, comentario: "É o oposto: I=I refere-se especificamente à transmissão sexual." },
+      { letra: "D", texto: "É válido apenas para pacientes em uso de inibidores de protease.", correta: false, comentario: "O conceito vale para qualquer esquema TARV eficaz, não é específico de classe de fármaco." },
+    ],
+    dificuldade: "avancada",
+    estilo: "diagnostico",
+    tags: ["HIV", "I=I", "amamentação", "transmissão"],
+    fonte: FONTE,
+  },
+  {
+    id: "inf-hiv-024",
+    subtemaId: SUB.hiv,
+    disciplinaId: "inf",
+    enunciado:
+      "Qual é o prazo máximo recomendado para início da profilaxia pós-exposição (PEP) ao HIV após exposição sexual desprotegida ou acidente biológico?",
+    alternativas: [
+      { letra: "A", texto: "24 horas, idealmente na primeira hora.", correta: false, comentario: "O prazo máximo é maior que 24h." },
+      { letra: "B", texto: "72 horas, idealmente nas primeiras 2 horas.", correta: true, comentario: "PEP mantida por 28 dias, com o mesmo esquema TARV preferencial do tratamento — quanto mais precoce, maior a eficácia." },
+      { letra: "C", texto: "7 dias, sem necessidade de pressa.", correta: false, comentario: "Prazo muito além do recomendado — a eficácia cai com o atraso." },
+      { letra: "D", texto: "48 horas, apenas em caso de violência sexual.", correta: false, comentario: "O prazo de 72h vale para qualquer exposição de risco, não só violência sexual." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["HIV", "PEP", "profilaxia pós-exposição"],
     fonte: FONTE,
   },
 ];

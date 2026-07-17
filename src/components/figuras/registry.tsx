@@ -525,6 +525,49 @@ function ViasBiliares() {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// Infectologia — padrão temporal febre × exantema
+// ═══════════════════════════════════════════════════════════════
+function ExantemasPadraoTemporal() {
+  return (
+    <svg viewBox="0 0 430 210" role="img" aria-label="Padrão temporal entre febre e exantema: sarampo × exantema súbito">
+      {/* eixo de dias comum */}
+      {["D1", "D2", "D3", "D4", "D5"].map((d, i) => (
+        <text key={d} x={100 + i * 66} y={200} textAnchor="middle" style={label({ fill: C.faint, fontSize: 9 })}>{d}</text>
+      ))}
+
+      {/* SARAMPO — febre persiste durante o exantema */}
+      <text x={20} y={26} style={label({ fill: C.text, fontSize: 11, fontWeight: 800 })}>Sarampo</text>
+      <rect x={68} y={16} width={330} height={18} rx={4} fill={C.gold} opacity="0.28" />
+      <text x={233} y={29} textAnchor="middle" style={label({ fill: C.gold, fontSize: 9.5, fontWeight: 800 })}>febre — persiste durante todo o exantema</text>
+
+      <circle cx={100} cy={54} r={4} fill={C.accent} />
+      <text x={110} y={58} style={label({ fill: C.accent, fontSize: 9.5, fontWeight: 800 })}>Koplik (patognomônico, precede)</text>
+
+      <rect x={166} y={68} width={232} height={16} rx={4} fill={C.danger} opacity="0.22" />
+      <text x={282} y={80} textAnchor="middle" style={label({ fill: C.danger, fontSize: 9.5, fontWeight: 800 })}>exantema céfalo-caudal (D3–D5) — SOBRE a febre</text>
+
+      {/* separador */}
+      <line x1={20} y1={104} x2={410} y2={104} stroke={C.border} strokeWidth="1" strokeDasharray="3 3" />
+
+      {/* EXANTEMA SÚBITO — febre cede e ENTÃO surge exantema */}
+      <text x={20} y={128} style={label({ fill: C.text, fontSize: 11, fontWeight: 800 })}>Exantema</text>
+      <text x={20} y={140} style={label({ fill: C.text, fontSize: 11, fontWeight: 800 })}>súbito</text>
+      <rect x={68} y={116} width={166} height={18} rx={4} fill={C.gold} opacity="0.28" />
+      <text x={151} y={129} textAnchor="middle" style={label({ fill: C.gold, fontSize: 9.5, fontWeight: 800 })}>febre alta 3–4d</text>
+
+      <line x1={234} y1={110} x2={234} y2={182} stroke={C.text} strokeWidth="1.5" strokeDasharray="2 2" />
+      <circle cx={234} cy={108} r={4} fill={C.text} />
+
+      <rect x={234} y={116} width={164} height={18} rx={4} fill={C.danger} opacity="0.22" />
+      <text x={316} y={129} textAnchor="middle" style={label({ fill: C.danger, fontSize: 9.5, fontWeight: 800 })}>exantema — criança melhora ao surgir</text>
+
+      <text x={234} y={162} textAnchor="middle" style={label({ fill: C.text, fontSize: 10, fontWeight: 800 })}>a febre CAI</text>
+      <text x={234} y={175} textAnchor="middle" style={label({ fontSize: 9 })}>exatamente quando o exantema aparece</text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
 // Registry
 // ═══════════════════════════════════════════════════════════════
 export const FIGURAS: Record<string, Figura> = {
@@ -604,6 +647,13 @@ export const FIGURAS: Record<string, Figura> = {
     legenda:
       "Mirizzi é compressão EXTRÍNSECA do hepático comum por cálculo impactado no infundíbulo/cístico — dá icterícia obstrutiva sem cálculo dentro do colédoco, e aumenta o risco de lesão de via biliar na cirurgia.",
     render: () => <ViasBiliares />,
+  },
+  "inf-exantemas-padrao-temporal": {
+    id: "inf-exantemas-padrao-temporal",
+    titulo: "Padrão temporal febre × exantema",
+    legenda:
+      "O detalhe que mais cai: no sarampo a febre PERSISTE durante o exantema; no exantema súbito a febre CAI exatamente quando o exantema surge — a criança melhora ao exantemar.",
+    render: () => <ExantemasPadraoTemporal />,
   },
 };
 

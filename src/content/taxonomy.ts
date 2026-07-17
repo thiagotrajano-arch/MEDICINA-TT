@@ -152,7 +152,15 @@ const infectologia: Disciplina = {
     tema("inf", "Meningites", ["Bacteriana vs. viral"]),
     tema("inf", "Hepatites virais", ["Interpretação sorológica"]),
     tema("inf", "Malária", ["Diagnóstico e tratamento"]),
-    tema("inf", "Leptospirose", ["Fases e manejo"]),
+    tema("inf", "Zoonoses e doenças emergentes", [
+      "Raiva — profilaxia pós-exposição",
+      ["Leptospirose — fases e manejo", { altoRendimento: true }],
+      "Mpox (monkeypox)",
+    ]),
+    tema("inf", "Parasitoses intestinais e protozooses", [
+      ["Helmintíases e protozooses — diagnóstico e tratamento", { altoRendimento: true }],
+    ]),
+    tema("inf", "Doenças exantemáticas", ["Sarampo, rubéola, escarlatina e Kawasaki"]),
     tema("inf", "Infecções congênitas", ["STORCH — visão infectológica"]),
     tema("inf", "Imunizações no adulto", ["Vacinas do adulto"]),
     tema("inf", "COVID-19 e influenza", ["Manejo ambulatorial e hospitalar"]),

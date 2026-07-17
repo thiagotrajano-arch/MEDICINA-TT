@@ -604,4 +604,524 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
     ],
   },
+
+  "inf--hepatites-virais--interpretacao-sorologica": {
+    subtemaId: "inf--hepatites-virais--interpretacao-sorologica",
+    titulo: "Hepatites virais — interpretação sorológica",
+    atualizadoEm: "2026-07-17",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Inflamação hepática causada pelos vírus **hepatotrópicos A, B, C, D e E**, que diferem em **via de transmissão**, **potencial de cronificação** e **conduta**. Tema muito integrado com GO (transmissão vertical) e Infectologia geral (coinfecção HIV).",
+      },
+      {
+        secao: "Etiologia e transmissão",
+        corpo:
+          "- **A e E:** RNA vírus, transmissão **fecal-oral**, **não cronificam** (E também zoonótico — carne de porco malcozida);\n- **B:** DNA vírus, transmissão **sexual/parenteral/vertical**, pode cronificar — risco **inversamente proporcional à idade de aquisição** (até **90%** se adquirida no período neonatal);\n- **C:** RNA vírus, transmissão **parenteral predominante**, **alto potencial de cronificação (~75–85%)** — principal causa de hepatopatia crônica relacionada a transfusão/uso de drogas injetáveis no passado;\n- **D (delta):** RNA **defectivo**, **só replica na presença do HBV** (coinfecção ou superinfecção), agrava o curso da hepatite B.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "**Fase aguda:** pode ser assintomática (maioria dos casos de B e C) ou apresentar mal-estar, náuseas, dor em hipocôndrio direito, icterícia, colúria, acolia fecal. Hepatite B aguda pode ter **fenômenos extra-hepáticos** por imunocomplexos (poliartrite, urticária, glomerulonefrite).\n\n**Hepatite crônica (B/C):** frequentemente **assintomática por décadas** até estágio de cirrose/descompensação.",
+      },
+      {
+        secao: "Diagnóstico sorológico",
+        corpo:
+          "| Marcador | Significado |\n|---|---|\n| Anti-HAV IgM | Infecção aguda por hepatite A |\n| HBsAg | Infecção atual por HBV (aguda ou crônica) |\n| Anti-HBc IgM | Infecção aguda/recente por HBV (**janela imunológica**, quando HBsAg já pode ter negativado) |\n| Anti-HBs | Imunidade (vacinal ou pós-infecção resolvida) |\n| HBeAg / HBV-DNA | Replicação viral ativa — maior infectividade |\n| Anti-HCV | **Triagem** — confirmar sempre com **HCV-RNA** (anti-HCV+ não distingue infecção ativa de cicatriz sorológica) |",
+      },
+      {
+        secao: "Exames de imagem",
+        corpo:
+          "**USG de abdome:** hepatomegalia na fase aguda; na hepatite crônica avançada — fígado heterogêneo, nodular, com sinais de hipertensão portal (esplenomegalia, veia porta calibrosa, circulação colateral, ascite). **Elastografia hepática (FibroScan)** estima o grau de fibrose de forma não invasiva, reduzindo a necessidade de biópsia. **TC/RM com contraste** indicada para rastreio/caracterização de carcinoma hepatocelular em cirróticos (nódulo com **realce arterial e washout venoso**).",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "Hepatite medicamentosa/tóxica (paracetamol, fitoterápicos), hepatite autoimune, **doença de Wilson** (jovem + Kayser-Fleischer + ceruloplasmina baixa), esteato-hepatite, colangite (padrão colestático com dor + febre + icterícia — tríade de Charcot).",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "- **Hepatite A/E:** suporte apenas (autolimitada); monitorar hepatite fulminante (rara);\n- **Hepatite B crônica:** **tenofovir** (alta barreira genética) é o antiviral de escolha, indicado conforme critérios de atividade (HBV-DNA elevado + ALT alterada ou fibrose significativa); tratamento geralmente prolongado/indefinido;\n- **Hepatite C:** **antivirais de ação direta (DAA)** — ex.: sofosbuvir + velpatasvir (esquemas pangenotípicos) — curam **> 95%** dos casos em 8–12 semanas; a era do interferon está superada.",
+      },
+      {
+        secao: "Posologia e profilaxia",
+        corpo:
+          "**Tenofovir** 300 mg 1×/dia (ajustar por função renal). **Sofosbuvir/velpatasvir** 400/100 mg 1×/dia por 12 semanas (esquema pangenotípico padrão, SUS disponibiliza). **Vacina de hepatite B:** esquema 0-1-6 meses (ou combinada no PNI infantil); **imunoglobulina hiperimune (HBIG) + vacina no RN de mãe HBsAg+** nas primeiras **12–24h** de vida — as duas juntas, nunca só a vacina.",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "- Cirrose hepática e suas descompensações (ascite, encefalopatia, varizes);\n- **Carcinoma hepatocelular** (risco aumentado em B mesmo sem cirrose, por integração viral ao genoma; em C o risco é predominantemente ligado à cirrose);\n- **Hepatite fulminante** (rara, mais associada à hepatite B com coinfecção delta, ou **hepatite E em gestante** — mortalidade elevada);\n- Manifestações extra-hepáticas (crioglobulinemia mista na C, poliarterite nodosa na B).",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "Vacina de hepatite A e B no calendário infantil (PNI). Transmissão vertical de hepatite B: RN de mãe HBsAg+ recebe **vacina + HBIG** nas primeiras horas de vida — reduz drasticamente a cronificação. **Não há vacina para hepatite C** — prevenção é triagem de sangue/hemoderivados, não compartilhamento de material perfurocortante, e tratamento universal de infectados.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Anti-HCV positivo não significa infecção ativa** — sempre confirmar com **HCV-RNA** antes de tratar ou dar prognóstico.\n- ★ Hepatite C hoje se cura em **> 95%** dos casos com DAA em 8–12 semanas — **não existe mais interferon como 1ª linha**.\n- ★ Quanto mais jovem ao adquirir hepatite B, **maior a chance de cronificação** — até 90% se transmissão vertical/neonatal sem profilaxia.\n- ★ RN de mãe HBsAg+ precisa de **vacina + HBIG juntas** nas primeiras 12–24h — a vacina isolada não basta.\n- ★ **Anti-HBc IgM** pode ser o único marcador positivo na \"janela\" entre HBsAg negativar e anti-HBs ainda não aparecer.\n- ★ **Hepatite E em gestante** tem risco de forma fulminante.\n- ★ **Hepatite delta só existe na presença de hepatite B** (coinfecção ou superinfecção) — piora o prognóstico.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Protocolo Clínico e Diretrizes Terapêuticas para Hepatite B e Coinfecções",
+      "Ministério da Saúde — Protocolo Clínico e Diretrizes Terapêuticas para Hepatite C e Coinfecções",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--doencas-exantematicas--sarampo-rubeola-escarlatina-e-kawasaki": {
+    subtemaId: "inf--doencas-exantematicas--sarampo-rubeola-escarlatina-e-kawasaki",
+    titulo: "Doenças exantemáticas — sarampo, rubéola, escarlatina e Kawasaki",
+    atualizadoEm: "2026-07-17",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Grupo de doenças infecciosas, predominantemente virais, que cursam com **exantema cutâneo característico** — o **padrão temporal** (quando a febre aparece/cede em relação ao exantema) e a **morfologia/distribuição** são as chaves diagnósticas mais cobradas em prova.",
+      },
+      {
+        secao: "Etiologia",
+        corpo:
+          "**Sarampo** (*Paramyxovirus*), **rubéola** (*Togavirus*), **exantema súbito** (HHV-6), **eritema infeccioso** (Parvovírus B19 — infecta precursores eritroides, causando risco de crise aplásica/hidropsia fetal), **escarlatina** (exotoxina eritrogênica do *Streptococcus pyogenes*). Cobertura vacinal inadequada é o principal determinante de surtos de sarampo e rubéola (imunopreveníveis); **sarampo é um dos vírus mais transmissíveis conhecidos**.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "- **Sarampo:** pródromo 3–5 dias (tosse/coriza/conjuntivite) → **manchas de Koplik** → exantema céfalo-caudal maculopapular D3–D5;\n- **Rubéola:** pródromo leve → exantema rosado céfalo-caudal fugaz + **linfadenopatia retroauricular**;\n- **Escarlatina:** febre + faringite → exantema micropapular **\"em lixa\"** + Filatov/Pastia → descamação;\n- **Exantema súbito (HHV-6):** febre alta 3–4 dias **que cede E ENTÃO surge o exantema** (a criança melhora ao exantemar);\n- **Eritema infeccioso (Parvo B19):** **\"face esbofeteada\"** → exantema rendilhado em membros, poupando a face depois;\n- **Kawasaki** (vasculite, não infecciosa, mas sempre estudada junto): **febre ≥ 5 dias + 4 dos 5 critérios** — conjuntivite não exsudativa bilateral, alterações de mucosa oral (lábios fissurados, língua \"em framboesa\"), exantema polimorfo, alterações de extremidades (edema/eritema, descamação periungueal tardia), linfadenopatia cervical ≥ 1,5 cm;\n- **MIS-C** (síndrome inflamatória multissistêmica pediátrica pós-COVID): febre + inflamação multissistêmica + disfunção cardíaca, temporalmente associada a infecção prévia por SARS-CoV-2 — diferencial importante de Kawasaki.",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "Predominantemente **clínico** pelo padrão do exantema e pródromos. Sorologia IgM específica confirma sarampo, rubéola e parvovírus quando necessário (**notificação compulsória exige confirmação laboratorial para sarampo/rubéola**). **Kawasaki é diagnóstico clínico** (critérios), sem exame único confirmatório — provas inflamatórias (PCR/VHS elevadas) e plaquetose são de apoio.",
+      },
+      {
+        secao: "Exames de imagem",
+        corpo:
+          "**Kawasaki:** ecocardiograma **obrigatório** na suspeita (basal, 2 semanas e 6–8 semanas) para rastreio de **aneurisma de artéria coronária** — achado que define a gravidade e o seguimento a longo prazo. **MIS-C:** ecocardiograma também essencial (pode haver disfunção miocárdica/derrame pericárdico, além de aneurisma coronariano).",
+        figura: "inf-exantemas-padrao-temporal",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "Farmacodermia (exantema morbiliforme por medicamento, sem pródromo viral característico); mononucleose (linfadenopatia generalizada + esplenomegalia; exantema pode surgir após amoxicilina); **Kawasaki × escarlatina** (ambas podem ter língua em framboesa — escarlatina tem cultura/teste rápido para estreptococo positivo e responde a penicilina).",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "- **Sarampo, rubéola, eritema infeccioso, exantema súbito:** suporte (antitérmico, hidratação) — autolimitados; **vitamina A** recomendada pela OMS no sarampo (reduz morbimortalidade, especialmente em desnutridos);\n- **Escarlatina:** **penicilina** (ou amoxicilina) — tratar sempre, para prevenir complicações supurativas e não supurativas (febre reumática, GNPE);\n- **Kawasaki:** **imunoglobulina intravenosa (IVIG)** em dose única + **AAS** em dose alta na fase aguda, com redução para dose antiagregante após defervescência — reduz drasticamente o risco de aneurisma coronariano se iniciado nos primeiros **10 dias** de doença.",
+      },
+      {
+        secao: "Posologia",
+        corpo:
+          "**IVIG** 2 g/kg em infusão única. **AAS:** 80–100 mg/kg/dia (fase aguda, dividido) → 3–5 mg/kg/dia (fase de manutenção antiagregante) — exceção importante: uso de AAS em criança é geralmente contraindicado (síndrome de Reye), mas é **indicação formal na doença de Kawasaki**.",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "- **Sarampo:** pneumonia (principal causa de óbito), otite média, panencefalite esclerosante subaguda (PEES, tardia e rara);\n- **Rubéola congênita:** catarata, surdez, cardiopatia (persistência do canal arterial) — tríade clássica se infecção no 1º trimestre;\n- **Parvovírus B19 na gestação:** hidropsia fetal não imune (crise aplásica fetal); em anemia hemolítica crônica: crise aplásica transitória grave;\n- **Kawasaki:** aneurisma de coronária, IAM na infância (raro mas grave);\n- **Escarlatina não tratada:** febre reumática, GNPE.",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "**Tríplice viral (SCR)** — sarampo, caxumba, rubéola — 12 e 15 meses (calendário PNI); é a principal ferramenta de controle de surto. Isolamento de contato/aéreo no sarampo (extremamente contagioso). **Notificação compulsória imediata** de casos suspeitos de sarampo e rubéola.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ O detalhe que mais cai: a **relação temporal entre febre e exantema** diferencia as principais doenças exantemáticas.\n- ★ **Exantema súbito:** a criança melhora (fica afebril) **exatamente quando** o exantema aparece — padrão único.\n- ★ **Manchas de Koplik** precedem o exantema do sarampo e são **patognomônicas**.\n- ★ **Kawasaki: ecocardiograma sempre**, mesmo com critérios completos — o aneurisma coronariano define o seguimento.\n- ★ **AAS é contraindicado na maioria dos quadros pediátricos (Reye), EXCETO na doença de Kawasaki**.\n- ★ **Escarlatina não tratada** leva às mesmas complicações do estreptococo não tratado — sempre tratar com penicilina.\n- ★ **Rubéola congênita:** tríade **catarata + surdez + PCA**, maior risco se infecção no 1º trimestre.\n- ★ **Mnemônico Kawasaki = CRASH + febre:** Conjuntivite, Rash, Adenopatia, Strawberry tongue/mucosa, Hands-feet.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Guia de Vigilância em Saúde (sarampo e rubéola)",
+      "Sociedade Brasileira de Pediatria — Doença de Kawasaki e MIS-C",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--zoonoses-e-doencas-emergentes--raiva-profilaxia-pos-exposicao": {
+    subtemaId: "inf--zoonoses-e-doencas-emergentes--raiva-profilaxia-pos-exposicao",
+    titulo: "Raiva — profilaxia pós-exposição",
+    atualizadoEm: "2026-07-17",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Encefalite viral aguda causada por **Lyssavirus**, transmitida por mordedura/arranhadura de mamífero infectado (cão, gato, morcego, animais silvestres), com **letalidade próxima de 100% após o início dos sintomas**.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "O vírus **neurotrópico**, inoculado na mordedura, **migra retrogradamente pelos nervos periféricos até o SNC** — período de incubação variável (dias a meses), conforme a **distância entre o local da mordida e o SNC**. Após atingir o SNC, causa encefalite fatal quase invariavelmente.",
+      },
+      {
+        secao: "Fatores de risco",
+        corpo:
+          "Mordedura por animal não vacinado ou sem possibilidade de observação; **exposição a morcegos** (inclusive sem mordida percebida, em ambiente fechado) — considerada sempre de risco.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "**Pródromo inespecífico** (febre, mal-estar, parestesia/dor no local da mordida) → **fase neurológica** com **hidrofobia** (espasmo faríngeo doloroso ao tentar beber água), **aerofobia**, agitação/hiperatividade autonômica (**forma furiosa**, mais comum) ou paralisia ascendente (**forma paralítica**, mimetiza Guillain-Barré) → coma e óbito.",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "**Clínico** (história de exposição + quadro compatível) — confirmação laboratorial (imunofluorescência, PCR) geralmente pós-morte ou em centros de referência. **Não se aguarda confirmação para iniciar a profilaxia.**",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**Não há tratamento curativo eficaz estabelecido após o início dos sintomas** (protocolos experimentais como o \"protocolo de Milwaukee\" têm resultados limitados). Toda a estratégia é **preventiva pós-exposição**.",
+      },
+      {
+        secao: "Profilaxia pós-exposição",
+        corpo:
+          "1. **Lavagem exaustiva da ferida** com água e sabão imediatamente;\n2. **Soro/imunoglobulina antirrábica** se indicado pela gravidade da exposição;\n3. **Vacina de células Vero** (esquema conforme pré ou pós-exposição, e situação vacinal prévia).\n\nAvaliar **gravidade da exposição e status do animal**: cão/gato saudável e observável por **10 dias** → pode-se aguardar (suspender profilaxia se o animal permanecer assintomático); animal selvagem, morcego ou animal doente → **iniciar profilaxia imediatamente**.",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "Encefalite fatal — **mortalidade ~100% após o início dos sintomas**.",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "Vacinação de cães/gatos (bloqueio da cadeia de transmissão urbana); observação do animal agressor por 10 dias quando possível; **todo acidente com morcego é considerado grave** e indica profilaxia completa, independentemente da gravidade aparente da lesão.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Todo acidente com morcego** é tratado como grave para fins de profilaxia antirrábica, mesmo que a lesão pareça superficial.\n- ★ **Hidrofobia + aerofobia** em paciente com história de mordedura semanas/meses antes = **raiva até prova em contrário**.\n- ★ **Não se aguarda confirmação laboratorial** de raiva para iniciar a profilaxia pós-exposição — a decisão é **clínico-epidemiológica**.\n- ★ **Mnemônico:** raiva = **2 H** — **H**idrofobia + **H**iperatividade autonômica (forma furiosa), ou paralisia ascendente (forma paralítica, minoria).",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Guia de Vigilância em Saúde (raiva) e Normas Técnicas de Profilaxia da Raiva Humana",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--zoonoses-e-doencas-emergentes--leptospirose-fases-e-manejo": {
+    subtemaId: "inf--zoonoses-e-doencas-emergentes--leptospirose-fases-e-manejo",
+    titulo: "Leptospirose — fases e manejo",
+    atualizadoEm: "2026-07-17",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Zoonose causada pela espiroqueta ***Leptospira***, classicamente associada a **enchentes** e contato com água/lama contaminada por urina de roedores.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "A espiroqueta, eliminada na **urina de roedores** (principal reservatório — o rato de esgoto), **penetra por pele/mucosa lesada** em contato com água/lama contaminada. Dissemina-se e **lesa o endotélio vascular**, explicando o tropismo multissistêmico (rim, fígado, pulmão).",
+      },
+      {
+        secao: "Fatores de risco",
+        corpo:
+          "Enchentes/inundações urbanas, contato ocupacional (coleta de lixo, trabalho rural, limpeza de fossas), exposição recreativa a água doce parada.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "**Fase precoce (leptospirêmica):** febre, **mialgia intensa (especialmente de panturrilhas)**, cefaleia, **sufusão conjuntival** (hiperemia conjuntival **sem secreção**).\n\n**Fase tardia (imune), em minoria — síndrome de Weil:** **icterícia rubínica** (tom alaranjado), **injúria renal aguda**, hemorragia (a **pulmonar é a mais temida**).",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "Sorologia (**ELISA IgM**; **microaglutinação** como confirmatório), **PCR** nos primeiros dias da doença.",
+      },
+      {
+        secao: "Exames de imagem",
+        corpo:
+          "Nas formas graves, RX/TC de tórax pode mostrar **infiltrado alveolar difuso/hemorragia pulmonar** — reconhecer precocemente pela alta mortalidade. USG renal geralmente inespecífica na lesão renal aguda leptospirótica, que é tipicamente **não oligúrica, com hipocalemia** (diferente da maioria das IRAs).",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "**Leptospirose × dengue** (cocirculam em épocas de chuva — sufusão conjuntival e mialgia de panturrilha favorecem leptospirose; prova do laço/plaquetopenia mais marcada favorece dengue); hepatite viral (leptospirose causa icterícia com padrão **colestático**, bilirrubina direta predominante, sem grande elevação de transaminases).",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**Penicilina cristalina ou doxiciclina** nos casos leves-moderados (ambulatorial) — quanto mais precoce, melhor. Suporte hemodinâmico/dialítico nas formas graves (síndrome de Weil).",
+      },
+      {
+        secao: "Posologia",
+        corpo:
+          "**Leptospirose leve:** doxiciclina 100 mg 12/12h VO, 5–7 dias. **Leptospirose grave:** penicilina G cristalina EV ou ceftriaxona.",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "**Síndrome de Weil** (IRA + icterícia + hemorragia); **hemorragia pulmonar maciça** (principal causa de óbito na forma grave); miocardite.",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "Evitar contato com água de enchente; uso de EPI em atividades de risco ocupacional; controle de roedores. Doxiciclina profilática pode ser considerada em exposição de risco muito específica (**não é rotina**).",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Mialgia de panturrilha + sufusão conjuntival + contexto de enchente** = pensar leptospirose antes de dengue.\n- ★ **Síndrome de Weil** = icterícia + IRA + hemorragia (pulmonar é a mais temida e principal causa de óbito).\n- ★ A **IRA da leptospirose é classicamente NÃO oligúrica e cursa com hipocalemia** — diferente da maioria das IRAs.\n- ★ Não confundir leptospirose com dengue **só pela plaquetopenia** — sufusão conjuntival e mialgia de panturrilha apontam para leptospirose.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Guia de Vigilância em Saúde (leptospirose)",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--zoonoses-e-doencas-emergentes--mpox-monkeypox": {
+    subtemaId: "inf--zoonoses-e-doencas-emergentes--mpox-monkeypox",
+    titulo: "Mpox (monkeypox)",
+    atualizadoEm: "2026-07-17",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Doença viral causada por **Orthopoxvirus**, que emergiu como preocupação global de saúde pública a partir de **2022**.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "Transmissão por **contato próximo/pele-a-pele** com lesões, fômites, ou secreções respiratórias prolongadas.",
+      },
+      {
+        secao: "Fatores de risco",
+        corpo:
+          "Contato íntimo/sexual com caso confirmado; viagem a área endêmica.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "Febre + **linfadenopatia** (achado que diferencia de varíola clássica) + lesões cutâneas que evoluem em **estágios sincrônicos** (mácula → pápula → vesícula → pústula → crosta), podendo ser genitais/perianais na apresentação atual.",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "**PCR de lesão cutânea** (swab de vesícula/pústula).",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "Varicela — o mpox tem lesões mais profundas/uniformes em estágio e **linfadenopatia proeminente**, achado que ajuda a diferenciar.",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**Suporte** na maioria dos casos (autolimitado); **tecovirimat** disponível para casos graves/imunossuprimidos em protocolos específicos.",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "Sobreinfecção bacteriana de lesões; proctite (lesões perianais); raramente encefalite.",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "Vacina (**ACAM2000/MVA-BN**) para contatos de alto risco e grupos prioritários; isolamento de casos até resolução das lesões.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Linfadenopatia proeminente** é o achado que diferencia clinicamente o mpox de varíola clássica e de varicela.\n- ★ As lesões evoluem em **estágios sincrônicos** (todas no mesmo estágio evolutivo simultaneamente).",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Guia de Vigilância Epidemiológica e Manejo Clínico do Mpox",
+      "OMS — Mpox Clinical Management and Infection Prevention and Control Guidance",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--parasitoses-intestinais-e-protozooses--helmintiases-e-protozooses-diagnostico-e-tratamento": {
+    subtemaId: "inf--parasitoses-intestinais-e-protozooses--helmintiases-e-protozooses-diagnostico-e-tratamento",
+    titulo: "Parasitoses intestinais e protozooses — diagnóstico e tratamento",
+    atualizadoEm: "2026-07-17",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Infecções por **helmintos e protozoários** do trato gastrointestinal, de altíssima prevalência em populações com saneamento precário — tema clássico de saúde pública e clínica médica/pediatria no Brasil.",
+      },
+      {
+        secao: "Etiologia e mecanismo-chave",
+        corpo:
+          "| Parasito | Via de infecção | Mecanismo-chave |\n|---|---|---|\n| ***Ascaris lumbricoides*** | Ingestão de ovos | Ciclo pulmonar (Löffler) antes de amadurecer no intestino — pode causar obstrução intestinal/biliar em carga alta |\n| Ancilostomídeos (*Necator/Ancylostoma*) | Penetração ativa pela pele (pé descalço) | Migração pulmonar, fixação na mucosa intestinal com **espoliação sanguínea crônica → anemia ferropriva** |\n| ***Strongyloides stercoralis*** | Penetração cutânea | **Autoinfecção** (único helminto capaz de completar o ciclo dentro do hospedeiro) — risco de **hiperinfecção fatal** em imunossuprimidos/uso de corticoide |\n| ***Entamoeba histolytica*** | Fecal-oral (cistos) | Invade mucosa colônica (disenteria amebiana) e pode disseminar por via portal → **abscesso hepático amebiano** |\n| ***Giardia lamblia*** | Fecal-oral (cistos) | Adere ao epitélio duodenal, causa má absorção **sem invasão tecidual** |\n| *Taenia solium/saginata* | Ingestão de carne malcozida (cisticercos) | ***T. solium*: ingestão de OVOS** (não só a carne) causa **cisticercose** (larva migra para tecidos, incluindo SNC) |\n| ***Schistosoma mansoni*** | Penetração cutânea em água doce (caramujo *Biomphalaria*) | Migração e oviposição no plexo venoso mesentérico → **fibrose periportal (Symmers)** e hipertensão porta pré-sinusoidal |",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "**Fase pulmonar** (*Ascaris*, ancilostomídeos, *Strongyloides*): **síndrome de Löffler** — tosse seca, broncoespasmo, infiltrado migratório fugaz + eosinofilia.\n\n**Fase intestinal:** dor abdominal, diarreia (giardíase — esteatorreia por má absorção; amebíase — disenteria com muco/sangue), prurido anal noturno (enterobíase, típico em criança).\n\n**Strongyloides — síndrome de hiperinfecção:** em imunossuprimido/corticoide crônico — dor abdominal difusa, **sepse por Gram-negativos** (a larva \"carrega\" bactérias entéricas na migração transmural), pode ser fatal.\n\n**Esquistossomose:** fase aguda — **febre de Katayama** (febre, urticária, eosinofilia, hepatoesplenomegalia, 4–8 semanas pós-exposição); fase crônica — hepatoesplenomegalia com **função hepatocelular preservada** (fibrose pré-sinusoidal, diferente da cirrose).",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "**Exame Parasitológico de Fezes (EPF)** — método de Hoffman/Kato-Katz, idealmente **3 amostras em dias alternados** (aumenta a sensibilidade pela eliminação intermitente de ovos/cistos). **Método de Baermann-Moraes** para *Strongyloides* (mais sensível que o EPF comum). Sorologia útil em esquistossomose e cisticercose (ELISA). **Fita adesiva anal (Graham)** para enterobíase (ovos raramente aparecem no EPF de fezes).",
+      },
+      {
+        secao: "Exames de imagem",
+        corpo:
+          "**Abscesso hepático amebiano:** USG/TC — lesão **única**, hipoecoica/hipodensa, tipicamente em **lobo direito**, conteúdo em \"pasta de chocolate\" se puncionado (raramente necessário puncionar). **Neurocisticercose:** TC/RM de crânio — lesões císticas múltiplas em diferentes estágios (vesicular, coloidal, calcificada) — **principal causa de epilepsia adquirida em área endêmica**. **Esquistossomose hepatoesplênica:** USG com fibrose periportal em \"cano de barro\" — achado que diferencia de cirrose.",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "Abscesso hepático amebiano × piogênico (o piogênico geralmente é múltiplo, associado a foco biliar/diverticular); neurocisticercose × toxoplasmose de SNC (contexto epidemiológico e sorologia diferenciam); diarreia por giárdia × doença celíaca (EPF/antígeno fecal de giárdia esclarece).",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "| Parasito | Fármaco de escolha |\n|---|---|\n| *Ascaris*, ancilostomídeos, enterobíase | Albendazol dose única (ou 3 dias conforme carga) — mebendazol alternativa |\n| *Strongyloides* | **Ivermectina** (albendazol é menos eficaz para este parasito) |\n| Giardíase | Metronidazol ou secnidazol/tinidazol (dose única) |\n| Amebíase (invasiva/disenteria/abscesso) | Metronidazol, seguido de agente luminal (teclozan/etofamida) |\n| Teníase | Praziquantel ou niclosamida |\n| Neurocisticercose | Albendazol ± corticoide — contraindicado se muitos cistos ou hipertensão intracraniana sem controle prévio |\n| Esquistossomose | Praziquantel dose única |",
+      },
+      {
+        secao: "Posologia",
+        corpo:
+          "**Albendazol** 400 mg VO dose única (ascaris/ancilostomídeo/enterobíase) — repetir em 2 semanas na enterobíase. **Ivermectina** 200 mcg/kg/dia por 1–2 dias (*Strongyloides* — considerar 2 doses com intervalo de 2 semanas em imunossuprimido). **Metronidazol** 500–750 mg 8/8h por 7–10 dias (amebíase invasiva). **Praziquantel** 40–60 mg/kg dose única (esquistossomose).\n\n**★ Pérola de rastreio:** todo paciente de área endêmica que for iniciar corticoterapia prolongada ou imunossupressão deve ser **rastreado e tratado empiricamente para Strongyloides antes**, pelo risco de hiperinfecção fatal.",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "- ***Ascaris*:** obstrução intestinal (bolo de áscaris), obstrução biliar/pancreática;\n- **Ancilostomídeo:** anemia ferropriva crônica, atraso de desenvolvimento em crianças;\n- ***Strongyloides*:** síndrome de hiperinfecção/disseminada (mortalidade alta);\n- **Amebíase:** abscesso hepático, perfuração intestinal, ameboma;\n- **Esquistossomose:** hipertensão porta com varizes esofágicas (HDA), cor pulmonale esquistossomótico;\n- **Neurocisticercose:** epilepsia crônica, hidrocefalia.",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "Saneamento básico, uso de calçados (ancilostomídeo/estrongiloidíase), lavagem de mãos e higienização de alimentos, tratamento em massa (desparasitação) em áreas de alta prevalência, cocção adequada de carne (teníase/cisticercose), evitar contato com água doce parada em área endêmica de esquistossomose.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ ***Strongyloides* é o único helminto capaz de autoinfecção** — por isso pode persistir décadas e causar hiperinfecção fatal muito tempo depois da exposição original.\n- ★ **Sempre rastrear/tratar Strongyloides ANTES de iniciar corticoide crônico** em paciente de área endêmica — pegadinha clássica.\n- ★ **Ivermectina, não albendazol**, é o tratamento de escolha para *Strongyloides*.\n- ★ **Teníase por *T. solium*:** comer **OVOS** (não só a carne) causa cisticercose.\n- ★ **Abscesso hepático amebiano:** lesão única em lobo direito; o piogênico tende a ser múltiplo.\n- ★ **Esquistossomose crônica preserva a função hepatocelular** (fibrose pré-sinusoidal) — diferente da cirrose verdadeira.\n- ★ **EPF deve ser feito em 3 amostras de dias alternados** — amostra única tem sensibilidade baixa.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Guia de Vigilância em Saúde (parasitoses intestinais)",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--antibioticoterapia--principios-de-antibioticoterapia-empirica": {
+    subtemaId: "inf--antibioticoterapia--principios-de-antibioticoterapia-empirica",
+    titulo: "Antibioticoterapia — princípios de uso racional e resistência bacteriana",
+    atualizadoEm: "2026-07-17",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Princípios de escolha, uso racional e monitorização de antimicrobianos, e os principais **mecanismos de resistência bacteriana** — tema transversal, embutido em praticamente toda questão de foco infeccioso da prova.",
+      },
+      {
+        secao: "Mecanismos de resistência",
+        corpo:
+          "| Mecanismo | Exemplo | Descrição |\n|---|---|---|\n| **Betalactamases (ESBL/KPC)** | Enterobactérias | Hidrolisam o anel betalactâmico. ESBL: resistente a cefalosporinas (usar carbapenêmico). KPC: resistente também a carbapenêmicos |\n| **Alteração de PBP (PBP2a)** | MRSA | Proteína ligadora de penicilina alterada → toda a classe dos betalactâmicos perde ação, **exceto ceftarolina**. Tratar com vancomicina/linezolida |\n| **Bomba de efluxo** | *Pseudomonas*, Gram-negativos | Expulsa o antibiótico da célula antes de agir — resistência a quinolonas e outros |\n| **Alteração de alvo ribossomal** | Pneumococo, Enterococo (VRE) | Muda o sítio de ligação (PBP no pneumococo resistente a penicilina; genes *van* no VRE) |\n\n**Mnemônico dos 4 mecanismos: \"EABP\"** — Enzima (betalactamase), Alvo alterado, Bomba de efluxo, Permeabilidade reduzida.",
+      },
+      {
+        secao: "Fatores de risco para multirresistência",
+        corpo:
+          "Uso indiscriminado/sem indicação (infecção viral tratada com antibiótico), automedicação, doses/duração inadequadas, uso agropecuário maciço, internação prolongada e dispositivos invasivos (seleciona flora hospitalar multirresistente), imunossupressão. Suspeitar de multirresistência quando há **falha terapêutica apesar de antibiótico teoricamente adequado**, infecção associada a cuidados de saúde, ou colonização prévia conhecida.",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "**Antibiograma** (teste de sensibilidade) é o padrão para guiar/ajustar terapia — **sempre coletar cultura antes de iniciar antibiótico** quando possível, sem atrasar o início em quadros graves/sépticos. Testes moleculares rápidos (PCR para genes de resistência — mecA no MRSA, blaKPC) aceleram a identificação em centros de referência.",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "Falha terapêutica **por resistência** × falha **por foco não controlado** (abscesso não drenado, corpo estranho/cateter não retirado, dose inadequada) × febre não infecciosa (febre por droga, tromboembolismo) — sempre **reavaliar o foco** antes de simplesmente trocar o antibiótico.",
+      },
+      {
+        secao: "Tratamento — princípios de uso racional",
+        corpo:
+          "**Terapia empírica inicial ampla** conforme foco/gravidade/epidemiologia local → **descalonar** assim que houver cultura/antibiograma (reduzir espectro, trocar para via oral quando possível). Ajustar dose por função renal/hepática; respeitar duração mínima eficaz. Terapia combinada reservada para sinergismo comprovado (ex.: endocardite por enterococo) ou cobertura polimicrobiana/multirresistente — **não é rotina** para a maioria das infecções.\n\n| Organismo resistente | Opções terapêuticas |\n|---|---|\n| MRSA | Vancomicina, linezolida, daptomicina (**não usar em pneumonia** — inativada pelo surfactante) |\n| ESBL (enterobactéria) | Carbapenêmico (meropenem/ertapenem) |\n| KPC/CRE (resistente a carbapenêmico) | Polimixina B, ceftazidima-avibactam, colistina — opções limitadas, discutir com CCIH |\n| VRE (enterococo resistente à vancomicina) | Linezolida, daptomicina |",
+      },
+      {
+        secao: "Posologia",
+        corpo:
+          "Individualizada por foco/agente/função renal. Regra geral: ajustar por clearance de creatinina aminoglicosídeos, vancomicina e a maioria dos betalactâmicos; **não ajustar (ou ajustar minimamente)** azitromicina, ceftriaxona (excreção biliar predominante) e linezolida.",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "**Infecção por *Clostridioides difficile*** (colite pseudomembranosa) pós-uso de antibiótico de amplo espectro — **clindamicina, quinolonas e cefalosporinas** classicamente mais associadas. Nefrotoxicidade (aminoglicosídeos, vancomicina), ototoxicidade (aminoglicosídeos). Seleção progressiva de flora multirresistente institucional. Reações alérgicas (verdadeira alergia a betalactâmico é mais rara do que rotulado).",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "Programas de **stewardship (PROA** — Programa de Otimização do Uso de Antimicrobianos): auditoria de prescrição, restrição de antimicrobianos de reserva, descalonamento ativo, educação continuada. Medidas de controle de infecção hospitalar: higienização das mãos, precaução de contato para multirresistentes, retirada precoce de dispositivos invasivos.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Descalonar** assim que possível é tão importante quanto escolher bem o empírico inicial — é o núcleo do uso racional.\n- ★ **Falha terapêutica pode ser por foco não controlado**, não só por resistência.\n- ★ **Daptomicina não funciona em pneumonia** (inativada pelo surfactante pulmonar) — pegadinha clássica sobre MRSA.\n- ★ **ESBL exige carbapenêmico; KPC** (resistente a carbapenêmico) é o próximo nível de gravidade, com opções limitadas.\n- ★ Alergia a betalactâmico relatada **nem sempre é verdadeira alergia mediada por IgE**.\n- ★ *C. difficile* pode ocorrer após qualquer antibiótico, mas classicamente mais com **clindamicina, quinolonas e cefalosporinas**.",
+      },
+    ],
+    referencias: [
+      "ANVISA — Programa Nacional de Prevenção e Controle de Infecções Relacionadas à Assistência à Saúde (PROA)",
+      "IDSA — Guidance on the Treatment of Antimicrobial-Resistant Gram-Negative Infections",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--imunizacoes-no-adulto--vacinas-do-adulto": {
+    subtemaId: "inf--imunizacoes-no-adulto--vacinas-do-adulto",
+    titulo: "Imunizações e profilaxias pós-exposição",
+    atualizadoEm: "2026-07-17",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Estratégias de **prevenção primária** (vacinação) e de **bloqueio pós-exposição** que aparecem transversalmente em quase toda prova de infectologia/pediatria/GO do OMED — o **calendário vacinal foi o subtema isolado mais recorrente** nas últimas edições (5 aparições em 2 anos).",
+      },
+      {
+        secao: "Tipos de vacina",
+        corpo:
+          "**Vírus vivo atenuado** (SCR, varicela, febre amarela, VOP historicamente, rotavírus): induzem resposta imune mais robusta e duradoura, mas são **contraindicadas em imunossuprimidos e, em geral, na gestação**.\n\n**Inativadas/subunidade/conjugadas** (VIP, hepatite B, pneumocócica conjugada, HPV, dTpa): **seguras em imunossuprimidos e gestantes**, mas costumam exigir múltiplas doses/reforços.",
+      },
+      {
+        secao: "Calendário (PNI e adulto)",
+        corpo:
+          "| Vacina | Esquema |\n|---|---|\n| BCG | Dose única ao nascer |\n| Hepatite B | Ao nascer (1as 12–24h) + penta/hexavalente aos 2-4-6 meses |\n| Penta/hexavalente (DTP+Hib+HepB±VIP) | 2, 4, 6 meses |\n| VIP (poliomielite inativada) | 2, 4, 6 meses + reforço 15 meses — hoje **exclusivamente inativada** na rotina |\n| Pneumocócica conjugada | 2, 4 meses + reforço 12 meses |\n| Rotavírus (oral) | 2 doses: até 3m7d e até 5m15d de vida (janelas etárias estritas) |\n| Meningocócica ACWY | 3, 5 meses + reforço 12 meses — preferencial sobre MenC isolada |\n| Febre amarela | 9 meses + reforço 4 anos |\n| Tríplice viral (SCR) / tetra viral | 12 meses (SCR) + 15 meses (tetra viral ou varicela isolada) |\n| DTP (reforço) / dT adulto | 15 meses e 4-6 anos; **dT a cada 10 anos na vida adulta** (antecipar para 5 anos se ferimento de risco) |\n| Influenza | Anual, a partir de 6 meses (2 doses na 1ª vez se < 9 anos) |",
+      },
+      {
+        secao: "Profilaxia pós-exposição",
+        corpo:
+          "| Situação | Profilaxia |\n|---|---|\n| Ferimento com potencial tetanogênico | Vacina dT/DTP conforme esquema prévio + soro/imunoglobulina antitetânica se esquema incompleto/desconhecido e ferimento de alto risco |\n| Exposição a raiva | Soro + vacina antirrábica conforme gravidade — ver tema Zoonoses |\n| Exposição sexual desprotegida a HIV | PEP em até 72h (idealmente 2h), TARV por 28 dias |\n| Contato domiciliar com meningite meningocócica | Rifampicina 2 dias (ou ceftriaxona/ciprofloxacino dose única) |\n| RN de mãe HBsAg+ | Vacina + imunoglobulina (HBIG) nas 1as 12–24h de vida |\n| Contato com hanseníase | Avaliação clínica + BCG conforme situação vacinal prévia |",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "Doença evitável por falha de cobertura vacinal (surtos de sarampo/coqueluche/difteria). Eventos adversos raros mas relevantes: **anafilaxia** (contraindica repetir a mesma vacina), intussuscepção (associação temporal restrita com a 1ª dose de rotavírus, monitorada, mas benefício-risco favorável à vacinação).",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "Busca ativa de faltosos, vacinação em bolsões de baixa cobertura, comunicação de risco/enfrentamento de desinformação, **oportunizar vacinação em toda visita ao serviço de saúde** — \"oportunidade perdida de vacinação\" é indicador de qualidade a evitar.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Calendário vacinal foi o subtema isolado mais recorrente** do OMED nas últimas edições — vale decorar as janelas etárias exatas.\n- ★ Esquema atual de pólio é **exclusivamente VIP** — não se usa mais VOP na rotina.\n- ★ Vacina de vírus vivo é **contraindicada em gestante e imunossuprimido grave**; inativadas são seguras nesses grupos.\n- ★ **\"Oportunidade perdida de vacinação\"** é indicador de qualidade — checar/atualizar a caderneta em toda consulta.\n- ★ **MenACWY é hoje preferencial** sobre MenC isolado.\n- ★ **RN de mãe HBsAg+** precisa de vacina **+ HBIG** nas primeiras 12–24h — não é rotina de vacina isolada.\n- ★ Esquema atrasado: **continuar de onde parou**, sem reiniciar do zero, respeitando intervalos mínimos.\n- ★ **Mnemônico:** \"2-4-6\" é o esqueleto da maioria dos esquemas infantis (penta, VIP, pneumo, rotavírus).",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Programa Nacional de Imunizações (PNI): Calendário de Vacinação",
+      "Sociedade Brasileira de Imunizações (SBIm) — Calendários de Vacinação",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
 };
