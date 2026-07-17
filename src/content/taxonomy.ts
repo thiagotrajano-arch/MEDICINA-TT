@@ -139,6 +139,13 @@ const infectologia: Disciplina = {
     tema("inf", "Sepse", [["Reconhecimento e Surviving Sepsis", { altoRendimento: true, dificuldade: "avancada" }]]),
     tema("inf", "Arboviroses", [["Dengue — classificação e manejo", { altoRendimento: true }], "Zika e chikungunya"]),
     tema("inf", "Infecções sexualmente transmissíveis", ["Sífilis", "Corrimentos e úlceras genitais"]),
+    tema("inf", "Pneumonias", [
+      ["Pneumonia adquirida na comunidade", { altoRendimento: true }],
+      "Pneumonia hospitalar e associada à ventilação",
+    ]),
+    tema("inf", "Infecção do trato urinário", [
+      ["Cistite e pielonefrite", { altoRendimento: true }],
+    ]),
     tema("inf", "Antibioticoterapia", ["Princípios de antibioticoterapia empírica"]),
     tema("inf", "Síndromes febris", ["Abordagem da febre aguda"]),
     tema("inf", "Endocardite infecciosa", ["Critérios de Duke e manejo"]),

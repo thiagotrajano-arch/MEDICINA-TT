@@ -396,4 +396,142 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       "Instituto Latino-Americano de Sepse (ILAS) — protocolos",
     ],
   },
+
+  "inf--pneumonias--pneumonia-adquirida-na-comunidade": {
+    subtemaId: "inf--pneumonias--pneumonia-adquirida-na-comunidade",
+    titulo: "Pneumonia adquirida na comunidade (PAC)",
+    atualizadoEm: "2026-07-16",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Infecção aguda do **parênquima pulmonar**. Classifica-se em:\n\n- **PAC** — adquirida na comunidade;\n- **PAH** — hospitalar (**≥ 48 h de internação**);\n- **PAV** — associada à ventilação mecânica.\n\n👉 A classificação não é burocracia: **cada categoria tem espectro de agentes e escolha antibiótica diferentes**.",
+      },
+      {
+        secao: "Etiologia",
+        corpo:
+          "**PAC típica:** ***Streptococcus pneumoniae*** — o agente mais comum globalmente.\n\n**PAC atípica:**\n- ***Mycoplasma pneumoniae*** — jovens, \"pneumonia que anda\" (o paciente segue em pé);\n- *Chlamydophila pneumoniae*;\n- ***Legionella pneumophila*** — associada a **ar-condicionado / torres de resfriamento**; pode cursar com **SIADH (hiponatremia)** e diarreia.\n\n**PAH/PAV:** predomínio de **Gram-negativos** (Pseudomonas, Klebsiella, Acinetobacter) e ***S. aureus*** (incluindo **MRSA**), com muito mais multirresistência.",
+      },
+      {
+        secao: "Fatores de risco",
+        corpo:
+          "- Extremos de idade, tabagismo, **DPOC**;\n- **Etilismo** — risco de aspiração e de agentes específicos (**Klebsiella**);\n- Imunossupressão;\n- **Disfagia / rebaixamento de consciência** → broncoaspiração → **anaeróbios**;\n- **Hospitalização recente ou antibiótico prévio** → risco de multirresistência.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "**Típica:** início **agudo**, febre alta, calafrios, **tosse produtiva purulenta**, dor pleurítica, taquipneia; **estertores e broncofonia** ao exame.\n\n**Atípica:** início **insidioso**, **tosse seca**, sintomas extrapulmonares (cefaleia, mialgia, **diarreia na Legionella**). A ausculta pode ser **desproporcionalmente pobre** frente ao infiltrado radiológico — a chamada **\"dissociação clínico-radiológica\"**.",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "**Clínico + radiológico** (infiltrado novo).\n\n**CURB-65** guia a decisão de internar — 1 ponto cada:\n- **C**onfusão;\n- **U**reia > 50 mg/dL;\n- **R**espiração (FR) ≥ 30;\n- **B**lood pressure < 90/60;\n- **65** anos ou mais.\n\n👉 **≥ 2 pontos → considerar internação.**\n\n**Hemocultura e cultura de escarro** nos casos graves/internados. **Antígeno urinário** para pneumococo e Legionella nos casos graves.",
+      },
+      {
+        secao: "Exames de imagem",
+        corpo:
+          "**Radiografia de tórax é obrigatória** para confirmar:\n\n- **Consolidação lobar homogênea com broncograma aéreo** — padrão clássico da **típica (pneumocócica)**;\n- **Infiltrado intersticial/reticular difuso** — padrão **atípico** (Mycoplasma, viral);\n- **Broncopneumonia** (multifocal, peribrônquica) — *S. aureus*, aspiração.\n\n**TC de tórax** apenas em dúvida diagnóstica, suspeita de complicação (abscesso, empiema) ou paciente grave sem resposta.",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "- **TEP** — pode simular pneumonia (dor pleurítica + infiltrado por infarto pulmonar);\n- **Tuberculose** — evolução mais arrastada;\n- **Insuficiência cardíaca descompensada** — edema pulmonar confunde no RX;\n- **Neoplasia com pneumonia obstrutiva pós-estenótica** — suspeitar se **não resolve ou recorre no mesmo local**.",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "| Cenário | Esquema empírico |\n|---|---|\n| **Ambulatorial, hígido** | Amoxicilina (± clavulanato) **OU** macrolídeo se suspeita de atípico |\n| **Ambulatorial com comorbidade** | Amoxicilina-clavulanato **+** macrolídeo, **ou** quinolona respiratória isolada |\n| **Internado (enfermaria)** | Betalactâmico EV (ceftriaxona) **+** macrolídeo, **ou** quinolona respiratória isolada |\n| **Grave (UTI)** | Betalactâmico EV **+** macrolídeo (cobertura dupla) ± cobertura para Pseudomonas se fator de risco |\n| **PAH/PAV** | Amplo para Gram-negativos multirresistentes ± MRSA, conforme epidemiologia local |\n\n**Duração:** mínimo **5 dias** **E** afebril por **48–72 h** antes de suspender (PAC não complicada). Estender para 7–14 dias em Pseudomonas, *S. aureus* ou complicação.\n\n👉 **Suspende-se por critério clínico, não por dia fixo no calendário.**",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "- **Derrame parapneumônico / empiema** — drenar se **loculado, pH < 7,2 ou purulento**;\n- **Abscesso pulmonar** — anaeróbios/aspiração; **cavitação com nível hidroaéreo**;\n- Sepse/choque séptico de foco pulmonar;\n- **Pneumonia necrosante** — *S. aureus*, especialmente cepas produtoras de **toxina PVL**.",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "- **Vacina pneumocócica** (VPC e/ou polissacarídica, conforme faixa/risco);\n- **Vacina influenza anual** em grupos de risco (idosos, comorbidades, gestantes).\n\n👉 A influenza **predispõe a pneumonia bacteriana secundária** — classicamente por ***S. aureus*** e pneumococo.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Consolidação lobar + broncograma aéreo = típica (pneumococo).** Infiltrado intersticial = atípica.\n- ★ **CURB-65 ≥ 2 → internar.** Decore o acrônimo: Confusão, Ureia > 50, Respiração ≥ 30, BP < 90/60, ≥ 65 anos.\n- ★ **Legionella:** surto por **ar-condicionado** + **hiponatremia (SIADH)** + diarreia.\n- ★ **Mycoplasma:** jovem, tosse seca, \"dissociação clínico-radiológica\".\n- ★ **Suspender ATB por critério clínico** (afebril 48–72 h **e** mínimo 5 dias) — não por número fixo de dias.\n- ★ **Pneumonia que não resolve/recorre no mesmo lugar** → pensar em **neoplasia obstrutiva**.\n- ★ **Empiema:** drenar se pH < 7,2, loculado ou purulento.\n- ★ Pós-influenza → pneumonia bacteriana secundária por ***S. aureus***.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde / Sociedade Brasileira de Pneumologia e Tisiologia — Diretrizes para PAC",
+      "IDSA/ATS — Community-acquired Pneumonia in Adults",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
+
+  "inf--infeccao-do-trato-urinario--cistite-e-pielonefrite": {
+    subtemaId: "inf--infeccao-do-trato-urinario--cistite-e-pielonefrite",
+    titulo: "Infecção do trato urinário — cistite e pielonefrite",
+    atualizadoEm: "2026-07-16",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Infecção bacteriana do trato urinário, classificada por:\n\n**Localização:**\n- **Cistite** — baixa;\n- **Pielonefrite** — alta.\n\n**Complexidade:**\n- **Não complicada** — trato urinário estruturalmente normal;\n- **Complicada** — anormalidade anatômica/funcional, **homem**, **gestante**, cateter, imunossupressão.\n\n👉 **Homem com ITU é \"complicada\" por definição** — sempre investigar próstata/via urinária.",
+      },
+      {
+        secao: "Etiologia",
+        corpo:
+          "- ***Escherichia coli*** uropatogênica: **75–95%** dos casos não complicados, por **ascensão** da flora perineal pela uretra;\n- ***Klebsiella***;\n- ***Proteus mirabilis*** — produz **urease**, alcaliniza a urina → **cálculos de estruvita**;\n- ***Staphylococcus saprophyticus*** — mulheres jovens sexualmente ativas;\n- ***Enterococcus*** e ***Pseudomonas*** — mais em ITU complicada/hospitalar.",
+      },
+      {
+        secao: "Fatores de risco",
+        corpo:
+          "- **Sexo feminino** (uretra curta), atividade sexual;\n- **Gestação** — estase urinária pela progesterona + compressão uterina → **maior risco de progressão a pielonefrite**;\n- Diabetes, litíase, refluxo vesicoureteral;\n- **Sondagem vesical**;\n- **Hiperplasia prostática** (obstrução);\n- Menopausa (atrofia urogenital).",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "**Cistite:** disúria, polaciúria, urgência, dor suprapúbica — **sem febre e sem dor lombar**.\n\n**Pielonefrite:** febre, calafrios, **dor em flanco/lombar**, **Giordano positivo** (punho-percussão lombar dolorosa), náuseas/vômitos. Pode ocorrer **sem** sintomas baixos.\n\n⚠️ **Idosos podem apresentar apenas confusão mental ou queda funcional**, sem febre nem disúria clássica.",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "- **EAS (urina I):** piúria (leucocitúria), **nitrito positivo** (sugere enterobactéria nitrato-redutase +), esterase leucocitária;\n- **Urocultura com antibiograma** — padrão-ouro. **Obrigatória** em: pielonefrite, ITU complicada, **gestante**, **homem** e recorrência. **Dispensável** na cistite não complicada típica de mulher jovem (trata-se empiricamente).\n\n⚠️ **Bacteriúria assintomática:** só se **rastreia e trata** em **gestantes** (risco de pielonefrite e prematuridade) e **antes de procedimento urológico invasivo**. **Fora isso — idoso, diabético, sondado crônico — NÃO se trata.**",
+      },
+      {
+        secao: "Exames de imagem",
+        corpo:
+          "**Não é rotina** em cistite nem no 1º episódio de pielonefrite não complicada com boa resposta.\n\n**USG de vias urinárias quando:**\n- 1º episódio de pielonefrite **em criança**;\n- **ITU em homem**;\n- Suspeita de obstrução/litíase;\n- Sepse de foco urinário.\n\n**TC de abdome:** se **sem melhora em 72 h** de antibiótico adequado → investigar **abscesso renal/perirrenal** ou **pielonefrite enfisematosa** (diabéticos; gás no parênquima — emergência, frequentemente cirúrgica).\n\n👉 **Sem melhora em 72 h = investigar por imagem, não trocar o antibiótico às cegas.**",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "- **Vaginite/cervicite** — corrimento, sem piúria verdadeira;\n- **Uretrite por IST**;\n- **Cálculo ureteral** — dor em cólica, hematúria, sem piúria necessariamente;\n- Apendicite/anexite — **Giordano é específico de acometimento renal**;\n- **Prostatite aguda** — homem, toque retal doloroso (⚠️ evitar massagem prostática vigorosa: risco de bacteremia).",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "| Quadro | 1ª linha | Duração |\n|---|---|---|\n| **Cistite não complicada** | Nitrofurantoína, **fosfomicina dose única**, ou SMX-TMP (conforme resistência local) | 3–5 dias (fosfomicina: dose única) |\n| **Pielonefrite leve/ambulatorial** | Fluoroquinolona (ciprofloxacino) VO | 7 dias |\n| **Pielonefrite grave/internada** | Ceftriaxona ou piperacilina-tazobactam EV, ajustar por cultura | 10–14 dias |\n| **Gestante** | **Cefalexina**, amoxicilina-clavulanato — ⚠️ **evitar quinolona e SMX-TMP** | 7 dias (cistite); **internar** se pielonefrite |\n\n**Posologia:** nitrofurantoína 100 mg 6/6h por 5 dias (⚠️ evitar se **TFG < 30** ou **próximo ao termo** da gestação); fosfomicina trometamol **3 g VO dose única**; ciprofloxacino 500 mg 12/12h (evitar na gestação e em crianças).",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "- Abscesso renal/perirrenal;\n- **Pielonefrite enfisematosa** — diabéticos, gás no parênquima renal, alta mortalidade;\n- Sepse urológica / choque séptico;\n- **Cicatriz renal e hipertensão secundária** — crianças com refluxo vesicoureteral não tratado;\n- Necrose de papila renal (diabéticos, uso crônico de analgésicos).",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "- Hidratação adequada, **micção pós-coito**, evitar retenção prolongada;\n- **Profilaxia contínua** em baixa dose (nitrofurantoína ou SMX-TMP à noite) para **ITU de repetição (≥ 3 episódios/ano)**;\n- **Estrogênio tópico vaginal** em mulheres na pós-menopausa com ITU recorrente.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Cistite = sem febre, sem dor lombar.** Se tem febre e Giordano → **pielonefrite**.\n- ★ **Bacteriúria assintomática: só trata GESTANTE** (e pré-procedimento urológico). **Nunca** no idoso ou diabético assintomático — essa é a pegadinha nº 1 do tema.\n- ★ **Na gestante, sempre trata** — e com **betalactâmico** (cefalexina); **quinolona e SMX-TMP são proibidos**.\n- ★ **Homem com ITU = complicada por definição** → investigar.\n- ★ **Sem melhora em 72 h → imagem** (abscesso/obstrução), não trocar ATB às cegas.\n- ★ **Pielonefrite enfisematosa** = diabético + gás no rim na TC → emergência cirúrgica potencial.\n- ★ ***Proteus*** → urease → **cálculo de estruvita**.\n- ★ **Cistite não complicada em mulher jovem dispensa urocultura** — trata empiricamente.",
+      },
+    ],
+    referencias: [
+      "IDSA — Guidelines for Acute Uncomplicated Cystitis and Pyelonephritis in Women",
+      "FEBRASGO / Ministério da Saúde — ITU na gestação",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
 };
