@@ -534,4 +534,74 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
     ],
   },
+
+  "inf--endocardite-infecciosa--criterios-de-duke-e-manejo": {
+    subtemaId: "inf--endocardite-infecciosa--criterios-de-duke-e-manejo",
+    titulo: "Endocardite infecciosa — critérios de Duke e manejo",
+    atualizadoEm: "2026-07-16",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Infecção do **endocárdio**, tipicamente das **válvulas** (nativas ou próteses), caracterizada pela formação de **vegetações** — massas de plaquetas, fibrina e microrganismos.\n\n- **Aguda:** ***S. aureus***, evolução em **dias**, mais **destrutiva**;\n- **Subaguda:** ***Streptococcus viridans***, evolução em **semanas**, sobre válvula **previamente lesada**.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "A equação é: **bacteremia transitória** (procedimento dentário, cateter, drogas IV) **+ lesão endotelial prévia** (valvopatia reumática, prolapso mitral, válvula bicúspide, prótese) → adesão bacteriana → **vegetação**.\n\n👉 A vegetação explica **todo** o quadro clínico: ela **emboliza** (fenômenos vasculares), **destrói a válvula** (insuficiência cardíaca) e **libera antígenos** continuamente (fenômenos imunológicos).",
+      },
+      {
+        secao: "Etiologia",
+        corpo:
+          "- ***Staphylococcus aureus*** — **a causa mais comum hoje**, inclusive em **válvula nativa**, superando o viridans nas séries recentes;\n- ***Streptococcus viridans*** — subaguda, pós-procedimento dentário;\n- ⚠️ ***Streptococcus bovis/gallolyticus*** — **associa-se a neoplasia de cólon → investigar com colonoscopia**;\n- **Grupo HACEK** — hemocultura de **crescimento lento** (avisar o laboratório);\n- **Usuário de drogas injetáveis → válvula TRICÚSPIDE** (direita), com **embolia pulmonar séptica**.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "**Febre prolongada + sopro novo ou modificado** é a dupla que levanta a suspeita.\n\n**Fenômenos vasculares** (embólicos):\n- **Lesões de Janeway** — máculas palmoplantares **indolores**;\n- Embolia séptica (AVC, infarto esplênico/renal).\n\n**Fenômenos imunológicos:**\n- **Nódulos de Osler** — **dolorosos**, em polpas digitais;\n- **Manchas de Roth** — hemorragia retiniana com centro claro;\n- Glomerulonefrite; fator reumatoide positivo.\n\nTambém: esplenomegalia, baqueteamento digital (formas subagudas prolongadas).\n\n💡 **Mnemônico:** **Os**ler = **dOloroso**; **Ja**neway = **indolor** (\"J\" de *just a macula*).",
+      },
+      {
+        secao: "Diagnóstico — critérios de Duke modificados",
+        corpo:
+          "**Critérios MAIORES:**\n1. **Hemocultura positiva** para agente típico, em **2 amostras separadas**;\n2. **Evidência de envolvimento endocárdico** — vegetação ao eco, ou **nova regurgitação** valvar.\n\n**Critérios MENORES:**\n1. **Fator predisponente** (valvopatia, usuário de drogas IV);\n2. **Febre ≥ 38 °C**;\n3. **Fenômenos vasculares** (Janeway, êmbolos);\n4. **Fenômenos imunológicos** (Osler, Roth, FR+);\n5. Hemocultura que não preenche critério maior.\n\n👉 **Endocardite DEFINITIVA:** **2 maiores** **OU** **1 maior + 3 menores** **OU** **5 menores**.\n\n**Hemoculturas:** colher **3 conjuntos de sítios diferentes ANTES do antibiótico** (exceto se instabilidade exigir início imediato).",
+      },
+      {
+        secao: "Exames de imagem",
+        corpo:
+          "- **Ecocardiograma transtorácico (ETT):** triagem inicial;\n- **Transesofágico (ETE):** **maior sensibilidade** — preferido se **ETT negativo com alta suspeita**, **prótese valvar**, ou suspeita de **abscesso perivalvar**;\n- Achados: vegetação (massa **oscilante** aderida à válvula), regurgitação nova, abscesso perianular, deiscência de prótese;\n- **PET-CT / cintilografia com leucócitos marcados:** útil em **prótese valvar** com eco inconclusivo (critério de imagem incorporado às versões recentes de Duke);\n- **TC de crânio/abdome** se suspeita de êmbolos sépticos.",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "- **Febre reumática** — sopro + febre, mas contexto e critérios de **Jones** diferem;\n- **Mixoma atrial** — simula vegetação e emboliza, mas **hemoculturas negativas**;\n- **Lúpus** — endocardite de **Libman-Sacks** (vegetações **estéreis**);\n- Febre de origem indeterminada por outras causas.",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**Antibioticoterapia prolongada, bactericida e ENDOVENOSA** — **4–6 semanas**, conforme agente e se válvula nativa ou prótese, guiada por hemocultura e antibiograma.\n\n**Empírico (antes da cultura):**\n- **Válvula nativa:** oxacilina/cefazolina + gentamicina (o aminoglicosídeo por curto período busca sinergismo — uso controverso, limitado pela nefrotoxicidade);\n- **Suspeita de MRSA ou prótese:** **vancomicina** ± rifampicina/gentamicina;\n- **Estreptococo sensível:** penicilina G ou ceftriaxona, 4 semanas.\n\n**⚠️ Indicações de CIRURGIA valvar:**\n1. **Insuficiência cardíaca refratária** (a mais frequente);\n2. **Infecção não controlada** — abscesso, deiscência de prótese, patógeno resistente/fúngico;\n3. **Êmbolos recorrentes** apesar de antibiótico adequado;\n4. **Vegetação > 10 mm** com alto risco embólico.",
+      },
+      {
+        secao: "Complicações",
+        corpo:
+          "- **Insuficiência cardíaca** por destruição valvar — a principal causa de óbito e de indicação cirúrgica;\n- **Abscesso perivalvar/perianular** → ⚠️ **bloqueio AV novo sugere extensão para o feixe de condução**;\n- **Embolia séptica sistêmica** (AVC, infarto esplênico/renal); **embolia pulmonar séptica** na tricúspide;\n- Glomerulonefrite por imunocomplexos.",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "**A profilaxia antibiótica antes de procedimento odontológico** (manipulação gengival/mucosa) hoje é reservada **apenas a grupos de altíssimo risco**:\n- **Prótese valvar**;\n- **Endocardite prévia**;\n- **Cardiopatia congênita cianótica** não corrigida, ou corrigida há **< 6 meses** com material protético;\n- Transplante cardíaco com valvopatia.\n\n**Esquema:** **amoxicilina 2 g VO dose única, 30–60 min antes**.\n\n⚠️ **Não é mais indicada de rotina** para a maioria das valvopatias — mudança importante e muito cobrada.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ ***S. aureus* é hoje a causa mais comum**, inclusive em válvula nativa — não é mais o viridans.\n- ★ **Duke: 2 maiores OU 1 maior + 3 menores OU 5 menores.**\n- ★ **3 hemoculturas de sítios diferentes ANTES do antibiótico.**\n- ★ **Osler dói, Janeway não.**\n- ★ ***S. bovis/gallolyticus* → colonoscopia** (neoplasia de cólon).\n- ★ **Usuário de drogas IV → tricúspide** → embolia **pulmonar** séptica.\n- ★ **ETE** se prótese, ETT negativo com alta suspeita, ou suspeita de abscesso.\n- ★ **Bloqueio AV novo = abscesso perianular** até prova em contrário.\n- ★ **Profilaxia odontológica só em altíssimo risco** (prótese, EI prévia, congênita cianótica) — não mais para toda valvopatia.\n- ★ Cirurgia: **IC refratária**, infecção não controlada, êmbolos recorrentes, vegetação > 10 mm.",
+      },
+    ],
+    referencias: [
+      "Critérios de Duke modificados",
+      "ESC — Guidelines for the management of endocarditis",
+      "AHA — Infective Endocarditis in Adults",
+      "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
+    ],
+  },
 };
