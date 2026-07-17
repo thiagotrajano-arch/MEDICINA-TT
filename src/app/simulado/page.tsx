@@ -1,13 +1,14 @@
-import { EmBreve } from "@/components/shell/EmBreve";
+import { getContentRepository } from "@/infra/content";
+import { SimuladoClient } from "@/components/simulado/SimuladoClient";
 
 export const metadata = { title: "Simulado · Codex Medicus" };
 
-export default function SimuladoPage() {
-  return (
-    <EmBreve
-      fase="Roadmap · v1.0"
-      titulo="Modo Simulado"
-      descricao="Simulados completos cronometrados, questões embaralhadas, correção automática e relatório de desempenho por disciplina — no estilo da prova OMED."
-    />
-  );
+export default async function SimuladoPage() {
+  const repo = await getContentRepository();
+  const [questoes, disciplinas] = await Promise.all([
+    repo.getQuestoes(),
+    repo.getDisciplinas(),
+  ]);
+
+  return <SimuladoClient questoes={questoes} disciplinas={disciplinas} />;
 }

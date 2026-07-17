@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Check, X, ChevronRight, RotateCcw, ListChecks } from "lucide-react";
 import type { Disciplina, Questao } from "@/domain/content/types";
+import { registrarResposta } from "@/lib/progresso";
 import { cn } from "@/lib/cn";
 
 /**
@@ -37,11 +38,12 @@ export function QuizClient({
 
   const responder = (letra: string) => {
     if (escolha) return;
+    const acertou = !!questao.alternativas.find((a) => a.letra === letra)?.correta;
     setEscolha(letra);
     setRespondidas((r) => r + 1);
-    if (questao.alternativas.find((a) => a.letra === letra)?.correta) {
-      setAcertos((a) => a + 1);
-    }
+    if (acertou) setAcertos((a) => a + 1);
+    // Alimenta o progresso do dashboard (persistido no navegador).
+    registrarResposta(questao, acertou);
   };
 
   const proxima = () => {
