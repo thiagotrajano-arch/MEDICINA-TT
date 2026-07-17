@@ -1,6 +1,8 @@
 import { getSupabaseAnon } from "@/infra/supabase/client";
+import { CASOS } from "@/content/casos";
 import type {
   BlocoConteudo,
+  CasoClinico,
   ConteudoSubtema,
   Dificuldade,
   Disciplina,
@@ -115,6 +117,22 @@ export class SupabaseContentRepository implements ContentRepository {
     return (data ?? []).map(mapQuestao);
   }
 
+  /**
+   * Casos clínicos ainda vivem no código, não no banco: o schema atual
+   * (caso_clinico/caso_secao) não modela as etapas com pergunta→resposta que a
+   * tela usa. Servir daqui mantém os dois backends equivalentes; quando o
+   * schema acompanhar, só esta implementação muda.
+   */
+  async getCasos(filtro?: { disciplinaId?: string }): Promise<CasoClinico[]> {
+    return filtro?.disciplinaId
+      ? CASOS.filter((c) => c.disciplinaId === filtro.disciplinaId)
+      : CASOS;
+  }
+
+  async getCaso(id: string): Promise<CasoClinico | undefined> {
+    return CASOS.find((c) => c.id === id);
+  }
+
   async getStats(): Promise<Stats> {
     const disciplinas = await this.getDisciplinas();
     const temas = disciplinas.flatMap((d) => d.temas);
@@ -129,6 +147,7 @@ export class SupabaseContentRepository implements ContentRepository {
       subtemas: subtemas.length,
       subtemasComConteudo: subtemas.filter((s) => s.temConteudo).length,
       questoes: questoes ?? 0,
+      casos: CASOS.length,
     };
   }
 

@@ -1,4 +1,5 @@
 import type {
+  CasoClinico,
   ConteudoSubtema,
   Disciplina,
   GrupoDisciplina,
@@ -24,6 +25,8 @@ export interface ContentRepository {
   getSubtemaById(id: string): Promise<SubtemaLocalizado | undefined>;
   getConteudo(subtemaId: string): Promise<ConteudoSubtema | undefined>;
   getQuestoes(filtro?: QuestaoFiltro): Promise<Questao[]>;
+  getCasos(filtro?: { disciplinaId?: string }): Promise<CasoClinico[]>;
+  getCaso(id: string): Promise<CasoClinico | undefined>;
   getStats(): Promise<Stats>;
   search(query: string): Promise<SearchHit[]>;
 }
@@ -46,6 +49,7 @@ export interface Stats {
   subtemas: number;
   subtemasComConteudo: number;
   questoes: number;
+  casos: number;
 }
 
 export interface SearchHit {

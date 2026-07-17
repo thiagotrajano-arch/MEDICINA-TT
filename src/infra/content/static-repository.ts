@@ -1,7 +1,9 @@
 import { DISCIPLINAS, GRUPOS } from "@/content/taxonomy";
 import { CONTEUDOS } from "@/content/conteudos";
 import { QUESTOES } from "@/content/questoes";
+import { CASOS } from "@/content/casos";
 import type {
+  CasoClinico,
   ConteudoSubtema,
   Disciplina,
   GrupoDisciplina,
@@ -61,6 +63,16 @@ export class StaticContentRepository implements ContentRepository {
     });
   }
 
+  async getCasos(filtro?: { disciplinaId?: string }): Promise<CasoClinico[]> {
+    return filtro?.disciplinaId
+      ? CASOS.filter((c) => c.disciplinaId === filtro.disciplinaId)
+      : CASOS;
+  }
+
+  async getCaso(id: string): Promise<CasoClinico | undefined> {
+    return CASOS.find((c) => c.id === id);
+  }
+
   async getStats(): Promise<Stats> {
     const temas = DISCIPLINAS.flatMap((d) => d.temas);
     const subtemas = temas.flatMap((t) => t.subtemas);
@@ -71,6 +83,7 @@ export class StaticContentRepository implements ContentRepository {
       subtemas: subtemas.length,
       subtemasComConteudo: subtemas.filter((s) => s.temConteudo).length,
       questoes: QUESTOES.length,
+      casos: CASOS.length,
     };
   }
 

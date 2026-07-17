@@ -96,3 +96,46 @@ export interface Questao {
   tags: string[];
   fonte?: string;
 }
+
+/**
+ * Caso clínico no formato das provas do Einstein: a vinheta é revelada por
+ * etapas, e a cada etapa o estudante decide antes de ver a resposta — é o
+ * raciocínio clínico que se treina, não a memória.
+ */
+export interface CasoClinico {
+  id: string;
+  disciplinaId: string;
+  subtemaId?: string;
+  titulo: string;
+  resumo: string;
+  dificuldade: Dificuldade;
+  tags: string[];
+  etapas: EtapaCaso[];
+  discussao: string;
+  referencias: string[];
+}
+
+export type TipoEtapa =
+  | "historia"
+  | "anamnese"
+  | "exame_fisico"
+  | "hipoteses"
+  | "laboratorio"
+  | "imagem"
+  | "conduta"
+  | "evolucao"
+  | "desfecho";
+
+export interface EtapaCaso {
+  tipo: TipoEtapa;
+  titulo: string;
+  /** O que se apresenta ao estudante nesta etapa (markdown). */
+  corpo: string;
+  /** Figura ancorada a esta etapa (id no registry de figuras). */
+  figura?: string;
+  /** A pergunta feita ANTES de revelar a resposta. Sem pergunta, a etapa é
+   *  apenas informativa e é exibida direto. */
+  pergunta?: string;
+  /** A resposta/raciocínio revelado após o estudante pensar (markdown). */
+  resposta?: string;
+}
