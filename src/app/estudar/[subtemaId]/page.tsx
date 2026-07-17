@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ChevronRight, ListChecks, BookMarked, Sparkles, FileClock } from "lucide-react";
 import { getContentRepository } from "@/infra/content";
 import { MiniMarkdown } from "@/components/content/MiniMarkdown";
+import { Figura } from "@/components/figuras/Figura";
 
 export async function generateStaticParams() {
   const repo = await getContentRepository();
@@ -82,6 +83,7 @@ export default async function EstudarPage({
                   {bloco.secao}
                 </h2>
                 <MiniMarkdown text={bloco.corpo} />
+                {bloco.figura && <Figura id={bloco.figura} />}
               </section>
             ))}
           </article>

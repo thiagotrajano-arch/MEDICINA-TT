@@ -52,6 +52,7 @@ export const CONTEUDOS_CIR: Record<string, ConteudoSubtema> = {
         secao: "Síndromes e complicações",
         corpo:
           "- **Síndrome de Mirizzi:** **compressão extrínseca do ducto hepático comum** por cálculo impactado no **infundíbulo/ducto cístico** → icterícia obstrutiva **mesmo sem cálculo no colédoco**. Importa porque **aumenta o risco de lesão iatrogênica de via biliar** na colecistectomia;\n- **Íleo biliar:** **fístula colecistoentérica** (vesícula-duodeno) → cálculo grande migra e obstrui o íleo terminal. Tríade de Rigler: **pneumobilia + obstrução intestinal + cálculo ectópico**;\n- **Colecistite alitiásica:** paciente crítico, jejum prolongado, NPT, grande queimado — alta taxa de gangrena;\n- **Empiema, gangrena, perfuração**; **pancreatite biliar**.",
+        figura: "cir-vias-biliares-mirizzi",
       },
       {
         secao: "Pontos de prova / Pegadinhas",

@@ -43,6 +43,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Exames de imagem",
         corpo:
           "A **radiografia de tórax é obrigatória** em todo sintomático respiratório, mesmo com baciloscopia negativa.\n\n- **TB primária:** complexo primário (nódulo parenquimatoso + linfonodo hilar), podendo haver atelectasia; comum em crianças.\n- **TB pós-primária (reativação):** **cavitação em lobos superiores / segmento apical dos lobos inferiores** — achado clássico de prova.\n- **TB miliar:** micronódulos difusos < 2–3 mm bilaterais (\"grãos de milho\").\n- **TB pleural:** derrame unilateral, em geral sem cavitação associada.",
+        figura: "inf-tb-primaria-vs-pos",
       },
       {
         secao: "Tratamento",
@@ -118,6 +119,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Interpretação do líquor",
         corpo:
           "| | **Bacteriana** | **Viral** | **Tuberculosa** |\n|---|---|---|---|\n| Aspecto | Turvo/purulento | Límpido | Límpido/xantocrômico |\n| Células | > 1000, **PMN** | < 500, linfomono | 50–500, linfomono |\n| Proteína | ↑↑ (> 100) | normal / ↑ leve | ↑ (50–200) |\n| Glicose | ↓↓ (< 40% da glicemia) | normal | ↓ |",
+        figura: "inf-liquor",
       },
       {
         secao: "Exames de imagem",
@@ -182,6 +184,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Quadro clínico (estágios)",
         corpo:
           "**Primária** — **cancro duro**: úlcera **única, indolor**, bordos endurecidos, base limpa, com adenopatia satélite não dolorosa. **Resolve espontaneamente em 3–8 semanas mesmo sem tratamento** (o que dá falsa sensação de cura).\n\n**Secundária** (6–8 sem após o cancro) — roséola/exantema maculopapular que tipicamente acomete **palmas e plantas**, **condiloma plano**, **alopecia em clareira**, madarose, linfadenopatia generalizada, sintomas gripais.\n\n**Latente** — assintomática, com sorologia reagente. **Recente (< 1 ano)** ou **tardia (> 1 ano ou duração indeterminada)** — essa divisão **define o esquema terapêutico**.\n\n**Terciária** (anos depois) — **goma sifilítica**; **cardiovascular** (aortite/aneurisma de aorta **ascendente**); **neurossífilis tardia** (tabes dorsalis com ataxia sensitiva; **pupila de Argyll-Robertson** — acomoda mas não reage à luz; paralisia geral progressiva).",
+        figura: "inf-sifilis-estagios",
       },
       {
         secao: "Diagnóstico",
@@ -305,6 +308,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Fases da doença",
         corpo:
           "1. **Febril** (1º–3º dia): febre alta, cefaleia, dor retro-orbitária, mialgia/artralgia, exantema.\n2. **Crítica** (⚠️ **por volta da defervescência, 3º–6º dia**): é **quando a febre cai** que o extravasamento acontece — janela de 24–48 h em que o paciente pode chocar.\n3. **Recuperação:** reabsorção do plasma extravasado (risco de **hipervolemia** se a hidratação não for reduzida); pode surgir exantema \"ilhas de branco em mar vermelho\" e prurido.\n\n⚠️ **A queda da febre NÃO é melhora** — é o sinal de entrada na fase crítica.",
+        figura: "inf-dengue-fases",
       },
       {
         secao: "Sinais de alarme",

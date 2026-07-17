@@ -17,6 +17,7 @@ export const CONTEUDOS_MFC: Record<string, ConteudoSubtema> = {
         secao: "A tabela 2×2 — a base de tudo",
         corpo:
           "Todo o tema sai desta tabela. Memorize a **posição**, não as fórmulas soltas:\n\n| | **Doente** | **Não doente** |\n|---|---|---|\n| **Teste +** | **a** (verdadeiro-positivo) | **b** (falso-positivo) |\n| **Teste −** | **c** (falso-negativo) | **d** (verdadeiro-negativo) |\n\n👉 A regra de ouro: **sensibilidade e especificidade leem a tabela na VERTICAL** (partem de quem tem/não tem a doença); **valores preditivos leem na HORIZONTAL** (partem do resultado do teste). É daí que decorre tudo o que vem abaixo.",
+        figura: "mfc-tabela-2x2",
       },
       {
         secao: "Sensibilidade e especificidade",

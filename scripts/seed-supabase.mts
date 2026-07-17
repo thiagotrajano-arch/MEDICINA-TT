@@ -49,7 +49,10 @@ async function main() {
       { subtema_id: c.subtemaId, tipo: "completo", titulo: c.titulo },
       "subtema_id,tipo");
     // desmarca versões anteriores como não-atuais
-    await db.from("resumo_versao").update({ is_atual: false }).eq("resumo_id", resumo.id);
+    check(
+      await db.from("resumo_versao").update({ is_atual: false }).eq("resumo_id", resumo.id),
+      "resumo_versao.update(is_atual)"
+    );
     const versao = await upsertReturning(db, "resumo_versao",
       {
         resumo_id: resumo.id, numero: 1, titulo: c.titulo, origem: c.origem,
@@ -57,11 +60,18 @@ async function main() {
         is_atual: true,
       },
       "resumo_id,numero");
-    await db.from("bloco_conteudo").delete().eq("versao_id", versao.id);
-    await db.from("bloco_conteudo").insert(
-      c.blocos.map((b, i) => ({
-        versao_id: versao.id, secao: b.secao, corpo_mdx: b.corpo, ordem: i,
-      }))
+    check(
+      await db.from("bloco_conteudo").delete().eq("versao_id", versao.id),
+      "bloco_conteudo.delete"
+    );
+    check(
+      await db.from("bloco_conteudo").insert(
+        c.blocos.map((b, i) => ({
+          versao_id: versao.id, secao: b.secao, corpo_mdx: b.corpo, ordem: i,
+          figura: b.figura ?? null,
+        }))
+      ),
+      `bloco_conteudo.insert (${c.titulo})`
     );
   }
   console.log(`[seed] conteúdo: ${Object.keys(CONTEUDOS).length} resumos.`);
@@ -73,16 +83,31 @@ async function main() {
       enunciado: q.enunciado, estilo: q.estilo, dificuldade: q.dificuldade,
       tags: q.tags, fonte: q.fonte ?? null, status: "publicada",
     });
-    await db.from("alternativa").delete().eq("questao_id", q.id);
-    await db.from("alternativa").insert(
-      q.alternativas.map((a, i) => ({
-        questao_id: q.id, letra: a.letra, texto: a.texto,
-        correta: a.correta, comentario: a.comentario, ordem: i,
-      }))
+    check(
+      await db.from("alternativa").delete().eq("questao_id", q.id),
+      "alternativa.delete"
+    );
+    check(
+      await db.from("alternativa").insert(
+        q.alternativas.map((a, i) => ({
+          questao_id: q.id, letra: a.letra, texto: a.texto,
+          correta: a.correta, comentario: a.comentario, ordem: i,
+        }))
+      ),
+      `alternativa.insert (${q.id})`
     );
   }
   console.log(`[seed] questões: ${QUESTOES.length}.`);
   console.log("[seed] concluído.");
+}
+
+/**
+ * Falha alto em qualquer erro do Supabase.
+ * Sem isto, um insert rejeitado (ex.: coluna inexistente) passa despercebido e
+ * o seed reporta "concluído" tendo gravado dados pela metade.
+ */
+function check(res: { error: { message: string } | null }, contexto: string) {
+  if (res.error) throw new Error(`${contexto}: ${res.error.message}`);
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

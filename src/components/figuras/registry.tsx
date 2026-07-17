@@ -1,0 +1,612 @@
+import type { ReactNode } from "react";
+
+/**
+ * Biblioteca de figuras médicas — diagramas ORIGINAIS em SVG.
+ *
+ * Por que SVG desenhado aqui, e não fotos da internet:
+ *  - imagens clínicas da web quase sempre têm direitos autorais;
+ *  - URLs externas quebram e violam a CSP de um site estático;
+ *  - SVG é leve, escala sem perder qualidade e acompanha o tema claro/escuro
+ *    automaticamente (usa as CSS vars do design system).
+ *
+ * Cada figura é ancorada a uma seção específica de um resumo via
+ * `BlocoConteudo.figura` — a imagem aparece exatamente onde ajuda a entender,
+ * nunca numa galeria solta.
+ */
+
+export interface Figura {
+  id: string;
+  titulo: string;
+  legenda: string;
+  render: () => ReactNode;
+}
+
+// ── helpers de estilo (usam os tokens do tema) ──────────────────
+const C = {
+  accent: "var(--accent)",
+  text: "var(--text)",
+  muted: "var(--text-muted)",
+  faint: "var(--text-faint)",
+  surface: "var(--surface)",
+  surface2: "var(--surface-2)",
+  border: "var(--border-strong)",
+  danger: "var(--danger)",
+  gold: "var(--gold)",
+};
+
+const label = (extra?: object) => ({
+  fontSize: 11,
+  fill: C.muted,
+  fontWeight: 600,
+  ...extra,
+});
+
+// ═══════════════════════════════════════════════════════════════
+// GO — DPP × Placenta prévia
+// ═══════════════════════════════════════════════════════════════
+function DppVsPlacentaPrevia() {
+  const Utero = ({ x }: { x: number }) => (
+    <path
+      d={`M${x + 60} 30 C ${x + 105} 30, ${x + 118} 80, ${x + 110} 125
+          C ${x + 104} 162, ${x + 88} 182, ${x + 72} 190
+          L ${x + 72} 210 L ${x + 48} 210 L ${x + 48} 190
+          C ${x + 32} 182, ${x + 16} 162, ${x + 10} 125
+          C ${x + 2} 80, ${x + 15} 30, ${x + 60} 30 Z`}
+      fill={C.surface2}
+      stroke={C.border}
+      strokeWidth="2"
+    />
+  );
+
+  return (
+    <svg viewBox="0 0 420 250" role="img" aria-label="Comparação entre descolamento prematuro de placenta e placenta prévia">
+      {/* ── DPP ── */}
+      <Utero x={20} />
+      {/* placenta normalmente inserida no fundo */}
+      <path d="M45 46 C 70 34, 110 34, 135 50 L 130 66 C 108 52, 72 52, 50 62 Z" fill={C.accent} opacity="0.85" />
+      {/* hematoma retroplacentário */}
+      <path d="M50 62 C 72 52, 108 52, 130 66 C 122 84, 66 84, 50 62 Z" fill={C.danger} />
+      <text x="80" y="20" textAnchor="middle" style={label({ fill: C.text, fontSize: 12, fontWeight: 800 })}>DPP</text>
+      <text x="152" y="60" style={label({ fill: C.danger, fontSize: 10 })}>hematoma</text>
+      <text x="152" y="72" style={label({ fill: C.danger, fontSize: 10 })}>retroplacentário</text>
+      {/* sangue escuro, pouco */}
+      <path d="M74 210 q 6 14 2 26" stroke="#6b1f1f" strokeWidth="4" fill="none" strokeLinecap="round" />
+      <text x="86" y="240" style={label({ fontSize: 10 })}>sangue escuro, pouco</text>
+      <text x="30" y="236" style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>DOR +</text>
+      <text x="30" y="248" style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>HIPERTONIA</text>
+
+      {/* ── Placenta prévia ── */}
+      <Utero x={240} />
+      {/* placenta recobrindo o orifício interno */}
+      <path d="M272 168 C 292 150, 328 150, 348 168 L 348 186 C 326 172, 294 172, 272 186 Z" fill={C.accent} opacity="0.85" />
+      <text x="300" y="20" textAnchor="middle" style={label({ fill: C.text, fontSize: 12, fontWeight: 800 })}>PLACENTA PRÉVIA</text>
+      <text x="360" y="170" style={label({ fill: C.accent, fontSize: 10 })}>recobre o</text>
+      <text x="360" y="182" style={label({ fill: C.accent, fontSize: 10 })}>orifício interno</text>
+      {/* sangue vivo, abundante */}
+      <path d="M294 210 q 8 16 4 28" stroke="#d92b2b" strokeWidth="7" fill="none" strokeLinecap="round" />
+      <text x="306" y="240" style={label({ fontSize: 10 })}>sangue vivo, abundante</text>
+      <text x="250" y="236" style={label({ fill: C.accent, fontSize: 10, fontWeight: 800 })}>INDOLOR</text>
+      <text x="250" y="248" style={label({ fill: C.accent, fontSize: 10, fontWeight: 800 })}>TÔNUS NORMAL</text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Infecto — TB primária × pós-primária
+// ═══════════════════════════════════════════════════════════════
+function TbPrimariaVsPosPrimaria() {
+  const Pulmoes = ({ x }: { x: number }) => (
+    <>
+      <path
+        d={`M${x + 55} 34 C ${x + 30} 40, ${x + 18} 90, ${x + 22} 140 C ${x + 25} 168, ${x + 42} 172, ${x + 52} 156 C ${x + 58} 140, ${x + 58} 70, ${x + 55} 34 Z`}
+        fill={C.surface2} stroke={C.border} strokeWidth="2"
+      />
+      <path
+        d={`M${x + 73} 34 C ${x + 98} 40, ${x + 110} 90, ${x + 106} 140 C ${x + 103} 168, ${x + 86} 172, ${x + 76} 156 C ${x + 70} 140, ${x + 70} 70, ${x + 73} 34 Z`}
+        fill={C.surface2} stroke={C.border} strokeWidth="2"
+      />
+      {/* traqueia */}
+      <line x1={x + 64} y1="24" x2={x + 64} y2="60" stroke={C.border} strokeWidth="3" />
+    </>
+  );
+
+  return (
+    <svg viewBox="0 0 420 230" role="img" aria-label="Tuberculose primária versus pós-primária">
+      {/* primária */}
+      <Pulmoes x={20} />
+      {/* foco de Ghon periférico */}
+      <circle cx="42" cy="112" r="7" fill={C.gold} />
+      {/* linfonodo hilar */}
+      <circle cx="76" cy="86" r="8" fill={C.gold} opacity="0.7" />
+      <line x1="49" y1="108" x2="70" y2="90" stroke={C.gold} strokeWidth="2" strokeDasharray="3 2" />
+      <text x="84" y="14" textAnchor="middle" style={label({ fill: C.text, fontSize: 12, fontWeight: 800 })}>TB PRIMÁRIA</text>
+      <text x="10" y="196" style={label({ fill: C.gold, fontSize: 10, fontWeight: 700 })}>foco de Ghon (periférico)</text>
+      <text x="10" y="209" style={label({ fill: C.gold, fontSize: 10, fontWeight: 700 })}>+ linfonodo hilar</text>
+      <text x="10" y="222" style={label({ fontSize: 10 })}>= complexo de Ranke · criança</text>
+
+      {/* pós-primária */}
+      <Pulmoes x={240} />
+      {/* cavitação apical */}
+      <circle cx="262" cy="58" r="12" fill="none" stroke={C.danger} strokeWidth="3" />
+      <circle cx="262" cy="58" r="12" fill={C.surface} />
+      <circle cx="262" cy="58" r="12" fill="none" stroke={C.danger} strokeWidth="3" />
+      <circle cx="298" cy="54" r="8" fill="none" stroke={C.danger} strokeWidth="2.5" />
+      <text x="304" y="14" textAnchor="middle" style={label({ fill: C.text, fontSize: 12, fontWeight: 800 })}>TB PÓS-PRIMÁRIA</text>
+      <text x="230" y="196" style={label({ fill: C.danger, fontSize: 10, fontWeight: 700 })}>CAVITAÇÃO em ápice /</text>
+      <text x="230" y="209" style={label({ fill: C.danger, fontSize: 10, fontWeight: 700 })}>segmento apical do lobo inferior</text>
+      <text x="230" y="222" style={label({ fontSize: 10 })}>= reativação · adulto (achado clássico)</text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Infecto — Líquor nas meningites
+// ═══════════════════════════════════════════════════════════════
+function LiquorMeningites() {
+  const rows = [
+    { l: "Aspecto", b: "Turvo/purulento", v: "Límpido", t: "Límpido/xantocrômico" },
+    { l: "Células", b: "> 1000 · PMN", v: "< 500 · linfomono", t: "50–500 · linfomono" },
+    { l: "Proteína", b: "↑↑ (> 100)", v: "normal / ↑ leve", t: "↑ (50–200)" },
+    { l: "Glicose", b: "↓↓ (< 40% glicemia)", v: "normal", t: "↓" },
+  ];
+  const colX = [110, 218, 326];
+  const heads = [
+    { t: "BACTERIANA", c: C.danger },
+    { t: "VIRAL", c: C.accent },
+    { t: "TUBERCULOSA", c: C.gold },
+  ];
+
+  return (
+    <svg viewBox="0 0 430 190" role="img" aria-label="Interpretação do líquor nas meningites">
+      {heads.map((h, i) => (
+        <g key={h.t}>
+          <rect x={colX[i] - 52} y={8} width={104} height={22} rx={6} fill={h.c} opacity="0.15" />
+          <text x={colX[i]} y={23} textAnchor="middle" style={label({ fill: h.c, fontSize: 10, fontWeight: 800 })}>{h.t}</text>
+        </g>
+      ))}
+      {rows.map((r, i) => {
+        const y = 52 + i * 33;
+        return (
+          <g key={r.l}>
+            {i % 2 === 0 && <rect x={6} y={y - 15} width={418} height={30} rx={5} fill={C.surface2} />}
+            <text x={12} y={y + 4} style={label({ fill: C.text, fontSize: 11, fontWeight: 800 })}>{r.l}</text>
+            <text x={colX[0]} y={y + 4} textAnchor="middle" style={label({ fontSize: 10 })}>{r.b}</text>
+            <text x={colX[1]} y={y + 4} textAnchor="middle" style={label({ fontSize: 10 })}>{r.v}</text>
+            <text x={colX[2]} y={y + 4} textAnchor="middle" style={label({ fontSize: 10 })}>{r.t}</text>
+          </g>
+        );
+      })}
+      <text x={12} y={182} style={label({ fill: C.faint, fontSize: 9.5 })}>
+        Glicose baixa = consumo bacteriano/TB · PMN = polimorfonucleares
+      </text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Infecto — Curva da dengue (fases)
+// ═══════════════════════════════════════════════════════════════
+function DengueFases() {
+  return (
+    <svg viewBox="0 0 430 220" role="img" aria-label="Fases da dengue: febril, crítica e de recuperação">
+      {/* faixa da fase crítica */}
+      <rect x={168} y={20} width={104} height={132} fill={C.danger} opacity="0.1" />
+      <text x={220} y={34} textAnchor="middle" style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>FASE CRÍTICA</text>
+      <text x={220} y={46} textAnchor="middle" style={label({ fill: C.danger, fontSize: 9 })}>extravasamento · 24–48h</text>
+
+      {/* eixos */}
+      <line x1={40} y1={152} x2={410} y2={152} stroke={C.border} strokeWidth="1.5" />
+      <line x1={40} y1={20} x2={40} y2={152} stroke={C.border} strokeWidth="1.5" />
+
+      {/* curva da febre */}
+      <path d="M52 60 L 100 52 L 150 56 L 180 68 L 210 128 L 260 140 L 330 142 L 400 143"
+        fill="none" stroke={C.gold} strokeWidth="3" strokeLinecap="round" />
+      <text x={96} y={44} style={label({ fill: C.gold, fontSize: 10, fontWeight: 800 })}>febre</text>
+
+      {/* hematócrito */}
+      <path d="M52 132 L 120 132 L 170 130 L 200 108 L 225 74 L 250 92 L 300 126 L 400 131"
+        fill="none" stroke={C.danger} strokeWidth="3" strokeLinecap="round" strokeDasharray="6 3" />
+      <text x={244} y={68} style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>hematócrito ↑</text>
+
+      {/* plaquetas */}
+      <path d="M52 74 L 120 80 L 170 96 L 210 128 L 240 136 L 290 116 L 400 84"
+        fill="none" stroke={C.accent} strokeWidth="2.5" strokeLinecap="round" />
+      <text x={330} y={78} style={label({ fill: C.accent, fontSize: 10, fontWeight: 800 })}>plaquetas</text>
+
+      {/* seta da defervescência */}
+      <line x1={196} y1={100} x2={196} y2={150} stroke={C.text} strokeWidth="1.5" strokeDasharray="3 3" />
+      <circle cx={196} cy={98} r={4} fill={C.text} />
+      <text x={196} y={172} textAnchor="middle" style={label({ fill: C.text, fontSize: 10, fontWeight: 800 })}>⚠ a febre CAI aqui</text>
+      <text x={196} y={185} textAnchor="middle" style={label({ fontSize: 9.5 })}>não é melhora — é o início do risco</text>
+
+      {/* dias */}
+      {["D1", "D3", "D5", "D7", "D9"].map((d, i) => (
+        <text key={d} x={60 + i * 85} y={166} textAnchor="middle" style={label({ fill: C.faint, fontSize: 9 })}>{d}</text>
+      ))}
+      <text x={92} y={210} textAnchor="middle" style={label({ fontSize: 10, fontWeight: 700 })}>FEBRIL</text>
+      <text x={330} y={210} textAnchor="middle" style={label({ fontSize: 10, fontWeight: 700 })}>RECUPERAÇÃO</text>
+      <text x={330} y={200} textAnchor="middle" style={label({ fill: C.faint, fontSize: 9 })}>(reduzir volume)</text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Pediatria — Planos A/B/C de desidratação
+// ═══════════════════════════════════════════════════════════════
+function PlanosDesidratacao() {
+  const planos = [
+    {
+      t: "PLANO A", c: C.accent, sub: "SEM desidratação",
+      l1: "Alerta · olhos normais", l2: "prega desfaz rápido",
+      cond: "Domicílio · SRO após cada evacuação + zinco",
+    },
+    {
+      t: "PLANO B", c: C.gold, sub: "ALGUM grau",
+      l1: "Irritado · olhos fundos · sedento", l2: "prega desfaz devagar",
+      cond: "Unidade · SRO 50–100 mL/kg em 4–6h (TRO supervisionada)",
+    },
+    {
+      t: "PLANO C", c: C.danger, sub: "GRAVE / choque",
+      l1: "Letárgico · não bebe · TEC > 3s", l2: "prega desfaz muito devagar (> 2s)",
+      cond: "EV · cristaloide 20 mL/kg em bolus, repetir até 3×",
+    },
+  ];
+  return (
+    <svg viewBox="0 0 430 250" role="img" aria-label="Planos A, B e C de reidratação do Ministério da Saúde">
+      {planos.map((p, i) => {
+        const y = 10 + i * 80;
+        return (
+          <g key={p.t}>
+            <rect x={8} y={y} width={414} height={70} rx={10} fill={p.c} opacity="0.08" />
+            <rect x={8} y={y} width={5} height={70} rx={2.5} fill={p.c} />
+            <text x={22} y={y + 20} style={label({ fill: p.c, fontSize: 12, fontWeight: 800 })}>{p.t}</text>
+            <text x={86} y={y + 20} style={label({ fill: C.text, fontSize: 10.5, fontWeight: 700 })}>{p.sub}</text>
+            <text x={22} y={y + 37} style={label({ fontSize: 10 })}>{p.l1}</text>
+            <text x={22} y={y + 50} style={label({ fontSize: 10 })}>{p.l2}</text>
+            <text x={22} y={y + 64} style={label({ fill: p.c, fontSize: 10, fontWeight: 700 })}>{p.cond}</text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Pediatria — Crupe × Epiglotite (via aérea)
+// ═══════════════════════════════════════════════════════════════
+function CrupeVsEpiglotite() {
+  return (
+    <svg viewBox="0 0 420 230" role="img" aria-label="Crupe versus epiglotite: local da obstrução na via aérea">
+      {/* CRUPE */}
+      <text x="105" y="18" textAnchor="middle" style={label({ fill: C.text, fontSize: 12, fontWeight: 800 })}>CRUPE</text>
+      <path d="M80 30 L 80 70 Q 80 84, 92 84 L 92 200 L 118 200 L 118 84 Q 130 84, 130 70 L 130 30"
+        fill={C.surface2} stroke={C.border} strokeWidth="2" />
+      {/* epiglote normal */}
+      <path d="M84 40 q 21 -8 42 0" stroke={C.border} strokeWidth="3" fill="none" strokeLinecap="round" />
+      {/* edema subglótico */}
+      <path d="M92 96 q 13 10 26 0 L 118 118 q -13 -10 -26 0 Z" fill={C.danger} opacity="0.75" />
+      <text x="140" y="106" style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>edema SUBGLÓTICO</text>
+      <text x="140" y="118" style={label({ fontSize: 9.5 })}>(abaixo das cordas)</text>
+      <text x="20" y="218" style={label({ fill: C.text, fontSize: 10, fontWeight: 700 })}>Tosse ladrante · rouquidão · pouco toxemiado</text>
+
+      {/* divisor */}
+      <line x1="215" y1="26" x2="215" y2="205" stroke={C.border} strokeWidth="1" strokeDasharray="4 4" />
+
+      {/* EPIGLOTITE */}
+      <text x="310" y="18" textAnchor="middle" style={label({ fill: C.text, fontSize: 12, fontWeight: 800 })}>EPIGLOTITE</text>
+      <path d="M285 30 L 285 70 Q 285 84, 297 84 L 297 200 L 323 200 L 323 84 Q 335 84, 335 70 L 335 30"
+        fill={C.surface2} stroke={C.border} strokeWidth="2" />
+      {/* epiglote edemaciada — "polegar" */}
+      <path d="M288 44 q 22 -22 44 0 q -22 12 -44 0 Z" fill={C.danger} />
+      <text x="344" y="44" style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>epiglote</text>
+      <text x="344" y="56" style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>edemaciada</text>
+      <text x="344" y="68" style={label({ fontSize: 9 })}>(sinal do polegar)</text>
+      <text x="228" y="218" style={label({ fill: C.danger, fontSize: 10, fontWeight: 700 })}>TOXEMIADO · sialorreia · tripé · sem tosse</text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Pediatria — Zonas de Kramer
+// ═══════════════════════════════════════════════════════════════
+function ZonasKramer() {
+  const zonas = [
+    { z: "1", y: 42, bt: "~6 mg/dL", d: "cabeça e pescoço" },
+    { z: "2", y: 78, bt: "~9 mg/dL", d: "até o umbigo" },
+    { z: "3", y: 112, bt: "~12 mg/dL", d: "até os joelhos" },
+    { z: "4", y: 146, bt: "~15 mg/dL", d: "braços e pernas" },
+    { z: "5", y: 176, bt: "> 18 mg/dL", d: "palmas e plantas" },
+  ];
+  return (
+    <svg viewBox="0 0 420 215" role="img" aria-label="Zonas de Kramer para progressão craniocaudal da icterícia neonatal">
+      {/* corpo do RN, estilizado */}
+      <g transform="translate(40,0)">
+        <circle cx="60" cy="34" r="20" fill={C.gold} opacity="0.85" />
+        <rect x="40" y="54" width="40" height="60" rx="10" fill={C.gold} opacity="0.6" />
+        <rect x="22" y="58" width="16" height="52" rx="8" fill={C.gold} opacity="0.4" />
+        <rect x="82" y="58" width="16" height="52" rx="8" fill={C.gold} opacity="0.4" />
+        <rect x="44" y="114" width="14" height="62" rx="7" fill={C.gold} opacity="0.3" />
+        <rect x="62" y="114" width="14" height="62" rx="7" fill={C.gold} opacity="0.3" />
+        <ellipse cx="51" cy="184" rx="9" ry="6" fill={C.gold} opacity="0.2" />
+        <ellipse cx="69" cy="184" rx="9" ry="6" fill={C.gold} opacity="0.2" />
+        {/* linhas divisórias */}
+        {[54, 92, 122, 158, 178].map((y) => (
+          <line key={y} x1="14" y1={y} x2="108" y2={y} stroke={C.border} strokeWidth="1" strokeDasharray="3 3" />
+        ))}
+      </g>
+      {zonas.map((z) => (
+        <g key={z.z}>
+          <circle cx={182} cy={z.y - 4} r={9} fill={C.gold} opacity="0.25" />
+          <text x={182} y={z.y} textAnchor="middle" style={label({ fill: C.gold, fontSize: 10, fontWeight: 800 })}>{z.z}</text>
+          <text x={200} y={z.y} style={label({ fill: C.text, fontSize: 10.5, fontWeight: 700 })}>{z.bt}</text>
+          <text x={266} y={z.y} style={label({ fontSize: 10 })}>{z.d}</text>
+        </g>
+      ))}
+      <text x={14} y={208} style={label({ fill: C.faint, fontSize: 9.5 })}>
+        Progressão craniocaudal — estimativa VISUAL e imprecisa: a decisão é pela bilirrubina no nomograma de Bhutani.
+      </text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// GO — Fisiopatologia da pré-eclâmpsia
+// ═══════════════════════════════════════════════════════════════
+function PreEclampsiaFisiopato() {
+  return (
+    <svg viewBox="0 0 430 210" role="img" aria-label="Falha da segunda onda de invasão trofoblástica na pré-eclâmpsia">
+      {/* NORMAL */}
+      <text x="106" y="16" textAnchor="middle" style={label({ fill: C.accent, fontSize: 11, fontWeight: 800 })}>GESTAÇÃO NORMAL</text>
+      <path d="M40 34 C 60 60, 60 90, 42 120 L 62 128 C 96 116, 150 118, 176 126"
+        fill="none" stroke={C.accent} strokeWidth="14" strokeLinecap="round" opacity="0.35" />
+      <text x="30" y="150" style={label({ fill: C.accent, fontSize: 10, fontWeight: 700 })}>2ª onda de invasão OK</text>
+      <text x="30" y="163" style={label({ fontSize: 9.5 })}>arteríola dilatada, baixa resistência</text>
+      <text x="30" y="176" style={label({ fontSize: 9.5 })}>→ perfusão placentária adequada</text>
+
+      {/* divisor */}
+      <line x1="212" y1="26" x2="212" y2="186" stroke={C.border} strokeWidth="1" strokeDasharray="4 4" />
+
+      {/* PRÉ-ECLÂMPSIA */}
+      <text x="322" y="16" textAnchor="middle" style={label({ fill: C.danger, fontSize: 11, fontWeight: 800 })}>PRÉ-ECLÂMPSIA</text>
+      <path d="M250 34 C 270 60, 270 90, 252 120 L 272 128 C 306 116, 360 118, 386 126"
+        fill="none" stroke={C.danger} strokeWidth="5" strokeLinecap="round" opacity="0.8" />
+      <text x="240" y="150" style={label({ fill: C.danger, fontSize: 10, fontWeight: 700 })}>FALHA da 2ª onda</text>
+      <text x="240" y="163" style={label({ fontSize: 9.5 })}>vaso estreito, ALTA resistência</text>
+      <text x="240" y="176" style={label({ fontSize: 9.5 })}>→ hipoperfusão → ↑sFlt-1 / ↓PlGF</text>
+
+      {/* cascata */}
+      <rect x={8} y={190} width={414} height={16} rx={8} fill={C.danger} opacity="0.1" />
+      <text x={215} y={202} textAnchor="middle" style={label({ fill: C.danger, fontSize: 9.5, fontWeight: 800 })}>
+        disfunção endotelial sistêmica → HAS · proteinúria (endoteliose) · plaquetopenia · lesão hepática
+      </text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Infecto — Sífilis: linha do tempo
+// ═══════════════════════════════════════════════════════════════
+function SifilisEstagios() {
+  const fases = [
+    { x: 46, t: "PRIMÁRIA", q: "cancro duro", s: "indolor · some sozinho", c: C.accent },
+    { x: 158, t: "SECUNDÁRIA", q: "exantema", s: "palmas e plantas", c: C.gold },
+    { x: 268, t: "LATENTE", q: "assintomática", s: "só sorologia", c: C.faint },
+    { x: 376, t: "TERCIÁRIA", q: "goma · aortite", s: "tabes · Argyll-R.", c: C.danger },
+  ];
+  return (
+    <svg viewBox="0 0 430 170" role="img" aria-label="Estágios da sífilis ao longo do tempo">
+      <line x1={20} y1={70} x2={412} y2={70} stroke={C.border} strokeWidth="2" />
+      {fases.map((f) => (
+        <g key={f.t}>
+          <circle cx={f.x} cy={70} r={8} fill={f.c} />
+          <text x={f.x} y={44} textAnchor="middle" style={label({ fill: f.c, fontSize: 10, fontWeight: 800 })}>{f.t}</text>
+          <text x={f.x} y={92} textAnchor="middle" style={label({ fill: C.text, fontSize: 10, fontWeight: 700 })}>{f.q}</text>
+          <text x={f.x} y={104} textAnchor="middle" style={label({ fontSize: 9 })}>{f.s}</text>
+        </g>
+      ))}
+      <text x={100} y={26} textAnchor="middle" style={label({ fill: C.faint, fontSize: 9 })}>3–8 sem</text>
+      <text x={212} y={26} textAnchor="middle" style={label({ fill: C.faint, fontSize: 9 })}>6–8 sem</text>
+      <text x={322} y={26} textAnchor="middle" style={label({ fill: C.faint, fontSize: 9 })}>anos</text>
+
+      {/* tratamento */}
+      <rect x={20} y={122} width={224} height={18} rx={9} fill={C.accent} opacity="0.12" />
+      <text x={132} y={135} textAnchor="middle" style={label({ fill: C.accent, fontSize: 9.5, fontWeight: 800 })}>
+        Penicilina benzatina 2,4 mi · DOSE ÚNICA
+      </text>
+      <rect x={252} y={122} width={160} height={18} rx={9} fill={C.danger} opacity="0.12" />
+      <text x={332} y={135} textAnchor="middle" style={label({ fill: C.danger, fontSize: 9.5, fontWeight: 800 })}>
+        3 doses semanais
+      </text>
+      <text x={215} y={158} textAnchor="middle" style={label({ fill: C.faint, fontSize: 9 })}>
+        Latente recente (&lt; 1 ano) segue a regra da dose única · Neurossífilis: cristalina EV, em qualquer fase
+      </text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MFC — Tabela 2×2 e as fórmulas
+// ═══════════════════════════════════════════════════════════════
+function Tabela2x2() {
+  return (
+    <svg viewBox="0 0 430 220" role="img" aria-label="Tabela 2x2 de acurácia diagnóstica">
+      <text x={150} y={20} textAnchor="middle" style={label({ fill: C.text, fontSize: 11, fontWeight: 800 })}>DOENTE</text>
+      <text x={244} y={20} textAnchor="middle" style={label({ fill: C.text, fontSize: 11, fontWeight: 800 })}>NÃO DOENTE</text>
+
+      <text x={16} y={62} style={label({ fill: C.text, fontSize: 11, fontWeight: 800 })}>Teste +</text>
+      <text x={16} y={122} style={label({ fill: C.text, fontSize: 11, fontWeight: 800 })}>Teste −</text>
+
+      {/* células */}
+      <rect x={100} y={32} width={100} height={48} rx={8} fill={C.accent} opacity="0.18" />
+      <text x={150} y={54} textAnchor="middle" style={label({ fill: C.accent, fontSize: 16, fontWeight: 800 })}>a</text>
+      <text x={150} y={70} textAnchor="middle" style={label({ fill: C.accent, fontSize: 8.5 })}>verdadeiro +</text>
+
+      <rect x={204} y={32} width={100} height={48} rx={8} fill={C.danger} opacity="0.14" />
+      <text x={254} y={54} textAnchor="middle" style={label({ fill: C.danger, fontSize: 16, fontWeight: 800 })}>b</text>
+      <text x={254} y={70} textAnchor="middle" style={label({ fill: C.danger, fontSize: 8.5 })}>FALSO +</text>
+
+      <rect x={100} y={90} width={100} height={48} rx={8} fill={C.danger} opacity="0.14" />
+      <text x={150} y={112} textAnchor="middle" style={label({ fill: C.danger, fontSize: 16, fontWeight: 800 })}>c</text>
+      <text x={150} y={128} textAnchor="middle" style={label({ fill: C.danger, fontSize: 8.5 })}>FALSO −</text>
+
+      <rect x={204} y={90} width={100} height={48} rx={8} fill={C.accent} opacity="0.18" />
+      <text x={254} y={112} textAnchor="middle" style={label({ fill: C.accent, fontSize: 16, fontWeight: 800 })}>d</text>
+      <text x={254} y={128} textAnchor="middle" style={label({ fill: C.accent, fontSize: 8.5 })}>verdadeiro −</text>
+
+      {/* setas verticais = S e E */}
+      <line x1={150} y1={148} x2={150} y2={162} stroke={C.accent} strokeWidth="1.5" />
+      <text x={150} y={175} textAnchor="middle" style={label({ fill: C.accent, fontSize: 9.5, fontWeight: 800 })}>Sens = a/(a+c)</text>
+      <line x1={254} y1={148} x2={254} y2={162} stroke={C.accent} strokeWidth="1.5" />
+      <text x={254} y={175} textAnchor="middle" style={label({ fill: C.accent, fontSize: 9.5, fontWeight: 800 })}>Espec = d/(b+d)</text>
+
+      {/* setas horizontais = VPP e VPN */}
+      <line x1={310} y1={56} x2={324} y2={56} stroke={C.gold} strokeWidth="1.5" />
+      <text x={330} y={53} style={label({ fill: C.gold, fontSize: 9.5, fontWeight: 800 })}>VPP = a/(a+b)</text>
+      <text x={330} y={65} style={label({ fill: C.faint, fontSize: 8 })}>muda c/ prevalência</text>
+      <line x1={310} y1={114} x2={324} y2={114} stroke={C.gold} strokeWidth="1.5" />
+      <text x={330} y={111} style={label({ fill: C.gold, fontSize: 9.5, fontWeight: 800 })}>VPN = d/(c+d)</text>
+      <text x={330} y={123} style={label({ fill: C.faint, fontSize: 8 })}>muda c/ prevalência</text>
+
+      <text x={16} y={196} style={label({ fill: C.accent, fontSize: 9.5, fontWeight: 800 })}>VERTICAL (↓) = propriedade do teste — não muda com a prevalência</text>
+      <text x={16} y={210} style={label({ fill: C.gold, fontSize: 9.5, fontWeight: 800 })}>HORIZONTAL (→) = valor preditivo — MUDA com a prevalência</text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Cirurgia — Vias biliares e a síndrome de Mirizzi
+// ═══════════════════════════════════════════════════════════════
+function ViasBiliares() {
+  return (
+    <svg viewBox="0 0 420 220" role="img" aria-label="Anatomia das vias biliares e síndrome de Mirizzi">
+      {/* fígado estilizado */}
+      <path d="M30 26 C 120 12, 210 18, 240 40 C 210 62, 120 66, 30 54 Z" fill={C.surface2} stroke={C.border} strokeWidth="1.5" />
+      <text x={60} y={44} style={label({ fill: C.faint, fontSize: 10, fontWeight: 700 })}>fígado</text>
+
+      {/* ductos hepáticos */}
+      <line x1={110} y1={54} x2={140} y2={86} stroke={C.gold} strokeWidth="4" strokeLinecap="round" />
+      <line x1={180} y1={54} x2={150} y2={86} stroke={C.gold} strokeWidth="4" strokeLinecap="round" />
+      {/* hepático comum */}
+      <line x1={145} y1={86} x2={145} y2={124} stroke={C.gold} strokeWidth="5" strokeLinecap="round" />
+      <text x={156} y={104} style={label({ fill: C.gold, fontSize: 9.5, fontWeight: 700 })}>hepático comum</text>
+
+      {/* vesícula */}
+      <path d="M74 108 C 56 116, 52 146, 70 160 C 88 172, 108 160, 106 138 C 105 124, 92 112, 74 108 Z"
+        fill={C.accent} opacity="0.25" stroke={C.accent} strokeWidth="2" />
+      <text x={54} y={180} style={label({ fill: C.accent, fontSize: 9.5, fontWeight: 700 })}>vesícula</text>
+
+      {/* ducto cístico */}
+      <path d="M104 126 Q 126 118, 145 116" stroke={C.gold} strokeWidth="4" fill="none" strokeLinecap="round" />
+      <text x={104} y={110} style={label({ fill: C.gold, fontSize: 9, fontWeight: 700 })}>cístico</text>
+
+      {/* cálculo impactado — Mirizzi */}
+      <circle cx={116} cy={122} r={9} fill={C.danger} />
+      <path d="M132 118 L 143 118" stroke={C.danger} strokeWidth="2" markerEnd="url(#arrowRed)" />
+      <defs>
+        <marker id="arrowRed" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill={C.danger} />
+        </marker>
+      </defs>
+      <text x={196} y={130} style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>MIRIZZI</text>
+      <text x={196} y={142} style={label({ fill: C.danger, fontSize: 9 })}>cálculo impactado no infundíbulo/cístico</text>
+      <text x={196} y={153} style={label({ fill: C.danger, fontSize: 9 })}>comprime o hepático comum POR FORA</text>
+      <text x={196} y={164} style={label({ fill: C.danger, fontSize: 9 })}>→ icterícia SEM cálculo no colédoco</text>
+
+      {/* colédoco */}
+      <line x1={145} y1={124} x2={145} y2={186} stroke={C.gold} strokeWidth="5" strokeLinecap="round" />
+      <text x={100} y={196} style={label({ fill: C.gold, fontSize: 9.5, fontWeight: 700 })}>colédoco</text>
+      {/* duodeno */}
+      <path d="M120 194 Q 145 210, 176 196" stroke={C.border} strokeWidth="6" fill="none" strokeLinecap="round" />
+      <text x={182} y={200} style={label({ fill: C.faint, fontSize: 9 })}>duodeno</text>
+
+      <text x={196} y={182} style={label({ fill: C.faint, fontSize: 9 })}>⚠ risco de lesão iatrogênica na colecistectomia</text>
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Registry
+// ═══════════════════════════════════════════════════════════════
+export const FIGURAS: Record<string, Figura> = {
+  "go-dpp-vs-pp": {
+    id: "go-dpp-vs-pp",
+    titulo: "DPP × Placenta prévia",
+    legenda:
+      "No DPP a placenta está normalmente inserida e descola, formando hematoma retroplacentário — dor e hipertonia, com pouco sangue escuro visível. Na placenta prévia a placenta recobre o orifício interno — sangramento vivo e abundante, mas indolor e com útero de tônus normal.",
+    render: () => <DppVsPlacentaPrevia />,
+  },
+  "inf-tb-primaria-vs-pos": {
+    id: "inf-tb-primaria-vs-pos",
+    titulo: "TB primária × pós-primária",
+    legenda:
+      "A primoinfecção forma o foco de Ghon periférico + linfonodo hilar (complexo de Ranke), típico da criança. A reativação cavita em ápice ou segmento apical do lobo inferior — o achado mais cobrado em prova.",
+    render: () => <TbPrimariaVsPosPrimaria />,
+  },
+  "inf-liquor": {
+    id: "inf-liquor",
+    titulo: "Líquor nas meningites",
+    legenda:
+      "A glicose baixa é a chave: bactérias e BK consomem glicose, o vírus não. Bacteriana = turvo, PMN, proteína alta, glicose muito baixa.",
+    render: () => <LiquorMeningites />,
+  },
+  "inf-dengue-fases": {
+    id: "inf-dengue-fases",
+    titulo: "Fases da dengue",
+    legenda:
+      "A armadilha central: a fase crítica começa QUANDO A FEBRE CAI (3º–6º dia). É aí que o plasma extravasa — hematócrito sobe, plaquetas caem. Defervescência não é melhora.",
+    render: () => <DengueFases />,
+  },
+  "ped-planos-desidratacao": {
+    id: "ped-planos-desidratacao",
+    titulo: "Planos A, B e C",
+    legenda:
+      "Turgor cutâneo e estado neurológico são os parâmetros mais fidedignos para classificar. O plano decorre direto da classificação.",
+    render: () => <PlanosDesidratacao />,
+  },
+  "ped-crupe-vs-epiglotite": {
+    id: "ped-crupe-vs-epiglotite",
+    titulo: "Crupe × Epiglotite",
+    legenda:
+      "O crupe edemacia ABAIXO das cordas (subglótico) — tosse ladrante, criança pouco toxemiada. A epiglotite edemacia ACIMA — sem tosse, toxemiada, sialorreia e posição em tripé. A diferença central é a toxemia.",
+    render: () => <CrupeVsEpiglotite />,
+  },
+  "ped-zonas-kramer": {
+    id: "ped-zonas-kramer",
+    titulo: "Zonas de Kramer",
+    legenda:
+      "A icterícia progride da cabeça para os pés. Serve como triagem grosseira — a decisão de fototerapia é sempre pela bilirrubina plotada no nomograma de Bhutani por hora de vida.",
+    render: () => <ZonasKramer />,
+  },
+  "go-pre-eclampsia-fisiopato": {
+    id: "go-pre-eclampsia-fisiopato",
+    titulo: "Falha da 2ª onda de invasão trofoblástica",
+    legenda:
+      "Tudo na pré-eclâmpsia sai daqui: a arteríola espiralada não remodela, permanece de alta resistência → hipoperfusão placentária → desequilíbrio angiogênico (↑sFlt-1, ↓PlGF) → disfunção endotelial materna sistêmica.",
+    render: () => <PreEclampsiaFisiopato />,
+  },
+  "inf-sifilis-estagios": {
+    id: "inf-sifilis-estagios",
+    titulo: "Estágios da sífilis",
+    legenda:
+      "O cancro duro some sozinho — o desaparecimento não é cura. A divisão latente recente (< 1 ano) × tardia é o que define dose única versus 3 doses semanais.",
+    render: () => <SifilisEstagios />,
+  },
+  "mfc-tabela-2x2": {
+    id: "mfc-tabela-2x2",
+    titulo: "Tabela 2×2 — a origem de todas as fórmulas",
+    legenda:
+      "Leia na VERTICAL para sensibilidade e especificidade (propriedades do teste, estáveis). Leia na HORIZONTAL para VPP e VPN (dependem da prevalência). Essa é a distinção mais cobrada do tema.",
+    render: () => <Tabela2x2 />,
+  },
+  "cir-vias-biliares-mirizzi": {
+    id: "cir-vias-biliares-mirizzi",
+    titulo: "Vias biliares e síndrome de Mirizzi",
+    legenda:
+      "Mirizzi é compressão EXTRÍNSECA do hepático comum por cálculo impactado no infundíbulo/cístico — dá icterícia obstrutiva sem cálculo dentro do colédoco, e aumenta o risco de lesão de via biliar na cirurgia.",
+    render: () => <ViasBiliares />,
+  },
+};
+
+export function getFigura(id: string): Figura | undefined {
+  return FIGURAS[id];
+}

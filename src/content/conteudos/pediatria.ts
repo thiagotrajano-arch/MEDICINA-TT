@@ -22,6 +22,7 @@ export const CONTEUDOS_PED: Record<string, ConteudoSubtema> = {
         secao: "Classificação (MS/OMS)",
         corpo:
           "| | **Sem desidratação (Plano A)** | **Algum grau (Plano B)** | **Grave (Plano C)** |\n|---|---|---|---|\n| Estado geral | Alerta | **Irritado/inquieto** | **Letárgico/inconsciente** |\n| Olhos | Normais | **Fundos** | Muito fundos |\n| Sede | Normal | **Sedento, bebe rápido** | **Não consegue beber** |\n| Prega cutânea | Desaparece rápido | **Desaparece lentamente** | **Desaparece muito lentamente (> 2 s)** |\n| Pulso/perfusão | Normal | Normal | **Filiforme; TEC > 3 s** |\n\nOs parâmetros mais fidedignos são **turgor cutâneo** e **estado neurológico**.",
+        figura: "ped-planos-desidratacao",
       },
       {
         secao: "Conduta — Plano A (sem desidratação)",
@@ -155,6 +156,7 @@ export const CONTEUDOS_PED: Record<string, ConteudoSubtema> = {
         secao: "Diagnóstico diferencial",
         corpo:
           "| | **Crupe** | **Epiglotite** |\n|---|---|---|\n| Início | Gradual, noturno | **Súbito, fulminante** |\n| Tosse | **Ladrante** | Ausente |\n| Estado geral | **Pouco toxemiado** | **Toxemiado, prostrado** |\n| Postura | Normal | **Tripé**, pescoço estendido |\n| Outros | Rouquidão | **Sialorreia, disfagia**, voz abafada |\n| Agente | Parainfluenza | ***H. influenzae* tipo b** |\n\n👉 O diferencial central é a **toxemia**. Outros: **traqueíte bacteriana**, **aspiração de corpo estranho** (súbito, sem pródromo), abscesso retrofaríngeo.",
+        figura: "ped-crupe-vs-epiglotite",
       },
       {
         secao: "Complicações",
@@ -209,6 +211,7 @@ export const CONTEUDOS_PED: Record<string, ConteudoSubtema> = {
         secao: "Diagnóstico",
         corpo:
           "- **Zonas de Kramer** (avaliação visual, progressão craniocaudal) — apenas triagem, **imprecisa**;\n- **Bilirrubina total e frações** + plotagem no **nomograma de Bhutani** (BT × **horas de vida**) — é isso que define a conduta;\n- Se suspeita de hemólise: **tipagem sanguínea da mãe e do RN**, **Coombs direto**, hematócrito/reticulócitos, esfregaço, **G6PD**;\n- **Icterícia > 2 semanas:** obrigatório **dosar BT e frações** para rastrear **colestase**.",
+        figura: "ped-zonas-kramer",
       },
       {
         secao: "Tratamento",

@@ -61,6 +61,12 @@ export type GrupoDisciplina =
 export interface BlocoConteudo {
   secao: string;
   corpo: string; // markdown
+  /**
+   * Optional figure anchored to THIS section — the id of an entry in the figure
+   * registry (src/content/figuras). This is what makes an image appear exactly
+   * where it aids comprehension, instead of in a detached gallery.
+   */
+  figura?: string;
 }
 
 export interface ConteudoSubtema {

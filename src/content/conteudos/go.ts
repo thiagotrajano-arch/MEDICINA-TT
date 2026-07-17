@@ -21,6 +21,7 @@ export const CONTEUDOS_GO: Record<string, ConteudoSubtema> = {
         secao: "Fisiopatologia",
         corpo:
           "A raiz do problema é a **falha da segunda onda de invasão trofoblástica**: as arteríolas espiraladas não sofrem a remodelação fisiológica e permanecem como **vasos de alta resistência**, com camada muscular preservada.\n\nO resultado é **hipoperfusão placentária** → liberação de fatores **antiangiogênicos** (↑**sFlt-1**, ↓**PlGF**) → **disfunção endotelial sistêmica materna**, que explica todo o quadro: vasoconstrição (hipertensão), aumento da permeabilidade (edema), ativação plaquetária (plaquetopenia) e lesão de órgão-alvo.\n\nNo rim, a lesão característica é a **endoteliose glomerulocapilar**, responsável pela proteinúria.",
+        figura: "go-pre-eclampsia-fisiopato",
       },
       {
         secao: "Critérios diagnósticos",
@@ -134,6 +135,7 @@ export const CONTEUDOS_GO: Record<string, ConteudoSubtema> = {
         secao: "DPP × Placenta prévia — o quadro comparativo",
         corpo:
           "| | **DPP** | **Placenta prévia** |\n|---|---|---|\n| **Dor** | **Intensa, súbita** | **Ausente (indolor)** |\n| **Sangramento** | **Escuro**, pequena quantidade (pode ser **oculto**) | **Vermelho vivo**, abundante |\n| **Tônus uterino** | **Hipertônico (\"útero em lenho\")** | **Normal** |\n| **Início** | Súbito | **Insidioso, de repetição** |\n| **Sofrimento fetal** | **Precoce e frequente** | Raro (inicialmente) |\n| **Relação com o volume** | Repercussão **desproporcional** ao sangramento visível | Proporcional |\n| **USG** | **Baixa sensibilidade** (dx é **CLÍNICO**) | **Confirma** o diagnóstico |\n| **Toque vaginal** | Pode ser feito | ⚠️ **CONTRAINDICADO** |\n\n👉 A pegadinha central: **o sangramento do DPP engana** — grande parte fica retida (hematoma retroplacentário), então a paciente pode chocar com pouco sangue visível.",
+        figura: "go-dpp-vs-pp",
       },
       {
         secao: "DPP — fisiopatologia e fatores de risco",

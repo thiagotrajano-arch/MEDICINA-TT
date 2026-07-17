@@ -76,7 +76,7 @@ export class SupabaseContentRepository implements ContentRepository {
     const { data, error } = await this.db
       .from("resumo_versao")
       .select(
-        "id, origem, criado_em, referencias, titulo, resumo:resumo!inner(subtema_id), bloco:bloco_conteudo(secao, corpo_mdx, ordem)"
+        "id, origem, criado_em, referencias, titulo, resumo:resumo!inner(subtema_id), bloco:bloco_conteudo(secao, corpo_mdx, ordem, figura)"
       )
       .eq("is_atual", true)
       .eq("resumo.subtema_id", subtemaId)
@@ -86,7 +86,11 @@ export class SupabaseContentRepository implements ContentRepository {
 
     const blocos: BlocoConteudo[] = ((data.bloco as BlocoRow[]) ?? [])
       .sort((a, b) => a.ordem - b.ordem)
-      .map((b) => ({ secao: b.secao, corpo: b.corpo_mdx }));
+      .map((b) => ({
+        secao: b.secao,
+        corpo: b.corpo_mdx,
+        figura: b.figura ?? undefined,
+      }));
 
     return {
       subtemaId,
@@ -172,6 +176,7 @@ interface BlocoRow {
   secao: string;
   corpo_mdx: string;
   ordem: number;
+  figura: string | null;
 }
 interface AlternativaRow {
   letra: string;
