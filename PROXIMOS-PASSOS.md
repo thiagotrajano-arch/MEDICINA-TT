@@ -48,6 +48,22 @@ figuras foram acidentalmente ancoradas em seções erradas (`go-dpp-vs-pp` e
 `mfc-tabela-2x2` não tinham relação com o conteúdo) — removidas antes do
 commit.
 
+## ⚠️ MUDANÇA DE FONTE (2026-07-17, tarde) — os PDFs saíram do Downloads
+
+A pasta `C:\Users\Adm\Downloads\` foi **limpa** — os PDFs OMED (`Infectologia_OMED_15_Temas`, `Cirurgia_Banco_160`, `MFC_Banco_80`, `Infectologia_Simulado_160`, etc.) **não estão mais lá**. Não tente extraí-los do Downloads: o `extract-pdf.mts` vai dar `ENOENT`.
+
+**Fontes alternativas (usar nesta ordem):**
+1. **Histórico desta conversa/sessão do Claude** — vários materiais foram colados nas mensagens e ainda estão no contexto (ex.: as 80 questões de GO do "Banco OMED GO", e o "Simulado de Pediatria 1 comentado" completo com gabarito de 68 questões). O usuário confirmou: "os temas que não achar na pasta Downloads estão nas conversas do Claude também."
+2. **Google Drive do usuário** (ferramentas `mcp__9734b289...__search_files` / leitura de conteúdo). Google Docs encontrados no Drive raiz (`parentId 0AOuKO_XOjsM9Uk9PVA`):
+   - `Banco de Questões OMED: Ginecologia e Obstetrícia` (Google Doc, id `1843iScXNAjOR8pj_LraTF-gzSEcX0xOR7Y2Silvc4Hk`)
+   - `simulado indectologia` (Doc, id `1ICb-YzIKgIpgLMvEQZfxxBkSw-8fng7WNU8namooguE`)
+   - `Simulado de Pediatria 1` (Doc, id `1LbjYvrqeF3N6u3ieuDAjlhxo7YrgGKblfVkhAy2vI_I`)
+   - `omed abertas go ped` (Doc, id `19PczBChHRbjwOMBCyOUSpgBJzSy8UIeetl-nr8ds4mM`)
+   - Para ler um Google Doc: usar a ferramenta de leitura de conteúdo do Drive (`read_file_content`/`download_file_content` — exportam como texto).
+   - Pastas de multimídia (`Simulado_Multimídia_Radiologia`, `12. Simulados Multimídia`) estavam **vazias** — sem imagens aproveitáveis ali. Procurar imagens reais em `RESUMOS`/`MEDICINA` (ver Prioridade 2).
+
+Progresso desta sub-sessão (tarde): +9 questões Inf (dengue Q25-29, sepse Q30-33) e +14 Ped (lote 2), do material já em contexto. **Total agora: 114 questões** (GO 19 · Ped 36 · Inf 35 · MFC 14 · Cir 10), 31 resumos.
+
 ## PRIORIDADE 1 — Terminar a extração (continuar daqui)
 
 ### Infectologia
