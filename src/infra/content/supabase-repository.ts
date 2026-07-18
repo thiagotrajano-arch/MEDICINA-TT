@@ -91,7 +91,12 @@ export class SupabaseContentRepository implements ContentRepository {
       .map((b) => ({
         secao: b.secao,
         corpo: b.corpo_mdx,
-        figura: b.figura ?? undefined,
+        // Várias figuras são gravadas separadas por vírgula (ver seed).
+        figura: b.figura
+          ? b.figura.includes(",")
+            ? b.figura.split(",").map((f) => f.trim()).filter(Boolean)
+            : b.figura
+          : undefined,
       }));
 
     return {

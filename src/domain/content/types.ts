@@ -62,11 +62,14 @@ export interface BlocoConteudo {
   secao: string;
   corpo: string; // markdown
   /**
-   * Optional figure anchored to THIS section — the id of an entry in the figure
-   * registry (src/content/figuras). This is what makes an image appear exactly
-   * where it aids comprehension, instead of in a detached gallery.
+   * Figura(s) ancorada(s) a ESTA seção — id(s) do registry
+   * (src/components/figuras/registry.tsx). É o que faz a imagem aparecer
+   * exatamente onde ajuda a entender, em vez de numa galeria separada.
+   *
+   * Aceita uma ou várias: um mesmo trecho costuma pedir o esquema (diagrama)
+   * E o achado como ele realmente aparece (imagem real).
    */
-  figura?: string;
+  figura?: string | string[];
 }
 
 export interface ConteudoSubtema {

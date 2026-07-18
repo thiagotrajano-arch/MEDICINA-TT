@@ -14,11 +14,44 @@ import type { ReactNode } from "react";
  * nunca numa galeria solta.
  */
 
+/**
+ * Uma figura é de um de dois tipos:
+ *
+ *  - **diagrama** (`render`): SVG desenhado aqui. Sem direitos autorais, leve,
+ *    acompanha o tema. Ideal para fluxogramas, comparativos e esquemas.
+ *  - **imagem real** (`imagem`): fotografia/exame de verdade (raio-X, TC, RM,
+ *    lesão de pele, lâmina). Serve para o que um desenho não ensina —
+ *    reconhecer o achado como ele aparece na prova e no plantão.
+ *
+ * Toda imagem real EXIGE procedência e licença explícitas, e o crédito é
+ * renderizado junto da figura. Sem licença verificável, a imagem não entra:
+ * preferimos um diagrama honesto a uma foto de origem duvidosa.
+ */
 export interface Figura {
   id: string;
   titulo: string;
   legenda: string;
-  render: () => ReactNode;
+  /** Diagrama SVG. Mutuamente exclusivo com `imagem`. */
+  render?: () => ReactNode;
+  /** Imagem real com procedência. Mutuamente exclusivo com `render`. */
+  imagem?: ImagemReal;
+}
+
+export interface ImagemReal {
+  /** Caminho servido pelo próprio site (`/img/...`). Nunca hotlink: o arquivo
+   *  é baixado para `public/img/` para não depender de terceiros nem consumir
+   *  banda alheia. */
+  src: string;
+  /** Texto alternativo descritivo — acessibilidade e SEO. */
+  alt: string;
+  /** Ex.: "Wikimedia Commons", "CDC PHIL", "Radiopaedia". */
+  fonte: string;
+  /** Ex.: "Domínio público", "CC BY 4.0", "CC BY-SA 3.0". */
+  licenca: string;
+  /** Autor/atribuição exigida pela licença. */
+  autor?: string;
+  /** Página de origem, para verificação e crédito. */
+  url?: string;
 }
 
 // ── helpers de estilo (usam os tokens do tema) ──────────────────
@@ -654,6 +687,79 @@ export const FIGURAS: Record<string, Figura> = {
     legenda:
       "O detalhe que mais cai: no sarampo a febre PERSISTE durante o exantema; no exantema súbito a febre CAI exatamente quando o exantema surge — a criança melhora ao exantemar.",
     render: () => <ExantemasPadraoTemporal />,
+  },
+
+  // ═════════════════════════════════════════════════════════════
+  // IMAGENS REAIS — todas com licença verificada na origem.
+  // Arquivos baixados para /public/img/clinicas (nunca hotlink).
+  // ═════════════════════════════════════════════════════════════
+  "inf-tb-miliar-rx-real": {
+    id: "inf-tb-miliar-rx-real",
+    titulo: "TB miliar — radiografia de tórax",
+    legenda:
+      "Micronódulos difusos e bilaterais de 1–3 mm, distribuídos por todos os campos — o padrão em \"grãos de milho\" da disseminação hematogênica. Compare com a cavitação apical da forma pós-primária: são apresentações radiológicas completamente distintas do mesmo bacilo.",
+    imagem: {
+      src: "img/clinicas/tb-miliar-rx.jpg",
+      alt: "Radiografia de tórax mostrando padrão miliar: micronódulos difusos bilaterais em todos os campos pulmonares",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY 4.0",
+      autor: "Herreros B, Plaza I, García R, Chichón M, Guerrero C, et al.",
+      url: "https://commons.wikimedia.org/wiki/File:Chest_radiograph_of_miliary_tuberculosis_1.jpg",
+    },
+  },
+  "inf-pneumonia-consolidacao-real": {
+    id: "inf-pneumonia-consolidacao-real",
+    titulo: "Pneumonia — consolidação lobar",
+    legenda:
+      "Consolidação homogênea ocupando um lobo, com broncograma aéreo: o ar permanece nos brônquios enquanto o alvéolo se enche de exsudato. É o padrão da PAC típica (pneumocócica) — o oposto do infiltrado intersticial difuso da atípica.",
+    imagem: {
+      src: "img/clinicas/pneumonia-consolidacao.jpg",
+      alt: "Radiografia e tomografia de tórax mostrando consolidação lobar em pneumonia grave",
+      fonte: "Wikimedia Commons (Emerging Infectious Diseases, CDC)",
+      licenca: "Domínio público",
+      autor: "Grottola A, Forghieri F, Meacci M, et al.",
+      url: "https://commons.wikimedia.org/wiki/File:Severe_Pneumonia_Caused_by_Legionella_pneumophila_Serogroup_11,_Italy.jpg",
+    },
+  },
+  "inf-sifilis-cancro-real": {
+    id: "inf-sifilis-cancro-real",
+    titulo: "Cancro duro — sífilis primária",
+    legenda:
+      "Úlcera de base limpa, bordos endurecidos e bem delimitados, caracteristicamente INDOLOR. É essa ausência de dor que a separa do cancro mole (H. ducreyi), doloroso e de fundo sujo. Some sozinho em 3–8 semanas — e o desaparecimento não significa cura.",
+    imagem: {
+      src: "img/clinicas/sifilis-cancro-duro.jpg",
+      alt: "Lesão ulcerada de bordos endurecidos e base limpa em haste peniana, característica do cancro duro da sífilis primária",
+      fonte: "CDC PHIL via Wikimedia Commons",
+      licenca: "Domínio público",
+      autor: "CDC / M. Rein",
+      url: "https://commons.wikimedia.org/wiki/File:Chancres_on_the_penile_shaft_due_to_a_primary_syphilitic_infection_caused_by_Treponema_pallidum_6803_lores.jpg",
+    },
+  },
+  "inf-sifilis-secundaria-real": {
+    id: "inf-sifilis-secundaria-real",
+    titulo: "Sífilis secundária — exantema papuloescamoso",
+    legenda:
+      "Lesões papuloescamosas disseminadas da fase secundária, expressando a disseminação sistêmica do treponema. Quando acomete PALMAS e PLANTAS, é praticamente assinatura de sífilis — poucas dermatoses poupam tão pouco essas regiões.",
+    imagem: {
+      src: "img/clinicas/sifilis-secundaria-exantema.jpg",
+      alt: "Exantema papuloescamoso disseminado no dorso, característico da sífilis secundária",
+      fonte: "CDC PHIL via Wikimedia Commons",
+      licenca: "Domínio público",
+      url: "https://commons.wikimedia.org/wiki/File:Secondary_syphilitic_rash_Treponema_pallidum_6756_lores.jpg",
+    },
+  },
+  "inf-sarampo-exantema-real": {
+    id: "inf-sarampo-exantema-real",
+    titulo: "Sarampo — exantema morbiliforme",
+    legenda:
+      "Exantema maculopapular avermelhado e confluente, no 3º dia de erupção. A progressão é craniocaudal (começa atrás das orelhas e na face) e — o ponto que mais cai — a FEBRE PERSISTE durante o exantema, ao contrário do exantema súbito.",
+    imagem: {
+      src: "img/clinicas/sarampo-exantema.jpg",
+      alt: "Criança com exantema maculopapular avermelhado e confluente no dorso e nádegas, no terceiro dia de sarampo",
+      fonte: "CDC PHIL via Wikimedia Commons",
+      licenca: "Domínio público",
+      url: "https://commons.wikimedia.org/wiki/File:Measles_rash_PHIL_4497_lores.jpg",
+    },
   },
 };
 

@@ -43,7 +43,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Exames de imagem",
         corpo:
           "A **radiografia de tórax é obrigatória** em todo sintomático respiratório, mesmo com baciloscopia negativa.\n\n- **TB primária:** complexo primário (nódulo parenquimatoso + linfonodo hilar), podendo haver atelectasia; comum em crianças.\n- **TB pós-primária (reativação):** **cavitação em lobos superiores / segmento apical dos lobos inferiores** — achado clássico de prova.\n- **TB miliar:** micronódulos difusos < 2–3 mm bilaterais (\"grãos de milho\").\n- **TB pleural:** derrame unilateral, em geral sem cavitação associada.",
-        figura: "inf-tb-primaria-vs-pos",
+        figura: ["inf-tb-primaria-vs-pos", "inf-tb-miliar-rx-real"],
       },
       {
         secao: "Tratamento",
@@ -184,7 +184,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Quadro clínico (estágios)",
         corpo:
           "**Primária** — **cancro duro**: úlcera **única, indolor**, bordos endurecidos, base limpa, com adenopatia satélite não dolorosa. **Resolve espontaneamente em 3–8 semanas mesmo sem tratamento** (o que dá falsa sensação de cura).\n\n**Secundária** (6–8 sem após o cancro) — roséola/exantema maculopapular que tipicamente acomete **palmas e plantas**, **condiloma plano**, **alopecia em clareira**, madarose, linfadenopatia generalizada, sintomas gripais.\n\n**Latente** — assintomática, com sorologia reagente. **Recente (< 1 ano)** ou **tardia (> 1 ano ou duração indeterminada)** — essa divisão **define o esquema terapêutico**.\n\n**Terciária** (anos depois) — **goma sifilítica**; **cardiovascular** (aortite/aneurisma de aorta **ascendente**); **neurossífilis tardia** (tabes dorsalis com ataxia sensitiva; **pupila de Argyll-Robertson** — acomoda mas não reage à luz; paralisia geral progressiva).",
-        figura: "inf-sifilis-estagios",
+        figura: ["inf-sifilis-estagios", "inf-sifilis-cancro-real", "inf-sifilis-secundaria-real"],
       },
       {
         secao: "Diagnóstico",
@@ -432,6 +432,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Exames de imagem",
         corpo:
           "**Radiografia de tórax é obrigatória** para confirmar:\n\n- **Consolidação lobar homogênea com broncograma aéreo** — padrão clássico da **típica (pneumocócica)**;\n- **Infiltrado intersticial/reticular difuso** — padrão **atípico** (Mycoplasma, viral);\n- **Broncopneumonia** (multifocal, peribrônquica) — *S. aureus*, aspiração.\n\n**TC de tórax** apenas em dúvida diagnóstica, suspeita de complicação (abscesso, empiema) ou paciente grave sem resposta.",
+        figura: "inf-pneumonia-consolidacao-real",
       },
       {
         secao: "Diagnóstico diferencial",
@@ -704,7 +705,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Exames de imagem",
         corpo:
           "**Kawasaki:** ecocardiograma **obrigatório** na suspeita (basal, 2 semanas e 6–8 semanas) para rastreio de **aneurisma de artéria coronária** — achado que define a gravidade e o seguimento a longo prazo. **MIS-C:** ecocardiograma também essencial (pode haver disfunção miocárdica/derrame pericárdico, além de aneurisma coronariano).",
-        figura: "inf-exantemas-padrao-temporal",
+        figura: ["inf-exantemas-padrao-temporal", "inf-sarampo-exantema-real"],
       },
       {
         secao: "Diagnóstico diferencial",

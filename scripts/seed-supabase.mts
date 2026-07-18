@@ -68,7 +68,9 @@ async function main() {
       await db.from("bloco_conteudo").insert(
         c.blocos.map((b, i) => ({
           versao_id: versao.id, secao: b.secao, corpo_mdx: b.corpo, ordem: i,
-          figura: b.figura ?? null,
+          // A coluna é text; várias figuras viajam separadas por vírgula e são
+          // reexpandidas em array na leitura (ver supabase-repository).
+          figura: Array.isArray(b.figura) ? b.figura.join(",") : (b.figura ?? null),
         }))
       ),
       `bloco_conteudo.insert (${c.titulo})`
