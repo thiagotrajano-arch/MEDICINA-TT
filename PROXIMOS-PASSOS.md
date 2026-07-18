@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-18 (rotina diária das 6h). Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-18 — rotina diária das 6h + sessão interativa (imagens reais). Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
@@ -10,7 +10,7 @@
 | **Resumos** | **32** de 162 subtemas |
 | **Questões** | **203** (GO 79 · Ped 34 · Inf 60 · MFC 12 · Cir 8 · originais 10) |
 | **Casos clínicos** | 4 (GO, Ped, Inf, Cir) |
-| **Figuras SVG** | 12 diagramas originais |
+| **Figuras** | 17 (12 diagramas SVG + 5 imagens reais licenciadas) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
 
 ## O que foi feito nesta sessão (2026-07-18, rotina automática)
@@ -62,6 +62,64 @@ não mapeia diretamente para `Questao` de múltipla escolha; considerar para
 Um erro de digitação próprio (`nem seguraem` → `nem segura em`) corrigido
 antes do commit. Nenhum bug de plataforma encontrado.
 
+## O que foi feito nesta sessão (2026-07-18, interativa — imagens clínicas reais)
+
+Sessão separada da rotina automática acima (mesma data, execução interativa).
+Foco: a "PRIORIDADE 2" abaixo, cobrada repetidamente pelo usuário ("imagens
+reais de casos clínicos... raio-x, ressonância, tomografia, sintomas") e
+ainda não executada até esta sessão.
+
+### Sistema de figuras estendido para imagens reais (não só SVG)
+`src/components/figuras/registry.tsx`: o tipo `Figura` ganhou um segundo modo,
+`imagem?: ImagemReal` (src/alt/fonte/licenca/autor/url), mutuamente exclusivo
+com o `render?: () => ReactNode` (diagrama SVG) que já existia. `Figura.tsx`
+renderiza `<img>` com crédito visível obrigatório (fonte, autor, licença,
+link) quando é imagem real, e mantém o SVG quando é diagrama.
+
+`BlocoConteudo.figura` passou de `string` para `string | string[]` — uma
+seção agora pode ancorar diagrama **e** foto real juntos (novo componente
+`Figuras`, plural, ao lado do `Figura` original, usado em
+`estudar/[subtemaId]/page.tsx`). Seed e leitura do Supabase
+(`seed-supabase.mts`, `supabase-repository.ts`) atualizados para gravar/ler
+múltiplas figuras concatenadas por vírgula na coluna `text` já existente —
+sem migração de schema nova.
+
+### 5 imagens reais com licença verificada, ancoradas em Infectologia
+Todas verificadas via API do Wikimedia Commons (`extmetadata.LicenseShortName`
+/ `Artist`) **antes** de baixar, salvas em `public/img/clinicas/` (nunca
+hotlink):
+
+| Imagem | Achado | Licença | Ancorada em |
+|---|---|---|---|
+| `tb-miliar-rx.jpg` | RX tórax, padrão miliar | CC BY 4.0 | Tuberculose (+ diagrama já existente) |
+| `sifilis-cancro-duro.jpg` | Cancro duro (sífilis 1ª) | Domínio público (CDC PHIL) | Sífilis (+ diagrama já existente) |
+| `sifilis-secundaria-exantema.jpg` | Exantema palmoplantar (sífilis 2ª) | Domínio público (CDC PHIL) | Sífilis |
+| `sarampo-exantema.jpg` | Exantema morbiliforme | Domínio público (CDC PHIL) | Doenças exantemáticas (+ diagrama já existente) |
+| `pneumonia-consolidacao.jpg` | Consolidação lobar + broncograma | Domínio público (CDC/EID) | PAC — **1ª figura desse resumo, antes não tinha nenhuma** |
+
+### Bug real encontrado e corrigido: basePath do GitHub Pages não chegava em `<img>`
+`next/image` e `next/link` recebem o prefixo `/MEDICINA-TT` automaticamente
+no build de export; uma tag `<img src="...">` crua, não. Sem correção, as 5
+imagens (e qualquer imagem real futura) dariam 404 no site publicado, mesmo
+funcionando perfeitamente em `next dev`. Corrigido com um helper novo,
+`src/lib/asset.ts`, e a env var `NEXT_PUBLIC_BASE_PATH` adicionada em
+`next.config.ts` — usado em todo `<img src>` de imagem real (`Figura.tsx`,
+`MidiaClient.tsx`).
+
+### Verificação feita
+- `tsc --noEmit` — 0 erros.
+- Navegador (dev server, pós-seed): páginas de Sífilis, Tuberculose e PAC —
+  as 3 mostram os diagramas antigos **e** as fotos reais juntos, com selo
+  "imagem real" e linha de crédito (fonte/autor/licença) correta.
+- Página `/midia` (Biblioteca visual): 17 figuras listadas (12 + 5), os 5
+  cards de imagem real com crédito e link "Estudar X" de volta ao resumo.
+- As 5 imagens conferidas por `fetch()` direto no navegador: HTTP 200,
+  `image/jpeg`, tamanho em bytes batendo com o arquivo local — nenhuma
+  corrompida.
+- Commit `0b99873`, push feito para `main`. Falta confirmar o deploy do
+  GitHub Actions/Pages (próxima sessão deve checar se as imagens carregam
+  no site publicado, não só no dev local).
+
 ## PRIORIDADE 1 — Continuar a extração (nesta ordem)
 
 ### Infectologia — 13 questões restantes do doc "infec congenita"
@@ -103,16 +161,28 @@ crônica + pré-eclâmpsia sobreposta).
 
 ## PRIORIDADE 2 — Imagens clínicas reais
 
-Ainda não abordado em nenhuma sessão recente. Continua válido o plano:
-1. Google Drive do usuário (pastas "Resumos e cursos"/"MEDICINA") — não
-   explorado com esse fim ainda.
-2. Radiopaedia (linkar, não embutir).
-3. Wikimedia Commons (baixar para `public/img/` se embutir).
-4. Open-i (NIH) / PMC open access.
+**Começado nesta sessão** (ver seção acima) — 5 imagens reais ancoradas em
+Infectologia (TB, sífilis ×2, sarampo, PAC). O sistema (`registry.tsx` com
+`imagem?: ImagemReal`, `asset()`/basePath, figuras múltiplas por seção) está
+pronto para reuso — falta aplicar às outras disciplinas:
 
-Implementação: estender `src/components/figuras/registry.tsx` com tipo de
-figura externa (`url`, `fonte`, `licenca`, `autor`, crédito visível
-obrigatório).
+1. **GO**: DPP × placenta prévia, pré-eclâmpsia, gravidez ectópica (US) —
+   hoje só têm diagrama SVG, nenhuma foto/exame real ainda.
+2. **Pediatria**: crupe/epiglotite (RX cervical em "sinal do polegar"),
+   icterícia neonatal (foto clínica), desidratação (sinais ao exame).
+3. **Cirurgia**: vias biliares/Mirizzi (colangio-RM ou US) — só diagrama.
+4. **MFC**: tabela 2×2 é conceitual, não pede imagem real.
+5. Explorar o Google Drive do usuário (pastas "Resumos e cursos"/
+   "MEDICINA") com esse fim específico — ainda não feito. O usuário
+   mencionou que vai enviar imagens próprias; essas têm prioridade sobre
+   qualquer imagem de terceiros e devem substituir/complementar as atuais
+   quando chegarem.
+
+Fontes por ordem de preferência (ver `docs/PROMPTS-MASTER.md`): imagens do
+próprio usuário > Radiopaedia (linkar, não embutir) > Wikimedia Commons
+(baixar e verificar licença antes, como feito agora) > Open-i (NIH)/PMC
+open access. Nunca Google Images, AMBOSS, UpToDate ou fotos de livro
+escaneado — risco de direito autoral.
 
 ## Armadilhas do ambiente (confirmadas/reforçadas nesta sessão)
 
@@ -132,6 +202,13 @@ obrigatório).
 - **PDFs grandes**: Read não pagina → `npx tsx scripts/extract-pdf.mts`.
   Mas nesta sessão os PDFs do Downloads continuam ausentes — Drive foi a
   fonte primária, com sucesso.
+- **Verificar `<img loading="lazy">` no navegador automatizado**: os eventos
+  `load`/`error` não disparam de forma confiável (a imagem nunca entra no
+  viewport da aba headless, então o IntersectionObserver não ativa) —
+  `naturalWidth`/`complete` ficam presos em 0/false mesmo com o arquivo
+  correto. Não é bug de verdade. Confirmar servindo certo com `fetch(url)`
+  direto no console (status 200, `content-type`, `content-length`) em vez
+  de esperar o evento de load da tag `<img>`.
 
 ## Checklist antes de commitar (reforçado, seguido nesta sessão)
 
@@ -143,7 +220,8 @@ obrigatório).
 4. Verificado visualmente no navegador: resumo STORCH de Infectologia e
    página de questões de GO (hemorragias 1ª metade, 28 questões) — ambos
    renderizando corretamente, sem erros de console.
-5. Push pendente — ver abaixo.
+5. Push feito (confirmado na sessão seguinte: `origin/main` sincronizado
+   até o commit das imagens reais, nada pendente).
 
 ## Regra de ouro
 
