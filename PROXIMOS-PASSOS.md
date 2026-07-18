@@ -116,9 +116,25 @@ funcionando perfeitamente em `next dev`. Corrigido com um helper novo,
 - As 5 imagens conferidas por `fetch()` direto no navegador: HTTP 200,
   `image/jpeg`, tamanho em bytes batendo com o arquivo local — nenhuma
   corrompida.
-- Commit `0b99873`, push feito para `main`. Falta confirmar o deploy do
-  GitHub Actions/Pages (próxima sessão deve checar se as imagens carregam
-  no site publicado, não só no dev local).
+- Commit `0b99873`, push feito para `main`. Deploy do GitHub Actions/Pages
+  confirmado com sucesso; site publicado testado ao vivo (não só dev
+  local) — as 5 imagens e a galeria `/midia` carregam corretamente sob o
+  basePath `/MEDICINA-TT/`.
+
+### Bug de plataforma encontrado (não relacionado a imagens): `backup.yml` falhava 100% desde a criação
+Ao checar o deploy, notei o workflow "Backup e keep-alive" com status de
+falha em **todos** os pushes desde que foi criado (2026-07-16) — nunca
+tinha sido notado porque não bloqueia o site. Causa: `if:` de step
+referenciando `secrets.*` diretamente não é permitido pelo GitHub Actions
+("Unrecognized named-value: 'secrets'") — o arquivo inteiro ficava
+inválido (0 jobs, falha instantânea a cada push). Corrigido movendo os
+secrets para `env:` no nível do job e trocando os `if:` para `env.*`
+(mesmo padrão já correto em `sync-drive.yml`). Commit `864bfd5`.
+Confirmado: o workflow agora aparece com o nome próprio ("Backup e
+keep-alive") em vez do path do arquivo — sinal de que o parse passou a
+funcionar. O `pg_dump` semanal (segunda 05h UTC) e o ping anti-hibernação
+do Supabase estavam ambos mortos até agora; a partir desta correção
+devem rodar de verdade.
 
 ## PRIORIDADE 1 — Continuar a extração (nesta ordem)
 
