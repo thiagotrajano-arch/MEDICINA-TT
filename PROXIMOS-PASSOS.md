@@ -1,14 +1,14 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-18 — rotina diária das 6h + sessão interativa (imagens reais). Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-18 — rotina diária das 6h + 2 sessões interativas (imagens reais; curso Estratégia MED). Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
 | | |
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
-| **Resumos** | **32** de 162 subtemas |
-| **Questões** | **203** (GO 79 · Ped 34 · Inf 60 · MFC 12 · Cir 8 · originais 10) |
+| **Resumos** | **43** de 170 subtemas |
+| **Questões** | **224** (GO 79 · Ped 55 · Inf 60 · MFC 12 · Cir 8 · originais 10) |
 | **Casos clínicos** | 4 (GO, Ped, Inf, Cir) |
 | **Figuras** | 17 (12 diagramas SVG + 5 imagens reais licenciadas) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
@@ -136,7 +136,154 @@ funcionar. O `pg_dump` semanal (segunda 05h UTC) e o ping anti-hibernação
 do Supabase estavam ambos mortos até agora; a partir desta correção
 devem rodar de verdade.
 
+## O que foi feito nesta sessão (2026-07-18, interativa — curso Estratégia MED)
+
+Terceira sessão do dia (mesma data). O usuário enviou **33 ZIPs** (Google
+Drive export completo de um curso — Estratégia MED, aulas "Extensivo") em
+5 disciplinas: GINECOLOGIA (7 partes), OBSTETRÍCIA (6), PEDIATRIA (9),
+PREVENTIVA (6), INFECTOLOGIA (5) — mais 3 ZIPs antigos que ainda não
+tinham sido processados (`00. Materiais`, `BAGAGEM DO JOTA`, `BAGAGEM
+GABS`). Pedido: "mais conteudo para vc, siga os prompts, e atualize a
+rotina."
+
+### Extração — só os PDFs, nunca os vídeos
+Cada ZIP contém, por tópico: `Videoaulas/*.mp4` (enorme — é isso que
+fazia cada ZIP ter ~2 GB — sem transcrição disponível, **não extraído**)
+e `Slide/Mapa Mental/Flashcard/*.pdf` (pequeno, denso). Com só 64 GB
+livres em disco, extrair tudo teria estourado o espaço — a solução foi
+extrair cada ZIP inteiro para uma pasta temporária, copiar só os `*.pdf`
+para fora, apagar a pasta temporária, e repetir ZIP a ZIP (nunca mais de
+~2 GB de pico). **871 PDFs** copiados no total para
+`C:\Users\Adm\Desktop\MEDICINA\_pdfs-estrategia\<DISCIPLINA>\` (pasta
+plana, nome do tópico já vem no nome do arquivo). Os ZIPs originais
+continuam intactos em Downloads (backup do usuário, não apagar).
+
+**Qualidade por tipo de PDF** (testado com `scripts/extract-pdf.mts`):
+**Mapa Mental é a melhor fonte** — texto rico, denso, já estruturado
+(definição/epidemiologia/fisiopatologia/diagnóstico/tratamento/tabelas
+comparativas), pronto para virar resumo quase direto. **Flashcard** é
+bom para questões de fixação rápida (formato pergunta/resposta, uma por
+página). **Slide ("Material-da-aula")** é majoritariamente **imagem**,
+não texto — a camada de texto do PDF captura só cabeçalho/rodapé,
+o conteúdo real não vem. **Não usar Slide como fonte de texto.**
+
+Inventário por disciplina (arquivos totais / Mapas Mentais ≈ tópicos únicos):
+- GINECOLOGIA: 162 arquivos / 24 tópicos
+- OBSTETRÍCIA: 136 arquivos / 25 tópicos
+- PEDIATRIA: 236 arquivos / 25 tópicos
+- INFECTOLOGIA: 107 arquivos / 20 tópicos
+- PREVENTIVA: 30 arquivos / 4 tópicos (zips com bem menos PDF por vídeo — ver nota abaixo)
+
+### Mapeamento de disciplina (já registrado no PROMPTS-MASTER.md)
+GINECOLOGIA + OBSTETRÍCIA → disciplina existente "Ginecologia &
+Obstetrícia"; PEDIATRIA → "Pediatria"; INFECTOLOGIA → "Infectologia";
+**PREVENTIVA → mesclar em "MFC & Atenção Primária"** (não criar
+disciplina nova — o conteúdo de Preventiva é essencialmente Saúde
+Coletiva/Epidemiologia/SUS, que já é o escopo do MFC na taxonomia; a
+disciplina "Saúde Pública" isolada existente é só um scaffold vazio, não
+usar).
+
+### Conteúdo escrito nesta sessão — 11 resumos
+**GO (8 resumos, todos em temas/subtemas NOVOS)** — a taxonomia de GO
+era quase só obstétrica; ginecologia geral estava praticamente vazia.
+Criados os temas "Distúrbios endócrino-menstruais", "Infecções
+ginecológicas", "Oncologia ginecológica", "Mastologia", "Miomatose e
+adenomiose", "Uroginecologia", "Climatério": síndrome dos ovários
+policísticos, vulvovaginites, DIP, câncer de colo uterino, câncer de
+mama, incontinência urinária, climatério/terapia hormonal, miomatose
+uterina.
+
+**Infectologia (3 resumos, preenchendo subtemas que já existiam vazios
+na taxonomia)**: malária (tema inteiro estava sem conteúdo), zika e
+chikungunya, COVID-19 e influenza (manejo).
+
+Todos com fonte real citada (FEBRASGO, SOBRAC 2024, MS, CDC, FIGO) —
+nenhum fato inventado; onde o PDF do curso não trazia detalhe suficiente
+(ex. chikungunya, mais fraco no material extraído), complementado com
+diretriz nomeada (MS), nunca "chutado".
+
+### Bug de plataforma encontrado e corrigido: MiniMarkdown não processava `***negrito+itálico***`
+Ao escrever os resumos de malária com nomes de espécie em itálico dentro
+de frases em negrito (convenção médica padrão — *Plasmodium*, *P.
+falciparum* etc.), percebi asteriscos literais sobrando na tela.
+Causa: o parser (`src/components/content/MiniMarkdown.tsx`) usa uma
+regex que **não aceita nenhum asterisco dentro de um span** — então
+`***texto***` (negrito+itálico aninhado) quebra a contagem e vaza
+asterisco cru. **Não é bug só do conteúdo novo** — já afetava conteúdo
+publicado de sessões anteriores (Infectologia: PAC, endocardite,
+parasitoses; Pediatria: crupe×epiglotite; GO: gravidez ectópica) com
+`***S. aureus***`, `***Leptospira***`, `***H. influenzae***` etc.
+
+Corrigido o parser para o caso limpo — `***span único sem asterisco no
+meio***` agora vira `<strong><em>`. Casos mais complexos (negrito
+envolvendo *parte* itálica no meio de uma frase, tipo `**texto *itálico*
+mais texto**`) são ambíguos até para esse parser melhorado — precisariam
+de um parser recursivo de verdade, desproporcional para um componente
+"deliberadamente mínimo" (comentário já existente no arquivo). Esses
+poucos casos (contados: 1 em go.ts, 1 em pediatria.ts, 4 em
+infectologia.ts, 3 nos resumos novos de malária) foram simplificados à
+mão (removido o itálico aninhado, mantido só o negrito).
+**Recomendação para sessões futuras: não aninhar `*itálico*` dentro de
+`**negrito**` — use só um nível de ênfase por trecho, ou o `***ambos***`
+quando o span inteiro (sem texto extra antes/depois) for itálico+negrito.**
+
+### Verificação feita
+- `tsc --noEmit` — 0 erros.
+- Script de validação (`scripts/_validate-tmp.mts`, apagado depois): 0
+  órfãos, 0 duplicados, 170 subtemas / 43 conteúdos / 43 com conteúdo.
+- Navegador (dev server, pós-seed): resumo de miomatose e câncer de mama
+  (com tabelas) renderizando corretamente; resumo de malária confirmado
+  SEM asterisco solto após o fix do parser; resumo de PAC (conteúdo
+  antigo, tinha `***S. aureus***`) também confirmado corrigido
+  retroativamente pelo mesmo fix.
+- Commit `654218e`, push feito para `main`.
+- `docs/PROMPTS-MASTER.md` e o SKILL.md da rotina diária
+  (`C:\Users\Adm\.claude\scheduled-tasks\codex-medicus-daily-dev\SKILL.md`)
+  atualizados com a nova fonte, sua estrutura e o mapeamento de
+  disciplinas — a rotina de amanhã já vai saber usar isso.
+
+### O que ficou pronto para a próxima sessão usar direto
+- **OBSTETRÍCIA** (136 PDFs/25 tópicos): nada escrito ainda nesta sessão
+  além do que já mapeava para temas existentes. Tópicos vistos no
+  inventário: TPP/prematuridade, partograma e distocias, infecções
+  congênitas na gestação (já existe resumo do lado GO — checar
+  duplicação), alteração do volume de líquido amniótico, abortamento de
+  repetição — e mais ~20 não inspecionados ainda.
+- **PEDIATRIA** (236 PDFs/25 tópicos): maior volume de todos, nada
+  escrito nesta sessão. Vistos no inventário: cuidados neonatais,
+  deficiências vitamínicas e profilaxias, anafilaxia e urticária, DNPM,
+  cefaleias na infância, púrpura de Henoch-Schönlein — e mais ~19 não
+  inspecionados.
+- **PREVENTIVA** (30 PDFs/4 tópicos — bem menor): testes diagnósticos
+  (já existe subtema em MFC — enriquecer, não duplicar), marcos legais
+  do SUS (idem), processos epidêmicos/epidemiologia das doenças
+  infecciosas, saúde do trabalhador (novo).
+- **GINECOLOGIA**: ainda restam ~16 tópicos não escritos desta leva
+  (Adenomiose, Endometriose, Cervicites, Doenças de vulva e vagina,
+  Úlceras genitais, Doenças benignas da mama, Câncer do corpo do útero,
+  Tumores anexiais/câncer de ovário, Prolapso de órgãos pélvicos,
+  Infertilidade conjugal, Sexualidade, SPM, Abdome agudo em ginecologia,
+  Assistência a vítima de violência sexual, Rastreamento — já existe
+  tema, conferir se falta subtema — Anatomia/embriologia do trato
+  genital). Extração de conteúdo já feita para Miomatose via Flashcard
+  (Mapa Mental deu erro de parse "Illegal character: 41" — tentar de
+  novo ou usar só o Flashcard, que funcionou).
+- **INFECTOLOGIA**: temas novos vistos no inventário sem equivalente na
+  taxonomia ainda — Animais Peçonhentos, IRAS, Micoses Invasivas,
+  Neutropenia Febril/FOI, Hepatoesplenomegalias Infecciosas, Síndrome
+  Febril Íctero-hemorrágica — precisam de tema/subtema novo antes de
+  virar resumo. TB latente e HIV/infecções oportunistas (subtemas já
+  existentes, vazios) podem estar cobertos dentro dos Mapas Mentais de
+  Tuberculose/HIV já extraídos — não verificado ainda.
+
 ## PRIORIDADE 1 — Continuar a extração (nesta ordem)
+
+### Estratégia MED — a fonte mais densa agora disponível
+Ver seção acima + `docs/PROMPTS-MASTER.md` ("CURSO ESTRATÉGIA MED") para
+localização exata, estrutura e o que já foi/falta escrever por
+disciplina. Ordem sugerida: Infectologia (poucos tópicos novos, resto é
+enriquecimento) → Pediatria (maior volume) → Obstetrícia → resto de
+Ginecologia → Preventiva (mesclar em MFC).
 
 ### Infectologia — 13 questões restantes do doc "infec congenita"
 Questões não extraídas ainda (números do doc original): 5, 15, 18, 23, 25,
@@ -225,19 +372,38 @@ escaneado — risco de direito autoral.
   correto. Não é bug de verdade. Confirmar servindo certo com `fetch(url)`
   direto no console (status 200, `content-type`, `content-length`) em vez
   de esperar o evento de load da tag `<img>`.
+- **`MiniMarkdown` não aceita asterisco aninhado** — nunca escrever
+  `**negrito com *itálico* no meio**`; use só um nível de ênfase, ou
+  `***span inteiro***` quando o trecho inteiro (sem texto extra antes/
+  depois dentro do mesmo span) for negrito+itálico junto. Ver "bug de
+  plataforma" nesta sessão para o porquê.
+- **`unzip` neste ambiente não casa wildcard (`*.pdf`) com `/`** — não
+  adianta `unzip arquivo.zip "*.pdf" -d dest` nem `-x "*.mp4"`; extrai
+  tudo pra uma pasta temporária e filtra depois com
+  `find tmp -iname "*.pdf" -exec cp {} dest \;`, apagando a temporária no
+  fim. Testado e confirmado nesta sessão.
+- **Dev server pode morrer sozinho sob I/O de disco pesado** (ex.: unzip
+  grande rodando em paralelo) — se `preview_start`/`navigate` falhar sem
+  motivo aparente, rodar `preview_list` para conferir se o processo
+  ainda existe; se não, só chamar `preview_start` de novo (não precisa
+  investigar mais que isso).
+- **`npx tsx ...` frequentemente cai sozinho em background** neste
+  ambiente (mesmo sem pedir `run_in_background`) — normal, só aguardar a
+  notificação em vez de re-tentar em primeiro plano.
 
 ## Checklist antes de commitar (reforçado, seguido nesta sessão)
 
 1. `NODE_OPTIONS=--max-old-space-size=6144 npx tsc --noEmit` — ok, 0 erros.
 2. Validar vínculos órfãos (script `scripts/_validate-tmp.mts`, apagado
-   depois): 0 órfãos, 0 IDs duplicados, 203 questões / 32 resumos.
-3. `npx tsx scripts/seed-supabase.mts` — ok (36 disciplinas, 32 resumos,
-   203 questões).
-4. Verificado visualmente no navegador: resumo STORCH de Infectologia e
-   página de questões de GO (hemorragias 1ª metade, 28 questões) — ambos
-   renderizando corretamente, sem erros de console.
-5. Push feito (confirmado na sessão seguinte: `origin/main` sincronizado
-   até o commit das imagens reais, nada pendente).
+   depois): 0 órfãos, 0 IDs duplicados, 170 subtemas / 43 conteúdos.
+3. `npx tsx scripts/seed-supabase.mts` — ok (36 disciplinas, 43 resumos,
+   224 questões).
+4. Verificado visualmente no navegador (pós-seed, dev server): resumos de
+   miomatose e câncer de mama (tabelas), resumo de malária (confirmando o
+   fix de markdown), resumo de PAC (confirmando o fix retroativo em
+   conteúdo antigo) — todos renderizando corretamente, sem asterisco
+   solto, sem erros de console.
+5. Push feito e confirmado (`654218e` em `origin/main`, nada pendente).
 
 ## Regra de ouro
 
