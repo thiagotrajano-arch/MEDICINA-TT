@@ -11,12 +11,12 @@ on:
 jobs:
   backup:
     runs-on: ubuntu-latest
+    env:
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
     steps:
       - uses: actions/checkout@v4
       - name: pg_dump
-        if: ${{ secrets.SUPABASE_DB_URL != '' }}
-        env:
-          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        if: ${{ env.SUPABASE_DB_URL != '' }}
         run: |
           sudo apt-get update && sudo apt-get install -y postgresql-client
           STAMP=$(date -u +%Y%m%d)
@@ -32,10 +32,13 @@ jobs:
 
   keepalive:
     runs-on: ubuntu-latest
+    env:
+      SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
     steps:
       - name: Ping Supabase (anti-hibernação)
-        if: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL != '' }}
+        if: ${{ env.SUPABASE_URL != '' }}
         run: |
           curl -sS -o /dev/null -w "%{http_code}\n" \
-            "${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}/rest/v1/disciplina?select=id&limit=1" \
-            -H "apikey: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" || true
+            "${SUPABASE_URL}/rest/v1/disciplina?select=id&limit=1" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" || true
