@@ -595,7 +595,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       {
         secao: "Pontos de prova / Pegadinhas",
         corpo:
-          "- ★ ***S. aureus* é hoje a causa mais comum**, inclusive em válvula nativa — não é mais o viridans.\n- ★ **Duke: 2 maiores OU 1 maior + 3 menores OU 5 menores.**\n- ★ **3 hemoculturas de sítios diferentes ANTES do antibiótico.**\n- ★ **Osler dói, Janeway não.**\n- ★ ***S. bovis/gallolyticus* → colonoscopia** (neoplasia de cólon).\n- ★ **Usuário de drogas IV → tricúspide** → embolia **pulmonar** séptica.\n- ★ **ETE** se prótese, ETT negativo com alta suspeita, ou suspeita de abscesso.\n- ★ **Bloqueio AV novo = abscesso perianular** até prova em contrário.\n- ★ **Profilaxia odontológica só em altíssimo risco** (prótese, EI prévia, congênita cianótica) — não mais para toda valvopatia.\n- ★ Cirurgia: **IC refratária**, infecção não controlada, êmbolos recorrentes, vegetação > 10 mm.",
+          "- ★ **S. aureus é hoje a causa mais comum**, inclusive em válvula nativa — não é mais o viridans.\n- ★ **Duke: 2 maiores OU 1 maior + 3 menores OU 5 menores.**\n- ★ **3 hemoculturas de sítios diferentes ANTES do antibiótico.**\n- ★ **Osler dói, Janeway não.**\n- ★ **S. bovis/gallolyticus → colonoscopia** (neoplasia de cólon).\n- ★ **Usuário de drogas IV → tricúspide** → embolia **pulmonar** séptica.\n- ★ **ETE** se prótese, ETT negativo com alta suspeita, ou suspeita de abscesso.\n- ★ **Bloqueio AV novo = abscesso perianular** até prova em contrário.\n- ★ **Profilaxia odontológica só em altíssimo risco** (prótese, EI prévia, congênita cianótica) — não mais para toda valvopatia.\n- ★ Cirurgia: **IC refratária**, infecção não controlada, êmbolos recorrentes, vegetação > 10 mm.",
       },
     ],
     referencias: [
@@ -959,7 +959,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       {
         secao: "Etiologia e mecanismo-chave",
         corpo:
-          "| Parasito | Via de infecção | Mecanismo-chave |\n|---|---|---|\n| ***Ascaris lumbricoides*** | Ingestão de ovos | Ciclo pulmonar (Löffler) antes de amadurecer no intestino — pode causar obstrução intestinal/biliar em carga alta |\n| Ancilostomídeos (*Necator/Ancylostoma*) | Penetração ativa pela pele (pé descalço) | Migração pulmonar, fixação na mucosa intestinal com **espoliação sanguínea crônica → anemia ferropriva** |\n| ***Strongyloides stercoralis*** | Penetração cutânea | **Autoinfecção** (único helminto capaz de completar o ciclo dentro do hospedeiro) — risco de **hiperinfecção fatal** em imunossuprimidos/uso de corticoide |\n| ***Entamoeba histolytica*** | Fecal-oral (cistos) | Invade mucosa colônica (disenteria amebiana) e pode disseminar por via portal → **abscesso hepático amebiano** |\n| ***Giardia lamblia*** | Fecal-oral (cistos) | Adere ao epitélio duodenal, causa má absorção **sem invasão tecidual** |\n| *Taenia solium/saginata* | Ingestão de carne malcozida (cisticercos) | ***T. solium*: ingestão de OVOS** (não só a carne) causa **cisticercose** (larva migra para tecidos, incluindo SNC) |\n| ***Schistosoma mansoni*** | Penetração cutânea em água doce (caramujo *Biomphalaria*) | Migração e oviposição no plexo venoso mesentérico → **fibrose periportal (Symmers)** e hipertensão porta pré-sinusoidal |",
+          "| Parasito | Via de infecção | Mecanismo-chave |\n|---|---|---|\n| ***Ascaris lumbricoides*** | Ingestão de ovos | Ciclo pulmonar (Löffler) antes de amadurecer no intestino — pode causar obstrução intestinal/biliar em carga alta |\n| Ancilostomídeos (*Necator/Ancylostoma*) | Penetração ativa pela pele (pé descalço) | Migração pulmonar, fixação na mucosa intestinal com **espoliação sanguínea crônica → anemia ferropriva** |\n| ***Strongyloides stercoralis*** | Penetração cutânea | **Autoinfecção** (único helminto capaz de completar o ciclo dentro do hospedeiro) — risco de **hiperinfecção fatal** em imunossuprimidos/uso de corticoide |\n| ***Entamoeba histolytica*** | Fecal-oral (cistos) | Invade mucosa colônica (disenteria amebiana) e pode disseminar por via portal → **abscesso hepático amebiano** |\n| ***Giardia lamblia*** | Fecal-oral (cistos) | Adere ao epitélio duodenal, causa má absorção **sem invasão tecidual** |\n| *Taenia solium/saginata* | Ingestão de carne malcozida (cisticercos) | **T. solium: ingestão de OVOS** (não só a carne) causa **cisticercose** (larva migra para tecidos, incluindo SNC) |\n| ***Schistosoma mansoni*** | Penetração cutânea em água doce (caramujo *Biomphalaria*) | Migração e oviposição no plexo venoso mesentérico → **fibrose periportal (Symmers)** e hipertensão porta pré-sinusoidal |",
       },
       {
         secao: "Quadro clínico",
@@ -1004,7 +1004,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       {
         secao: "Pontos de prova / Pegadinhas",
         corpo:
-          "- ★ ***Strongyloides* é o único helminto capaz de autoinfecção** — por isso pode persistir décadas e causar hiperinfecção fatal muito tempo depois da exposição original.\n- ★ **Sempre rastrear/tratar Strongyloides ANTES de iniciar corticoide crônico** em paciente de área endêmica — pegadinha clássica.\n- ★ **Ivermectina, não albendazol**, é o tratamento de escolha para *Strongyloides*.\n- ★ **Teníase por *T. solium*:** comer **OVOS** (não só a carne) causa cisticercose.\n- ★ **Abscesso hepático amebiano:** lesão única em lobo direito; o piogênico tende a ser múltiplo.\n- ★ **Esquistossomose crônica preserva a função hepatocelular** (fibrose pré-sinusoidal) — diferente da cirrose verdadeira.\n- ★ **EPF deve ser feito em 3 amostras de dias alternados** — amostra única tem sensibilidade baixa.",
+          "- ★ **Strongyloides é o único helminto capaz de autoinfecção** — por isso pode persistir décadas e causar hiperinfecção fatal muito tempo depois da exposição original.\n- ★ **Sempre rastrear/tratar Strongyloides ANTES de iniciar corticoide crônico** em paciente de área endêmica — pegadinha clássica.\n- ★ **Ivermectina, não albendazol**, é o tratamento de escolha para *Strongyloides*.\n- ★ **Teníase por T. solium:** comer **OVOS** (não só a carne) causa cisticercose.\n- ★ **Abscesso hepático amebiano:** lesão única em lobo direito; o piogênico tende a ser múltiplo.\n- ★ **Esquistossomose crônica preserva a função hepatocelular** (fibrose pré-sinusoidal) — diferente da cirrose verdadeira.\n- ★ **EPF deve ser feito em 3 amostras de dias alternados** — amostra única tem sensibilidade baixa.",
       },
     ],
     referencias: [
@@ -1057,7 +1057,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       {
         secao: "Complicações",
         corpo:
-          "**Infecção por *Clostridioides difficile*** (colite pseudomembranosa) pós-uso de antibiótico de amplo espectro — **clindamicina, quinolonas e cefalosporinas** classicamente mais associadas. Nefrotoxicidade (aminoglicosídeos, vancomicina), ototoxicidade (aminoglicosídeos). Seleção progressiva de flora multirresistente institucional. Reações alérgicas (verdadeira alergia a betalactâmico é mais rara do que rotulado).",
+          "**Infecção por Clostridioides difficile** (colite pseudomembranosa) pós-uso de antibiótico de amplo espectro — **clindamicina, quinolonas e cefalosporinas** classicamente mais associadas. Nefrotoxicidade (aminoglicosídeos, vancomicina), ototoxicidade (aminoglicosídeos). Seleção progressiva de flora multirresistente institucional. Reações alérgicas (verdadeira alergia a betalactâmico é mais rara do que rotulado).",
       },
       {
         secao: "Prevenção",
@@ -1184,6 +1184,168 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       "CDC — Congenital CMV, Toxoplasmosis and Syphilis Guidelines",
       "Sociedade Brasileira de Pediatria — Infecções Congênitas",
       "Material do usuário — Google Drive, doc 'infec congenita' (banco de questões perinatal)",
+    ],
+  },
+
+  "inf--malaria--diagnostico-e-tratamento": {
+    subtemaId: "inf--malaria--diagnostico-e-tratamento",
+    titulo: "Malária — diagnóstico e tratamento",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição e epidemiologia",
+        corpo:
+          "Doença causada pelo protozoário **Plasmodium spp.**, transmitida pela picada da fêmea do mosquito ***Anopheles***. **99% da transmissão no Brasil ocorre na Amazônia Legal**; fora dela é rara (áreas pontuais de Mata Atlântica). **Morar ou ter estado recentemente em área de risco** é o dado epidemiológico mais cobrado para levantar a suspeita.",
+      },
+      {
+        secao: "Ciclo de vida (fisiopatologia do acesso malárico)",
+        corpo:
+          "Merozoítos invadem hemácias → diferenciam-se em **trofozoítos** → formam **esquizontes** (esquizogonia) → **ruptura do esquizonte** libera novos merozoítos na corrente sanguínea (fenômeno que corresponde ao **acesso malárico febril**) → esses merozoítos infectam outras hemácias, fechando o ciclo, ou se diferenciam em **gametócitos** (forma transmissível ao mosquito).\n\n⚠️ **P. vivax e P. ovale** formam **hipnozoítos** (formas latentes hepáticas) → risco de **recaída** meses depois, mesmo após tratamento do episódio agudo.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "Padrão de febre por espécie:\n- *P. falciparum* e *P. vivax* — febre **terçã** (recorrência a cada **48 h**);\n- *P. malariae* — febre **quartã** (a cada **72 h**) — mnemônico: **malariae = mais longo**.\n\n*P. falciparum* é a principal causa de **malária grave** — mnemônico: **\"Falciparum? Ferrou!\"**",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "Consiste em **detectar o *Plasmodium* no sangue periférico** (gota espessa/esfregaço — padrão-ouro tradicional; testes rápidos antigênicos também disponíveis).",
+      },
+      {
+        secao: "Malária complicada (grave)",
+        corpo:
+          "**Sempre em regime de internação hospitalar.** Sinais de gravidade:\n- **Hemólise:** icterícia, anemia (mucosas descoradas);\n- **Disfunção orgânica sistêmica:** oligúria (IRA), taquicardia, cianose, sangramentos, vômitos persistentes, hiperlactatemia, acidose metabólica, descompensação de comorbidades;\n- **Lesão de órgão específica:** dor abdominal intensa (ruptura esplênica), convulsão ou desorientação (**malária cerebral**);\n- **Parasitemia elevada:** hiperparasitemia, hipoglicemia.\n\n**Malária cerebral** responde por grande parte dos óbitos — mecanismo combinado de **hipoglicemia + sequestro de hemácias parasitadas** na microcirculação.",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "Esquema conforme espécie e gravidade (combinação de esquizonticidas sanguíneos). Ponto-chave: **infecção por *P. vivax* ou *P. ovale* exige adicionar primaquina** — é a única droga que atua sobre os **hipnozoítos** hepáticos, prevenindo a recaída (contraindicada na gestação e deficiência de G6PD).",
+      },
+      {
+        secao: "Prevenção",
+        corpo:
+          "**Quimioprofilaxia não é rotineiramente recomendada no Brasil**, pois o predomínio de casos é por **P. vivax**, espécie para a qual a profilaxia medicamentosa tem **baixa eficácia**. Quando indicada (viajantes para áreas de alto risco por *P. falciparum*), deve começar **antes da viagem** e continuar por período definido **após o retorno**.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **Terçã (48h) = falciparum/vivax; quartã (72h) = malariae** — decore pelo mnemônico \"malariae = mais longo\".\n- **Falciparum é a espécie que mata** — sempre suspeitar de forma grave.\n- **Primaquina é exclusiva para vivax/ovale** — trata a forma hepática latente, não a fase sanguínea.\n- **Quimioprofilaxia NÃO é rotina no Brasil** — pegadinha clássica, pois o país é predominantemente de *vivax*.\n- Área de risco (Amazônia Legal) é o **dado epidemiológico-chave** que a banca usa para sinalizar malária.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Guia de Tratamento da Malária no Brasil",
+      "OMS — Guidelines for the Treatment of Malaria",
+      "Material do curso Estratégia MED — Infectologia",
+    ],
+  },
+
+  "inf--arboviroses--zika-e-chikungunya": {
+    subtemaId: "inf--arboviroses--zika-e-chikungunya",
+    titulo: "Zika e chikungunya",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Arboviroses transmitidas pelo ***Aedes aegypti*** (o mesmo vetor da dengue), o que faz com que **cocirculem na mesma região e época** e sejam constantemente cobradas em **diagnóstico diferencial** com a dengue.",
+      },
+      {
+        secao: "Chikungunya — quadro clínico",
+        corpo:
+          "**Fase aguda:** febre alta de início súbito **+ poliartralgia intensa**, tipicamente **bilateral, simétrica e incapacitante**, acometendo pequenas articulações (mãos, punhos, tornozelos) — é essa artralgia desproporcional que diferencia clinicamente de dengue e zika.\n\n**Fase crônica:** artralgia persistente por **semanas a meses** (pode durar anos em parcela dos pacientes) — a principal sequela da doença.",
+      },
+      {
+        secao: "Chikungunya — tratamento",
+        corpo:
+          "Sintomático: analgesia (paracetamol/dipirona). **Evitar AINE e AAS na fase aguda febril** enquanto a dengue não é excluída (risco de sangramento caso seja dengue). Na **fase crônica**, com artralgia refratária, **corticoide** pode ser empregado.",
+      },
+      {
+        secao: "Zika — transmissão e quadro clínico",
+        corpo:
+          "Transmissão pelo *Aedes*, além de **sexual** e **vertical** (mãe-feto). Quadro geralmente mais brando que dengue/chikungunya: **exantema pruriginoso**, **conjuntivite não purulenta**, febre baixa ou ausente, artralgia leve.",
+      },
+      {
+        secao: "Zika — complicações",
+        corpo:
+          "**Síndrome congênita do Zika** (infecção na gestação): **microcefalia**, microftalmia, pé torto congênito, artrogripose, hidropsia fetal, restrição de crescimento fetal, abortamento e óbito fetal.\n\n**Manifestações neurológicas no adulto:** **síndrome de Guillain-Barré**, meningoencefalite, mielite, paralisia facial.",
+      },
+      {
+        secao: "Diagnóstico diferencial das arboviroses",
+        corpo:
+          "| | Dengue | Chikungunya | Zika |\n|---|---|---|---|\n| Febre | Alta | Alta, início súbito | Baixa ou ausente |\n| Artralgia | Leve a moderada | **Intensa, incapacitante** | Leve |\n| Exantema | Comum | Comum | **Muito pruriginoso** |\n| Conjuntivite | Rara | Rara | **Comum, não purulenta** |\n| Gravidade típica | Risco de choque/hemorragia | Cronificação articular | Risco fetal (microcefalia) |",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **Mesmo vetor das 3 (*Aedes aegypti*)** — cocirculação exige diagnóstico diferencial ativo, não só pensar em dengue.\n- **Chikungunya = artralgia desproporcional e incapacitante**, muitas vezes o dado que mais aparece no enunciado.\n- **Evitar AINE/AAS** em qualquer síndrome febril aguda compatível com arbovirose até excluir dengue.\n- **Zika na gestação = microcefalia** — a associação mais cobrada de toda a tríade.\n- **Guillain-Barré é a principal complicação neurológica do adulto** na infecção por Zika.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Guia de Vigilância em Saúde (Arboviroses)",
+      "Ministério da Saúde — Protocolo de Manejo Clínico de Chikungunya",
+      "Material do curso Estratégia MED — Infectologia",
+    ],
+  },
+
+  "inf--covid-19-e-influenza--manejo-ambulatorial-e-hospitalar": {
+    subtemaId: "inf--covid-19-e-influenza--manejo-ambulatorial-e-hospitalar",
+    titulo: "COVID-19 e influenza — manejo ambulatorial e hospitalar",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "COVID-19 — definição e transmissão",
+        corpo:
+          "**SARS-CoV-2** — betacoronavírus, RNA, com a **proteína Spike** como principal estrutura viral (alvo de vacinas e de entrada celular). Transmissão pessoa-a-pessoa por **secreções — predominantemente gotículas**, com potencial de **aerossóis** em procedimentos geradores de aerossol. **Imunossuprimidos podem ter excreção viral prolongada.**\n\n**Precauções hospitalares:** contato + gotículas na rotina; **contato + aerossóis** em procedimentos que geram aerossol.",
+      },
+      {
+        secao: "COVID-19 — fatores de risco e complicações",
+        corpo:
+          "Idade **≥ 60 anos**, doenças cardiovasculares, diabetes, pneumopatia crônica, doença renal crônica, doença hepática crônica, câncer, imunossupressão, obesidade, gestação.\n\nEm **crianças**, complicação característica: **Síndrome Inflamatória Multissistêmica Pediátrica (SIM-P)**, tipicamente semanas após a infecção aguda.",
+      },
+      {
+        secao: "COVID-19 — diagnóstico por imagem",
+        corpo:
+          "Padrões tomográficos mais comuns:\n1. **Opacidades em vidro fosco periféricas e bilaterais** — achado mais frequente;\n2. Padrão em **pavimentação (\"crazy paving\")**;\n3. **Sinal do halo reverso.**",
+      },
+      {
+        secao: "Influenza — definição e tipos",
+        corpo:
+          "Vírus RNA, **4 tipos**: **A** (maior variabilidade antigênica, infecta humanos/aves/suínos, **maior potencial pandêmico**), **B** (só humanos, variabilidade intermediária), **C** (leve), **D** (não infecta humanos). Distribuição **global e sazonal**. Transmissão por **gotículas + contato** — precaução padrão + gotículas.",
+      },
+      {
+        secao: "Influenza — quadro clínico e diferenciais",
+        corpo:
+          "Início **SÚBITO**, com sintomas **respiratórios** (tosse, dor de garganta, coriza) **+ sistêmicos** (febre, mialgia, prostração) — é essa combinação súbita e sistêmica que diferencia de uma **IVAS comum** (mais insidiosa, só respiratória) e da **pneumonia bacteriana** (tosse produtiva, dor torácica ventilatório-dependente).",
+      },
+      {
+        secao: "Influenza — diagnóstico",
+        corpo:
+          "**RT-PCR** é o método mais utilizado. Teste rápido de antígeno tem **sensibilidade inferior**. Radiografia/TC (se suspeita de complicação): **infiltrado intersticial**, vidro fosco; consolidações são **menos comuns** que na pneumonia bacteriana.",
+      },
+      {
+        secao: "Influenza — sinais de gravidade",
+        corpo:
+          "Dispneia/taquipneia (FR ≥ 20) ou hipoxemia (SpO₂ < 95%); **persistência ou piora da febre após 3 dias**, ou **retorno da febre após 48 h afebril**; alteração do sensório; hipotensão; diurese reduzida; exacerbação de doença de base; em crianças — estridor, bradipneia, gemência.",
+      },
+      {
+        secao: "Influenza — tratamento",
+        corpo:
+          "**Oseltamivir 75 mg VO 12/12h por 5 dias** é a droga de escolha (alternativa: zanamivir inalatório). Ideal **iniciar em até 48 h** do início dos sintomas, mas **sempre tratar** grupo de risco mesmo além desse prazo. **AAS é contraindicado** (risco de síndrome de Reye). Antibiótico só se suspeita de infecção bacteriana secundária.\n\n**Quimioprofilaxia pós-exposição** (grupo de risco não vacinado, iniciada em até 48 h): reduz o risco em **70–90%**.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **Vidro fosco periférico bilateral** é o achado tomográfico mais frequente e mais cobrado de COVID-19.\n- **Influenza tem início súbito e sistêmico** — o que a distingue de IVAS (gradual) e pneumonia bacteriana (tosse produtiva).\n- **Retorno da febre após 48h afebril** é sinal de alarme em influenza — sugere complicação bacteriana secundária.\n- **Oseltamivir sempre no grupo de risco**, mesmo fora da janela ideal de 48h.\n- **AAS contraindicado na influenza** (síndrome de Reye) — mesma lógica de outras viroses em crianças/jovens.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Protocolo de Manejo Clínico da COVID-19",
+      "Ministério da Saúde — Protocolo de Tratamento de Influenza",
+      "Material do curso Estratégia MED — Infectologia",
     ],
   },
 };

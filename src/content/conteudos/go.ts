@@ -199,7 +199,7 @@ export const CONTEUDOS_GO: Record<string, ConteudoSubtema> = {
       {
         secao: "Gravidez ectópica — fatores de risco",
         corpo:
-          "- **GE prévia** (6–8×) — maior FR isolado;\n- **DIP/salpingite, especialmente por *Chlamydia*** (3–7×);\n- Cirurgia tubária prévia, inclusive laqueadura (4–5×);\n- Endometriose (2–3×), tabagismo dose-dependente (2–3×), idade > 35 anos, FIV.\n\n⚠️ **Pegadinha clássica:** o **DIU não aumenta o risco absoluto** de GE (é altamente eficaz contra qualquer gestação) — mas, na rara falha contraceptiva, a **proporção relativa** de GE entre as gestações que ocorrem é maior, pois protege menos contra implantação tubária do que intrauterina. Mesmo raciocínio para **contracepção com progestágeno isolado**.",
+          "- **GE prévia** (6–8×) — maior FR isolado;\n- **DIP/salpingite, especialmente por Chlamydia** (3–7×);\n- Cirurgia tubária prévia, inclusive laqueadura (4–5×);\n- Endometriose (2–3×), tabagismo dose-dependente (2–3×), idade > 35 anos, FIV.\n\n⚠️ **Pegadinha clássica:** o **DIU não aumenta o risco absoluto** de GE (é altamente eficaz contra qualquer gestação) — mas, na rara falha contraceptiva, a **proporção relativa** de GE entre as gestações que ocorrem é maior, pois protege menos contra implantação tubária do que intrauterina. Mesmo raciocínio para **contracepção com progestágeno isolado**.",
       },
       {
         secao: "Gravidez ectópica — quadro clínico",
@@ -401,6 +401,403 @@ export const CONTEUDOS_GO: Record<string, ConteudoSubtema> = {
       "ACOG Practice Bulletin 178 — Shoulder Dystocia",
       "FEBRASGO — Protocolos de Distocia e Assistência ao Parto",
       "Material do usuário — OMED GO · Material Completo (10 Temas)",
+    ],
+  },
+
+  "go--disturbios-endocrino-menstruais--sindrome-dos-ovarios-policisticos": {
+    subtemaId: "go--disturbios-endocrino-menstruais--sindrome-dos-ovarios-policisticos",
+    titulo: "Síndrome dos ovários policísticos",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Uma das **doenças endócrinas mais comuns** em mulheres em idade reprodutiva — incidência estimada de **4% a 20%**. Síndrome de **hiperandrogenismo + anovulação crônica**, com repercussão metabólica (resistência insulínica) além da reprodutiva.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "**Teoria das duas células** da esteroidogênese ovariana: o **LH** estimula a conversão de colesterol em andrógenos (androstenediona/testosterona) nas **células da teca**; o **FSH** estimula a aromatização desses andrógenos em estrógenos nas **células da granulosa**.\n\nNa SOP: **↑LH** (desproporcional ao FSH) → excesso de produção androgênica pela teca; **resistência insulínica** → ↓**SHBG** (globulina carreadora) → ↑**testosterona livre** circulante. O excesso androgênico bloqueia a seleção folicular normal, perpetuando a **anovulação crônica**.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "- **Hiperandrogenismo clínico:** hirsutismo (**Índice de Ferriman-Gallwey ≥ 8**), acne, pele oleosa, queda de cabelo; nos casos graves, sinais de **virilização** (clitoromegalia, engrossamento da voz, alopecia, aumento de massa muscular);\n- **Anovulação crônica:** irregularidade menstrual, amenorreia;\n- **Repercussão metabólica:** dificuldade de perda de peso, piora de resistência insulínica e intolerância à glicose, acantose nigricans — sobretudo em obesas com história familiar de DM2.",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "**Critérios de Rotterdam** — pelo menos **2 dos 3**:\n1. Hiperandrogenismo clínico e/ou laboratorial;\n2. Anovulação crônica (irregularidade menstrual/amenorreia);\n3. Alterações ultrassonográficas: **≥ 20 folículos** com diâmetro médio de 2–9 mm **e/ou** volume ovariano total **≥ 10 cm³** (critério ASRM/ESHRE).\n\n**Sempre excluir outras causas** de hiperandrogenismo/anovulação antes de fechar o diagnóstico: tumor adrenal e hiperplasia adrenal congênita (**17-OH-progesterona, DHEA-S**), tumor ovariano (**testosterona**), hiperprolactinemia (**prolactina**), distúrbio tireoidiano (**TSH**).",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**A perda de peso (dieta + atividade física) é o pilar do tratamento em todos os cenários.**\n\n- **Sem desejo de concepção:** anticoncepcional hormonal combinado (de preferência) — o estrogênio ↑SHBG (↓testosterona livre) e o progestágeno inibe LH (↓produção androgênica pela teca) e opõe-se à proliferação endometrial (previne hiperplasia/câncer de endométrio pela anovulação crônica);\n- **Hirsutismo refratário** (sem melhora após 6 meses de ACO): antiandrogênico — **espironolactona (1ª escolha)**, acetato de ciproterona, finasterida, flutamida;\n- **Distúrbios metabólicos** (resistência insulínica): **metformina** é a droga de 1ª linha;\n- **Com desejo de concepção:** indutor de ovulação — **letrozol é a 1ª escolha** (superior ao clomifeno em taxa de nascidos vivos na SOP).",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **Rotterdam exige apenas 2 de 3 critérios** — não precisa ter USG alterada para diagnosticar SOP.\n- **Sempre excluir diagnósticos diferenciais** (adrenal, tireoide, prolactina, tumor ovariano) antes de rotular como SOP.\n- **Letrozol, não clomifeno, é hoje a 1ª escolha** para indução de ovulação na SOP — mudança de conduta muito cobrada.\n- O anticoncepcional combinado trata **tanto o hirsutismo quanto a proteção endometrial** — mecanismo duplo.\n- **Perda de peso** melhora o quadro em qualquer cenário, inclusive fertilidade.",
+      },
+    ],
+    referencias: [
+      "FEBRASGO — Síndrome dos Ovários Policísticos (Série Orientações e Recomendações, n.4, Comissão Nacional de Ginecologia Endócrina, 2018)",
+      "Consenso de Rotterdam (ASRM/ESHRE)",
+      "Material do curso Estratégia MED — Ginecologia",
+    ],
+  },
+
+  "go--infeccoes-ginecologicas--vulvovaginites": {
+    subtemaId: "go--infeccoes-ginecologicas--vulvovaginites",
+    titulo: "Vulvovaginites",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Processo inflamatório da vulva e vagina. O **corrimento vaginal fisiológico** é pequena quantidade, homogêneo, fluido, esbranquiçado/amarelado, **pH 4,0–4,5**, sem odor, prurido ou sinais inflamatórios — a flora normal é rica em **lactobacilos**, produtores de ácido lático. A **disbiose** (ruptura desse ecossistema) é a porta de entrada das vulvovaginites.",
+      },
+      {
+        secao: "Diagnóstico (abordagem geral)",
+        corpo:
+          "Anamnese (características do corrimento, evolução, fatores predisponentes, hábitos de higiene) + exame físico + **pH vaginal**, **teste das aminas (Whiff test)**, bacterioscopia, cultura, PCR conforme o caso.",
+      },
+      {
+        secao: "Tabela comparativa — as 3 principais causas",
+        corpo:
+          "| | Vaginose bacteriana | Candidíase | Tricomoníase |\n|---|---|---|---|\n| Frequência no menacme | **1ª causa** | 2ª causa | IST não viral mais comum no mundo |\n| Agente | *Gardnerella vaginalis*, *Mobiluncus*, anaeróbios (desbalanço de flora) | *Candida albicans* (a maioria) | *Trichomonas vaginalis* (protozoário flagelado) |\n| Corrimento | Branco/acinzentado, homogêneo, **odor desagradável**, geralmente sem inflamação | Esbranquiçado, \"leite coalhado\", **sem odor** | Amarelo-esverdeado, fluido, abundante, bolhoso, odor desagradável |\n| Sintomas-chave | Frequentemente **assintomática** (50–75%) | Prurido, dispareunia, queimação, disúria, piora pré-menstrual | Prurido, disúria, dispareunia; piora no período menstrual |\n| pH | **> 4,5** | **< 4,5** | **> 4,5** |\n| Whiff test | **Positivo** | Negativo | Pode ser positivo |\n| Achado especular | Clue cells (células-guia) | — | Colo em framboesa / colo tigroide |\n| Tratar parceria? | Não rotineiramente | Não | **Sim — sempre** (IST) |",
+      },
+      {
+        secao: "Diagnóstico — Vaginose bacteriana",
+        corpo:
+          "**Critérios de Amsel** — pelo menos **3 de 4**: corrimento branco-acinzentado homogêneo; pH > 4,5; Whiff test positivo; **clue cells** presentes.",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**Vaginose bacteriana** (inclusive gestantes/lactantes): metronidazol 250 mg VO 12/12h por 7 dias **ou** metronidazol gel vaginal 100 mg/g à noite por 5 dias; 2ª opção clindamicina. Recorrência: esquema estendido (10–14 dias) + manutenção com óvulo de ácido bórico e gel de metronidazol por meses.\n\n**Candidíase:** classificar em **não complicada** (esporádica, sintomas leves-moderados, *C. albicans*, imunocompetente) vs. **complicada** (recorrente ≥ 3-4/ano, sintomas graves, *C. glabrata* ou outra não-albicans, gestante/diabética/imunossuprimida) — a complicada exige indução + manutenção por 6 meses (fluconazol semanal ou miconazol tópico).\n\n**Tricomoníase:** metronidazol 250 mg VO 12/12h por 7 dias (MS) **ou** 2 g VO dose única; CDC aceita tinidazol 2 g DU. **Sempre tratar a parceria** (VO, nunca só tópico) — é uma IST.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **pH é o divisor de águas:** candidíase tem pH **< 4,5** (normal); vaginose e tricomoníase têm pH **> 4,5**.\n- **Clue cells = vaginose bacteriana.** Colo em framboesa/tigroide = tricomoníase.\n- **Só a tricomoníase exige tratar a parceria** por rotina — é a única IST das três.\n- Metronidazol tópico/oral é **seguro na gestação** — não adiar o tratamento da vaginose por isso.\n- Candidíase **não é IST** — não trata parceiro por rotina.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — PCDT Corrimento Vaginal / IST",
+      "CDC — Sexually Transmitted Infections Treatment Guidelines",
+      "Material do curso Estratégia MED — Ginecologia",
+    ],
+  },
+
+  "go--infeccoes-ginecologicas--doenca-inflamatoria-pelvica-dip": {
+    subtemaId: "go--infeccoes-ginecologicas--doenca-inflamatoria-pelvica-dip",
+    titulo: "Doença inflamatória pélvica (DIP)",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição e etiologia",
+        corpo:
+          "Conjunto de processos inflamatórios do **trato genital superior**, secundário à **ascensão de microrganismos** a partir do trato genital inferior. Os principais agentes são os **mesmos da cervicite**: **Chlamydia trachomatis** e **Neisseria gonorrhoeae**.",
+      },
+      {
+        secao: "Fatores de risco",
+        corpo:
+          "Associados a **comportamento sexual de risco** — mais comum em **pacientes jovens**, múltiplos parceiros, IST prévia, não uso de preservativo.",
+      },
+      {
+        secao: "Quadro clínico",
+        corpo:
+          "Dor abdominal (pélvica), secreção vaginal amarelada, febre, calafrios, anorexia, náuseas, vômitos, diarreia, **dismenorreia**, **dispareunia**, menorragia.",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "Antibioticoterapia empírica cobrindo *Chlamydia*, *Neisseria* e anaeróbios (esquema MS: ceftriaxona + doxiciclina ± metronidazol).\n\n**Tratamento da parceria sexual** — sempre: **ceftriaxona 500 mg IM + azitromicina 1 g VO, ambos em dose única.**\n\n**DIP × DIU:** usuária de DIU **não precisa remover o dispositivo** rotineiramente; se houver indicação de remoção, só **após 2 doses do esquema terapêutico**.",
+      },
+      {
+        secao: "Critérios de internação",
+        corpo:
+          "Manutenção de abscesso pélvico mesmo após tratamento clínico; suspeita de **abscesso tubo-ovariano roto**; peritonite difusa ou hemoperitônio; instabilidade hemodinâmica refratária; abscesso em fundo de saco de Douglas (indicação de **culdocentese**); gravidez; intolerância a antibióticos orais; dificuldade de seguimento ambulatorial; ausência de resposta clínica em 72 h de ATB oral; dúvida diagnóstica com emergência cirúrgica (apendicite, ectópica).",
+      },
+      {
+        secao: "Critérios para abordagem cirúrgica",
+        corpo:
+          "Falha do tratamento clínico; abscesso tubo-ovariano ou peritonite; estado geral grave (náuseas, vômitos, febre); ausência de resposta após 72 h de ATB oral.",
+      },
+      {
+        secao: "Seguimento",
+        corpo:
+          "**Ambulatorial:** reavaliar em **72 horas** — se não houver melhora, internar.\n**Internada:** reavaliar em **48 horas** — avaliar necessidade de cirurgia.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- Os agentes da DIP são **os mesmos da cervicite** — DIP é a ascensão não tratada de uma cervicite.\n- **DIU não precisa ser removido** de rotina só porque há DIP.\n- Tratamento da parceria é **sempre em dose única** (ceftriaxona IM + azitromicina VO) — não precisa aguardar cultura.\n- Reavaliação é **72 h se ambulatorial, 48 h se internada** — prazos diferentes, pegadinha clássica.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — PCDT Infecções Sexualmente Transmissíveis",
+      "CDC — STI Treatment Guidelines (Pelvic Inflammatory Disease)",
+      "Material do curso Estratégia MED — Ginecologia",
+    ],
+  },
+
+  "go--oncologia-ginecologica--cancer-de-colo-uterino": {
+    subtemaId: "go--oncologia-ginecologica--cancer-de-colo-uterino",
+    titulo: "Câncer de colo uterino",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição e epidemiologia",
+        corpo:
+          "**4º câncer mais comum** no sexo feminino no mundo; **3º no Brasil**. Causa: **HPV** — é, portanto, um câncer **prevenível** (vacinação + rastreamento).",
+      },
+      {
+        secao: "Fatores de risco",
+        corpo:
+          "Infecção pelo **HPV** (o principal), tabagismo, início precoce da atividade sexual, múltiplos parceiros, IST prévias, imunossupressão, multiparidade, história de neoplasia intraepitelial/câncer vaginal ou vulvar, baixo nível socioeconômico, uso de ACO, raça negra.",
+      },
+      {
+        secao: "Quadro clínico e diagnóstico",
+        corpo:
+          "Pode ser **assintomático** (rastreamento) ou sintomático — **sinusorragia** (sangramento pós-coito), corrimento com odor. Ao exame: toque vaginal e retal. **Qualquer lesão visível suspeita deve ser biopsiada** — diagnóstico é anatomopatológico.",
+      },
+      {
+        secao: "Estadiamento (FIGO 2018)",
+        corpo:
+          "Exames complementares variam por estádio suspeito:\n- **IA2–IB2:** radiografia de tórax (metástase pulmonar) + RM de pelve (tamanho tumoral, paramétrios, bexiga, reto) + TC de abdome/pelve ou PET-CT (linfonodos).\n- **Doença localmente avançada (IB3–IVA):** RM de pelve (bexiga/reto) + PET-CT (metástase a distância).",
+      },
+      {
+        secao: "Tratamento por estádio",
+        corpo:
+          "| Estádio | Conduta |\n|---|---|\n| Ca in situ | Conização (diagnóstica e terapêutica); se **adenocarcinoma in situ** → histerectomia simples |\n| IA1 (invasão < 3 mm) sem IELV | Histerectomia extrafascial simples (Piver I); **conização se desejo de prole** |\n| IA1 com IELV | Histerectomia Piver II + linfadenectomia |\n| IA2 (invasão 3–5 mm) | Histerectomia Piver II + linfadenectomia; traquelectomia se desejo de prole |\n| IB1 (< 2 cm) / IB2 (2–4 cm) | Histerectomia Piver III + linfadenectomia |\n| IB3 (≥ 4 cm) em diante | **Quimiorradiação** |\n\n**IELV** = invasão do espaço linfovascular. A quimiorradiação é opção de tratamento para **qualquer estádio**. Casos operados: avaliar fatores de risco para terapia adjuvante.",
+      },
+      {
+        secao: "Câncer de colo na gestação",
+        corpo:
+          "Curso e prognóstico semelhantes aos da não gestante. Última dose de QT deve ser **3 semanas antes do parto previsto**. Parto na viabilidade fetal ou com **37 semanas**, via **cesárea** — exceto estádios IA1/IA2 com < 20 semanas já tratados por conização com margens livres.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **HPV é necessário mas a doença é prevenível** — rastreamento (citologia) + vacinação são as intervenções-chave.\n- Para a prova, **histerectomia é o tratamento padrão** mesmo quando a conização isolada poderia ser considerada suficiente em casos muito iniciais.\n- **A partir de IB3, o tratamento é quimiorradiação** — não mais cirurgia primária.\n- Via de parto na gestante com câncer de colo: **cesárea**, com exceção pontual para estádios muito iniciais já tratados.",
+      },
+    ],
+    referencias: [
+      "FIGO — Estadiamento do Câncer de Colo Uterino (2018)",
+      "INCA — Diretrizes para o Rastreamento do Câncer do Colo do Útero",
+      "Material do curso Estratégia MED — Ginecologia",
+    ],
+  },
+
+  "go--mastologia--cancer-de-mama": {
+    subtemaId: "go--mastologia--cancer-de-mama",
+    titulo: "Câncer de mama",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição e epidemiologia",
+        corpo:
+          "Câncer **mais frequente** nas mulheres (excluindo câncer de pele não melanoma) e o que **mais mata mulheres** no mundo e no Brasil.",
+      },
+      {
+        secao: "Fatores de risco",
+        corpo:
+          "Idade > 50 anos; obesidade/sobrepeso pós-menopausa; sedentarismo; álcool; menarca < 12 anos; nuliparidade; 1ª gestação > 30 anos; menopausa > 55 anos; uso de ACO; **TRH pós-menopausa > 5 anos**; densidade mamária > 75%; biópsia prévia com atipia; radioterapia torácica antes dos 30 anos; história familiar (1º grau com CA de mama/ovário pré-menopausa, CA de mama masculino); **mutação BRCA 1/2**.\n\n**BRCA 1/2** (genes supressores tumorais, mutação autossômica dominante): ~10% dos cânceres de mama são hereditários, ~50% destes por BRCA. **BRCA1** — risco cumulativo aos 80 anos: 72% mama / 44% ovário. **BRCA2** — 69% mama / 17% ovário.",
+      },
+      {
+        secao: "Prevenção em alto risco",
+        corpo:
+          "**Quimioprofilaxia** (tamoxifeno): risco > 20% pelo escore Tyrer-Cuzick; hiperplasia ductal/lobular atípica; carcinoma lobular in situ.\n\n**Mastectomia profilática:** mutação BRCA 1/2 confirmada; radioterapia torácica antes dos 30 anos; BRCA+ que não deseja quimioprofilaxia.",
+      },
+      {
+        secao: "Tipos histológicos",
+        corpo:
+          "**Carcinoma ductal invasivo (CDI)** — ~80%, o mais comum, nódulo único endurecido. **Carcinoma lobular invasivo (CLI)** — ~10%, RH positivos, pode ser multifocal/multicêntrico/bilateral. Demais (tubular, mucinoso, medular, micropapilar, metaplásico, adenoide cístico, secretório) somam poucos % cada. **Carcinoma inflamatório** (~1–3%) — peau d'orange, diferencial com mastite. **Doença de Paget** — ulceração/destruição do mamilo, diferencial com eczema.",
+      },
+      {
+        secao: "Classificação molecular (perfil imuno-histoquímico)",
+        corpo:
+          "| Subtipo | RE/RP | HER2 | Ki-67 |\n|---|---|---|---|\n| Luminal A | Positivos | Negativo (0/1+) | < 20% |\n| Luminal B | RE+ | +/− | RP < 20% e/ou Ki-67 > 20% |\n| HER2 puro | Negativos | Positivo (3+) | — |\n| Triplo negativo | Negativos | Negativo | — |",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**Cirurgia:** quadrantectomia (conservadora) é preferida quando não há contraindicação (tumor muito grande relativo à mama, microcalcificações extensas, multicentricidade, RT torácica prévia); senão, mastectomia.\n\n**Linfonodo sentinela** se axila clinicamente negativa e tumor T1/T2. **Esvaziamento axilar** se ≥ 3 linfonodos comprometidos ou axila clinicamente positiva — risco de **linfedema 4× maior** que no sentinela.\n\n**Radioterapia:** sempre após quadrantectomia; após mastectomia se T3/T4 ou ≥ 4 linfonodos comprometidos.\n\n**Hormonioterapia** (se RH+): **tamoxifeno** na pré-menopausa (SERM — antagonista na mama, agonista no endométrio; melhora sobrevida ~40%, risco de TEV); **inibidores de aromatase** (anastrozol, letrozol) na pós-menopausa.\n\n**Quimioterapia:** adjuvante no estádio inicial (I–IIB/T2N1); neoadjuvante no localmente avançado (> IIB/T3N0). Esquema padrão: antraciclina + ciclofosfamida + taxano.\n\n**Imunoterapia:** **trastuzumabe** (anti-HER2) para tumores HER2+.",
+      },
+      {
+        secao: "Situações especiais",
+        corpo:
+          "**Gestação:** cirurgia liberada em qualquer trimestre; linfonodo sentinela só com radiofármaco; **radioterapia proibida na gestação**; QT permitida **após o 1º trimestre**; **tamoxifeno e trastuzumabe contraindicados** na gestação e amamentação.\n\n**Homem:** ~1% dos casos; fatores de risco incluem mutação BRCA, Klinefelter (46,XXY), uso de esteroide exógeno.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **Triplo negativo** = pior prognóstico entre os subtipos moleculares comuns.\n- **Tamoxifeno na pré-menopausa, inibidor de aromatase na pós** — não trocar.\n- **Radioterapia é proibida durante toda a gestação**; quimioterapia só é liberada após o 1º trimestre (organogênese).\n- Esvaziamento axilar tem **4× mais risco de linfedema** que linfonodo sentinela.\n- **Doença de Paget** mimetiza eczema; **carcinoma inflamatório** mimetiza mastite — diferenciais clássicos.",
+      },
+    ],
+    referencias: [
+      "INCA / FEBRASGO — Diretrizes de Câncer de Mama",
+      "St. Gallen Consensus — Classificação molecular do câncer de mama",
+      "Material do curso Estratégia MED — Ginecologia",
+    ],
+  },
+
+  "go--uroginecologia--incontinencia-urinaria": {
+    subtemaId: "go--uroginecologia--incontinencia-urinaria",
+    titulo: "Incontinência urinária",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Perda involuntária de qualquer volume de urina. **Fisiologia da continência:** enchimento vesical é mediado pelo **simpático** (relaxa o detrusor via β2, contrai o esfíncter via α1); esvaziamento é mediado pelo **parassimpático** (contrai o detrusor via M1) + controle somático do esfíncter.",
+      },
+      {
+        secao: "Classificação",
+        corpo:
+          "- **Incontinência urinária aos esforços (IUE):** perda associada a esforço físico (tossir, pular, espirrar), pequeno volume;\n- **Incontinência urinária de urgência (IUU):** perda precedida de urgência miccional súbita, grande volume;\n- **Mista (IUM):** ambos os componentes;\n- **Bexiga hiperativa:** urgência ± incontinência;\n- **Hiperatividade do detrusor:** achado urodinâmico de contrações involuntárias do detrusor.",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "**Sempre afastar ITU primeiro** (urina tipo 1 + urocultura) antes de investigar. Anamnese + exame físico (perda à manobra de Valsalva).\n\n**Estudo urodinâmico** — indicado se falha de tratamento conservador prévio, antes de cirurgia, ou sintomatologia mista. Etapas: urofluxometria → cistometria → fluxometria de pressão. **Pressão de perda aos esforços < 60 cmH₂O = deficiência esfincteriana intrínseca; > 90 cmH₂O = hipermobilidade do colo vesical.**",
+      },
+      {
+        secao: "Tabela comparativa — IUE × IUU",
+        corpo:
+          "| | IUU | IUE |\n|---|---|---|\n| Urgência | Sim | Não |\n| Aumento de frequência | Sim | Não |\n| Perda com esforço | Não | Sim |\n| Volume por episódio | Grande | Pequeno |\n| Consegue chegar ao banheiro | Frequentemente não | Sim |\n| Noctúria | Sim | Não |",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**IUE:** 1ª linha é **fisioterapia** (exercícios do assoalho pélvico). Cirúrgico (falha do conservador): **colpofixação retropúbica** ou **slings** — via retropúbica de escolha na deficiência esfincteriana intrínseca (mais complicações, ex. lesão vesical); via transobturatória com menor risco.\n\n**IUU:** 1ª linha é **tratamento conservador** (ajuste de ingesta hídrica, treinamento vesical, perda de peso). Farmacológico: **anticolinérgicos** (oxibutinina — mais barata/disponível no SUS —, tolterodina, darifenacina, solifenacina; contraindicados em arritmia, glaucoma de ângulo fechado, doença intestinal obstrutiva). **Não há tratamento cirúrgico para IUU isolada.**",
+      },
+      {
+        secao: "Diagnóstico diferencial",
+        corpo:
+          "**Síndrome da bexiga dolorosa:** dor que piora com enchimento e melhora com esvaziamento; diagnóstico de exclusão; cistoscopia com úlceras de Hunner. **Incontinência por transbordamento:** secundária a lesão neurológica.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **Sempre excluir ITU antes** de qualquer investigação de incontinência — a pegadinha mais comum.\n- Pressão de perda **< 60 = deficiência esfincteriana; > 90 = hipermobilidade** — não inverter.\n- **IUE não tem tratamento farmacológico eficaz de rotina** — é fisioterapia + cirurgia.\n- **IUU não tem tratamento cirúrgico** — é comportamental + anticolinérgico.\n- Via retropúbica do sling: mais eficaz na deficiência esfincteriana, porém mais complicações que a transobturatória.",
+      },
+    ],
+    referencias: [
+      "FEBRASGO — Incontinência Urinária de Esforço",
+      "International Continence Society (ICS) — critérios de classificação",
+      "Material do curso Estratégia MED — Ginecologia",
+    ],
+  },
+
+  "go--climaterio--climaterio-e-terapia-hormonal": {
+    subtemaId: "go--climaterio--climaterio-e-terapia-hormonal",
+    titulo: "Climatério e terapia hormonal",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definições",
+        corpo:
+          "**Menopausa:** data da última menstruação por falência ovariana (diagnóstico **retrospectivo**, confirmado após 12 meses de amenorreia).\n**Climatério:** fase de transição entre o menacme e a senilidade — engloba parte do menacme até a menopausa. Idade média: **46–52 anos**.\n**Perimenopausa:** do início da irregularidade menstrual até 1 ano após a menopausa.\n**Insuficiência ovariana prematura:** cessação da menstruação **antes dos 40 anos** com FSH elevado.\n\n⚠️ **O diagnóstico da transição menopáusica é CLÍNICO** — não depende de dosagem hormonal.",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "Depleção folicular progressiva → ↓inibina B → ↑FSH (perda de feedback negativo) → depleção acelerada → reserva folicular muito baixa → ↓estradiol → ausência de pico de LH → **anovulação**. Na pós-menopausa, com exaustão folicular completa, o estrogênio dominante passa a ser a **estrona**, produzida por conversão periférica de andrógenos.",
+      },
+      {
+        secao: "Manifestações clínicas",
+        corpo:
+          "- **Vasomotoras:** fogachos (1–5 min, mais à noite, tronco→face/membros) por alteração do centro hipotalâmico de termorregulação frente à queda de estradiol;\n- **Cardiovasculares:** ↑risco de doença cardiovascular até 6×, ↑LDL/triglicérides, ↓HDL, hipercoagulabilidade, ↑PA;\n- **Urogenitais:** atrofia por hipoestrogenismo → dispareunia, disúria, urgência miccional, perda de mecanismos de continência;\n- **Endométrio:** fase inicial com ciclos anovulatórios espaçados (↑risco de câncer de endométrio pelo estímulo estrogênico sem oposição); pós-menopausa com atrofia endometrial. **Sangramento pós-menopausa sempre investigar** (USG + histeroscopia se necessário).",
+      },
+      {
+        secao: "Terapia hormonal (TH) — indicações e benefícios",
+        corpo:
+          "**Indicações (SOBRAC 2024):** sintomas vasomotores que afetam qualidade de vida; atrofia urogenital (uso tópico); prevenção/tratamento de osteoporose em casos selecionados.\n\n**Janela de oportunidade:** idade **< 60 anos** e **< 10 anos** desde a menopausa — dentro dela, benefício cardiovascular; fora dela, aumenta risco.\n\n**Benefícios:** reduz sintomas vasomotores e atrofia urogenital (1ª linha, nível de evidência A); previne perda de massa óssea e fraturas osteoporóticas; melhora perfil lipídico/cardiovascular dentro da janela.",
+      },
+      {
+        secao: "Terapia hormonal — riscos e contraindicações",
+        corpo:
+          "**Contraindicações absolutas:** sangramento vaginal inexplicado; doença hepática; câncer sensível a estrogênio (inclusive mama); doença coronariana, cerebrovascular, IAM; TEV prévio ou alto risco hereditário de tromboembolismo. *(Lúpus, porfiria e meningioma foram retirados do consenso mais recente.)*\n\n**Riscos:** ↑risco de câncer de mama após 5 anos de terapia combinada (estrogênio+progesterona); ↑risco de trombose por via oral; ↑risco cardiovascular se iniciada fora da janela de oportunidade. **Reduz** risco de câncer colorretal e de endométrio (terapia combinada); não afeta risco de câncer de ovário/colo.",
+      },
+      {
+        secao: "Esquemas terapêuticos",
+        corpo:
+          "**Estrogênio isolado:** só em mulheres **histerectomizadas**. **Estrogênio + progestágeno** (proteção endometrial): mulheres com útero — sequencial ou contínuo. Regra geral: **menor dose pelo menor tempo possível.**\n\n**Tibolona:** propriedades progestagênica + estrogênica + androgênica — alivia vasomotores, atrofia e efeito positivo sobre libido/humor.\n\n**Não hormonal** (contraindicação/recusa de TH): venlafaxina (~61% eficácia), desvenlafaxina (~66%), paroxetina (~52%), gabapentina (~50%); fluoxetina sem efeito demonstrado. ⚠️ **Interação:** paroxetina/fluoxetina/bupropiona interferem no metabolismo do **tamoxifeno** — evitar associação em pacientes em uso de tamoxifeno.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **Diagnóstico da transição menopáusica é clínico** — não peça FSH/estradiol para \"confirmar\".\n- **Janela de oportunidade (< 60 anos / < 10 anos de menopausa)** determina se a TH traz benefício ou risco cardiovascular.\n- **Estrogênio isolado só em histerectomizada** — em mulher com útero, sempre associar progestágeno (proteção endometrial).\n- **Sangramento pós-menopausa é sempre patológico até prova em contrário** — investigar.\n- Tamoxifeno **não deve ser associado a paroxetina/fluoxetina/bupropiona** (interação medicamentosa relevante).",
+      },
+    ],
+    referencias: [
+      "SOBRAC — Consenso Brasileiro de Terapêutica Hormonal na Menopausa (2024)",
+      "FEBRASGO — Manual de Climatério",
+      "Material do curso Estratégia MED — Ginecologia",
+    ],
+  },
+
+  "go--miomatose-e-adenomiose--miomatose-uterina": {
+    subtemaId: "go--miomatose-e-adenomiose--miomatose-uterina",
+    titulo: "Miomatose uterina",
+    atualizadoEm: "2026-07-18",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição e epidemiologia",
+        corpo:
+          "**Leiomiomas uterinos** — tumores benignos **monoclonais** originados das células musculares lisas e fibroblastos do miométrio. É a **neoplasia pélvica mais comum** em mulheres e a **causa mais frequente de indicação de histerectomia**. Prevalência máxima entre **35 e 50 anos**. Sofrem influência de **estrógeno e progesterona**.",
+      },
+      {
+        secao: "Fatores de risco e proteção",
+        corpo:
+          "**Risco:** raça negra, nuliparidade. **Proteção:** tabagismo **reduz** o risco (achado contraintuitivo, muito cobrado).",
+      },
+      {
+        secao: "Classificação (FIGO)",
+        corpo:
+          "| FIGO | Localização |\n|---|---|\n| 0 | Intracavitário, pediculado |\n| 1 | Submucoso, componente intramural < 50% |\n| 2 | Submucoso, componente intramural ≥ 50% |\n| 3 | Intramural, tangenciando o endométrio |\n| 4 | Intramural (puro) |\n| 5 | Subseroso, componente intramural ≥ 50% |\n| 6 | Subseroso, componente intramural < 50% |\n| 7 | Subseroso pediculado |\n| 8 | Outros (cervical, parasita) |\n\n**Mioma parasita:** subseroso que se desprende do útero e adere a outro órgão. **Mioma parido:** exterioriza-se pelo colo uterino.",
+      },
+      {
+        secao: "Quadro clínico por localização",
+        corpo:
+          "- **Submucoso:** **metrorragia**; localização mais associada a **infertilidade**;\n- **Intramural:** **hipermenorragia**;\n- **Subseroso volumoso:** **dor pélvica** por compressão de estruturas adjacentes.",
+      },
+      {
+        secao: "Degenerações",
+        corpo:
+          "**Hialina** — mais comum, em geral. **Rubra** (vermelha/necrobiose asséptica) — mais comum **durante a gestação**. **Calcificada** — mais comum **após a menopausa**. **Sarcomatosa** — a mais rara, porém **pior prognóstico** (malignização).",
+      },
+      {
+        secao: "Diagnóstico",
+        corpo:
+          "**Ultrassom pélvico/transvaginal** — exame de escolha para investigação inicial. **Histeroscopia** — padrão-ouro para avaliação da **cavidade uterina**. **Ressonância magnética** — maior acurácia para mapeamento e planejamento cirúrgico.",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**Assintomática:** conduta **expectante**. Na **perimenopausa** pouco sintomática: também expectante — miomas tendem a regredir após a menopausa.\n\n**Sangramento associado (não hormonal):** AINEs (ex.: naproxeno) ou antifibrinolíticos (ácido tranexâmico).\n\n**Submucosos sintomáticos:** **miomectomia histeroscópica** é o tratamento de escolha para a maioria (FIGO 0, 1 e alguns FIGO 2) — guiada pelo **escore de Lasmar**: 0–4 → histeroscópica direta; 5–6 → considerar preparo com análogo de GnRH e/ou cirurgia em 2 tempos; 7–9 → indicar outra técnica (não histeroscópica).\n\n**Miomectomia laparoscópica:** até 5 miomas intramurais/subserosos pequenos, ou único < 10 cm. **Miomectomia laparotômica:** múltiplos (> 5) e/ou volumosos.\n\n**Análogos de GnRH pré-operatórios:** reduzem tamanho do mioma e sangramento, elevando a hemoglobina antes da cirurgia.\n\n**Tratamento cirúrgico definitivo (histerectomia):** prole constituída + falha do tratamento clínico, ou suspeita de malignidade (sarcoma). **Crescimento rápido pós-menopausa → cirúrgico mesmo se assintomático** (risco de degeneração sarcomatosa).",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **Tabagismo reduz o risco de miomatose** — contraintuitivo, mas cobrado.\n- **Submucoso = metrorragia + infertilidade; intramural = hipermenorragia; subseroso = dor por compressão** — decore por localização.\n- **Degeneração rubra na gestação; calcificada na menopausa; sarcomatosa é a de pior prognóstico** (não a mais comum).\n- **Histeroscopia é padrão-ouro para a CAVIDADE, não para o mioma como um todo** — RM tem maior acurácia global.\n- **Crescimento rápido pós-menopausa é sempre indicação cirúrgica**, mesmo sem sintomas — suspeita de sarcoma.\n- **Escore de Lasmar** guia a via de miomectomia histeroscópica — quanto maior o escore, mais complexa a abordagem.",
+      },
+    ],
+    referencias: [
+      "FEBRASGO — Miomatose Uterina (Série Orientações e Recomendações)",
+      "FIGO — Classificação de miomas uterinos (PALM-COEIN)",
+      "Material do curso Estratégia MED — Ginecologia",
     ],
   },
 };

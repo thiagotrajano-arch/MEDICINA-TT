@@ -24,23 +24,74 @@ Dentro de cada disciplina, priorizar os subtemas marcados `altoRendimento` na ta
 
 ## FONTES DE CONTEÚDO (usar nesta ordem)
 
-1. **Histórico das conversas do Claude** — muitos PDFs foram colados nas mensagens e
+1. **Estratégia MED — PDFs já extraídos** (fonte mais nova e mais densa; ver seção própria
+   abaixo "CURSO ESTRATÉGIA MED" para estrutura completa e mapeamento por disciplina):
+   `C:\Users\Adm\Desktop\MEDICINA\_pdfs-estrategia\<DISCIPLINA>\` — Slides, Mapas Mentais e
+   Flashcards em PDF, um arquivo por tópico, nome do arquivo já contém o nome do tópico.
+2. **Histórico das conversas do Claude** — muitos PDFs foram colados nas mensagens e
    permanecem no contexto (bancos de questões OMED, simulados comentados, resumos).
-   O usuário confirmou: *"os temas que não achar na pasta Downloads estão nas conversas do Claude também."*
-2. **Google Drive do usuário** (ferramentas `mcp__…__search_files` / `read_file_content`):
+3. **Google Drive do usuário** (ferramentas `mcp__…__search_files` / `read_file_content`):
    - Pastas-chave: **"Resumos e cursos"**, **"MEDICINA"** (aba do site), **"RESUMOS"**, **"HCPM"**.
    - Google Docs OMED já mapeados: `Banco de Questões OMED: Ginecologia e Obstetrícia`
      (`1843iScXNAjOR8pj_LraTF-gzSEcX0xOR7Y2Silvc4Hk`), `simulado indectologia`
      (`1ICb-YzIKgIpgLMvEQZfxxBkSw-8fng7WNU8namooguE`), `Simulado de Pediatria 1`
      (`1LbjYvrqeF3N6u3ieuDAjlhxo7YrgGKblfVkhAy2vI_I`), `omed abertas go ped`
      (`19PczBChHRbjwOMBCyOUSpgBJzSy8UIeetl-nr8ds4mM`).
-3. **Pastas locais** (via Cowork / filesystem):
+4. **Pastas locais** (via Cowork / filesystem):
    - `C:\Users\Adm\Desktop\MEDICINA\` (RESUMOS, HCPM, Farmacologia, BBPM I–VIII, UE, livros gerais, `NEOPLASIA TUDO.docx`, `IMUNO RADIO E FARMACOLOGIA.docx`, `OTORRINO QUESTOES PROVA.docx`).
-   - `C:\Users\Adm\Downloads\Estratégia 2024 Extensivo\` (Extensivo + Atualizações Residência/Revalida).
+   - `C:\Users\Adm\Downloads\Estratégia 2024 Extensivo\` (Extensivo + Atualizações Residência/Revalida — pasta antiga, verificar se ainda existe).
    - ZIPs em Downloads: `BAGAGEM GABS`, `BAGAGEM DO JOTA`, `00. Materiais` (extrair sob demanda).
-4. **Diretrizes e livros** (para complementar/atualizar — MBE): MS, FEBRASGO, SBP, ACOG,
+     ⚠️ **Downloads volta a ser uma fonte válida** (o usuário repovoou a pasta em 2026-07-18
+     com os 33 ZIPs do Estratégia MED — a advertência antiga de "pasta vazia, não usar" não
+     vale mais para esse lote). Os ZIPs em si (~2 GB cada, contêm videoaulas) continuam em
+     Downloads só como backup do usuário — **não precisa reabri-los**, os PDFs relevantes já
+     foram extraídos para `_pdfs-estrategia` (ver acima).
+5. **Diretrizes e livros** (para complementar/atualizar — MBE): MS, FEBRASGO, SBP, ACOG,
    IDSA, AHA/ESC/ACC, ADA, KDIGO, GOLD, GINA, Surviving Sepsis, TG18, WSES; Harrison,
    Sabiston, Nelson, Zugaib, Williams, Robbins, etc.
+
+---
+
+## CURSO ESTRATÉGIA MED (novo, 2026-07-18 — 33 ZIPs, ~66 GB brutos)
+
+O usuário enviou o export completo do Google Drive de um curso (Estratégia MED, aulas
+"Extensivo") em 5 disciplinas: GINECOLOGIA, OBSTETRÍCIA, PEDIATRIA, PREVENTIVA, INFECTOLOGIA.
+Cada ZIP é uma fatia (Google Drive quebra pastas grandes em partes `-1-NNN.zip`); dentro,
+a estrutura é **por tópico**:
+
+```
+<DISCIPLINA>/NN. Nome do Tópico-<hash>/NN. Nome do Tópico/
+  Videoaulas (N)/*.mp4        ← videoaulas — NÃO extrair (enorme, sem transcrição disponível)
+  Slide (N)/*.pdf             ← slide de aula e/ou "slide resumo" (mais denso)
+  Mapa Mental (N)/*.pdf       ← mapa mental do tópico
+  Flashcard (N)/*.pdf         ← flashcards de revisão rápida
+```
+
+**Só os PDFs foram extraídos** (os `.mp4` ficam nos ZIPs originais em Downloads — não
+apagar os ZIPs, são o backup do usuário) para:
+`C:\Users\Adm\Desktop\MEDICINA\_pdfs-estrategia\<DISCIPLINA>\` — pasta **plana** (sem
+subpastas), o nome do tópico já vem no nome do arquivo (ex.: `Slide Aula - Bronquiolite.pdf`,
+`Mapa Mental - Cefaleias na Infância.pdf`, `Flashcard - Amenorreia.pdf`). Use o nome do
+arquivo para casar com o subtema certo na taxonomia.
+
+**Mapeamento disciplina do curso → disciplina da plataforma:**
+- `GINECOLOGIA` + `OBSTETRÍCIA` → disciplina existente **"Ginecologia & Obstetrícia"**.
+- `PEDIATRIA` → disciplina existente **"Pediatria"**.
+- `INFECTOLOGIA` → disciplina existente **"Infectologia"**.
+- `PREVENTIVA` → **não criar disciplina nova** — mesclar na disciplina existente
+  **"MFC & Atenção Primária"** (Saúde Coletiva & Emergência), criando temas novos conforme
+  necessário (ex.: Epidemiologia/Testes Diagnósticos — já existe um subtema parecido, checar
+  antes de duplicar —, Políticas de Saúde/SUS, Saúde do Trabalhador, Bioestatística).
+
+**Antes de usar como fonte:** os PDFs de Slide costumam ser texto extraível (slides de
+apresentação) — confirmar com `scripts/extract-pdf.mts` num arquivo de teste; se vier vazio
+ou só imagem, é slide escaneado/exportado como imagem e precisa de outra abordagem (não
+inventar o conteúdo nesse caso — pular e registrar em PROXIMOS-PASSOS.md).
+
+**Ordem de prioridade dentro do lote** (por peso OMED, ver Raio-X): Infectologia → GO →
+Pediatria → Preventiva/MFC. Dentro de cada disciplina, não há como saber de antemão quais
+tópicos são `altoRendimento` — cruzar com a taxonomia existente e com o Raio-X ao decidir
+a ordem de extração.
 
 **Regra de ouro:** nunca inventar fato clínico. Toda afirmação vem do material do usuário
 ou de diretriz. Conferir o gabarito antes de marcar a alternativa correta. Preservar o

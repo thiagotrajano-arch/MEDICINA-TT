@@ -114,9 +114,17 @@ function Table({ rows }: { rows: string[] }) {
 }
 
 function inline(text: string): React.ReactNode {
-  // Split on **bold** and *italic*, keeping the delimiters for detection.
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  // Split on ***bold+italic***, **bold** and *italic* — order matters, longest
+  // delimiter first, so a *** run isn't misread as ** followed by a stray *.
+  const parts = text.split(/(\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|\*[^*]+\*)/g);
   return parts.map((part, i) => {
+    if (part.startsWith("***") && part.endsWith("***") && part.length > 6) {
+      return (
+        <strong key={i}>
+          <em>{part.slice(3, -3)}</em>
+        </strong>
+      );
+    }
     if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
       return <strong key={i}>{part.slice(2, -2)}</strong>;
     }

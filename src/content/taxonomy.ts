@@ -92,6 +92,20 @@ const ginecoObst: Disciplina = {
     tema("go", "Sangramento uterino anormal", ["Abordagem do SUA"]),
     tema("go", "Amenorreia e ciclo menstrual", ["Investigação de amenorreia"]),
     tema("go", "Planejamento familiar", ["Métodos contraceptivos"]),
+    tema("go", "Distúrbios endócrino-menstruais", [
+      ["Síndrome dos ovários policísticos", { altoRendimento: true }],
+    ]),
+    tema("go", "Infecções ginecológicas", [
+      ["Vulvovaginites", { altoRendimento: true }],
+      ["Doença inflamatória pélvica (DIP)", { altoRendimento: true, dificuldade: "avancada" }],
+    ]),
+    tema("go", "Oncologia ginecológica", [
+      ["Câncer de colo uterino", { altoRendimento: true }],
+    ]),
+    tema("go", "Mastologia", [["Câncer de mama", { altoRendimento: true }]]),
+    tema("go", "Miomatose e adenomiose", [["Miomatose uterina", { altoRendimento: true }]]),
+    tema("go", "Uroginecologia", [["Incontinência urinária", { altoRendimento: true }]]),
+    tema("go", "Climatério", [["Climatério e terapia hormonal", { altoRendimento: true }]]),
   ],
 };
 
