@@ -1124,4 +1124,65 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
     ],
   },
+
+  "inf--infeccoes-congenitas--storch-visao-infectologica": {
+    subtemaId: "inf--infeccoes-congenitas--storch-visao-infectologica",
+    titulo: "Infecções congênitas — visão infectológica (agente por agente)",
+    atualizadoEm: "2026-07-18",
+    origem: "usuario_original",
+    blocos: [
+      {
+        secao: "Definição",
+        corpo:
+          "Enquanto o resumo de GO aborda as infecções congênitas pelo eixo **obstétrico** (rastreio pré-natal, conduta no parto), este resumo cobre o mesmo grupo de doenças pelo eixo **infectológico**: o agente, seu mecanismo de transmissão, a janela de maior risco e o racional de cada exame diagnóstico — incluindo agentes que a OMED cobra e que não entram no TORCH clássico (Chagas, hepatites B/C, tuberculose congênita, GBS, malária, listeriose, arboviroses periparto). Estimativa: **infecções congênitas respondem por parte relevante da morbimortalidade neonatal evitável**, e a banca costuma testar o **raciocínio diferencial por padrão de achado** (calcificação, tipo de exantema, tipo de sequela) mais do que a lista decorada de agentes.",
+      },
+      {
+        secao: "Etiologia — o espectro além do TORCH clássico",
+        corpo:
+          "| Agente | Classe | Via principal |\n|---|---|---|\n| *Toxoplasma gondii* | Protozoário | Transplacentária (parasitemia materna aguda) |\n| *Treponema pallidum* | Espiroqueta | Transplacentária, **qualquer trimestre** |\n| CMV | Herpesvírus DNA | Transplacentária (primária ou não-primária) |\n| Rubéola | Togavírus RNA | Transplacentária |\n| HSV | Herpesvírus DNA | **Intraparto** (contato com secreções) |\n| Varicela-zóster | Herpesvírus DNA | Transplacentária (viremia materna) |\n| Parvovírus B19 | Parvovírus DNA | Transplacentária (tropismo por precursores eritroides) |\n| Zika | Flavivírus RNA | Transplacentária (neurotropismo) |\n| *Trypanosoma cruzi* (Chagas) | Protozoário | Transplacentária, qualquer momento da gestação |\n| HBV / HCV | Hepadnavírus / Flavivírus | Predominantemente **periparto** (contato com sangue/secreções) |\n| *Mycobacterium tuberculosis* | Micobactéria | Transplacentária (via veia umbilical → fígado fetal) ou aspiração de líquido amniótico infectado |\n| *Streptococcus agalactiae* (GBS) | Bactéria | Ascendente/intraparto |\n| *Plasmodium* spp. | Protozoário | Transplacentária (sequestro placentário) |\n| *Listeria monocytogenes* | Bactéria | Transplacentária/ascendente |\n| Dengue, Chikungunya | Flavivírus/Alfavírus | **Perinatal** (viremia materna próxima ao parto) |",
+      },
+      {
+        secao: "Fisiopatologia",
+        corpo:
+          "**Regra geral (a maioria dos agentes):** quanto **mais precoce** a infecção na gestação, **menor a taxa de transmissão, mas maior a gravidade** (organogênese em curso); quanto mais tardia, maior a taxa de transmissão mas menor a gravidade estrutural (órgãos já formados). **A sífilis é a exceção clássica** — transmite-se com alta eficiência em qualquer trimestre e causa dano grave mesmo tardiamente.\n\n**Mecanismos de lesão específicos:**\n- **Parvovírus B19** — tropismo pelos precursores eritroides (receptor P antigen); destrói a linhagem eritroide → **anemia fetal grave → insuficiência cardíaca de alto débito → hidropisia não imune**.\n- **CMV/Toxoplasmose/Zika** — neurotropismo com padrões de calcificação **distintos** por mecanismo de necrose tecidual diferente (ver Diagnóstico diferencial).\n- **Sífilis** — invasão direta da espiroqueta em ossos (periostite/osteocondrite), pele e vísceras — lesão inflamatória difusa, não neurotrópica isolada.\n- **Tuberculose congênita** — bacilos alcançam o fígado fetal pela veia umbilical **antes** dos pulmões → o complexo primário costuma se formar no **fígado**, ao contrário da TB pós-natal (pulmonar).\n- **Listeriose** — sepse fetal com microabscessos multiorgânicos disseminados = **granulomatosis infantiseptica**.\n- **Malária** — sequestro de hemácias parasitadas no espaço interviloso placentário → insuficiência placentária → baixo peso/prematuridade (mecanismo indireto, não teratogênico direto).",
+      },
+      {
+        secao: "Quadro clínico — pistas por agente",
+        corpo:
+          "| Achado-chave | Agente mais associado |\n|---|---|\n| Hidropisia fetal não imune + ACM-PVS elevado | Parvovírus B19 |\n| Vesículas no local do eletrodo de escalpo fetal | HSV neonatal (forma de SNC) |\n| \"Duplo contorno\" ósseo + rinite serossanguinolenta + pênfigo palmoplantar | Sífilis congênita precoce |\n| Petéquias + hepatoesplenomegalia + calcificação periventricular + falha no teste da orelhinha | CMV |\n| Tétrade de Sabin (coriorretinite + calcificação difusa + hidrocefalia + retardo mental) | Toxoplasmose |\n| Tríade de Gregg (catarata + cardiopatia [PCA] + surdez) | Rubéola |\n| Microcefalia com colapso craniano + artrogripose + calcificação subcortical | Zika |\n| Granulomatosis infantiseptica (abscessos multiorgânicos) | Listeria |\n| Complexo primário hepático | Tuberculose congênita |\n| Febre + irritabilidade + exantema + edema de extremidades no RN | Chikungunya periparto |\n| Plaquetopenia + sangramento em pontos de punção após quadro febril materno com dor retro-orbital | Dengue perinatal |",
+      },
+      {
+        secao: "Diagnóstico — o racional de cada exame",
+        corpo:
+          "**Sorologia materna (IgM/IgG + avidez):** IgM+/IgG+ com **avidez baixa** (< 30%) = infecção recente (< ~4 meses) → maior risco; **avidez alta** (> 60%) no 1º trimestre = infecção antiga, pré-concepcional → risco desprezível para a gestação atual. Regra-chave: **IgM não atravessa a placenta** — IgM neonatal positivo é sempre infecção verdadeira do concepto; **IgG isolada no RN pode ser só transferência passiva materna** e exige seguimento sorológico seriado até negativar ou confirmar produção própria.\n\n**PCR em líquido amniótico** (toxoplasmose, CMV, parvovírus): não deve ser feito precocemente demais — para toxoplasmose, aguardar **≥ 18 semanas E ≥ 4 semanas da soroconversão materna** (falso-negativo se muito cedo).\n\n**Diagnóstico direto no RN:**\n- **Chagas** — sorologia materna/neonatal não confia (IgG materno cruza a placenta); no período neonatal precoce, o método de escolha é **parasitológico direto** (micro-hematócrito/Strout), já que a sorologia só é interpretável após 9–12 meses (quando o IgG materno já desapareceu).\n- **CMV** — **PCR em urina ou saliva nas primeiras 3 semanas de vida**; após esse prazo, não se distingue mais infecção congênita de adquirida no pós-natal.\n- **HIV neonatal** — o teste de anticorpos **não serve** para diagnóstico no RN (IgG materno persiste até 18 meses); usam-se testes moleculares (carga viral/PCR-DNA).\n- **Sífilis** — VDRL de sangue **periférico** do RN comparado ao título materno (não usar sangue de cordão, risco de contaminação/diluição).",
+      },
+      {
+        secao: "Diagnóstico diferencial — padrões de imagem e achados",
+        corpo:
+          "| Achado de imagem | Interpretação |\n|---|---|\n| Calcificação **difusa** em parênquima (\"em pipoca\") | Toxoplasmose |\n| Calcificação **periventricular** | CMV |\n| Calcificação **cortical/subcortical** + colapso craniano | Zika |\n| Sinal de \"duplo contorno\" em ossos longos | Sífilis congênita |\n| Complexo primário **hepático** (não pulmonar) | Tuberculose congênita |\n\n| Sequela auditiva | Padrão |\n|---|---|\n| Surdez **presente ao nascer, estável** | Rubéola |\n| Surdez **progressiva, pode ser tardia** (principal causa infecciosa não genética) | CMV |",
+      },
+      {
+        secao: "Tratamento",
+        corpo:
+          "**Toxoplasmose:** infecção materna sem confirmação de infecção fetal → **espiramicina** (reduz transmissão, não trata o feto já infectado — não atravessa bem a barreira placentária); infecção fetal confirmada (PCR+) → esquema tríplice **sulfadiazina + pirimetamina + ácido folínico**, mantido no RN infectado por **12 meses**.\n\n**Sífilis:** penicilina é o **único fármaco que previne sífilis congênita** — em gestante alérgica grave, a conduta é **dessensibilização hospitalar**, nunca substituir por outro antibiótico (doxiciclina contraindicada na gestação; azitromicina com resistência documentada e não comprovadamente eficaz para o feto).\n\n**CMV sintomático:** valganciclovir oral por 6 meses (reduz progressão da surdez e melhora neurodesenvolvimento — evidência do estudo CASG).\n\n**HSV neonatal:** aciclovir IV em altas doses, independentemente da forma clínica (pele-olho-boca, SNC ou disseminada).\n\n**Chagas congênito:** **benzonidazol é indicado e eficaz em menores de 1 ano** (ao contrário do que muitos assumem) — a taxa de cura é maior quanto mais precoce o tratamento.\n\n**Hepatite B:** RN de mãe HBsAg+ recebe **vacina + imunoglobulina específica (HBIG) nas primeiras 12–24h de vida** — via de parto não altera significativamente o risco quando essa imunoprofilaxia é feita corretamente (não há indicação de cesárea eletiva só por isso).\n\n**HIV:** **dolutegravir (DTG) é hoje o esquema preferencial**, inclusive em mulheres em idade fértil e no primeiro trimestre (o sinal de defeito de tubo neural inicialmente reportado em Botsuana foi reavaliado como muito menor do que o temido); **aleitamento materno é proscrito** no Brasil independentemente de carga viral indetectável.",
+      },
+      {
+        secao: "Situações especiais",
+        corpo:
+          "**Varicela:** janela de maior risco para a Síndrome da Varicela Congênita (cicatrizes cutâneas, hipoplasia de membros, defeitos oculares) é **13ª–20ª semana**; varicela materna nos **5 dias antes a 2 dias depois do parto** é a situação de maior risco de varicela neonatal grave (sem tempo de transferência de IgG materno).\n\n**Herpes genital no parto:** primoinfecção materna próxima ao parto (sem tempo de produzir e transferir anticorpos) é o cenário de **maior risco de transmissão (30–50%)** — contraintuitivamente maior que na recorrência (1–3%), por isso lesão ativa em primoinfecção indica cesariana mesmo com bolsa íntegra.\n\n**Gestante trabalhando com crianças pequenas + ascite fetal isolada com sorologias TORCH negativas** → pensar em **parvovírus B19** (exposição ocupacional clássica em creches/escolas).",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- ★ **Sífilis é a exceção** à regra transmissão↓/gravidade↑: transmite bem e agride em qualquer trimestre.\n- ★ **IgM não cruza a placenta** — sempre infecção verdadeira; **IgG isolada pode ser só passagem materna**.\n- ★ Padrão de calcificação: **difusa = toxo · periventricular = CMV · cortical/subcortical = Zika**.\n- ★ **Complexo primário da TB congênita é hepático**, não pulmonar — pega muita gente que generaliza da TB pós-natal.\n- ★ **Diagnóstico de Chagas neonatal precoce é parasitológico direto**, não sorológico (IgG materno atrapalha até os 9–12 meses).\n- ★ **Benzonidazol NÃO é contraindicado em < 1 ano** — é a faixa etária com melhor resposta ao tratamento no Chagas congênito.\n- ★ **CMV: PCR de urina/saliva só vale nas primeiras 3 semanas de vida.**\n- ★ **Herpes: maior risco é a primoinfecção materna tardia (30–50%)**, não a recorrência (1–3%) — inversão clássica cobrada.\n- ★ **HIV neonatal: teste de anticorpos não serve para diagnóstico** (IgG materno confunde até 18 meses) — usar PCR/carga viral.\n- ★ **Dolutegravir hoje é preferencial mesmo no 1º trimestre** — questão desatualizada pode cobrar o contrário.\n- ★ **Aleitamento materno é proscrito em mãe HIV+ no Brasil**, mesmo com carga viral indetectável.\n- ★ **Gestante em contato ocupacional com crianças pequenas + hidropisia/ascite fetal isolada** → pensar em parvovírus B19.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — PCDT para Prevenção da Transmissão Vertical de HIV, Sífilis e Hepatites Virais",
+      "Ministério da Saúde — Guia de Vigilância em Saúde (Doença de Chagas, Tuberculose)",
+      "CDC — Congenital CMV, Toxoplasmosis and Syphilis Guidelines",
+      "Sociedade Brasileira de Pediatria — Infecções Congênitas",
+      "Material do usuário — Google Drive, doc 'infec congenita' (banco de questões perinatal)",
+    ],
+  },
 };
