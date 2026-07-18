@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Search, Images, ExternalLink } from "lucide-react";
 import { FIGURAS } from "@/components/figuras/registry";
+import { asset } from "@/lib/asset";
 import { cn } from "@/lib/cn";
 
 /** Onde cada figura é usada — permite ir da imagem para o estudo. */
@@ -19,6 +20,12 @@ const ONDE_APARECE: Record<string, { subtemaId: string; rotulo: string } | undef
   "ped-zonas-kramer": { subtemaId: "ped--neonatologia--ictericia-neonatal", rotulo: "Icterícia neonatal" },
   "mfc-tabela-2x2": { subtemaId: "mfc--epidemiologia--testes-diagnosticos-sensibilidade-e-especificidade", rotulo: "Testes diagnósticos" },
   "cir-vias-biliares-mirizzi": { subtemaId: "cir--abdome-agudo--colecistite-e-colangite", rotulo: "Colecistite e colangite" },
+  // imagens reais
+  "inf-tb-miliar-rx-real": { subtemaId: "inf--tuberculose--diagnostico-e-tratamento", rotulo: "Tuberculose" },
+  "inf-pneumonia-consolidacao-real": { subtemaId: "inf--pneumonias--pneumonia-adquirida-na-comunidade", rotulo: "Pneumonia (PAC)" },
+  "inf-sifilis-cancro-real": { subtemaId: "inf--infeccoes-sexualmente-transmissiveis--sifilis", rotulo: "Sífilis" },
+  "inf-sifilis-secundaria-real": { subtemaId: "inf--infeccoes-sexualmente-transmissiveis--sifilis", rotulo: "Sífilis" },
+  "inf-sarampo-exantema-real": { subtemaId: "inf--doencas-exantematicas--exantemas-da-infancia", rotulo: "Doenças exantemáticas" },
 };
 
 const AREA: Record<string, string> = {
@@ -105,11 +112,36 @@ export function MidiaClient() {
                   {areaDe(f.id)}
                 </span>
               </div>
-              <div className="overflow-x-auto px-3 py-4">
-                <div className="min-w-[340px]">{f.render()}</div>
-              </div>
+              {f.imagem ? (
+                <div className="bg-black/[0.03] px-3 py-4 dark:bg-white/[0.02]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset(f.imagem.src)}
+                    alt={f.imagem.alt}
+                    loading="lazy"
+                    className="mx-auto max-h-[340px] w-auto max-w-full rounded-lg"
+                  />
+                </div>
+              ) : (
+                <div className="overflow-x-auto px-3 py-4">
+                  <div className="min-w-[340px]">{f.render?.()}</div>
+                </div>
+              )}
               <figcaption className="border-t border-border px-4 py-2.5 text-[12.5px] leading-snug text-text-muted">
                 {f.legenda}
+                {f.imagem && (
+                  <span className="mt-1.5 block text-[11px] text-text-faint">
+                    Fonte: {f.imagem.autor ? `${f.imagem.autor} · ` : ""}
+                    {f.imagem.url ? (
+                      <a href={f.imagem.url} target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-accent">
+                        {f.imagem.fonte}
+                      </a>
+                    ) : (
+                      f.imagem.fonte
+                    )}{" "}
+                    — {f.imagem.licenca}
+                  </span>
+                )}
                 {onde && (
                   <Link
                     href={`/estudar/${encodeURIComponent(onde.subtemaId)}`}
@@ -129,11 +161,14 @@ export function MidiaClient() {
       )}
 
       <p className="mt-10 rounded-xl border border-border bg-surface-2 p-4 text-xs leading-relaxed text-text-muted">
-        <strong className="text-text">Sobre as imagens:</strong> são diagramas desenhados
-        originalmente para esta plataforma — livres de direitos autorais, leves e
-        acompanham o tema claro/escuro. Fotografias clínicas reais (radiografias,
-        dermatoscopia, lâminas) entram quando forem <strong className="text-text">suas</strong> ou
-        de fonte com licença aberta, respeitando os direitos autorais.
+        <strong className="text-text">Sobre as imagens:</strong> os{" "}
+        <strong className="text-text">diagramas</strong> são desenhados originalmente para esta
+        plataforma — livres de direitos autorais e adaptados ao tema claro/escuro. As{" "}
+        <strong className="text-text">imagens reais</strong> (radiografias, lesões, exames) vêm
+        apenas de fontes com licença verificada — domínio público (CDC/PHIL) ou Creative
+        Commons — baixadas para o próprio site, com fonte, autor e licença creditados em cada
+        figura. Imagens <strong className="text-text">suas</strong> têm prioridade e podem ser
+        adicionadas a qualquer momento.
       </p>
     </div>
   );
