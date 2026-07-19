@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-18 — rotina diária das 6h + 2 sessões interativas (imagens reais; curso Estratégia MED). Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-19 (madrugada) — rotina diária das 6h (18/07) + 3 sessões interativas (imagens reais; curso Estratégia MED; skills/Obsidian/tentativa de workflow em massa). Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
@@ -9,8 +9,8 @@
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
 | **Resumos** | **43** de 170 subtemas |
 | **Questões** | **224** (GO 79 · Ped 55 · Inf 60 · MFC 12 · Cir 8 · originais 10) |
-| **Casos clínicos** | 4 (GO, Ped, Inf, Cir) |
-| **Figuras** | 17 (12 diagramas SVG + 5 imagens reais licenciadas) |
+| **Casos clínicos** | 4 (GO, Ped, Inf, Cir) — **MFC e Cirurgia ainda com zero casos** |
+| **Figuras** | 20 (12 diagramas SVG + 8 imagens reais licenciadas) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
 
 ## O que foi feito nesta sessão (2026-07-18, rotina automática)
@@ -276,6 +276,112 @@ quando o span inteiro (sem texto extra antes/depois) for itálico+negrito.**
   existentes, vazios) podem estar cobertos dentro dos Mapas Mentais de
   Tuberculose/HIV já extraídos — não verificado ainda.
 
+## O que foi feito nesta sessão (2026-07-19, madrugada — skills, Obsidian, tentativa de workflow em massa)
+
+Quarta sessão (após a de imagens reais e a do curso Estratégia MED). Pedido do
+usuário: extrair "tudo" (o usuário perguntou, corretamente, se eu tinha
+extraído todos os resumos/questões da sessão anterior — a resposta foi não,
+só 11 de ~98 tópicos disponíveis viraram resumo), adicionar mais questões e
+casos clínicos "de todos os conteúdo", instalar skills úteis, conectar a um
+vault do Obsidian, e buscar 60 imagens clínicas reais. O usuário tinha
+"ultracode" ativado nesse momento, o que autorizou usar o Workflow tool
+(orquestração multi-agente) em vez de fazer tudo manualmente.
+
+### Skills instaladas
+- `obsidian-vault` (mattpocock/skills, 143.9K installs) e `obsidian-markdown`
+  (kepano/obsidian-skills — kepano é o desenvolvedor-líder do Obsidian, 59.8K
+  installs) — via `npx skills add ... -g -y`.
+- `token-efficiency` (delphine-l/claude_global, 1.8K installs).
+- Pesquisado e **descartado** por falta de qualidade (poucos installs, < 150):
+  skills de PDF processing, git-commit-workflow, e "medical/clinical" — nenhum
+  bateu a barra de qualidade (1K+ installs preferencial) nem agregava algo que
+  já não fazemos manualmente (extract-pdf.mts, convenção de commit já
+  estabelecida).
+
+### Vault do Obsidian criado
+Não existia nenhum vault no computador (verificado em Desktop/Documents/
+OneDrive — nada). Criado do zero em `C:\Users\Adm\Desktop\Obsidian Vault\`,
+seguindo as convenções do skill instalado (flat, sem pastas, wikilinks, notas
+`Index`): `Index.md`, `OMED Index.md`, `OMED Raio-X.md` (trazido de
+`RAIO-X-OMED.md`), `Codex Medicus.md` (explica a relação site×vault — o site
+é a base estruturada, o vault é espaço pessoal solto), `Estudo Diário.md`
+(modelo de log de estudo). O SKILL.md do `obsidian-vault` foi editado para
+apontar pro caminho real (o arquivo original tinha um path de exemplo do
+autor original, `/mnt/d/Obsidian Vault/AI Research/`, que não existe aqui).
+
+### Tentativa de gerar questões/casos/imagens via Workflow em massa — FALHOU por limite de sessão
+Duas Workflows grandes foram lançadas (43 tópicos × 4 questões + 8 casos
+clínicos; busca+verificação de 60 imagens reais), cada uma com uma etapa de
+verificação cética separada por item. **Ambas foram atingidas por um limite
+de sessão/uso** ("session limit", reset aliás **23h America/Sao_Paulo**) logo
+no início — a maioria dos agentes falhou com a mesma mensagem de limite, não
+por um bug de conteúdo. Isso derrubou quase todo o proveito das duas
+Workflows:
+- Questões: só 5 de 43 tópicos tiveram a etapa de escrita concluída, **zero**
+  sobreviveu à etapa de verificação (que também foi atingida pelo limite) —
+  resultado final vazio.
+- Imagens: só 3 de 60 tiveram busca+download concluídos.
+
+**Bug real encontrado nos dois scripts** (corrigido, arquivos ainda existem
+no disco para reuso): quando o agente da etapa de **verificação** falhava
+(retornava `null`, incluindo por causa do limite de sessão), o `.then(...)`
+seguinte não tratava esse `null` e quebrava o pipeline inteiro com erro tipo
+`"null is not an object (evaluating 'veredito.aprovado')"` — mascarando o
+resultado real (que já tinha itens aprovados de verdade, perdidos pelo
+crash). Corrigido nos dois arquivos de script (`if (!v) return null` antes de
+desreferenciar). Os scripts corrigidos ficam em:
+- `C:\Users\Adm\.claude\projects\C--Users-Adm-Desktop-med-codex-medicus\179bffe7-7924-4554-87af-89d84f9b519f\workflows\scripts\gerar-questoes-casos-omed-wf_d6d32d8a-1e2.js`
+- `C:\Users\Adm\.claude\projects\C--Users-Adm-Desktop-med-codex-medicus\179bffe7-7924-4554-87af-89d84f9b519f\workflows\scripts\buscar-60-imagens-clinicas-wf_eaaf18c5-f98.js`
+
+**Recuperado do que sobreviveu:**
+- As 3 imagens que tinham completado busca+download foram **verificadas de
+  novo manualmente** (re-consulta independente da licença via API do
+  Wikimedia) antes de aceitar: `mola-hidatiforme-us.jpg` (CC0), `colo-uterino-
+  colposcopia.gif` (CC BY 4.0), `cancer-mama-mamografia.jpg` (domínio público,
+  NCI/NIH) — todas confirmadas, registradas em `registry.tsx`, ancoradas nos
+  resumos de hemorragias da 1ª metade (mola), câncer de colo e câncer de
+  mama, e no mapa de navegação do `/midia`. Commit `89b46d6`.
+- As 5 questões que tinham só a etapa de escrita (sem verificação) **não
+  foram usadas** — ficam no journal da Workflow
+  (`...\subagents\workflows\wf_d6d32d8a-1e2\journal.jsonl`) caso alguém queira
+  revisá-las manualmente depois, mas não devem ser tratadas como prontas
+  (nunca passaram pela checagem cética).
+
+### Decisão para o resto da sessão
+Dado que gerar subagentes está bloqueado até o reset (23h), e que o modo
+"ultracode" também foi desativado no meio da sessão (voltou a regra padrão de
+só usar Workflow quando pedido explicitamente), **não relancei as duas
+Workflows**. O trabalho de escrever questões/casos/buscar imagens **continua
+pendente** — praticamente do zero (só 3 imagens novas, 0 questões novas desta
+leva).
+
+## PRIORIDADE 0 (nova, mais urgente que tudo abaixo) — Terminar o que essa sessão não conseguiu
+
+1. **Questões + casos clínicos para os 43 resumos existentes** — o pedido do
+   usuário foi "adicione mais questões e casos clínicos de todos os
+   conteúdo". Ainda não iniciado de verdade (a tentativa via Workflow não
+   produziu nada aproveitável). Duas opções pra próxima sessão:
+   a. **Relançar as duas Workflows corrigidas** (`Workflow({scriptPath: ...,
+      resumeFromRunId: ...})` nos dois `runId` acima) depois de 23h — os
+      scripts já estão certos, só rodar de novo. **Ou**, mais seguro: rodar
+      script novo (não resume) já que o resume pode reaproveitar respostas
+      cacheadas de agentes que "completaram" com erro de limite — checar o
+      journal.jsonl antes de confiar em qualquer cache.
+   b. **Escrever manualmente** (como foi feito para os 11 resumos e as
+      imagens desta sessão) — mais lento, mas não depende de cota de
+      subagente. Priorizar por raio-x: Infectologia (21 tópicos com resumo,
+      nenhuma questão nova ainda desta leva) → GO (15 tópicos, 8 são novos
+      desta sessão) → Pediatria (5) → Cirurgia/MFC (1 cada, mas são os que
+      mais precisam: **zero casos clínicos em ambas**).
+2. **57 imagens clínicas reais restantes** — a lista completa dos 60 alvos
+   (com query de busca em inglês, legenda em português, disciplina) está
+   nos dois arquivos de script linkados acima (variável `ALVOS`), ou pode
+   ser reconstruída a partir do texto desta seção. 3 já feitas: mola
+   hidatiforme, colposcopia, mamografia.
+3. **Continuar a extração de resumos do curso Estratégia MED** — ver seção
+   "CURSO ESTRATÉGIA MED" no PROMPTS-MASTER.md. Ainda faltam: Obstetrícia (25
+   tópicos), Pediatria (25), Preventiva (quase tudo), ~16 de Ginecologia.
+
 ## PRIORIDADE 1 — Continuar a extração (nesta ordem)
 
 ### Estratégia MED — a fonte mais densa agora disponível
@@ -390,6 +496,17 @@ escaneado — risco de direito autoral.
 - **`npx tsx ...` frequentemente cai sozinho em background** neste
   ambiente (mesmo sem pedir `run_in_background`) — normal, só aguardar a
   notificação em vez de re-tentar em primeiro plano.
+- **Workflows grandes (muitos agentes em pouco tempo) podem bater um "session
+  limit"** com reset em horário fixo (visto: 23h America/Sao_Paulo). Quando
+  isso acontece, TODOS os agentes daquele momento em diante falham com a
+  mesma mensagem — não é bug de conteúdo. Sinais: `agents_error` alto no
+  resumo da Workflow, mensagem literal "You've hit your session limit".
+  **Antes de relançar uma Workflow grande, considerar se o horário está perto
+  de um limite recente.** E sempre que uma etapa de pipeline chama `agent()`
+  de novo depois da primeira (ex.: escrever → verificar), tratar o `null` de
+  QUALQUER chamada, não só da primeira — `agent()` pode retornar `null` em
+  qualquer etapa, e não tratar isso quebra o pipeline inteiro e mascara
+  resultados parciais bons que já existiam.
 
 ## Checklist antes de commitar (reforçado, seguido nesta sessão)
 
