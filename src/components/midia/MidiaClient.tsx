@@ -26,6 +26,9 @@ const ONDE_APARECE: Record<string, { subtemaId: string; rotulo: string } | undef
   "inf-sifilis-cancro-real": { subtemaId: "inf--infeccoes-sexualmente-transmissiveis--sifilis", rotulo: "Sífilis" },
   "inf-sifilis-secundaria-real": { subtemaId: "inf--infeccoes-sexualmente-transmissiveis--sifilis", rotulo: "Sífilis" },
   "inf-sarampo-exantema-real": { subtemaId: "inf--doencas-exantematicas--exantemas-da-infancia", rotulo: "Doenças exantemáticas" },
+  "go-mola-hidatiforme-us-real": { subtemaId: "go--hemorragias-da-gestacao--primeira-metade-abortamento-ectopica-mola", rotulo: "Hemorragias da 1ª metade" },
+  "go-colo-uterino-colposcopia-real": { subtemaId: "go--oncologia-ginecologica--cancer-de-colo-uterino", rotulo: "Câncer de colo uterino" },
+  "go-cancer-mama-mamografia-real": { subtemaId: "go--mastologia--cancer-de-mama", rotulo: "Câncer de mama" },
 };
 
 const AREA: Record<string, string> = {

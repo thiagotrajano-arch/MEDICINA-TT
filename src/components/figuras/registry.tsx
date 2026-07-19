@@ -761,6 +761,48 @@ export const FIGURAS: Record<string, Figura> = {
       url: "https://commons.wikimedia.org/wiki/File:Measles_rash_PHIL_4497_lores.jpg",
     },
   },
+  "go-mola-hidatiforme-us-real": {
+    id: "go-mola-hidatiforme-us-real",
+    titulo: "Mola hidatiforme — ultrassonografia",
+    legenda:
+      "Padrão ecográfico em \"cacho de uvas\" / \"tempestade de neve\" — múltiplos ecos vesiculares dentro da cavidade uterina, sem saco gestacional ou embrião identificável, característico da mola completa.",
+    imagem: {
+      src: "img/clinicas/mola-hidatiforme-us.jpg",
+      alt: "Ultrassonografia transvaginal mostrando padrão vesicular difuso intrauterino característico de mola hidatiforme",
+      fonte: "Wikimedia Commons",
+      licenca: "CC0",
+      autor: "Mikael Häggström",
+      url: "https://commons.wikimedia.org/wiki/File:Molar_pregnancy.jpg",
+    },
+  },
+  "go-colo-uterino-colposcopia-real": {
+    id: "go-colo-uterino-colposcopia-real",
+    titulo: "Colo uterino — colposcopia com área acetobranca",
+    legenda:
+      "Área acetobranca no colo uterino após aplicação de ácido acético — achado colposcópico sugestivo de neoplasia intraepitelial cervical (NIC), indicação de biópsia dirigida.",
+    imagem: {
+      src: "img/clinicas/colo-uterino-colposcopia.gif",
+      alt: "Colposcopia do colo uterino mostrando área esbranquiçada (acetobranca) após ácido acético",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY 4.0",
+      autor: "Haeok Lee, Mary Sue Makin, Jasintha T Mtengezo e Address Malata",
+      url: "https://commons.wikimedia.org/wiki/File:VIAPosCIN1.gif",
+    },
+  },
+  "go-cancer-mama-mamografia-real": {
+    id: "go-cancer-mama-mamografia-real",
+    titulo: "Câncer de mama — mamografia",
+    legenda:
+      "Massa espiculada de alta densidade à mamografia — margens irregulares e espiculadas são o achado clássico de malignidade, em contraste com a margem circunscrita das lesões benignas.",
+    imagem: {
+      src: "img/clinicas/cancer-mama-mamografia.jpg",
+      alt: "Mamografia mostrando massa espiculada de alta densidade, achado característico de carcinoma de mama",
+      fonte: "Wikimedia Commons (National Cancer Institute / NIH)",
+      licenca: "Domínio público",
+      autor: "Dr. Dwight Kaufman, National Cancer Institute",
+      url: "https://commons.wikimedia.org/wiki/File:Mammogram_with_obvious_cancer.jpg",
+    },
+  },
 };
 
 export function getFigura(id: string): Figura | undefined {
