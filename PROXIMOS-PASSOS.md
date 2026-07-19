@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-19 (madrugada) — rotina diária das 6h (18/07) + 3 sessões interativas (imagens reais; curso Estratégia MED; skills/Obsidian/tentativa de workflow em massa). Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-19 — rotina diária das 6h (18/07) + 4 sessões interativas (imagens reais; curso Estratégia MED; skills/Obsidian/workflow em massa; extração direta de questões/casos/imagens). Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
@@ -8,9 +8,9 @@
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
 | **Resumos** | **43** de 170 subtemas |
-| **Questões** | **224** (GO 79 · Ped 55 · Inf 60 · MFC 12 · Cir 8 · originais 10) |
-| **Casos clínicos** | 4 (GO, Ped, Inf, Cir) — **MFC e Cirurgia ainda com zero casos** |
-| **Figuras** | 20 (12 diagramas SVG + 8 imagens reais licenciadas) |
+| **Questões** | **298** (GO 111 · Ped 55 · Inf 102 · MFC 12 · Cir 8 · originais 10) — todos os 43 tópicos com pelo menos 2 questões |
+| **Casos clínicos** | 6 (GO ×1, Ped, Inf, Cir ×2, MFC ×1) — todas as 5 disciplinas ativas têm ao menos 1 caso |
+| **Figuras** | 33 (12 diagramas SVG + 21 imagens reais licenciadas) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
 
 ## O que foi feito nesta sessão (2026-07-18, rotina automática)
@@ -355,32 +355,90 @@ Workflows**. O trabalho de escrever questões/casos/buscar imagens **continua
 pendente** — praticamente do zero (só 3 imagens novas, 0 questões novas desta
 leva).
 
-## PRIORIDADE 0 (nova, mais urgente que tudo abaixo) — Terminar o que essa sessão não conseguiu
+## O que foi feito nesta sessão (2026-07-19 — extração direta de questões/casos/imagens)
 
-1. **Questões + casos clínicos para os 43 resumos existentes** — o pedido do
-   usuário foi "adicione mais questões e casos clínicos de todos os
-   conteúdo". Ainda não iniciado de verdade (a tentativa via Workflow não
-   produziu nada aproveitável). Duas opções pra próxima sessão:
-   a. **Relançar as duas Workflows corrigidas** (`Workflow({scriptPath: ...,
-      resumeFromRunId: ...})` nos dois `runId` acima) depois de 23h — os
-      scripts já estão certos, só rodar de novo. **Ou**, mais seguro: rodar
-      script novo (não resume) já que o resume pode reaproveitar respostas
-      cacheadas de agentes que "completaram" com erro de limite — checar o
-      journal.jsonl antes de confiar em qualquer cache.
-   b. **Escrever manualmente** (como foi feito para os 11 resumos e as
-      imagens desta sessão) — mais lento, mas não depende de cota de
-      subagente. Priorizar por raio-x: Infectologia (21 tópicos com resumo,
-      nenhuma questão nova ainda desta leva) → GO (15 tópicos, 8 são novos
-      desta sessão) → Pediatria (5) → Cirurgia/MFC (1 cada, mas são os que
-      mais precisam: **zero casos clínicos em ambas**).
-2. **57 imagens clínicas reais restantes** — a lista completa dos 60 alvos
-   (com query de busca em inglês, legenda em português, disciplina) está
-   nos dois arquivos de script linkados acima (variável `ALVOS`), ou pode
-   ser reconstruída a partir do texto desta seção. 3 já feitas: mola
-   hidatiforme, colposcopia, mamografia.
-3. **Continuar a extração de resumos do curso Estratégia MED** — ver seção
+Continuação direta da sessão anterior, depois que o usuário confirmou "faça
+tudo q pedi". A tentativa de usar Workflow (multi-agente) foi retentada
+**duas vezes mais** e falhou as duas vezes pelo mesmo motivo — ver lição
+abaixo. Diante disso, todo o conteúdo desta seção foi **escrito
+diretamente**, sem subagentes.
+
+### Descoberta importante: o limite de sessão é rolante, não um horário fixo
+Cada nova tentativa de Workflow grande (dezenas de agentes de uma vez)
+bateu o limite quase instantaneamente, e a mensagem de "reset" **mudou de
+horário a cada tentativa** (23h → 13:40 → ainda em vigor às 15h50 do mesmo
+dia). Conclusão: o limite é proporcional ao volume de agentes disparados
+em rajada recente, não um reset num horário fixo do dia. **Um teste rápido
+com 1 agente isolado sempre funcionou** — o problema é especificamente
+lançar dezenas de agentes de uma vez via Workflow. Lição para sessões
+futuras: se o objetivo é gerar muito conteúdo, ou usar Workflow com poucos
+agentes por vez (ex.: lotes de 5-10, não 40-60), ou simplesmente escrever
+diretamente (mais lento, mas 100% confiável e é o que efetivamente
+funcionou aqui).
+
+### Questões — 74 novas (todos os 43 tópicos agora com ≥ 2 questões)
+Auditoria real (contagem programática por `subtemaId`, não estimativa)
+revelou que **GO e Pediatria já estavam bem cobertos** (2 a 28 questões por
+tópico), mas **11 dos 21 tópicos de Infectologia tinham ZERO questões**:
+PAC, ITU, endocardite, hepatites virais, doenças exantemáticas, raiva,
+leptospirose, mpox, parasitoses intestinais, antibioticoterapia,
+imunizações no adulto. Escritas 30 questões para esses 11 (commit
+`e160a78`), mais as 44 já commitadas antes (`6c0b656`): 8 tópicos novos de
+GO (32) + 3 tópicos novos de Infectologia — malária, zika/chikungunya,
+COVID-19/influenza (12).
+
+### Casos clínicos — 2 novos (Cirurgia e MFC, únicas disciplinas sem
+cobertura variada)
+- `caso-cir-02`: mesmo subtema (colecistite/colangite, único disponível em
+  Cirurgia), ângulo diferente do caso já existente — o espectro cólica
+  biliar → colecistite → coledocolitíase, não a progressão para choque
+  séptico já coberta.
+- `caso-mfc-01`: **primeiro caso clínico da história do MFC** — raciocínio
+  aplicado de sensibilidade/especificidade/VPP com uma vinheta de
+  rastreamento populacional.
+
+### Imagens reais — 16 novas nesta sessão (13 + 4, commit `6c0b656`)
+Todas buscadas e com licença verificada manualmente (API do Wikimedia,
+mesma checagem de sempre) uma a uma, sem Workflow: manchas de Koplik
+(sarampo), TB cavitária, crupe e epiglotite (RX cervical — sinal da torre
+e sinal do polegar), pneumotórax, apendicite (TC), obstrução intestinal
+(RX), pé diabético, baqueteamento digital, cianose central, gota (tofos),
+escabiose, doença mão-pé-boca. Ancoradas onde já havia resumo compatível
+(TB, exantemáticas, crupe×epiglotite); as demais ficam disponíveis na
+Biblioteca (`/midia`) aguardando resumo correspondente.
+
+Uma imagem (`ictericia-kramer-rn.jpg`, ~71 KB, JPEG válido) foi
+**descartada** por não ter registro de fonte/licença recuperável —
+provavelmente baixada por um agente da Workflow anterior que morreu antes
+de retornar seus metadados. Nunca use uma imagem sem conseguir confirmar a
+licença, mesmo que o arquivo pareça legítimo.
+
+### Rate limit do Wikimedia (diferente do limite de sessão)
+Depois de ~15-20 requisições de download em poucos minutos, o CDN do
+Wikimedia (`upload.wikimedia.org`) passou a retornar **HTTP 429** com a
+mensagem "Too many requests — contact noc@wikimedia.org...". É um limite
+da própria Wikimedia, não relacionado ao limite de sessão do Claude.
+Mitigação: espaçar downloads por pelo menos 3-5 segundos, e se começar a
+tomar 429, parar por vários minutos antes de tentar de novo — insistir
+imediatamente só resulta em mais arquivos de erro HTML disfarçados de
+imagem (sempre confirme o tamanho/conteúdo do arquivo baixado).
+
+## PRIORIDADE 0 (mais urgente) — o que ainda falta desta leva
+
+1. **~44 imagens clínicas reais restantes** (das 60 originalmente
+   planejadas, 16 já feitas nesta sessão + 3 da sessão anterior = 19 no
+   total). A lista completa dos alvos ainda não buscados (query em inglês,
+   legenda em português, disciplina) está nos arquivos de script linkados
+   na entrada da sessão anterior, ou pode ser refeita a partir do padrão já
+   estabelecido. Continuar buscando **com pausas de 3-5s entre downloads**
+   para não levar 429 do Wikimedia.
+2. **Continuar a extração de resumos do curso Estratégia MED** — ver seção
    "CURSO ESTRATÉGIA MED" no PROMPTS-MASTER.md. Ainda faltam: Obstetrícia (25
-   tópicos), Pediatria (25), Preventiva (quase tudo), ~16 de Ginecologia.
+   tópicos), Pediatria (25), Preventiva (quase tudo), ~16 de Ginecologia —
+   esta é a maior pendência em volume absoluto de todo o projeto.
+3. **Mais um caso clínico por disciplina** seria valioso (GO e Pediatria só
+   têm 1 cada; Infectologia e Cirurgia têm 1-2) — considerar ao extrair
+   novos resumos do Estratégia MED, aproveitando o material fresco.
 
 ## PRIORIDADE 1 — Continuar a extração (nesta ordem)
 
