@@ -43,7 +43,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Exames de imagem",
         corpo:
           "A **radiografia de tórax é obrigatória** em todo sintomático respiratório, mesmo com baciloscopia negativa.\n\n- **TB primária:** complexo primário (nódulo parenquimatoso + linfonodo hilar), podendo haver atelectasia; comum em crianças.\n- **TB pós-primária (reativação):** **cavitação em lobos superiores / segmento apical dos lobos inferiores** — achado clássico de prova.\n- **TB miliar:** micronódulos difusos < 2–3 mm bilaterais (\"grãos de milho\").\n- **TB pleural:** derrame unilateral, em geral sem cavitação associada.",
-        figura: ["inf-tb-primaria-vs-pos", "inf-tb-miliar-rx-real"],
+        figura: ["inf-tb-primaria-vs-pos", "inf-tb-miliar-rx-real", "inf-tb-cavitaria-real"],
       },
       {
         secao: "Tratamento",
@@ -705,7 +705,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Exames de imagem",
         corpo:
           "**Kawasaki:** ecocardiograma **obrigatório** na suspeita (basal, 2 semanas e 6–8 semanas) para rastreio de **aneurisma de artéria coronária** — achado que define a gravidade e o seguimento a longo prazo. **MIS-C:** ecocardiograma também essencial (pode haver disfunção miocárdica/derrame pericárdico, além de aneurisma coronariano).",
-        figura: ["inf-exantemas-padrao-temporal", "inf-sarampo-exantema-real"],
+        figura: ["inf-exantemas-padrao-temporal", "inf-sarampo-exantema-real", "inf-sarampo-koplik-real"],
       },
       {
         secao: "Diagnóstico diferencial",

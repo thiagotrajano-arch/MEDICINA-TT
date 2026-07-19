@@ -245,4 +245,117 @@ export const CASOS: CasoClinico[] = [
       "Sabiston — Textbook of Surgery",
     ],
   },
+  {
+    id: "caso-cir-02",
+    disciplinaId: "cir",
+    subtemaId: "cir--abdome-agudo--colecistite-e-colangite",
+    titulo: "Cólica biliar, colecistite ou coledocolitíase?",
+    resumo: "Três apresentações do mesmo problema biliar — a duração da dor e o padrão dos exames é que separam uma da outra.",
+    dificuldade: "intermediaria",
+    tags: ["cólica biliar", "colecistite", "coledocolitíase", "Murphy"],
+    etapas: [
+      {
+        tipo: "historia",
+        titulo: "História",
+        corpo:
+          "**Mulher, 45 anos, obesa, multípara**, relata episódios recorrentes de dor em hipocôndrio direito após refeições gordurosas, cada um durando 1–2 horas e cedendo espontaneamente — há meses.\n\nHoje, a dor começou há **18 horas** e **não cedeu** — está contínua, associada a náuseas e vômitos. Sem febre até o momento.",
+        pergunta: "Diferencie os episódios prévios do episódio atual: qual a hipótese para cada um?",
+        resposta:
+          "**Episódios prévios: cólica biliar simples** — obstrução transitória do ducto cístico por cálculo, sem inflamação da parede vesicular. Duração tipicamente curta (horas), sem febre, cede espontaneamente quando o cálculo se desimpacta.\n\n**Episódio atual: dor persistente > 6 horas + náusea/vômito** sugere progressão para **colecistite aguda** — a obstrução não se desfez, e a estase biliar mantida inflama a parede da vesícula.",
+      },
+      {
+        tipo: "exame_fisico",
+        titulo: "Exame físico",
+        corpo: "Temperatura 38,2 °C, FC 96 bpm. Dor à palpação em hipocôndrio direito com interrupção da inspiração profunda durante a palpação (sinal de Murphy positivo). Sem icterícia.",
+        pergunta: "O Murphy positivo + febre confirma o quê — e por que a AUSÊNCIA de icterícia aqui é uma pista importante?",
+        resposta:
+          "Confirma **colecistite aguda**. A ausência de icterícia é a pista-chave: a obstrução é do **ducto cístico** (drena só a vesícula), não do colédoco — a bilirrubina permanece normal ou pouco alterada.\n\nSe fosse **colangite**, a obstrução seria do **colédoco** (via biliar principal), e aí sim esperaríamos icterícia associada à febre.",
+      },
+      {
+        tipo: "laboratorio",
+        titulo: "Laboratório e imagem",
+        corpo:
+          "Leucocitose com desvio à esquerda. Bilirrubina e transaminases normais. USG: parede vesicular espessada (> 3 mm), líquido pericolecístico, cálculo impactado no colo/infundíbulo, Murphy ultrassonográfico positivo.",
+        pergunta: "A USG confirma o diagnóstico. Qual a conduta e o timing recomendado pela diretriz atual (WSES 2020)?",
+        resposta:
+          "**Colecistectomia videolaparoscópica precoce** — dentro de 7 dias do início dos sintomas (idealmente nas primeiras 72h), **na mesma internação**.\n\n👉 É a mudança de paradigma da **WSES 2020**: abandonar a antiga conduta de \"esfriar\" o quadro por 6 semanas antes de operar. Cirurgia precoce reduz tempo total de internação, sem aumento de complicações.",
+      },
+      {
+        tipo: "evolucao",
+        titulo: "Evolução na espera pré-operatória",
+        corpo: "Dois dias depois, ainda aguardando vaga cirúrgica, a paciente evolui com icterícia (bilirrubina total 4,2 mg/dL, padrão colestático) e piora do quadro geral.",
+        pergunta: "O que aconteceu, e como isso muda a conduta imediata?",
+        resposta:
+          "Provável **migração do cálculo para o colédoco (coledocolitíase)** — com risco de evoluir para **colangite** se sobrevier infecção sobre essa obstrução.\n\n**Muda a conduta:** solicitar CPRM (ou colangiografia intraoperatória) para confirmar a coledocolitíase; confirmada, indicar **CPRE** (papilotomia + extração do cálculo) antes ou durante a colecistectomia, conforme o protocolo do serviço.",
+      },
+      {
+        tipo: "desfecho",
+        titulo: "Desfecho",
+        corpo: "CPRE confirma e remove cálculo do colédoco distal com sucesso. Paciente segue para colecistectomia videolaparoscópica no mesmo internamento, com boa evolução.",
+        pergunta: "Em uma frase: por que os 3 quadros deste caso são o MESMO problema em estágios diferentes?",
+        resposta:
+          "Porque formam um **espectro contínuo**: cálculo obstrui o cístico transitoriamente (**cólica biliar**) → obstrução persiste e inflama a vesícula (**colecistite**) → cálculo migra e obstrui o colédoco (**coledocolitíase**) → se infecta, vira **colangite**. A icterícia é o que separa \"doença só da vesícula\" de \"doença da via biliar principal\".",
+      },
+    ],
+    discussao:
+      "Três pontos-chave:\n\n1. **O espectro biliar é um continuum**: cólica biliar → colecistite → coledocolitíase → colangite, cada etapa definida por onde o cálculo está e há quanto tempo.\n2. **A icterícia é o divisor de águas** entre obstrução do cístico (só vesícula, sem icterícia) e obstrução do colédoco (via biliar principal, com icterícia).\n3. **WSES 2020 mudou o paradigma da colecistite** para cirurgia precoce na mesma internação — não mais \"esfriar\" por semanas.",
+    referencias: [
+      "WSES 2020 — Guidelines on acute calculous cholecystitis",
+      "Tokyo Guidelines 2018 (TG18)",
+      "Sabiston — Textbook of Surgery",
+    ],
+  },
+
+  // ── MFC ───────────────────────────────────────────────────────
+  {
+    id: "caso-mfc-01",
+    disciplinaId: "mfc",
+    subtemaId: "mfc--epidemiologia--testes-diagnosticos-sensibilidade-e-especificidade",
+    titulo: "Um teste positivo nem sempre significa doença",
+    resumo: "Um resultado positivo em rastreamento populacional gera dúvida: confiar no teste ou na prevalência da doença?",
+    dificuldade: "intermediaria",
+    tags: ["sensibilidade", "especificidade", "valor preditivo positivo", "prevalência"],
+    etapas: [
+      {
+        tipo: "historia",
+        titulo: "O cenário",
+        corpo:
+          "Você atua em uma unidade básica de saúde e realiza rastreamento de uma doença **rara** (prevalência de 1% na população) com um teste rápido de **sensibilidade 95%** e **especificidade 90%**.\n\nUma paciente assintomática, sem fatores de risco, tem resultado **POSITIVO**.",
+        pergunta: "Antes de calcular qualquer coisa: qual pergunta você, como médico, deve se fazer diante desse resultado positivo numa doença rara?",
+        resposta:
+          "\"Qual a real probabilidade de a paciente ter a doença, dado esse resultado positivo?\" — ou seja, qual é o **Valor Preditivo Positivo (VPP)** desse teste **nesta população específica**, de prevalência baixa.\n\n👉 Sensibilidade e especificidade são propriedades **fixas** do teste (leem-se na vertical da tabela 2×2); o **VPP muda com a prevalência** (lê-se na horizontal).",
+      },
+      {
+        tipo: "exame_fisico",
+        titulo: "Fazendo as contas",
+        corpo:
+          "Suponha uma população de **10.000 pessoas** rastreadas. Prevalência de 1% → 100 doentes e 9.900 sadios. Sensibilidade 95%, especificidade 90%.",
+        pergunta: "Quantos verdadeiros positivos, falsos positivos, verdadeiros negativos e falsos negativos você espera?",
+        resposta:
+          "Dos 100 doentes: **VP = 100 × 0,95 = 95**; **FN = 100 × 0,05 = 5**.\n\nDos 9.900 sadios: **VN = 9.900 × 0,90 = 8.910**; **FP = 9.900 × 0,10 = 990**.\n\nTotal de testes positivos = 95 + 990 = **1.085**.",
+      },
+      {
+        tipo: "hipoteses",
+        titulo: "Calculando o VPP",
+        corpo: "Com esses números da tabela 2×2 em mãos...",
+        pergunta: "Qual é o VPP desse teste, e o que isso significa na prática para essa paciente com resultado positivo?",
+        resposta:
+          "**VPP = VP / (VP + FP) = 95 / 1.085 ≈ 8,8%.**\n\nMesmo com um teste de boa sensibilidade/especificidade, numa doença **rara** a maioria absoluta dos resultados positivos (**91,2%**) é **falso positivo**. Não se deve tratar nem alarmar a paciente com base só nesse resultado — é necessário **confirmar com um teste mais específico (padrão-ouro)** antes de qualquer conduta definitiva.",
+      },
+      {
+        tipo: "desfecho",
+        titulo: "Desfecho",
+        corpo: "A paciente é encaminhada para o teste confirmatório padrão-ouro, que vem negativo.",
+        pergunta: "Isso configura um erro do teste rápido inicial? Como você explica esse resultado à paciente?",
+        resposta:
+          "**Não é um erro** no sentido de falha da tecnologia — é a matemática esperada de rastrear uma doença rara com um teste imperfeito: um número relevante de falsos positivos é **estatisticamente inevitável**, mesmo com um bom teste.\n\n**Explicação à paciente:** o teste de rastreio serve para **triagem** (alta sensibilidade = poucos casos perdidos), não para diagnóstico definitivo — por isso todo positivo em rastreio populacional precisa de confirmação antes de qualquer conclusão.",
+      },
+    ],
+    discussao:
+      "Três pontos-chave:\n\n1. **Sensibilidade e especificidade são propriedades intrínsecas do teste** — não mudam com a prevalência (leitura vertical da tabela 2×2).\n2. **VPP e VPN mudam com a prevalência** (leitura horizontal) — é por isso que o mesmo teste \"funciona diferente\" em populações diferentes.\n3. **Em doenças raras, mesmo testes muito bons geram muitos falsos positivos em números absolutos** — daí a necessidade de teste confirmatório antes de qualquer conduta, e o cuidado ao interpretar rastreamento em massa.",
+    referencias: [
+      "Fletcher & Fletcher — Epidemiologia Clínica",
+      "Rouquayrol — Epidemiologia e Saúde",
+    ],
+  },
 ];

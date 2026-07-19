@@ -156,7 +156,7 @@ export const CONTEUDOS_PED: Record<string, ConteudoSubtema> = {
         secao: "Diagnóstico diferencial",
         corpo:
           "| | **Crupe** | **Epiglotite** |\n|---|---|---|\n| Início | Gradual, noturno | **Súbito, fulminante** |\n| Tosse | **Ladrante** | Ausente |\n| Estado geral | **Pouco toxemiado** | **Toxemiado, prostrado** |\n| Postura | Normal | **Tripé**, pescoço estendido |\n| Outros | Rouquidão | **Sialorreia, disfagia**, voz abafada |\n| Agente | Parainfluenza | **H. influenzae tipo b** |\n\n👉 O diferencial central é a **toxemia**. Outros: **traqueíte bacteriana**, **aspiração de corpo estranho** (súbito, sem pródromo), abscesso retrofaríngeo.",
-        figura: "ped-crupe-vs-epiglotite",
+        figura: ["ped-crupe-vs-epiglotite", "ped-crupe-rx-real", "ped-epiglotite-rx-real"],
       },
       {
         secao: "Complicações",

@@ -803,6 +803,188 @@ export const FIGURAS: Record<string, Figura> = {
       url: "https://commons.wikimedia.org/wiki/File:Mammogram_with_obvious_cancer.jpg",
     },
   },
+  "inf-sarampo-koplik-real": {
+    id: "inf-sarampo-koplik-real",
+    titulo: "Sarampo — manchas de Koplik",
+    legenda:
+      "Manchas de Koplik: pequenos pontos esbranquiçados sobre base eritematosa na mucosa jugal, patognomônicas de sarampo — surgem no pródromo, ANTES do exantema cutâneo, e são um achado precoce valioso para o diagnóstico.",
+    imagem: {
+      src: "img/clinicas/sarampo-koplik.jpg",
+      alt: "Mucosa oral com manchas de Koplik — pontos esbranquiçados patognomônicos do sarampo",
+      fonte: "Wikimedia Commons (CDC PHIL)",
+      licenca: "Domínio público",
+      autor: "CDC",
+      url: "https://commons.wikimedia.org/wiki/File:Koplik_spots,_measles_6111_lores.jpg",
+    },
+  },
+  "inf-tb-cavitaria-real": {
+    id: "inf-tb-cavitaria-real",
+    titulo: "Tuberculose pós-primária — cavitação em RX de tórax",
+    legenda:
+      "Cavitação em lobo superior — o achado clássico da TB pós-primária (reativação), tipicamente em ápices pulmonares. Compare com o padrão miliar (micronódulos difusos): são apresentações radiológicas distintas do mesmo bacilo, uma da reativação e outra da disseminação hematogênica.",
+    imagem: {
+      src: "img/clinicas/tb-cavitaria-rx.jpg",
+      alt: "Radiografia de tórax mostrando cavitação em lobo superior, achado clássico de tuberculose pós-primária",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY-SA 2.0",
+      autor: "Yale Rosen",
+      url: "https://commons.wikimedia.org/wiki/File:Cavitary_tuberculosis.jpg",
+    },
+  },
+  "ped-crupe-rx-real": {
+    id: "ped-crupe-rx-real",
+    titulo: "Crupe — radiografia cervical (sinal da torre)",
+    legenda:
+      "Estreitamento subglótico em coluna de ar, o \"sinal da torre de igreja\" (steeple sign), característico do crupe viral — reflete o edema logo abaixo das cordas vocais.",
+    imagem: {
+      src: "img/clinicas/crupe-sinal-torre.jpg",
+      alt: "Radiografia cervical AP mostrando estreitamento subglótico em coluna, sinal da torre de igreja do crupe",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY-SA 3.0",
+      autor: "Frank Gaillard",
+      url: "https://commons.wikimedia.org/wiki/File:Croup_steeple_sign.jpg",
+    },
+  },
+  "ped-epiglotite-rx-real": {
+    id: "ped-epiglotite-rx-real",
+    titulo: "Epiglotite — radiografia cervical (sinal do polegar)",
+    legenda:
+      "Epiglote edemaciada, espessada, projetando-se como um \"polegar\" na radiografia cervical lateral — o sinal do polegar (thumb sign), clássico da epiglotite aguda. Emergência: manipular a via aérea com extrema cautela.",
+    imagem: {
+      src: "img/clinicas/epiglotite-sinal-polegar.jpg",
+      alt: "Radiografia cervical lateral mostrando epiglote edemaciada em formato de polegar, sinal clássico de epiglotite",
+      fonte: "Wikimedia Commons",
+      licenca: "CC0",
+      autor: "Med Chaos",
+      url: "https://commons.wikimedia.org/wiki/File:Epiglottitis.jpg",
+    },
+  },
+  "cir-pneumotorax-real": {
+    id: "cir-pneumotorax-real",
+    titulo: "Pneumotórax — tomografia de tórax",
+    legenda:
+      "Ar livre no espaço pleural, colabando o parênquima pulmonar adjacente — achado que pode ser visto tanto em radiografia simples quanto em TC de tórax.",
+    imagem: {
+      src: "img/clinicas/pneumotorax-rx.jpg",
+      alt: "Tomografia de tórax mostrando pneumotórax com colabamento pulmonar",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY-SA 2.5",
+      autor: "Clinical Cases (Wikipedia)",
+      url: "https://commons.wikimedia.org/wiki/File:Pneumothorax_CT.jpg",
+    },
+  },
+  "cir-apendicite-tc-real": {
+    id: "cir-apendicite-tc-real",
+    titulo: "Apendicite aguda — tomografia computadorizada",
+    legenda:
+      "Apêndice espessado e distendido, com borramento da gordura periapendicular — achados tomográficos clássicos de apendicite aguda.",
+    imagem: {
+      src: "img/clinicas/apendicite-tc.jpg",
+      alt: "Tomografia de abdome mostrando apêndice espessado e inflamado, achado de apendicite aguda",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY-SA 4.0",
+      autor: "Cerevisae",
+      url: "https://commons.wikimedia.org/wiki/File:CT_scan_of_the_abdomen_showing_acute_appendicitis.jpg",
+    },
+  },
+  "cir-obstrucao-intestinal-real": {
+    id: "cir-obstrucao-intestinal-real",
+    titulo: "Obstrução intestinal — radiografia de abdome",
+    legenda:
+      "Alças intestinais dilatadas com múltiplos níveis hidroaéreos — o padrão radiográfico clássico da obstrução intestinal mecânica.",
+    imagem: {
+      src: "img/clinicas/obstrucao-intestinal-rx-niveis.jpg",
+      alt: "Radiografia de abdome mostrando alças dilatadas e níveis hidroaéreos, achado de obstrução intestinal",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY-SA 4.0",
+      autor: "Igboeze",
+      url: "https://commons.wikimedia.org/wiki/File:1._Bowel-obstruction-x-ray.jpg",
+    },
+  },
+  "mfc-pe-diabetico-real": {
+    id: "mfc-pe-diabetico-real",
+    titulo: "Pé diabético — úlcera neuropática",
+    legenda:
+      "Úlcera plantar em área de pressão, tipicamente indolor pela neuropatia periférica associada ao diabetes — reforça a importância do exame regular dos pés e da prevenção (calçados adequados, inspeção diária).",
+    imagem: {
+      src: "img/clinicas/pe-diabetico-ulcera.jpg",
+      alt: "Pé com úlcera neuropática em região plantar, característica do pé diabético",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY 4.0",
+      autor: "Mark A. Dreyer, DPM, FACFAS",
+      url: "https://commons.wikimedia.org/wiki/File:Diabetic_Foot_Ulcer.jpg",
+    },
+  },
+  "clm-baqueteamento-digital-real": {
+    id: "clm-baqueteamento-digital-real",
+    titulo: "Baqueteamento digital",
+    legenda:
+      "Aumento do ângulo entre a prega ungueal e a unha (perda do ângulo de Lovibond) com abaulamento da falange distal — sinal clássico associado a doenças pulmonares crônicas, cardiopatias cianóticas e outras condições sistêmicas.",
+    imagem: {
+      src: "img/clinicas/baqueteamento-digital.jpg",
+      alt: "Dedos com baqueteamento digital, mostrando abaulamento característico da falange distal",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY-SA 4.0",
+      autor: "Wesalius",
+      url: "https://commons.wikimedia.org/wiki/File:Clubbing_fingers_2.jpg",
+    },
+  },
+  "clm-cianose-labios-real": {
+    id: "clm-cianose-labios-real",
+    titulo: "Cianose central",
+    legenda:
+      "Coloração azulada de lábios e extremidades por dessaturação de oxi-hemoglobina — cianose central quando envolve mucosas (lábios, língua), sinal de hipoxemia significativa.",
+    imagem: {
+      src: "img/clinicas/cianose-labios.jpg",
+      alt: "Lábios e extremidades com coloração azulada característica de cianose",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY-SA 4.0",
+      autor: "Göttgens, Baks, Harteveld, Goossens & van Gammeren",
+      url: "https://commons.wikimedia.org/wiki/File:Cyanotic_extremities_and_cyanotic_lip_discoloration.jpg",
+    },
+  },
+  "reu-gota-tofos-real": {
+    id: "reu-gota-tofos-real",
+    titulo: "Gota — tofos gotosos",
+    legenda:
+      "Depósitos de cristais de urato (tofos) em mãos de paciente com gota crônica — achado tardio da doença não controlada, frequentemente periarticular.",
+    imagem: {
+      src: "img/clinicas/gota-tofos.jpg",
+      alt: "Mão com tofos gotosos, depósitos de cristais de urato característicos de gota crônica",
+      fonte: "Wikimedia Commons (Wellcome Collection)",
+      licenca: "CC BY 4.0",
+      autor: "Leonard Portal Mark",
+      url: "https://commons.wikimedia.org/wiki/File:Right_hand_of_a_woman_suffering_from_chronic_gout_Wellcome_L0062320.jpg",
+    },
+  },
+  "inf-escabiose-real": {
+    id: "inf-escabiose-real",
+    titulo: "Escabiose — lesões cutâneas",
+    legenda:
+      "Lesões papulares e escoriações por prurido intenso, tipicamente de piora noturna, em distribuição característica (interdígitos, punhos, região periumbilical) — escabiose (infestação por Sarcoptes scabiei).",
+    imagem: {
+      src: "img/clinicas/escabiose-lesoes.jpg",
+      alt: "Pele com lesões papulares características de escabiose",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY-SA 2.0",
+      autor: "Atlas of Medical Foreign Bodies",
+      url: "https://commons.wikimedia.org/wiki/File:Skin_-_Scabies_(49415528603).jpg",
+    },
+  },
+  "ped-maos-pes-boca-real": {
+    id: "ped-maos-pes-boca-real",
+    titulo: "Doença mão-pé-boca — exantema",
+    legenda:
+      "Vesículas e pápulas eritematosas em mãos, tipicamente associadas a lesões semelhantes em pés e mucosa oral — doença mão-pé-boca, geralmente por Coxsackievírus A16 ou Enterovírus 71.",
+    imagem: {
+      src: "img/clinicas/maos-pes-boca-lesoes.jpg",
+      alt: "Mãos com vesículas e pápulas eritematosas características de doença mão-pé-boca",
+      fonte: "Wikimedia Commons",
+      licenca: "CC BY-SA 3.0",
+      autor: "James Heilman, MD",
+      url: "https://commons.wikimedia.org/wiki/File:Characteristic_rash_of_hand,_foot,_and_mouth_disease,_on_human_hands.jpg",
+    },
+  },
 };
 
 export function getFigura(id: string): Figura | undefined {

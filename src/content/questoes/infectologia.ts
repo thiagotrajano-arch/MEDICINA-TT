@@ -1052,4 +1052,213 @@ export const QUESTOES_INF: Questao[] = [
     tags: ["herpes neonatal", "SNC", "eletrodo de escalpo fetal"],
     fonte: FONTE_CONGENITA,
   },
+
+  // ── MALÁRIA ──────────────────────────────────────────────────
+  {
+    id: "inf-mal-01",
+    subtemaId: "inf--malaria--diagnostico-e-tratamento",
+    disciplinaId: "inf",
+    enunciado:
+      "Paciente retorna de viagem à região amazônica há 10 dias e apresenta febre com recorrência a cada 48 horas, calafrios e sudorese. A gota espessa confirma Plasmodium falciparum. Qual a classificação da febre observada?",
+    alternativas: [
+      { letra: "A", texto: "Febre quartã.", correta: false, comentario: "A febre quartã (a cada 72h) é característica do P. malariae." },
+      { letra: "B", texto: "Febre terçã.", correta: true, comentario: "A recorrência a cada 48 horas é chamada de febre terçã, característica de P. falciparum e P. vivax." },
+      { letra: "C", texto: "Febre héctica.", correta: false, comentario: "Não é o termo usado para esse padrão de malária." },
+      { letra: "D", texto: "Febre contínua.", correta: false, comentario: "Não descreve o padrão intermitente típico da malária." },
+    ],
+    dificuldade: "fixacao",
+    estilo: "diagnostico",
+    tags: ["malária", "febre terçã"],
+    fonte: "Ministério da Saúde — Guia de Tratamento da Malária no Brasil",
+  },
+  {
+    id: "inf-mal-02",
+    subtemaId: "inf--malaria--diagnostico-e-tratamento",
+    disciplinaId: "inf",
+    enunciado: "Qual espécie de Plasmodium é a principal responsável pelos casos de malária grave e óbitos relacionados à doença?",
+    alternativas: [
+      { letra: "A", texto: "Plasmodium malariae.", correta: false, comentario: "Associado a febre quartã, geralmente com curso mais brando." },
+      { letra: "B", texto: "Plasmodium falciparum.", correta: true, comentario: "É a espécie associada à maior parte dos casos de malária grave e à quase totalidade dos óbitos." },
+      { letra: "C", texto: "Plasmodium ovale.", correta: false, comentario: "Associado a recaídas por hipnozoítos, não é a principal causa de malária grave." },
+      { letra: "D", texto: "Plasmodium vivax isoladamente.", correta: false, comentario: "Pode cursar com formas graves ocasionalmente, mas não é a principal causa de óbito." },
+    ],
+    dificuldade: "fixacao",
+    estilo: "diagnostico",
+    tags: ["malária", "P. falciparum"],
+    fonte: "OMS — Guidelines for the Treatment of Malaria",
+  },
+  {
+    id: "inf-mal-03",
+    subtemaId: "inf--malaria--diagnostico-e-tratamento",
+    disciplinaId: "inf",
+    enunciado:
+      "Paciente tratado para malária por Plasmodium vivax recebe alta após resolução do quadro agudo com esquizonticida sanguíneo. Qual medicação adicional é necessária para prevenir recaída, e por quê?",
+    alternativas: [
+      { letra: "A", texto: "Nenhuma medicação adicional é necessária.", correta: false, comentario: "Para P. vivax há risco de recaída pelas formas hepáticas latentes, exigindo tratamento adicional." },
+      { letra: "B", texto: "Primaquina, para eliminar os hipnozoítos hepáticos.", correta: true, comentario: "P. vivax (e P. ovale) formam hipnozoítos hepáticos responsáveis por recaídas — a primaquina atua sobre essas formas latentes." },
+      { letra: "C", texto: "Doxiciclina, para cobertura de infecção bacteriana secundária.", correta: false, comentario: "Não é essa a indicação nesse contexto." },
+      { letra: "D", texto: "Corticoide, para reduzir resposta inflamatória.", correta: false, comentario: "Não tem papel padrão no tratamento pós-episódio agudo." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["malária", "primaquina", "recaída"],
+    fonte: "Ministério da Saúde — Guia de Tratamento da Malária no Brasil",
+  },
+  {
+    id: "inf-mal-04",
+    subtemaId: "inf--malaria--diagnostico-e-tratamento",
+    disciplinaId: "inf",
+    enunciado:
+      "Paciente com malária apresenta icterícia, anemia, oligúria, hiperlactatemia e episódio de desorientação. Qual a classificação e a conduta quanto ao local de tratamento?",
+    alternativas: [
+      { letra: "A", texto: "Malária não complicada; tratamento ambulatorial.", correta: false, comentario: "Os sinais descritos caracterizam malária grave, não malária não complicada." },
+      { letra: "B", texto: "Malária complicada (grave), com internação hospitalar obrigatória.", correta: true, comentario: "Sinais de hemólise, disfunção orgânica e neurológica (sugerindo malária cerebral) definem malária grave, exigindo internação." },
+      { letra: "C", texto: "Malária latente; apenas observação ambulatorial.", correta: false, comentario: "Não existe essa classificação para o quadro descrito, claramente grave." },
+      { letra: "D", texto: "Quimioprofilaxia isolada, sem tratamento agudo.", correta: false, comentario: "Quimioprofilaxia é medida preventiva, não tratamento de um caso grave já instalado." },
+    ],
+    dificuldade: "avancada",
+    estilo: "conduta",
+    tags: ["malária grave", "malária cerebral"],
+    fonte: "Ministério da Saúde — Guia de Tratamento da Malária no Brasil",
+  },
+
+  // ── ZIKA E CHIKUNGUNYA ───────────────────────────────────────
+  {
+    id: "inf-zc-01",
+    subtemaId: "inf--arboviroses--zika-e-chikungunya",
+    disciplinaId: "inf",
+    enunciado:
+      "Gestante no primeiro trimestre apresenta exantema pruriginoso leve e conjuntivite não purulenta, com sorologia positiva para Zika vírus. Qual a principal complicação fetal associada?",
+    alternativas: [
+      { letra: "A", texto: "Cardiopatia congênita isolada.", correta: false, comentario: "Não é a associação clássica mais forte com a infecção por Zika." },
+      { letra: "B", texto: "Microcefalia (síndrome congênita do Zika).", correta: true, comentario: "A infecção por Zika na gestação associa-se classicamente à síndrome congênita do Zika, cujo achado mais marcante é a microcefalia." },
+      { letra: "C", texto: "Macrossomia fetal.", correta: false, comentario: "Não é achado associado à infecção por Zika." },
+      { letra: "D", texto: "Polidrâmnio isolado.", correta: false, comentario: "Não é a principal complicação descrita." },
+    ],
+    dificuldade: "fixacao",
+    estilo: "diagnostico",
+    tags: ["Zika", "microcefalia", "síndrome congênita"],
+    fonte: "Ministério da Saúde — Guia de Vigilância em Saúde (Arboviroses)",
+  },
+  {
+    id: "inf-zc-02",
+    subtemaId: "inf--arboviroses--zika-e-chikungunya",
+    disciplinaId: "inf",
+    enunciado:
+      "Paciente apresenta febre alta de início súbito associada a poliartralgia intensa e incapacitante em mãos e punhos, bilateral e simétrica. Qual arbovirose é a mais provável?",
+    alternativas: [
+      { letra: "A", texto: "Dengue.", correta: false, comentario: "Cursa mais com mialgia e artralgia leve a moderada, não poliartralgia tão intensa." },
+      { letra: "B", texto: "Chikungunya.", correta: true, comentario: "A poliartralgia intensa, incapacitante, bilateral e simétrica é a marca clínica mais característica da chikungunya." },
+      { letra: "C", texto: "Zika.", correta: false, comentario: "Cursa tipicamente com artralgia leve, exantema pruriginoso e conjuntivite." },
+      { letra: "D", texto: "Febre amarela.", correta: false, comentario: "Não cursa classicamente com esse padrão de poliartralgia intensa." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "diagnostico",
+    tags: ["chikungunya", "poliartralgia"],
+    fonte: "Ministério da Saúde — Protocolo de Manejo Clínico de Chikungunya",
+  },
+  {
+    id: "inf-zc-03",
+    subtemaId: "inf--arboviroses--zika-e-chikungunya",
+    disciplinaId: "inf",
+    enunciado:
+      "Paciente com quadro agudo compatível com arbovirose (febre, artralgia, exantema), ainda sem diagnóstico laboratorial definido. Qual classe de medicamento deve ser EVITADA até que a dengue seja excluída?",
+    alternativas: [
+      { letra: "A", texto: "Paracetamol.", correta: false, comentario: "É a droga de escolha para analgesia/antitermia, sem risco de sangramento." },
+      { letra: "B", texto: "Anti-inflamatórios não esteroidais (AINE) e ácido acetilsalicílico.", correta: true, comentario: "Enquanto a dengue não for excluída, deve-se evitar AINEs e AAS pelo risco de sangramento." },
+      { letra: "C", texto: "Antitérmicos em geral, incluindo paracetamol.", correta: false, comentario: "Paracetamol não deve ser evitado; é o antitérmico seguro de escolha." },
+      { letra: "D", texto: "Hidratação oral.", correta: false, comentario: "Não é uma classe de medicamento a ser evitada; é recomendada." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["arboviroses", "AINE", "dengue"],
+    fonte: "Ministério da Saúde — Guia de Vigilância em Saúde (Arboviroses)",
+  },
+  {
+    id: "inf-zc-04",
+    subtemaId: "inf--arboviroses--zika-e-chikungunya",
+    disciplinaId: "inf",
+    enunciado:
+      "Homem de 30 anos apresenta febre há 5 dias após retorno de área com transmissão ativa de Zika vírus, e relata atividade sexual desprotegida com a parceira nesse período. Além da picada do Aedes, qual via de transmissão do Zika deve ser considerada no aconselhamento?",
+    alternativas: [
+      { letra: "A", texto: "Transmissão hídrica (água contaminada).", correta: false, comentario: "Não é uma via de transmissão descrita para o Zika vírus." },
+      { letra: "B", texto: "Transmissão sexual.", correta: true, comentario: "O Zika vírus tem transmissão sexual documentada, além da vetorial e da vertical (mãe-feto)." },
+      { letra: "C", texto: "Transmissão exclusivamente por transfusão sanguínea.", correta: false, comentario: "Não é a via mais relevante a destacar nesse contexto de aconselhamento sexual." },
+      { letra: "D", texto: "Não há nenhuma via de transmissão além da picada do mosquito.", correta: false, comentario: "Existem outras vias descritas (sexual e vertical)." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["Zika", "transmissão sexual"],
+    fonte: "Ministério da Saúde — Guia de Vigilância em Saúde (Arboviroses)",
+  },
+
+  // ── COVID-19 E INFLUENZA ─────────────────────────────────────
+  {
+    id: "inf-cvi-01",
+    subtemaId: "inf--covid-19-e-influenza--manejo-ambulatorial-e-hospitalar",
+    disciplinaId: "inf",
+    enunciado:
+      "Paciente com quadro respiratório agudo realiza TC de tórax, que evidencia opacidades em vidro fosco periféricas e bilaterais. Qual etiologia é mais compatível com esse padrão tomográfico?",
+    alternativas: [
+      { letra: "A", texto: "Influenza.", correta: false, comentario: "Tipicamente cursa com infiltrado intersticial; o padrão periférico bilateral em vidro fosco é mais associado à COVID-19." },
+      { letra: "B", texto: "COVID-19.", correta: true, comentario: "Opacidades em vidro fosco periféricas e bilaterais são o achado tomográfico mais frequente na COVID-19." },
+      { letra: "C", texto: "Pneumonia bacteriana típica.", correta: false, comentario: "Cursa mais com consolidação lobar e broncograma aéreo." },
+      { letra: "D", texto: "Tuberculose primária.", correta: false, comentario: "Associa-se ao complexo primário (nódulo + linfonodo hilar)." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "exame",
+    tags: ["COVID-19", "tomografia de tórax", "vidro fosco"],
+    fonte: "Ministério da Saúde — Protocolo de Manejo Clínico da COVID-19",
+  },
+  {
+    id: "inf-cvi-02",
+    subtemaId: "inf--covid-19-e-influenza--manejo-ambulatorial-e-hospitalar",
+    disciplinaId: "inf",
+    enunciado:
+      "Criança apresenta, semanas após quadro de COVID-19, febre persistente, exantema, conjuntivite e disfunção de múltiplos órgãos. Qual a principal hipótese diagnóstica?",
+    alternativas: [
+      { letra: "A", texto: "Recidiva simples da infecção viral aguda.", correta: false, comentario: "O intervalo de semanas e o padrão multissistêmico não são compatíveis com recidiva viral aguda." },
+      { letra: "B", texto: "Síndrome Inflamatória Multissistêmica Pediátrica (SIM-P).", correta: true, comentario: "Quadro ocorrendo semanas após a COVID-19 aguda, com febre e disfunção multissistêmica, é característico da SIM-P." },
+      { letra: "C", texto: "Escarlatina.", correta: false, comentario: "Não se relaciona temporalmente com infecção prévia por COVID-19 dessa forma." },
+      { letra: "D", texto: "Doença de Kawasaki clássica, sem relação com COVID-19.", correta: false, comentario: "O contexto temporal pós-COVID caracteriza a SIM-P especificamente." },
+    ],
+    dificuldade: "avancada",
+    estilo: "diagnostico",
+    tags: ["SIM-P", "COVID-19", "pediatria"],
+    fonte: "Ministério da Saúde — Protocolo de Manejo Clínico da COVID-19",
+  },
+  {
+    id: "inf-cvi-03",
+    subtemaId: "inf--covid-19-e-influenza--manejo-ambulatorial-e-hospitalar",
+    disciplinaId: "inf",
+    enunciado:
+      "Paciente com síndrome gripal apresenta início súbito de febre alta, mialgia intensa e prostração, associados a tosse seca e coriza. O que diferencia esse quadro de uma IVAS comum?",
+    alternativas: [
+      { letra: "A", texto: "A presença isolada de coriza.", correta: false, comentario: "Coriza também ocorre em IVAS comuns, não é o diferencial." },
+      { letra: "B", texto: "O início súbito associado a sintomas sistêmicos importantes.", correta: true, comentario: "A influenza tem início súbito com sintomas sistêmicos proeminentes, diferentemente da IVAS comum, mais insidiosa." },
+      { letra: "C", texto: "A ausência completa de sintomas respiratórios.", correta: false, comentario: "A influenza também cursa com sintomas respiratórios." },
+      { letra: "D", texto: "A duração dos sintomas superior a um mês.", correta: false, comentario: "Não é esse o critério diferencial." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "diagnostico",
+    tags: ["influenza", "IVAS", "diagnóstico diferencial"],
+    fonte: "Ministério da Saúde — Protocolo de Tratamento de Influenza",
+  },
+  {
+    id: "inf-cvi-04",
+    subtemaId: "inf--covid-19-e-influenza--manejo-ambulatorial-e-hospitalar",
+    disciplinaId: "inf",
+    enunciado:
+      "Paciente com influenza confirmada, sem fatores de risco, procura atendimento no 4º dia de sintomas com melhora progressiva. Qual a conduta quanto ao antiviral (oseltamivir)?",
+    alternativas: [
+      { letra: "A", texto: "Deve ser sempre iniciado, independente do tempo de sintomas ou grupo de risco.", correta: false, comentario: "O benefício é maior se iniciado precocemente; não é obrigatório em todo caso leve e tardio sem fator de risco." },
+      { letra: "B", texto: "O benefício é maior nas primeiras 48h; em grupos de risco deve sempre ser considerado mesmo fora dessa janela.", correta: true, comentario: "Idealmente iniciado em até 48h; em paciente sem risco e com melhora, reavalia-se caso a caso, mas grupos de risco sempre recebem o antiviral mesmo fora da janela ideal." },
+      { letra: "C", texto: "O antiviral está contraindicado após 48 horas em qualquer paciente.", correta: false, comentario: "Não há contraindicação absoluta após 48h; em grupos de risco o tratamento ainda é recomendado." },
+      { letra: "D", texto: "Deve-se substituir por antibioticoterapia empírica de rotina.", correta: false, comentario: "Antibiótico só é indicado se houver suspeita de infecção bacteriana secundária." },
+    ],
+    dificuldade: "avancada",
+    estilo: "conduta",
+    tags: ["influenza", "oseltamivir"],
+    fonte: "Ministério da Saúde — Protocolo de Tratamento de Influenza",
+  },
 ];
