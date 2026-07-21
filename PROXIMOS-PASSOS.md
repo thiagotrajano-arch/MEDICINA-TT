@@ -1,17 +1,26 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-19 — rotina diária das 6h (18/07) + 4 sessões interativas (imagens reais; curso Estratégia MED; skills/Obsidian/workflow em massa; extração direta de questões/casos/imagens). Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-21 — migração do contexto do Claude, handoff para outras IAs e extração de IRAS. Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
 | | |
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
-| **Resumos** | **43** de 170 subtemas |
-| **Questões** | **298** (GO 111 · Ped 55 · Inf 102 · MFC 12 · Cir 8 · originais 10) — todos os 43 tópicos com pelo menos 2 questões |
+| **Resumos** | **44** de 171 subtemas |
+| **Questões** | **302** (GO 111 · Ped 55 · Inf 106 · MFC 12 · Cir 8 · originais 10) |
 | **Casos clínicos** | 6 (GO ×1, Ped, Inf, Cir ×2, MFC ×1) — todas as 5 disciplinas ativas têm ao menos 1 caso |
 | **Figuras** | 33 (12 diagramas SVG + 21 imagens reais licenciadas) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+## O que foi feito nesta sessão (2026-07-21 — migração e IRAS)
+
+- Ambiente local do Claude inventariado; credenciais, variáveis de sessão e snapshots foram excluídos da documentação.
+- Criados `docs/MEMORIA-CONSOLIDADA.md` e `docs/AI-HANDOFF.md`, permitindo que outra IA retome o trabalho sem ler todo o histórico bruto.
+- Projeto oficial clonado em novo workspace, com `.env.local` mantido fora do Git.
+- Extraído o mapa mental **Infecções Relacionadas à Assistência à Saúde** do Estratégia MED (6 páginas).
+- Criado novo subtema de alto rendimento em Infectologia, resumo estruturado e **4 questões** sobre higiene das mãos, precaução para aerossóis, profilaxia cirúrgica e diagnóstico de *C. difficile*.
+- Conteúdo clínico atualizado com Anvisa 2026, OMS e SHEA/IDSA; a recomendação antiga de metronidazol como opção preferencial para episódio inicial de *C. difficile* não foi reproduzida.
 
 ## O que foi feito nesta sessão (2026-07-18, rotina automática)
 

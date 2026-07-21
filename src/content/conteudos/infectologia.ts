@@ -1348,4 +1348,54 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       "Material do curso Estratégia MED — Infectologia",
     ],
   },
+
+  "inf--infeccoes-relacionadas-a-assistencia-a-saude--prevencao-sitio-cirurgico-cateter-e-c-difficile": {
+    subtemaId: "inf--infeccoes-relacionadas-a-assistencia-a-saude--prevencao-sitio-cirurgico-cateter-e-c-difficile",
+    titulo: "IRAS — prevenção, sítio cirúrgico, cateter e C. difficile",
+    atualizadoEm: "2026-07-21",
+    origem: "edicao_manual",
+    blocos: [
+      {
+        secao: "Definição e precauções padrão",
+        corpo:
+          "**Infecção Relacionada à Assistência à Saúde (IRAS)** é adquirida durante o cuidado e não estava presente nem em incubação no momento da admissão. A prevenção começa pelas **precauções padrão para todos os pacientes**: higiene das mãos, uso de luvas/avental/proteção ocular/máscara conforme o risco de exposição a sangue ou secreções e descarte imediato de perfurocortantes, sem reencapar agulhas.\n\nOs **5 momentos da OMS** são: antes de tocar o paciente; antes de procedimento limpo/asséptico; após risco de exposição a fluidos; após tocar o paciente; e após tocar superfícies próximas ao paciente.",
+      },
+      {
+        secao: "Precauções baseadas na transmissão",
+        corpo:
+          "- **Contato:** luvas e avental; exemplos incluem microrganismos multirresistentes, **C. difficile** e escabiose.\n- **Gotículas:** máscara cirúrgica; exemplos clássicos incluem influenza e doença meningocócica.\n- **Aerossóis:** respirador **PFF2/N95** e, quando indicado, quarto com pressão negativa; exemplos clássicos incluem tuberculose pulmonar/laríngea, sarampo e varicela.\n\nA indicação exata e a duração do isolamento devem seguir o protocolo institucional e a avaliação do agente ou síndrome.",
+      },
+      {
+        secao: "Infecção de sítio cirúrgico",
+        corpo:
+          "A ISC é classificada pela profundidade: **superficial** (pele/subcutâneo), **profunda** (fáscia/músculo) e **órgão/espaço**. Drenagem purulenta, cultura obtida de modo asséptico, deiscência ou abertura associada a sinais inflamatórios, abscesso e diagnóstico do cirurgião compõem os critérios, com detalhes e janelas de vigilância definidos pela Anvisa para cada procedimento.\n\nQuanto ao potencial de contaminação, a operação pode ser **limpa, limpa-contaminada, contaminada ou infectada**. Essa classificação, o sítio operado e o perfil microbiológico orientam a prevenção e a profilaxia.",
+      },
+      {
+        secao: "Prevenção e antibioticoprofilaxia cirúrgica",
+        corpo:
+          "Medidas essenciais incluem banho e preparo adequado da pele, tricotomia **somente quando necessária** com aparador elétrico imediatamente antes do procedimento, controle glicêmico perioperatório, normotermia, oxigenação adequada e técnica asséptica.\n\nA antibioticoprofilaxia busca concentração tecidual efetiva **no momento da incisão**. Em geral, administrar dentro dos **60 minutos anteriores**; vancomicina e fluoroquinolonas exigem início mais precoce pelo tempo de infusão. Repetir a dose quando a operação exceder aproximadamente duas meias-vidas do fármaco ou houver grande perda sanguínea. Escolha, redose e duração devem seguir o procedimento e o protocolo institucional.",
+      },
+      {
+        secao: "Infecção de corrente sanguínea associada a cateter",
+        corpo:
+          "Suspeitar diante de bacteremia ou fungemia sem foco alternativo em paciente com acesso vascular. A confirmação pode envolver culturas periféricas e do cateter, **diferença do tempo para positividade** ou métodos quantitativos, sempre interpretados no contexto clínico. Coletar culturas antes do antimicrobiano quando isso não atrasar o cuidado.\n\nA decisão de retirar o cateter, a escolha do antimicrobiano e a duração variam conforme estabilidade, complicações e agente — especialmente **S. aureus, Candida**, enterococos e bacilos Gram-negativos. Casos complicados exigem investigação de endocardite, tromboflebite séptica e focos metastáticos.",
+      },
+      {
+        secao: "Infecção por Clostridioides difficile",
+        corpo:
+          "Bacilo Gram-positivo anaeróbio e formador de esporos, associado sobretudo a exposição a antimicrobianos, idade avançada, hospitalização e comorbidade. Investigar apenas pacientes com **diarreia clinicamente significativa**; não testar nem tratar colonização assintomática. Os algoritmos diagnósticos combinam teste altamente sensível (GDH ou NAAT/PCR) com detecção de toxina, conforme o protocolo local.\n\nSuspender, quando possível, o antimicrobiano desencadeante. Para episódio inicial não fulminante, diretrizes atuais favorecem **fidaxomicina** quando disponível ou **vancomicina oral**; metronidazol deixou de ser opção preferencial. Doença fulminante, com hipotensão/choque, íleo ou megacólon, requer manejo hospitalar urgente. Recorrências podem demandar esquemas específicos ou transplante de microbiota fecal em casos selecionados.",
+      },
+      {
+        secao: "Pontos de prova / Pegadinhas",
+        corpo:
+          "- **Precaução padrão vale para todos**, independentemente do diagnóstico.\n- Luvas **não substituem higiene das mãos**.\n- **C. difficile forma esporos**: contato e limpeza ambiental esporicida são centrais.\n- Profilaxia cirúrgica deve estar ativa **na incisão**; não é tratamento prolongado.\n- Não diagnosticar infecção de cateter apenas por uma cultura isolada.\n- Não solicitar teste de C. difficile em assintomático.",
+      },
+    ],
+    referencias: [
+      "Estratégia MED — Mapa Mental: Infecções Relacionadas à Assistência em Saúde (material do usuário)",
+      "Anvisa — Protocolo de Prevenção de Infecção de Sítio Cirúrgico, atualização 2026",
+      "Organização Mundial da Saúde — My Five Moments for Hand Hygiene",
+      "SHEA/IDSA — Clinical Practice Guideline Update for Clostridioides difficile Infection in Adults",
+    ],
+  },
 };

@@ -157,6 +157,9 @@ const infectologia: Disciplina = {
       ["Pneumonia adquirida na comunidade", { altoRendimento: true }],
       "Pneumonia hospitalar e associada à ventilação",
     ]),
+    tema("inf", "Infecções relacionadas à assistência à saúde", [
+      ["Prevenção, sítio cirúrgico, cateter e C. difficile", { altoRendimento: true, dificuldade: "avancada" }],
+    ]),
     tema("inf", "Infecção do trato urinário", [
       ["Cistite e pielonefrite", { altoRendimento: true }],
     ]),

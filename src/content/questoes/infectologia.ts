@@ -18,10 +18,12 @@ const SUB = {
   dengue: "inf--arboviroses--dengue-classificacao-e-manejo",
   sepse: "inf--sepse--reconhecimento-e-surviving-sepsis",
   storch: "inf--infeccoes-congenitas--storch-visao-infectologica",
+  iras: "inf--infeccoes-relacionadas-a-assistencia-a-saude--prevencao-sitio-cirurgico-cateter-e-c-difficile",
 } as const;
 
 const FONTE = "Simulado OMED Infectologia — 160 questões comentadas (material do usuário)";
 const FONTE_CONGENITA = "Google Drive — 'Exame Nacional de Infectologia Perinatal e Medicina Fetal' (material do usuário)";
+const FONTE_IRAS = "Estratégia MED — Mapa Mental de IRAS; Anvisa; OMS; SHEA/IDSA";
 
 export const QUESTOES_INF: Questao[] = [
   // ── TUBERCULOSE ─────────────────────────────────────────────────
@@ -1766,5 +1768,70 @@ export const QUESTOES_INF: Questao[] = [
     estilo: "conduta",
     tags: ["imunização", "imunossupressão", "vacina de vírus vivo"],
     fonte: "Ministério da Saúde — Programa Nacional de Imunizações",
+  },
+
+  {
+    id: "inf-iras-01",
+    subtemaId: SUB.iras,
+    disciplinaId: "inf",
+    enunciado: "Qual ação corresponde a um dos cinco momentos da OMS para higiene das mãos?",
+    alternativas: [
+      { letra: "A", texto: "Somente antes de procedimentos cirúrgicos.", correta: false, comentario: "A higiene das mãos não se limita a cirurgias e deve ocorrer em todos os cinco momentos." },
+      { letra: "B", texto: "Após tocar superfícies próximas ao paciente, mesmo sem contato direto com ele.", correta: true, comentario: "O quinto momento da OMS é após contato com as áreas próximas ao paciente." },
+      { letra: "C", texto: "Apenas quando as mãos estiverem visivelmente sujas.", correta: false, comentario: "A indicação depende do momento assistencial; sujidade visível define preferência por água e sabonete, não a única ocasião para higienizar." },
+      { letra: "D", texto: "Somente depois de retirar luvas contaminadas.", correta: false, comentario: "Após retirar luvas é uma indicação, mas há também momentos antes e depois do contato e de procedimentos." },
+    ],
+    dificuldade: "fixacao",
+    estilo: "fixacao",
+    tags: ["IRAS", "higiene das mãos", "OMS"],
+    fonte: FONTE_IRAS,
+  },
+  {
+    id: "inf-iras-02",
+    subtemaId: SUB.iras,
+    disciplinaId: "inf",
+    enunciado: "Paciente com suspeita de tuberculose pulmonar bacilífera necessita de qual precaução adicional?",
+    alternativas: [
+      { letra: "A", texto: "Contato, apenas com luvas.", correta: false, comentario: "Luvas isoladamente não previnem transmissão aérea de tuberculose." },
+      { letra: "B", texto: "Gotículas, com máscara cirúrgica para o profissional.", correta: false, comentario: "A tuberculose pulmonar ou laríngea exige precaução para aerossóis." },
+      { letra: "C", texto: "Aerossóis, com PFF2/N95 e ambiente apropriado conforme protocolo institucional.", correta: true, comentario: "A transmissão por partículas aéreas exige respirador PFF2/N95 e controle ambiental adequado." },
+      { letra: "D", texto: "Nenhuma precaução além da padrão.", correta: false, comentario: "Precauções padrão permanecem, mas não são suficientes para esse agente." },
+    ],
+    dificuldade: "fixacao",
+    estilo: "conduta",
+    tags: ["IRAS", "precaução", "tuberculose"],
+    fonte: FONTE_IRAS,
+  },
+  {
+    id: "inf-iras-03",
+    subtemaId: SUB.iras,
+    disciplinaId: "inf",
+    enunciado: "Sobre antibioticoprofilaxia cirúrgica, qual princípio é correto?",
+    alternativas: [
+      { letra: "A", texto: "O objetivo é atingir concentração tecidual adequada no momento da incisão.", correta: true, comentario: "A profilaxia deve estar ativa na incisão; em geral é administrada nos 60 minutos anteriores, com exceções pelo tempo de infusão." },
+      { letra: "B", texto: "Deve ser iniciada após o fechamento da pele.", correta: false, comentario: "Iniciar depois da operação perde o principal benefício preventivo." },
+      { letra: "C", texto: "Deve ser prolongada por vários dias em toda cirurgia limpa.", correta: false, comentario: "Prolongamento rotineiro não melhora prevenção e aumenta eventos adversos e resistência." },
+      { letra: "D", texto: "A redose intraoperatória nunca é necessária.", correta: false, comentario: "Pode ser necessária em operações longas ou com grande perda sanguínea." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["IRAS", "ISC", "antibioticoprofilaxia"],
+    fonte: FONTE_IRAS,
+  },
+  {
+    id: "inf-iras-04",
+    subtemaId: SUB.iras,
+    disciplinaId: "inf",
+    enunciado: "Qual conduta diagnóstica é apropriada diante de suspeita de infecção por Clostridioides difficile?",
+    alternativas: [
+      { letra: "A", texto: "Testar rotineiramente todos os pacientes internados, mesmo assintomáticos.", correta: false, comentario: "Testar assintomáticos detecta colonização e pode levar a tratamento desnecessário." },
+      { letra: "B", texto: "Investigar paciente com diarreia clinicamente significativa usando o algoritmo laboratorial institucional.", correta: true, comentario: "O diagnóstico combina contexto clínico com testes de toxina, GDH e/ou NAAT conforme o algoritmo local." },
+      { letra: "C", texto: "Confirmar o diagnóstico apenas por colonoscopia.", correta: false, comentario: "Colonoscopia não é exame rotineiro para confirmação e fica reservada a situações selecionadas." },
+      { letra: "D", texto: "Usar cultura positiva isolada para definir doença ativa.", correta: false, comentario: "A presença do organismo não distingue colonização de doença sem síndrome clínica compatível." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "diagnostico",
+    tags: ["IRAS", "C. difficile", "diagnóstico"],
+    fonte: FONTE_IRAS,
   },
 ];
