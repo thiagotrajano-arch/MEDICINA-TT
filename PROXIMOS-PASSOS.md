@@ -26,6 +26,7 @@
 - Adicionados 6 subtemas necessários à taxonomia para acomodar Cirurgia e abordagem familiar em MFC.
 - Auditoria estrutural final: 36 disciplinas, 248 subtemas, 159 resumos, 528 questões e 21 casos; zero IDs duplicados, zero questões/casos órfãos e exatamente um gabarito por questão.
 - Seed oficial concluído de forma transacional pelo canal PostgreSQL porque o endpoint REST estava temporariamente inacessível: 528 questões publicadas e 2.431 alternativas confirmadas no banco. Linhas históricas de taxonomia/resumo foram preservadas, sem exclusão destrutiva.
+- Corrigida a lentidão percebida após a primeira publicação: a busca global deixou de carregar antecipadamente o banco completo de questões, e o cliente de autenticação passou a ser carregado sob demanda com prazos máximos para login e sincronização. O carregamento inicial caiu de cerca de 2,09 MB para 0,78 MB (−62,8%); a versão compilada foi aberta em Chrome isolado sem erros críticos.
 
 ### Limite de fonte documentado
 

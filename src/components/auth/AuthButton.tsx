@@ -3,23 +3,58 @@
 import { FormEvent, useEffect, useState } from "react";
 import type { User } from "@supabase/supabase-js";
 import { Loader2, LogIn, LogOut, UserRound, X } from "lucide-react";
-import { getSupabaseAnon } from "@/infra/supabase/client";
 import { sincronizarProgresso } from "@/lib/progresso";
+
+async function carregarSupabase() {
+  const { getSupabaseAnon } = await import("@/infra/supabase/client");
+  return getSupabaseAnon();
+}
+
+function comPrazo<T>(operacao: PromiseLike<T>, milissegundos = 15000): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = window.setTimeout(
+      () => reject(new Error("tempo-esgotado")),
+      milissegundos
+    );
+    Promise.resolve(operacao).then(
+      (valor) => { window.clearTimeout(timer); resolve(valor); },
+      (erro) => { window.clearTimeout(timer); reject(erro); }
+    );
+  });
+}
 
 export function AuthButton() {
   const [user, setUser] = useState<User | null>(null);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const supabase = getSupabaseAnon();
-    void supabase.auth.getSession().then(({ data }) => setUser(data.session?.user ?? null));
-    const { data } = supabase.auth.onAuthStateChange((_evento, sessao) => setUser(sessao?.user ?? null));
-    return () => data.subscription.unsubscribe();
+    let cancelado = false;
+    let unsubscribe: (() => void) | undefined;
+    const timer = window.setTimeout(() => {
+      void carregarSupabase().then(async (supabase) => {
+        const { data: sessao } = await supabase.auth.getSession();
+        if (cancelado) return;
+        setUser(sessao.session?.user ?? null);
+        const { data } = supabase.auth.onAuthStateChange((_evento, atual) => {
+          if (!cancelado) setUser(atual?.user ?? null);
+        });
+        unsubscribe = () => data.subscription.unsubscribe();
+      }).catch(() => {});
+    }, 300);
+    return () => {
+      cancelado = true;
+      window.clearTimeout(timer);
+      unsubscribe?.();
+    };
   }, []);
 
   const sair = async () => {
-    await getSupabaseAnon().auth.signOut();
-    window.location.reload();
+    try {
+      const supabase = await carregarSupabase();
+      await comPrazo(supabase.auth.signOut({ scope: "local" }), 5000);
+    } finally {
+      window.location.reload();
+    }
   };
 
   if (user) {
@@ -52,25 +87,34 @@ function AuthDialog({ onClose }: { onClose: () => void }) {
     e.preventDefault();
     setCarregando(true);
     setMensagem("");
-    const supabase = getSupabaseAnon();
-    if (modo === "entrar") {
-      const { error } = await supabase.auth.signInWithPassword({ email, password: senha });
-      if (error) setMensagem(error.message === "Invalid login credentials" ? "E-mail ou senha inválidos." : error.message);
-      else {
-        await sincronizarProgresso();
-        window.location.reload();
+    try {
+      const supabase = await carregarSupabase();
+      if (modo === "entrar") {
+        const { error } = await comPrazo(
+          supabase.auth.signInWithPassword({ email, password: senha })
+        );
+        if (error) setMensagem(error.message === "Invalid login credentials" ? "E-mail ou senha inválidos." : error.message);
+        else {
+          await comPrazo(sincronizarProgresso(), 8000).catch(() => {});
+          window.location.reload();
+        }
+      } else {
+        const emailRedirectTo = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/`;
+        const { data, error } = await comPrazo(
+          supabase.auth.signUp({ email, password: senha, options: { emailRedirectTo } })
+        );
+        if (error) setMensagem(error.message);
+        else if (!data.session) setMensagem("Cadastro criado. Confirme o e-mail recebido e depois entre.");
+        else {
+          await comPrazo(sincronizarProgresso(), 8000).catch(() => {});
+          window.location.reload();
+        }
       }
-    } else {
-      const emailRedirectTo = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/`;
-      const { data, error } = await supabase.auth.signUp({ email, password: senha, options: { emailRedirectTo } });
-      if (error) setMensagem(error.message);
-      else if (!data.session) setMensagem("Cadastro criado. Confirme o e-mail recebido e depois entre.");
-      else {
-        await sincronizarProgresso();
-        window.location.reload();
-      }
+    } catch {
+      setMensagem("Não foi possível conectar agora. Verifique sua internet e tente novamente.");
+    } finally {
+      setCarregando(false);
     }
-    setCarregando(false);
   };
 
   return (

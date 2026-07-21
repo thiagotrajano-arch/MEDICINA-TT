@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search, CornerDownLeft, FileText, BookOpen, ListChecks, Layers } from "lucide-react";
-import { searchStatic } from "@/lib/search-static";
 import type { SearchHit } from "@/application/ports/content-repository";
 import { cn } from "@/lib/cn";
 
@@ -23,8 +22,13 @@ export function CommandPalette({
 }) {
   const [q, setQ] = useState("");
   const [active, setActive] = useState(0);
+  const [resultado, setResultado] = useState<{ consulta: string; hits: SearchHit[] }>({
+    consulta: "",
+    hits: [],
+  });
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
+  const consulta = q.trim();
 
   useEffect(() => {
     if (!open) return;
@@ -36,11 +40,24 @@ export function CommandPalette({
     return () => window.cancelAnimationFrame(frame);
   }, [open]);
 
-  // Instant client-side search over the bundled index (works offline/static).
-  const hits = useMemo(() => {
-    if (!open || q.trim().length < 2) return [];
-    return searchStatic(q);
-  }, [q, open]);
+  // O banco completo de questoes e carregado somente depois que o usuario
+  // realmente pesquisa. Isso evita enviar mais de 1 MB de JavaScript durante
+  // a abertura de todas as paginas do site.
+  useEffect(() => {
+    if (!open || consulta.length < 2) return;
+    let cancelada = false;
+    void import("@/lib/search-static")
+      .then(({ searchStatic }) => {
+        if (!cancelada) setResultado({ consulta, hits: searchStatic(consulta) });
+      })
+      .catch(() => {
+        if (!cancelada) setResultado({ consulta, hits: [] });
+      });
+    return () => { cancelada = true; };
+  }, [consulta, open]);
+
+  const hits = resultado.consulta === consulta ? resultado.hits : [];
+  const carregandoBusca = consulta.length >= 2 && resultado.consulta !== consulta;
 
   if (!open) return null;
 
@@ -83,12 +100,17 @@ export function CommandPalette({
         </div>
 
         <div className="max-h-[52vh] overflow-y-auto p-2">
-          {q.length < 2 && (
+          {consulta.length < 2 && (
             <p className="px-3 py-6 text-center text-sm text-text-faint">
               Digite ao menos 2 caracteres para buscar em toda a base.
             </p>
           )}
-          {q.length >= 2 && hits.length === 0 && (
+          {carregandoBusca && (
+            <p className="px-3 py-6 text-center text-sm text-text-faint">
+              Carregando busca…
+            </p>
+          )}
+          {!carregandoBusca && consulta.length >= 2 && hits.length === 0 && (
             <p className="px-3 py-6 text-center text-sm text-text-faint">
               Nenhum resultado para “{q}”.
             </p>
