@@ -158,6 +158,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       },
     ],
     referencias: [
+      "Estratégia MED — Mapa Mental — Meningites (Infecções do Sistema Nervoso Central)",
       "Ministério da Saúde — Guia de Vigilância em Saúde (meningites)",
       "IDSA — Practice Guidelines for Bacterial Meningitis",
       "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
@@ -803,6 +804,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       },
     ],
     referencias: [
+      "Estratégia MED — Flashcard — Raiva, Tétano, Mordedura e Arranhadura Animal",
       "Ministério da Saúde — Guia de Vigilância em Saúde (raiva) e Normas Técnicas de Profilaxia da Raiva Humana",
       "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",
     ],
@@ -1071,6 +1073,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
       },
     ],
     referencias: [
+      "Estratégia MED — Mapa Mental — Antibióticos",
       "ANVISA — Programa Nacional de Prevenção e Controle de Infecções Relacionadas à Assistência à Saúde (PROA)",
       "IDSA — Guidance on the Treatment of Antimicrobial-Resistant Gram-Negative Infections",
       "Material do usuário — Infectologia OMED · 15 Temas (Resumo Absoluto)",

@@ -77,8 +77,8 @@ const label = (extra?: object) => ({
 // ═══════════════════════════════════════════════════════════════
 // GO — DPP × Placenta prévia
 // ═══════════════════════════════════════════════════════════════
-function DppVsPlacentaPrevia() {
-  const Utero = ({ x }: { x: number }) => (
+function UteroEsquematico({ x }: { x: number }) {
+  return (
     <path
       d={`M${x + 60} 30 C ${x + 105} 30, ${x + 118} 80, ${x + 110} 125
           C ${x + 104} 162, ${x + 88} 182, ${x + 72} 190
@@ -90,11 +90,13 @@ function DppVsPlacentaPrevia() {
       strokeWidth="2"
     />
   );
+}
 
+function DppVsPlacentaPrevia() {
   return (
     <svg viewBox="0 0 420 250" role="img" aria-label="Comparação entre descolamento prematuro de placenta e placenta prévia">
       {/* ── DPP ── */}
-      <Utero x={20} />
+      <UteroEsquematico x={20} />
       {/* placenta normalmente inserida no fundo */}
       <path d="M45 46 C 70 34, 110 34, 135 50 L 130 66 C 108 52, 72 52, 50 62 Z" fill={C.accent} opacity="0.85" />
       {/* hematoma retroplacentário */}
@@ -109,7 +111,7 @@ function DppVsPlacentaPrevia() {
       <text x="30" y="248" style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>HIPERTONIA</text>
 
       {/* ── Placenta prévia ── */}
-      <Utero x={240} />
+      <UteroEsquematico x={240} />
       {/* placenta recobrindo o orifício interno */}
       <path d="M272 168 C 292 150, 328 150, 348 168 L 348 186 C 326 172, 294 172, 272 186 Z" fill={C.accent} opacity="0.85" />
       <text x="300" y="20" textAnchor="middle" style={label({ fill: C.text, fontSize: 12, fontWeight: 800 })}>PLACENTA PRÉVIA</text>
@@ -127,8 +129,8 @@ function DppVsPlacentaPrevia() {
 // ═══════════════════════════════════════════════════════════════
 // Infecto — TB primária × pós-primária
 // ═══════════════════════════════════════════════════════════════
-function TbPrimariaVsPosPrimaria() {
-  const Pulmoes = ({ x }: { x: number }) => (
+function PulmoesEsquematicos({ x }: { x: number }) {
+  return (
     <>
       <path
         d={`M${x + 55} 34 C ${x + 30} 40, ${x + 18} 90, ${x + 22} 140 C ${x + 25} 168, ${x + 42} 172, ${x + 52} 156 C ${x + 58} 140, ${x + 58} 70, ${x + 55} 34 Z`}
@@ -142,11 +144,13 @@ function TbPrimariaVsPosPrimaria() {
       <line x1={x + 64} y1="24" x2={x + 64} y2="60" stroke={C.border} strokeWidth="3" />
     </>
   );
+}
 
+function TbPrimariaVsPosPrimaria() {
   return (
     <svg viewBox="0 0 420 230" role="img" aria-label="Tuberculose primária versus pós-primária">
       {/* primária */}
-      <Pulmoes x={20} />
+      <PulmoesEsquematicos x={20} />
       {/* foco de Ghon periférico */}
       <circle cx="42" cy="112" r="7" fill={C.gold} />
       {/* linfonodo hilar */}
@@ -158,7 +162,7 @@ function TbPrimariaVsPosPrimaria() {
       <text x="10" y="222" style={label({ fontSize: 10 })}>= complexo de Ranke · criança</text>
 
       {/* pós-primária */}
-      <Pulmoes x={240} />
+      <PulmoesEsquematicos x={240} />
       {/* cavitação apical */}
       <circle cx="262" cy="58" r="12" fill="none" stroke={C.danger} strokeWidth="3" />
       <circle cx="262" cy="58" r="12" fill={C.surface} />

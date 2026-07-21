@@ -7,8 +7,9 @@ import { isSupabaseConfigured } from "@/infra/supabase/config";
  * Progresso com estrategia local-first.
  *
  * Toda interacao e gravada imediatamente no navegador. Quando o Supabase esta
- * configurado, uma sessao anonima persistente sincroniza os mesmos eventos com
- * RLS por usuario. Falhas de rede nunca interrompem o estudo: a proxima leitura
+ * configurado e o estudante entra com e-mail e senha, a sessão persistente
+ * sincroniza os mesmos eventos com RLS por usuário. Falhas de rede nunca
+ * interrompem o estudo: a próxima leitura
  * do dashboard tenta reconciliar novamente as duas copias.
  */
 
@@ -104,24 +105,15 @@ export function registrarSimulado(r: Omit<ResultadoSimulado, "id">): void {
   void enviarSimulado(resultado);
 }
 
-let autenticacaoIndisponivel = false;
-
 async function sessaoSupabase() {
-  if (autenticacaoIndisponivel) return null;
   if (!isSupabaseConfigured()) return null;
   try {
     const { getSupabaseAnon } = await import("@/infra/supabase/client");
     const supabase = getSupabaseAnon();
     const atual = await supabase.auth.getSession();
     if (atual.data.session?.user) return { supabase, user: atual.data.session.user };
-    const criada = await supabase.auth.signInAnonymously();
-    if (criada.error || !criada.data.user) {
-      autenticacaoIndisponivel = true;
-      return null;
-    }
-    return { supabase, user: criada.data.user };
+    return null;
   } catch {
-    autenticacaoIndisponivel = true;
     return null;
   }
 }

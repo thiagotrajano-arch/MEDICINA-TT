@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search, CornerDownLeft, FileText, BookOpen, ListChecks, Layers } from "lucide-react";
 import { searchStatic } from "@/lib/search-static";
@@ -22,25 +22,24 @@ export function CommandPalette({
   onClose: () => void;
 }) {
   const [q, setQ] = useState("");
-  const [hits, setHits] = useState<SearchHit[]>([]);
   const [active, setActive] = useState(0);
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (open) {
+    if (!open) return;
+    const frame = window.requestAnimationFrame(() => {
       setQ("");
-      setHits([]);
       setActive(0);
-      setTimeout(() => inputRef.current?.focus(), 20);
-    }
+      inputRef.current?.focus();
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, [open]);
 
   // Instant client-side search over the bundled index (works offline/static).
-  useEffect(() => {
-    setActive(0);
-    if (!open) return;
-    setHits(q.trim().length < 2 ? [] : searchStatic(q));
+  const hits = useMemo(() => {
+    if (!open || q.trim().length < 2) return [];
+    return searchStatic(q);
   }, [q, open]);
 
   if (!open) return null;
@@ -65,7 +64,10 @@ export function CommandPalette({
           <input
             ref={inputRef}
             value={q}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={(e) => {
+              setQ(e.target.value);
+              setActive(0);
+            }}
             onKeyDown={(e) => {
               if (e.key === "ArrowDown") { e.preventDefault(); setActive((a) => Math.min(a + 1, hits.length - 1)); }
               if (e.key === "ArrowUp") { e.preventDefault(); setActive((a) => Math.max(a - 1, 0)); }

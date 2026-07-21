@@ -13,6 +13,8 @@ Atualizado em 2026-07-21.
 
 Use um clone local do repositório. O arquivo `.env.local` contém as credenciais necessárias e é ignorado pelo Git. Nunca mostrar, registrar em logs, copiar para documentação ou commitar seu conteúdo.
 
+Estado operacional em 2026-07-21: login por e-mail/senha ativo, sessão persistente e progresso local-first sincronizado com Supabase/RLS. Não reintroduzir autenticação anônima: ela está desabilitada no projeto.
+
 ## Antes de trabalhar
 
 1. Ler `AGENTS.md`.
@@ -49,6 +51,8 @@ Para extração, preferir Mapas Mentais; flashcards são úteis para questões. 
 - Migrações: `npx tsx scripts/apply-migration.mts`
 
 Após alterar `src/content/**` ou a taxonomia, executar o seed antes de validar a versão que usa Supabase. Verificar IDs de subtemas, questões, casos e figuras para evitar vínculos órfãos.
+
+Estado quantitativo validado: 36 disciplinas, 248 subtemas, 159 resumos, 528 questões, 21 casos e 66 figuras. A extração das fontes disponíveis foi encerrada; os 89 subtemas vazios são scaffolds. Os bancos exatos de Cirurgia 160 e MFC 80 não estão no disco e só têm páginas parciais no histórico; os acervos recuperados dos Resumos Absolutos (10 temas/100 questões por disciplina) já foram incorporados em `src/content/raw/`.
 
 ## Publicação
 

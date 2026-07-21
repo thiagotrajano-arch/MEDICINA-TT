@@ -1,0 +1,1676 @@
+{
+  "new_temas": [
+    {
+      "tema_num": 1,
+      "titulo": "Delineamentos de Estudo Epidemiológico",
+      "kicker": "MFC · Metodologia Científica",
+      "subtitulo": "Coorte, caso-controle, transversal e ECR — a base de tudo em epidemiologia clínica",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição e lógica temporal de cada delineamento</h2>\n<p><b>Estudo observacional</b> — o pesquisador apenas observa exposição e desfecho, sem intervir (coorte, caso-controle, transversal, ecológico). <b>Estudo experimental</b> — o pesquisador aloca ativamente a exposição/intervenção (o ensaio clínico randomizado, ECR, é o padrão-ouro).</p>\n<ul>\n<li><b>Coorte</b> — parte de um grupo de EXPOSTOS e um de NÃO EXPOSTOS, livres do desfecho no início, e acompanha ao longo do tempo. Pode ser prospectiva ou retrospectiva/histórica (exposição já ocorreu, desfecho reconstruído por registros).</li>\n<li><b>Caso-controle</b> — parte de CASOS (já têm a doença) e CONTROLES (não têm) e investiga retrospectivamente a exposição prévia. Divide os grupos pelo desfecho, não pela exposição — é o oposto lógico da coorte.</li>\n<li><b>Transversal (seccional)</b> — mede exposição e desfecho no MESMO momento, uma \"fotografia\" única da população. Estima prevalência, não incidência.</li>\n<li><b>Ensaio clínico randomizado (ECR)</b> — aloca aleatoriamente participantes para intervenção ou controle/placebo, equilibrando confundidores conhecidos <b>e</b> desconhecidos entre os grupos.</li>\n</ul>\n<p>Na coorte, a exposição é medida <b>ANTES</b> do desfecho — permite calcular incidência e RR diretamente e reduz viés de memória. No caso-controle a lógica é invertida: parte-se do desfecho e \"olha-se para trás\" — eficiente para doenças raras, mas mais vulnerável a viés de memória e de seleção de controles. No ECR, a randomização distribui não só os confundidores conhecidos como também os desconhecidos — propriedade que nenhum outro delineamento replica, e por isso o ECR ocupa o topo da hierarquia para perguntas de tratamento.</p>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Como reconhecer o delineamento no enunciado</h2>\n<ul>\n<li>\"Foram selecionados X pacientes com a doença e Y sem a doença, e investigou-se exposição prévia\" → <b>caso-controle</b></li>\n<li>\"Acompanhou-se por N anos um grupo exposto e um não exposto\" → <b>coorte</b></li>\n<li>\"Os participantes foram alocados aleatoriamente para receber a droga ou placebo\" → <b>ECR</b></li>\n<li>\"Foi aplicado um questionário a toda a população num único momento\" → <b>transversal</b></li>\n<li>\"Todos usaram a droga e depois foram redivididos em manter ou trocar por placebo\" → variante de ECR (retirada/randomização tardia), atenção redobrada</li>\n</ul>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Um estudo pode se AUTODESCREVER como \"caso-controle\" no resumo, mas o enunciado revela um desenho diferente na descrição operacional do método. A leitura crítica do método descrito — não o rótulo dado pelos autores — é o que deve guiar a classificação.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Hierarquia de evidência e validade interna x externa</h2>\n<p>Da mais forte para a mais fraca (perguntas de tratamento/intervenção): <b>revisão sistemática/meta-análise de ECRs → ECR individual → coorte → caso-controle → transversal → série de casos → opinião de especialista.</b></p>\n<p><b>Validade interna</b> — o quanto os resultados refletem corretamente o que aconteceu NAQUELA amostra (livre de viés/confundimento). <b>Validade externa (generalização)</b> — o quanto os resultados se aplicam a outras populações. Um estudo pode ter alta validade interna e baixa validade externa (amostra muito seletiva, pouco representativa da prática real).</p>\n<div class=\"box pearl\"><span class=\"bt\">Pérola de prova</span><p>Validade interna (o estudo está certo para a amostra dele) é diferente de validade externa (o resultado generaliza para outras populações) — um estudo pode ter uma sem a outra.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> Ensaios de não-inferioridade</h2>\n<p>Não buscam provar que a intervenção é melhor, mas que não é PIOR que o padrão além de uma margem pré-especificada (margem de não-inferioridade). A hipótese nula é <b>invertida</b> em relação ao ensaio de superioridade clássico: aqui, a H0 é \"a nova intervenção é pior que a padrão além da margem\", e rejeitá-la significa concluir não-inferioridade.</p>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Achar que resultado \"sem diferença estatística\" sempre prova não-inferioridade. É preciso que o <b>IC fique inteiramente dentro da margem de não-inferioridade pré-especificada</b>, não apenas ausência de significância.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Comparação entre delineamentos</h2>\n<table><thead><tr><th>Delineamento</th><th>Direção</th><th>Mede diretamente</th><th>Principal força</th><th>Principal limitação</th></tr></thead><tbody>\n<tr><td>Coorte</td><td>Exposição → Desfecho</td><td>Incidência, RR</td><td>Boa para exposições raras</td><td>Caro, demorado, perdas de seguimento</td></tr>\n<tr><td>Caso-controle</td><td>Desfecho → Exposição</td><td>Odds Ratio</td><td>Eficiente p/ doenças raras, rápido</td><td>Viés de memória e seleção de controles</td></tr>\n<tr><td>Transversal</td><td>Simultâneo</td><td>Prevalência</td><td>Rápido e barato</td><td>Não estabelece sequência temporal</td></tr>\n<tr><td>ECR</td><td>Alocação → Desfecho</td><td>Efeito causal</td><td>Maior força causal</td><td>Custo, tempo, questões éticas</td></tr>\n</tbody></table>\n<p><b>Vieses mais associados a cada delineamento:</b> caso-controle → viés de memória (recall bias) e viés de seleção de controles; coorte → viés de perda de seguimento (attrition bias); transversal → viés de sobrevivência (não captura casos fatais precoces); ECR → viés de não-adesão e viés de aferição se não houver cegamento.</p>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Como escolher o delineamento (aplicação prática)</h2>\n<ul>\n<li><b>Doença rara</b> → caso-controle é mais eficiente (não exige acompanhar milhares de pessoas esperando poucos eventos)</li>\n<li><b>Exposição rara</b> → coorte é mais eficiente (garante número suficiente de expostos)</li>\n<li><b>Necessidade de causalidade forte</b> → ECR, quando eticamente viável</li>\n<li><b>Questão de prevalência/planejamento de serviço</b> → transversal é suficiente e mais rápido/barato</li>\n<li><b>Impossibilidade ética de randomizar a exposição</b> (tabagismo, poluição) → força observacionais (coorte/caso-controle)</li>\n</ul>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Estudo caso-controle sobre diabetes materna e malformação cardíaca fetal — identificar a lógica do delineamento (parte do desfecho) e seus critérios de inclusão implícitos. Também já caiu ensaio de não-inferioridade sobre jornada de trabalho de residentes, exigindo interpretação de margem de não-inferioridade e hipótese nula invertida; e curva ROC/ponto de corte de teste diagnóstico como tema adjacente ao delineamento do estudo de acurácia.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Fluxograma de raciocínio</h2>\n<div class=\"flow\"><div class=\"ft\">Qual delineamento escolher / identificar</div><pre>PERGUNTA DE PESQUISA DEFINIDA\n│\n├─ A exposição pode ser randomizada eticamente?\n│    └─ SIM → ENSAIO CLÍNICO RANDOMIZADO\n│\n├─ NÃO, doença é RARA → CASO-CONTROLE (parte do desfecho, olha p/ trás)\n│\n├─ NÃO, exposição é RARA e há recursos p/ seguimento → COORTE (parte da exposição, olha p/ frente)\n│\n└─ NÃO, só quer estimar prevalência/associação num momento → TRANSVERSAL</pre></div>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Armadilhas e resumo de fixação</h2>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Achar que RR pode ser calculado diretamente em caso-controle — não pode; usa-se OR como aproximação (válida quando a doença é rara). Confundir estudo <b>ecológico</b> (unidade de análise populacional/agregada) com estudo individual expõe ao risco de <b>falácia ecológica</b>. Assumir que estudo transversal estabelece causalidade só por achar associação significativa é erro clássico — sem sequência temporal não se pode afirmar que a exposição precedeu o desfecho.</p></div>\n<div class=\"box pulo\"><span class=\"bt\">Atalho mnemônico</span><p><b>Caso-controle:</b> do desfecho pro passado (Com poucos casos, mais fácil achar → doença rara). <b>Coorte:</b> do presente pro futuro (Exposição rara → coorte).</p></div>\n<div class=\"box pearl\"><span class=\"bt\">Pérola de prova</span><p>Randomização distribui igualmente não só os confundidores conhecidos, mas também os desconhecidos — é essa propriedade única que torna o ECR superior para inferência causal.</p></div>"
+    },
+    {
+      "tema_num": 2,
+      "titulo": "Medidas de Associação e Efeito",
+      "kicker": "MFC · Metodologia Científica",
+      "subtitulo": "RR, OR, HR, RAR e NNT — calcular certo e, principalmente, interpretar certo",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição das medidas</h2>\n<ul>\n<li><b>Risco Relativo (RR)</b> — razão entre a incidência do desfecho no expostos e a incidência nos não expostos. RR = incidência exposto / incidência não exposto. Calculável diretamente em <b>coortes e ECRs</b>.</li>\n<li><b>Odds Ratio (OR)</b> — razão entre as chances (odds, não probabilidade) do desfecho no expostos vs. não expostos. Calculável em qualquer delineamento, mas é a medida <b>OBRIGATÓRIA em caso-controle</b> (onde RR não pode ser calculado diretamente, pois a proporção de expostos/não expostos é definida artificialmente pelo desenho).</li>\n<li><b>Hazard Ratio (HR)</b> — análogo ao RR, usado em análises de sobrevida (tempo até o evento), levando em conta não só SE o evento ocorreu, mas QUANDO — extraído de Kaplan-Meier e regressão de Cox.</li>\n<li><b>Redução Absoluta de Risco (RAR)</b> — diferença simples entre incidência no controle e no tratamento. <b>NNT</b> = 1/RAR; representa quantos pacientes precisam ser tratados para prevenir um desfecho adverso a mais.</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Lógica conceitual: por que RR e OR divergem</h2>\n<p>Risco (probabilidade: eventos/total em risco) é diferente de odds (chance: eventos/não-eventos). Quando o desfecho é <b>RARO</b> (tipicamente &lt;10%), odds e risco se aproximam numericamente e OR vira boa aproximação do RR (\"lei das odds raras\"). Quando o desfecho é <b>COMUM</b>, OR se afasta do RR na mesma direção do efeito — exagera tanto o aumento quanto a redução de risco. O HR incorpora a dimensão temporal que RR/OR simples não capturam: dois tratamentos podem ter o mesmo RR final, mas um atrasar o evento por mais tempo — só a análise de sobrevida revela isso.</p>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Como calcular — tabela 2x2</h2>\n<p>Exposição nas linhas, desfecho nas colunas: a=exposto+doente, b=exposto+sadio, c=não exposto+doente, d=não exposto+sadio.</p>\n<table><thead><tr><th></th><th>Doente</th><th>Sadio</th></tr></thead><tbody>\n<tr><td>Exposto</td><td>a</td><td>b</td></tr>\n<tr><td>Não exposto</td><td>c</td><td>d</td></tr>\n</tbody></table>\n<table><thead><tr><th>Medida</th><th>Fórmula</th></tr></thead><tbody>\n<tr><td>Risco Relativo (RR)</td><td>[a/(a+b)] ÷ [c/(c+d)]</td></tr>\n<tr><td>Odds Ratio (OR)</td><td>(a×d) ÷ (b×c) — \"produto cruzado\"</td></tr>\n<tr><td>Redução Absoluta de Risco (RAR)</td><td>Incidência controle − Incidência tratamento</td></tr>\n<tr><td>NNT</td><td>1 ÷ RAR (sempre arredondar para CIMA)</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> Como interpretar o valor e o IC</h2>\n<ul>\n<li><b>= 1</b> — ausência de associação</li>\n<li><b>&gt; 1</b> — associação positiva (fator de risco)</li>\n<li><b>&lt; 1</b> — associação negativa/protetora (fator protetor)</li>\n</ul>\n<p>Exemplo: RR = 2,5 significa 2,5 vezes o risco (150% de risco A MAIS, não 250% a mais — diferenciar \"vezes o risco\" de \"aumento percentual\" é armadilha textual comum).</p>\n<p>Um IC 95% que <b>NÃO cruza o valor nulo</b> (1 para razões; 0 para diferenças) indica associação estatisticamente significativa a 5%. Se o IC cruza o nulo, não se pode afirmar significância, mesmo que o ponto estimado pareça sugerir efeito.</p>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Comparação entre RR, OR e HR</h2>\n<table><thead><tr><th>Medida</th><th>Usa</th><th>Interpretação de valor &gt;1</th></tr></thead><tbody>\n<tr><td>Risco Relativo (RR)</td><td>Coorte, ECR</td><td>Exposição aumenta o RISCO do desfecho</td></tr>\n<tr><td>Odds Ratio (OR)</td><td>Caso-controle (obrigatório); qualquer delineamento (opcional)</td><td>Exposição aumenta a CHANCE do desfecho</td></tr>\n<tr><td>Hazard Ratio (HR)</td><td>Análise de sobrevida (Kaplan-Meier/Cox)</td><td>Aumenta a taxa instantânea de ocorrência do evento ao longo do tempo</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Aplicação prática</h2>\n<ul>\n<li><b>Estudo caso-controle</b> → calcular/interpretar exclusivamente OR, nunca \"risco relativo\", mesmo que o enunciado use a palavra \"risco\" de forma leiga.</li>\n<li><b>Desfecho raro (&lt;10%) em caso-controle</b> → OR pode ser interpretado como boa aproximação do RR verdadeiro.</li>\n<li><b>Desfecho comum em caso-controle</b> → alertar que OR superestima a magnitude do RR verdadeiro.</li>\n<li><b>Curvas de sobrevida (Kaplan-Meier)</b> → interpretar o HR como medida-síntese, mas observar se as curvas se separam cedo ou tarde.</li>\n<li><b>Quantos pacientes tratar para evitar um evento</b> → NNT = 1/RAR, arredondar para cima.</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Limitações, armadilhas e integração</h2>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Calcular/interpretar RR num estudo caso-controle é matematicamente inválido (proporção de expostos é artificial, definida pelo desenho). Tratar \"sem diferença estatisticamente significativa\" como prova de ausência de efeito é erro tipo II — pode refletir amostra pequena/IC amplo. Esquecer de checar a <b>direção</b> do efeito antes de comentar a magnitude: OR de 0,4 é proteção (60% de redução de chance), não \"0,4 vezes menos risco\". Confundir <b>NNT</b> com <b>NNH</b> (número necessário para causar dano) — lógica análoga, interpretação oposta.</p></div>\n<p>Depende do tema 01 (delineamento define qual medida é válida) e alimenta o tema 05 (meta-análises combinam RR/OR/HR de múltiplos estudos em forest plot).</p>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Fluxograma e resumo de fixação</h2>\n<div class=\"flow\"><div class=\"ft\">Qual medida calcular/interpretar</div><pre>IDENTIFICAR O DELINEAMENTO (tema 01)\n│\n├─ CASO-CONTROLE → usar OR obrigatoriamente\n│\n├─ COORTE ou ECR → calcular RR (ou HR se análise de sobrevida)\n│\n├─ Verificar IC 95% → cruza o valor nulo (1)? SIM → não significativo\n│\n└─ ECR com desfecho binário → calcular RAR e NNT (arredondar p/ cima)</pre></div>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Interpretação de forest plot com I² e p-valor (inibidores de DPP-4) — I²=0% não significa ausência de benefício, refere-se a heterogeneidade, não à magnitude do efeito. Curvas de Kaplan-Meier de radioterapia vs. quimiorradioterapia em câncer de bexiga — sobrevida livre de doença vs. sobrevida global. OR como medida apropriada em caso-controle sobre tabagismo e DPOC.</p></div>\n<div class=\"box pulo\"><span class=\"bt\">Atalho mnemônico</span><p>RR e HR = risco/taxa direta (coorte/ECR/sobrevida). OR = chance, sempre em caso-controle. IC cruzou o 1? Não significativo, ponto final. NNT sempre arredonda pra CIMA.</p></div>"
+    },
+    {
+      "tema_num": 3,
+      "titulo": "Sensibilidade, Especificidade e Valores Preditivos",
+      "kicker": "MFC · Metodologia Científica",
+      "subtitulo": "Tabela 2x2 diagnóstica, curva ROC, SnNOUT/SpPIN e razão de verossimilhança",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição</h2>\n<ul>\n<li><b>Sensibilidade</b> — proporção de VERDADEIRAMENTE DOENTES que o teste identifica como positivos. \"Entre os doentes, quantos o teste pega?\"</li>\n<li><b>Especificidade</b> — proporção de VERDADEIRAMENTE SADIOS que o teste identifica como negativos. \"Entre os sadios, quantos o teste descarta?\"</li>\n<li><b>Valor Preditivo Positivo (VPP)</b> — dado teste positivo, probabilidade de realmente ter a doença. <b>Valor Preditivo Negativo (VPN)</b> — dado teste negativo, probabilidade de realmente não ter. Ambos <b>VARIAM com a prevalência</b>.</li>\n<li><b>Razão de Verossimilhança Positiva (RVP)</b> = Sensibilidade / (1−Especificidade).</li>\n<li><b>Curva ROC</b> — desempenho de teste contínuo em todos os pontos de corte, plotando sensibilidade (eixo Y) x 1−especificidade (eixo X).</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Lógica conceitual: propriedade do teste x da população</h2>\n<p>Sensibilidade e especificidade são propriedades <b>intrínsecas do teste</b> — não mudam com a prevalência (calculadas a partir de quem já se sabe doente ou não, via padrão-ouro). Já VPP/VPN são propriedades da <b>combinação teste + população testada</b> — em baixa prevalência, mesmo um teste muito específico gera proporcionalmente mais falsos-positivos entre os poucos positivos totais, derrubando o VPP; em alta prevalência, o mesmo teste tem VPP mais alto.</p>\n<p>A curva ROC nasce de: abaixar o ponto de corte aumenta sensibilidade às custas de especificidade, e vice-versa (trade-off, nunca ganho livre). AUC=1 é teste perfeito; AUC=0,5 é equivalente a jogar moeda (linha diagonal, teste inútil).</p>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Cálculo — tabela 2x2 de acurácia diagnóstica</h2>\n<p>Linhas = resultado do teste, colunas = padrão-ouro: a=verdadeiro positivo, b=falso positivo, c=falso negativo, d=verdadeiro negativo.</p>\n<table><thead><tr><th></th><th>Doente (padrão-ouro +)</th><th>Sadio (padrão-ouro −)</th></tr></thead><tbody>\n<tr><td>Teste positivo</td><td>a (VP)</td><td>b (FP)</td></tr>\n<tr><td>Teste negativo</td><td>c (FN)</td><td>d (VN)</td></tr>\n</tbody></table>\n<table><thead><tr><th>Medida</th><th>Fórmula</th></tr></thead><tbody>\n<tr><td>Sensibilidade</td><td>a / (a+c)</td></tr>\n<tr><td>Especificidade</td><td>d / (b+d)</td></tr>\n<tr><td>VPP</td><td>a / (a+b)</td></tr>\n<tr><td>VPN</td><td>d / (c+d)</td></tr>\n<tr><td>Razão de Verossimilhança Positiva</td><td>Sensibilidade / (1 − Especificidade)</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> SnNOUT, SpPIN e escolha do teste</h2>\n<ul>\n<li><b>Sensibilidade alta</b> → triagem/rastreio inicial, doenças graves onde perder um caso é inaceitável. Teste negativo <b>EXCLUI</b> a doença com confiança (poucos falsos-negativos).</li>\n<li><b>Especificidade alta</b> → confirmação diagnóstica antes de tratamento agressivo/definitivo. Teste positivo <b>CONFIRMA</b> a doença com confiança (poucos falsos-positivos).</li>\n</ul>\n<div class=\"box pulo\"><span class=\"bt\">Como decidir na hora da prova</span><p><b>SnNOUT</b> (Sensitivity high, Negative rules OUT) e <b>SpPIN</b> (Specificity high, Positive rules IN). Passo a passo: (1) identifique o objetivo clínico do teste no enunciado — excluir ou confirmar; (2) monte a tabela 2x2 com a=VP, b=FP, c=FN, d=VN; (3) aplique a fórmula correta; (4) só recalcule VPP/VPN se a prevalência mudar de contexto.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Comparação entre as medidas</h2>\n<table><thead><tr><th>Medida</th><th>Pergunta que responde</th><th>Muda com prevalência?</th></tr></thead><tbody>\n<tr><td>Sensibilidade</td><td>Dos doentes, quantos o teste pega?</td><td>Não</td></tr>\n<tr><td>Especificidade</td><td>Dos sadios, quantos o teste descarta?</td><td>Não</td></tr>\n<tr><td>VPP</td><td>Se deu positivo, qual a chance de realmente ter?</td><td>Sim — aumenta com prevalência</td></tr>\n<tr><td>VPN</td><td>Se deu negativo, qual a chance de realmente não ter?</td><td>Sim — diminui com prevalência</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Aplicação prática</h2>\n<ul>\n<li><b>Excluir doença grave (triagem)</b> → escolher teste de alta sensibilidade — negativo terá alto VPN (SnNOUT).</li>\n<li><b>Confirmar antes de tratamento invasivo</b> → escolher teste de alta especificidade — positivo terá alto VPP (SpPIN).</li>\n<li><b>Teste contínuo, ponto de corte</b> → usar curva ROC; não existe corte \"certo\" universal, depende do custo relativo de FP vs. FN no cenário.</li>\n<li><b>Aplicar teste validado em outra população</b> → sensibilidade/especificidade tendem a se manter estáveis, mas VPP/VPN devem ser recalculados pela prevalência local.</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Limitações e armadilhas</h2>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Achar que sensibilidade/especificidade mudam com a prevalência — <b>não mudam</b>, são intrínsecas ao teste. Aplicar VPP calculado em população de alta prevalência (ambulatório de referência) para interpretar rastreio em população geral de baixa prevalência — os valores preditivos <b>não são transferíveis</b> entre contextos. Confundir razão de verossimilhança (não depende de prevalência) com VPP (depende).</p></div>\n<div class=\"box pearl\"><span class=\"bt\">Pérola de prova</span><p>Em população de baixa prevalência, mesmo testes muito bons têm VPP relativamente baixo — a maioria dos positivos pode ser falso-positivo nesse cenário. Baixar o ponto de corte sempre é trade-off: sensibilidade sobe, especificidade cai.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Fluxograma e resumo de fixação</h2>\n<div class=\"flow\"><div class=\"ft\">Escolha do teste conforme objetivo clínico</div><pre>DEFINIR O OBJETIVO CLÍNICO DO TESTE\n│\n├─ Excluir doença grave (triagem)? → priorizar SENSIBILIDADE (SnNOUT)\n│\n├─ Confirmar antes de tratar agressivamente? → priorizar ESPECIFICIDADE (SpPIN)\n│\n├─ Teste contínuo, corte não definido → construir/consultar curva ROC\n│\n└─ Aplicar resultado a paciente individual → considerar prevalência pré-teste p/ VPP/VPN</pre></div>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Curva ROC com múltiplos pontos de corte — qual corte favorece sensibilidade vs. especificidade, e o significado de AUC=0,5. Construção de tabela 2x2 de teste laboratorial fictício (PAR) com cálculo comparativo de sensibilidade, especificidade, VPP, VPN e RVP contra teste padrão (fator reumatoide). Também repete o erro de interpretar I² de meta-análise como \"ausência de benefício\" — I² mede heterogeneidade, não magnitude/significância do efeito (tema adjacente ao 05).</p></div>"
+    },
+    {
+      "tema_num": 4,
+      "titulo": "Vieses, Confundimento e Causalidade",
+      "kicker": "MFC · Metodologia Científica",
+      "subtitulo": "Leitura crítica: erro sistemático, fator de confusão e critérios de Hill",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição</h2>\n<ul>\n<li><b>Viés (bias)</b> — erro sistemático (não aleatório) que distorce a estimativa numa direção previsível, decorrente de falhas no desenho, condução ou análise. Diferente do erro aleatório, o viés <b>NÃO se corrige com mais participantes</b>.</li>\n<li><b>Confundimento (confounding)</b> — distorção da associação exposição-desfecho causada por uma terceira variável (fator de confusão) associada a ambos, sem estar na via causal entre eles.</li>\n<li><b>Causalidade</b> — inferência de que a exposição efetivamente CAUSA o desfecho, não apenas está associada. Associação é condição necessária mas não suficiente para causalidade.</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Lógica conceitual: as 3 condições do fator de confusão</h2>\n<p>Um fator de confusão clássico precisa satisfazer <b>simultaneamente</b>: (1) estar associado à exposição; (2) ser fator de risco independente para o desfecho (mesmo sem a exposição estudada); (3) NÃO estar na via causal entre exposição e desfecho (senão seria mediação, não confundimento).</p>\n<p><b>Exemplo clássico:</b> \"carregar isqueiro\" e \"câncer de pulmão\" têm associação positiva forte — inteiramente explicada pelo tabagismo: tabagistas carregam isqueiro mais (condição 1) E tabagismo causa câncer independentemente (condição 2) E carregar isqueiro não está na via causal (condição 3). Sem ajustar para tabagismo, a associação bruta é espúria.</p>\n<p>Viés de <b>seleção</b> ocorre no RECRUTAMENTO da amostra; viés de <b>informação/aferição</b> ocorre na COLETA de dados (inclui o viés de memória do tema 01).</p>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Critérios de causalidade de Hill</h2>\n<table><thead><tr><th>Critério</th><th>Pergunta-chave</th></tr></thead><tbody>\n<tr><td>Temporalidade</td><td>A causa precede o efeito? (único absolutamente necessário)</td></tr>\n<tr><td>Força da associação</td><td>O RR/OR é grande?</td></tr>\n<tr><td>Gradiente dose-resposta</td><td>Mais exposição = mais desfecho?</td></tr>\n<tr><td>Consistência</td><td>Replicado em populações/estudos diferentes?</td></tr>\n<tr><td>Plausibilidade biológica</td><td>Existe mecanismo biológico coerente?</td></tr>\n</tbody></table>\n<p>Não é um checklist rígido: nenhum critério isolado (exceto temporalidade) é absolutamente necessário nem suficiente — é uma avaliação de peso de evidência global.</p>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> Como reconhecer confundimento no caso clínico</h2>\n<p>Perguntar sempre: existe uma terceira variável plausível que satisfaça as 3 condições e explique (total ou parcialmente) a associação observada? Se os autores não mencionam ajuste para essa variável óbvia, a associação deve ser interpretada com cautela.</p>\n<table><thead><tr><th>Condição</th><th>Descrição</th></tr></thead><tbody>\n<tr><td>1</td><td>Associado à exposição estudada</td></tr>\n<tr><td>2</td><td>Fator de risco independente para o desfecho</td></tr>\n<tr><td>3</td><td>NÃO está na via causal entre exposição e desfecho</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Estratégias de controle de confundimento</h2>\n<ul>\n<li><b>Na fase de desenho:</b> randomização (ECR — controla confundidores conhecidos e desconhecidos), restrição (só incluir sem o fator de confusão), pareamento (emparelhar casos/controles pelo confundidor).</li>\n<li><b>Na fase de análise:</b> estratificação (analisar separadamente por níveis do confundidor), ajuste multivariado (regressão logística/de Cox incluindo o confundidor).</li>\n</ul>\n<div class=\"box pearl\"><span class=\"bt\">Pérola de prova</span><p>Randomização é a ÚNICA estratégia que controla confundidores desconhecidos/não medidos — todas as demais (restrição, pareamento, ajuste estatístico) só controlam o que foi identificado e medido.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Comparação entre conceitos correlatos</h2>\n<table><thead><tr><th>Conceito</th><th>Fase onde ocorre</th><th>Corrige-se com</th></tr></thead><tbody>\n<tr><td>Viés de seleção</td><td>Recrutamento da amostra</td><td>Desenho cuidadoso; sem correção estatística pós-hoc confiável</td></tr>\n<tr><td>Viés de informação/memória</td><td>Coleta de dados</td><td>Cegamento, fontes de dados objetivas (prontuário vs. autorrelato)</td></tr>\n<tr><td>Confundimento</td><td>Relação exposição-desfecho</td><td>Randomização, restrição, pareamento, ajuste estatístico</td></tr>\n</tbody></table>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Confundir <b>mediador</b> (variável no meio do caminho causal) com <b>fator de confusão</b> (fora do caminho causal) — ajustar estatisticamente para um mediador remove parte do efeito real que se está tentando medir, erro diferente do confundimento.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Aplicação prática e limitações</h2>\n<p>Diante de associação forte e inesperada num estudo observacional, buscar ativamente possíveis confundidores não ajustados antes de aceitar como causal. Se houver diferença importante entre <b>RR bruto</b> e <b>RR ajustado</b> no mesmo estudo, isso confirma que havia confundimento relevante sendo corrigido pelo ajuste. Aceitar associação confundida como causal pode levar a recomendações de saúde pública equivocadas e decisões clínicas mal fundamentadas.</p>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Fluxograma e resumo de fixação</h2>\n<div class=\"flow\"><div class=\"ft\">Avaliando causalidade de uma associação</div><pre>ASSOCIAÇÃO ESTATÍSTICA ENCONTRADA\n│\n├─ Existe temporalidade clara (exposição antes do desfecho)?\n│    └─ NÃO → não pode ser causal, investigar causalidade reversa\n│\n├─ SIM → buscar 3ª variável associada a exposição E desfecho, fora da via causal\n│    └─ Existe e não foi ajustada? → suspeitar de CONFUNDIMENTO\n│\n└─ Ajustada adequadamente (randomização/restrição/pareamento/multivariada)?\n     → avaliar demais critérios de Hill para força da inferência causal</pre></div>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Tema transversal — não costuma aparecer isolado com identidade própria, mas fundamenta a interpretação correta de praticamente toda questão de metodologia científica (temas 01, 02, 05): sempre que um enunciado cita \"um estudo mostrou que X está associado a Y\", esse é o momento de aplicar o raciocínio de viés/confundimento/causalidade.</p></div>\n<div class=\"box pulo\"><span class=\"bt\">Atalho mnemônico</span><p>Fator de confusão = 3 condições: associado à exposição + fator de risco independente + fora da via causal. Só randomização controla o que você não sabe que precisa controlar. Temporalidade é o único critério de Hill absolutamente necessário.</p></div>"
+    },
+    {
+      "tema_num": 5,
+      "titulo": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "kicker": "MFC · Metodologia Científica",
+      "subtitulo": "Forest plot, heterogeneidade (I²) e a hierarquia de evidência no topo",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição</h2>\n<ul>\n<li><b>Revisão sistemática</b> — síntese de todas as evidências disponíveis sobre uma pergunta específica, seguindo metodologia explícita e reprodutível de busca, seleção e avaliação crítica (diferente da revisão narrativa tradicional, sem protocolo pré-especificado e mais sujeita a viés de seleção do revisor).</li>\n<li><b>Meta-análise</b> — técnica estatística que combina quantitativamente os resultados de múltiplos estudos numa única estimativa de efeito, com maior poder estatístico que qualquer estudo isolado.</li>\n<li><b>Forest plot</b> — cada linha horizontal representa um estudo (ponto estimado + IC); um losango no final representa o efeito combinado.</li>\n<li><b>Heterogeneidade (I²)</b> — quanto da variabilidade entre os estudos excede o esperado por acaso, expressa em percentual (0-100%).</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Lógica conceitual: I² não é magnitude de efeito</h2>\n<p>A meta-análise aumenta o poder estatístico combinando o \"N\" de múltiplos estudos, reduzindo o erro aleatório (IC mais estreito). Mas só é válida quando os estudos são suficientemente semelhantes entre si (população, intervenção, comparador, desfecho) — é o que a heterogeneidade avalia.</p>\n<p>O I² <b>não mede a magnitude nem a significância</b> do efeito combinado — mede exclusivamente o quanto da variação TOTAL observada é atribuível a diferenças reais entre os estudos versus flutuação aleatória. I² próximo de 0% sugere baixa heterogeneidade; I² alto (&gt;50-75%) sugere heterogeneidade substancial, podendo exigir modelo de efeitos aleatórios ou análise de subgrupos.</p>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Como ler um forest plot</h2>\n<p>Cada quadrado = ponto estimado de um estudo (tamanho proporcional ao peso/precisão); a linha horizontal atravessando é o IC daquele estudo. A linha vertical central (geralmente 1 para razões, 0 para diferenças) é o valor nulo. O <b>losango</b> na parte inferior é a estimativa combinada — se não toca a linha do valor nulo, o efeito combinado é estatisticamente significativo.</p>\n<div class=\"box pulo\"><span class=\"bt\">Passo a passo na prova</span><p>1) Localizar o losango (efeito combinado) e verificar se cruza a linha do valor nulo → responde SIGNIFICÂNCIA. 2) Separadamente, avaliar o I² relatado → responde CONSISTÊNCIA entre estudos. Nunca misturar as duas respostas — são perguntas independentes.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> Interpretação de I² e modelos estatísticos</h2>\n<table><thead><tr><th>Faixa aproximada de I²</th><th>Interpretação</th></tr></thead><tbody>\n<tr><td>0-25%</td><td>Heterogeneidade baixa/pode não ser importante</td></tr>\n<tr><td>25-50%</td><td>Heterogeneidade moderada</td></tr>\n<tr><td>50-75%</td><td>Heterogeneidade substancial</td></tr>\n<tr><td>&gt;75%</td><td>Heterogeneidade considerável</td></tr>\n</tbody></table>\n<table><thead><tr><th></th><th>Efeitos fixos</th><th>Efeitos aleatórios</th></tr></thead><tbody>\n<tr><td>Pressuposto</td><td>Um único efeito verdadeiro comum</td><td>Efeito verdadeiro varia entre estudos</td></tr>\n<tr><td>Quando usar</td><td>Heterogeneidade baixa</td><td>Heterogeneidade relevante</td></tr>\n<tr><td>IC resultante</td><td>Mais estreito</td><td>Mais amplo (mais conservador)</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Comparação com conceitos correlatos</h2>\n<table><thead><tr><th>Conceito</th><th>O que informa</th><th>Erro comum de interpretação</th></tr></thead><tbody>\n<tr><td>IC do efeito combinado (losango)</td><td>Significância estatística do efeito</td><td>Confundir com heterogeneidade</td></tr>\n<tr><td>I² (heterogeneidade)</td><td>Consistência entre os estudos</td><td>Interpretar como magnitude/significância do efeito</td></tr>\n<tr><td>Revisão sistemática</td><td>Síntese qualitativa metodológica</td><td>Confundir com revisão narrativa tradicional</td></tr>\n<tr><td>Meta-análise</td><td>Síntese quantitativa (estatística)</td><td>Assumir que toda revisão sistemática inclui meta-análise</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Aplicação prática: hierarquia de evidência e viés de publicação</h2>\n<p>Hierarquia (GRADE e similares): <b>revisão sistemática/meta-análise de ECRs</b> no topo → ECR individual → estudos observacionais (coorte, caso-controle) → série de casos e opinião de especialista.</p>\n<p><b>Viés de publicação</b> é a limitação mais insidiosa: estudos com resultado positivo/significativo têm maior probabilidade de serem publicados que estudos com resultado nulo, distorcendo sistematicamente a síntese na direção de superestimar efeitos positivos. O funil de publicação (funnel plot) ajuda a detectar essa assimetria, mas não a elimina.</p>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Limitações e armadilhas</h2>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Interpretar <b>I²=0% como \"não houve benefício com o tratamento\"</b> — I² de 0% significa apenas que os estudos foram CONSISTENTES entre si; nada diz sobre direção/magnitude do efeito, que se lê no ponto estimado e IC do losango. Achar que toda revisão sistemática necessariamente contém meta-análise — quando os estudos são heterogêneos demais, pode haver só síntese qualitativa. Confundir revisão sistemática (protocolo explícito) com revisão narrativa (escolha subjetiva do autor).</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Fluxograma e resumo de fixação</h2>\n<div class=\"flow\"><div class=\"ft\">Interpretando evidência de meta-análise</div><pre>PERGUNTA CLÍNICA REQUER A MELHOR EVIDÊNCIA\n│\n├─ Buscar revisão sistemática/meta-análise de ECRs primeiro\n│\n├─ Encontrado forest plot → avaliar LOSANGO (efeito/significância)\n│                            separadamente do I² (heterogeneidade)\n│\n├─ I² alto → considerar fonte de heterogeneidade, preferir efeitos aleatórios\n│\n└─ Sem meta-análise disponível → descer na hierarquia: ECR individual → coorte → caso-controle</pre></div>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Meta-análise de inibidores de DPP-4 em diabetes tipo 2 — interpretação de I²=0%, p-valor de 0,70 e IC da mudança de HbA1c, testando exatamente a armadilha de confundir heterogeneidade com ausência de efeito. Curvas de Kaplan-Meier de radioterapia vs. quimiorradioterapia em câncer de bexiga músculo-invasivo (NEJM) — sobrevida em ECR publicado.</p></div>\n<div class=\"box pearl\"><span class=\"bt\">Pérola de prova</span><p>Revisão sistemática de ECRs está no topo da hierarquia justamente por combinar a maior força causal individual (ECR) com o maior poder estatístico (síntese de múltiplos estudos).</p></div>"
+    },
+    {
+      "tema_num": 6,
+      "titulo": "Atenção Primária à Saúde e Atributos de Starfield",
+      "kicker": "MFC · Medicina de Família",
+      "subtitulo": "Acesso, longitudinalidade, integralidade e coordenação do cuidado",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição</h2>\n<p><b>Atenção Primária à Saúde (APS)</b> — nível de atenção que serve como porta de entrada preferencial do sistema, resolvendo a grande maioria dos problemas de saúde da população (estimativa clássica: até 85-90%), articulando-se com os demais níveis quando necessário.</p>\n<p><b>Atributos essenciais de Starfield</b> — quatro características que definem e operacionalizam a APS:</p>\n<ul>\n<li><b>Acesso/Porta de entrada (first contact)</b> — ser o primeiro recurso buscado a cada novo problema de saúde.</li>\n<li><b>Longitudinalidade</b> — vínculo continuado ao longo do tempo entre profissional/equipe e paciente, independente da presença de doença.</li>\n<li><b>Integralidade</b> — reconhecer e abordar todo o espectro de necessidades de saúde da pessoa, encaminhando quando exceder sua capacidade resolutiva.</li>\n<li><b>Coordenação do cuidado</b> — garantir continuidade e articulação entre os diferentes pontos de atenção que o paciente eventualmente acesse.</li>\n</ul>\n<p><b>Atributos derivados</b> — orientação familiar, orientação comunitária e competência cultural.</p>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Fundamento: por que APS forte melhora desfechos</h2>\n<p>Sistemas organizados com APS forte como base (não apenas como nível periférico/residual) apresentam melhores desfechos populacionais e menor custo agregado — a longitudinalidade permite conhecer o contexto do paciente ao longo do tempo (reduz exames redundantes, melhora adesão), e a coordenação evita fragmentação quando múltiplos especialistas estão envolvidos.</p>\n<p>Coordenação do cuidado <b>não significa proibir</b> práticas paralelas (remédios caseiros/fitoterápicos que o paciente já usa) — significa que a equipe se mantém INFORMADA e envolvida em tudo que afeta a saúde do paciente, orientando sobre uso seguro sem romper o vínculo pela discordância.</p>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Como reconhecer cada atributo no caso clínico</h2>\n<ul>\n<li>Paciente procura a UBS como primeiro recurso para QUALQUER novo problema → <b>acesso/porta de entrada</b></li>\n<li>Mesmo médico/equipe acompanha o paciente por anos, doente ou não → <b>longitudinalidade</b></li>\n<li>Equipe maneja tanto problemas físicos quanto psicossociais, ou identifica quando encaminhar → <b>integralidade</b></li>\n<li>Equipe orienta sobre uso seguro de prática paralela sem romper o vínculo → <b>coordenação do cuidado</b></li>\n<li>Uso de genograma para entender a dinâmica familiar → <b>orientação familiar</b></li>\n<li>Adaptação da abordagem a crenças/valores específicos → <b>competência cultural</b></li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> Comparação entre os atributos</h2>\n<table><thead><tr><th>Atributo</th><th>Foco central</th><th>Não deve ser confundido com</th></tr></thead><tbody>\n<tr><td>Acesso/Porta de entrada</td><td>Ser o primeiro recurso buscado</td><td>Disponibilidade geográfica isolada (é sobre ser buscado primeiro, não só estar perto)</td></tr>\n<tr><td>Longitudinalidade</td><td>Vínculo ao longo do TEMPO</td><td>Integralidade (que é sobre amplitude de problemas, não duração do vínculo)</td></tr>\n<tr><td>Integralidade</td><td>Amplitude de necessidades reconhecidas</td><td>Coordenação (que é sobre articular pontos de atenção)</td></tr>\n<tr><td>Coordenação do cuidado</td><td>Continuidade entre diferentes pontos de atenção</td><td>Integralidade (coordenação pode envolver só 1 problema, mas em vários serviços)</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Síntese dos atributos</h2>\n<table><thead><tr><th>Categoria</th><th>Atributos</th></tr></thead><tbody>\n<tr><td>Essenciais</td><td>Acesso (porta de entrada), Longitudinalidade, Integralidade, Coordenação do cuidado</td></tr>\n<tr><td>Derivados</td><td>Orientação familiar, Orientação comunitária, Competência cultural</td></tr>\n</tbody></table>\n<div class=\"box pulo\"><span class=\"bt\">Como decidir na prova</span><p>Pergunte: o caso fala sobre SER O PRIMEIRO contato? (acesso) Sobre TEMPO de vínculo? (longitudinalidade) Sobre AMPLITUDE de problemas reconhecidos? (integralidade) Sobre ARTICULAÇÃO entre serviços/práticas? (coordenação) — cada palavra-chave aponta para um atributo específico.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Aplicação prática e limitações</h2>\n<p>Sistemas com APS fraca (sem os 4 atributos essenciais bem estabelecidos) apresentam fragmentação do cuidado, duplicação desnecessária de exames, maior encaminhamento inadequado a especialistas e piores desfechos populacionais a maior custo — base conceitual que justifica investir no fortalecimento da APS como estratégia de saúde pública.</p>\n<p>Fatores que fragilizam os atributos: alta rotatividade de profissionais (compromete longitudinalidade), ausência de sistema de referência/contrarreferência (compromete coordenação), falta de território adscrito definido (compromete orientação comunitária), equipe sem capacitação para diversidade cultural (compromete competência cultural).</p>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Fluxograma e armadilhas</h2>\n<div class=\"flow\"><div class=\"ft\">Identificando o atributo de Starfield no caso</div><pre>CASO CLÍNICO DE MFC/SAÚDE COLETIVA\n│\n├─ Comportamento descrito é sobre PRIMEIRO CONTATO? → ACESSO\n├─ É sobre VÍNCULO TEMPORAL contínuo? → LONGITUDINALIDADE\n├─ É sobre AMPLITUDE de problemas reconhecidos? → INTEGRALIDADE\n├─ É sobre ARTICULAÇÃO entre serviços já acessados? → COORDENAÇÃO\n└─ Envolve família/comunidade especificamente? → atributos derivados</pre></div>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Confundir integralidade com coordenação — integralidade é AMPLITUDE de problemas de UM paciente; coordenação é articular MÚLTIPLOS pontos/serviços de atenção. Achar que a resposta correta diante de terapia alternativa é sempre proibir — Starfield indica orientar com segurança, mantendo o vínculo.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Resumo de fixação</h2>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Caso de paciente idoso que usa chá caseiro para dor articular, orientado pelo médico de família sobre uso seguro sem suspender a prática — identificação do atributo de <b>coordenação do cuidado</b>. A APS resolve ~85-90% dos problemas de saúde de uma população sem necessidade de encaminhamento a níveis de maior complexidade.</p></div>\n<div class=\"box pulo\"><span class=\"bt\">Mnemônico</span><p>4 essenciais: <b>A-L-I-C</b>e no país da APS — Acesso, Longitudinalidade, Integralidade, Coordenação.</p></div>"
+    },
+    {
+      "tema_num": 7,
+      "titulo": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "kicker": "MFC · Medicina de Família",
+      "subtitulo": "Genograma, APGAR familiar, ecomapa, tipologia familiar e crises normativas x paranormativas",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição</h2>\n<ul>\n<li><b>Genograma (familiograma)</b> — representação gráfica de pelo menos <b>3 gerações</b> de uma família, com símbolos padronizados para sexo, vínculos, qualidade dos relacionamentos e problemas de saúde relevantes.</li>\n<li><b>Ciclo de vida familiar</b> — sequência de estágios previsíveis (formação do casal, nascimento dos filhos, filhos pequenos, filhos escolares, adolescentes, saída dos filhos/\"ninho vazio\", velhice), cada um com tarefas desenvolvimentais próprias.</li>\n<li><b>Tipologia familiar</b> — nuclear (pais e filhos biológicos), extensa/ampliada (outros parentes coabitando), monoparental (um só genitor), reconstituída/recasada (união após separação, possivelmente com filhos de relações prévias), homoafetiva, entre outras.</li>\n<li><b>Crise familiar</b> — desequilíbrio no funcionamento familiar: <b>normativa</b> (esperada, decorre da transição entre estágios) ou <b>paranormativa/não-normativa</b> (inesperada, fora do curso natural — doença grave súbita, desemprego, morte prematura, violência).</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Lógica conceitual</h2>\n<p>Padrões familiares se repetem através de gerações — doenças crônicas, relacionamentos conflituosos, dependência química e padrões de enfrentamento de crises tendem a se repetir; visualizar 3 gerações revela isso melhor que a anamnese verbal isolada.</p>\n<p>Cada transição de estágio exige reorganização de papéis — a chegada de um primeiro neto reposiciona toda a estrutura familiar, e a dificuldade em completar essa reorganização caracteriza uma crise <b>normativa mal resolvida</b>, mesmo sendo esperada. Crises paranormativas são mais desestabilizadoras por não seguirem roteiro esperado — a família não teve tempo de se preparar nem de observar outras famílias na mesma transição.</p>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Como classificar no caso clínico</h2>\n<p><b>Estrutura familiar:</b> pais+filhos biológicos apenas = nuclear; inclui avós/tios/outros parentes MORANDO JUNTO = extensa/ampliada; um só genitor+filhos = monoparental; união após separação anterior, possivelmente com filhos de relações prévias = reconstituída.</p>\n<p><b>Tipo de crise:</b> evento FAZ PARTE do ciclo de vida esperado (nascimento, filho saindo de casa, aposentadoria, morte em idade avançada esperada) → normativa; evento INESPERADO, fora do curso natural (doença grave súbita em jovem, perda de emprego, separação abrupta, violência, morte prematura) → paranormativa. Crises normativas se subclassificam pela fase do ciclo (ex.: \"etapa procriativa\", \"etapa de dispersão\").</p>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> Simbologia do genograma e instrumentos complementares</h2>\n<table><thead><tr><th>Símbolo</th><th>Significado</th></tr></thead><tbody>\n<tr><td>Quadrado</td><td>Sexo masculino</td></tr>\n<tr><td>Círculo</td><td>Sexo feminino</td></tr>\n<tr><td>Linha contínua horizontal</td><td>Casamento/união estável</td></tr>\n<tr><td>Linha tracejada</td><td>União informal ou relação rompida</td></tr>\n<tr><td>\"X\" sobre o símbolo</td><td>Óbito</td></tr>\n<tr><td>Linha pontilhada ao redor do grupo</td><td>Pessoas que coabitam no mesmo domicílio</td></tr>\n</tbody></table>\n<table><thead><tr><th>Instrumento</th><th>Foco</th></tr></thead><tbody>\n<tr><td>Genograma</td><td>Estrutura e relações internas da família, 3 gerações</td></tr>\n<tr><td>APGAR familiar</td><td>Percepção do paciente sobre funcionamento familiar (5 domínios: Adaptação, Parceria, Crescimento, Afeto, Resolução)</td></tr>\n<tr><td>Ecomapa</td><td>Relações da família com sistemas externos (comunidade, trabalho, serviços)</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Comparação entre tipos de crise e tipologias</h2>\n<table><thead><tr><th>Tipo de crise</th><th>Origem</th><th>Exemplo</th></tr></thead><tbody>\n<tr><td>Normativa</td><td>Transição esperada do ciclo de vida familiar</td><td>Nascimento de filho, filho saindo de casa, aposentadoria</td></tr>\n<tr><td>Paranormativa</td><td>Evento inesperado, fora do curso natural</td><td>Doença grave súbita, desemprego, morte prematura, violência doméstica</td></tr>\n</tbody></table>\n<table><thead><tr><th>Tipologia</th><th>Composição</th></tr></thead><tbody>\n<tr><td>Nuclear</td><td>Pais + filhos biológicos</td></tr>\n<tr><td>Extensa/ampliada</td><td>Inclui outros parentes coabitando</td></tr>\n<tr><td>Monoparental</td><td>Um só genitor + filhos</td></tr>\n<tr><td>Reconstituída</td><td>Recasamento, possivelmente com filhos de uniões anteriores</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Aplicação prática</h2>\n<ul>\n<li><b>Identificação de vulnerabilidade familiar</b> → construir genograma de 3+ gerações, mapeando estrutura, qualidade dos vínculos e problemas de saúde recorrentes — indicado especialmente diante de queixas inespecíficas múltiplas ou vulnerabilidade social.</li>\n<li><b>Transição esperada do ciclo de vida</b> (ex.: filho saindo de casa) → reconhecer como crise normativa, oferecer suporte à reorganização de papéis sem patologizar excessivamente.</li>\n<li><b>Evento inesperado desestabilizando a família</b> (ex.: diagnóstico grave) → reconhecer como paranormativa, com suporte mais intensivo por não haver \"roteiro\" cultural prévio.</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Limitações e armadilhas</h2>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Classificar uma crise esperada (nascimento de filho, mesmo gerando estresse significativo) como paranormativa só pela intensidade do impacto — a classificação depende da <b>previsibilidade</b>, não da intensidade do estresse. Confundir família extensa (coabitação) com simplesmente ter parentes por perto/contato frequente — o critério técnico é <b>COABITAÇÃO</b>, não proximidade relacional.</p></div>\n<p>Crises mal resolvidas (normativas ou paranormativas) associam-se a maior morbidade psíquica, pior adesão a tratamentos crônicos e maior uso inadequado de serviços de saúde — reconhecer a crise subjacente é frequentemente mais produtivo que investigar exaustivamente uma queixa física isolada sem contexto.</p>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Fluxograma e resumo de fixação</h2>\n<div class=\"flow\"><div class=\"ft\">Avaliação familiar em consulta de rotina</div><pre>PACIENTE COM MÚLTIPLAS QUEIXAS INESPECÍFICAS OU VULNERABILIDADE\n│\n├─ Construir GENOGRAMA de 3+ gerações\n│\n├─ Identificar TIPOLOGIA FAMILIAR (nuclear/extensa/monoparental/reconstituída)\n│\n├─ Identificar evento desencadeante recente\n│    ├─ Fazia parte do ciclo de vida esperado? → CRISE NORMATIVA\n│    └─ Evento inesperado, fora do curso natural? → CRISE PARANORMATIVA\n│\n└─ Complementar com APGAR familiar (percepção subjetiva) e ecomapa (rede externa)</pre></div>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Caso de paciente com depressão e familiograma detalhado (relação fragilizada com o marido, filha morando com namorado, filho que não a defende) — classificação simultânea da estrutura familiar (nuclear com crise normativa em etapa de dispersão) e do tipo de crise, testando os dois eixos ao mesmo tempo.</p></div>\n<div class=\"box pulo\"><span class=\"bt\">Mnemônico</span><p>Normativa = No roteiro (esperada). Paranormativa = Pega de surpresa (inesperada). Ecomapa olha para FORA da família; genograma olha para DENTRO.</p></div>"
+    },
+    {
+      "tema_num": 8,
+      "titulo": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "kicker": "MFC · Medicina de Família",
+      "subtitulo": "Leavell & Clark (1ª a 4ª prevenção) e Triple/Quadruple/Quintuple Aim",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição — níveis de prevenção (Leavell & Clark)</h2>\n<ul>\n<li><b>Prevenção primária</b> — atua ANTES da doença se instalar (vacinação, orientação de estilo de vida, AAS profilático em paciente sem doença estabelecida mas com fator de risco).</li>\n<li><b>Prevenção secundária</b> — detecção e tratamento precoce de doença já instalada mas ainda assintomática/inicial (rastreamentos: mamografia, Papanicolau, PSA).</li>\n<li><b>Prevenção terciária</b> — reabilitação e limitação de sequelas/incapacidades em doença já estabelecida e sintomática.</li>\n<li><b>Prevenção quaternária</b> — proteção do paciente contra intervenção médica excessiva ou desnecessária (sobrediagnóstico, sobretratamento), evitando dano iatrogênico de excesso de medicalização.</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Definição — Triple/Quadruple/Quintuple Aim (IHI)</h2>\n<table><thead><tr><th>Modelo</th><th>Objetivos incluídos</th></tr></thead><tbody>\n<tr><td>Triple Aim</td><td>Experiência do cuidado + resultados populacionais + custo per capita</td></tr>\n<tr><td>Quadruple Aim</td><td>+ bem-estar da equipe/profissionais de saúde</td></tr>\n<tr><td>Quintuple Aim</td><td>+ equidade em saúde</td></tr>\n</tbody></table>\n<p>O Quadruple Aim nasceu do reconhecimento de que <b>burnout da equipe compromete os outros três objetivos</b> — não é adicional isolado, é condição habilitadora dos demais. O Quintuple Aim é a evolução mais recente, incorporando equidade explicitamente.</p>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Lógica conceitual: história natural da doença</h2>\n<p>Os níveis de prevenção seguem a história natural da doença: período <b>pré-patogênico</b> (fatores de risco presentes, doença ainda não iniciada — janela da primária) → período <b>patogênico subclínico</b> (doença já iniciada biologicamente, sem manifestação clínica — janela da secundária, onde o rastreamento intercepta) → manifestação clínica e possível sequela/incapacidade ou morte (janela da terciária).</p>\n<p>A prevenção quaternária nasce de constatação diferente: o próprio sistema de saúde pode gerar dano ao intervir além do necessário — sobrediagnóstico (identificar \"doenças\" que nunca causariam sintomas/morte) e sobretratamento expõem o paciente a riscos sem benefício líquido real. É prevenção \"da prevenção excessiva\".</p>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> Como reconhecer o nível de prevenção no caso clínico</h2>\n<ul>\n<li>Paciente SEM a doença, mas com fator de risco, recebendo intervenção para EVITAR que ocorra → <b>primária</b> (vacina, estilo de vida, AAS profilático em prevenção cardiovascular primária)</li>\n<li>Paciente ASSINTOMÁTICO sendo rastreado para detectar doença subclínica → <b>secundária</b> (mamografia, colonoscopia de rastreio)</li>\n<li>Paciente já COM a doença estabelecida, recebendo reabilitação para limitar sequela → <b>terciária</b> (fisioterapia pós-AVC, reabilitação cardíaca)</li>\n<li>Reavaliação de intervenção/medicação já em uso, retirando-a por RISCO SUPERAR BENEFÍCIO → <b>quaternária</b> (retirada de AAS profilático sem indicação clara favorável naquele paciente)</li>\n</ul>\n<p>O ponto de maior confusão: diferenciar primária de quaternária quando ambas envolvem NÃO prescrever/retirar medicação. A diferença está em SE a medicação nunca teve indicação clara (evitar uso inadequado, não é \"prevenção\") versus SE tinha indicação previamente aceitável e a relação risco-benefício foi reavaliada e mudou (quaternária genuína).</p>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Comparação entre os níveis</h2>\n<table><thead><tr><th>Nível</th><th>Momento na história natural</th><th>Exemplo clássico</th></tr></thead><tbody>\n<tr><td>Primária</td><td>Antes da doença existir</td><td>Vacinação, mudança de estilo de vida</td></tr>\n<tr><td>Secundária</td><td>Doença subclínica, assintomática</td><td>Rastreamento (mamografia, Papanicolau)</td></tr>\n<tr><td>Terciária</td><td>Doença sintomática estabelecida</td><td>Reabilitação, limitação de sequela</td></tr>\n<tr><td>Quaternária</td><td>Risco de dano por excesso de intervenção médica</td><td>Retirada de medicação/exame sem benefício líquido claro</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Aplicação prática</h2>\n<ul>\n<li><b>Paciente assintomático com fator de risco CV, sem evento prévio</b> → decisão de AAS profilático pesa risco-benefício individual; se a decisão é NÃO iniciar ou RETIRAR por reavaliação, configura <b>prevenção quaternária</b>, não simplesmente \"deixar de fazer primária\".</li>\n<li><b>Planejamento de rastreamento populacional</b> → definir população-alvo baseada em evidência de benefício líquido positivo; rastrear fora dela aumenta sobrediagnóstico sem benefício correspondente.</li>\n<li><b>Avaliação de desempenho de serviço de saúde</b> → aplicar Quadruple/Quintuple Aim para checar se melhorar um objetivo não compromete outro (ex.: reduzir custo à custa do bem-estar da equipe).</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Limitações e armadilhas</h2>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Classificar retirada de medicação profilática (por reavaliação de risco-benefício) simplesmente como \"não fazer mais prevenção primária\" — o correto é <b>prevenção quaternária</b>. Confundir rastreamento (secundária, doença já existe mas subclínica) com orientação de estilo de vida (primária, doença ainda não existe) — pergunta-chave: \"a doença já está biologicamente presente, mesmo sem sintomas?\". Achar que Quadruple Aim \"substitui\" o Triple Aim — na verdade ele ACRESCENTA um quarto objetivo, os três originais permanecem válidos.</p></div>\n<p>Falha em considerar a prevenção quaternária leva à <b>cascata diagnóstica</b>: um achado incidental gera investigação adicional, que gera outro achado, expondo o paciente a riscos cumulativos sem benefício comprovado.</p>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Fluxograma e resumo de fixação</h2>\n<div class=\"flow\"><div class=\"ft\">Identificando o nível de prevenção</div><pre>EM QUE PONTO DA HISTÓRIA NATURAL A INTERVENÇÃO ATUA?\n│\n├─ Paciente sem doença, evitando que ocorra → PRIMÁRIA\n├─ Paciente assintomático, doença subclínica sendo buscada → SECUNDÁRIA\n├─ Paciente sintomático, doença estabelecida, limitando sequela → TERCIÁRIA\n└─ Reavaliação de intervenção já em curso por risco de excesso → QUATERNÁRIA</pre></div>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Retirada de AAS profilático de paciente sem evento cardiovascular prévio, por reavaliação de risco-benefício — identificação como <b>prevenção quaternária</b>. Identificação do quarto elemento do Quadruple Aim (bem-estar/experiência dos profissionais de saúde) em questão direta sobre o modelo do IHI.</p></div>\n<div class=\"box pulo\"><span class=\"bt\">Mnemônico</span><p>1-2-3-4: Primária (antes) · Secundária (achou cedo/assintomático) · Terciária (já tem, reabilita) · Quaternária (protege do excesso). Triple → Quadruple (+equipe) → Quintuple (+equidade).</p></div>"
+    },
+    {
+      "tema_num": 9,
+      "titulo": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "kicker": "MFC · Medicina de Família",
+      "subtitulo": "Incidência x prevalência, notificação compulsória e indicadores de mortalidade",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição</h2>\n<ul>\n<li><b>Incidência</b> — número de CASOS NOVOS de uma doença numa população, num determinado período, dividido pela população em risco nesse período. Mede a velocidade de ocorrência de novos casos.</li>\n<li><b>Prevalência</b> — número TOTAL de casos existentes (novos + antigos) numa população, num ponto ou período, dividido pela população total. Mede a \"carga\" total da doença, não sua velocidade de surgimento.</li>\n<li><b>Notificação compulsória</b> — obrigação legal de comunicar às autoridades de saúde pública a ocorrência (confirmada OU suspeita, conforme a doença) de agravos relevantes para a vigilância epidemiológica.</li>\n<li><b>Transição epidemiológica</b> — mudança no perfil de morbimortalidade de uma população ao longo do tempo, tipicamente de doenças infecciosas/carenciais para doenças crônico-degenerativas.</li>\n</ul>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Lógica conceitual: a relação incidência × prevalência</h2>\n<p><b>Prevalência ≈ Incidência × Duração média da doença</b> (aproximação válida em condições de relativa estabilidade). Isso explica por que uma doença pode ter prevalência crescente sem que a incidência esteja aumentando — basta que a duração média (tempo que os doentes permanecem vivos e doentes) esteja aumentando, típico quando o tratamento melhora a sobrevida sem curar a condição (ex.: HIV/AIDS após TARV — incidência estável/caindo, mas prevalência sobe porque as pessoas vivem mais tempo com a condição).</p>\n<p>A lógica da notificação compulsória é permitir que a vigilância identifique precocemente surtos e tendências emergentes — doenças com potencial de disseminação rápida ou gravidade elevada exigem notificação IMEDIATA (horas), enquanto outras permitem notificação semanal.</p>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Como calcular</h2>\n<table><thead><tr><th>Indicador</th><th>Fórmula</th></tr></thead><tbody>\n<tr><td>Incidência</td><td>Casos NOVOS no período / População em risco no período</td></tr>\n<tr><td>Prevalência</td><td>Casos TOTAIS existentes no momento / População total no momento</td></tr>\n</tbody></table>\n<p>Indicadores de mortalidade em saúde pública: <b>taxa de mortalidade geral</b>, <b>taxa de mortalidade infantil</b> (óbitos em menores de 1 ano por 1.000 nascidos vivos — indicador sensível de qualidade de saúde materno-infantil e de desenvolvimento socioeconômico), <b>taxa de mortalidade materna</b> (óbitos maternos por 100.000 nascidos vivos).</p>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> Como reconhecer no enunciado</h2>\n<p>\"Novos casos diagnosticados no último ano\" → <b>incidência</b>. \"Quantas pessoas têm a doença atualmente\" (somando diagnosticados há anos e ainda vivos/doentes) → <b>prevalência</b>.</p>\n<p>Doenças de <b>notificação compulsória imediata</b> (poucas horas) no Brasil: sarampo, rubéola, poliomielite/paralisia flácida aguda, doença meningocócica e outras meningites em suspeita de surto, óbito ou caso grave por doença de importância internacional, síndrome respiratória aguda grave em surto, entre outras de alta gravidade/transmissibilidade. Demais doenças de rotina: <b>notificação semanal</b>.</p>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Comparação entre incidência e prevalência</h2>\n<table><thead><tr><th>Indicador</th><th>Mede</th><th>Sensível a</th></tr></thead><tbody>\n<tr><td>Incidência</td><td>Velocidade de casos NOVOS</td><td>Fatores causais/de risco atuais</td></tr>\n<tr><td>Prevalência</td><td>Carga TOTAL de casos existentes</td><td>Incidência × duração da doença (inclui sobrevida)</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Aplicação prática e limitações</h2>\n<ul>\n<li><b>Doença de notificação compulsória em atendimento</b> → notificar dentro do prazo estabelecido (imediato ou semanal), independentemente de confirmação laboratorial já disponível — muitas exigem notificação já na suspeita clínica.</li>\n<li><b>Dados de vigilância com prevalência crescente de condição crônica</b> → investigar se reflete aumento real de incidência ou aumento de sobrevida/duração da doença antes de concluir que há \"epidemia\" de novos casos.</li>\n</ul>\n<p><b>Subnotificação</b> (comum em doenças estigmatizantes ou regiões com vigilância menos estruturada) distorce incidência/prevalência reais e compromete a capacidade do sistema de identificar surtos precocemente.</p>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Armadilhas</h2>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Interpretar prevalência crescente de doença crônica como sinal de piora epidemiológica (mais gente adoecendo) sem considerar que pode refletir simplesmente melhora da sobrevida dos já doentes. Aguardar confirmação laboratorial antes de notificar doenças que exigem notificação já na suspeita clínica — atraso compromete a resposta oportuna de vigilância.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Fluxograma e resumo de fixação</h2>\n<div class=\"flow\"><div class=\"ft\">Vigilância epidemiológica na prática</div><pre>SUSPEITA OU CONFIRMAÇÃO DE AGRAVO DE NOTIFICAÇÃO COMPULSÓRIA\n│\n├─ Verificar prazo exigido (imediato vs. semanal)\n│\n├─ Notificar pelo sistema oficial, mesmo sem confirmação laboratorial (se a doença exigir notificação já na suspeita)\n│\n└─ Dado de prevalência em ascensão → investigar se é ↑incidência real ou ↑duração/sobrevida da doença</pre></div>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Tema de apoio que reforça a base numérica dos temas 01-02 aplicada ao contexto de vigilância e saúde coletiva, presente de forma transversal em questões de saúde pública da prova — sobretudo diferenciar incidência de prevalência e reconhecer notificação compulsória imediata vs. semanal.</p></div>\n<div class=\"box pulo\"><span class=\"bt\">Mnemônico</span><p>Incidência = NOVOS. Prevalência = TODOS (novos+antigos). Prevalência sobe se incidência sobe OU se a duração da doença sobe.</p></div>"
+    },
+    {
+      "tema_num": 10,
+      "titulo": "Organização do SUS e Modelos de Atenção à Saúde",
+      "kicker": "MFC · Medicina de Família",
+      "subtitulo": "Princípios doutrinários, diretrizes organizativas, RAS e a base legal do SUS",
+      "html_content": "<h2 class=\"sec\"><span class=\"n\">1.</span> Definição</h2>\n<p><b>Sistema Único de Saúde (SUS)</b> — sistema público de saúde brasileiro, instituído pela <b>Constituição Federal de 1988</b> e regulamentado pela <b>Lei 8.080/1990</b>, de acesso universal e gratuito, organizado conforme princípios doutrinários e diretrizes organizativas.</p>\n<p><b>Princípios doutrinários</b> — universalidade (acesso garantido a todos, sem discriminação), integralidade (atenção a todas as necessidades, da promoção à reabilitação, articulando os níveis de atenção) e equidade (tratar desigualmente os desiguais, priorizando quem tem maior necessidade).</p>\n<p><b>Diretrizes organizativas</b> — descentralização/regionalização (gestão compartilhada entre União, estados e municípios, organizada em regiões de saúde), hierarquização (níveis de complexidade crescente: primária, secundária, terciária), e participação social/controle social (conselhos e conferências de saúde).</p>\n<p><b>Redes de Atenção à Saúde (RAS)</b> — arranjos organizativos de ações e serviços de diferentes densidades tecnológicas, integrados por sistemas de apoio técnico, logístico e de gestão, garantindo integralidade do cuidado ao longo do tempo e entre pontos de atenção.</p>\n\n<h2 class=\"sec\"><span class=\"n\">2.</span> Lógica conceitual: hierarquização não é hierarquia de importância</h2>\n<p>A hierarquização em níveis (primária → secundária → terciária) não é hierarquia de importância, mas de densidade tecnológica e complexidade — a atenção primária, apesar de tecnologicamente menos densa, é conceitualmente o centro <b>ORDENADOR</b> do cuidado no modelo brasileiro, porta de entrada preferencial e responsável por coordenar o fluxo do paciente pelos demais níveis. É a materialização institucional dos atributos de Starfield (tema 06) na organização legal do sistema.</p>\n<p>A regionalização parte do princípio de que nenhum município isoladamente consegue oferecer toda a gama de serviços de forma eficiente — regiões de saúde compostas por municípios vizinhos compartilham serviços de maior complexidade, otimizando recursos e evitando duplicação ineficiente de estruturas de alto custo.</p>\n\n<h2 class=\"sec\"><span class=\"n\">3.</span> Como reconhecer cada princípio/diretriz no caso</h2>\n<ul>\n<li>Serviço a qualquer cidadão, independente de contribuição prévia ou capacidade de pagamento → <b>universalidade</b></li>\n<li>Atenção que vai da promoção à reabilitação, sem se limitar à doença já instalada → <b>integralidade</b></li>\n<li>Priorização de recursos/atenção para populações/regiões com maior necessidade → <b>equidade</b></li>\n<li>Gestão compartilhada entre esferas de governo, serviços organizados por região → <b>descentralização/regionalização</b></li>\n<li>Conselho de saúde municipal deliberando sobre prioridades locais → <b>participação social</b></li>\n</ul>\n<p><b>Estratégia Saúde da Família (ESF)</b> — modelo prioritário de organização da atenção básica no Brasil, com equipes multiprofissionais responsáveis por território e população adscrita definidos, operacionalizando na prática os atributos de Starfield e os princípios do SUS no nível local.</p>\n\n<h2 class=\"sec\"><span class=\"n\">4.</span> Base legal</h2>\n<table><thead><tr><th>Norma</th><th>Conteúdo principal</th></tr></thead><tbody>\n<tr><td>Constituição Federal de 1988</td><td>Instituição do SUS como direito universal à saúde</td></tr>\n<tr><td>Lei 8.080/1990</td><td>Organização, regulamentação e funcionamento dos serviços de saúde do SUS</td></tr>\n<tr><td>Lei 8.142/1990</td><td>Participação social e transferências intergovernamentais de recursos</td></tr>\n</tbody></table>\n\n<h2 class=\"sec\"><span class=\"n\">5.</span> Comparação entre princípios e diretrizes</h2>\n<table><thead><tr><th>Categoria</th><th>Elementos</th></tr></thead><tbody>\n<tr><td>Princípios doutrinários</td><td>Universalidade, Integralidade, Equidade</td></tr>\n<tr><td>Diretrizes organizativas</td><td>Descentralização/Regionalização, Hierarquização, Participação social</td></tr>\n</tbody></table>\n<div class=\"box pulo\"><span class=\"bt\">Como decidir na prova</span><p>Princípios doutrinários respondem \"para quem e o quê\" (quem tem acesso, a que tipo de atenção). Diretrizes organizativas respondem \"como o sistema se organiza\". Se a questão fala de acesso/direito → princípio; se fala de gestão/fluxo/organização → diretriz.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">6.</span> Aplicação prática</h2>\n<ul>\n<li><b>Planejamento de rede regional de saúde</b> → aplicar regionalização, concentrando serviços de maior densidade tecnológica em polos compartilhados por municípios vizinhos, evitando duplicação ineficiente e vazios assistenciais.</li>\n<li><b>Fortalecimento da atenção básica como ordenadora</b> → investir em ESF territorializada com equipes completas e vínculo longitudinal, operacionalizando Starfield na prática organizativa do SUS.</li>\n</ul>\n<p>Falhas na aplicação dos princípios/diretrizes geram fragmentação do cuidado, filas e barreiras de acesso desproporcionais para populações vulneráveis (comprometendo equidade) e ineficiência na alocação de recursos regionais — consequências que afetam diretamente os desfechos medidos pelo Triple/Quadruple/Quintuple Aim (tema 08).</p>\n\n<h2 class=\"sec\"><span class=\"n\">7.</span> Armadilhas</h2>\n<div class=\"box trap\"><span class=\"bt\">Pegadinha clássica</span><p>Confundir <b>equidade</b> com <b>igualdade</b> — equidade implica tratamento diferenciado conforme a necessidade, não tratamento idêntico para todos. Trocar a lei associada a cada conteúdo (8.080 = organização/funcionamento; 8.142 = participação social e recursos). Achar que hierarquização em níveis de complexidade implica que a atenção primária é \"menos importante\" — hierarquização é sobre densidade tecnológica, não sobre relevância no sistema.</p></div>\n\n<h2 class=\"sec\"><span class=\"n\">8.</span> Fluxograma e resumo de fixação</h2>\n<div class=\"flow\"><div class=\"ft\">Classificando princípio x diretriz no caso</div><pre>CASO DESCREVE UM PRINCÍPIO/DIRETRIZ DO SUS\n│\n├─ É sobre QUEM tem acesso e a QUE tipo de atenção?\n│    → PRINCÍPIO DOUTRINÁRIO (universalidade / integralidade / equidade)\n│\n└─ É sobre COMO o sistema se organiza/gerencia?\n     → DIRETRIZ ORGANIZATIVA (descentralização / hierarquização / participação social)</pre></div>\n<div class=\"box omed\"><span class=\"bt\">O que a OMED costuma cobrar</span><p>Tema de base doutrinária que sustenta questões sobre organização de serviços e fluxos assistenciais, frequentemente em conjunto com os temas 06 (Starfield) e 08 (níveis de prevenção) deste material — especialmente a associação correta entre Lei 8.080 x Lei 8.142 e a distinção equidade x igualdade.</p></div>\n<div class=\"box pulo\"><span class=\"bt\">Mnemônico</span><p>Doutrinários: Universalidade, Integralidade, Equidade (<b>U-I-E</b>, \"quem e o quê\"). Organizativas: Descentralização, Hierarquização, Participação (<b>D-H-P</b>, \"como se organiza\").</p></div>"
+    }
+  ],
+  "questions": [
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Médio",
+      "enun": "Pesquisadores selecionaram um grupo de recém-nascidos com malformação cardíaca congênita e um grupo de recém-nascidos sem malformação cardíaca, pareados por idade materna e paridade. Em seguida, revisaram os prontuários pré-natais de ambos os grupos para verificar a frequência de diabetes materna (pré-gestacional ou gestacional) durante a gravidez. Qual o delineamento do estudo descrito?",
+      "alts": [
+        "Coorte prospectiva",
+        "Coorte retrospectiva",
+        "Caso-controle",
+        "Transversal",
+        "Ensaio clínico randomizado"
+      ],
+      "correta": 2,
+      "coment": "A seleção partiu do DESFECHO (malformação cardíaca presente vs. ausente) e investigou retrospectivamente a exposição prévia (diabetes materna) — é a definição operacional de caso-controle, independentemente de os autores mencionarem ou não esse rótulo. Coorte (A/B) partiria da exposição (mães diabéticas vs. não diabéticas) e acompanharia o desfecho. Transversal (D) mediria exposição e desfecho simultaneamente. ECR (E) exigiria alocação ativa da exposição, o que é eticamente inviável para diabetes materna.",
+      "fonte": "OMED (questão mapeada — diabetes materna)"
+    },
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Difícil",
+      "enun": "Um estudo testou se uma nova escala de plantões (jornada reduzida) para residentes NÃO é pior que a escala tradicional em relação a um desfecho de segurança do paciente, definindo margem de não-inferioridade de 2 pontos percentuais. O IC 95% da diferença observada entre os grupos ficou entre -1,0 e +1,5 pontos percentuais. A interpretação correta é:",
+      "alts": [
+        "A nova escala é superior à tradicional, pois o IC não inclui o zero",
+        "Não é possível concluir nada, pois não houve significância estatística",
+        "A nova escala é não inferior à tradicional, pois o IC ficou inteiramente dentro da margem pré-especificada",
+        "A nova escala é inferior à tradicional, pois o limite superior do IC é positivo",
+        "O estudo deveria ter usado hipótese nula de superioridade, tornando o resultado inválido"
+      ],
+      "correta": 2,
+      "coment": "Em ensaio de não-inferioridade, a hipótese nula é invertida: H0 = \"a nova intervenção é pior que a padrão além da margem\". Conclui-se não-inferioridade quando o IC da diferença fica INTEIRAMENTE dentro da margem pré-especificada (aqui, entre -2 e +2), o que ocorre (-1,0 a +1,5 está dentro de ±2). Não é sobre cruzar ou não o zero (isso testaria superioridade, não não-inferioridade) — confundir os dois é a armadilha central desse desenho.",
+      "fonte": "OMED (questão mapeada — jornada de residentes)"
+    },
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Fácil",
+      "enun": "Um pesquisador quer estudar a associação entre exposição ocupacional a um solvente raro e uma doença comum (hipertensão arterial). Qual delineamento é geralmente mais eficiente nesse cenário?",
+      "alts": [
+        "Caso-controle",
+        "Coorte",
+        "Série de casos",
+        "Transversal",
+        "Ensaio clínico cruzado (crossover)"
+      ],
+      "correta": 1,
+      "coment": "Quando a EXPOSIÇÃO é rara (não a doença), o desenho de coorte é mais eficiente, pois garante que um número suficiente de expostos seja recrutado e acompanhado. Caso-controle é preferível quando a DOENÇA (desfecho) é rara — o inverso da situação descrita.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Médio",
+      "enun": "Em um estudo, 800 pacientes com diagnóstico recente de artrite reumatoide foram identificados e um número igual de pacientes sem a doença foi selecionado como grupo de comparação. Investigou-se, por meio de questionário retrospectivo, a exposição prévia ao tabagismo em ambos os grupos. Assinale a alternativa correta sobre esse delineamento.",
+      "alts": [
+        "É um estudo de coorte prospectiva, pois acompanha os pacientes ao longo do tempo",
+        "É um estudo transversal, pois mede exposição e desfecho no mesmo momento",
+        "É um estudo caso-controle, sujeito a viés de memória na aferição do tabagismo",
+        "É um ensaio clínico randomizado, pois há um grupo de comparação",
+        "É um estudo ecológico, pois usa dados agregados por região"
+      ],
+      "correta": 2,
+      "coment": "A seleção parte do desfecho (doentes vs. não doentes) e investiga retrospectivamente a exposição — caso-controle clássico. Esse desenho é particularmente vulnerável ao viés de memória (recall bias), já que pacientes doentes podem recordar/relatar exposições passadas de forma diferente dos controles.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Médio",
+      "enun": "Um grupo de 3.000 trabalhadores expostos a poeira de sílica e 3.000 trabalhadores não expostos, todos livres de doença pulmonar no início, foram acompanhados por 20 anos para verificar o desenvolvimento de silicose. Esse desenho é classificado como:",
+      "alts": [
+        "Caso-controle",
+        "Transversal",
+        "Coorte",
+        "Ensaio clínico randomizado",
+        "Série de casos"
+      ],
+      "correta": 2,
+      "coment": "Partiu-se de um grupo de expostos e um de não expostos, livres do desfecho no início, acompanhados ao longo do tempo — definição clássica de estudo de coorte (nesse caso, prospectiva).",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Difícil",
+      "enun": "Um estudo observacional encontrou associação forte entre uso de determinado antidepressivo e risco cardiovascular, mas os autores não randomizaram os pacientes. Em relação à validade desse estudo comparado a um ECR sobre a mesma pergunta, é correto afirmar que:",
+      "alts": [
+        "O estudo observacional tem validade interna necessariamente superior ao ECR",
+        "O ECR distribui de forma equilibrada tanto os confundidores conhecidos quanto os desconhecidos entre os grupos, o que o estudo observacional não garante",
+        "Estudos observacionais sempre têm validade externa superior a ECRs, pois refletem melhor a prática real",
+        "Validade interna e validade externa são sinônimos e devem ser avaliadas em conjunto",
+        "A ausência de randomização não afeta a validade interna do estudo"
+      ],
+      "correta": 1,
+      "coment": "A propriedade central que diferencia o ECR é a randomização distribuir aleatoriamente inclusive confundidores desconhecidos/não medidos, algo que nenhum desenho observacional consegue replicar — por isso o ECR ocupa o topo da hierarquia de evidência para perguntas de tratamento. Validade interna ≠ validade externa (D está errada); um estudo pode ter uma sem a outra.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Fácil",
+      "enun": "Pesquisadores aplicaram um questionário sobre hábitos alimentares e dosaram simultaneamente o perfil lipídico de 2.000 adultos numa única visita, sem acompanhamento posterior. Esse desenho permite calcular diretamente:",
+      "alts": [
+        "Incidência",
+        "Risco relativo",
+        "Prevalência",
+        "Hazard ratio",
+        "Odds ratio ajustado por tempo de exposição"
+      ],
+      "correta": 2,
+      "coment": "Estudo transversal mede exposição e desfecho no mesmo momento (\"fotografia\" única) — permite estimar prevalência, mas não incidência (que exige acompanhamento ao longo do tempo) nem estabelece sequência temporal para calcular RR diretamente.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Médio",
+      "enun": "Sobre a hierarquia de evidência para perguntas de tratamento/intervenção, ordene da mais forte para a mais fraca: (I) coorte, (II) revisão sistemática/meta-análise de ECRs, (III) caso-controle, (IV) ECR individual.",
+      "alts": [
+        "II, IV, I, III",
+        "IV, II, I, III",
+        "I, II, III, IV",
+        "II, I, IV, III",
+        "III, I, IV, II"
+      ],
+      "correta": 0,
+      "coment": "A hierarquia clássica (mais forte → mais fraca) é: revisão sistemática/meta-análise de ECRs → ECR individual → coorte → caso-controle → transversal → série de casos → opinião de especialista. Logo: II, IV, I, III.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Médio",
+      "enun": "Um estudo publicado descreve-se, no resumo, como \"estudo de coorte retrospectiva\". Na leitura do método, porém, verifica-se que os pesquisadores selecionaram pacientes já diagnosticados com câncer de pâncreas e um grupo de comparação sem a doença, investigando depois a exposição prévia a agrotóxicos. A conduta correta na análise crítica dessa questão é:",
+      "alts": [
+        "Aceitar a classificação dada pelos autores, pois o resumo é a fonte mais confiável",
+        "Classificar o estudo como caso-controle, pois a descrição operacional do método (seleção pelo desfecho) prevalece sobre o rótulo dado pelos autores",
+        "Classificar como transversal, pois envolve dados retrospectivos",
+        "Considerar o estudo inválido, pois há incoerência insanável entre resumo e método",
+        "Classificar como ensaio clínico, pois houve comparação entre grupos"
+      ],
+      "correta": 1,
+      "coment": "Pegadinha textual clássica: o rótulo que os autores dão ao próprio estudo pode estar impreciso. A leitura crítica do método operacional descrito — aqui, seleção pelo desfecho (câncer presente/ausente) com investigação retrospectiva da exposição — é o que deve guiar a classificação como caso-controle, e não o termo usado no resumo.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 1,
+      "tema_nome": "Delineamentos de Estudo Epidemiológico",
+      "dif": "Difícil",
+      "enun": "Em relação a estudos ecológicos, é correto afirmar que:",
+      "alts": [
+        "A unidade de análise é o indivíduo, não a população",
+        "Permitem inferência causal direta ao nível individual sem restrições",
+        "A unidade de análise é agregada/populacional, e inferir associação individual a partir do dado agregado expõe ao risco de falácia ecológica",
+        "São equivalentes a ensaios clínicos randomizados em força de evidência",
+        "Não podem ser usados para gerar hipóteses de pesquisa"
+      ],
+      "correta": 2,
+      "coment": "No estudo ecológico, a unidade de análise é populacional/agregada (ex.: \"países com maior consumo de X têm maior taxa de Y\"). Inferir que essa associação se aplica a cada indivíduo constitui a falácia ecológica — uma das armadilhas clássicas de interpretação desse delineamento.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Difícil",
+      "enun": "Uma meta-análise de ensaios clínicos avaliando inibidores de DPP-4 em diabetes tipo 2 reportou, para o desfecho de mudança de HbA1c, I² = 0% e p-valor de 0,70 para o teste de heterogeneidade, com o losango do forest plot não cruzando a linha do efeito nulo. A interpretação correta é:",
+      "alts": [
+        "O tratamento não trouxe nenhum benefício, já que I² = 0%",
+        "A heterogeneidade entre os estudos foi baixa (estudos consistentes entre si), e o efeito combinado foi estatisticamente significativo, informação obtida pelo losango, não pelo I²",
+        "O p-valor de 0,70 indica que o efeito do tratamento não foi significativo",
+        "I² = 0% indica que todos os estudos tiveram exatamente o mesmo tamanho de efeito numérico",
+        "Não é possível relacionar I² a heterogeneidade nesse contexto"
+      ],
+      "correta": 1,
+      "coment": "I² mede exclusivamente a heterogeneidade (consistência) ENTRE os estudos, não a magnitude nem a significância do efeito combinado — essas duas perguntas são independentes. O p-valor de 0,70 citado refere-se ao teste de heterogeneidade (não ao efeito do tratamento), sustentando a interpretação de baixa heterogeneidade. A significância do efeito combinado é lida no losango do forest plot.",
+      "fonte": "OMED (questão mapeada — meta-análise DPP-4)"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Médio",
+      "enun": "Em um estudo caso-controle sobre exposição a agrotóxicos e leucemia infantil, encontrou-se OR = 3,2 (IC95% 1,8-5,6). A interpretação metodologicamente correta é:",
+      "alts": [
+        "O risco relativo de leucemia entre expostos é 3,2 vezes maior",
+        "A chance de exposição prévia a agrotóxicos é 3,2 vezes maior entre os casos de leucemia comparados aos controles, e essa medida é a apropriada nesse delineamento",
+        "O RR não pode ser calculado porque o estudo foi mal desenhado",
+        "Como o IC cruza o valor 1, o resultado não é significativo",
+        "O OR de 3,2 corresponde a um aumento de 320% na chance"
+      ],
+      "correta": 1,
+      "coment": "Em caso-controle, OR é a medida obrigatória (RR não é calculável diretamente pois a proporção de expostos é definida artificialmente pelo desenho). O IC (1,8-5,6) não cruza o valor nulo (1), logo é estatisticamente significativo (D está errada). \"3,2 vezes\" não equivale a \"aumento de 320%\" na leitura popular incorreta (E está errada) — tecnicamente seria um aumento de 220% na chance (3,2-1=2,2 → 220%), mas a forma padronizada de expressar é \"3,2 vezes a chance\".",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Fácil",
+      "enun": "Em um ensaio clínico randomizado, a incidência do desfecho no grupo controle foi de 20% e no grupo tratado foi de 12%. Qual o NNT (número necessário para tratar)?",
+      "alts": [
+        "1,25",
+        "8",
+        "12,5",
+        "20",
+        "0,08"
+      ],
+      "correta": 2,
+      "coment": "RAR = 20% - 12% = 8% = 0,08. NNT = 1/RAR = 1/0,08 = 12,5, que se arredonda para CIMA (13 pacientes), pois representa pessoas. Entre as opções, 12,5 é o valor calculado corretamente antes do arredondamento prático.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Médio",
+      "enun": "Um estudo de coorte encontrou RR = 1,8 para infarto agudo do miocárdio em usuários de determinado anti-inflamatório, com desfecho relativamente comum na população estudada (25%). Um segundo estudo, caso-controle, sobre a mesma exposição e desfecho, encontrou OR = 2,4. A explicação mais provável para a diferença entre os valores é:",
+      "alts": [
+        "Erro de digitação em um dos estudos",
+        "Quando o desfecho é comum, o OR tende a se afastar do RR na mesma direção do efeito, superestimando a magnitude da associação",
+        "OR e RR deveriam ser sempre idênticos, independentemente da prevalência do desfecho",
+        "O caso-controle mede um parâmetro completamente diferente e não deve ser comparado nunca",
+        "O RR do estudo de coorte está necessariamente errado"
+      ],
+      "correta": 1,
+      "coment": "RR e OR só coincidem numericamente quando o desfecho é raro (lei das odds raras, tipicamente <10%). Com desfecho comum (25%), o OR se afasta do RR na mesma direção do efeito — exagerando a magnitude, seja de risco aumentado ou de proteção.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Médio",
+      "enun": "Duas curvas de sobrevida (Kaplan-Meier) comparando quimioterapia A e quimioterapia B mostram Hazard Ratio = 0,75 (IC95% 0,60-0,94) favorecendo o tratamento A. É correto afirmar que:",
+      "alts": [
+        "O HR de 0,75 significa que 75% dos pacientes do grupo A sobreviveram",
+        "O HR incorpora a dimensão temporal (tempo até o evento), e o valor de 0,75 indica menor taxa instantânea de ocorrência do evento no grupo A, com significância estatística (IC não cruza 1)",
+        "Como o HR é menor que 1, o resultado não é estatisticamente significativo",
+        "HR e RR são exatamente a mesma medida e podem ser usados de forma intercambiável em qualquer contexto",
+        "Não é possível interpretar HR sem a curva completa disponível"
+      ],
+      "correta": 1,
+      "coment": "HR < 1 indica menor taxa (hazard) do evento no grupo A comparado ao B — proteção relativa ao longo do tempo, não uma porcentagem de sobreviventes. O IC (0,60-0,94) não cruza o valor nulo (1), portanto o achado é estatisticamente significativo.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Fácil",
+      "enun": "Um estudo mostrou RR = 1,0 (IC95% 0,85-1,18) para a associação entre uso de determinado suplemento vitamínico e redução de eventos cardiovasculares. A interpretação correta é:",
+      "alts": [
+        "Há forte efeito protetor do suplemento",
+        "Há associação, mas ela é fraca",
+        "Não há associação: o RR de 1,0 indica ausência de efeito, e o IC contendo o 1 confirma ausência de significância estatística",
+        "O suplemento é um fator de risco",
+        "O estudo é inconclusivo por erro metodológico"
+      ],
+      "correta": 2,
+      "coment": "RR = 1 significa ausência de associação (exposição não altera o risco do desfecho). O IC 95% (0,85-1,18) inclui o valor nulo (1), confirmando ausência de significância estatística — os dois achados são consistentes entre si.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Médio",
+      "enun": "Em relação à diferença entre significância estatística e relevância clínica, assinale a afirmativa correta.",
+      "alts": [
+        "Todo resultado estatisticamente significativo é automaticamente clinicamente relevante",
+        "Um efeito pode ser estatisticamente significativo (IC não cruza o nulo) e clinicamente irrelevante, especialmente quando o efeito é pequeno numa amostra muito grande",
+        "Relevância clínica só pode ser avaliada por meta-análise",
+        "Significância estatística é sinônimo de magnitude do efeito",
+        "Amostras pequenas sempre geram significância estatística"
+      ],
+      "correta": 1,
+      "coment": "Significância estatística e relevância clínica são avaliações distintas: um efeito muito pequeno pode ser estatisticamente significativo se a amostra for grande o suficiente (IC estreito, ainda que longe do nulo por pouco), sem ter impacto clínico relevante; o inverso também ocorre (efeito grande, amostra pequena, IC amplo cruzando o nulo).",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Médio",
+      "enun": "Um ensaio clínico randomizado comparou um novo anti-hipertensivo a placebo e encontrou RAR de 5% para o desfecho de AVC em 5 anos, mas também reportou um aumento de eventos adversos graves com NNH = 25. Sobre esses dois números, é correto afirmar que:",
+      "alts": [
+        "NNT e NNH usam lógica de cálculo análoga (inverso da diferença de risco), mas interpretações opostas: NNT mede benefício, NNH mede dano",
+        "NNH deve ser sempre maior que NNT para o tratamento ser seguro",
+        "NNH é calculado apenas em estudos observacionais",
+        "NNT e NNH são a mesma medida com nomes diferentes",
+        "Quanto maior o NNH, pior o perfil de segurança do medicamento"
+      ],
+      "correta": 0,
+      "coment": "NNT (número necessário para tratar) e NNH (número necessário para causar dano) compartilham a lógica de cálculo (inverso de uma diferença de risco), mas o NNT quantifica benefício e o NNH quantifica dano — confundir os dois é uma pegadinha clássica. Quanto MAIOR o NNH, MELHOR o perfil de segurança (é preciso tratar mais pessoas para causar um dano a mais), o oposto do que diz a alternativa E.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Fácil",
+      "enun": "Em um estudo caso-controle investigando a associação entre tabagismo e DPOC, a medida de associação apropriada e obrigatória a ser calculada é:",
+      "alts": [
+        "Risco relativo",
+        "Razão de prevalência",
+        "Odds ratio",
+        "Redução absoluta de risco",
+        "Número necessário para tratar"
+      ],
+      "correta": 2,
+      "coment": "Em delineamento caso-controle, a proporção de expostos/não expostos é definida artificialmente pela seleção da amostra, não refletindo a população-fonte — por isso o RR não pode ser calculado diretamente, e o OR é a medida de associação obrigatória.",
+      "fonte": "OMED (questão mapeada — tabagismo e DPOC)"
+    },
+    {
+      "tema_num": 2,
+      "tema_nome": "Medidas de Associação e Efeito",
+      "dif": "Difícil",
+      "enun": "Um forest plot de meta-análise mostra 6 estudos com pontos estimados variando amplamente (alguns favorecendo o tratamento, outros favorecendo o controle), com I² = 82%. O losango final não cruza a linha do valor nulo, favorecendo levemente o tratamento. A conduta metodologicamente mais adequada na interpretação desse resultado é:",
+      "alts": [
+        "Aceitar diretamente o resultado combinado como definitivo, já que o losango não cruza o nulo",
+        "Reconhecer heterogeneidade substancial (I² alto), o que exige cautela na interpretação do efeito combinado único, preferindo modelo de efeitos aleatórios e investigando fontes de heterogeneidade (população, intervenção, desfecho)",
+        "Descartar o estudo inteiro por ter I² diferente de zero",
+        "Concluir que não há heterogeneidade, pois o losango é significativo",
+        "I² alto invalida qualquer possibilidade de meta-análise, mesmo com modelo de efeitos aleatórios"
+      ],
+      "correta": 1,
+      "coment": "I² de 82% indica heterogeneidade considerável (>75%), sinal de que os estudos incluídos diferem significativamente entre si (população, intervenção, desfecho). Isso não invalida a meta-análise, mas exige cautela: preferir modelo de efeitos aleatórios (IC mais conservador) e investigar a fonte da heterogeneidade antes de tratar o efeito combinado como um valor único aplicável universalmente.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Médio",
+      "enun": "Um novo teste laboratorial fictício, denominado PAR, foi comparado ao fator reumatoide (padrão-ouro) em 200 pacientes com suspeita de artrite reumatoide. Resultado: 70 verdadeiros positivos, 15 falsos positivos, 10 falsos negativos e 105 verdadeiros negativos. A sensibilidade do teste PAR é de aproximadamente:",
+      "alts": [
+        "82,3%",
+        "87,5%",
+        "93,3%",
+        "70,0%",
+        "55,0%"
+      ],
+      "correta": 1,
+      "coment": "Sensibilidade = a/(a+c) = 70/(70+10) = 70/80 = 87,5%. É a proporção de verdadeiramente doentes (a+c=80) que o teste identificou corretamente como positivos (a=70).",
+      "fonte": "OMED (questão mapeada — teste PAR vs. fator reumatoide)"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Médio",
+      "enun": "Usando os mesmos dados da questão anterior (70 VP, 15 FP, 10 FN, 105 VN), a especificidade do teste PAR é de aproximadamente:",
+      "alts": [
+        "87,5%",
+        "91,3%",
+        "82,3%",
+        "70,0%",
+        "93,3%"
+      ],
+      "correta": 1,
+      "coment": "Especificidade = d/(b+d) = 105/(105+15) = 105/120 ≈ 91,3%. É a proporção de verdadeiramente sadios (b+d=120) que o teste identificou corretamente como negativos (d=105).",
+      "fonte": "OMED (questão mapeada — teste PAR vs. fator reumatoide)"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Fácil",
+      "enun": "Em uma curva ROC de um teste diagnóstico contínuo, a área sob a curva (AUC) foi de 0,50. Isso significa que o teste:",
+      "alts": [
+        "Tem capacidade discriminativa perfeita",
+        "É completamente inútil, equivalente a um sorteio ao acaso",
+        "Tem alta sensibilidade e baixa especificidade",
+        "Tem alta especificidade e baixa sensibilidade",
+        "Deve ser usado apenas para triagem, nunca para confirmação"
+      ],
+      "correta": 1,
+      "coment": "AUC = 0,5 corresponde à linha diagonal do gráfico ROC — equivalente a jogar uma moeda, teste sem capacidade discriminativa alguma. AUC = 1 seria o teste perfeito (canto superior esquerdo).",
+      "fonte": "OMED (questão mapeada — curva ROC)"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Médio",
+      "enun": "Um médico de família precisa escolher um teste para excluir com segurança uma doença grave em um programa de triagem populacional, aceitando um número maior de falsos-positivos que serão investigados posteriormente. A propriedade mais importante do teste nesse contexto é:",
+      "alts": [
+        "Alta especificidade",
+        "Alto valor preditivo positivo",
+        "Alta sensibilidade (lógica SnNOUT)",
+        "Baixo custo, independentemente da acurácia",
+        "Alta razão de verossimilhança positiva"
+      ],
+      "correta": 2,
+      "coment": "Para triagem/rastreio, onde perder um caso é inaceitável, prioriza-se sensibilidade alta — um teste muito sensível, quando negativo, exclui a doença com confiança (SnNOUT: Sensitivity high, Negative rules OUT).",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Médio",
+      "enun": "Um teste diagnóstico tem sensibilidade de 95% e especificidade de 90%, valores estáveis, validados em múltiplos estudos. Ao ser aplicado numa população de rastreio com prevalência de 1% da doença, comparado a um contexto de ambulatório de referência com prevalência de 30%, é correto afirmar que:",
+      "alts": [
+        "Sensibilidade e especificidade mudam, pois dependem da prevalência",
+        "O VPP será menor na população de rastreio (prevalência 1%) do que no ambulatório de referência (prevalência 30%), mesmo com sensibilidade/especificidade inalteradas",
+        "O VPN será menor na população de rastreio de baixa prevalência",
+        "Nenhuma medida se altera entre os dois contextos",
+        "A razão de verossimilhança positiva mudará entre os dois contextos"
+      ],
+      "correta": 1,
+      "coment": "Sensibilidade e especificidade são propriedades intrínsecas do teste e não mudam com a prevalência. VPP e VPN, porém, mudam: em baixa prevalência, mesmo um teste bom gera proporcionalmente mais falsos-positivos entre os poucos positivos totais, reduzindo o VPP. A razão de verossimilhança (RVP), assim como sensibilidade/especificidade, não depende da prevalência.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Difícil",
+      "enun": "Antes de iniciar um tratamento oncológico agressivo e irreversível, o médico deseja confirmar o diagnóstico com o menor risco possível de falso-positivo. A estratégia mais alinhada a esse objetivo é:",
+      "alts": [
+        "Escolher um teste de alta sensibilidade e baixa especificidade",
+        "Escolher um teste de alta especificidade (lógica SpPIN), pois um resultado positivo terá alto VPP",
+        "Escolher qualquer teste disponível, já que sensibilidade e especificidade são equivalentes nesse contexto",
+        "Priorizar o teste de menor custo, independentemente da acurácia",
+        "Repetir o mesmo teste de rastreio duas vezes sempre resolve o problema"
+      ],
+      "correta": 1,
+      "coment": "Para confirmação diagnóstica antes de tratamento agressivo/definitivo, prioriza-se especificidade alta — um teste muito específico, quando positivo, confirma a doença com confiança (SpPIN: Specificity high, Positive rules IN), minimizando falsos-positivos.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Médio",
+      "enun": "Em um teste com resultado contínuo (por exemplo, dosagem de um biomarcador), o médico decide baixar o ponto de corte para aumentar a captação de casos verdadeiros. A consequência esperada dessa mudança é:",
+      "alts": [
+        "Aumento simultâneo de sensibilidade e especificidade",
+        "Aumento da sensibilidade às custas de redução da especificidade",
+        "Nenhuma alteração em sensibilidade ou especificidade",
+        "Redução da sensibilidade e da especificidade simultaneamente",
+        "Aumento da especificidade às custas de redução da sensibilidade"
+      ],
+      "correta": 1,
+      "coment": "Em testes contínuos, o ponto de corte gera sempre um trade-off: baixar o corte aumenta a sensibilidade (capta mais casos verdadeiros, mas também mais falsos-positivos) às custas de reduzir a especificidade — nunca é um ganho livre, sem perda em algum eixo.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Fácil",
+      "enun": "Qual das medidas abaixo NÃO se altera quando o mesmo teste diagnóstico é aplicado em populações com prevalências diferentes da doença?",
+      "alts": [
+        "Valor Preditivo Positivo",
+        "Valor Preditivo Negativo",
+        "Sensibilidade",
+        "Probabilidade pós-teste",
+        "Nenhuma das anteriores permanece igual"
+      ],
+      "correta": 2,
+      "coment": "Sensibilidade (e especificidade) são propriedades intrínsecas do teste, calculadas a partir de quem já se sabe doente ou não — não variam com a prevalência da população testada, ao contrário de VPP, VPN e da probabilidade pós-teste.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Difícil",
+      "enun": "A razão de verossimilhança positiva (RVP) de um teste é de 8,0. Isso significa que:",
+      "alts": [
+        "80% dos doentes testam positivo",
+        "A probabilidade de um resultado positivo é 8 vezes mais provável em quem tem a doença do que em quem não tem, e essa medida não depende da prevalência",
+        "O VPP do teste é necessariamente de 80%",
+        "A especificidade do teste é de 8%",
+        "A RVP é equivalente ao valor preditivo positivo em qualquer população"
+      ],
+      "correta": 1,
+      "coment": "RVP = Sensibilidade/(1-Especificidade) — quantifica quanto mais provável é obter um resultado positivo em quem tem a doença comparado a quem não tem. Assim como sensibilidade/especificidade, a RVP não depende da prevalência, diferente do VPP.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 3,
+      "tema_nome": "Sensibilidade, Especificidade e Valores Preditivos",
+      "dif": "Médio",
+      "enun": "Um teste é validado inicialmente apenas em pacientes com doença em fase grave/avançada, apresentando sensibilidade de 98%. Ao ser aplicado numa população com predomínio de casos leves/iniciais, é esperado que:",
+      "alts": [
+        "A sensibilidade real na população geral tenda a ser superestimada pelo estudo de validação inicial (viés de espectro)",
+        "A sensibilidade permanecerá idêntica, pois é propriedade fixa do teste em qualquer estágio da doença",
+        "A especificidade cairá proporcionalmente à sensibilidade",
+        "O VPN se tornará irrelevante nesse cenário",
+        "Não há qualquer implicação clínica dessa diferença de espectro"
+      ],
+      "correta": 0,
+      "coment": "O viés de espectro ocorre quando um teste é validado numa amostra com gravidade de doença diferente da população-alvo de uso real — testes validados só em casos graves tendem a superestimar a sensibilidade real quando aplicados numa população com casos mais leves/iniciais, que costumam ter manifestações mais sutis e mais difíceis de detectar.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Médio",
+      "enun": "Um estudo observacional encontrou forte associação entre o hábito de carregar isqueiro no bolso e câncer de pulmão. Essa associação é inteiramente explicada pelo tabagismo. Para que o tabagismo seja classificado como fator de confusão clássico nessa relação, é necessário que ele:",
+      "alts": [
+        "Esteja na via causal direta entre carregar isqueiro e câncer de pulmão",
+        "Esteja associado ao hábito de carregar isqueiro, seja fator de risco independente para câncer de pulmão, e não esteja na via causal entre os dois",
+        "Seja apenas um fator de risco para câncer de pulmão, sem qualquer relação com o isqueiro",
+        "Não precise ter nenhuma associação estatística com a exposição estudada",
+        "Seja, por definição, sempre um erro aleatório e não sistemático"
+      ],
+      "correta": 1,
+      "coment": "As 3 condições clássicas de um fator de confusão: (1) associado à exposição, (2) fator de risco independente para o desfecho, (3) fora da via causal entre exposição e desfecho. O tabagismo satisfaz as três: tabagistas carregam mais isqueiro, tabagismo causa câncer independentemente, e carregar isqueiro não está no caminho causal do câncer.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Fácil",
+      "enun": "Um viés (erro sistemático) em um estudo epidemiológico é corrigido, na maioria das vezes, por:",
+      "alts": [
+        "Aumento do tamanho amostral",
+        "Prolongamento do tempo de seguimento",
+        "Não se corrige aumentando a amostra; exige correção pelo desenho/condução adequados do estudo",
+        "Uso de testes estatísticos mais sofisticados após a coleta",
+        "Análise post-hoc de subgrupos"
+      ],
+      "correta": 2,
+      "coment": "Viés é erro sistemático (não aleatório) — diferente do erro aleatório, que se reduz com maior amostra, o viés não se corrige aumentando participantes; mais participantes só tornam a estimativa viesada \"mais precisamente errada\". A correção deve vir do desenho e condução adequados do estudo.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Médio",
+      "enun": "Segundo os critérios de causalidade de Hill, qual é o único critério considerado absolutamente necessário para inferir causalidade?",
+      "alts": [
+        "Força da associação",
+        "Plausibilidade biológica",
+        "Temporalidade (a causa precede o efeito)",
+        "Consistência entre estudos",
+        "Gradiente dose-resposta"
+      ],
+      "correta": 2,
+      "coment": "Temporalidade — a causa deve preceder o efeito — é o único critério de Hill considerado absolutamente necessário. Os demais critérios (força, consistência, gradiente dose-resposta, plausibilidade biológica etc.) fortalecem a inferência causal, mas nenhum isolado é obrigatório.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Médio",
+      "enun": "Um estudo de coorte apresenta RR bruto = 3,5 para a associação entre sedentarismo e diabetes tipo 2. Após ajuste estatístico para idade, IMC e história familiar, o RR ajustado cai para 1,3. Essa diferença sugere que:",
+      "alts": [
+        "O estudo é inválido, pois os dois valores deveriam ser idênticos",
+        "Havia confundimento relevante por uma ou mais das variáveis ajustadas, sendo corrigido pelo ajuste estatístico",
+        "O ajuste estatístico introduziu um novo viés de seleção",
+        "O RR ajustado é sempre menos confiável que o RR bruto",
+        "Não é possível interpretar qualquer diferença entre RR bruto e ajustado"
+      ],
+      "correta": 1,
+      "coment": "Uma diferença importante entre RR bruto e RR ajustado no mesmo estudo é evidência direta de que havia confundimento relevante sendo corrigido pelo ajuste — nesse caso, provavelmente por idade, IMC e/ou história familiar, fatores associados tanto ao sedentarismo quanto ao risco de diabetes.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Difícil",
+      "enun": "Em uma análise estatística de um ECR sobre anti-hipertensivo e redução de eventos cardiovasculares, os pesquisadores ajustaram o modelo para a variável \"redução da pressão arterial\", que é o próprio mecanismo pelo qual o medicamento reduz eventos. Esse ajuste é problemático porque:",
+      "alts": [
+        "A redução da pressão arterial é um fator de confusão clássico e deveria ser ajustada",
+        "A redução da pressão arterial é um mediador (está na via causal do efeito do medicamento), e ajustar para ela remove parte do efeito real que se quer medir",
+        "Não há problema algum nesse ajuste, é sempre recomendado",
+        "Esse ajuste elimina o viés de seleção do estudo",
+        "Esse ajuste é obrigatório em qualquer ECR randomizado"
+      ],
+      "correta": 1,
+      "coment": "Confundir mediador (variável no meio do caminho causal, aqui a própria queda de PA pela qual o remédio previne eventos) com fator de confusão (fora da via causal) é uma pegadinha clássica. Ajustar estatisticamente para um mediador \"esconde\" parte do efeito real do tratamento, um erro diferente e mais sutil do que deixar de ajustar para um confundidor verdadeiro.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Médio",
+      "enun": "Um estudo caso-controle sobre uso de determinado medicamento na gestação e malformação fetal recruta os controles entre gestantes atendidas em um ambulatório de alto risco, enquanto os casos vêm de toda a rede de atenção. Essa diferença na origem dos grupos configura risco de:",
+      "alts": [
+        "Viés de memória apenas",
+        "Viés de seleção de controles, pois eles podem não representar adequadamente a população-fonte dos casos",
+        "Confundimento por idade materna, exclusivamente",
+        "Erro aleatório, corrigível com mais participantes",
+        "Viés de aferição do desfecho"
+      ],
+      "correta": 1,
+      "coment": "Quando os controles são recrutados de forma sistematicamente diferente da população-fonte dos casos (aqui, um ambulatório de alto risco em vez de toda a rede), há risco de viés de seleção de controles — um viés característico do desenho caso-controle, que ocorre na fase de recrutamento da amostra.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Fácil",
+      "enun": "Associação estatística entre exposição e desfecho é:",
+      "alts": [
+        "Condição necessária e suficiente para inferir causalidade",
+        "Irrelevante para avaliar causalidade",
+        "Condição necessária, mas não suficiente, para inferir causalidade",
+        "Only aplicável em ensaios clínicos randomizados",
+        "Equivalente à temporalidade"
+      ],
+      "correta": 2,
+      "coment": "Associação estatística é necessária, mas não suficiente para inferir causalidade — é preciso ainda descartar confundimento, viés e causalidade reversa, além de avaliar os demais critérios de Hill (temporalidade sendo o único absolutamente necessário).",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Médio",
+      "enun": "Um pesquisador realiza ajuste multivariado (regressão logística) incluindo todas as variáveis de confusão conhecidas e medidas em seu estudo observacional. Sobre a limitação dessa estratégia, é correto afirmar que:",
+      "alts": [
+        "Ela resolve completamente qualquer tipo de confundimento, conhecido ou desconhecido",
+        "Ela só controla os confundidores que foram efetivamente medidos e incluídos no modelo; confundidores desconhecidos permanecem não corrigidos fora de um ECR",
+        "Ela substitui completamente a necessidade de randomização em qualquer contexto",
+        "Ela introduz automaticamente viés de memória",
+        "Ela é equivalente, em robustez, à randomização"
+      ],
+      "correta": 1,
+      "coment": "Ajuste estatístico multivariado, assim como restrição e pareamento, só controla confundidores identificados e medidos. Apenas a randomização tem a propriedade de distribuir igualmente também os confundidores desconhecidos/não medidos — por isso o ECR permanece superior para inferência causal mesmo diante de ajuste estatístico sofisticado.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Difícil",
+      "enun": "Ao avaliar se uma associação observacional entre poluição atmosférica e asma infantil é causal, um pesquisador aplica os critérios de Hill e constata que faltam evidências experimentais diretas (não seria ético randomizar exposição a poluentes em crianças), mas há consistência entre múltiplos estudos, gradiente dose-resposta e plausibilidade biológica clara. A conduta metodologicamente correta é:",
+      "alts": [
+        "Descartar totalmente a possibilidade de causalidade, pois falta o critério de evidência experimental",
+        "Considerar os critérios de Hill como avaliação de peso de evidência em conjunto, não como checklist rígido — a ausência de um critério não exclusivo (como evidência experimental) não invalida a inferência causal se os demais critérios, sobretudo a temporalidade, estiverem satisfeitos",
+        "Exigir obrigatoriamente um ECR antes de qualquer recomendação de saúde pública",
+        "Considerar a consistência como o único critério relevante",
+        "Ignorar completamente os critérios de Hill nesse contexto"
+      ],
+      "correta": 1,
+      "coment": "Os critérios de Hill não formam um checklist rígido onde todos precisam ser preenchidos — é uma avaliação de peso de evidência global. Apenas a temporalidade é absolutamente necessária; os demais (incluindo evidência experimental, frequentemente inviável eticamente em exposições ambientais) fortalecem, mas sua ausência isolada não invalida a inferência causal.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 4,
+      "tema_nome": "Vieses, Confundimento e Causalidade",
+      "dif": "Médio",
+      "enun": "O viés de informação (ou aferição) ocorre principalmente em qual fase do estudo?",
+      "alts": [
+        "No recrutamento da amostra",
+        "Na coleta dos dados de exposição ou desfecho",
+        "Apenas na fase de publicação dos resultados",
+        "Exclusivamente em ensaios clínicos randomizados",
+        "Na definição do tamanho amostral"
+      ],
+      "correta": 1,
+      "coment": "Viés de seleção ocorre no RECRUTAMENTO da amostra (quem entra ou não no estudo). Viés de informação/aferição ocorre na fase de COLETA de dados — como a exposição ou o desfecho é medido introduz erro sistemático, incluindo o viés de memória (recall bias).",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Difícil",
+      "enun": "Uma meta-análise avaliou o efeito de inibidores de DPP-4 sobre HbA1c em diabetes tipo 2, reportando redução média de -0,6% (IC95% -0,8 a -0,4%), I² = 0% e p = 0,70 para o teste de heterogeneidade. Assinale a interpretação correta.",
+      "alts": [
+        "O efeito do tratamento não foi significativo, pois p=0,70",
+        "Os estudos foram consistentes entre si (heterogeneidade baixa) e o efeito combinado foi estatisticamente significativo (IC não cruza o zero), sendo essas duas conclusões independentes uma da outra",
+        "I²=0% prova que o tratamento não trouxe benefício algum",
+        "O p-valor de 0,70 refere-se à magnitude do efeito do tratamento",
+        "Não é possível relatar heterogeneidade e efeito combinado no mesmo forest plot"
+      ],
+      "correta": 1,
+      "coment": "O p=0,70 citado no enunciado refere-se ao teste de heterogeneidade (não ao efeito do tratamento), sustentando I²=0% (baixa heterogeneidade). Já a significância do efeito do tratamento é lida no IC do losango (-0,8 a -0,4%), que não cruza o zero — logo, é estatisticamente significativo. São duas perguntas e duas respostas independentes.",
+      "fonte": "OMED (questão mapeada — meta-análise DPP-4, HbA1c)"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Médio",
+      "enun": "Um ensaio clínico randomizado publicado em revista de alto impacto comparou radioterapia isolada versus quimiorradioterapia em câncer de bexiga músculo-invasivo, usando curvas de Kaplan-Meier para sobrevida livre de doença e sobrevida global. Em relação à interpretação dessas curvas, é correto afirmar que:",
+      "alts": [
+        "Sobrevida livre de doença e sobrevida global são sinônimos e podem ser usadas de forma intercambiável",
+        "São desfechos distintos: sobrevida livre de doença mede tempo até recidiva/progressão, e sobrevida global mede tempo até óbito por qualquer causa — um tratamento pode melhorar um sem impactar necessariamente o outro",
+        "Apenas a sobrevida global é relevante clinicamente",
+        "As curvas de Kaplan-Meier não permitem avaliar significância estatística",
+        "O Hazard Ratio não pode ser extraído desse tipo de curva"
+      ],
+      "correta": 1,
+      "coment": "Sobrevida livre de doença (tempo até recidiva/progressão) e sobrevida global (tempo até óbito por qualquer causa) são desfechos diferentes, extraídos separadamente das curvas de Kaplan-Meier — um tratamento pode retardar a recidiva sem necessariamente aumentar a sobrevida global, e essa distinção é frequentemente cobrada na interpretação de ensaios oncológicos.",
+      "fonte": "OMED (questão mapeada — radioterapia x quimiorradioterapia, câncer de bexiga)"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Fácil",
+      "enun": "A principal diferença entre revisão sistemática e revisão narrativa tradicional é:",
+      "alts": [
+        "A revisão sistemática é sempre mais curta",
+        "A revisão sistemática segue metodologia explícita e reprodutível de busca, seleção e avaliação crítica; a narrativa reflete escolha subjetiva do autor sobre quais estudos discutir",
+        "Apenas a revisão narrativa pode incluir meta-análise",
+        "A revisão sistemática nunca inclui estudos observacionais",
+        "Não há diferença metodológica relevante entre as duas"
+      ],
+      "correta": 1,
+      "coment": "A revisão sistemática segue protocolo explícito e reprodutível (critérios de busca, seleção e avaliação crítica pré-especificados), reduzindo o viés de seleção do próprio revisor — diferente da revisão narrativa tradicional, mais sujeita à escolha subjetiva de quais estudos discutir.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Médio",
+      "enun": "Em um forest plot, o losango representando o efeito combinado de uma meta-análise toca a linha vertical do valor nulo. A interpretação correta é:",
+      "alts": [
+        "O efeito combinado é estatisticamente significativo, independentemente da posição do losango",
+        "O efeito combinado não é estatisticamente significativo, independentemente do valor do I² reportado",
+        "É necessário saber o I² antes de interpretar o losango",
+        "O losango tocando a linha nula indica alta heterogeneidade automaticamente",
+        "Essa configuração é impossível de ocorrer em uma meta-análise real"
+      ],
+      "correta": 1,
+      "coment": "Quando o losango do efeito combinado toca (ou cruza) a linha do valor nulo, o resultado não é estatisticamente significativo — essa leitura é independente do valor de I² (que responde a uma pergunta diferente: consistência entre estudos, não significância do efeito).",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Médio",
+      "enun": "Uma revisão sistemática sobre um novo anti-inflamatório identificou 40 estudos elegíveis, mas os autores optaram por não realizar meta-análise, apresentando apenas síntese qualitativa/narrativa estruturada dos achados. Isso ocorre tipicamente quando:",
+      "alts": [
+        "A revisão sistemática nunca pode dispensar a meta-análise",
+        "Os estudos são heterogêneos demais (em população, intervenção, comparador ou desfecho) para serem combinados sensatamente em uma estimativa única",
+        "Os autores cometeram um erro metodológico grave",
+        "A ausência de meta-análise invalida toda a revisão sistemática",
+        "Meta-análise só é possível com menos de 10 estudos"
+      ],
+      "correta": 1,
+      "coment": "Nem toda revisão sistemática necessariamente contém uma meta-análise. Quando os estudos são heterogêneos demais (populações, intervenções, comparadores ou desfechos muito distintos) para uma combinação estatística sensata, a revisão sistemática pode apresentar apenas síntese qualitativa, sem prejuízo do rigor metodológico da busca e seleção.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Difícil",
+      "enun": "Sobre o viés de publicação em revisões sistemáticas e meta-análises, é correto afirmar que:",
+      "alts": [
+        "Ele tende a distorcer a síntese de literatura na direção de subestimar efeitos positivos",
+        "Estudos com resultado nulo/negativo têm maior probabilidade de serem publicados do que estudos positivos",
+        "Ele tende a distorcer sistematicamente a síntese na direção de superestimar efeitos positivos, pois estudos com resultado significativo são publicados com mais frequência",
+        "O funnel plot elimina completamente esse viés quando detectado",
+        "Esse viés não afeta meta-análises baseadas em estudos publicados"
+      ],
+      "correta": 2,
+      "coment": "Viés de publicação: estudos com resultado positivo/significativo têm maior probabilidade de publicação que estudos nulos, distorcendo sistematicamente a literatura disponível na direção de superestimar o efeito real. O funil de publicação (funnel plot) ajuda a detectar assimetria sugestiva desse viés, mas não o elimina.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Fácil",
+      "enun": "No topo da hierarquia de evidência (GRADE e similares) para perguntas de tratamento está:",
+      "alts": [
+        "Opinião de especialista",
+        "Série de casos",
+        "Estudo de coorte isolado",
+        "Revisão sistemática/meta-análise de ensaios clínicos randomizados",
+        "Estudo caso-controle isolado"
+      ],
+      "correta": 3,
+      "coment": "A revisão sistemática/meta-análise de ECRs ocupa o topo da hierarquia por combinar a maior força causal individual (a do ECR) com o maior poder estatístico (síntese de múltiplos estudos), reduzindo o erro aleatório da estimativa combinada.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Médio",
+      "enun": "Uma meta-análise reporta I² = 68% para o desfecho principal. A escolha metodológica mais apropriada diante desse achado é:",
+      "alts": [
+        "Usar exclusivamente o modelo de efeitos fixos, que assume um único efeito verdadeiro comum",
+        "Preferir o modelo de efeitos aleatórios, que assume que o efeito verdadeiro varia entre os estudos e gera IC mais conservador (mais amplo)",
+        "Ignorar a heterogeneidade e reportar apenas o ponto estimado",
+        "Excluir automaticamente todos os estudos da meta-análise",
+        "I² não influencia a escolha do modelo estatístico"
+      ],
+      "correta": 1,
+      "coment": "Com heterogeneidade substancial (I²=68%, na faixa 50-75%), o modelo de efeitos aleatórios é mais apropriado — assume que o efeito verdadeiro varia entre os estudos, incorporando essa variabilidade adicional e gerando um IC mais amplo (mais conservador) que o modelo de efeitos fixos.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Médio",
+      "enun": "Ao ler um forest plot, o tamanho do quadrado que representa cada estudo individual geralmente é proporcional a:",
+      "alts": [
+        "À data de publicação do estudo",
+        "Ao peso/precisão daquele estudo na meta-análise",
+        "Ao número de autores do estudo",
+        "Ao valor do I² individual daquele estudo",
+        "Ao fator de impacto da revista onde foi publicado"
+      ],
+      "correta": 1,
+      "coment": "O tamanho do quadrado de cada estudo no forest plot é proporcional ao peso/precisão daquele estudo na estimativa combinada — estudos maiores/mais precisos (geralmente com IC mais estreito) recebem maior peso visual e estatístico.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 5,
+      "tema_nome": "Revisões Sistemáticas, Meta-análise e Medicina Baseada em Evidências",
+      "dif": "Difícil",
+      "enun": "Uma pergunta clínica sobre eficácia de um novo antibiótico não possui meta-análise disponível na literatura. Seguindo a hierarquia de evidência, a próxima fonte de evidência mais forte a ser buscada é:",
+      "alts": [
+        "Opinião de especialista",
+        "Ensaio clínico randomizado individual",
+        "Série de casos",
+        "Relato de caso",
+        "Estudo ecológico"
+      ],
+      "correta": 1,
+      "coment": "Na ausência de revisão sistemática/meta-análise, desce-se na hierarquia de evidência: ECR individual → coorte → caso-controle → transversal → série de casos → opinião de especialista. O ECR individual é a próxima fonte mais forte disponível.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Médio",
+      "enun": "Paciente idoso, acompanhado há anos pela mesma equipe de Saúde da Família, relata em consulta que usa regularmente um chá caseiro para dor articular, além do anti-inflamatório prescrito. O médico de família orienta sobre possíveis interações e sinais de alerta, mantendo o acompanhamento sem desaprovar a prática, desde que não haja risco documentado. Essa conduta exemplifica qual atributo de Starfield?",
+      "alts": [
+        "Integralidade",
+        "Acesso/porta de entrada",
+        "Coordenação do cuidado",
+        "Orientação comunitária",
+        "Competência cultural, exclusivamente"
+      ],
+      "correta": 2,
+      "coment": "Coordenação do cuidado não significa proibir práticas paralelas — significa que a equipe se mantém INFORMADA e envolvida em tudo que afeta a saúde do paciente, orientando sobre uso seguro sem romper o vínculo pela discordância. É a pegadinha mais clássica desse subtema.",
+      "fonte": "OMED (questão mapeada — chá caseiro e coordenação do cuidado)"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Fácil",
+      "enun": "Uma paciente de 34 anos procura a UBS de sua área adscrita para qualquer novo problema de saúde, seja uma gripe, uma dor lombar ou uma dúvida sobre anticoncepção, antes de considerar procurar qualquer outro serviço. Esse comportamento caracteriza qual atributo essencial de Starfield?",
+      "alts": [
+        "Longitudinalidade",
+        "Integralidade",
+        "Acesso/porta de entrada (first contact)",
+        "Coordenação do cuidado",
+        "Orientação familiar"
+      ],
+      "correta": 2,
+      "coment": "Acesso/porta de entrada é especificamente sobre SER O PRIMEIRO RECURSO BUSCADO pelo paciente para qualquer novo problema de saúde — não deve ser confundido com disponibilidade geográfica isolada (estar perto).",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Médio",
+      "enun": "Um médico de família acompanha a mesma família há 8 anos, conhecendo sua história de saúde mesmo em períodos sem nenhuma queixa ativa, retomando o vínculo a cada nova consulta independentemente do motivo. Esse é o atributo de:",
+      "alts": [
+        "Integralidade",
+        "Longitudinalidade",
+        "Coordenação do cuidado",
+        "Competência cultural",
+        "Acesso"
+      ],
+      "correta": 1,
+      "coment": "Longitudinalidade é sobre o vínculo continuado ao longo do TEMPO entre profissional/equipe e paciente, independente da presença de doença ativa — diferente de integralidade, que é sobre a amplitude de problemas reconhecidos.",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Médio",
+      "enun": "Uma equipe de Saúde da Família identifica, na mesma consulta de um paciente com hipertensão descompensada, sintomas de ansiedade relacionados a conflitos familiares e dificuldades financeiras, abordando ativamente todas essas dimensões ou encaminhando quando excede sua capacidade resolutiva. Esse comportamento caracteriza:",
+      "alts": [
+        "Integralidade",
+        "Coordenação do cuidado",
+        "Acesso",
+        "Longitudinalidade",
+        "Orientação comunitária"
+      ],
+      "correta": 0,
+      "coment": "Integralidade é a capacidade de reconhecer e abordar todo o espectro de necessidades de saúde da pessoa (físicas, psicológicas, sociais), encaminhando quando exceder a capacidade resolutiva da equipe — não deve ser confundida com coordenação, que trata da articulação entre diferentes pontos de atenção já acessados pelo paciente.",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Difícil",
+      "enun": "Um paciente com diabetes está sendo acompanhado simultaneamente pela UBS, por um endocrinologista particular e por um nutricionista, e a equipe da UBS mantém contato ativo com os demais profissionais, integrando as condutas num plano terapêutico único. Esse comportamento exemplifica:",
+      "alts": [
+        "Integralidade",
+        "Coordenação do cuidado",
+        "Acesso/porta de entrada",
+        "Competência cultural",
+        "Nenhum atributo essencial de Starfield"
+      ],
+      "correta": 1,
+      "coment": "Coordenação do cuidado é a capacidade de garantir continuidade e articulação entre diferentes pontos de atenção que o paciente eventualmente acesse — nesse caso, entre a UBS, o especialista e o nutricionista. Pode envolver um único problema de saúde, mas em múltiplos serviços, diferente de integralidade (amplitude de problemas de um único paciente).",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Fácil",
+      "enun": "Segundo Barbara Starfield, uma Atenção Primária à Saúde bem estruturada é capaz de resolver, sem necessidade de encaminhamento a níveis de maior complexidade, aproximadamente:",
+      "alts": [
+        "30-40% dos problemas de saúde de uma população",
+        "50-60% dos problemas de saúde de uma população",
+        "85-90% dos problemas de saúde de uma população",
+        "100% dos problemas de saúde de uma população",
+        "10-20% dos problemas de saúde de uma população"
+      ],
+      "correta": 2,
+      "coment": "A estimativa clássica de Starfield é que uma APS bem estruturada resolve até 85-90% dos problemas de saúde de uma população, articulando-se com os demais níveis (secundário e terciário) apenas quando necessário.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Médio",
+      "enun": "São considerados atributos DERIVADOS (e não essenciais) da APS segundo Starfield:",
+      "alts": [
+        "Acesso, longitudinalidade e integralidade",
+        "Orientação familiar, orientação comunitária e competência cultural",
+        "Coordenação do cuidado e acesso",
+        "Integralidade e coordenação do cuidado",
+        "Longitudinalidade e acesso"
+      ],
+      "correta": 1,
+      "coment": "Os 4 atributos essenciais são acesso, longitudinalidade, integralidade e coordenação do cuidado. Os 3 atributos derivados — que qualificam ainda mais a atuação da APS — são orientação familiar, orientação comunitária e competência cultural.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Difícil",
+      "enun": "Uma UBS apresenta alta rotatividade de médicos, com trocas frequentes da equipe responsável por cada família ao longo do ano. Esse problema organizacional compromete diretamente qual atributo de Starfield?",
+      "alts": [
+        "Acesso",
+        "Longitudinalidade",
+        "Competência cultural",
+        "Orientação comunitária",
+        "Nenhum atributo é afetado por rotatividade de profissionais"
+      ],
+      "correta": 1,
+      "coment": "A longitudinalidade depende do vínculo continuado entre o MESMO profissional/equipe e o paciente ao longo do tempo. Alta rotatividade de profissionais fragmenta esse vínculo, comprometendo diretamente esse atributo, ainda que os demais possam ser preservados.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Médio",
+      "enun": "Um médico de família adapta a forma de conduzir a anamnese e a orientação terapêutica considerando crenças religiosas e práticas culturais específicas de uma família imigrante recém-chegada à área adscrita, sem comprometer a qualidade do cuidado. Esse comportamento é um exemplo de:",
+      "alts": [
+        "Integralidade",
+        "Competência cultural",
+        "Acesso",
+        "Coordenação do cuidado",
+        "Longitudinalidade"
+      ],
+      "correta": 1,
+      "coment": "Competência cultural é um atributo derivado de Starfield que envolve adaptar a linguagem e a abordagem clínica a crenças e valores específicos do paciente/família, sem comprometer a qualidade técnica do cuidado prestado.",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 6,
+      "tema_nome": "Atenção Primária à Saúde e Atributos de Starfield",
+      "dif": "Médio",
+      "enun": "Sistemas de saúde organizados com APS forte como base (e não apenas como nível periférico de menor complexidade) tendem a apresentar:",
+      "alts": [
+        "Piores desfechos populacionais e maior custo agregado",
+        "Melhores desfechos populacionais e menor custo agregado, entre outros motivos por reduzir exames redundantes e melhorar a adesão via longitudinalidade",
+        "Nenhuma diferença mensurável em relação a sistemas centrados em especialidades",
+        "Maior fragmentação do cuidado",
+        "Redução exclusiva de custos, sem impacto em desfechos clínicos"
+      ],
+      "correta": 1,
+      "coment": "A lógica sistêmica dos atributos de Starfield é que a APS forte melhora desfechos populacionais e reduz custo agregado: a longitudinalidade permite conhecer o contexto do paciente ao longo do tempo (menos exames redundantes, melhor adesão) e a coordenação evita fragmentação quando múltiplos especialistas estão envolvidos.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Difícil",
+      "enun": "Mulher de 45 anos, casada, com quadro de depressão, relata em consulta que seu relacionamento com o marido está fragilizado, que a filha mais velha saiu recentemente de casa para morar com o namorado, e que o filho mais novo \"não a defende\" nos conflitos familiares. O genograma construído mostra apenas o casal e os dois filhos biológicos coabitando (antes da saída da filha). A classificação mais adequada da estrutura familiar e do tipo de crise vivenciada é:",
+      "alts": [
+        "Família extensa; crise paranormativa",
+        "Família nuclear; crise normativa (etapa de dispersão, saída de filho de casa)",
+        "Família monoparental; crise paranormativa",
+        "Família reconstituída; crise normativa",
+        "Família nuclear; crise paranormativa, pela gravidade do quadro depressivo"
+      ],
+      "correta": 1,
+      "coment": "Estrutura: pais + filhos biológicos coabitando = família nuclear. A saída da filha de casa é um evento esperado do ciclo de vida familiar (etapa de dispersão/saída dos filhos) — mesmo gerando sofrimento e sintomas depressivos importantes, permanece classificada como crise NORMATIVA, pois a classificação depende da previsibilidade do evento, não da intensidade do impacto emocional.",
+      "fonte": "OMED (questão mapeada — familiograma e depressão)"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Médio",
+      "enun": "Uma família é composta por um casal, seus dois filhos biológicos e a avó materna, que mora na mesma casa e participa ativamente dos cuidados das crianças. Segundo a tipologia familiar, essa estrutura é classificada como:",
+      "alts": [
+        "Nuclear",
+        "Monoparental",
+        "Extensa/ampliada",
+        "Reconstituída",
+        "Homoafetiva"
+      ],
+      "correta": 2,
+      "coment": "Família extensa/ampliada inclui outros parentes COABITANDO no mesmo domicílio além do núcleo pais-filhos — nesse caso, a avó materna. O critério técnico decisivo é a coabitação, não apenas proximidade relacional ou contato frequente.",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Fácil",
+      "enun": "Um casal se separa e, posteriormente, um dos cônjuges forma uma nova união com outra pessoa que já tem filhos de um relacionamento anterior, passando todos a coabitar. Essa nova configuração familiar é classificada como:",
+      "alts": [
+        "Nuclear",
+        "Extensa",
+        "Monoparental",
+        "Reconstituída/recasada",
+        "Ecomapa familiar"
+      ],
+      "correta": 3,
+      "coment": "Família reconstituída (ou recasada) é aquela formada por união após separação anterior, podendo incluir filhos de relacionamentos prévios de um ou ambos os cônjuges — pode gerar crises normativas próprias, específicas dessa configuração.",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Médio",
+      "enun": "Uma família recebe o diagnóstico inesperado de leucemia aguda em uma criança de 6 anos, previamente saudável. Esse evento, do ponto de vista da abordagem familiar em MFC, é classificado como:",
+      "alts": [
+        "Crise normativa, etapa de filhos escolares",
+        "Crise paranormativa (não-normativa), por ser evento inesperado e fora do curso natural do desenvolvimento familiar",
+        "Crise normativa, pois toda família com filhos pequenos passa por doenças",
+        "Não se classifica como crise, apenas como intercorrência médica",
+        "Crise normativa da etapa procriativa"
+      ],
+      "correta": 1,
+      "coment": "Crises paranormativas são eventos INESPERADOS, fora do curso natural do desenvolvimento familiar — doença grave súbita é o exemplo clássico. Diferem das crises normativas (esperadas, decorrentes de transições previsíveis do ciclo de vida, como nascimento ou saída de filhos de casa).",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Médio",
+      "enun": "No genograma, a simbologia padronizada para representar um óbito é:",
+      "alts": [
+        "Linha tracejada sobre o símbolo",
+        "Um \"X\" sobre o símbolo do indivíduo",
+        "Círculo duplo",
+        "Linha em zigue-zague",
+        "Quadrado preenchido de preto"
+      ],
+      "correta": 1,
+      "coment": "No genograma, um \"X\" sobre o símbolo (quadrado ou círculo) representa óbito. Linha tracejada indica união informal ou relação rompida; linha em zigue-zague indica relação rompida/conflituosa em alguns sistemas de notação; a coabitação é representada por linha pontilhada ao redor do grupo.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Fácil",
+      "enun": "O instrumento de abordagem familiar que avalia a PERCEPÇÃO SUBJETIVA do próprio paciente sobre o funcionamento de sua família, em 5 domínios (Adaptação, Parceria, Crescimento, Afeto, Resolução), é:",
+      "alts": [
+        "Genograma",
+        "Ecomapa",
+        "APGAR familiar",
+        "Ciclo de vida familiar de Duvall",
+        "Escala de Hamilton"
+      ],
+      "correta": 2,
+      "coment": "O APGAR familiar é um instrumento breve e autorreferido que avalia a percepção do próprio paciente sobre o funcionamento familiar nos 5 domínios: Adaptação, Parceria/Companheirismo, Crescimento, Afeto e Resolução — diferente do genograma, que é uma representação objetiva de estrutura.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Médio",
+      "enun": "Qual instrumento de abordagem familiar tem como foco as relações da família com sistemas EXTERNOS, como trabalho, escola, serviços de saúde e comunidade?",
+      "alts": [
+        "Genograma",
+        "Ecomapa",
+        "APGAR familiar",
+        "Ciclo de vida familiar",
+        "Tipologia familiar"
+      ],
+      "correta": 1,
+      "coment": "O ecomapa complementa o genograma olhando para FORA da família (rede social, trabalho, escola, serviços de saúde, comunidade), enquanto o genograma olha para DENTRO (relações e estrutura internas da família, por pelo menos 3 gerações).",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Difícil",
+      "enun": "Sobre a lógica clínica do genograma como ferramenta diagnóstica em MFC, é correto afirmar que:",
+      "alts": [
+        "Deve mapear no mínimo 3 gerações, pois padrões familiares (doenças crônicas, conflitos, dependência química) tendem a se repetir transgeracionalmente, sendo mais bem visualizados dessa forma do que pela anamnese verbal isolada",
+        "Deve se limitar ao núcleo familiar atual (pais e filhos), sem incluir gerações anteriores",
+        "Não tem utilidade para identificar padrões de saúde repetitivos",
+        "É equivalente ao ecomapa em finalidade e construção",
+        "Só pode ser construído por psicólogos, não por médicos de família"
+      ],
+      "correta": 0,
+      "coment": "O genograma mapeia no mínimo 3 gerações — menos que isso perde a capacidade de identificar padrões repetitivos transgeracionais (doenças crônicas, relacionamentos conflituosos, dependência química, padrões de enfrentamento de crises), que a anamnese verbal isolada frequentemente não captura.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Médio",
+      "enun": "Uma mulher de 60 anos, cujo único filho saiu de casa há poucos meses para estudar em outra cidade, apresenta queixas somáticas recorrentes sem causa orgânica identificável nas últimas consultas. A conduta mais alinhada à abordagem familiar em MFC é:",
+      "alts": [
+        "Investigar exaustivamente a queixa física isolada com exames complementares repetidos, sem considerar o contexto familiar",
+        "Reconhecer a possível crise normativa (etapa de dispersão) subjacente e oferecer suporte à reorganização de papéis familiares, sem patologizar excessivamente um processo desenvolvimental esperado",
+        "Encaminhar diretamente para psiquiatria, sem investigação inicial do contexto familiar",
+        "Classificar automaticamente como crise paranormativa, dada a intensidade da queixa",
+        "Ignorar completamente a queixa, considerando-a psicossomática sem necessidade de manejo"
+      ],
+      "correta": 1,
+      "coment": "Crises familiares mal resolvidas — inclusive normativas, como a saída de um filho de casa (síndrome do \"ninho vazio\") — associam-se a maior utilização inadequada de serviços de saúde (queixas somáticas recorrentes sem causa orgânica). Reconhecer a crise subjacente é frequentemente mais produtivo que investigar exaustivamente a queixa física isolada sem contexto.",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 7,
+      "tema_nome": "Abordagem Familiar — Genograma, Ciclo de Vida e Crises Familiares",
+      "dif": "Médio",
+      "enun": "Segundo o ciclo de vida familiar de Duvall, a chegada do primeiro filho de um casal caracteriza uma transição de estágio que:",
+      "alts": [
+        "Não exige qualquer reorganização de papéis familiares",
+        "Exige reorganização de papéis e relacionamentos, podendo caracterizar crise normativa mesmo sendo um evento esperado e celebrado",
+        "É sempre classificada como crise paranormativa",
+        "Só é relevante para a mãe, sem impacto no restante da família",
+        "Ocorre apenas em famílias reconstituídas"
+      ],
+      "correta": 1,
+      "coment": "Cada transição do ciclo de vida familiar exige reorganização de papéis e relacionamentos — a chegada de um filho, por exemplo, reposiciona toda a estrutura familiar. A dificuldade em completar essa reorganização caracteriza crise NORMATIVA mal resolvida, mesmo sendo um evento esperado e frequentemente celebrado.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Médio",
+      "enun": "Paciente de 68 anos, sem história de evento cardiovascular prévio, vinha em uso de AAS profilático prescrito anos atrás para prevenção cardiovascular primária. Em reavaliação periódica, o médico de família identifica que o risco de sangramento atual supera o benefício cardiovascular esperado para esse paciente e decide suspender o AAS. Essa conduta caracteriza:",
+      "alts": [
+        "Prevenção primária, pois evita um evento futuro",
+        "Prevenção secundária, pois envolve reavaliação de um medicamento",
+        "Prevenção quaternária, por proteger o paciente do dano de uma intervenção médica cuja relação risco-benefício não é mais favorável",
+        "Prevenção terciária, pois o paciente já usava a medicação",
+        "Não se trata de nenhum nível de prevenção, apenas ajuste de conduta"
+      ],
+      "correta": 2,
+      "coment": "A retirada ATIVA e deliberada de uma intervenção que tinha indicação previamente aceitável, mas cuja relação risco-benefício foi reavaliada e mudou, configura prevenção quaternária — proteção do paciente contra dano iatrogênico de manutenção desnecessária de uma intervenção médica.",
+      "fonte": "OMED (questão mapeada — retirada de AAS profilático)"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Fácil",
+      "enun": "O Quadruple Aim, evolução do modelo Triple Aim do Institute for Healthcare Improvement (IHI), acrescenta qual quarto objetivo aos três originais (experiência do cuidado, resultados populacionais e custo per capita)?",
+      "alts": [
+        "Equidade em saúde",
+        "Bem-estar da equipe/profissionais de saúde",
+        "Digitalização dos prontuários",
+        "Redução do tempo de espera em consultas",
+        "Aumento do número de leitos hospitalares"
+      ],
+      "correta": 1,
+      "coment": "O Quadruple Aim acrescenta o bem-estar da equipe/profissionais de saúde, reconhecendo que o burnout profissional compromete os outros três objetivos do Triple Aim original — não é um adicional isolado, mas uma condição habilitadora dos demais. A equidade (alternativa A) é o quinto elemento, do Quintuple Aim.",
+      "fonte": "OMED (questão mapeada — Quadruple Aim)"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Médio",
+      "enun": "Uma gestante saudável, sem fatores de risco conhecidos, recebe orientação sobre alimentação balanceada e é vacinada contra influenza durante o pré-natal. Essas condutas exemplificam qual nível de prevenção?",
+      "alts": [
+        "Prevenção secundária",
+        "Prevenção terciária",
+        "Prevenção primária",
+        "Prevenção quaternária",
+        "Nenhum nível de prevenção se aplica"
+      ],
+      "correta": 2,
+      "coment": "Orientação de estilo de vida e vacinação atuam ANTES da doença se instalar, evitando sua ocorrência — são exemplos clássicos de prevenção primária, que atua no período pré-patogênico (fatores de risco presentes, doença ainda não iniciada).",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Médio",
+      "enun": "Uma mulher de 52 anos assintomática realiza mamografia de rastreio conforme protocolo, sem qualquer queixa mamária. Esse procedimento representa:",
+      "alts": [
+        "Prevenção primária, pois evita o câncer de mama",
+        "Prevenção secundária, pois busca detectar doença subclínica ainda assintomática",
+        "Prevenção terciária, pois a paciente já tem risco aumentado por idade",
+        "Prevenção quaternária, pois todo rastreio é excesso de intervenção",
+        "Não se classifica em nenhum nível de prevenção"
+      ],
+      "correta": 1,
+      "coment": "O rastreamento (mamografia, Papanicolau, PSA) busca detectar doença já existente biologicamente, porém ainda subclínica/assintomática — é a definição de prevenção secundária. A pergunta-chave para diferenciar de primária é: \"a doença já está biologicamente presente, mesmo sem sintomas?\"",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Fácil",
+      "enun": "Um paciente que sofreu um AVC isquêmico há 3 meses está em programa de fisioterapia motora para reduzir sequelas e recuperar função. Esse cuidado corresponde a:",
+      "alts": [
+        "Prevenção primária",
+        "Prevenção secundária",
+        "Prevenção terciária",
+        "Prevenção quaternária",
+        "Rastreamento populacional"
+      ],
+      "correta": 2,
+      "coment": "Prevenção terciária é a reabilitação e limitação de sequelas/incapacidades numa doença já estabelecida e sintomática — nesse caso, a fisioterapia pós-AVC busca limitar a incapacidade decorrente do evento já ocorrido.",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Difícil",
+      "enun": "Um achado incidental de nódulo pulmonar pequeno e de baixo risco, identificado em tomografia realizada por outro motivo, desencadeia uma sequência de exames adicionais (biópsia, PET-CT), gerando ansiedade e exposição a riscos cumulativos, sem benefício líquido comprovado. Esse fenômeno é conhecido como:",
+      "alts": [
+        "Prevenção primária eficaz",
+        "Cascata diagnóstica, relacionada à falha em considerar a prevenção quaternária",
+        "Rastreamento populacional apropriado",
+        "Prevenção secundária bem-sucedida",
+        "Efeito Hawthorne"
+      ],
+      "correta": 1,
+      "coment": "A cascata diagnóstica ocorre quando um achado incidental gera investigação adicional, que gera outro achado, expondo o paciente a riscos cumulativos sem benefício líquido comprovado — é a consequência prática de não aplicar o princípio da prevenção quaternária (proteção contra excesso de intervenção médica).",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Médio",
+      "enun": "Em relação ao Quintuple Aim, é correto afirmar que:",
+      "alts": [
+        "Substitui integralmente o Triple Aim, descartando seus três objetivos originais",
+        "É a evolução mais recente do modelo do IHI, incorporando explicitamente a equidade em saúde como quinto objetivo, além dos quatro anteriores",
+        "Elimina o objetivo de bem-estar da equipe presente no Quadruple Aim",
+        "Foi o primeiro modelo proposto pelo IHI, anterior ao Triple Aim",
+        "Não considera resultados populacionais de saúde"
+      ],
+      "correta": 1,
+      "coment": "A evolução Triple → Quadruple → Quintuple Aim é cumulativa, não substitutiva: cada modelo ACRESCENTA um objetivo aos anteriores. O Quintuple Aim é a evolução mais recente, incorporando equidade em saúde como quinto objetivo, refletindo que benefícios populacionais e de custo devem se distribuir de forma justa entre diferentes grupos sociais.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Médio",
+      "enun": "Segundo o modelo de Leavell & Clark, a diferença fundamental entre prevenção primária e secundária está em:",
+      "alts": [
+        "Na secundária, a doença nunca existiu biologicamente; na primária, a doença já existe mas é assintomática",
+        "Na primária, a doença ainda não existe biologicamente; na secundária, a doença já existe biologicamente, ainda que assintomática/subclínica",
+        "Ambas ocorrem exclusivamente após o diagnóstico clínico da doença",
+        "Não há diferença conceitual relevante entre elas",
+        "A secundária só se aplica a doenças infecciosas"
+      ],
+      "correta": 1,
+      "coment": "A diferença está em SE a doença já existe biologicamente (mesmo sem sintomas): na primária, a intervenção ocorre ANTES de a doença existir (período pré-patogênico); na secundária, a doença já existe biologicamente, mas ainda está subclínica (período patogênico assintomático), sendo o rastreamento a ferramenta típica de interceptação.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Difícil",
+      "enun": "Um programa de rastreio de câncer de próstata com PSA é oferecido rotineiramente a homens de 40 anos sem fatores de risco, fora da faixa etária/critério recomendado pelas evidências de benefício líquido positivo. O principal risco dessa prática, à luz da prevenção quaternária, é:",
+      "alts": [
+        "Redução do custo do sistema de saúde",
+        "Aumento do risco de sobrediagnóstico e sobretratamento, sem benefício correspondente, gerando dano iatrogênico",
+        "Melhora automática da sobrevida populacional",
+        "Fortalecimento da longitudinalidade do cuidado",
+        "Nenhum risco relevante, pois rastreio é sempre benéfico"
+      ],
+      "correta": 1,
+      "coment": "Rastrear fora da população-alvo recomendada (idade/risco inadequados) aumenta o risco de sobrediagnóstico (identificar \"doenças\" que nunca causariam sintomas/morte) e sobretratamento consequente, expondo o paciente a riscos de procedimentos e ansiedade sem benefício líquido real — exatamente o que a prevenção quaternária busca evitar.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 8,
+      "tema_nome": "Níveis de Prevenção e Modelos de Cuidado em Saúde",
+      "dif": "Médio",
+      "enun": "Em relação à evolução do modelo do Institute for Healthcare Improvement (IHI), a ordem cronológica e cumulativa correta é:",
+      "alts": [
+        "Quintuple Aim → Quadruple Aim → Triple Aim",
+        "Triple Aim → Quadruple Aim (+bem-estar da equipe) → Quintuple Aim (+equidade)",
+        "Quadruple Aim → Triple Aim → Quintuple Aim",
+        "Todos os três modelos surgiram simultaneamente",
+        "Triple Aim → Quintuple Aim → Quadruple Aim"
+      ],
+      "correta": 1,
+      "coment": "A evolução histórica e conceitual é cumulativa: Triple Aim (experiência do cuidado + resultados populacionais + custo per capita) → Quadruple Aim (acrescenta bem-estar da equipe) → Quintuple Aim (acrescenta equidade em saúde), cada modelo mantendo os objetivos dos anteriores.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Fácil",
+      "enun": "Em um município, foram registrados 150 casos novos de dengue no último mês, numa população em risco de 100.000 habitantes. Esse número, expresso como casos novos por população em risco no período, representa:",
+      "alts": [
+        "Prevalência",
+        "Incidência",
+        "Taxa de mortalidade",
+        "Razão de verossimilhança",
+        "Odds ratio"
+      ],
+      "correta": 1,
+      "coment": "Incidência = número de casos NOVOS de uma doença numa população, num determinado período, dividido pela população em risco nesse período — mede a velocidade de ocorrência de novos casos, exatamente o que é descrito no enunciado.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Médio",
+      "enun": "Um levantamento populacional identificou que, em determinado momento, 8.000 pessoas em uma cidade de 200.000 habitantes tinham diabetes tipo 2 diagnosticado, incluindo casos diagnosticados há vários anos e ainda vivos/em acompanhamento. Esse número representa:",
+      "alts": [
+        "Incidência",
+        "Prevalência",
+        "Taxa de mortalidade infantil",
+        "Razão de verossimilhança negativa",
+        "Sensibilidade populacional"
+      ],
+      "correta": 1,
+      "coment": "Prevalência = número TOTAL de casos existentes (novos + antigos) de uma doença numa população, em um ponto ou período do tempo, dividido pela população total — mede a carga total da doença presente naquele momento, não sua velocidade de surgimento.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Difícil",
+      "enun": "Após a introdução de um novo tratamento que aumenta significativamente a sobrevida de pacientes com uma doença crônica grave (sem, no entanto, curá-la), observa-se ao longo dos anos seguintes um aumento constante na prevalência dessa doença na população, enquanto a incidência de novos casos permanece estável. A explicação mais provável para esse fenômeno é:",
+      "alts": [
+        "Erro de notificação sistemático",
+        "A prevalência aumenta porque a duração média da doença aumentou (pacientes vivem mais tempo com a condição), mesmo sem aumento da incidência, já que prevalência ≈ incidência × duração",
+        "Aumento real do número de novos casos, apesar dos dados de incidência",
+        "A prevalência não deveria mudar nessa situação",
+        "O tratamento está causando a doença em novos pacientes"
+      ],
+      "correta": 1,
+      "coment": "A relação Prevalência ≈ Incidência × Duração média da doença explica esse fenômeno clássico: quando um tratamento prolonga a sobrevida sem curar a condição, a duração média aumenta, elevando a prevalência mesmo com incidência estável — o exemplo histórico clássico é o HIV/AIDS após a introdução da TARV.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Médio",
+      "enun": "Um médico identifica um caso suspeito de sarampo em atendimento ambulatorial. A conduta correta em relação à notificação compulsória é:",
+      "alts": [
+        "Aguardar confirmação laboratorial antes de notificar",
+        "Notificar imediatamente (dentro de poucas horas), já na suspeita clínica, dada a alta transmissibilidade e gravidade da doença",
+        "Notificar apenas se houver óbito associado",
+        "A notificação de sarampo é opcional no Brasil",
+        "Notificar apenas semanalmente, como a maioria dos agravos"
+      ],
+      "correta": 1,
+      "coment": "Sarampo está entre as doenças de notificação compulsória IMEDIATA (poucas horas) no Brasil, por seu alto potencial de disseminação e gravidade — a notificação deve ocorrer já na suspeita clínica, sem aguardar confirmação laboratorial, para permitir resposta rápida de vigilância (investigação de caso, busca ativa de contatos, medidas de controle).",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Fácil",
+      "enun": "O indicador de saúde mais amplamente utilizado como reflexo sensível da qualidade da atenção materno-infantil e do desenvolvimento socioeconômico de uma região é:",
+      "alts": [
+        "Taxa de mortalidade geral",
+        "Taxa de mortalidade infantil",
+        "Taxa de incidência de dengue",
+        "Razão de verossimilhança positiva",
+        "Valor preditivo positivo populacional"
+      ],
+      "correta": 1,
+      "coment": "A taxa de mortalidade infantil (óbitos em menores de 1 ano por 1.000 nascidos vivos) é um dos indicadores mais sensíveis e mais usados para avaliar tanto a qualidade da atenção materno-infantil quanto o desenvolvimento socioeconômico geral de uma região.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Médio",
+      "enun": "Uma região apresenta aumento expressivo na prevalência registrada de hipertensão arterial ao longo de 10 anos. Antes de concluir que há uma \"epidemia\" de novos casos, a conduta metodologicamente correta é:",
+      "alts": [
+        "Assumir diretamente que a incidência aumentou",
+        "Investigar se o aumento reflete maior incidência real, maior sobrevida/duração da doença (melhora do tratamento), ou mudança nos critérios diagnósticos/rastreio, antes de concluir sobre a tendência",
+        "Ignorar o dado, pois prevalência não é um indicador confiável",
+        "Reduzir automaticamente o investimento em prevenção primária",
+        "Concluir que houve queda na qualidade da atenção primária"
+      ],
+      "correta": 1,
+      "coment": "Prevalência crescente de doença crônica pode refletir aumento real de incidência OU aumento de sobrevida/duração da doença (ex.: melhora do tratamento) OU mudança nos critérios diagnósticos — são explicações distintas que exigem investigação antes de qualquer conclusão sobre tendência epidemiológica real.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Difícil",
+      "enun": "Em uma região com alta prevalência de uma doença estigmatizante (por exemplo, hanseníase), os dados oficiais de incidência tendem a estar sistematicamente subestimados em relação à ocorrência real. Esse fenômeno é conhecido como:",
+      "alts": [
+        "Viés de aferição",
+        "Subnotificação",
+        "Falácia ecológica",
+        "Viés de espectro",
+        "Viés de publicação"
+      ],
+      "correta": 1,
+      "coment": "A subnotificação, comum em doenças estigmatizantes ou em regiões com vigilância menos estruturada, distorce a incidência/prevalência real registrada, comprometendo a capacidade do sistema de vigilância de identificar surtos precocemente e de dimensionar corretamente a carga real de doença numa população.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Médio",
+      "enun": "Sobre a transição epidemiológica, é correto afirmar que:",
+      "alts": [
+        "É a mudança no perfil de morbimortalidade de uma população, tipicamente de predomínio de doenças infecciosas/carenciais para predomínio de doenças crônico-degenerativas",
+        "Ocorre exclusivamente em países de alta renda",
+        "Não tem relação com mudanças demográficas ou socioeconômicas",
+        "É sinônimo de transição demográfica, sem relação com morbimortalidade",
+        "Refere-se apenas à mudança nos critérios diagnósticos de uma doença específica"
+      ],
+      "correta": 0,
+      "coment": "Transição epidemiológica é a mudança no perfil de morbimortalidade de uma população ao longo do tempo, tipicamente de predomínio de doenças infecciosas/carenciais para predomínio de doenças crônico-degenerativas, associada a mudanças demográficas, socioeconômicas e de acesso à saúde — processo observado, em graus variados, também em países de renda média e baixa.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Médio",
+      "enun": "Uma doença X tem incidência anual estável de 50 casos novos por 100.000 habitantes há 5 anos consecutivos, mas sua letalidade caiu de 40% para 10% no mesmo período, graças a um novo tratamento. O que se espera em relação à prevalência dessa doença ao longo desses 5 anos?",
+      "alts": [
+        "Permanecer exatamente igual à incidência",
+        "Diminuir progressivamente, acompanhando a queda da letalidade",
+        "Aumentar progressivamente, pois a redução da letalidade prolonga a duração média da doença (mais pacientes sobrevivem e permanecem doentes por mais tempo)",
+        "Não é possível relacionar letalidade e prevalência",
+        "Tornar-se igual a zero"
+      ],
+      "correta": 2,
+      "coment": "Como Prevalência ≈ Incidência × Duração média da doença, uma queda de letalidade (mais pacientes sobrevivendo) aumenta a duração média com que os pacientes permanecem vivos e doentes, elevando a prevalência ao longo do tempo mesmo com incidência estável — mesma lógica do exemplo do HIV/AIDS pós-TARV.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 9,
+      "tema_nome": "Indicadores de Saúde e Vigilância Epidemiológica",
+      "dif": "Fácil",
+      "enun": "Doenças de notificação compulsória SEMANAL, em contraste com as de notificação imediata, são tipicamente:",
+      "alts": [
+        "Aquelas de alta transmissibilidade e potencial de surto imediato, como sarampo",
+        "A maioria dos agravos de interesse para vigilância de rotina, sem o mesmo grau de urgência epidemiológica das doenças de notificação imediata",
+        "Exclusivamente doenças crônico-degenerativas",
+        "Doenças que nunca precisam ser notificadas",
+        "Apenas doenças de notificação obrigatória internacional"
+      ],
+      "correta": 1,
+      "coment": "Enquanto doenças de alta gravidade/transmissibilidade (sarampo, poliomielite, doença meningocócica em suspeita de surto, entre outras) exigem notificação imediata (poucas horas), a maioria dos demais agravos de interesse para vigilância de rotina segue prazo de notificação semanal, sem o mesmo grau de urgência.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Fácil",
+      "enun": "O princípio doutrinário do SUS que garante acesso aos serviços de saúde a qualquer cidadão, independentemente de contribuição prévia ou capacidade de pagamento, é:",
+      "alts": [
+        "Equidade",
+        "Universalidade",
+        "Hierarquização",
+        "Descentralização",
+        "Participação social"
+      ],
+      "correta": 1,
+      "coment": "Universalidade é o princípio doutrinário que garante acesso a todos, sem discriminação — diferente de equidade, que trata desigualmente os desiguais, priorizando quem tem maior necessidade.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Médio",
+      "enun": "Uma secretaria municipal de saúde prioriza a alocação de recursos e equipes de Saúde da Família para os bairros com piores indicadores socioeconômicos e maior carga de doença, mesmo que isso signifique menos recursos proporcionais para bairros de maior renda. Essa conduta exemplifica o princípio de:",
+      "alts": [
+        "Universalidade",
+        "Integralidade",
+        "Equidade",
+        "Hierarquização",
+        "Regionalização, exclusivamente"
+      ],
+      "correta": 2,
+      "coment": "Equidade significa tratar desigualmente os desiguais, priorizando quem tem maior necessidade, para reduzir disparidades — exatamente o oposto de tratamento uniforme (igualdade) para todos, independentemente do contexto.",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Médio",
+      "enun": "A lei responsável por regulamentar a organização, o funcionamento e a regulação dos serviços de saúde no âmbito do SUS é:",
+      "alts": [
+        "Lei 8.142/1990",
+        "Lei 8.080/1990",
+        "Constituição Federal de 1988, exclusivamente",
+        "Lei 8.212/1991",
+        "Emenda Constitucional 29"
+      ],
+      "correta": 1,
+      "coment": "A Lei 8.080/1990 regulamenta a organização, o funcionamento e a regulação geral dos serviços de saúde do SUS. A Lei 8.142/1990, frequentemente confundida com ela, trata especificamente de participação social (conselhos/conferências de saúde) e das transferências intergovernamentais de recursos.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Médio",
+      "enun": "A lei que trata especificamente da participação social (conselhos e conferências de saúde) e das transferências intergovernamentais de recursos no SUS é:",
+      "alts": [
+        "Lei 8.080/1990",
+        "Constituição Federal de 1988",
+        "Lei 8.142/1990",
+        "Lei Orgânica da Saúde, artigo único",
+        "Decreto 7.508/2011, exclusivamente"
+      ],
+      "correta": 2,
+      "coment": "A Lei 8.142/1990 é a norma que trata especificamente de participação social (conselhos e conferências de saúde) e de transferências intergovernamentais de recursos — troca frequente com a Lei 8.080, que trata da organização geral do sistema.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Fácil",
+      "enun": "São diretrizes ORGANIZATIVAS do SUS (respondendo \"como o sistema se organiza\"):",
+      "alts": [
+        "Universalidade, integralidade e equidade",
+        "Descentralização/regionalização, hierarquização e participação social",
+        "Apenas universalidade e hierarquização",
+        "Apenas integralidade e participação social",
+        "Equidade e descentralização, exclusivamente"
+      ],
+      "correta": 1,
+      "coment": "As diretrizes organizativas — descentralização/regionalização, hierarquização e participação social — respondem \"como o sistema se organiza\". Já universalidade, integralidade e equidade são os princípios doutrinários, que respondem \"para quem e o quê\".",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Médio",
+      "enun": "Um conselho municipal de saúde, com participação de representantes de usuários, trabalhadores e gestores, delibera sobre as prioridades do plano municipal de saúde para o próximo ano. Esse mecanismo exemplifica qual diretriz organizativa do SUS?",
+      "alts": [
+        "Hierarquização",
+        "Regionalização",
+        "Participação social",
+        "Integralidade",
+        "Universalidade"
+      ],
+      "correta": 2,
+      "coment": "Conselhos e conferências de saúde, com participação da população na formulação e fiscalização da política de saúde, exemplificam a diretriz organizativa de participação social/controle social, regulamentada especificamente pela Lei 8.142/1990.",
+      "fonte": "caso clínico"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Difícil",
+      "enun": "Sobre a hierarquização do SUS em níveis de atenção (primária, secundária, terciária), é correto afirmar que:",
+      "alts": [
+        "Reflete uma hierarquia de importância, sendo a atenção primária o nível menos relevante do sistema",
+        "É organizada por densidade tecnológica e complexidade crescente, mas a atenção primária é conceitualmente o centro ORDENADOR do cuidado, formalmente porta de entrada preferencial",
+        "Significa que a atenção terciária deve ser a porta de entrada preferencial do sistema",
+        "Elimina a necessidade de referência e contrarreferência entre níveis",
+        "Não tem relação com os atributos de Starfield"
+      ],
+      "correta": 1,
+      "coment": "A hierarquização não é hierarquia de importância, mas de densidade tecnológica/complexidade — a atenção primária, apesar de tecnologicamente menos densa, é formalmente estabelecida como porta de entrada preferencial e ordenadora do fluxo do paciente pelos demais níveis, sendo a materialização institucional dos atributos de Starfield na organização legal do SUS.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Médio",
+      "enun": "A lógica da regionalização no SUS parte do princípio de que:",
+      "alts": [
+        "Cada município deve oferecer isoladamente toda a gama de serviços de saúde, de qualquer complexidade",
+        "Nenhum município isoladamente consegue oferecer toda a gama de serviços de forma eficiente; regiões de saúde compostas por municípios vizinhos compartilham serviços de maior complexidade",
+        "A regionalização é incompatível com o princípio de descentralização",
+        "Apenas municípios de grande porte podem integrar regiões de saúde",
+        "A regionalização elimina a necessidade de hierarquização dos níveis de atenção"
+      ],
+      "correta": 1,
+      "coment": "A regionalização parte da constatação de que nenhum município isoladamente consegue oferecer toda a gama de serviços de saúde de forma eficiente — regiões de saúde compostas por municípios vizinhos compartilham serviços de maior complexidade, otimizando recursos e evitando duplicação ineficiente de estruturas de alto custo.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Fácil",
+      "enun": "A Estratégia Saúde da Família (ESF) é o modelo prioritário de organização da atenção básica no Brasil, estruturado em:",
+      "alts": [
+        "Equipes multiprofissionais responsáveis por território e população adscrita definidos, operacionalizando os atributos de Starfield e os princípios do SUS no nível local",
+        "Hospitais de grande porte com atendimento por demanda espontânea, sem território definido",
+        "Ambulatórios de especialidades exclusivamente",
+        "Unidades de pronto atendimento (UPA) de urgência e emergência",
+        "Serviços exclusivamente privados conveniados ao SUS"
+      ],
+      "correta": 0,
+      "coment": "A ESF é o modelo prioritário de organização da atenção básica no Brasil, com equipes multiprofissionais responsáveis por território e população adscrita definidos — operacionalizando na prática os atributos de Starfield (acesso, longitudinalidade, integralidade, coordenação) e os princípios doutrinários/organizativos do SUS no nível local.",
+      "fonte": "exercício"
+    },
+    {
+      "tema_num": 10,
+      "tema_nome": "Organização do SUS e Modelos de Atenção à Saúde",
+      "dif": "Médio",
+      "enun": "Uma Rede de Atenção à Saúde (RAS) bem estruturada é caracterizada por:",
+      "alts": [
+        "Serviços isolados, sem qualquer integração entre pontos de atenção",
+        "Arranjos organizativos de ações e serviços de diferentes densidades tecnológicas, integrados por sistemas de apoio técnico, logístico e de gestão, garantindo integralidade do cuidado ao longo do tempo",
+        "Concentração de todos os serviços exclusivamente no nível terciário",
+        "Ausência de fluxos de referência e contrarreferência, por definição",
+        "Exclusão da atenção primária do desenho da rede"
+      ],
+      "correta": 1,
+      "coment": "Redes de Atenção à Saúde (RAS) são arranjos organizativos de ações e serviços de diferentes densidades tecnológicas, integrados através de sistemas de apoio técnico, logístico e de gestão, buscando garantir a integralidade do cuidado ao longo do tempo e entre os pontos de atenção — a fragmentação da rede é justamente uma das falhas que compromete esse desenho.",
+      "fonte": "exercício"
+    }
+  ]
+}

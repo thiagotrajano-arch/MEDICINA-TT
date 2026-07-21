@@ -4,6 +4,11 @@ import { CONTEUDOS_PED } from "./conteudos/pediatria";
 import { CONTEUDOS_INF } from "./conteudos/infectologia";
 import { CONTEUDOS_CIR } from "./conteudos/cirurgia";
 import { CONTEUDOS_MFC } from "./conteudos/mfc";
+import { CONTEUDOS_ESTRATEGIA_GO } from "./conteudos/estrategia-go";
+import { CONTEUDOS_ESTRATEGIA_PED } from "./conteudos/estrategia-ped";
+import { CONTEUDOS_ESTRATEGIA_INF_MFC } from "./conteudos/estrategia-inf-mfc";
+import { CONTEUDOS_ESTRATEGIA_EXTRAS } from "./conteudos/estrategia-extras";
+import { CONTEUDOS_OMED_EXTRAIDOS } from "./omed-extraidos";
 
 /**
  * Resumos — agregador.
@@ -19,10 +24,34 @@ import { CONTEUDOS_MFC } from "./conteudos/mfc";
  * Para adicionar uma disciplina: crie ./conteudos/<disc>.ts exportando
  * `CONTEUDOS_<DISC>: Record<string, ConteudoSubtema>` e inclua-o abaixo.
  */
-export const CONTEUDOS: Record<string, ConteudoSubtema> = {
+const CONTEUDOS_BASE: Record<string, ConteudoSubtema> = {
   ...CONTEUDOS_GO,
   ...CONTEUDOS_PED,
   ...CONTEUDOS_INF,
   ...CONTEUDOS_CIR,
   ...CONTEUDOS_MFC,
+  ...CONTEUDOS_ESTRATEGIA_GO,
+  ...CONTEUDOS_ESTRATEGIA_PED,
+  ...CONTEUDOS_ESTRATEGIA_INF_MFC,
+  ...CONTEUDOS_ESTRATEGIA_EXTRAS,
 };
+
+export const CONTEUDOS: Record<string, ConteudoSubtema> = Object.fromEntries(
+  new Set([...Object.keys(CONTEUDOS_BASE), ...Object.keys(CONTEUDOS_OMED_EXTRAIDOS)])
+    .values()
+    .map((id) => {
+      const base = CONTEUDOS_BASE[id];
+      const extraido = CONTEUDOS_OMED_EXTRAIDOS[id];
+      if (!base) return [id, extraido];
+      if (!extraido) return [id, base];
+      return [
+        id,
+        {
+          ...base,
+          atualizadoEm: extraido.atualizadoEm,
+          blocos: [...base.blocos, ...extraido.blocos],
+          referencias: [...new Set([...base.referencias, ...extraido.referencias])],
+        },
+      ];
+    })
+);

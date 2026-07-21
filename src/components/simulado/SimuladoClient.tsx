@@ -179,7 +179,8 @@ export function SimuladoClient({
             onClick={() =>
               setMarcadas((m) => {
                 const n = new Set(m);
-                n.has(q.id) ? n.delete(q.id) : n.add(q.id);
+                if (n.has(q.id)) n.delete(q.id);
+                else n.add(q.id);
                 return n;
               })
             }
@@ -405,7 +406,7 @@ function Resultado({
       {/* Correção detalhada */}
       <h2 className="mb-3 mt-7 text-sm font-bold uppercase tracking-wider text-text-faint">Correção comentada</h2>
       <div className="space-y-4">
-        {detalhe.map(({ q, escolha, certa, acertou, respondeu }, i) => (
+        {detalhe.map(({ q, escolha, acertou, respondeu }, i) => (
           <div key={q.id} className="rounded-2xl border border-border bg-surface p-5">
             <div className="mb-2 flex items-center gap-2">
               <span className={cn(

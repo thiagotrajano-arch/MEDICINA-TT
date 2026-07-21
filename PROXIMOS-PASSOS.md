@@ -1,17 +1,37 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-21 — migração do contexto do Claude, handoff para outras IAs e extração de IRAS. Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-21 — login, sincronização do progresso e encerramento da extração disponível. Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
 | | |
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
-| **Resumos** | **44** de 171 subtemas |
-| **Questões** | **302** (GO 111 · Ped 55 · Inf 106 · MFC 12 · Cir 8 · originais 10) |
-| **Casos clínicos** | 6 (GO ×1, Ped, Inf, Cir ×2, MFC ×1) — todas as 5 disciplinas ativas têm ao menos 1 caso |
+| **Resumos** | **159** de 248 subtemas (89 scaffolds sem fonte local identificada) |
+| **Questões** | **528** (GO 113 · Ped 70 · Inf 121 · MFC 114 · Cir 110) |
+| **Casos clínicos** | **21** (GO 6 · Ped 6 · Inf 6 · Cir 2 · MFC 1) |
 | **Figuras** | 66 (12 diagramas SVG + 54 imagens reais licenciadas; 53 arquivos, pois uma radiografia serve a dois achados) |
+| **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+## O que foi feito nesta sessão (2026-07-21 — login, progresso e extração final)
+
+- Habilitado login seguro por **e-mail e senha** com sessão persistente, criação de conta, confirmação por e-mail e saída.
+- Validado o fluxo real com usuário temporário confirmado: autenticação, RLS, gravação, leitura e exclusão de progresso; o usuário temporário foi removido ao final.
+- Respostas e simulados continuam sendo gravados imediatamente no navegador. Ao entrar, o histórico local é enviado à conta; o dashboard reconcilia as cópias local e remota e permite continuar em outro dispositivo.
+- Inventariados **871 PDFs** do Estratégia MED. Mapas mentais e flashcards resultaram em **125 nomes de tópicos**, todos cobertos por resumo existente ou complemento novo (**125/125**).
+- Recuperados do histórico local autorizado dois acervos que haviam perdido o arquivo de origem operacional: **10 temas + 100 questões de Cirurgia** e **10 temas + 100 questões de MFC**. Os dados brutos recuperados foram preservados em `src/content/raw/` e adaptados à taxonomia atual sem apagar os resumos existentes.
+- Fechados os bancos menores: Pediatria **68/68 objetivas recuperadas**, Infectologia perinatal **40/40 objetivas** e GO **80/80 objetivas** do banco identificado.
+- As **15 questões discursivas** restantes (5 Pediatria, 5 Infectologia e 5 GO) foram transformadas em casos clínicos interativos, com raciocínio revelável por etapas.
+- Adicionados 6 subtemas necessários à taxonomia para acomodar Cirurgia e abordagem familiar em MFC.
+- Auditoria estrutural final: 36 disciplinas, 248 subtemas, 159 resumos, 528 questões e 21 casos; zero IDs duplicados, zero questões/casos órfãos e exatamente um gabarito por questão.
+- Seed oficial concluído de forma transacional pelo canal PostgreSQL porque o endpoint REST estava temporariamente inacessível: 528 questões publicadas e 2.431 alternativas confirmadas no banco. Linhas históricas de taxonomia/resumo foram preservadas, sem exclusão destrutiva.
+
+### Limite de fonte documentado
+
+Os PDFs exatos `Cirurgia_Banco_160_Questoes_Gabarito.pdf` e `MFC_Banco_80_Questoes_Gabarito.pdf` não existem mais no disco e o histórico antigo contém apenas páginas parciais. Para não inventar transcrições, foram incorporados os acervos completos recuperados dos respectivos **Resumos Absolutos OMED VI**, incluindo 100 questões estruturadas por disciplina. Se os dois PDFs originais reaparecerem, fazer apenas uma auditoria de fidelidade/diferença; não há outra extração local segura pendente.
+
+As seções antigas de pendências abaixo são histórico e ficam supersedidas por este estado.
 
 ## O que foi feito nesta sessão (2026-07-21 — migração e IRAS)
 

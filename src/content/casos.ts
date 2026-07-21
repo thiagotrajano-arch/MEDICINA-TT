@@ -1,4 +1,5 @@
 import type { CasoClinico } from "@/domain/content/types";
+import { CASOS_EXTRAIDOS } from "./casos-extraidos";
 
 /**
  * Casos clínicos — formato OMED/Einstein.
@@ -10,6 +11,7 @@ import type { CasoClinico } from "@/domain/content/types";
  * Ancorados em diretriz (MS, FEBRASGO, SBP, ACOG, Surviving Sepsis, TG18).
  */
 export const CASOS: CasoClinico[] = [
+  ...CASOS_EXTRAIDOS,
   // ── GO ────────────────────────────────────────────────────────
   {
     id: "caso-go-01",

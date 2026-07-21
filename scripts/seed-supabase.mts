@@ -8,6 +8,7 @@
  * imutavel=true) — nunca sobrescrito depois. Requer SUPABASE_SERVICE_ROLE_KEY.
  */
 import { loadEnv } from "./load-env.mjs";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { DISCIPLINAS } from "../src/content/taxonomy";
 import { CONTEUDOS } from "../src/content/conteudos";
 import { QUESTOES } from "../src/content/questoes";
@@ -112,15 +113,13 @@ function check(res: { error: { message: string } | null }, contexto: string) {
   if (res.error) throw new Error(`${contexto}: ${res.error.message}`);
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-async function upsert(db: any, table: string, row: Record<string, unknown>) {
+async function upsert(db: SupabaseClient, table: string, row: Record<string, unknown>) {
   const { error } = await db.from(table).upsert(row, { onConflict: "id" });
   if (error) throw new Error(`${table}: ${error.message}`);
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function upsertReturning(
-  db: any, table: string, row: Record<string, unknown>, onConflict: string
+  db: SupabaseClient, table: string, row: Record<string, unknown>, onConflict: string
 ) {
   const { data, error } = await db
     .from(table).upsert(row, { onConflict }).select("id").single();

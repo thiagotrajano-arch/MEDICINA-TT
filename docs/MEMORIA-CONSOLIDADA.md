@@ -22,7 +22,10 @@ O estado quantitativo e as pendências atuais devem ser obtidos de `PROXIMOS-PAS
 - Conferir gabaritos e comentar alternativas.
 - Usar imagens reais apenas com fonte, autoria e licença verificadas.
 - Em 2026-07-21, o lote visual foi encerrado com 49/60 alvos clínicos atendidos e 11 indisponíveis por ausência de arquivo aberto adequado; nunca preencher essas lacunas com imagem enganosa. O acervo passou a 66 figuras (12 diagramas e 54 registros de imagens reais em 53 arquivos).
-- O progresso de questões e simulados é salvo imediatamente no navegador e alimenta o dashboard. A sincronização segura com Supabase está preparada, mas depende de habilitar um método público de autenticação; nunca expor a `service_role` no cliente para contornar essa restrição.
+- O progresso de questões e simulados é salvo imediatamente no navegador e alimenta o dashboard. O login público por e-mail/senha está ativo e a sincronização segura com Supabase usa a sessão do próprio usuário e RLS; nunca expor a `service_role` no cliente.
+- Ao autenticar, pendências locais são enviadas à conta. Ao abrir o dashboard, eventos locais e remotos são reconciliados por `client_event_id`, sem duplicação.
+- Em 2026-07-21, a extração disponível foi encerrada com 125/125 tópicos do lote Estratégia MED cobertos, 159 resumos, 528 questões e 21 casos. Os 89 subtemas sem resumo são scaffolds da expansão futura, não fontes locais esquecidas.
+- Dois acervos históricos recuperados foram incorporados: Cirurgia (10 temas/100 questões) e MFC (10 temas/100 questões). Os PDFs exatos dos bancos 160/80 não estão mais disponíveis; não reconstruir as questões ausentes por suposição.
 - Manter as áreas e subtemas ligados à taxonomia existente.
 - Preventiva integra MFC/Atenção Primária; não criar disciplina redundante.
 - Processamento de IA ocorre nas sessões, não como API paga embutida no produto.

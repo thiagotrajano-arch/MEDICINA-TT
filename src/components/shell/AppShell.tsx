@@ -6,6 +6,7 @@ import { Sidebar } from "./Sidebar";
 import { CommandPalette } from "./CommandPalette";
 import { cn } from "@/lib/cn";
 import type { Disciplina, GrupoDisciplina } from "@/domain/content/types";
+import { AuthButton } from "@/components/auth/AuthButton";
 
 export function AppShell({
   children,
@@ -21,7 +22,10 @@ export function AppShell({
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    setDark(document.documentElement.classList.contains("dark"));
+    const frame = window.requestAnimationFrame(() => {
+      setDark(document.documentElement.classList.contains("dark"));
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {
@@ -108,6 +112,7 @@ export function AppShell({
           </button>
 
           <div className="ml-auto flex items-center gap-1">
+            <AuthButton />
             <button
               onClick={toggleTheme}
               className="grid size-9 place-items-center rounded-lg text-text-muted hover:bg-surface-2"

@@ -5,6 +5,8 @@ import { QUESTOES_CIR } from "./questoes/cirurgia";
 import { QUESTOES_INF } from "./questoes/infectologia";
 import { QUESTOES_MFC } from "./questoes/mfc";
 import { QUESTOES_ORIGINAIS } from "./questoes/originais";
+import { QUESTOES_OMED_EXTRAIDAS } from "./omed-extraidos";
+import { QUESTOES_PENDENTES_EXTRAIDAS } from "./questoes/pendentes-extraidas";
 
 /**
  * Banco de questões — agregador.
@@ -22,5 +24,7 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_CIR,
   ...QUESTOES_INF,
   ...QUESTOES_MFC,
+  ...QUESTOES_OMED_EXTRAIDAS,
+  ...QUESTOES_PENDENTES_EXTRAIDAS,
   ...QUESTOES_ORIGINAIS,
 ];
