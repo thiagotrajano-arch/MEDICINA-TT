@@ -29,6 +29,14 @@ const ONDE_APARECE: Record<string, { subtemaId: string; rotulo: string } | undef
   "go-mola-hidatiforme-us-real": { subtemaId: "go--hemorragias-da-gestacao--primeira-metade-abortamento-ectopica-mola", rotulo: "Hemorragias da 1ª metade" },
   "go-colo-uterino-colposcopia-real": { subtemaId: "go--oncologia-ginecologica--cancer-de-colo-uterino", rotulo: "Câncer de colo uterino" },
   "go-cancer-mama-mamografia-real": { subtemaId: "go--mastologia--cancer-de-mama", rotulo: "Câncer de mama" },
+  "go-ectopica-us-real": { subtemaId: "go--hemorragias-da-gestacao--primeira-metade-abortamento-ectopica-mola", rotulo: "Gravidez ectópica" },
+  "go-mioma-us-real": { subtemaId: "go--miomatose-e-adenomiose--miomatose-uterina", rotulo: "Miomatose uterina" },
+  "ped-ictericia-rn-real": { subtemaId: "ped--neonatologia--ictericia-neonatal", rotulo: "Icterícia neonatal" },
+  "ped-bronquiolite-rx-real": { subtemaId: "ped--infeccoes-respiratorias-na-infancia--bronquiolite", rotulo: "Bronquiolite" },
+  "ped-kawasaki-real": { subtemaId: "inf--doencas-exantematicas--exantemas-da-infancia", rotulo: "Doença de Kawasaki" },
+  "inf-sifilis-condiloma-real": { subtemaId: "inf--infeccoes-sexualmente-transmissiveis--sifilis", rotulo: "Sífilis" },
+  "inf-leptospirose-real": { subtemaId: "inf--zoonoses-e-doencas-emergentes--leptospirose-fases-e-manejo", rotulo: "Leptospirose" },
+  "cir-colecistite-us-real": { subtemaId: "cir--abdome-agudo--colecistite-e-colangite", rotulo: "Colecistite" },
 };
 
 const AREA: Record<string, string> = {
@@ -37,6 +45,10 @@ const AREA: Record<string, string> = {
   inf: "Infectologia",
   cir: "Cirurgia",
   mfc: "MFC",
+  clm: "Clínica Médica",
+  reu: "Reumatologia",
+  ort: "Ortopedia",
+  derm: "Dermatologia",
 };
 
 function areaDe(id: string): string {

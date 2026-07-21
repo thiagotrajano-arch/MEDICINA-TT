@@ -18,7 +18,7 @@ export function getSupabaseAnon(): SupabaseClient {
     anon = createClient(
       requireEnv("NEXT_PUBLIC_SUPABASE_URL"),
       requireEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY"),
-      { auth: { persistSession: false } }
+      { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } }
     );
   }
   return anon;

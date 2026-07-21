@@ -21,6 +21,8 @@ O estado quantitativo e as pendências atuais devem ser obtidos de `PROXIMOS-PAS
 - Complementar com fontes clínicas nomeadas e verificáveis.
 - Conferir gabaritos e comentar alternativas.
 - Usar imagens reais apenas com fonte, autoria e licença verificadas.
+- Em 2026-07-21, o lote visual foi encerrado com 49/60 alvos clínicos atendidos e 11 indisponíveis por ausência de arquivo aberto adequado; nunca preencher essas lacunas com imagem enganosa. O acervo passou a 66 figuras (12 diagramas e 54 registros de imagens reais em 53 arquivos).
+- O progresso de questões e simulados é salvo imediatamente no navegador e alimenta o dashboard. A sincronização segura com Supabase está preparada, mas depende de habilitar um método público de autenticação; nunca expor a `service_role` no cliente para contornar essa restrição.
 - Manter as áreas e subtemas ligados à taxonomia existente.
 - Preventiva integra MFC/Atenção Primária; não criar disciplina redundante.
 - Processamento de IA ocorre nas sessões, não como API paga embutida no produto.

@@ -220,7 +220,7 @@ export const CONTEUDOS_GO: Record<string, ConteudoSubtema> = {
         secao: "Mola hidatiforme",
         corpo:
           "| | Mola completa | Mola parcial |\n|---|---|---|\n| Cariótipo | 46,XX (diandria, todos paternos) | 69,XXY/XXX (triploidia) |\n| Embrião | Ausente | Presente (malformado) |\n| β-hCG | Muito elevado (> 100.000) | Moderadamente elevado |\n| Risco de neoplasia trofoblástica (NTG) | 15–20% | 5% |\n\n**USG:** imagem em **\"flocos de neve\"/\"cacho de uva\"** (mola completa); **cistos tecaluteínicos bilaterais** por hiperestimulação do hCG.\n\n**Tratamento:** **vácuo-aspiração** (método preferido) — **nunca misoprostol** (risco de embolização trofoblástica); tipagem + anti-D se Rh negativo; **contracepção obrigatória** durante o seguimento (não usar DIU).\n\n**Seguimento:** β-hCG semanal até 3 valores normais consecutivos, depois mensal por 6 meses (mola completa) ou 12 meses. **Suspeitar de NTG** se hCG em platô (± 10% em 3 semanas), elevação (> 10% em 2 semanas) ou não negativar em 6 meses.\n\n**Complicações da mola:** NTG, hiperêmese grave, **hipertireoidismo** (hCG estimula receptor de TSH), **pré-eclâmpsia precoce (< 20 semanas)** — pista diagnóstica clássica, embolização trofoblástica.",
-        figura: "go-mola-hidatiforme-us-real",
+        figura: ["go-ectopica-us-real", "go-mola-hidatiforme-us-real"],
       },
       {
         secao: "Diagnóstico diferencial",

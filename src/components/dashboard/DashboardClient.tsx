@@ -8,10 +8,9 @@ import {
 } from "lucide-react";
 import type { Disciplina } from "@/domain/content/types";
 import {
-  calcularEstatisticas, lerRespostas, lerSimulados, limparProgresso,
+  calcularEstatisticas, lerRespostas, lerSimulados, limparProgresso, sincronizarProgresso,
   type Estatisticas, type ResultadoSimulado,
 } from "@/lib/progresso";
-import { cn } from "@/lib/cn";
 
 interface Props {
   disciplinas: Disciplina[];
@@ -21,13 +20,24 @@ interface Props {
 }
 
 export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, altoRendimento }: Props) {
-  // Só existe progresso no cliente (localStorage) — antes da hidratação, `null`.
   const [stats, setStats] = useState<Estatisticas | null>(null);
   const [simulados, setSimulados] = useState<ResultadoSimulado[]>([]);
+  const [sincronizado, setSincronizado] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setStats(calcularEstatisticas(lerRespostas()));
-    setSimulados(lerSimulados());
+    let ativo = true;
+    void Promise.resolve().then(() => {
+      if (!ativo) return;
+      setStats(calcularEstatisticas(lerRespostas()));
+      setSimulados(lerSimulados());
+    });
+    void sincronizarProgresso().then((progresso) => {
+      if (!ativo) return;
+      setStats(calcularEstatisticas(progresso.respostas));
+      setSimulados(progresso.simulados);
+      setSincronizado(progresso.sincronizado);
+    });
+    return () => { ativo = false; };
   }, []);
 
   const nomeDisc = (id: string) => disciplinas.find((d) => d.id === id)?.nome ?? id;
@@ -46,6 +56,11 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, alto
             ? "Seu progresso abaixo. Continue de onde parou ou faça um simulado cronometrado."
             : "Responda questões ou faça um simulado — seu progresso aparece aqui automaticamente."}
         </p>
+        {sincronizado !== null && (
+          <p className="mt-1 text-xs text-text-faint">
+            {sincronizado ? "Progresso sincronizado com segurança." : "Progresso salvo neste dispositivo; sincronização será tentada novamente."}
+          </p>
+        )}
       </div>
 
       {/* Stat tiles — os números-síntese */}
@@ -163,9 +178,9 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, alto
 
       {temProgresso && (
         <button
-          onClick={() => {
-            if (confirm("Apagar todo o seu progresso salvo neste navegador? Não dá para desfazer.")) {
-              limparProgresso();
+          onClick={async () => {
+            if (confirm("Apagar todo o seu progresso salvo neste dispositivo e na nuvem? Não dá para desfazer.")) {
+              await limparProgresso();
               setStats(calcularEstatisticas([]));
               setSimulados([]);
             }

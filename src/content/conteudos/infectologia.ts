@@ -184,7 +184,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Quadro clínico (estágios)",
         corpo:
           "**Primária** — **cancro duro**: úlcera **única, indolor**, bordos endurecidos, base limpa, com adenopatia satélite não dolorosa. **Resolve espontaneamente em 3–8 semanas mesmo sem tratamento** (o que dá falsa sensação de cura).\n\n**Secundária** (6–8 sem após o cancro) — roséola/exantema maculopapular que tipicamente acomete **palmas e plantas**, **condiloma plano**, **alopecia em clareira**, madarose, linfadenopatia generalizada, sintomas gripais.\n\n**Latente** — assintomática, com sorologia reagente. **Recente (< 1 ano)** ou **tardia (> 1 ano ou duração indeterminada)** — essa divisão **define o esquema terapêutico**.\n\n**Terciária** (anos depois) — **goma sifilítica**; **cardiovascular** (aortite/aneurisma de aorta **ascendente**); **neurossífilis tardia** (tabes dorsalis com ataxia sensitiva; **pupila de Argyll-Robertson** — acomoda mas não reage à luz; paralisia geral progressiva).",
-        figura: ["inf-sifilis-estagios", "inf-sifilis-cancro-real", "inf-sifilis-secundaria-real"],
+        figura: ["inf-sifilis-estagios", "inf-sifilis-cancro-real", "inf-sifilis-secundaria-real", "inf-sifilis-condiloma-real"],
       },
       {
         secao: "Diagnóstico",
@@ -705,7 +705,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Exames de imagem",
         corpo:
           "**Kawasaki:** ecocardiograma **obrigatório** na suspeita (basal, 2 semanas e 6–8 semanas) para rastreio de **aneurisma de artéria coronária** — achado que define a gravidade e o seguimento a longo prazo. **MIS-C:** ecocardiograma também essencial (pode haver disfunção miocárdica/derrame pericárdico, além de aneurisma coronariano).",
-        figura: ["inf-exantemas-padrao-temporal", "inf-sarampo-exantema-real", "inf-sarampo-koplik-real"],
+        figura: ["inf-exantemas-padrao-temporal", "inf-sarampo-exantema-real", "inf-sarampo-koplik-real", "ped-kawasaki-real"],
       },
       {
         secao: "Diagnóstico diferencial",

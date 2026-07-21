@@ -10,7 +10,7 @@
 | **Resumos** | **44** de 171 subtemas |
 | **Questões** | **302** (GO 111 · Ped 55 · Inf 106 · MFC 12 · Cir 8 · originais 10) |
 | **Casos clínicos** | 6 (GO ×1, Ped, Inf, Cir ×2, MFC ×1) — todas as 5 disciplinas ativas têm ao menos 1 caso |
-| **Figuras** | 33 (12 diagramas SVG + 21 imagens reais licenciadas) |
+| **Figuras** | 66 (12 diagramas SVG + 54 imagens reais licenciadas; 53 arquivos, pois uma radiografia serve a dois achados) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
 
 ## O que foi feito nesta sessão (2026-07-21 — migração e IRAS)
@@ -434,7 +434,7 @@ imagem (sempre confirme o tamanho/conteúdo do arquivo baixado).
 
 ## PRIORIDADE 0 (mais urgente) — o que ainda falta desta leva
 
-1. **~44 imagens clínicas reais restantes** (das 60 originalmente
+1. **11 imagens clínicas do lote original sem arquivo aberto adequado** (das 60 originalmente
    planejadas, 16 já feitas nesta sessão + 3 da sessão anterior = 19 no
    total). A lista completa dos alvos ainda não buscados (query em inglês,
    legenda em português, disciplina) está nos arquivos de script linkados
@@ -596,3 +596,18 @@ ou de diretriz (MS, FEBRASGO, SBP, ACOG, IDSA, CDC, Surviving Sepsis, TG18,
 WSES). Quando o material não trouxer gabarito, a resposta é determinada e
 justificada com base em diretriz nomeada — nunca "chutada". Uma questão
 errada é pior que uma questão a menos.
+
+## Sessão 2026-07-21 — conclusão do lote de imagens
+
+- 32 novos arquivos reais foram aprovados visualmente, baixados localmente e registrados com fonte, autoria e licença; o acervo agora tem 66 figuras (54 registros de imagens reais em 53 arquivos).
+- As figuras mais diretamente relacionadas foram vinculadas aos resumos de gravidez ectópica, sífilis e doenças exantemáticas; a biblioteca visual exibe todo o restante.
+- O lote original de 60 alvos ficou em **49/60 atendidos**. Os 11 sem imagem aberta e clinicamente adequada são: placenta prévia por US, meningococcemia, artrite por chikungunya, erisipela, hérnia inguinal por TC, diverticulite por TC, isquemia mesentérica por TC, bócio clínico, icterícia escleral, AVC isquêmico por TC e fratura de quadril por RX.
+- Não usar substitutos genéricos ou imagens com licença duvidosa para completar número. Esses 11 ficam explicitamente documentados como indisponíveis até surgir fonte aberta adequada ou material próprio do usuário.
+
+## Sessão 2026-07-21 — publicação e persistência de progresso
+
+- Lote visual validado: 66 IDs únicos, 54 referências reais em 53 arquivos, nenhum arquivo ausente ou inválido.
+- Progresso de questões e simulados permanece `local-first`: cada interação é salva imediatamente no navegador e alimenta o dashboard.
+- Preparada sincronização idempotente com `resposta_usuario` e `simulado_resultado`; a migration `0003_progresso_sincronizado.sql` adiciona IDs de evento para impedir duplicações e foi aplicada no Supabase.
+- O projeto Supabase está com login anônimo e Google desativados. Por segurança, nenhuma chave privilegiada foi exposta no site: até um método de login ser habilitado, o dashboard informa que os dados estão salvos no dispositivo e tentará sincronizar novamente em uma sessão futura.
+- Validações concluídas: typecheck, seed (36 disciplinas, 44 resumos, 302 questões) e build estático de 230 páginas.
