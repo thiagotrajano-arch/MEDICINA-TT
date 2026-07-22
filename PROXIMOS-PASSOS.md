@@ -28,6 +28,7 @@
 - Seed oficial concluído de forma transacional pelo canal PostgreSQL porque o endpoint REST estava temporariamente inacessível: 528 questões publicadas e 2.431 alternativas confirmadas no banco. Linhas históricas de taxonomia/resumo foram preservadas, sem exclusão destrutiva.
 - Corrigida a lentidão percebida após a primeira publicação: a busca global deixou de carregar antecipadamente o banco completo de questões, e o cliente de autenticação passou a ser carregado sob demanda com prazos máximos para login e sincronização. O carregamento inicial caiu de cerca de 2,09 MB para 0,78 MB (−62,8%); a versão compilada foi aberta em Chrome isolado sem erros críticos.
 - Corrigida a configuração do GitHub Pages para injetar no build as variáveis públicas do Supabase. O workflow agora falha explicitamente se elas estiverem ausentes, evitando publicar novamente uma tela de login sem conexão. A chave administrativa continua fora do artefato público.
+- Corrigida também a leitura dessas variáveis no cliente: o acesso dinâmico `process.env[nome]` não é substituído pelo Next.js no navegador; o cliente anônimo agora usa referências estáticas `NEXT_PUBLIC_*`, permitindo que o login publicado inicialize de fato.
 
 ### Limite de fonte documentado
 

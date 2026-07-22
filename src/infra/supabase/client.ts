@@ -15,9 +15,18 @@ export { isSupabaseConfigured } from "./config";
 let anon: SupabaseClient | null = null;
 export function getSupabaseAnon(): SupabaseClient {
   if (!anon) {
+    // Next.js substitui variaveis NEXT_PUBLIC_* no bundle apenas quando a
+    // propriedade e acessada estaticamente. Nao usar requireEnv(nome) aqui:
+    // process.env[nome] fica vazio no navegador mesmo quando o CI recebeu a
+    // configuracao corretamente.
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!url || !anonKey) {
+      throw new Error("Missing public Supabase configuration.");
+    }
     anon = createClient(
-      requireEnv("NEXT_PUBLIC_SUPABASE_URL"),
-      requireEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY"),
+      url,
+      anonKey,
       { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } }
     );
   }
