@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import type { User } from "@supabase/supabase-js";
-import { Loader2, LogIn, LogOut, UserRound, X } from "lucide-react";
+import { KeyRound, Loader2, LogIn, LogOut, UserRound, X } from "lucide-react";
 import { sincronizarProgresso } from "@/lib/progresso";
 
 type ModoAuth = "entrar" | "criar" | "recuperar" | "nova-senha";
@@ -74,6 +74,14 @@ export function AuthButton() {
       <>
         <div className="flex items-center gap-1">
           <span className="hidden max-w-36 truncate text-xs text-text-faint sm:block" title={user.email}>{user.email}</span>
+          <button
+            onClick={() => { setModoDialogo("nova-senha"); setOpen(true); }}
+            className="grid size-9 place-items-center rounded-lg text-text-muted hover:bg-surface-2"
+            aria-label="Trocar senha"
+            title="Trocar senha"
+          >
+            <KeyRound className="size-4" />
+          </button>
           <button onClick={sair} className="grid size-9 place-items-center rounded-lg text-text-muted hover:bg-surface-2" aria-label="Sair da conta" title="Sair da conta"><LogOut className="size-4" /></button>
         </div>
         {open && <AuthDialog key={modoDialogo} modoInicial={modoDialogo} onClose={() => setOpen(false)} />}
