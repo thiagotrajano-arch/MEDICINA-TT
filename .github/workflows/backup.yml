@@ -6,10 +6,12 @@ name: Backup e keep-alive
 on:
   schedule:
     - cron: "0 5 * * 1" # segunda-feira 05:00 UTC
+    - cron: "15 5 * * *" # keep-alive diario 05:15 UTC
   workflow_dispatch: {}
 
 jobs:
   backup:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '0 5 * * 1' }}
     runs-on: ubuntu-latest
     env:
       SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
