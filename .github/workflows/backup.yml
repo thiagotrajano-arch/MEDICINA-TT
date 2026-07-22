@@ -20,10 +20,15 @@ jobs:
       - name: pg_dump
         if: ${{ env.SUPABASE_DB_URL != '' }}
         run: |
-          sudo apt-get update && sudo apt-get install -y postgresql-client-17
           STAMP=$(date -u +%Y%m%d)
-          pg_dump "$SUPABASE_DB_URL" --no-owner --no-privileges -Fc -f "backup_${STAMP}.dump"
-          echo "BACKUP_FILE=backup_${STAMP}.dump" >> "$GITHUB_ENV"
+          BACKUP_FILE="backup_${STAMP}.dump"
+          docker run --rm \
+            -e SUPABASE_DB_URL \
+            -e BACKUP_FILE \
+            -v "$PWD:/backup" \
+            postgres:17-alpine \
+            sh -c 'pg_dump "$SUPABASE_DB_URL" --no-owner --no-privileges -Fc -f "/backup/$BACKUP_FILE"'
+          echo "BACKUP_FILE=$BACKUP_FILE" >> "$GITHUB_ENV"
       - name: Guardar backup como artefato
         if: ${{ env.BACKUP_FILE != '' }}
         uses: actions/upload-artifact@v4
