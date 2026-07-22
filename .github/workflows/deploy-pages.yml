@@ -20,6 +20,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Valores publicos usados pelo cliente web. A service-role permanece
+      # exclusivamente local e nunca entra no artefato do GitHub Pages.
+      NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,6 +32,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Validar configuração pública de autenticação
+        run: |
+          test -n "$NEXT_PUBLIC_SUPABASE_URL"
+          test -n "$NEXT_PUBLIC_SUPABASE_ANON_KEY"
       - name: Build (static export)
         env:
           GITHUB_PAGES: "true"
