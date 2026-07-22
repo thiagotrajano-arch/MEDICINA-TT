@@ -24,7 +24,7 @@ jobs:
           BACKUP_FILE="backup_${STAMP}.dump"
           docker run --rm \
             -e SUPABASE_DB_URL \
-            -e BACKUP_FILE \
+            -e BACKUP_FILE="$BACKUP_FILE" \
             -v "$PWD:/backup" \
             postgres:17-alpine \
             sh -c 'pg_dump "$SUPABASE_DB_URL" --no-owner --no-privileges -Fc -f "/backup/$BACKUP_FILE"'
