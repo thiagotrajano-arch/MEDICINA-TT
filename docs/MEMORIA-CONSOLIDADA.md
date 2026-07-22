@@ -31,6 +31,7 @@ O estado quantitativo e as pendências atuais devem ser obtidos de `PROXIMOS-PAS
 - Preventiva integra MFC/Atenção Primária; não criar disciplina redundante.
 - Processamento de IA ocorre nas sessões, não como API paga embutida no produto.
 - Obsidian é o segundo cérebro pessoal para dúvidas, conexões e decisões de estudo. O vault local não substitui os arquivos de handoff do repositório e não exige login. Obsidian Sync, caso desejado, é um serviço separado.
+- Backup lógico semanal do Supabase e keep-alive diário estão ativos no GitHub Actions. O primeiro artefato real foi validado em 2026-07-21 com retenção de 90 dias. Em CI, usar Supavisor session mode/IPv4 e cliente PostgreSQL 17; o endpoint direto do plano atual é IPv6 e não é alcançável pelos runners do GitHub.
 
 ## Fontes prioritárias
 

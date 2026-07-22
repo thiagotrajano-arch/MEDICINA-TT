@@ -67,6 +67,6 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 ## Pendências externas exatas
 
 - Corrigir `Site URL` e redirect allowlist no Auth do Supabase para o domínio público. Isso requer painel administrativo ou PAT do Management API; não tentar com service role.
-- Cadastrar `SUPABASE_DB_URL` e `SUPABASE_SERVICE_ROLE_KEY` como GitHub Actions Secrets somente após autorização explícita do usuário. As chaves públicas já são GitHub Variables.
+- `SUPABASE_DB_URL` e `SUPABASE_SERVICE_ROLE_KEY` já estão cadastrados como GitHub Actions Secrets com autorização explícita do usuário. O backup semanal foi validado no run `29885112038`; usa Supavisor session mode/IPv4 e `postgres:17-alpine`, pois o endpoint direto é IPv6 e o servidor está no PostgreSQL 17.
 - Para Drive, obter autorização Google própria e `DRIVE_FOLDER_IDS`; nunca inventar, solicitar senha de e-mail ou reutilizar credencial alheia.
 - Não há nova extração segura até o usuário fornecer os PDFs faltantes descritos em `PROXIMOS-PASSOS.md`.
