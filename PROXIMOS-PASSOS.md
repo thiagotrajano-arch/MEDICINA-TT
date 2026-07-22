@@ -634,3 +634,16 @@ errada é pior que uma questão a menos.
 - Preparada sincronização idempotente com `resposta_usuario` e `simulado_resultado`; a migration `0003_progresso_sincronizado.sql` adiciona IDs de evento para impedir duplicações e foi aplicada no Supabase.
 - O projeto Supabase está com login anônimo e Google desativados. Por segurança, nenhuma chave privilegiada foi exposta no site: até um método de login ser habilitado, o dashboard informa que os dados estão salvos no dispositivo e tentará sincronizar novamente em uma sessão futura.
 - Validações concluídas: typecheck, seed (36 disciplinas, 44 resumos, 302 questões) e build estático de 230 páginas.
+
+## Sessão 2026-07-21 — progresso completo, dashboard e segundo cérebro
+
+- Implementado progresso `local-first` também para resumos e casos: primeiro/último acesso, etapa do caso, conclusão, favorito e anotação pessoal.
+- A migration `0004_progresso_conteudo.sql` foi aplicada no Supabase. A tabela usa chave por usuário/item e RLS; teste com conta temporária confirmou escrita do próprio registro e bloqueio de `owner_id` divergente. A conta temporária foi apagada.
+- Resumos e casos agora exibem controles reais de favorito, conclusão e anotação com salvamento automático. Casos retomam na etapa salva e a discussão final conclui o caso.
+- O dashboard agora mostra resumos concluídos, casos concluídos, favoritos e anotações, além de questões e simulados. Zerar progresso remove também esses registros localmente e na nuvem.
+- Workflows de backup/keep-alive e Drive foram corrigidos para usar GitHub Variables nas chaves públicas. Os segredos `SUPABASE_DB_URL` e `SUPABASE_SERVICE_ROLE_KEY` ainda precisam de autorização explícita do usuário para envio ao cofre criptografado do GitHub; nenhum valor foi transmitido ou exposto nesta sessão.
+- A sincronização do Google Drive permanece preparada, mas não pode operar sem autorização Google e `DRIVE_FOLDER_IDS`. Não há credencial Google disponível no ambiente.
+- A recuperação de senha ainda cai em `localhost` porque o `Site URL`/allowlist do projeto Supabase exige autoridade do painel ou Personal Access Token do Management API. A service role do banco não tem permissão de control plane.
+- Revisão de conteúdo: não surgiram novas fontes. Os 125 tópicos identificados continuam cobertos; os 89 scaffolds e os bancos exatos Cirurgia 160/MFC 80 aguardam PDFs do usuário. Não inventar extração para preencher contagem.
+- Obsidian 1.12.7 instalado e o vault local atualizado com `Index`, `Codex Medicus Dashboard` e `Fontes Pendentes`. Uso local não exige conta; Obsidian Sync é opcional e separado.
+- Validações: lint 0 erros, TypeScript 0 erros, build de produção com 322 páginas e RLS confirmado.

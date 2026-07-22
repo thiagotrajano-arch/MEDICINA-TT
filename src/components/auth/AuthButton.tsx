@@ -4,12 +4,20 @@ import { FormEvent, useEffect, useState } from "react";
 import type { User } from "@supabase/supabase-js";
 import { KeyRound, Loader2, LogIn, LogOut, UserRound, X } from "lucide-react";
 import { sincronizarProgresso } from "@/lib/progresso";
+import { sincronizarProgressoConteudos } from "@/lib/progresso-conteudo";
 
 type ModoAuth = "entrar" | "criar" | "recuperar" | "nova-senha";
 
 async function carregarSupabase() {
   const { getSupabaseAnon } = await import("@/infra/supabase/client");
   return getSupabaseAnon();
+}
+
+async function sincronizarTudo(): Promise<void> {
+  await Promise.all([
+    comPrazo(sincronizarProgresso(), 8000).catch(() => undefined),
+    comPrazo(sincronizarProgressoConteudos(), 8000).catch(() => undefined),
+  ]);
 }
 
 function comPrazo<T>(operacao: PromiseLike<T>, milissegundos = 15000): Promise<T> {
@@ -119,7 +127,7 @@ function AuthDialog({ onClose, modoInicial }: { onClose: () => void; modoInicial
         );
         if (error) setMensagem(error.message === "Invalid login credentials" ? "E-mail ou senha inválidos." : error.message);
         else {
-          await comPrazo(sincronizarProgresso(), 8000).catch(() => {});
+          await sincronizarTudo();
           window.location.reload();
         }
       } else if (modo === "criar") {
@@ -129,7 +137,7 @@ function AuthDialog({ onClose, modoInicial }: { onClose: () => void; modoInicial
         if (error) setMensagem(error.message);
         else if (!data.session) setMensagem("Cadastro criado. Confirme o e-mail recebido e depois entre.");
         else {
-          await comPrazo(sincronizarProgresso(), 8000).catch(() => {});
+          await sincronizarTudo();
           window.location.reload();
         }
       } else if (modo === "recuperar") {

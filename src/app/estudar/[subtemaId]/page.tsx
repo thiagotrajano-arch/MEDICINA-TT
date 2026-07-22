@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, ListChecks, BookMarked, Sparkles, FileClock } from "lucide-react";
+import { ChevronRight, ListChecks, Sparkles, FileClock } from "lucide-react";
 import { getContentRepository } from "@/infra/content";
 import { MiniMarkdown } from "@/components/content/MiniMarkdown";
 import { Figuras } from "@/components/figuras/Figura";
+import { ProgressoConteudoClient } from "@/components/progresso/ProgressoConteudoClient";
 
 export async function generateStaticParams() {
   const repo = await getContentRepository();
@@ -59,11 +60,9 @@ export default async function EstudarPage({
             {questoes.length} questões
           </Link>
         )}
-        <button className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text hover:border-border-strong">
-          <BookMarked className="size-4 text-text-faint" />
-          Favoritar
-        </button>
       </div>
+
+      <ProgressoConteudoClient tipo="resumo" itemId={id} />
 
       {/* Content */}
       {conteudo ? (

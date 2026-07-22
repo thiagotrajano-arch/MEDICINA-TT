@@ -4,24 +4,32 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Flame, Target, ListChecks, TrendingUp, Sparkles, ArrowRight,
-  Timer, BookOpen, RotateCcw,
+  Timer, BookOpen, RotateCcw, BookMarked, StickyNote, Stethoscope,
 } from "lucide-react";
 import type { Disciplina } from "@/domain/content/types";
 import {
   calcularEstatisticas, lerRespostas, lerSimulados, limparProgresso, sincronizarProgresso,
   type Estatisticas, type ResultadoSimulado,
 } from "@/lib/progresso";
+import {
+  lerProgressoConteudos,
+  limparProgressoConteudos,
+  sincronizarProgressoConteudos,
+  type ProgressoConteudo,
+} from "@/lib/progresso-conteudo";
 
 interface Props {
   disciplinas: Disciplina[];
   totalQuestoes: number;
   totalResumos: number;
+  totalCasos: number;
   altoRendimento: { id: string; nome: string; marca: string; temConteudo: boolean }[];
 }
 
-export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, altoRendimento }: Props) {
+export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, totalCasos, altoRendimento }: Props) {
   const [stats, setStats] = useState<Estatisticas | null>(null);
   const [simulados, setSimulados] = useState<ResultadoSimulado[]>([]);
+  const [conteudos, setConteudos] = useState<ProgressoConteudo[]>([]);
   const [sincronizado, setSincronizado] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -30,18 +38,24 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, alto
       if (!ativo) return;
       setStats(calcularEstatisticas(lerRespostas()));
       setSimulados(lerSimulados());
+      setConteudos(lerProgressoConteudos());
     });
-    void sincronizarProgresso().then((progresso) => {
+    void Promise.all([sincronizarProgresso(), sincronizarProgressoConteudos()]).then(([progresso, leitura]) => {
       if (!ativo) return;
       setStats(calcularEstatisticas(progresso.respostas));
       setSimulados(progresso.simulados);
-      setSincronizado(progresso.sincronizado);
+      setConteudos(leitura.conteudos);
+      setSincronizado(progresso.sincronizado && leitura.sincronizado);
     });
     return () => { ativo = false; };
   }, []);
 
   const nomeDisc = (id: string) => disciplinas.find((d) => d.id === id)?.nome ?? id;
-  const temProgresso = (stats?.respondidas ?? 0) > 0;
+  const temProgresso = (stats?.respondidas ?? 0) > 0 || conteudos.length > 0;
+  const resumosConcluidos = conteudos.filter((item) => item.tipo === "resumo" && item.concluido).length;
+  const casosConcluidos = conteudos.filter((item) => item.tipo === "caso" && item.concluido).length;
+  const favoritos = conteudos.filter((item) => item.favorito).length;
+  const anotacoes = conteudos.filter((item) => item.anotacao.trim()).length;
 
   return (
     <div className="mx-auto max-w-5xl px-5 py-8 sm:px-8 sm:py-10">
@@ -62,6 +76,13 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, alto
           </p>
         )}
       </div>
+
+      <section className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4" aria-label="Progresso de leitura e casos">
+        <Tile icon={BookOpen} label="Resumos concluídos" valor={String(resumosConcluidos)} hint={`${totalResumos} disponíveis`} />
+        <Tile icon={Stethoscope} label="Casos concluídos" valor={String(casosConcluidos)} hint={`${totalCasos} disponíveis`} />
+        <Tile icon={BookMarked} label="Favoritos" valor={String(favoritos)} hint="resumos e casos" />
+        <Tile icon={StickyNote} label="Anotações" valor={String(anotacoes)} hint="salvas na conta" />
+      </section>
 
       {/* Stat tiles — os números-síntese */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -181,8 +202,10 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, alto
           onClick={async () => {
             if (confirm("Apagar todo o seu progresso salvo neste dispositivo e na nuvem? Não dá para desfazer.")) {
               await limparProgresso();
+              await limparProgressoConteudos();
               setStats(calcularEstatisticas([]));
               setSimulados([]);
+              setConteudos([]);
             }
           }}
           className="mt-8 inline-flex items-center gap-1.5 text-xs text-text-faint hover:text-danger"

@@ -27,6 +27,7 @@ export default async function DashboardPage() {
       disciplinas={disciplinas}
       totalQuestoes={stats.questoes}
       totalResumos={stats.subtemasComConteudo}
+      totalCasos={stats.casos}
       altoRendimento={altoRendimento}
     />
   );

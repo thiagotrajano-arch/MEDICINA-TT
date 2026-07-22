@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   ChevronLeft, Eye, Lightbulb, Stethoscope, FlaskConical, Activity,
@@ -9,7 +9,12 @@ import {
 import type { CasoClinico, TipoEtapa } from "@/domain/content/types";
 import { MiniMarkdown } from "@/components/content/MiniMarkdown";
 import { Figura } from "@/components/figuras/Figura";
+import { ProgressoConteudoClient } from "@/components/progresso/ProgressoConteudoClient";
 import { cn } from "@/lib/cn";
+import {
+  atualizarProgressoConteudo,
+  lerProgressoConteudo,
+} from "@/lib/progresso-conteudo";
 
 const ICONE: Record<TipoEtapa, React.ElementType> = {
   historia: FileText,
@@ -32,6 +37,19 @@ export function CasoClient({ caso }: { caso: CasoClinico }) {
   const total = caso.etapas.length;
   const todasReveladas = reveladas >= total;
 
+  useEffect(() => {
+    let ativo = true;
+    void Promise.resolve().then(() => {
+      if (!ativo) return;
+      const salvo = lerProgressoConteudo("caso", caso.id);
+      if (salvo) {
+        setReveladas(Math.max(1, Math.min(total, salvo.etapa || 1)));
+        setVerDiscussao(salvo.concluido);
+      }
+    });
+    return () => { ativo = false; };
+  }, [caso.id, total]);
+
   return (
     <div className="mx-auto max-w-3xl px-5 py-8 sm:px-8">
       <Link href="/casos" className="mb-4 inline-flex items-center gap-1.5 text-sm text-text-faint hover:text-text">
@@ -45,6 +63,8 @@ export function CasoClient({ caso }: { caso: CasoClinico }) {
           <span key={t} className="rounded-full bg-surface-2 px-2.5 py-0.5 text-xs text-text-muted">{t}</span>
         ))}
       </div>
+
+      <ProgressoConteudoClient tipo="caso" itemId={caso.id} />
 
       {/* progresso do caso */}
       <div className="mt-5 flex items-center gap-2">
@@ -97,7 +117,11 @@ export function CasoClient({ caso }: { caso: CasoClinico }) {
       {/* avançar */}
       {!todasReveladas && (
         <button
-          onClick={() => setReveladas((r) => r + 1)}
+          onClick={() => setReveladas((r) => {
+            const proxima = Math.min(total, r + 1);
+            atualizarProgressoConteudo("caso", caso.id, { etapa: proxima });
+            return proxima;
+          })}
           className="mt-5 w-full rounded-xl bg-accent px-5 py-3 text-sm font-bold text-accent-contrast hover:opacity-90"
         >
           Próxima etapa →
@@ -109,7 +133,10 @@ export function CasoClient({ caso }: { caso: CasoClinico }) {
         <div className="mt-6">
           {!verDiscussao ? (
             <button
-              onClick={() => setVerDiscussao(true)}
+              onClick={() => {
+                setVerDiscussao(true);
+                atualizarProgressoConteudo("caso", caso.id, { etapa: total, concluido: true });
+              }}
               className="w-full rounded-xl border border-border bg-surface px-5 py-3 text-sm font-bold text-text hover:border-accent"
             >
               Ver discussão do caso

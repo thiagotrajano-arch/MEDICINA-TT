@@ -15,6 +15,8 @@ Use um clone local do repositório. O arquivo `.env.local` contém as credenciai
 
 Estado operacional em 2026-07-21: login por e-mail/senha ativo, sessão persistente e progresso local-first sincronizado com Supabase/RLS. Não reintroduzir autenticação anônima: ela está desabilitada no projeto.
 
+O progresso sincronizado inclui questões, simulados, resumos/casos concluídos, etapa de casos, favoritos e anotações. A migration `0004_progresso_conteudo.sql` já foi aplicada e validada com uma conta temporária apagada ao fim do teste.
+
 ## Antes de trabalhar
 
 1. Ler `AGENTS.md`.
@@ -61,3 +63,10 @@ Mudanças em `main` acionam o workflow de GitHub Pages. Antes de publicar: typec
 ## Segurança
 
 Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas somente para a tarefa autorizada, mas não devem ser reproduzidas em prompts, relatórios, commits ou mensagens. Recomenda-se rotacioná-las quando a migração estiver estabilizada.
+
+## Pendências externas exatas
+
+- Corrigir `Site URL` e redirect allowlist no Auth do Supabase para o domínio público. Isso requer painel administrativo ou PAT do Management API; não tentar com service role.
+- Cadastrar `SUPABASE_DB_URL` e `SUPABASE_SERVICE_ROLE_KEY` como GitHub Actions Secrets somente após autorização explícita do usuário. As chaves públicas já são GitHub Variables.
+- Para Drive, obter autorização Google própria e `DRIVE_FOLDER_IDS`; nunca inventar, solicitar senha de e-mail ou reutilizar credencial alheia.
+- Não há nova extração segura até o usuário fornecer os PDFs faltantes descritos em `PROXIMOS-PASSOS.md`.
