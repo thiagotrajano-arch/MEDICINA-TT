@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-21 — login, sincronização do progresso e encerramento da extração disponível. Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-23 — questões já respondidas deixam de repetir. Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
@@ -13,6 +13,53 @@
 | **Figuras** | 66 (12 diagramas SVG + 54 imagens reais licenciadas; 53 arquivos, pois uma radiografia serve a dois achados) |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+## O que foi feito nesta sessão (2026-07-23 — Claude, banco de questões sem repetição)
+
+Sessão curta pedida pelo usuário via Obsidian: "acesse os próximos passos e faça". O
+item concreto e não bloqueado por autorização prévia na lista "Tarefas de amanhã" do
+`Codex Medicus Dashboard.md` era: parar de mostrar questões já respondidas ao voltar
+para a tela de Questões.
+
+### Correção: fila de questões deixa de ciclar e de repetir já respondidas
+`src/components/questoes/QuizClient.tsx` usava um índice com incremento módulo
+(`(i + 1) % lista.length`), então ao chegar na última questão da seleção ele voltava
+para a primeira — inclusive dentro da mesma sessão. Reescrito para um modelo de fila:
+a questão respondida sai da fila ao clicar "Próxima", e ao carregar a página o
+componente lê o histórico de respostas (`lerRespostas()` local e depois
+`sincronizarProgresso()` da conta) e monta a fila já excluindo o que foi respondido
+antes — em qualquer dispositivo, não só neste navegador.
+
+Quando a seleção acaba (tudo já respondido), a tela mostra quantas questões foram
+concluídas e oferece "Revisar questões já respondidas" para refazer tudo de propósito.
+Enquanto ainda sobram questões novas, um link discreto no cabeçalho ("N já respondidas
+(ocultas) — revisar") deixa isso acessível a qualquer momento, sem exigir que o aluno
+esgote a lista primeiro.
+
+### Verificação feita
+- `NODE_OPTIONS=--max-old-space-size=6144 npx tsc --noEmit` — 0 erros.
+- `npm run lint` — 0 erros.
+- `npx tsx scripts/seed-supabase.mts` — ok (36 disciplinas, 159 resumos, 528 questões).
+- Navegador (dev server em `:3001`, pós-seed): respondida 1 questão de GO, "Próxima"
+  avançou sem repetir; recarregando a página (`/questoes`) a questão respondida não
+  reapareceu (528 → 527, com aviso "1 já respondidas (ocultas) — revisar"); clicar em
+  "revisar" trouxe a seleção completa de volta, incluindo a questão já respondida;
+  trocar de disciplina voltou a ocultar automaticamente. Sem erros no console.
+- `npm run build` — build estático de produção, 322 páginas, sucesso.
+- Commit `b1ac57a` em `main` (repositório local, **ainda não enviado ao GitHub** —
+  aguardando confirmação do usuário antes do push, já que isso dispara o deploy do
+  GitHub Pages).
+
+### Achado à parte: clone duplicado e desatualizado do repositório
+`C:\Users\Adm\Desktop\med\codex-medicus\` é um checkout separado do mesmo repositório
+(`MEDICINA-TT`), **19 commits atrás** do `codex-medicus-live` (parado em `8fee480`,
+antes de todo o trabalho de login/sincronização) e com duas alterações locais nunca
+commitadas: `src/content/conteudos/go.ts` e `src/content/taxonomy.ts`. Não foi tocado
+nesta sessão — não dá para saber, sem perguntar ao usuário, se esse diff pendente é
+trabalho intencional (do Codex ou de uma sessão anterior) ainda não commitado, ou
+apenas um workspace abandonado. **Não descartar essas alterações sem confirmar com o
+usuário primeiro.** Recomendação: o usuário decidir se apaga essa pasta antiga ou
+resgata o diff, para não haver dois lugares divergentes editando o mesmo site.
 
 ## O que foi feito nesta sessão (2026-07-21 — login, progresso e extração final)
 
