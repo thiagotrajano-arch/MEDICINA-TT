@@ -1,14 +1,19 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { Check, X, ChevronRight, RotateCcw, ListChecks } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Check, X, ChevronRight, RotateCcw, ListChecks, PartyPopper } from "lucide-react";
 import type { Disciplina, Questao } from "@/domain/content/types";
-import { registrarResposta } from "@/lib/progresso";
+import { registrarResposta, lerRespostas, sincronizarProgresso } from "@/lib/progresso";
 import { cn } from "@/lib/cn";
 
 /**
  * Interactive quiz. Receives questions + disciplines as props from the server
  * page, so it is fully decoupled from where the data comes from (static/Supabase).
+ *
+ * Por padrão, questões já respondidas em sessões anteriores (locais ou
+ * sincronizadas) não voltam a aparecer — evita repetir o que o aluno já fez
+ * ao simplesmente recarregar a página. `mostrarRespondidas` permite revisar
+ * a seleção inteira de novo quando o aluno pedir.
  */
 export function QuizClient({
   questoes,
@@ -18,26 +23,58 @@ export function QuizClient({
   disciplinas: Disciplina[];
 }) {
   const [filtro, setFiltro] = useState<string>("todas");
+  const [mostrarRespondidas, setMostrarRespondidas] = useState(false);
+  const [respondidasBase, setRespondidasBase] = useState<Set<string>>(new Set());
+
+  const [fila, setFila] = useState<Questao[]>(questoes);
+  const [totalNaSelecao, setTotalNaSelecao] = useState(questoes.length);
+  const [totalFila, setTotalFila] = useState(questoes.length);
+  const [escolha, setEscolha] = useState<string | null>(null);
+  const [acertos, setAcertos] = useState(0);
+  const [respondidas, setRespondidas] = useState(0);
 
   const disciplinasComQ = useMemo(() => {
     const ids = new Set(questoes.map((q) => q.disciplinaId));
     return disciplinas.filter((d) => ids.has(d.id));
   }, [questoes, disciplinas]);
 
-  const lista = useMemo(
-    () => (filtro === "todas" ? questoes : questoes.filter((q) => q.disciplinaId === filtro)),
-    [filtro, questoes]
-  );
+  function montarFila(filtroAtual: string, incluirRespondidas: boolean, base: Set<string>) {
+    const pool = filtroAtual === "todas" ? questoes : questoes.filter((q) => q.disciplinaId === filtroAtual);
+    const disponiveis = incluirRespondidas ? pool : pool.filter((q) => !base.has(q.id));
+    setFila(disponiveis);
+    setTotalNaSelecao(pool.length);
+    setTotalFila(disponiveis.length);
+    setEscolha(null);
+    setAcertos(0);
+    setRespondidas(0);
+  }
 
-  const [idx, setIdx] = useState(0);
-  const [escolha, setEscolha] = useState<string | null>(null);
-  const [acertos, setAcertos] = useState(0);
-  const [respondidas, setRespondidas] = useState(0);
+  // Carrega o histórico de respostas (local, depois reconciliado com a conta)
+  // após montar no cliente, para não divergir da renderização do servidor.
+  useEffect(() => {
+    let ativo = true;
+    void Promise.resolve().then(() => {
+      if (!ativo) return;
+      const base = new Set(lerRespostas().map((r) => r.questaoId));
+      setRespondidasBase(base);
+      montarFila(filtro, mostrarRespondidas, base);
+    });
+    void sincronizarProgresso().then((p) => {
+      if (!ativo) return;
+      const base = new Set(p.respostas.map((r) => r.questaoId));
+      setRespondidasBase(base);
+      montarFila(filtro, mostrarRespondidas, base);
+    });
+    return () => {
+      ativo = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const questao = lista[idx];
+  const questao = fila[0];
 
   const responder = (letra: string) => {
-    if (escolha) return;
+    if (escolha || !questao) return;
     const acertou = !!questao.alternativas.find((a) => a.letra === letra)?.correta;
     setEscolha(letra);
     setRespondidas((r) => r + 1);
@@ -48,21 +85,42 @@ export function QuizClient({
 
   const proxima = () => {
     setEscolha(null);
-    setIdx((i) => (i + 1) % lista.length);
+    setFila((f) => f.slice(1));
   };
 
   const reset = (novoFiltro: string) => {
     setFiltro(novoFiltro);
-    setIdx(0);
-    setEscolha(null);
-    setAcertos(0);
-    setRespondidas(0);
+    setMostrarRespondidas(false);
+    montarFila(novoFiltro, false, respondidasBase);
   };
 
+  const revisarRespondidas = () => {
+    setMostrarRespondidas(true);
+    montarFila(filtro, true, respondidasBase);
+  };
+
+  const ocultas = totalNaSelecao - totalFila;
+
   if (!questao) {
+    const tudoRespondido = totalNaSelecao > 0 && !mostrarRespondidas;
     return (
       <div className="mx-auto max-w-3xl px-5 py-16 text-center">
-        <p className="text-text-muted">Nenhuma questão nesta seleção.</p>
+        {tudoRespondido ? (
+          <>
+            <PartyPopper className="mx-auto mb-3 size-8 text-accent" />
+            <p className="text-text-muted">
+              Você já respondeu todas as {totalNaSelecao} questões desta seleção.
+            </p>
+            <button
+              onClick={revisarRespondidas}
+              className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-contrast hover:opacity-90"
+            >
+              Revisar questões já respondidas
+            </button>
+          </>
+        ) : (
+          <p className="text-text-muted">Nenhuma questão nesta seleção.</p>
+        )}
       </div>
     );
   }
@@ -77,7 +135,16 @@ export function QuizClient({
             <ListChecks className="size-6 text-accent" /> Questões
           </h1>
           <p className="text-sm text-text-faint">
-            {lista.length} questões · estilo OMED / residência
+            {totalFila} questões · estilo OMED / residência
+            {ocultas > 0 && !mostrarRespondidas && (
+              <>
+                {" "}
+                ·{" "}
+                <button onClick={revisarRespondidas} className="underline hover:text-text-muted">
+                  {ocultas} já respondidas (ocultas) — revisar
+                </button>
+              </>
+            )}
           </p>
         </div>
         <div className="text-right">
@@ -108,7 +175,7 @@ export function QuizClient({
       >
         <div className="mb-3 flex items-center gap-2 text-xs">
           <span className="rounded-full bg-surface-2 px-2 py-0.5 font-semibold text-text-muted">
-            {idx + 1} / {lista.length}
+            {respondidas + 1} / {totalFila}
           </span>
           <span className="rounded-full bg-accent-soft px-2 py-0.5 font-semibold text-accent">
             {questao.estilo}
