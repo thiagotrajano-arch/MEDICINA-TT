@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-23 — 7 imagens clínicas novas + raio-X real da OMED. Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-23 — biblioteca de mídia organizada por tema/subtema. Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
@@ -13,6 +13,36 @@
 | **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+## O que foi feito nesta sessão (2026-07-23 — Claude, organização da biblioteca de mídia)
+
+Continuação da sessão de hoje, seguindo a lista priorizada do `Codex Medicus
+Dashboard.md` no Obsidian: item "Organização da mídia — separar a biblioteca por
+temas e subtemas, preservando os vínculos dos resumos e casos".
+
+### `/midia` agora agrupa por tema, não só por disciplina
+Antes, a galeria era uma grade única filtrada só por disciplina (chip "Cirurgia",
+"Infectologia" etc.), sem hierarquia — 73 figuras soltas numa lista. Agora
+`MidiaClient.tsx` monta um mapa `subtemaId -> {disciplina, tema}` direto da
+taxonomia real (`DISCIPLINAS` de `taxonomy.ts`, não texto duplicado à mão) e agrupa
+as figuras já ancoradas (`ONDE_APARECE`) por tema, com a disciplina como subtítulo e
+a contagem por grupo. As figuras ainda sem resumo correspondente (48 de 73 hoje)
+ficam num grupo honesto "Ainda sem tema associado" no fim da lista filtrada, em vez
+de se misturarem soltas entre as organizadas.
+
+O filtro por disciplina (chips) continua funcionando normalmente em conjunto com o
+agrupamento — selecionar "Cirurgia" mostra só os grupos/figuras de Cirurgia. Todos
+os links "Estudar X" para resumo (e, no futuro, para caso clínico — o campo já
+existe no tipo `EtapaCaso.figura`, mas nenhum caso usa ainda) continuam exatamente
+como estavam; nada foi removido ou reescrito, só reagrupado.
+
+### Verificação feita
+`tsc --noEmit` (0 erros), `npm run lint` (0 erros), conferido no navegador: "73
+figuras · 17 temas" (16 temas reais + o grupo "sem tema"), filtro "Cirurgia" isolado
+corretamente (8 figuras em 2 grupos), links "Estudar X" abrindo o resumo certo.
+`npm run build` — 322 páginas, sucesso (2 timeouts transitórios de SSG,
+sem relação com esta mudança, resolvidos no retry automático). Commit `83e6412`,
+push feito para `main`.
 
 ## O que foi feito nesta sessão (2026-07-23 — Claude, mídia clínica: 7 imagens novas)
 
