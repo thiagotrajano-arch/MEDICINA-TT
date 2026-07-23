@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-23 — questões já respondidas deixam de repetir. Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-23 — 7 imagens clínicas novas + raio-X real da OMED. Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
@@ -10,9 +10,56 @@
 | **Resumos** | **159** de 248 subtemas (89 scaffolds sem fonte local identificada) |
 | **Questões** | **528** (GO 113 · Ped 70 · Inf 121 · MFC 114 · Cir 110) |
 | **Casos clínicos** | **21** (GO 6 · Ped 6 · Inf 6 · Cir 2 · MFC 1) |
-| **Figuras** | 66 (12 diagramas SVG + 54 imagens reais licenciadas; 53 arquivos, pois uma radiografia serve a dois achados) |
+| **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+## O que foi feito nesta sessão (2026-07-23 — Claude, mídia clínica: 7 imagens novas)
+
+Continuação da sessão de hoje (após correção de questões repetidas e releitura do
+raio-X), seguindo a lista priorizada do `Codex Medicus Dashboard.md` no Obsidian:
+item "Mídia clínica — localizar pelo menos 30 imagens de casos clínicos".
+
+### 7 imagens reais adicionadas, licença verificada via API antes do download
+`Meningococcemia — púrpura fulminante`, `Erisipela`, `Isquemia mesentérica (TC)`,
+`Bócio`, `Icterícia escleral`, `AVC isquêmico (TC)`, `Fibrilação atrial (ECG)` — todas
+do Wikimedia Commons, com `extmetadata.LicenseShortName`/`Artist` conferidos via API
+antes de baixar (mesmo processo já estabelecido em sessões anteriores). Uma delas
+(meningococcemia) tem permissão confirmada por VRT (equipe de licenciamento da
+Wikimedia). Adicionadas ao `registry.tsx`; a maioria ainda não tem resumo
+correspondente para ancorar (Clínica Médica e Endocrinologia são só scaffolds no
+site hoje), então ficam disponíveis na Biblioteca (`/midia`) aguardando esse
+conteúdo — mesmo padrão já usado para ~44 das 54 imagens anteriores.
+
+### 4 buscas sem resultado adequado, documentadas como indisponíveis
+Placenta prévia (US), hérnia inguinal (TC), diverticulite (TC) e fratura de quadril
+(RX) — o Wikimedia Commons só tinha ilustrações/diagramas ou tratados médicos
+antigos digitalizados para esses temas, nenhuma foto/exame real com licença aberta.
+Não usados substitutos de qualidade duvidosa.
+
+### Verificação feita
+`tsc --noEmit` (0 erros), `npm run lint` (0 erros), as 7 imagens conferidas com
+`fetch()` direto no navegador (HTTP 200, content-type e tamanho corretos — evita o
+problema conhecido de `<img loading="lazy">` não disparar `load`/`error` em
+navegador automatizado), `npm run build` (322 páginas, sucesso). Commit `57a4207`,
+push feito para `main`.
+
+### Descoberta relevante para a próxima leva de mídia
+Não existe discipline "Clínica Médica" nem "Endocrinologia" povoada no site hoje —
+são só `scaffold()` na taxonomia, sem nenhum resumo. Isso bate com o achado da
+releitura do raio-X real (ver seção abaixo): Clínica Médica é um bloco pesado nas
+provas da OMED, não "transversal" como se pensava. Das 61 imagens reais já
+licenciadas, a maioria com prefixo `clm-` (insuficiência cardíaca, HSA, AVC
+hemorrágico, TEP, retinopatias, acantose, cardiomegalia, e agora icterícia escleral/
+AVC isquêmico/fibrilação atrial) está represada esperando essa disciplina ser
+escrita — quando isso acontecer, é só ancorar via `figura:` nos resumos novos, as
+imagens já estão prontas.
+
+### Restante da meta (≥30 imagens) para sessão futura
+7 de ~26 ainda faltam para a meta de "pelo menos 30" desta leva. Próximos alvos
+sugeridos: buscar por radiologia (Radiopaedia — linkar, não embutir, conforme
+`docs/PROMPTS-MASTER.md`) para hérnia inguinal, diverticulite e fratura de quadril;
+tentar mais imagens de Cirurgia/Ortopedia/Ginecologia que ainda só têm diagrama.
 
 ## O que foi feito nesta sessão (2026-07-23 — Claude, banco de questões sem repetição)
 
