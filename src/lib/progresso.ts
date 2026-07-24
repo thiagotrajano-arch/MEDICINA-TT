@@ -121,19 +121,20 @@ async function sessaoSupabase() {
 async function enviarResposta(r: RespostaRegistrada): Promise<void> {
   const auth = await sessaoSupabase();
   if (!auth) return;
-  await auth.supabase.from("resposta_usuario").upsert({
+  const { error } = await auth.supabase.from("resposta_usuario").upsert({
     owner_id: auth.user.id,
     client_event_id: r.id,
     questao_id: r.questaoId,
     correta: r.correta,
     respondido_em: new Date(r.em).toISOString(),
   }, { onConflict: "owner_id,client_event_id", ignoreDuplicates: true });
+  if (error) console.error("[progresso] falha ao sincronizar resposta:", error);
 }
 
 async function enviarSimulado(r: ResultadoSimulado): Promise<void> {
   const auth = await sessaoSupabase();
   if (!auth) return;
-  await auth.supabase.from("simulado_resultado").upsert({
+  const { error } = await auth.supabase.from("simulado_resultado").upsert({
     owner_id: auth.user.id,
     client_event_id: r.id,
     finalizado_em: new Date(r.em).toISOString(),
@@ -142,6 +143,7 @@ async function enviarSimulado(r: ResultadoSimulado): Promise<void> {
     total: r.total,
     relatorio: { duracaoSeg: r.duracaoSeg, porDisciplina: r.porDisciplina },
   }, { onConflict: "owner_id,client_event_id", ignoreDuplicates: true });
+  if (error) console.error("[progresso] falha ao sincronizar simulado:", error);
 }
 
 /** Envia pendencias locais e incorpora eventos remotos no dashboard. */
@@ -155,7 +157,7 @@ export async function sincronizarProgresso(): Promise<{
   const auth = await sessaoSupabase();
   if (!auth) return { respostas: respostasLocais, simulados: simuladosLocais, sincronizado: false };
 
-  await Promise.all([
+  const [envioRespostas, envioSimulados] = await Promise.all([
     respostasLocais.length
       ? auth.supabase.from("resposta_usuario").upsert(respostasLocais.map((r) => ({
           owner_id: auth.user.id,
@@ -164,7 +166,7 @@ export async function sincronizarProgresso(): Promise<{
           correta: r.correta,
           respondido_em: new Date(r.em).toISOString(),
         })), { onConflict: "owner_id,client_event_id", ignoreDuplicates: true })
-      : Promise.resolve(),
+      : Promise.resolve(null),
     simuladosLocais.length
       ? auth.supabase.from("simulado_resultado").upsert(simuladosLocais.map((r) => ({
           owner_id: auth.user.id,
@@ -175,8 +177,10 @@ export async function sincronizarProgresso(): Promise<{
           total: r.total,
           relatorio: { duracaoSeg: r.duracaoSeg, porDisciplina: r.porDisciplina },
         })), { onConflict: "owner_id,client_event_id", ignoreDuplicates: true })
-      : Promise.resolve(),
+      : Promise.resolve(null),
   ]);
+  if (envioRespostas?.error) console.error("[progresso] falha ao enviar respostas pendentes:", envioRespostas.error);
+  if (envioSimulados?.error) console.error("[progresso] falha ao enviar simulados pendentes:", envioSimulados.error);
 
   const [rr, sr] = await Promise.all([
     auth.supabase.from("resposta_usuario")

@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-24 — Cardiologia, Pneumologia e Neurologia populadas (36 resumos, 480 questões). Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-24 — corrigido bug crítico de sincronização (respostas/simulados não salvavam na conta). Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
@@ -12,8 +12,67 @@
 | **Questões** | **1008** (GO 113 · Ped 70 · Inf 121 · MFC 114 · Cir 110 · **Cardio 160 · Pneumo 160 · Neuro 160**) |
 | **Casos clínicos** | **21** (GO 6 · Ped 6 · Inf 6 · Cir 2 · MFC 1) |
 | **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) |
-| **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário |
+| **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário — **sincronização de resposta_usuario/simulado_resultado corrigida em 2026-07-24 (estava 100% quebrada desde a migration 0003, ver relatório abaixo); progresso_conteudo (resumos/casos) nunca foi afetado** |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+## O que foi feito nesta sessão (2026-07-24, parte 2 — Claude, correção crítica: respostas e simulados não sincronizavam)
+
+**Relato do usuário:** "MINHAS QUESTOES E PROGRESSO AINDA CONTINUAM N SALVANDO... É PRA
+EU FAZER A QUESTAO E SALVAR PARA SEMPRE Q EU FIZ ELA." Usuário confirmou que o problema
+ocorre mesmo logado.
+
+### Diagnóstico (sem tocar em senha do usuário)
+O usuário ofereceu login/senha para eu testar — **recusado**, por regra permanente do
+projeto (nunca usar/pedir senha, mesmo com autorização explícita do usuário no chat).
+Diagnóstico feito 100% via `SUPABASE_SERVICE_ROLE_KEY` (já disponível no `.env.local`,
+service role, bypassa RLS, nunca precisa de senha de usuário):
+- `db.auth.admin.listUsers()` achou o usuário por e-mail e confirmou login recente
+  (hoje, 2026-07-24).
+- Contagem direta nas tabelas: `resposta_usuario` = **0 linhas**, `simulado_resultado` =
+  **0 linhas**, apesar de uso ativo real. `progresso_conteudo` (resumos/casos) = 5
+  linhas, sincronizando normalmente — então o bug era específico de
+  questões/simulados, não geral.
+- Causa raiz lida em `supabase/migrations/0003_progresso_sincronizado.sql`: os índices
+  únicos de `resposta_usuario`/`simulado_resultado` são **parciais**
+  (`where client_event_id is not null`). Postgres só aceita um índice parcial como
+  árbitro de `ON CONFLICT` quando o mesmo predicado `WHERE` é repetido na cláusula
+  `ON CONFLICT` — e o `supabase-js` (`.upsert(dados, { onConflict: "owner_id,client_event_id" })`,
+  usado em `src/lib/progresso.ts`) nunca envia esse predicado. Resultado: **todo**
+  upsert falhava com o erro Postgres `42P10` ("no unique or exclusion constraint
+  matching the ON CONFLICT specification"), para qualquer usuário, desde que a
+  migration 0003 foi aplicada (2026-07-21).
+- `src/lib/progresso.ts` nunca checava o `{error}` retornado pelo upsert do
+  supabase-js (que **não lança exceção**, só retorna `{data, error}`) — por isso a
+  falha era 100% silenciosa: sem erro no console, sem aviso na tela, nada.
+- Confirmado empiricamente (não só por leitura de código): reproduzi a chamada exata
+  do app via cliente admin e recebi o mesmo `42P10` na hora.
+
+### Correção aplicada
+1. **Migration `0005_fix_resposta_conflict_target.sql`**: troca os dois índices
+   parciais por índices únicos comuns nas mesmas colunas. Em Postgres, `NULL` nunca
+   colide com `NULL` num índice único comum — então linhas antigas sem
+   `client_event_id` continuam livres de colisão entre si, igual antes; só corrige o
+   caso (`client_event_id` preenchido) que estava quebrado. Aplicada no banco de
+   produção via `npx tsx scripts/apply-migration.mts` (runner idempotente já existente
+   no repo, tracking em `schema_migrations`).
+2. **Verificação direta**: reproduzi de novo a chamada exata do app após a migration —
+   agora retorna `201 Created`, sem erro.
+3. **`src/lib/progresso.ts`**: `enviarResposta`, `enviarSimulado` e os dois upserts
+   dentro de `sincronizarProgresso` agora checam `{error}` e fazem `console.error` se
+   falhar — para uma falha futura (de qualquer causa) nunca mais ser 100% silenciosa.
+   Não foi adicionado retry nem UI de erro — fora do escopo do bug relatado; o
+   `console.error` já muda o comportamento de "impossível de detectar" para
+   "detectável no DevTools".
+
+### Verificação
+`tsc --noEmit` (0 erros), `npm run lint` (0 erros), `npm run build` (358 páginas, ok).
+
+### Impacto para o usuário
+Nenhum dado foi perdido — respostas e simulados sempre foram salvos no navegador
+(`localStorage`, `local-first`), só nunca tinham saído do dispositivo. Com o fix, a
+sincronização volta a funcionar a partir de agora; o histórico já salvo localmente
+sobe para a conta automaticamente na próxima vez que o dashboard carregar
+(`sincronizarProgresso()` roda no load). Não é preciso refazer nenhuma questão.
 
 ## O que foi feito nesta sessão (2026-07-24 — Claude, Cardiologia + Pneumologia + Neurologia)
 
