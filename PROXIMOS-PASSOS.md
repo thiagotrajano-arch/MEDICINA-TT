@@ -66,6 +66,7 @@ service role, bypassa RLS, nunca precisa de senha de usuário):
 
 ### Verificação
 `tsc --noEmit` (0 erros), `npm run lint` (0 erros), `npm run build` (358 páginas, ok).
+Commit `c44e861`, push feito para `main` (autorizado pelo usuário).
 
 ### Impacto para o usuário
 Nenhum dado foi perdido — respostas e simulados sempre foram salvos no navegador
