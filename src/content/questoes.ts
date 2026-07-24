@@ -7,6 +7,9 @@ import { QUESTOES_MFC } from "./questoes/mfc";
 import { QUESTOES_ORIGINAIS } from "./questoes/originais";
 import { QUESTOES_OMED_EXTRAIDAS } from "./omed-extraidos";
 import { QUESTOES_PENDENTES_EXTRAIDAS } from "./questoes/pendentes-extraidas";
+import { QUESTOES_CARDIO } from "./questoes/cardio";
+import { QUESTOES_PNEUMO } from "./questoes/pneumo";
+import { QUESTOES_NEURO } from "./questoes/neuro";
 
 /**
  * Banco de questões — agregador.
@@ -27,4 +30,7 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_OMED_EXTRAIDAS,
   ...QUESTOES_PENDENTES_EXTRAIDAS,
   ...QUESTOES_ORIGINAIS,
+  ...QUESTOES_CARDIO,
+  ...QUESTOES_PNEUMO,
+  ...QUESTOES_NEURO,
 ];

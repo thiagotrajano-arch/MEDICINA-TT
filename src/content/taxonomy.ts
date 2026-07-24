@@ -316,11 +316,80 @@ const scaffold = (
   temas: temas.map((t) => tema(id, t, ["Geral"])),
 });
 
+const cardiologia: Disciplina = {
+  id: "cardio",
+  slug: "cardiologia",
+  nome: "Cardiologia",
+  grupo: "Clínica Médica",
+  marca: "CAR",
+  omed: true,
+  temas: [
+    tema("cardio", "Síndrome Coronariana Aguda (SCA/IAM)", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("cardio", "Dissecção Aórtica", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("cardio", "Dislipidemia e Estatinas", ["Diagnóstico e conduta"]),
+    tema("cardio", "Fibrilação Atrial, Bradiarritmias e Leitura de ECG", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("cardio", "Morte Súbita Cardíaca em Atletas e Commotio Cordis", ["Diagnóstico e conduta"]),
+    tema("cardio", "Hipertensão Resistente e Refratária", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("cardio", "Hipertensão Secundária", ["Diagnóstico e conduta"]),
+    tema("cardio", "Taquiarritmias e Manejo ACLS", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("cardio", "Insuficiência Cardíaca (ICFER e ICFEP)", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("cardio", "Febre Reumática e Cardiopatia Reumática Crônica", ["Diagnóstico e conduta"]),
+    tema("cardio", "Doença Arterial Periférica e Claudicação Intermitente", ["Diagnóstico e conduta"]),
+    tema("cardio", "Pericardite Aguda e Tamponamento", ["Diagnóstico e conduta"]),
+  ],
+};
+
+const pneumologia: Disciplina = {
+  id: "pneumo",
+  slug: "pneumologia",
+  nome: "Pneumologia",
+  grupo: "Clínica Médica",
+  marca: "PNE",
+  omed: true,
+  temas: [
+    tema("pneumo", "Derrame Pleural", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("pneumo", "Tromboembolismo Pulmonar (TEP)", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("pneumo", "Pneumotórax (Espontâneo e Hipertensivo)", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("pneumo", "Pneumonia Adquirida na Comunidade (PAC)", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("pneumo", "Asma (Crônica e Crise Aguda)", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("pneumo", "DPOC (Crônico e Exacerbado)", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("pneumo", "Asma e Pneumopatia Ocupacional", ["Diagnóstico e conduta"]),
+    tema("pneumo", "Tuberculose Pulmonar com HIV", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("pneumo", "Distúrbios Ácido-Base e Interpretação de Gasometria", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("pneumo", "Tosse Crônica e Tosse por IECA", ["Diagnóstico e conduta"]),
+  ],
+};
+
+const neurologia: Disciplina = {
+  id: "neuro",
+  slug: "neurologia",
+  nome: "Neurologia",
+  grupo: "Clínica Médica",
+  marca: "NEU",
+  omed: true,
+  temas: [
+    tema("neuro", "AVC Isquêmico", ["Diagnóstico e conduta"]),
+    tema("neuro", "AVC Hemorrágico — HSA e Hemorragia Intraparenquimatosa", ["Diagnóstico e conduta"]),
+    tema("neuro", "Crise Convulsiva e Status Epilepticus", ["Diagnóstico e conduta"]),
+    tema("neuro", "Cefaleias — Primárias e Sinais de Alarme", ["Diagnóstico e conduta"]),
+    tema("neuro", "Síndrome de Guillain-Barré", ["Diagnóstico e conduta"]),
+    tema("neuro", "Miastenia Gravis", ["Diagnóstico e conduta"]),
+    tema("neuro", "Compressão Medular Aguda e Síndrome de Cauda Equina", ["Diagnóstico e conduta"]),
+    tema("neuro", "Hipertensão Intracraniana e Delirium", ["Diagnóstico e conduta"]),
+    tema("neuro", "Amnésias e Síndromes Demenciais", ["Diagnóstico e conduta"]),
+    tema("neuro", "Neuropatias Compressivas Periféricas", ["Diagnóstico e conduta"]),
+    tema("neuro", "Síndromes Vestibulares", ["Diagnóstico e conduta"]),
+    tema("neuro", "Encefalopatia de Wernicke-Korsakoff", ["Diagnóstico e conduta"]),
+    tema("neuro", "Neurossífilis", ["Diagnóstico e conduta"]),
+    tema("neuro", "Cefaleia Pós-Punção Dural", ["Diagnóstico e conduta"]),
+  ],
+};
+
 const clinicaMedica: Disciplina[] = [
-  scaffold("cardio", "Cardiologia", "Clínica Médica", "CAR", ["Insuficiência cardíaca", "Síndromes coronarianas", "Arritmias", "Hipertensão"]),
-  scaffold("pneumo", "Pneumologia", "Clínica Médica", "PNE", ["Asma", "DPOC", "Pneumonias", "TEP"]),
+  cardiologia,
+  pneumologia,
+  neurologia,
   scaffold("gastro", "Gastroenterologia", "Clínica Médica", "GAS", ["DRGE", "Doença ulcerosa", "Hepatopatias"]),
-  scaffold("neuro", "Neurologia", "Clínica Médica", "NEU", ["AVC", "Cefaleias", "Epilepsia"]),
   scaffold("otorrino", "Otorrinolaringologia", "Clínica Médica", "OTO", ["Otites", "Rinossinusites", "Vertigem"]),
   scaffold("endocrino", "Endocrinologia", "Clínica Médica", "END", ["Tireoide", "Diabetes", "Adrenal"]),
   scaffold("hemato", "Hematologia", "Clínica Médica", "HEM", ["Anemias", "Leucemias", "Distúrbios da hemostasia"]),

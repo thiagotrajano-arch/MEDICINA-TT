@@ -8,6 +8,9 @@ import { CONTEUDOS_ESTRATEGIA_GO } from "./conteudos/estrategia-go";
 import { CONTEUDOS_ESTRATEGIA_PED } from "./conteudos/estrategia-ped";
 import { CONTEUDOS_ESTRATEGIA_INF_MFC } from "./conteudos/estrategia-inf-mfc";
 import { CONTEUDOS_ESTRATEGIA_EXTRAS } from "./conteudos/estrategia-extras";
+import { CONTEUDOS_CARDIO } from "./conteudos/cardio";
+import { CONTEUDOS_PNEUMO } from "./conteudos/pneumo";
+import { CONTEUDOS_NEURO } from "./conteudos/neuro";
 import { CONTEUDOS_OMED_EXTRAIDOS } from "./omed-extraidos";
 
 /**
@@ -34,6 +37,9 @@ const CONTEUDOS_BASE: Record<string, ConteudoSubtema> = {
   ...CONTEUDOS_ESTRATEGIA_PED,
   ...CONTEUDOS_ESTRATEGIA_INF_MFC,
   ...CONTEUDOS_ESTRATEGIA_EXTRAS,
+  ...CONTEUDOS_CARDIO,
+  ...CONTEUDOS_PNEUMO,
+  ...CONTEUDOS_NEURO,
 };
 
 export const CONTEUDOS: Record<string, ConteudoSubtema> = Object.fromEntries(
