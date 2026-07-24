@@ -9,7 +9,7 @@
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
 | **Disciplinas com conteúdo real** | 8 (GO, Pediatria, Infectologia, Cirurgia, MFC + **Cardiologia, Pneumologia, Neurologia novas**) de 36 na taxonomia |
 | **Resumos** | **195** de 273 subtemas (número correto — 292→273 após remover páginas fantasma, ver relatório abaixo) |
-| **Questões** | **1008** (GO 113 · Ped 70 · Inf 121 · MFC 114 · Cir 110 · **Cardio 160 · Pneumo 160 · Neuro 160**) |
+| **Questões** | **1020** (GO 115 · Ped 73 · Inf 122 · MFC 114 · Cir 112 · Cardio 163 · Pneumo 160 · Neuro 161 — **+12 inéditas da prova oficial OMED V**) |
 | **Casos clínicos** | **24** (GO 6 · Ped 7 · Inf 7 · Cir 2 · MFC 1 · **Neuro 1 novo**) |
 | **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) · **57 ancoradas a resumos (78%, era 37%)** |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário — **sincronização de resposta_usuario/simulado_resultado corrigida em 2026-07-24 (estava 100% quebrada desde a migration 0003, ver relatório abaixo); progresso_conteudo (resumos/casos) nunca foi afetado** |
@@ -52,6 +52,29 @@ Evitei a Questão 2 (restrição de crescimento fetal) da mesma prova por sobrep
 dissertativas de cada uma das outras 3 edições (OMED II/III/IV, 2ª fase) — fonte real abundante para
 continuar esta tarefa em sessão futura. Verificado: script de integridade (0 problemas, 24 casos),
 typecheck, lint, build (342 páginas). Commit `af20bd6`, push feito para `main`.
+
+### Item 4 — Mais questões inéditas: 12 novas, mesma prova oficial
+As 25 questões de **múltipla escolha** da mesma prova (V OMED, 2ª fase 2025) tinham gabarito oficial
+(só a letra certa, sem justificativa por alternativa) — escrevi os comentários de cada distrator a
+partir de diretrizes nomeadas (SBH para HAS resistente, PNI para calendário vacinal, Tanaka et al.
+para hérnia incisional, etc.), sem inventar nenhum mecanismo ou fato clínico novo.
+
+Das 25, **12 entraram** (Cardio 3, GO 2, Ped 3, Inf 1, Cir 2, Neuro 1) — as outras 13 foram
+descartadas por não terem subtema correspondente na taxonomia atual, por a questão ter sido
+**oficialmente anulada** (nº 10 — sinal `Ø` no gabarito, não é erro meu) ou por exigirem uma diretriz
+específica demais para eu comentar com segurança (ex.: protocolo do MS 2025 sobre teste de DNA-HPV).
+
+⚠️ **Nota importante de processo:** na primeira leitura da tabela de gabarito eu interpretei a
+ordem errada (a tabela é organizada em 5 colunas de pares questão-resposta lado a lado, não
+sequencial 1→25 linha a linha) — isso teria gerado várias questões com a resposta "correta" marcada
+errada. Percebi ao notar uma resposta clinicamente estranha (meia elástica como tratamento
+prioritário de DAOP arterial) e refiz a leitura da tabela inteira, conferindo cada uma das 12
+respostas antes de escrever qualquer conteúdo. Nenhuma questão com resposta errada foi publicada,
+mas registro aqui para reforçar: **sempre reconferir tabelas de gabarito por posição, não por
+leitura corrida.**
+
+Verificado: script de integridade (0 problemas, 1020 questões), typecheck, lint, build (342 páginas).
+Commit `fa5503d`, push feito para `main`.
 
 ## O que foi feito nesta sessão (2026-07-24, parte 3 — Claude, revisão de arquitetura completa)
 
