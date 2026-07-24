@@ -10,6 +10,7 @@ import { QUESTOES_PENDENTES_EXTRAIDAS } from "./questoes/pendentes-extraidas";
 import { QUESTOES_CARDIO } from "./questoes/cardio";
 import { QUESTOES_PNEUMO } from "./questoes/pneumo";
 import { QUESTOES_NEURO } from "./questoes/neuro";
+import { QUESTOES_OMEDV_2025 } from "./questoes/omedv-2025";
 
 /**
  * Banco de questões — agregador.
@@ -33,4 +34,5 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_CARDIO,
   ...QUESTOES_PNEUMO,
   ...QUESTOES_NEURO,
+  ...QUESTOES_OMEDV_2025,
 ];
