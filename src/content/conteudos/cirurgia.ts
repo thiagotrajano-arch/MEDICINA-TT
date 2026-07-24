@@ -27,6 +27,7 @@ export const CONTEUDOS_CIR: Record<string, ConteudoSubtema> = {
         secao: "Colecistite — quadro e critérios (TG18)",
         corpo:
           "**Clínica:** dor em **hipocôndrio direito** > 6 h (diferente da cólica biliar, que é autolimitada), **sinal de Murphy** (parada inspiratória à palpação do HCD), febre, náuseas.\n\n**Critérios diagnósticos TG18 — exigem as TRÊS categorias:**\n- **(A) Sinais locais:** Murphy, dor/massa em HCD;\n- **(B) Sinais sistêmicos:** febre, **PCR elevada**, leucocitose;\n- **(C) Confirmação por imagem.**\n\n**Achados ultrassonográficos** (USG é o exame inicial de escolha): **espessamento de parede > 4 mm**, **Murphy ultrassonográfico**, **líquido pericolecístico**, cálculo/lama, distensão vesicular.\n\n⚠️ **Dilatação do ducto pancreático principal NÃO é critério** de colecistite (é achado pancreático).",
+        figura: "cir-colecistite-us-real",
       },
       {
         secao: "Colecistite — classificação de gravidade e conduta",

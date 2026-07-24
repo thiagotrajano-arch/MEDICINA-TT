@@ -109,6 +109,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Quadro clínico",
         corpo:
           "**Tríade clássica:** febre + cefaleia + rigidez de nuca — presente completa em uma **minoria** dos casos (sensibilidade baixa isolada).\n\n**Sinais de irritação meníngea:** **Kernig** (dor à extensão do joelho com quadril fletido) e **Brudzinski** (flexão involuntária dos joelhos à flexão passiva do pescoço).\n\nPodem associar-se: fotofobia, vômitos, rebaixamento de consciência, convulsões, abaulamento de fontanela (lactentes) e **petéquias/púrpura** (sugere meningococcemia — gravíssimo, tratar sem atraso).",
+        figura: "inf-meningococcemia-purpura-real",
       },
       {
         secao: "Diagnóstico",
@@ -325,6 +326,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Diagnóstico",
         corpo:
           "- **Até o 5º dia:** **NS1** (antígeno) ou **RT-PCR**;\n- **A partir do 6º dia:** **sorologia IgM** (ELISA);\n- **Hemograma seriado** é o exame de acompanhamento essencial: **hematócrito subindo + plaquetas caindo** = extravasamento;\n- **Prova do laço:** triagem de fragilidade capilar (integra o grupo B).",
+        figura: "inf-dengue-laco-real",
       },
       {
         secao: "Tratamento",
@@ -627,6 +629,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Quadro clínico",
         corpo:
           "**Fase aguda:** pode ser assintomática (maioria dos casos de B e C) ou apresentar mal-estar, náuseas, dor em hipocôndrio direito, icterícia, colúria, acolia fecal. Hepatite B aguda pode ter **fenômenos extra-hepáticos** por imunocomplexos (poliartrite, urticária, glomerulonefrite).\n\n**Hepatite crônica (B/C):** frequentemente **assintomática por décadas** até estágio de cirrose/descompensação.",
+        figura: "clm-ictericia-escleral-real",
       },
       {
         secao: "Diagnóstico sorológico",
@@ -835,6 +838,7 @@ export const CONTEUDOS_INF: Record<string, ConteudoSubtema> = {
         secao: "Quadro clínico",
         corpo:
           "**Fase precoce (leptospirêmica):** febre, **mialgia intensa (especialmente de panturrilhas)**, cefaleia, **sufusão conjuntival** (hiperemia conjuntival **sem secreção**).\n\n**Fase tardia (imune), em minoria — síndrome de Weil:** **icterícia rubínica** (tom alaranjado), **injúria renal aguda**, hemorragia (a **pulmonar é a mais temida**).",
+        figura: "inf-leptospirose-real",
       },
       {
         secao: "Diagnóstico",

@@ -201,6 +201,24 @@ export const CONTEUDOS_OMED_EXTRAIDOS: Record<string, ConteudoSubtema> = {
   ...conteudos(mfc, MFC_SUBTEMAS, "MFC"),
 };
 
+// Ancora figuras do registry (src/components/figuras/registry.tsx) nos blocos
+// gerados a partir do HTML legado — os "secao" abaixo vêm direto do
+// html_content em src/content/raw/omed-cirurgia.json, não são literais aqui.
+function ancoraFigura(subtemaId: string, secao: string, figura: string | string[]): void {
+  const bloco = CONTEUDOS_OMED_EXTRAIDOS[subtemaId]?.blocos.find((b) => b.secao === secao);
+  if (bloco) bloco.figura = figura;
+}
+ancoraFigura(
+  "cir--abdome-agudo--coloproctologia-e-abdome-agudo-inflamatorio",
+  "Diagnóstico",
+  ["cir-apendicite-tc-real", "cir-volvo-sigmoide-rx-real"]
+);
+ancoraFigura(
+  "cir--abdome-agudo--abordagem-do-abdome-agudo",
+  "Diagnóstico",
+  ["cir-obstrucao-intestinal-real", "cir-pneumoperitonio-rx-real", "cir-isquemia-mesenterica-tc-real"]
+);
+
 export const QUESTOES_OMED_EXTRAIDAS: Questao[] = [
   ...questoes(cirurgia, CIR_SUBTEMAS, "cir"),
   ...questoes(mfc, MFC_SUBTEMAS, "mfc"),

@@ -1,6 +1,6 @@
 import type { ConteudoSubtema } from "@/domain/content/types";
 
-function resumo(id: string, titulo: string, fonte: string, essencial: string, avaliacao: string, conduta: string, prova: string, referencias: string[]): ConteudoSubtema {
+function resumo(id: string, titulo: string, fonte: string, essencial: string, avaliacao: string, conduta: string, prova: string, referencias: string[], figuraAvaliacao?: string | string[]): ConteudoSubtema {
   return {
     subtemaId: id,
     titulo,
@@ -8,7 +8,7 @@ function resumo(id: string, titulo: string, fonte: string, essencial: string, av
     origem: "complemento_ia",
     blocos: [
       { secao: "Definição e fundamentos", corpo: essencial },
-      { secao: "Avaliação e diagnóstico", corpo: avaliacao },
+      { secao: "Avaliação e diagnóstico", corpo: avaliacao, figura: figuraAvaliacao },
       { secao: "Conduta", corpo: conduta },
       { secao: "Pontos de prova / Pegadinhas", corpo: prova },
     ],
@@ -25,7 +25,8 @@ const R: ConteudoSubtema[] = [
     "O risco de infecção oportunista cresce com queda de CD4 e viremia não controlada. Pneumocistose, neurotoxoplasmose, criptococose, tuberculose, CMV e micobacterioses têm faixas de risco e apresentações próprias.",
     "Em pessoa com HIV e síndrome aguda/subaguda, integrar CD4/carga viral, imagem e amostras do sítio. Antes de TARV, rastrear TB, hepatites e infecções cuja síndrome inflamatória de reconstituição possa ser grave.",
     "Tratar a infecção específica, iniciar/otimizar TARV no momento apropriado e oferecer profilaxias primárias/secundárias conforme CD4 e imunidade. Interações com antirretrovirais precisam ser revisadas.",
-    "**Não atrasar diagnóstico invasivo quando SNC/pulmão estão ameaçados.** A profilaxia pode ser suspensa após reconstituição imune sustentada conforme critérios específicos.", INF
+    "**Não atrasar diagnóstico invasivo quando SNC/pulmão estão ameaçados.** A profilaxia pode ser suspensa após reconstituição imune sustentada conforme critérios específicos.", INF,
+    ["inf-candidiase-oral-real", "inf-zoster-real"]
   ),
   resumo(
     "inf--tuberculose--tb-latente", "Infecção latente por tuberculose", "Mapa Mental — Tuberculose",

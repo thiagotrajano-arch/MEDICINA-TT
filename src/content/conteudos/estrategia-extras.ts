@@ -1,6 +1,6 @@
 import type { ConteudoSubtema } from "@/domain/content/types";
 
-function resumo(id: string, titulo: string, fonte: string, essencial: string, avaliacao: string, conduta: string, prova: string): ConteudoSubtema {
+function resumo(id: string, titulo: string, fonte: string, essencial: string, avaliacao: string, conduta: string, prova: string, figuraAvaliacao?: string | string[]): ConteudoSubtema {
   const area = id.startsWith("ped--") ? "Sociedade Brasileira de Pediatria — documentos científicos temáticos" : "FEBRASGO — protocolos e recomendações temáticas";
   return {
     subtemaId: id,
@@ -9,7 +9,7 @@ function resumo(id: string, titulo: string, fonte: string, essencial: string, av
     origem: "complemento_ia",
     blocos: [
       { secao: "Definição e fundamentos", corpo: essencial },
-      { secao: "Avaliação e diagnóstico", corpo: avaliacao },
+      { secao: "Avaliação e diagnóstico", corpo: avaliacao, figura: figuraAvaliacao },
       { secao: "Conduta", corpo: conduta },
       { secao: "Pontos de prova / Pegadinhas", corpo: prova },
     ],
@@ -65,7 +65,8 @@ const R: ConteudoSubtema[] = [
     "Massa anexial pode ser funcional, benigna ou maligna. Idade, menopausa, sintomas e morfologia ultrassonográfica definem risco; torção e rotura são apresentações agudas.",
     "Ultrassonografia transvaginal caracteriza conteúdo, septos, papilas, vascularização, ascite e bilateralidade. Marcadores tumorais auxiliam em contexto selecionado, mas não rastreiam nem substituem imagem/histologia.",
     "Observar cisto simples de baixo risco conforme tamanho/idade; operar massa sintomática, persistente, suspeita ou complicada. Suspeita de malignidade deve ser encaminhada à oncoginecologia para cirurgia adequada.",
-    "**CA-125 pode subir em doença benigna e ser normal em câncer inicial.** Evitar punção de massa suspeita por risco de disseminação."
+    "**CA-125 pode subir em doença benigna e ser normal em câncer inicial.** Evitar punção de massa suspeita por risco de disseminação.",
+    "go-cisto-ovariano-us-real"
   ),
   resumo(
     "go--assistencia-ao-parto--parto-vaginal-operatorio", "Parto vaginal operatório", "Flashcard — Parto Vaginal Operatório",

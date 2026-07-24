@@ -92,6 +92,7 @@ export const CONTEUDOS_PED: Record<string, ConteudoSubtema> = {
         secao: "Diagnóstico",
         corpo:
           "**Eminentemente clínico.** Exames **não são rotina**:\n- **Radiografia de tórax:** só se dúvida diagnóstica ou gravidade atípica. Quando feita: **hiperinsuflação**, retificação de arcos costais, **atelectasias laminares** (⚠️ atelectasia é frequentemente confundida com pneumonia e gera antibiótico desnecessário);\n- **Painel viral:** não muda a conduta (tratamento é de suporte independentemente do vírus); útil para coorte hospitalar;\n- **Hemograma/PCR:** não indicados de rotina.",
+        figura: "ped-bronquiolite-rx-real",
       },
       {
         secao: "Tratamento",
@@ -186,6 +187,7 @@ export const CONTEUDOS_PED: Record<string, ConteudoSubtema> = {
         secao: "Definição",
         corpo:
           "Coloração amarelada de pele e mucosas por **hiperbilirrubinemia**. Clinicamente visível a partir de **BT ~5 mg/dL** no RN. Ocorre em ~60% dos RN a termo — a maioria **fisiológica**, mas é preciso identificar as patológicas.",
+        figura: "ped-ictericia-rn-real",
       },
       {
         secao: "Fisiopatologia",

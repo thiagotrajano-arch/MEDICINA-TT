@@ -1,6 +1,6 @@
 import type { ConteudoSubtema } from "@/domain/content/types";
 
-function resumo(id: string, titulo: string, fonte: string, essencial: string, avaliacao: string, conduta: string, prova: string): ConteudoSubtema {
+function resumo(id: string, titulo: string, fonte: string, essencial: string, avaliacao: string, conduta: string, prova: string, figuraAvaliacao?: string | string[]): ConteudoSubtema {
   return {
     subtemaId: id,
     titulo,
@@ -8,7 +8,7 @@ function resumo(id: string, titulo: string, fonte: string, essencial: string, av
     origem: "complemento_ia",
     blocos: [
       { secao: "Definição e fundamentos", corpo: essencial },
-      { secao: "Avaliação e diagnóstico", corpo: avaliacao },
+      { secao: "Avaliação e diagnóstico", corpo: avaliacao, figura: figuraAvaliacao },
       { secao: "Conduta", corpo: conduta },
       { secao: "Pontos de prova / Pegadinhas", corpo: prova },
     ],

@@ -430,6 +430,7 @@ export const CONTEUDOS_GO: Record<string, ConteudoSubtema> = {
         secao: "Diagnóstico",
         corpo:
           "**Critérios de Rotterdam** — pelo menos **2 dos 3**:\n1. Hiperandrogenismo clínico e/ou laboratorial;\n2. Anovulação crônica (irregularidade menstrual/amenorreia);\n3. Alterações ultrassonográficas: **≥ 20 folículos** com diâmetro médio de 2–9 mm **e/ou** volume ovariano total **≥ 10 cm³** (critério ASRM/ESHRE).\n\n**Sempre excluir outras causas** de hiperandrogenismo/anovulação antes de fechar o diagnóstico: tumor adrenal e hiperplasia adrenal congênita (**17-OH-progesterona, DHEA-S**), tumor ovariano (**testosterona**), hiperprolactinemia (**prolactina**), distúrbio tireoidiano (**TSH**).",
+        figura: ["go-sop-us-real", "clm-acantose-real"],
       },
       {
         secao: "Tratamento",
@@ -785,6 +786,7 @@ export const CONTEUDOS_GO: Record<string, ConteudoSubtema> = {
         secao: "Diagnóstico",
         corpo:
           "**Ultrassom pélvico/transvaginal** — exame de escolha para investigação inicial. **Histeroscopia** — padrão-ouro para avaliação da **cavidade uterina**. **Ressonância magnética** — maior acurácia para mapeamento e planejamento cirúrgico.",
+        figura: "go-mioma-us-real",
       },
       {
         secao: "Tratamento",
