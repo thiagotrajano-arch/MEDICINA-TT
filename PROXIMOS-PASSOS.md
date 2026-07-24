@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-24 — corrigido bug crítico de sincronização (respostas/simulados não salvavam na conta). Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-24 — revisão completa de arquitetura: achado e corrigido bug crítico de build (páginas de resumo podiam sumir silenciosamente em produção). Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
@@ -8,12 +8,86 @@
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
 | **Disciplinas com conteúdo real** | 8 (GO, Pediatria, Infectologia, Cirurgia, MFC + **Cardiologia, Pneumologia, Neurologia novas**) de 36 na taxonomia |
-| **Resumos** | **195** de 248+36 subtemas |
+| **Resumos** | **195** de 273 subtemas (número correto — 292→273 após remover páginas fantasma, ver relatório abaixo) |
 | **Questões** | **1008** (GO 113 · Ped 70 · Inf 121 · MFC 114 · Cir 110 · **Cardio 160 · Pneumo 160 · Neuro 160**) |
 | **Casos clínicos** | **21** (GO 6 · Ped 6 · Inf 6 · Cir 2 · MFC 1) |
 | **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário — **sincronização de resposta_usuario/simulado_resultado corrigida em 2026-07-24 (estava 100% quebrada desde a migration 0003, ver relatório abaixo); progresso_conteudo (resumos/casos) nunca foi afetado** |
+| **Fonte do conteúdo publicado** | Arquivos TS (`src/content/**`), sempre — build não depende mais do Supabase estar sincronizado (corrigido 2026-07-24, ver relatório abaixo) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+## O que foi feito nesta sessão (2026-07-24, parte 3 — Claude, revisão de arquitetura completa)
+
+Pedido do usuário: "reveja toda a arquitetura e arrume tudo que não está funcionando direito". Revisão
+sistemática — não só leitura de código, mas build real, banco real, navegador real.
+
+### 🔴 Achado crítico — build lia do Supabase ao vivo e podia publicar página quebrada, silenciosamente
+`getContentRepository()` (`src/infra/content/index.ts`) preferia `SupabaseContentRepository` (rede) a
+`StaticContentRepository` (bundle TS, zero rede) sempre que as credenciais públicas estavam presentes —
+e estão, sempre, inclusive no CI (`deploy-pages.yml` as define via `vars.*` antes de `next build`).
+
+Como o site é 100% export estático (`output: export`, GitHub Pages), cada uma das ~340 páginas é gerada
+UMA VEZ, no build, por 7 workers em paralelo. Cada `/estudar/[subtemaId]` fazia um round-trip de rede ao
+Supabase (`getSubtemaById` → select aninhado disciplina→tema→subtema) para saber se a própria página
+existe. Sob a carga concorrente de gerar ~340 páginas ao mesmo tempo, uma fração dessas consultas volta
+tarde ou incompleta — sem lançar erro, só devolvendo dado faltante — e a página, não achando seu próprio
+subtema, chama `notFound()`. **O build termina com sucesso (exit 0), mas publica um "não encontrado" no
+lugar de conteúdo real que existe.** Sem log, sem aviso — só se alguém abrisse exatamente aquela página.
+
+**Reproduzido e medido:** rodando `npm run build` localmente, **113 das 289 páginas `/estudar` (39%)**
+vieram com título genérico + corpo "não encontrado" — confirmado por título de aba real no navegador (não
+só grep em HTML minificado, que dá falso positivo pois o boilerplate do error boundary aparece em toda
+página). Testado no site já publicado (commit anterior): uma amostra de 3 páginas do lote "quebrado local"
+estava OK ao vivo — ou seja, o problema é aleatório por build, não fixo por página; já aconteceu uma vez
+nesta sessão, vai acontecer de novo em algum deploy futuro se não for corrigido agora.
+
+**Bônus descoberto no processo:** o build antigo gerava **292 páginas `/estudar`, não 273** — 19 a mais
+do que existem de verdade nos arquivos TS (fonte da verdade, validada sem órfãos). São subtemas antigos
+que já foram renomeados/removidos do código mas cujas linhas nunca foram apagadas do Supabase (`npm run
+seed` só faz upsert, nunca delete) — o build publicava página fantasma para eles, com conteúdo desatualizado.
+
+**Correção:** `getContentRepository()` agora usa `StaticContentRepository` por padrão — o mesmo bundle TS
+que já é a fonte de verdade do projeto, sem rede, sem flakiness, sempre em sincronia (mesmo commit = mesmo
+conteúdo). `StaticContentRepository` já implementava 100% da interface (inclusive busca, sem depender do
+RPC do Supabase) — troca sem perda de funcionalidade. Supabase-como-fonte-de-conteúdo continua disponível
+via `CONTENT_SOURCE=supabase` para quem quiser inspecionar o espelho do banco. **Efeito colateral bom:**
+isso também fecha um risco separado que eu ia propor corrigir via CI (rodar `seed`/migração automaticamente
+antes do build) — não precisa mais, porque o build não depende do Supabase estar atualizado.
+`npm run seed` continua necessário só para o RPC de busca (`search_conteudo`) e diagnósticos ficarem
+atuais — não afeta mais o que é publicado.
+
+**Verificado:** rebuild local após o fix → **273/273 páginas corretas, 0 quebradas** (script de checagem
+por título real, mesma amostra). `tsc --noEmit`, `npm run lint`, `npm run build` (339 páginas, sucesso).
+
+### Outros achados e correções desta revisão
+- **`src/lib/progresso-conteudo.ts`**: `enviarProgresso()`/`conciliarAcesso()` faziam upsert em
+  `progresso_conteudo` sem checar `{error}` — mesma classe do bug de sincronização já corrigido em
+  `progresso.ts` na parte 2 desta sessão (essa tabela não tinha o problema de índice parcial, já
+  sincronizava corretamente — mas ficava igualmente sem rede de segurança para falha futura). Agora loga
+  no console em caso de erro, mesmo padrão.
+- **Títulos de página ausentes**: `/estudar/[subtemaId]`, `/biblioteca/[disciplina]` e `/casos/[casoId]`
+  (~330 páginas) não definiam `<title>` próprio — a aba do navegador sempre mostrava "Codex Medicus"
+  genérico, para qualquer resumo/disciplina/caso. Adicionado `generateMetadata` nas 3 rotas, com
+  `React.cache()` para não duplicar a busca de dados entre o título e o corpo da página.
+- **Auditoria de RLS** (migrations 0001–0005): todas as tabelas sensíveis corretamente protegidas —
+  conteúdo com leitura pública, atividade do usuário escopada por `owner_id`. Único ponto teoricamente
+  "público demais" é `etiqueta_alvo`/`simulado_questao` (tabelas de junção com leitura liberada a
+  qualquer chave anon) — risco baixo (não expõe dono, só padrão de uso) e a primeira nem é usada pelo
+  app hoje. Nenhuma correção necessária.
+- **Integridade de conteúdo**: script de validação (subtemas/conteúdos/questões/casos/figuras) — 0
+  órfãos, 0 IDs duplicados, 0 gabaritos ambíguos, 0 figuras quebradas, 0 etapas de caso sem resposta.
+  195 conteúdos · 1008 questões · 21 casos · 273 subtemas · 73 figuras.
+- **Varredura de código**: nenhum TODO/FIXME/HACK esquecido, nenhum `@ts-ignore`, único
+  `dangerouslySetInnerHTML` do projeto é o script estático de tema (sem entrada de usuário, seguro).
+- **Testado ao vivo no navegador**: dashboard, biblioteca (incl. Cardiologia), questões (responder +
+  gabarito comentado), simulado, mídia, modal de login/cadastro/recuperação — tudo funcional, zero erro
+  de console, zero request falhando, em todas as páginas testadas.
+- **GitHub Actions**: nenhum workflow com falha real (deploy, backup+keep-alive, sync do Drive — todos
+  "success" nos runs recentes).
+- **Confirmado, não corrigível por mim**: recuperação de senha ainda cai em localhost — é configuração
+  do painel do Supabase (Site URL / Redirect URLs), não bug de código; o app já calcula o redirect
+  correto dinamicamente. Requer 1 min de ação manual do usuário no painel (link e valores exatos
+  entregues a ele diretamente).
 
 ## O que foi feito nesta sessão (2026-07-24, parte 2 — Claude, correção crítica: respostas e simulados não sincronizavam)
 

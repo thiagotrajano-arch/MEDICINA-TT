@@ -1,3 +1,5 @@
+import { cache } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, ListChecks, Sparkles, FileClock } from "lucide-react";
@@ -14,6 +16,24 @@ export async function generateStaticParams() {
   );
 }
 
+// cache() dedupe garante que generateMetadata e a página não disparem duas
+// buscas (a versão Supabase do repositório faz round-trip de rede por chamada).
+const buscarSubtema = cache(async (id: string) => {
+  const repo = await getContentRepository();
+  return repo.getSubtemaById(id);
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ subtemaId: string }>;
+}): Promise<Metadata> {
+  const { subtemaId } = await params;
+  const found = await buscarSubtema(decodeURIComponent(subtemaId));
+  if (!found) return {};
+  return { title: `${found.subtema.nome} · ${found.disciplina.nome} · Codex Medicus` };
+}
+
 export default async function EstudarPage({
   params,
 }: {
@@ -22,7 +42,7 @@ export default async function EstudarPage({
   const { subtemaId } = await params;
   const id = decodeURIComponent(subtemaId);
   const repo = await getContentRepository();
-  const found = await repo.getSubtemaById(id);
+  const found = await buscarSubtema(id);
   if (!found) notFound();
 
   const { subtema, tema, disciplina } = found;

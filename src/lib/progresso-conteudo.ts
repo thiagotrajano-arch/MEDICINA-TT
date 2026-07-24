@@ -180,10 +180,11 @@ async function enviarProgresso(item: ProgressoConteudo): Promise<void> {
   const auth = await sessaoSupabase();
   if (!auth) return;
   const atual = lerProgressoConteudo(item.tipo, item.itemId) ?? item;
-  await auth.supabase.from("progresso_conteudo").upsert(
+  const { error } = await auth.supabase.from("progresso_conteudo").upsert(
     paraRemoto(auth.user.id, atual),
     { onConflict: "owner_id,alvo_tipo,alvo_id" },
   );
+  if (error) console.error("[progresso-conteudo] falha ao sincronizar:", error);
 }
 
 async function conciliarAcesso(
@@ -219,10 +220,11 @@ async function conciliarAcesso(
   mapa[chave(mesclado.tipo, mesclado.itemId)] = mesclado;
   gravarMapa(mapa);
   emitir(mesclado);
-  await auth.supabase.from("progresso_conteudo").upsert(
+  const { error } = await auth.supabase.from("progresso_conteudo").upsert(
     paraRemoto(auth.user.id, mesclado),
     { onConflict: "owner_id,alvo_tipo,alvo_id" },
   );
+  if (error) console.error("[progresso-conteudo] falha ao conciliar acesso:", error);
 }
 
 /** Reconciliacao last-write-wins: a copia mais recente vence por item. */

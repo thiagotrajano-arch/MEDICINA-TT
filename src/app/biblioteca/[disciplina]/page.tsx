@@ -1,3 +1,5 @@
+import { cache } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, Sparkles, FileText } from "lucide-react";
@@ -9,14 +11,28 @@ export async function generateStaticParams() {
   return disciplinas.map((d) => ({ disciplina: d.slug }));
 }
 
+const buscarDisciplina = cache(async (slug: string) => {
+  const repo = await getContentRepository();
+  return repo.getDisciplina(slug);
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ disciplina: string }>;
+}): Promise<Metadata> {
+  const { disciplina: slug } = await params;
+  const disciplina = await buscarDisciplina(slug);
+  return disciplina ? { title: `${disciplina.nome} · Codex Medicus` } : {};
+}
+
 export default async function DisciplinaPage({
   params,
 }: {
   params: Promise<{ disciplina: string }>;
 }) {
   const { disciplina: slug } = await params;
-  const repo = await getContentRepository();
-  const disciplina = await repo.getDisciplina(slug);
+  const disciplina = await buscarDisciplina(slug);
   if (!disciplina) notFound();
 
   return (
