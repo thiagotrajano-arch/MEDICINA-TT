@@ -58,6 +58,7 @@ atuais — não afeta mais o que é publicado.
 
 **Verificado:** rebuild local após o fix → **273/273 páginas corretas, 0 quebradas** (script de checagem
 por título real, mesma amostra). `tsc --noEmit`, `npm run lint`, `npm run build` (339 páginas, sucesso).
+Commit `58d3fd3`, push feito para `main` (autorizado pelo usuário).
 
 ### Outros achados e correções desta revisão
 - **`src/lib/progresso-conteudo.ts`**: `enviarProgresso()`/`conciliarAcesso()` faziam upsert em
