@@ -1,18 +1,72 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-23 — biblioteca de mídia organizada por tema/subtema. Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-24 — Cardiologia, Pneumologia e Neurologia populadas (36 resumos, 480 questões). Este arquivo é reescrito ao fim de cada sessão.
 
 ## Estado atual
 
 | | |
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
-| **Resumos** | **159** de 248 subtemas (89 scaffolds sem fonte local identificada) |
-| **Questões** | **528** (GO 113 · Ped 70 · Inf 121 · MFC 114 · Cir 110) |
+| **Disciplinas com conteúdo real** | 8 (GO, Pediatria, Infectologia, Cirurgia, MFC + **Cardiologia, Pneumologia, Neurologia novas**) de 36 na taxonomia |
+| **Resumos** | **195** de 248+36 subtemas |
+| **Questões** | **1008** (GO 113 · Ped 70 · Inf 121 · MFC 114 · Cir 110 · **Cardio 160 · Pneumo 160 · Neuro 160**) |
 | **Casos clínicos** | **21** (GO 6 · Ped 6 · Inf 6 · Cir 2 · MFC 1) |
 | **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+## O que foi feito nesta sessão (2026-07-24 — Claude, Cardiologia + Pneumologia + Neurologia)
+
+O usuário forneceu 6 arquivos MD próprios (Resumo Absoluto + Banco de Questões de
+Cardiologia, Pneumologia e Neurologia, ~700KB), pedindo para colocar no site. Essas 3
+disciplinas já existiam na taxonomia como `scaffold()` vazio dentro de "Clínica
+Médica" desde o commit inicial (MVP) — nunca tinham sido populadas.
+
+### Metodologia da fonte: catalogação questão-por-questão das provas reais
+O material do usuário foi construído com a MESMA abordagem que a releitura do raio-X
+desta sessão recomendou como próximo passo: 36 temas (12 Cardio + 10 Pneumo + 14
+Neuro) derivados de catalogar questão a questão as provas oficiais OMED II–V, cada
+tema com 16 seções (Definição → Fisiopatologia → ... → Resumo de 5 min) e um banco de
+160 questões por disciplina (80 fixação + 80 casos clínicos) com gabarito comentado.
+
+### Conversão via script, não digitação manual
+Dado o volume (~9.000 linhas de código gerado), escrito um script de conversão
+(`scripts/_import-clm-tmp.mts`, apagado após uso) que fez parsing dos 6 MDs e gerou
+diretamente os arquivos TypeScript do site — elimina risco de erro de transcrição
+manual em conteúdo desse tamanho. Achados durante a construção do parser:
+- Os títulos "# Tema NN — Título" de Cardiologia e Pneumologia vêm sem acentuação
+  (bug de alguma etapa de geração do MD de origem; o corpo do texto tem acentos
+  normais) — corrigidos à mão via tabela de 22 títulos, conferidos contra o próprio
+  sumário do documento.
+- O banco de questões de Neurologia usa formato diferente dos outros dois (agrupa por
+  cabeçalho `## Rótulo`, sem tag `` `Tema NN` `` por questão) e a ORDEM dos rótulos
+  diverge da numeração do resumo a partir do tema 9 (ex.: "Vertigem" no banco é o
+  Tema 11 no resumo) — resolvido com tabela de mapeamento rótulo→número, conferida
+  questão a questão.
+- O gabarito comentado original explica só a alternativa correta (não há
+  justificativa distinta por distrator) — o mesmo comentário real foi replicado nas
+  4 alternativas de cada questão, em vez de inventar comentário por alternativa.
+
+### Verificação feita
+`tsc --noEmit` (0 erros), `npm run lint` (0 erros), script de validação próprio (0
+subtemas duplicados, 0 conteúdos órfãos, 0 questões órfãs, 0 IDs duplicados, 0
+questões com gabarito ambíguo — 273 subtemas, 195 conteúdos, 1008 questões no total).
+`npm run seed` confirmou os números batendo no Supabase. Testado no navegador:
+`/biblioteca/cardiologia` mostra os 12 temas novos como "pronto" ao lado dos 4
+scaffolds antigos ainda "a importar"; resumo de SCA/IAM renderiza as 17 seções, 3
+tabelas como HTML real, sem asterisco solto; o remapeamento de Neurologia conferido
+ao vivo (tema "Amnésias e Síndromes Demenciais" mostra as 12 questões certas); tela
+de Questões com os 3 filtros novos funcionando. `npm run build` — 358 páginas,
+sucesso. Commit `3b4bb98`, push feito para `main` (autorizado pelo usuário).
+
+### Por que isso importa (conecta com a releitura do raio-X)
+A releitura do raio-X desta sessão (provas reais OMED II–V) já tinha identificado que
+Clínica Médica é bloco pesado na prova, não "transversal" como se supunha — mas o
+site não tinha nenhuma disciplina de Clínica Médica com conteúdo real. Esta sessão
+resolve exatamente essa lacuna para 3 das maiores áreas (Cardio/Pneumo/Neuro).
+Restam ainda como scaffold vazio: Gastroenterologia, Otorrinolaringologia,
+Endocrinologia, Hematologia, Nefrologia, Reumatologia, Dermatologia e Emergências
+Clínicas — sem material do usuário disponível ainda para essas.
 
 ## O que foi feito nesta sessão (2026-07-23 — Claude, organização da biblioteca de mídia)
 
