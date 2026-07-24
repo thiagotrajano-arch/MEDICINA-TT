@@ -10,11 +10,48 @@
 | **Disciplinas com conteúdo real** | 8 (GO, Pediatria, Infectologia, Cirurgia, MFC + **Cardiologia, Pneumologia, Neurologia novas**) de 36 na taxonomia |
 | **Resumos** | **195** de 273 subtemas (número correto — 292→273 após remover páginas fantasma, ver relatório abaixo) |
 | **Questões** | **1008** (GO 113 · Ped 70 · Inf 121 · MFC 114 · Cir 110 · **Cardio 160 · Pneumo 160 · Neuro 160**) |
-| **Casos clínicos** | **21** (GO 6 · Ped 6 · Inf 6 · Cir 2 · MFC 1) |
-| **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) |
+| **Casos clínicos** | **24** (GO 6 · Ped 7 · Inf 7 · Cir 2 · MFC 1 · **Neuro 1 novo**) |
+| **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) · **57 ancoradas a resumos (78%, era 37%)** |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário — **sincronização de resposta_usuario/simulado_resultado corrigida em 2026-07-24 (estava 100% quebrada desde a migration 0003, ver relatório abaixo); progresso_conteudo (resumos/casos) nunca foi afetado** |
 | **Fonte do conteúdo publicado** | Arquivos TS (`src/content/**`), sempre — build não depende mais do Supabase estar sincronizado (corrigido 2026-07-24, ver relatório abaixo) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+## O que foi feito nesta sessão (2026-07-24, parte 4 — Claude, tarefas autorizadas 2-5 do Dashboard)
+
+Usuário autorizou os itens 2–5 da lista priorizada do Obsidian Dashboard e saiu por um tempo,
+pedindo para eu seguir sozinho. Documentando aqui para revisão quando ele voltar.
+
+### Item 2 — Mídia clínica: concluído (redirecionado)
+A meta numérica do Dashboard ("localizar pelo menos 30 imagens") já estava 2× superada (61 imagens
+reais de 73 figuras). O gap real, descoberto ao investigar, era **correlação**: 46 das 73 figuras
+(63%) não apareciam em nenhum resumo, só na galeria solta de `/midia` — contrariando o próprio
+princípio de design do projeto ("nunca numa galeria separada"). Mapeei cada figura órfã para o
+bloco/seção mais específico do resumo correspondente, sempre com correspondência textual direta (não
+forcei nenhuma correlação fraca). Resultado: **57/73 ancoradas (78%)**. As 16 restantes genuinamente
+não têm resumo ainda (Reumatologia/Dermatologia/Endocrinologia seguem scaffold vazio) ou não tinham
+correspondência específica o suficiente para não confundir o estudante — ficam documentadas, não
+forçadas. Verificado: validação de integridade (0 problemas), typecheck, lint, build (339 páginas).
+Commit `72f0f1c`, push feito para `main` (autorização já concedida pelo usuário antes de sair).
+
+### Item 3 — Mais casos clínicos: 3 novos, fonte 100% verificável
+Construídos a partir das questões **dissertativas** 1, 4 e 5 da prova oficial **V OMED — Ciclo
+Clínico, 2ª fase (2025)** (`provas-oficiais-omed/omed5-2025-2fase-clinico.pdf`), usando o **gabarito
+oficial publicado** (`omed5-2025-gabarito-2fase-clinico.pdf`) como fonte de cada resposta — nenhum
+fato clínico inventado, cada `resposta` de etapa é uma transcrição fiel do gabarito real (só
+reorganizada em formato de revelação por etapas, estilo Einstein).
+
+- `caso-neuro-disc-01` — AVC isquêmico intra-hospitalar (TC sem contraste → território vascular pelo
+  padrão do déficit → limiar de PA para trombólise → definição terapêutica pela janela de tempo).
+- `caso-inf-disc-46` — Angiomatose bacilar em paciente HIV/CD4 crítico (espécie de Bartonella →
+  espectro da doença em imunocompetente → prevenção → diferencial com sarcoma de Kaposi).
+- `caso-ped-disc-06` — Otite média com efusão evoluindo para OMA supurativa e mastoidite (sem
+  `subtemaId` — Otorrinolaringologia ainda é taxonomia vazia, sem resumo para linkar).
+
+Evitei a Questão 2 (restrição de crescimento fetal) da mesma prova por sobrepor tema com
+`caso-go-disc-01` já existente. **Restam ainda não utilizadas**: Questão 2 e 3 (OMED V) e as 5
+dissertativas de cada uma das outras 3 edições (OMED II/III/IV, 2ª fase) — fonte real abundante para
+continuar esta tarefa em sessão futura. Verificado: script de integridade (0 problemas, 24 casos),
+typecheck, lint, build (342 páginas). Commit `af20bd6`, push feito para `main`.
 
 ## O que foi feito nesta sessão (2026-07-24, parte 3 — Claude, revisão de arquitetura completa)
 
