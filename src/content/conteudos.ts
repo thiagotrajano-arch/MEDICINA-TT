@@ -11,6 +11,7 @@ import { CONTEUDOS_ESTRATEGIA_EXTRAS } from "./conteudos/estrategia-extras";
 import { CONTEUDOS_CARDIO } from "./conteudos/cardio";
 import { CONTEUDOS_PNEUMO } from "./conteudos/pneumo";
 import { CONTEUDOS_NEURO } from "./conteudos/neuro";
+import { CONTEUDOS_REUMATO } from "./conteudos/reumato";
 import { CONTEUDOS_OMED_EXTRAIDOS } from "./omed-extraidos";
 
 /**
@@ -40,6 +41,7 @@ const CONTEUDOS_BASE: Record<string, ConteudoSubtema> = {
   ...CONTEUDOS_CARDIO,
   ...CONTEUDOS_PNEUMO,
   ...CONTEUDOS_NEURO,
+  ...CONTEUDOS_REUMATO,
 };
 
 export const CONTEUDOS: Record<string, ConteudoSubtema> = Object.fromEntries(

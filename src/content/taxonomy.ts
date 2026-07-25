@@ -385,6 +385,23 @@ const neurologia: Disciplina = {
   ],
 };
 
+const reumatologia: Disciplina = {
+  id: "reumato",
+  slug: "reumatologia",
+  nome: "Reumatologia",
+  grupo: "Clínica Médica",
+  marca: "REU",
+  omed: true,
+  temas: [
+    tema("reumato", "Vasculites de Grandes e Médios Vasos", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("reumato", "Vasculites ANCA-Associadas", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("reumato", "Esclerose Sistêmica", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("reumato", "Espondiloartrites", [["Diagnóstico e conduta", { altoRendimento: true }]]),
+    tema("reumato", "Artrites", ["Artrite reumatoide", "Osteoartrite"]),
+    tema("reumato", "Lúpus Eritematoso Sistêmico", ["Diagnóstico e conduta"]),
+  ],
+};
+
 const clinicaMedica: Disciplina[] = [
   cardiologia,
   pneumologia,
@@ -394,7 +411,7 @@ const clinicaMedica: Disciplina[] = [
   scaffold("endocrino", "Endocrinologia", "Clínica Médica", "END", ["Tireoide", "Diabetes", "Adrenal"]),
   scaffold("hemato", "Hematologia", "Clínica Médica", "HEM", ["Anemias", "Leucemias", "Distúrbios da hemostasia"]),
   scaffold("nefro", "Nefrologia", "Clínica Médica", "NEF", ["Injúria renal aguda", "DRC", "Distúrbios hidroeletrolíticos"]),
-  scaffold("reumato", "Reumatologia", "Clínica Médica", "REU", ["Artrites", "LES", "Vasculites"]),
+  reumatologia,
   scaffold("derma", "Dermatologia", "Clínica Médica", "DER", ["Infecções cutâneas", "Câncer de pele"]),
   scaffold("emerg-cm", "Emergências Clínicas", "Clínica Médica", "EMC", ["PCR e RCP", "Distúrbios do ritmo"]),
 ];
