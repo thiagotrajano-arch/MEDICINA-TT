@@ -2,6 +2,7 @@
 
 import type { Questao } from "@/domain/content/types";
 import { isSupabaseConfigured } from "@/infra/supabase/config";
+import { registrarErro } from "@/lib/monitor";
 
 /**
  * Progresso com estrategia local-first.
@@ -128,7 +129,7 @@ async function enviarResposta(r: RespostaRegistrada): Promise<void> {
     correta: r.correta,
     respondido_em: new Date(r.em).toISOString(),
   }, { onConflict: "owner_id,client_event_id", ignoreDuplicates: true });
-  if (error) console.error("[progresso] falha ao sincronizar resposta:", error);
+  if (error) registrarErro("progresso-resposta", error.message, error);
 }
 
 async function enviarSimulado(r: ResultadoSimulado): Promise<void> {
@@ -143,7 +144,7 @@ async function enviarSimulado(r: ResultadoSimulado): Promise<void> {
     total: r.total,
     relatorio: { duracaoSeg: r.duracaoSeg, porDisciplina: r.porDisciplina },
   }, { onConflict: "owner_id,client_event_id", ignoreDuplicates: true });
-  if (error) console.error("[progresso] falha ao sincronizar simulado:", error);
+  if (error) registrarErro("progresso-simulado", error.message, error);
 }
 
 /** Envia pendencias locais e incorpora eventos remotos no dashboard. */
@@ -179,8 +180,8 @@ export async function sincronizarProgresso(): Promise<{
         })), { onConflict: "owner_id,client_event_id", ignoreDuplicates: true })
       : Promise.resolve(null),
   ]);
-  if (envioRespostas?.error) console.error("[progresso] falha ao enviar respostas pendentes:", envioRespostas.error);
-  if (envioSimulados?.error) console.error("[progresso] falha ao enviar simulados pendentes:", envioSimulados.error);
+  if (envioRespostas?.error) registrarErro("progresso-sync-respostas", envioRespostas.error.message, envioRespostas.error);
+  if (envioSimulados?.error) registrarErro("progresso-sync-simulados", envioSimulados.error.message, envioSimulados.error);
 
   const [rr, sr] = await Promise.all([
     auth.supabase.from("resposta_usuario")
@@ -190,6 +191,8 @@ export async function sincronizarProgresso(): Promise<{
       .select("client_event_id,finalizado_em,acertos,total,relatorio")
       .order("finalizado_em", { ascending: true }),
   ]);
+  if (rr.error) registrarErro("progresso-select-respostas", rr.error.message, rr.error);
+  if (sr.error) registrarErro("progresso-select-simulados", sr.error.message, sr.error);
   if (rr.error || sr.error) return { respostas: respostasLocais, simulados: simuladosLocais, sincronizado: false };
 
   const respostasRemotas: RespostaRegistrada[] = ((rr.data ?? []) as unknown as RespostaRemota[]).map((row) => ({

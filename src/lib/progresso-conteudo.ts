@@ -1,6 +1,7 @@
 "use client";
 
 import { isSupabaseConfigured } from "@/infra/supabase/config";
+import { registrarErro } from "@/lib/monitor";
 
 const CHAVE_CONTEUDOS = "codex:progresso-conteudos";
 const EVENTO_ATUALIZADO = "codex:progresso-conteudo-atualizado";
@@ -184,7 +185,7 @@ async function enviarProgresso(item: ProgressoConteudo): Promise<void> {
     paraRemoto(auth.user.id, atual),
     { onConflict: "owner_id,alvo_tipo,alvo_id" },
   );
-  if (error) console.error("[progresso-conteudo] falha ao sincronizar:", error);
+  if (error) registrarErro("progresso-conteudo-sync", error.message, error);
 }
 
 async function conciliarAcesso(
@@ -224,7 +225,7 @@ async function conciliarAcesso(
     paraRemoto(auth.user.id, mesclado),
     { onConflict: "owner_id,alvo_tipo,alvo_id" },
   );
-  if (error) console.error("[progresso-conteudo] falha ao conciliar acesso:", error);
+  if (error) registrarErro("progresso-conteudo-conciliar", error.message, error);
 }
 
 /** Reconciliacao last-write-wins: a copia mais recente vence por item. */
@@ -238,7 +239,10 @@ export async function sincronizarProgressoConteudos(): Promise<{
 
   const remoto = await auth.supabase.from("progresso_conteudo")
     .select("alvo_tipo,alvo_id,primeiro_acesso_em,ultimo_acesso_em,etapa,concluido,favorito,anotacao,atualizado_em");
-  if (remoto.error) return { conteudos: locais, sincronizado: false };
+  if (remoto.error) {
+    registrarErro("progresso-conteudo-select", remoto.error.message, remoto.error);
+    return { conteudos: locais, sincronizado: false };
+  }
 
   const mapa = new Map<string, ProgressoConteudo>();
   for (const item of [...locais, ...((remoto.data ?? []) as ProgressoRemoto[]).map(doRemoto)]) {
@@ -252,7 +256,10 @@ export async function sincronizarProgressoConteudos(): Promise<{
       mesclados.map((item) => paraRemoto(auth.user.id, item)),
       { onConflict: "owner_id,alvo_tipo,alvo_id" },
     );
-    if (envio.error) return { conteudos: locais, sincronizado: false };
+    if (envio.error) {
+      registrarErro("progresso-conteudo-sync-bulk", envio.error.message, envio.error);
+      return { conteudos: locais, sincronizado: false };
+    }
   }
   gravarMapa(Object.fromEntries(mesclados.map((item) => [chave(item.tipo, item.itemId), item])));
   return { conteudos: mesclados.sort((a, b) => b.ultimoAcessoEm - a.ultimoAcessoEm), sincronizado: true };

@@ -5,6 +5,7 @@ import { Menu, Search, Sun, Moon, Command } from "lucide-react";
 import { Sidebar } from "./Sidebar";
 import { CommandPalette } from "./CommandPalette";
 import { cn } from "@/lib/cn";
+import { instalarMonitoramentoGlobal } from "@/lib/monitor";
 import type { Disciplina, GrupoDisciplina } from "@/domain/content/types";
 import { AuthButton } from "@/components/auth/AuthButton";
 
@@ -26,6 +27,10 @@ export function AppShell({
       setDark(document.documentElement.classList.contains("dark"));
     });
     return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
+    instalarMonitoramentoGlobal();
   }, []);
 
   useEffect(() => {
