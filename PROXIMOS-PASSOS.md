@@ -1055,3 +1055,4 @@ errada é pior que uma questão a menos.
 - Anki Desktop: além da ponte local, `npm run anki:csv -- --subtema <id>` gera CSV para importação manual. O próprio Anki pode exportar o deck criado como `.apkg`.
 - Site: criada a aba `/mapas-mentais/`, derivada somente da taxonomia e dos resumos já publicados.
 - Obsidian: hubs de Anki e mapas foram adicionados; o dashboard e o roadmap foram atualizados.
+- Publicação: commit `399fb49` enviado a `main`; GitHub Pages concluiu com sucesso no run `30300207535`. As rotas `/mapas-mentais/` e `/questoes/` responderam HTTP 200.
