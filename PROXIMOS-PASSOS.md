@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-27 — passos 8 a 25 executados e validados localmente para publicação. O roteiro priorizado está em `docs/ROADMAP-50-PASSOS.md`.
+> Atualizado em 2026-07-27 — passos 8 a 25 executados, validados e publicados em `0525e59`. O roteiro priorizado está em `docs/ROADMAP-50-PASSOS.md`.
 
 ## Estado atual
 
@@ -16,7 +16,7 @@
 | **Fonte do conteúdo publicado** | Arquivos TS (`src/content/**`), sempre — build não depende mais do Supabase estar sincronizado (corrigido 2026-07-24, ver relatório abaixo) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
 
-> Publicação mais recente antes deste lote: commit `f751377` em `main`. Lote 8–25 validado com typecheck, lint, integridade estrutural e build de produção (363 páginas). O `npm run seed` não concluiu localmente em 10 min; o GitHub Pages renderiza a partir dos arquivos TS e não depende do seed para publicar.
+> Publicação mais recente: commit `0525e59` em `main`. Lote 8–25 validado com typecheck, lint, integridade estrutural e build de produção (363 páginas). O `npm run seed` não concluiu localmente em 10 min; o GitHub Pages renderiza a partir dos arquivos TS e não depende do seed para publicar.
 
 ## O que foi feito nesta sessão (2026-07-27 — Codex, passos 8 a 25)
 
