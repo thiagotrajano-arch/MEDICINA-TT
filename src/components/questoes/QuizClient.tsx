@@ -61,7 +61,13 @@ export function QuizClient({
     });
     void sincronizarProgresso().then((p) => {
       if (!ativo) return;
-      const base = new Set(p.respostas.map((r) => r.questaoId));
+      // A resposta pode ter sido dada enquanto a leitura remota estava em voo.
+      // Releia o armazenamento local antes de reconstruir a fila para nunca
+      // reintroduzir uma questão recém-respondida por uma resposta remota antiga.
+      const base = new Set([
+        ...lerRespostas().map((r) => r.questaoId),
+        ...p.respostas.map((r) => r.questaoId),
+      ]);
       setRespondidasBase(base);
       montarFila(filtro, mostrarRespondidas, base);
     });
@@ -81,6 +87,7 @@ export function QuizClient({
     if (acertou) setAcertos((a) => a + 1);
     // Alimenta o progresso do dashboard (persistido no navegador).
     registrarResposta(questao, acertou);
+    setRespondidasBase((base) => new Set(base).add(questao.id));
   };
 
   const proxima = () => {

@@ -9,7 +9,11 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "seed": "tsx scripts/seed-supabase.mts",
-    "sync-drive": "tsx scripts/sync-drive.mts"
+    "sync-drive": "tsx scripts/sync-drive.mts",
+    "anki:status": "tsx scripts/anki-connect.mts status",
+    "anki:resumo": "tsx scripts/anki-connect.mts resumo",
+    "anki:erros": "tsx scripts/anki-connect.mts erros",
+    "anki:csv": "tsx scripts/anki-connect.mts csv-resumo"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.6",

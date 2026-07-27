@@ -1038,3 +1038,20 @@ errada é pior que uma questão a menos.
 - Revisão de conteúdo: não surgiram novas fontes. Os 125 tópicos identificados continuam cobertos; os 89 scaffolds e os bancos exatos Cirurgia 160/MFC 80 aguardam PDFs do usuário. Não inventar extração para preencher contagem.
 - Obsidian 1.12.7 instalado e o vault local atualizado com `Index`, `Codex Medicus Dashboard` e `Fontes Pendentes`. Uso local não exige conta; Obsidian Sync é opcional e separado.
 - Validações: lint 0 erros, TypeScript 0 erros, build de produção com 322 páginas e RLS confirmado.
+
+## Sessão 2026-07-27 — Anki Desktop
+
+- A integração com Anki é local, pelo aplicativo desktop e AnkiConnect em `127.0.0.1:8765`; não há envio de cartões ao site, Supabase ou serviço externo.
+- O script `npm run anki:status` confirma se o Anki aberto responde; `npm run anki:resumo -- --subtema <id>` cria cartões Basic rastreáveis no deck `Codex Medicus::<disciplina>::<subtema>` e `npm run anki:erros -- --questoes <id-1,id-2>` cria cartões de revisão no deck de erros.
+- O script não duplica cartões do mesmo resumo e inclui as referências do resumo no verso. A criação ocorre apenas quando solicitada pelo usuário.
+- Ambiente auditado: AnkiConnect está instalado e restrito ao loopback; o Anki não estava aberto durante o diagnóstico. Typecheck e lint aprovados.
+- Ainda pendente: exportação offline CSV/APKG e geração dirigida a partir de erros, que devem ser desenhadas sem duplicar cartões nem alterar a programação existente do Anki.
+
+## Sessão 2026-07-27 — Produto, Anki e segundo cérebro (41–50)
+
+- Login: o endpoint público de Auth respondeu e o provedor de e-mail está habilitado. O fluxo usa o domínio atual + `/MEDICINA-TT/`; validar a senha e o e-mail de recuperação depende somente da conta do usuário, sem registrar credenciais.
+- Questões: corrigida a corrida em que uma sincronização lenta podia reconstruir a fila antes de incorporar a resposta recém-salva localmente. Respondidas permanecem ocultas até revisão intencional.
+- Dashboard: a reconciliação foi revisada — respostas/simulados usam `client_event_id`; resumos/casos usam a versão de `atualizado_em` mais recente.
+- Anki Desktop: além da ponte local, `npm run anki:csv -- --subtema <id>` gera CSV para importação manual. O próprio Anki pode exportar o deck criado como `.apkg`.
+- Site: criada a aba `/mapas-mentais/`, derivada somente da taxonomia e dos resumos já publicados.
+- Obsidian: hubs de Anki e mapas foram adicionados; o dashboard e o roadmap foram atualizados.

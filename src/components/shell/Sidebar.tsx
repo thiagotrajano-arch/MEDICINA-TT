@@ -10,6 +10,7 @@ import {
   Timer,
   Stethoscope,
   Images,
+  Network,
   ChevronRight,
   Sparkles,
 } from "lucide-react";
@@ -23,6 +24,7 @@ const NAV = [
   { href: "/simulado", label: "Simulado", icon: Timer },
   { href: "/casos", label: "Casos clínicos", icon: Stethoscope },
   { href: "/midia", label: "Mídia", icon: Images },
+  { href: "/mapas-mentais", label: "Mapas mentais", icon: Network },
 ];
 
 export function Sidebar({

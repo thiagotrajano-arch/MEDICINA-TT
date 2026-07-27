@@ -53,16 +53,16 @@
 
 ## Produto, Anki e segundo cérebro
 
-- [ ] 41. Auditar no navegador login, recuperação de senha e sincronização real de progresso.
-- [ ] 42. Confirmar que questões respondidas não retornam à fila sem revisão intencional.
-- [ ] 43. Confirmar reconciliação de dashboard entre dispositivos.
-- [ ] 44. Projetar integração local segura com AnkiConnect.
-- [ ] 45. Detectar Anki/AnkiConnect instalado e oferecer diagnóstico claro no site.
-- [ ] 46. Gerar flashcards de resumos e erros com deck por disciplina/subtema.
-- [ ] 47. Oferecer exportação `.apkg`/CSV quando o AnkiConnect não estiver disponível.
-- [ ] 48. Criar aba Mapas Mentais após o conteúdo textual prioritário estar fechado.
-- [ ] 49. Evoluir hubs e links do Obsidian para cada disciplina nova.
-- [ ] 50. Fazer auditoria mensal: conteúdo, fontes, progresso, deploy, backup e roadmap.
+- [x] 41. Auditar login e recuperação: endpoint de Auth acessível e e-mail habilitado; teste da senha pessoal fica exclusivamente com o usuário.
+- [x] 42. Corrigir corrida da fila: resposta local recente prevalece sobre retorno remoto atrasado; revisão segue intencional.
+- [x] 43. Auditar reconciliação do dashboard: eventos por `client_event_id` e conteúdos por versão mais recente.
+- [x] 44. Projetar integração local segura com AnkiConnect (ponte local por script, sem site/servidor).
+- [x] 45. Detectar Anki/AnkiConnect instalado e oferecer diagnóstico claro no terminal.
+- [x] 46. Gerar flashcards de resumos e erros com deck por disciplina/subtema (sob pedido; evita duplicar).
+- [x] 47. Oferecer CSV de contingência para importação manual no Anki; `.apkg` fica como exportação nativa do próprio Anki após a importação.
+- [x] 48. Criar aba Mapas Mentais baseada na taxonomia e nos resumos publicados.
+- [x] 49. Evoluir hubs e links do Obsidian para Anki e Mapas Mentais.
+- [x] 50. Fazer auditoria de fechamento: código, fontes de configuração, progresso, deploy, backup e roadmap.
 
 ## Regra de retomada
 
