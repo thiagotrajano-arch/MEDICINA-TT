@@ -1,20 +1,22 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-24 — revisão completa de arquitetura: achado e corrigido bug crítico de build (páginas de resumo podiam sumir silenciosamente em produção). Este arquivo é reescrito ao fim de cada sessão.
+> Atualizado em 2026-07-26 — consolidação publicada do trabalho Codex + Claude. O roteiro priorizado está em `docs/ROADMAP-50-PASSOS.md`.
 
 ## Estado atual
 
 | | |
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
-| **Disciplinas com conteúdo real** | 8 (GO, Pediatria, Infectologia, Cirurgia, MFC + **Cardiologia, Pneumologia, Neurologia novas**) de 36 na taxonomia |
-| **Resumos** | **195** de 273 subtemas (número correto — 292→273 após remover páginas fantasma, ver relatório abaixo) |
-| **Questões** | **1020** (GO 115 · Ped 73 · Inf 122 · MFC 114 · Cir 112 · Cardio 163 · Pneumo 160 · Neuro 161 — **+12 inéditas da prova oficial OMED V**) |
+| **Disciplinas com conteúdo real** | **13 de 36**: GO, Pediatria, Infectologia, Cirurgia, MFC, Cardiologia, Pneumologia, Neurologia, Reumatologia, Endocrinologia, Hematologia, Nefrologia e Gastroenterologia |
+| **Resumos** | **209** de 282 subtemas |
+| **Questões** | **1054** |
 | **Casos clínicos** | **24** (GO 6 · Ped 7 · Inf 7 · Cir 2 · MFC 1 · **Neuro 1 novo**) |
 | **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) · **57 ancoradas a resumos (78%, era 37%)** |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário — **sincronização de resposta_usuario/simulado_resultado corrigida em 2026-07-24 (estava 100% quebrada desde a migration 0003, ver relatório abaixo); progresso_conteudo (resumos/casos) nunca foi afetado** |
 | **Fonte do conteúdo publicado** | Arquivos TS (`src/content/**`), sempre — build não depende mais do Supabase estar sincronizado (corrigido 2026-07-24, ver relatório abaixo) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
+
+> Publicação mais recente: commit `5d478b2` em `main`, com validação de typecheck, lint e build de produção (351 páginas).
 
 ## O que foi feito nesta sessão (2026-07-24, parte 4 — Claude, tarefas autorizadas 2-5 do Dashboard)
 

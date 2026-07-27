@@ -8,6 +8,7 @@ Leia nesta ordem antes de alterar o projeto:
 4. `docs/PROMPTS-MASTER.md`
 5. `PROXIMOS-PASSOS.md`
 6. `docs/PLANO-INTEGRACAO-MEDICINA-DESKTOP.md`
+7. `docs/ROADMAP-50-PASSOS.md`
 
 ## Regras permanentes
 

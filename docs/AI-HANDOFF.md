@@ -78,12 +78,13 @@ Para extração, preferir Mapas Mentais; flashcards são úteis para questões. 
 
 Após alterar `src/content/**` ou a taxonomia, executar o seed antes de validar a versão que usa Supabase. Verificar IDs de subtemas, questões, casos e figuras para evitar vínculos órfãos.
 
-Estado quantitativo validado em 2026-07-25: 36 disciplinas (9 com conteúdo real — GO, Pediatria,
-Infectologia, Cirurgia, MFC, Cardiologia, Pneumologia, Neurologia, Reumatologia), 277 subtemas, 199
-resumos prontos, 1024 questões, 24 casos clínicos, 73 figuras (61 reais + 12 diagramas, 57 ancoradas).
+Estado quantitativo validado em 2026-07-26: 36 disciplinas (13 com conteúdo real — GO, Pediatria,
+Infectologia, Cirurgia, MFC, Cardiologia, Pneumologia, Neurologia, Reumatologia, Endocrinologia,
+Hematologia, Nefrologia e Gastroenterologia), 282 subtemas, 209 resumos prontos, 1054 questões,
+24 casos clínicos, 73 figuras (61 reais + 12 diagramas, 57 ancoradas).
 A extração NÃO está mais encerrada — ver `PLANO-INTEGRACAO-MEDICINA-DESKTOP.md` pra tudo que foi
 descoberto em 2026-07-25 e ainda não construído (17 subtemas mapeados, 3 cursos Estratégia MED nunca
-extraídos, Drive de terceiros liberado). Os bancos exatos de Cirurgia 160 e MFC 80 não estão no disco e só têm páginas parciais no histórico; os acervos recuperados dos Resumos Absolutos (10 temas/100 questões por disciplina) já foram incorporados em `src/content/raw/`.
+extraídos, Drive de terceiros liberado). Os bancos exatos de Cirurgia 160 e MFC 80 não estão no disco e só têm páginas parciais no histórico; os acervos recuperados dos Resumos Absolutos (10 temas/100 questões por disciplina) já foram incorporados em `src/content/raw/`. Para a ordem completa das próximas etapas, ler também `docs/ROADMAP-50-PASSOS.md`.
 
 ## Publicação
 
