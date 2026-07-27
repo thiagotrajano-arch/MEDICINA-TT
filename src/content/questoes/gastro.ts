@@ -7,6 +7,51 @@ import type { Questao } from "@/domain/content/types";
  */
 export const QUESTOES_GASTRO: Questao[] = [
   {
+    id: "gastro-000",
+    subtemaId: "gastro--hepatites-virais--diagnostico-e-conduta",
+    disciplinaId: "gastro",
+    enunciado: "Paciente assintomático realiza rastreio e apresenta anti-HCV reagente. A função hepática está preservada. Qual é o próximo exame indispensável para definir se há infecção ativa pelo HCV?",
+    alternativas: [
+      { letra: "A", texto: "Dosagem quantitativa de anti-HCV após 30 dias.", correta: false, comentario: "O título do anti-HCV não diferencia infecção ativa de infecção resolvida; o anticorpo pode permanecer reagente mesmo após cura." },
+      { letra: "B", texto: "Pesquisa de HCV-RNA por teste molecular.", correta: true, comentario: "Correta: HCV-RNA confirma viremia e, portanto, infecção ativa. O ideal é que seja realizado reflexamente após uma triagem reagente." },
+      { letra: "C", texto: "Elastografia hepática como exame confirmatório isolado.", correta: false, comentario: "A elastografia estratifica fibrose, mas não identifica o vírus nem confirma infecção ativa." },
+      { letra: "D", texto: "Biópsia hepática antes de qualquer teste virológico.", correta: false, comentario: "Biópsia não é necessária para confirmar HCV e hoje costuma ser substituída por métodos não invasivos para estadiar fibrose." },
+    ],
+    dificuldade: "fixacao",
+    estilo: "exame",
+    tags: ["hepatite C", "HCV-RNA", "sorologia", "diagnóstico"],
+  },
+  {
+    id: "gastro-000a",
+    subtemaId: "gastro--hepatites-virais--diagnostico-e-conduta",
+    disciplinaId: "gastro",
+    enunciado: "Em uma sorologia para hepatite B, HBsAg é negativo, anti-HBs é negativo e anti-HBc IgM é positivo. Qual interpretação é mais adequada?",
+    alternativas: [
+      { letra: "A", texto: "Imunidade adquirida exclusivamente por vacinação.", correta: false, comentario: "A vacinação produz anti-HBs, mas não anti-HBc, pois a vacina não contém o antígeno core." },
+      { letra: "B", texto: "Infecção crônica inativa por HBV.", correta: false, comentario: "Infecção crônica requer HBsAg persistente por mais de seis meses; neste perfil o HBsAg está negativo." },
+      { letra: "C", texto: "Janela imunológica de hepatite B aguda.", correta: true, comentario: "Correta: na janela, o HBsAg já desapareceu e o anti-HBs ainda não surgiu; o anti-HBc IgM evidencia infecção aguda recente." },
+      { letra: "D", texto: "Resultado impossível, que sempre representa erro laboratorial.", correta: false, comentario: "Embora exija correlação clínica e eventual repetição, esse é o perfil clássico da janela sorológica da hepatite B." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "diagnostico",
+    tags: ["hepatite B", "HBsAg", "anti-HBc IgM", "janela imunológica"],
+  },
+  {
+    id: "gastro-000b",
+    subtemaId: "gastro--hepatites-virais--diagnostico-e-conduta",
+    disciplinaId: "gastro",
+    enunciado: "Recém-nascido de mãe com HBsAg positivo é avaliado na sala de parto. Qual medida reduz de forma mais direta a transmissão vertical do HBV?",
+    alternativas: [
+      { letra: "A", texto: "Aguardar a sorologia do recém-nascido antes de iniciar qualquer prevenção.", correta: false, comentario: "A prevenção não deve esperar testes do recém-nascido: o benefício depende de intervenção logo após o nascimento." },
+      { letra: "B", texto: "Administrar apenas imunoglobulina anti-hepatite B ao completar um mês de vida.", correta: false, comentario: "A imunoglobulina deve ser precoce e não substitui a vacinação; postergar para um mês perde a janela de maior benefício." },
+      { letra: "C", texto: "Aplicar vacina contra hepatite B e imunoglobulina específica o mais cedo possível, idealmente nas primeiras 12 horas.", correta: true, comentario: "Correta: a imunoprofilaxia combinada imediata é a medida central para prevenir transmissão vertical, seguida do esquema vacinal e acompanhamento." },
+      { letra: "D", texto: "Contraindicar aleitamento materno de forma universal, independentemente da profilaxia do recém-nascido.", correta: false, comentario: "Com imunoprofilaxia adequada, a infecção materna por HBV não é, isoladamente, contraindicação universal ao aleitamento; a conduta segue protocolo e contexto clínico." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["hepatite B", "transmissão vertical", "vacina", "imunoglobulina"],
+  },
+  {
     id: "gastro-001",
     subtemaId: "gastro--cirrose-e-complicacoes--diagnostico-e-conduta",
     disciplinaId: "gastro",
