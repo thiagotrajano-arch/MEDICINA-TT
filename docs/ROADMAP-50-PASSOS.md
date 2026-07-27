@@ -12,8 +12,8 @@
 
 ## Conteúdo clínico prioritário
 
-- [ ] 6. Escrever e revisar Hepatites Virais.
-- [ ] 7. Revisar adversarialmente Linfomas.
+- [x] 6. Escrever e revisar Hepatites Virais — publicado em `1e53fcd`.
+- [x] 7. Revisar adversarialmente Linfomas — validado localmente; publicação pendente.
 - [ ] 8. Revisar adversarialmente Mieloma e NMP.
 - [ ] 9. Revisar adversarialmente Síndromes Glomerulares.
 - [ ] 10. Revisar adversarialmente IRA e DRC conforme KDIGO vigente.
