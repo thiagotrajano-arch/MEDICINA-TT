@@ -12,6 +12,10 @@ import { QUESTOES_PNEUMO } from "./questoes/pneumo";
 import { QUESTOES_NEURO } from "./questoes/neuro";
 import { QUESTOES_OMEDV_2025 } from "./questoes/omedv-2025";
 import { QUESTOES_REUMATO } from "./questoes/reumato";
+import { QUESTOES_ENDOCRINO } from "./questoes/endocrino";
+import { QUESTOES_GASTRO } from "./questoes/gastro";
+import { QUESTOES_HEMATO } from "./questoes/hemato";
+import { QUESTOES_NEFRO } from "./questoes/nefro";
 
 /**
  * Banco de questões — agregador.
@@ -37,4 +41,8 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_NEURO,
   ...QUESTOES_OMEDV_2025,
   ...QUESTOES_REUMATO,
+  ...QUESTOES_ENDOCRINO,
+  ...QUESTOES_GASTRO,
+  ...QUESTOES_HEMATO,
+  ...QUESTOES_NEFRO,
 ];

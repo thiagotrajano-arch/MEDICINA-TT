@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# artefatos locais gerados pelo pipeline de conteúdo
+.taxonomia-gerada/

@@ -402,15 +402,76 @@ const reumatologia: Disciplina = {
   ],
 };
 
+const gastroenterologia: Disciplina = {
+  id: "gastro",
+  slug: "gastroenterologia",
+  nome: "Gastroenterologia",
+  grupo: "Clínica Médica",
+  marca: "GAS",
+  omed: true,
+  temas: [
+    tema("gastro", "Hepatites Virais", [["Diagnóstico e conduta", { altoRendimento: true }]]),
+    tema("gastro", "Cirrose e Complicações", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("gastro", "Pancreatite Aguda", [["Diagnóstico e conduta", { altoRendimento: true }]]),
+    tema("gastro", "DRGE", ["Geral"]),
+    tema("gastro", "Doença Ulcerosa Péptica", ["Geral"]),
+  ],
+};
+
+const endocrinologia: Disciplina = {
+  id: "endocrino",
+  slug: "endocrinologia",
+  nome: "Endocrinologia",
+  grupo: "Clínica Médica",
+  marca: "END",
+  omed: true,
+  temas: [
+    tema("endocrino", "Nódulo e Câncer de Tireoide", [["Diagnóstico e conduta", { altoRendimento: true }]]),
+    tema("endocrino", "Diabetes Mellitus", ["Geral"]),
+    tema("endocrino", "Distúrbios Adrenais", ["Geral"]),
+  ],
+};
+
+const hematologia: Disciplina = {
+  id: "hemato",
+  slug: "hematologia",
+  nome: "Hematologia",
+  grupo: "Clínica Médica",
+  marca: "HEM",
+  omed: true,
+  temas: [
+    tema("hemato", "Anemias", [["Investigação e Classificação", { altoRendimento: true }]]),
+    tema("hemato", "Medicina Transfusional", [["Indicações de Hemocomponentes", { altoRendimento: true }]]),
+    tema("hemato", "Leucemias", [["Agudas e Crônicas", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("hemato", "Linfomas", [["Hodgkin e Não-Hodgkin", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("hemato", "Mieloma Múltiplo e Neoplasias Mieloproliferativas", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("hemato", "Distúrbios da Hemostasia", ["Geral"]),
+  ],
+};
+
+const nefrologia: Disciplina = {
+  id: "nefro",
+  slug: "nefrologia",
+  nome: "Nefrologia",
+  grupo: "Clínica Médica",
+  marca: "NEF",
+  omed: true,
+  temas: [
+    tema("nefro", "Síndromes Glomerulares", [["Nefrítica e Nefrótica", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("nefro", "Injúria Renal Aguda e Doença Renal Crônica", [["Diagnóstico e conduta", { altoRendimento: true }]]),
+    tema("nefro", "Distúrbios Hidroeletrolíticos", ["Geral"]),
+  ],
+};
+
 const clinicaMedica: Disciplina[] = [
   cardiologia,
   pneumologia,
   neurologia,
-  scaffold("gastro", "Gastroenterologia", "Clínica Médica", "GAS", ["DRGE", "Doença ulcerosa", "Hepatopatias"]),
+  gastroenterologia,
   scaffold("otorrino", "Otorrinolaringologia", "Clínica Médica", "OTO", ["Otites", "Rinossinusites", "Vertigem"]),
-  scaffold("endocrino", "Endocrinologia", "Clínica Médica", "END", ["Tireoide", "Diabetes", "Adrenal"]),
-  scaffold("hemato", "Hematologia", "Clínica Médica", "HEM", ["Anemias", "Leucemias", "Distúrbios da hemostasia"]),
-  scaffold("nefro", "Nefrologia", "Clínica Médica", "NEF", ["Injúria renal aguda", "DRC", "Distúrbios hidroeletrolíticos"]),
+  endocrinologia,
+  hematologia,
+  nefrologia,
   reumatologia,
   scaffold("derma", "Dermatologia", "Clínica Médica", "DER", ["Infecções cutâneas", "Câncer de pele"]),
   scaffold("emerg-cm", "Emergências Clínicas", "Clínica Médica", "EMC", ["PCR e RCP", "Distúrbios do ritmo"]),

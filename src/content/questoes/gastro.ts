@@ -1,0 +1,99 @@
+import type { Questao } from "@/domain/content/types";
+
+/**
+ * Questões inéditas — gastroenterologia.
+ * Gerado por scripts/gerar-conteudo.mts. Cada alternativa tem comentário próprio:
+ * a errada explica por que está errada, não repete a justificativa da certa.
+ */
+export const QUESTOES_GASTRO: Questao[] = [
+  {
+    id: "gastro-001",
+    subtemaId: "gastro--cirrose-e-complicacoes--diagnostico-e-conduta",
+    disciplinaId: "gastro",
+    enunciado: "Paciente de 58 anos, cirrótico por álcool, é avaliado por ascite volumosa. A paracentese diagnóstica mostra albumina sérica de 2,8 g/dL e albumina do líquido ascítico de 1,2 g/dL, sem outras alterações relevantes no exame do líquido. Qual a interpretação correta desse resultado?",
+    alternativas: [
+      { letra: "A", texto: "O gradiente calculado (1,6 g/dL) exclui hipertensão portal como causa da ascite, indicando necessidade de investigar carcinomatose peritoneal.", correta: false, comentario: "Está invertido: um GASA elevado (≥1,1 g/dL) indica hipertensão portal, e não a exclui; valores baixos (<1,1) é que sugerem causas como carcinomatose." },
+      { letra: "B", texto: "O GASA de 1,6 g/dL (≥1,1) é compatível com hipertensão portal como mecanismo da ascite, consistente com o quadro de cirrose.", correta: true, comentario: "Correto: GASA ≥1,1 g/dL tem alta acurácia para identificar hipertensão portal como mecanismo da ascite, cenário típico da cirrose descompensada." },
+      { letra: "C", texto: "É obrigatório solicitar citologia oncótica antes de afirmar a etiologia, pois o GASA isoladamente não tem acurácia suficiente para diferenciar as causas de ascite.", correta: false, comentario: "O GASA tem acurácia elevada para identificar hipertensão portal; citologia é reservada para suspeita específica de malignidade, não é pré-requisito universal." },
+      { letra: "D", texto: "O parâmetro relevante para diagnosticar hipertensão portal é a proteína total do líquido ascítico, e não o GASA.", correta: false, comentario: "A proteína total ajuda a estratificar risco de PBE e subclassificar a ascite, mas o marcador que define hipertensão portal como mecanismo é o GASA." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "caso",
+    tags: ["ascite", "GASA", "hipertensão portal", "cirrose"],
+  },
+  {
+    id: "gastro-002",
+    subtemaId: "gastro--cirrose-e-complicacoes--diagnostico-e-conduta",
+    disciplinaId: "gastro",
+    enunciado: "Paciente cirrótico, internado por ascite, evolui com febre e dor abdominal difusa. A paracentese diagnóstica mostra 400 polimorfonucleares/mm³ no líquido ascítico; a cultura ainda está pendente. Qual a conduta mais adequada neste momento?",
+    alternativas: [
+      { letra: "A", texto: "Aguardar o resultado da cultura do líquido ascítico para confirmar peritonite bacteriana espontânea antes de iniciar antibiótico.", correta: false, comentario: "Incorreto: o diagnóstico de PBE já está fechado pela contagem de PMN ≥250/mm³, independentemente da cultura, que pode ser negativa em parte relevante dos casos." },
+      { letra: "B", texto: "Iniciar cefalosporina de 3ª geração por via endovenosa imediatamente, associando albumina conforme função renal/bilirrubina, sem aguardar a cultura.", correta: true, comentario: "Correto: PMN ≥250/mm³ fecha o diagnóstico de PBE; o tratamento empírico com cefalosporina de 3ª geração deve começar de imediato, com albumina se houver critério de risco renal." },
+      { letra: "C", texto: "Iniciar norfloxacino oral como primeira escolha para tratar o quadro infeccioso já estabelecido.", correta: false, comentario: "Norfloxacino é usado como profilaxia (primária ou secundária), não como tratamento de primeira linha da infecção estabelecida, que exige antibiótico endovenoso com boa penetração no líquido ascítico." },
+      { letra: "D", texto: "Repetir a paracentese em 48 horas antes de decidir sobre antibioticoterapia, já que a contagem de PMN pode reduzir espontaneamente.", correta: false, comentario: "Adiar o tratamento aumenta o risco de progressão e de síndrome hepatorrenal; a paracentese de controle em 48h serve para confirmar resposta ao tratamento já iniciado, não para decidir se ele será iniciado." },
+    ],
+    dificuldade: "avancada",
+    estilo: "conduta",
+    tags: ["PBE", "peritonite bacteriana espontânea", "antibioticoterapia", "ascite"],
+  },
+  {
+    id: "gastro-003",
+    subtemaId: "gastro--cirrose-e-complicacoes--diagnostico-e-conduta",
+    disciplinaId: "gastro",
+    enunciado: "Paciente cirrótico Child C, em uso de diurético para ascite, é internado por confusão mental e flapping, sem foco infeccioso evidente, mas com hipocalemia relacionada ao uso do diurético. Qual a conduta mais apropriada?",
+    alternativas: [
+      { letra: "A", texto: "Instituir restrição proteica agressiva na dieta até resolução completa do quadro neurológico.", correta: false, comentario: "A restrição proteica não é mais recomendada: piora o estado nutricional e a sarcopenia do cirrótico sem benefício comprovado sobre a encefalopatia hepática." },
+      { letra: "B", texto: "Corrigir a hipocalemia, iniciar lactulose titulada para 2 a 3 evacuações amolecidas por dia e investigar outros fatores precipitantes.", correta: true, comentario: "Correto: a base do tratamento é corrigir o gatilho identificado (hipocalemia) e iniciar lactulose titulada, além de buscar ativamente outros fatores precipitantes associados." },
+      { letra: "C", texto: "Iniciar rifaximina em monoterapia, sem associar lactulose, por ser considerada mais eficaz isoladamente.", correta: false, comentario: "A rifaximina é adjuvante à lactulose nos casos recorrentes ou refratários, e não substituta em monoterapia como primeira conduta em um episódio agudo." },
+      { letra: "D", texto: "Solicitar dosagem de amônia sérica para confirmar o diagnóstico e guiar a intensidade do tratamento.", correta: false, comentario: "O diagnóstico de encefalopatia hepática é clínico; a amônia sérica não é necessária para confirmação nem se correlaciona bem com a gravidade do quadro." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    tags: ["encefalopatia hepática", "lactulose", "fatores precipitantes", "cirrose"],
+  },
+  {
+    id: "gastro-004",
+    subtemaId: "gastro--pancreatite-aguda--diagnostico-e-conduta",
+    disciplinaId: "gastro",
+    enunciado: "Paciente de 45 anos procura o pronto-socorro com dor epigástrica intensa, contínua, com irradiação para o dorso, iniciada há 6 horas após libação alcoólica. Ao exame, dor à palpação do andar superior do abdome, sem sinais de peritonite. São solicitadas amilase e lipase séricas. Em relação à escolha do exame laboratorial para o diagnóstico de pancreatite aguda, é correto afirmar que:",
+    alternativas: [
+      { letra: "A", texto: "A amilase sérica deve ser preferida por permanecer elevada por mais tempo que a lipase, facilitando o diagnóstico em pacientes que procuram atendimento tardiamente.", correta: false, comentario: "Está invertido: é a lipase que permanece elevada por mais tempo (cerca de 7-14 dias, contra 3-5 dias da amilase), sendo mais útil nos casos de apresentação tardia." },
+      { letra: "B", texto: "A lipase sérica é preferida à amilase por ser mais específica para doença pancreática e permanecer elevada por mais tempo após o início do quadro.", correta: true, comentario: "Correta: a lipase tem maior especificidade (a amilase se eleva em diversas condições extrapancreáticas) e maior janela diagnóstica, além de não sofrer a interferência da hipertrigliceridemia." },
+      { letra: "C", texto: "O grau de elevação da lipase sérica deve ser usado para estimar a gravidade do quadro, orientando diretamente a indicação de internação em UTI.", correta: false, comentario: "A magnitude da elevação enzimática não se correlaciona com gravidade; enzimas pancreáticas servem para diagnóstico, e a gravidade é definida pela presença e duração de falência orgânica." },
+      { letra: "D", texto: "Diante de amilase e lipase normais, o diagnóstico de pancreatite aguda deve ser descartado, independentemente do quadro clínico e dos achados de imagem.", correta: false, comentario: "O diagnóstico exige apenas 2 dos 3 critérios de Atlanta; dor típica associada a imagem compatível pode fechar o diagnóstico mesmo com enzimas não elevadas nesse momento." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "exame",
+    tags: ["pancreatite aguda", "lipase", "amilase", "diagnóstico", "Atlanta"],
+  },
+  {
+    id: "gastro-005",
+    subtemaId: "gastro--pancreatite-aguda--diagnostico-e-conduta",
+    disciplinaId: "gastro",
+    enunciado: "Paciente com pancreatite aguda grave, evoluindo com falência orgânica persistente após 48 horas de internação, permanece com dor, íleo paralítico e não tolera dieta oral no 3º dia de internação. Em relação ao suporte nutricional desse paciente, a conduta mais adequada é:",
+    alternativas: [
+      { letra: "A", texto: "Manter jejum absoluto até resolução completa do quadro doloroso e da falência orgânica, reintroduzindo a dieta oral apenas após a alta da UTI.", correta: false, comentario: "O jejum prolongado é conduta ultrapassada: associa-se a maior taxa de infecção da necrose pancreática e de falência de múltiplos órgãos por perda da integridade da barreira intestinal." },
+      { letra: "B", texto: "Iniciar nutrição parenteral total imediatamente, evitando qualquer estímulo entérico enquanto houver falência orgânica.", correta: false, comentario: "A nutrição parenteral total não é a primeira escolha em nenhum cenário de pancreatite aguda; é reservada para quando a via enteral não é tolerada ou é insuficiente." },
+      { letra: "C", texto: "Iniciar nutrição enteral precoce, por sonda nasoenteral ou nasogástrica, assim que viável, mantendo a via oral em reserva para quando houver melhora clínica.", correta: true, comentario: "Correta: a nutrição enteral precoce (24-72h) mantém a barreira mucosa intestinal, reduz translocação bacteriana e infecção de necrose, sendo a via preferida quando a via oral não é tolerada." },
+      { letra: "D", texto: "Postergar qualquer suporte nutricional até a realização de tomografia de abdome para quantificar a extensão da necrose pancreática.", correta: false, comentario: "A decisão nutricional não depende do resultado da tomografia; além disso, a TC não deve ser solicitada antes de 72h fora de indicação específica, o que atrasaria desnecessariamente o suporte nutricional." },
+    ],
+    dificuldade: "avancada",
+    estilo: "conduta",
+    tags: ["pancreatite aguda", "nutrição enteral", "conduta", "gravidade"],
+  },
+  {
+    id: "gastro-006",
+    subtemaId: "gastro--pancreatite-aguda--diagnostico-e-conduta",
+    disciplinaId: "gastro",
+    enunciado: "Paciente com pancreatite aguda necrosante, necrose estimada em 40% do parênquima pancreático à tomografia realizada no 5º dia de evolução. Encontra-se em melhora clínica progressiva, afebril, sem leucocitose e sem sinais de sepse. Em relação à antibioticoterapia nesse caso, é correto afirmar que:",
+    alternativas: [
+      { letra: "A", texto: "Deve-se iniciar antibioticoprofilaxia de amplo espectro imediatamente, dado o alto percentual de necrose, para reduzir o risco de infecção secundária.", correta: false, comentario: "A antibioticoprofilaxia não reduz a incidência de infecção da necrose e associa-se a maior risco de superinfecção fúngica, não sendo recomendada mesmo em necrose extensa." },
+      { letra: "B", texto: "O antibiótico deve ser mantido em uso contínuo desde a admissão até a alta hospitalar, independentemente da presença de sinais de infecção.", correta: false, comentario: "Não há indicação de antibioticoterapia contínua e prolongada sem evidência de infecção; o uso indiscriminado favorece resistência bacteriana e superinfecção fúngica." },
+      { letra: "C", texto: "Não há indicação de antibiótico neste momento; a antibioticoterapia deve ser reservada para quando houver evidência clínica, laboratorial ou de imagem sugestiva de infecção da necrose.", correta: true, comentario: "Correta: paciente com necrose estéril e em melhora clínica não tem indicação de antibiótico; o tratamento é reservado para necrose infectada documentada ou fortemente suspeita." },
+      { letra: "D", texto: "Necrose estéril acima de 30% do parênquima pancreático é, por si só, indicação formal de antibioticoprofilaxia, conforme critério ainda vigente na prática atual.", correta: false, comentario: "Esse critério de percentual de necrose para profilaxia é histórico e foi abandonado; estudos mostraram ausência de benefício e aumento de superinfecção fúngica com essa conduta." },
+    ],
+    dificuldade: "avancada",
+    estilo: "conduta",
+    tags: ["pancreatite aguda", "antibiótico", "necrose pancreática", "conduta"],
+  },
+];

@@ -1,6 +1,13 @@
 # Handoff para outra IA — Codex Medicus
 
-Atualizado em 2026-07-21.
+Atualizado em 2026-07-25.
+
+**Antes de mais nada, leia `docs/PLANO-INTEGRACAO-MEDICINA-DESKTOP.md`** — documento vivo com o
+inventário completo de `Desktop\MEDICINA\`, Downloads e Google Drive, o que já foi mapeado/construído,
+o que está pendente, e o passo a passo consolidado (sua seção 11 é o resumo mais rápido de onde tudo
+está). Sem ler isso primeiro, é fácil redescobrir fontes já catalogadas ou re-perguntar autorizações
+já concedidas (uso de RESUMOS licenciado, uso de pastas de terceiros no Drive — ambas já autorizadas
+pelo usuário, não perguntar de novo).
 
 ## Acessos públicos
 
@@ -31,17 +38,34 @@ Thiago é estudante de medicina da UFMS. O Codex Medicus é sua plataforma pesso
 
 Regra inegociável: custo zero. Usar camadas gratuitas e evitar APIs pagas em produção.
 
-Prioridade de conteúdo: Infectologia → GO → Pediatria → Cirurgia → MFC/Preventiva → Clínica Médica. Dentro de cada área, priorizar assuntos de alto rendimento da OMED.
+Prioridade de conteúdo (atualizada 2026-07-24 com dado real, não mais inferido — ver `RAIO-X-OMED.md`
+seção 0.1/0.2, arquivo local em `Desktop\med`, e `PLANO-INTEGRACAO-MEDICINA-DESKTOP.md` seção 0):
+dentro de Clínica Médica (~44% da prova, maior bloco isolado), a ordem real é Infectologia(17) >
+Cardiologia(16) > Neurologia(14) > Pneumologia(13) — já completas — depois Nefrologia(9, sem fonte
+encontrada ainda) > Gastro≈Endócrino(8) > Hematologia(7) > Oncologia≈Otorrino(6) > Reumato≈Dermato(4,
+Reumato já parcialmente construída) > Oftalmo(3) > Geriatria(1). Fora de Clínica Médica: Materno-
+Infantil (~24%, GO+Pediatria já completas) e Cirurgia (~20%, expansão grande disponível — ver plano).
 
-Nunca inventar fatos clínicos, gabaritos, fontes ou licenças. Preservar o conteúdo original do usuário e adicionar complementos em nova camada. Uma questão errada é pior que uma questão a menos.
+Nunca inventar fatos clínicos, gabaritos, fontes ou licenças. Preservar o conteúdo original do usuário e adicionar complementos em nova camada. Uma questão errada é pior que uma questão a menos. **Toda conduta precisa refletir a diretriz vigente**, não a que aparece na fonte se ela estiver desatualizada (RESUMOS, Estratégia MED e material de colega podem não estar na versão mais recente da diretriz).
 
 ## Fontes locais importantes
 
-- PDFs do Estratégia MED já extraídos pelo usuário.
-- Acervo médico local e materiais recebidos.
+- PDFs do Estratégia MED já extraídos pelo usuário (`_pdfs-estrategia`, 824 PDFs, 125/125 tópicos —
+  GO/Obstetrícia/Pediatria/Preventiva/Infectologia — **não retocar**).
+- 15 ZIPs em Downloads = 3 cursos Estratégia MED **ainda não extraídos** (Cardiologia 105 PDFs,
+  Neurologia 80 PDFs, Cirurgia 172 PDFs/33 tópicos) — ver plano seção 9.2.
+- `Desktop\MEDICINA\RESUMOS\` — produto licenciado (Esther Santos, Medicina Unimontes), uso
+  autorizado pelo usuário em 2026-07-25. Parcialmente extraído (virou Reumatologia).
+- 4 `.docx` em `Desktop\MEDICINA\` + 6 `.md` em `Desktop\cursos\` — ~595 questões comentadas já lidas
+  e mapeadas por disciplina/subtema (plano seção 2 e 9.1), prontas pra integrar.
+- Google Drive de terceiros ("Resumos e cursos" — MEDCOF/Estratégia/MedCurso —, "Bagagem" de colegas
+  de turma) — uso autorizado pelo usuário em 2026-07-25, reconhecimento feito, conteúdo interno não
+  aberto ainda. Ver plano seção 9.3.
+- `BBPM I-VIII`, `HCPM`, `LANN`, `UE`, `Farmacologia` do próprio usuário — maioria não triada, ver
+  plano seção 1 e Etapa A.
 - Histórico local do Claude, quando autorizado e disponível.
 
-Para extração, preferir Mapas Mentais; flashcards são úteis para questões. Muitos slides são imagens e exigem OCR ou inspeção própria.
+Para extração, preferir Mapas Mentais; flashcards são úteis para questões. Muitos slides são imagens e exigem OCR ou inspeção própria. **Extração de imagem via PDF Tools MCP está bloqueada** pra pelo menos parte do lote Estratégia MED (trailer malformado, artefato de export Google Drive) — ver plano seção 9.4 antes de tentar de novo.
 
 ## Operação
 
@@ -54,7 +78,12 @@ Para extração, preferir Mapas Mentais; flashcards são úteis para questões. 
 
 Após alterar `src/content/**` ou a taxonomia, executar o seed antes de validar a versão que usa Supabase. Verificar IDs de subtemas, questões, casos e figuras para evitar vínculos órfãos.
 
-Estado quantitativo validado: 36 disciplinas, 248 subtemas, 159 resumos, 528 questões, 21 casos e 66 figuras. A extração das fontes disponíveis foi encerrada; os 89 subtemas vazios são scaffolds. Os bancos exatos de Cirurgia 160 e MFC 80 não estão no disco e só têm páginas parciais no histórico; os acervos recuperados dos Resumos Absolutos (10 temas/100 questões por disciplina) já foram incorporados em `src/content/raw/`.
+Estado quantitativo validado em 2026-07-25: 36 disciplinas (9 com conteúdo real — GO, Pediatria,
+Infectologia, Cirurgia, MFC, Cardiologia, Pneumologia, Neurologia, Reumatologia), 277 subtemas, 199
+resumos prontos, 1024 questões, 24 casos clínicos, 73 figuras (61 reais + 12 diagramas, 57 ancoradas).
+A extração NÃO está mais encerrada — ver `PLANO-INTEGRACAO-MEDICINA-DESKTOP.md` pra tudo que foi
+descoberto em 2026-07-25 e ainda não construído (17 subtemas mapeados, 3 cursos Estratégia MED nunca
+extraídos, Drive de terceiros liberado). Os bancos exatos de Cirurgia 160 e MFC 80 não estão no disco e só têm páginas parciais no histórico; os acervos recuperados dos Resumos Absolutos (10 temas/100 questões por disciplina) já foram incorporados em `src/content/raw/`.
 
 ## Publicação
 
