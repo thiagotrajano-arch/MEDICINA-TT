@@ -1056,3 +1056,9 @@ errada é pior que uma questão a menos.
 - Site: criada a aba `/mapas-mentais/`, derivada somente da taxonomia e dos resumos já publicados.
 - Obsidian: hubs de Anki e mapas foram adicionados; o dashboard e o roadmap foram atualizados.
 - Publicação: commit `399fb49` enviado a `main`; GitHub Pages concluiu com sucesso no run `30300207535`. As rotas `/mapas-mentais/` e `/questoes/` responderam HTTP 200.
+
+## Auditoria e retomada — 2026-07-27
+
+- Auditoria estrutural aprovada: 37 disciplinas, 293 subtemas, 225 resumos, 1.072 questões, zero IDs duplicados e zero vínculos órfãos; typecheck e lint aprovados.
+- Qualidade pedagógica: 0 questões sem/múltiplas corretas e 0 resumos sem referência. Há dívida editorial legada: 685 questões com comentários repetidos, 81 comentários curtos, 48 sem fonte e 151 resumos com menos de 12 blocos. Não apresentar o banco inteiro como revisão final sem tratar esses lotes.
+- Próximos passos 26–40 foram pré-arquitetados em `docs/PLANO-PROXIMOS-BLOCOS.md`: primeiro revisar lote de maior peso, depois HCPM e demais triagens, então cursos grandes/provas/mídia.

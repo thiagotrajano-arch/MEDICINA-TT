@@ -35,6 +35,8 @@
 
 ## Fontes, provas e imagens
 
+> Execução pré-arquitetada em `docs/PLANO-PROXIMOS-BLOCOS.md`. Antes de aumentar o banco, aplicar o portão de qualidade editorial identificado na auditoria de 2026-07-27.
+
 - [ ] 26. Triar HCPM.
 - [ ] 27. Triar BBPM III, IV, VII e VIII.
 - [ ] 28. Triar LANN, UE e Farmacologia.
