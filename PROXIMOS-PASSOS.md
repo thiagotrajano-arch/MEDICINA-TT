@@ -1,22 +1,37 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-26 — consolidação publicada do trabalho Codex + Claude. O roteiro priorizado está em `docs/ROADMAP-50-PASSOS.md`.
+> Atualizado em 2026-07-27 — passos 8 a 25 executados e validados localmente para publicação. O roteiro priorizado está em `docs/ROADMAP-50-PASSOS.md`.
 
 ## Estado atual
 
 | | |
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
-| **Disciplinas com conteúdo real** | **13 de 36**: GO, Pediatria, Infectologia, Cirurgia, MFC, Cardiologia, Pneumologia, Neurologia, Reumatologia, Endocrinologia, Hematologia, Nefrologia e Gastroenterologia |
-| **Resumos** | **209** de 282 subtemas |
-| **Questões** | **1054** |
+| **Disciplinas com conteúdo real** | **16 de 37**: GO, Pediatria, Infectologia, Cirurgia, MFC, Cardiologia, Pneumologia, Neurologia, Gastroenterologia, Oncologia, Otorrinolaringologia, Endocrinologia, Hematologia, Nefrologia, Reumatologia e Dermatologia |
+| **Resumos** | **225** de 293 subtemas |
+| **Questões** | **1072** |
 | **Casos clínicos** | **24** (GO 6 · Ped 7 · Inf 7 · Cir 2 · MFC 1 · **Neuro 1 novo**) |
 | **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) · **57 ancoradas a resumos (78%, era 37%)** |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário — **sincronização de resposta_usuario/simulado_resultado corrigida em 2026-07-24 (estava 100% quebrada desde a migration 0003, ver relatório abaixo); progresso_conteudo (resumos/casos) nunca foi afetado** |
 | **Fonte do conteúdo publicado** | Arquivos TS (`src/content/**`), sempre — build não depende mais do Supabase estar sincronizado (corrigido 2026-07-24, ver relatório abaixo) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
 
-> Publicação mais recente: commit `5d478b2` em `main`, com validação de typecheck, lint e build de produção (351 páginas).
+> Publicação mais recente antes deste lote: commit `f751377` em `main`. Lote 8–25 validado com typecheck, lint, integridade estrutural e build de produção (363 páginas). O `npm run seed` não concluiu localmente em 10 min; o GitHub Pages renderiza a partir dos arquivos TS e não depende do seed para publicar.
+
+## O que foi feito nesta sessão (2026-07-27 — Codex, passos 8 a 25)
+
+Usuário liberou execução e publicação dos passos 8 a 25. O lote foi fechado em uma versão publicável e focada em alto rendimento:
+
+- Revisão/registro dos passos 8–12: Mieloma/NMP, Síndromes Glomerulares, IRA/DRC, Cirrose e Pancreatite Aguda permanecem integrados e revisados contra fontes vigentes.
+- Oncologia criada como disciplina própria em Clínica Médica.
+- Novos subtemas: Emergências Oncológicas; Câncer de Pulmão; Princípios de Oncologia; Farmacologia Oncológica e Imunoterapia.
+- Otorrinolaringologia deixou de ser scaffold: Rinite/Rinossinusite, Otites, Vertigem/HINTS, Tumores de Glândulas Salivares/Orofaringe.
+- Dermatologia deixou de ser scaffold: Piodermites e Neoplasias Cutâneas.
+- Backlog de Reumatologia expandido: Sjögren/Behçet, Crioglobulinemia/IgA e Miopatias Inflamatórias.
+- Gastroenterologia expandida: Doença de Wilson e Doença Hepática Alcoólica.
+- 15 resumos novos e 15 questões inéditas comentadas foram adicionados, com IDs validados.
+
+Validação local: `tsc --noEmit`, `npm run lint`, verificação estrutural de IDs/vínculos/gabaritos e `npm run build` aprovados. Build: 363 páginas estáticas.
 
 ## O que foi feito nesta sessão (2026-07-24, parte 4 — Claude, tarefas autorizadas 2-5 do Dashboard)
 

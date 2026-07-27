@@ -16,6 +16,11 @@ import { QUESTOES_ENDOCRINO } from "./questoes/endocrino";
 import { QUESTOES_GASTRO } from "./questoes/gastro";
 import { QUESTOES_HEMATO } from "./questoes/hemato";
 import { QUESTOES_NEFRO } from "./questoes/nefro";
+import { QUESTOES_GASTRO_EXTRA } from "./questoes/gastro-extra";
+import { QUESTOES_REUMATO_EXTRA } from "./questoes/reumato-extra";
+import { QUESTOES_ONCO } from "./questoes/onco";
+import { QUESTOES_OTORRINO } from "./questoes/otorrino";
+import { QUESTOES_DERMA } from "./questoes/derma";
 
 /**
  * Banco de questões — agregador.
@@ -45,4 +50,9 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_GASTRO,
   ...QUESTOES_HEMATO,
   ...QUESTOES_NEFRO,
+  ...QUESTOES_GASTRO_EXTRA,
+  ...QUESTOES_REUMATO_EXTRA,
+  ...QUESTOES_ONCO,
+  ...QUESTOES_OTORRINO,
+  ...QUESTOES_DERMA,
 ];

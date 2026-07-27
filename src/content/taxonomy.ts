@@ -399,6 +399,9 @@ const reumatologia: Disciplina = {
     tema("reumato", "Espondiloartrites", [["Diagnóstico e conduta", { altoRendimento: true }]]),
     tema("reumato", "Artrites", ["Artrite reumatoide", "Osteoartrite"]),
     tema("reumato", "Lúpus Eritematoso Sistêmico", ["Diagnóstico e conduta"]),
+    tema("reumato", "Síndrome de Sjögren e Behçet", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("reumato", "Vasculites por Imunocomplexos", [["Crioglobulinemia e IgA", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("reumato", "Miopatias Inflamatórias", [["Dermatomiosite e polimiosite", { altoRendimento: true, dificuldade: "avancada" }]]),
   ],
 };
 
@@ -413,6 +416,8 @@ const gastroenterologia: Disciplina = {
     tema("gastro", "Hepatites Virais", [["Diagnóstico e conduta", { altoRendimento: true }]]),
     tema("gastro", "Cirrose e Complicações", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
     tema("gastro", "Pancreatite Aguda", [["Diagnóstico e conduta", { altoRendimento: true }]]),
+    tema("gastro", "Doença de Wilson", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("gastro", "Doença Hepática Alcoólica", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
     tema("gastro", "DRGE", ["Geral"]),
     tema("gastro", "Doença Ulcerosa Péptica", ["Geral"]),
   ],
@@ -463,17 +468,62 @@ const nefrologia: Disciplina = {
   ],
 };
 
+const oncologia: Disciplina = {
+  id: "onco",
+  slug: "oncologia",
+  nome: "Oncologia",
+  grupo: "Clínica Médica",
+  marca: "ONC",
+  omed: true,
+  temas: [
+    tema("onco", "Emergências Oncológicas", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("onco", "Câncer de Pulmão", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("onco", "Princípios de Oncologia", [["Estadiamento e tratamento", { altoRendimento: true }]]),
+    tema("onco", "Farmacologia Oncológica e Imunoterapia", [["Princípios práticos", { altoRendimento: true, dificuldade: "avancada" }]]),
+  ],
+};
+
+const otorrinolaringologia: Disciplina = {
+  id: "otorrino",
+  slug: "otorrinolaringologia",
+  nome: "Otorrinolaringologia",
+  grupo: "Clínica Médica",
+  marca: "OTO",
+  omed: true,
+  temas: [
+    tema("otorrino", "Rinite e Rinossinusite", [["Diagnóstico e conduta", { altoRendimento: true }]]),
+    tema("otorrino", "Otites", [["Média, externa e complicações", { altoRendimento: true }]]),
+    tema("otorrino", "Vertigem e HINTS", [["Síndromes vestibulares", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("otorrino", "Tumores de Glândulas Salivares e Orofaringe", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+  ],
+};
+
+const dermatologia: Disciplina = {
+  id: "derma",
+  slug: "dermatologia",
+  nome: "Dermatologia",
+  grupo: "Clínica Médica",
+  marca: "DER",
+  omed: true,
+  temas: [
+    tema("derma", "Piodermites", [["Diagnóstico e conduta", { altoRendimento: true }]]),
+    tema("derma", "Neoplasias Cutâneas", [["CBC, CEC e melanoma", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("derma", "Dermatoses Inflamatórias", ["Geral"]),
+  ],
+};
+
 const clinicaMedica: Disciplina[] = [
   cardiologia,
   pneumologia,
   neurologia,
   gastroenterologia,
-  scaffold("otorrino", "Otorrinolaringologia", "Clínica Médica", "OTO", ["Otites", "Rinossinusites", "Vertigem"]),
+  oncologia,
+  otorrinolaringologia,
   endocrinologia,
   hematologia,
   nefrologia,
   reumatologia,
-  scaffold("derma", "Dermatologia", "Clínica Médica", "DER", ["Infecções cutâneas", "Câncer de pele"]),
+  dermatologia,
   scaffold("emerg-cm", "Emergências Clínicas", "Clínica Médica", "EMC", ["PCR e RCP", "Distúrbios do ritmo"]),
 ];
 

@@ -16,6 +16,11 @@ import { CONTEUDOS_ENDOCRINO } from "./conteudos/endocrino";
 import { CONTEUDOS_GASTRO } from "./conteudos/gastro";
 import { CONTEUDOS_HEMATO } from "./conteudos/hemato";
 import { CONTEUDOS_NEFRO } from "./conteudos/nefro";
+import { CONTEUDOS_GASTRO_EXTRA } from "./conteudos/gastro-extra";
+import { CONTEUDOS_REUMATO_EXTRA } from "./conteudos/reumato-extra";
+import { CONTEUDOS_ONCO } from "./conteudos/onco";
+import { CONTEUDOS_OTORRINO } from "./conteudos/otorrino";
+import { CONTEUDOS_DERMA } from "./conteudos/derma";
 import { CONTEUDOS_OMED_EXTRAIDOS } from "./omed-extraidos";
 
 /**
@@ -50,6 +55,11 @@ const CONTEUDOS_BASE: Record<string, ConteudoSubtema> = {
   ...CONTEUDOS_GASTRO,
   ...CONTEUDOS_HEMATO,
   ...CONTEUDOS_NEFRO,
+  ...CONTEUDOS_GASTRO_EXTRA,
+  ...CONTEUDOS_REUMATO_EXTRA,
+  ...CONTEUDOS_ONCO,
+  ...CONTEUDOS_OTORRINO,
+  ...CONTEUDOS_DERMA,
 };
 
 export const CONTEUDOS: Record<string, ConteudoSubtema> = Object.fromEntries(

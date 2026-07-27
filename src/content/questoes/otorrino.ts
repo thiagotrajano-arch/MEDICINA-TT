@@ -1,0 +1,64 @@
+import type { Questao } from "@/domain/content/types";
+
+export const QUESTOES_OTORRINO: Questao[] = [
+  {
+    id: "otorrino-001",
+    subtemaId: "otorrino--rinite-e-rinossinusite--diagnostico-e-conduta",
+    disciplinaId: "otorrino",
+    enunciado: "Adulto com rinorreia purulenta e obstrução nasal há 4 dias, sem febre alta nem piora bifásica. Qual conduta é mais adequada?",
+    alternativas: [
+      { letra: "A", texto: "Tratamento sintomático e observação.", correta: true, comentario: "Correta: quadro curto sem gravidade sugere rinossinusite viral, tratada com suporte." },
+      { letra: "B", texto: "Antibiótico imediato para toda secreção purulenta.", correta: false, comentario: "Secreção purulenta isolada não diferencia bactéria de vírus." },
+      { letra: "C", texto: "TC de seios da face na primeira consulta.", correta: false, comentario: "TC fica para complicação, recorrência, cronicidade ou dúvida relevante." },
+      { letra: "D", texto: "Corticoide sistêmico obrigatório.", correta: false, comentario: "Corticoide sistêmico não é rotina em rinossinusite viral simples." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "caso",
+    tags: ["rinossinusite", "antibiótico", "otorrino"],
+  },
+  {
+    id: "otorrino-002",
+    subtemaId: "otorrino--otites--media-externa-e-complicacoes",
+    disciplinaId: "otorrino",
+    enunciado: "Criança com otalgia, febre e membrana timpânica abaulada e hiperemiada. Qual achado mais sustenta otite média aguda verdadeira?",
+    alternativas: [
+      { letra: "A", texto: "Coriza isolada.", correta: false, comentario: "Coriza acompanha IVAS e não confirma acometimento de orelha média." },
+      { letra: "B", texto: "Abaulamento da membrana timpânica com efusão.", correta: true, comentario: "Correta: abaulamento com efusão traduz pus/pressão na orelha média e é o achado otoscópico decisivo." },
+      { letra: "C", texto: "Prurido nasal.", correta: false, comentario: "Prurido nasal sugere rinite, não OMA." },
+      { letra: "D", texto: "Dor apenas ao abrir a boca.", correta: false, comentario: "Dor mandibular isolada sugere causa odontológica ou ATM." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "caso",
+    tags: ["otite média aguda", "otoscopia"],
+  },
+  {
+    id: "otorrino-003",
+    subtemaId: "otorrino--vertigem-e-hints--sindromes-vestibulares",
+    disciplinaId: "otorrino",
+    enunciado: "Paciente com vertigem contínua há 12 horas, nistagmo espontâneo e marcha impossível. Qual uso do HINTS é correto?",
+    alternativas: [
+      { letra: "A", texto: "Aplicar em qualquer tontura episódica de segundos.", correta: false, comentario: "HINTS não é para VPPB episódica; nesses casos usa-se Dix-Hallpike." },
+      { letra: "B", texto: "Usar para substituir exame neurológico em todo paciente.", correta: false, comentario: "Ele complementa, não substitui avaliação neurológica e estratificação vascular." },
+      { letra: "C", texto: "Usar na síndrome vestibular aguda contínua para diferenciar periférico de central, se examinador treinado.", correta: true, comentario: "Correta: é ferramenta para síndrome vestibular aguda contínua com nistagmo." },
+      { letra: "D", texto: "Considerar HINTS central apenas se houver perda auditiva.", correta: false, comentario: "Perda auditiva muda hipóteses, mas HINTS central depende de impulso cefálico normal, nistagmo direcional alternante ou skew." },
+    ],
+    dificuldade: "avancada",
+    estilo: "exame",
+    tags: ["vertigem", "HINTS", "AVC posterior"],
+  },
+  {
+    id: "otorrino-004",
+    subtemaId: "otorrino--tumores-de-glandulas-salivares-e-orofaringe--diagnostico-e-conduta",
+    disciplinaId: "otorrino",
+    enunciado: "Paciente com massa parotídea endurecida e paralisia facial periférica ipsilateral. Qual interpretação é mais adequada?",
+    alternativas: [
+      { letra: "A", texto: "Adenoma pleomórfico benigno típico, sem necessidade de investigação.", correta: false, comentario: "Adenoma pleomórfico tende a ser indolor e sem paralisia facial." },
+      { letra: "B", texto: "Parotidite viral autolimitada obrigatória.", correta: false, comentario: "Parotidite viral costuma ser dolorosa/difusa e não causa paralisia facial focal como regra." },
+      { letra: "C", texto: "Cisto branquial sem relação com malignidade.", correta: false, comentario: "Cisto branquial é diagnóstico cervical lateral, não explica paralisia facial por massa parotídea." },
+      { letra: "D", texto: "Sinal de alarme para neoplasia maligna de parótida, exigindo investigação dirigida.", correta: true, comentario: "Correta: paralisia facial associada a massa parotídea é sinal de invasão neural e malignidade até prova em contrário." },
+    ],
+    dificuldade: "avancada",
+    estilo: "diagnostico",
+    tags: ["parótida", "neoplasia", "paralisia facial"],
+  },
+];

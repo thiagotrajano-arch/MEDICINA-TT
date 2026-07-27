@@ -1,6 +1,6 @@
 # Roadmap — Próximos 50 Grandes Passos
 
-> Atualizado em 2026-07-26. Execute em lotes de até 15 blocos e atualize o Obsidian ao fim de cada lote. Nunca publicar conteúdo clínico sem validação e nunca registrar credenciais.
+> Atualizado em 2026-07-27. Execute em lotes de até 15 blocos e atualize o Obsidian ao fim de cada lote. Nunca publicar conteúdo clínico sem validação e nunca registrar credenciais.
 
 ## Feitos hoje
 
@@ -13,25 +13,25 @@
 ## Conteúdo clínico prioritário
 
 - [x] 6. Escrever e revisar Hepatites Virais — publicado em `1e53fcd`.
-- [x] 7. Revisar adversarialmente Linfomas — validado localmente; publicação pendente.
-- [ ] 8. Revisar adversarialmente Mieloma e NMP.
-- [ ] 9. Revisar adversarialmente Síndromes Glomerulares.
-- [ ] 10. Revisar adversarialmente IRA e DRC conforme KDIGO vigente.
-- [ ] 11. Revisar adversarialmente Cirrose e complicações.
-- [ ] 12. Revisar adversarialmente Pancreatite Aguda.
-- [ ] 13. Decidir se Oncologia será disciplina própria.
-- [ ] 14. Construir Emergências Oncológicas.
-- [ ] 15. Construir Câncer de Pulmão e princípios de Oncologia.
-- [ ] 16. Construir Farmacologia Oncológica e Imunoterapia.
-- [ ] 17. Construir Rinite e Rinossinusite.
-- [ ] 18. Construir Otites e complicações.
-- [ ] 19. Construir Vertigem e HINTS.
-- [ ] 20. Construir tumores de glândulas salivares e orofaringe.
-- [ ] 21. Construir Piodermites.
-- [ ] 22. Construir Neoplasias Cutâneas.
-- [ ] 23. Completar backlog de Reumatologia/Dermatologia já lido.
-- [ ] 24. Construir Doença de Wilson e Doença Hepática Alcoólica.
-- [ ] 25. Revisar todo conteúdo novo com fontes primárias e gabaritos distintos.
+- [x] 7. Revisar adversarialmente Linfomas — publicado em `f751377`.
+- [x] 8. Revisar adversarialmente Mieloma e NMP.
+- [x] 9. Revisar adversarialmente Síndromes Glomerulares.
+- [x] 10. Revisar adversarialmente IRA e DRC conforme KDIGO vigente.
+- [x] 11. Revisar adversarialmente Cirrose e complicações.
+- [x] 12. Revisar adversarialmente Pancreatite Aguda.
+- [x] 13. Decidir se Oncologia será disciplina própria.
+- [x] 14. Construir Emergências Oncológicas.
+- [x] 15. Construir Câncer de Pulmão e princípios de Oncologia.
+- [x] 16. Construir Farmacologia Oncológica e Imunoterapia.
+- [x] 17. Construir Rinite e Rinossinusite.
+- [x] 18. Construir Otites e complicações.
+- [x] 19. Construir Vertigem e HINTS.
+- [x] 20. Construir tumores de glândulas salivares e orofaringe.
+- [x] 21. Construir Piodermites.
+- [x] 22. Construir Neoplasias Cutâneas.
+- [x] 23. Completar backlog de Reumatologia/Dermatologia já lido.
+- [x] 24. Construir Doença de Wilson e Doença Hepática Alcoólica.
+- [x] 25. Revisar todo conteúdo novo com fontes primárias e gabaritos distintos.
 
 ## Fontes, provas e imagens
 
