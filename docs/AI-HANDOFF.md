@@ -2,7 +2,7 @@
 
 Atualizado em 2026-07-25.
 
-**Antes de mais nada, leia `docs/PLANO-INTEGRACAO-MEDICINA-DESKTOP.md`** — documento vivo com o
+**Antes de mais nada, leia `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` e `docs/PLANO-INTEGRACAO-MEDICINA-DESKTOP.md`** — documentos vivos com o
 inventário completo de `Desktop\MEDICINA\`, Downloads e Google Drive, o que já foi mapeado/construído,
 o que está pendente, e o passo a passo consolidado (sua seção 11 é o resumo mais rápido de onde tudo
 está). Sem ler isso primeiro, é fácil redescobrir fontes já catalogadas ou re-perguntar autorizações
@@ -29,8 +29,9 @@ O progresso sincronizado inclui questões, simulados, resumos/casos concluídos,
 1. Ler `AGENTS.md`.
 2. Ler `PROXIMOS-PASSOS.md`.
 3. Ler `docs/PROMPTS-MASTER.md`.
-4. Consultar o arquivo local `RAIO-X-OMED.md` quando disponibilizado pelo usuário.
-5. Conferir `git status` e os commits recentes.
+4. Ler `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` para distinguir inventário, conversão, análise e integração.
+5. Consultar o arquivo local `RAIO-X-OMED.md` quando disponibilizado pelo usuário.
+6. Conferir `git status` e os commits recentes.
 
 ## Contexto consolidado
 

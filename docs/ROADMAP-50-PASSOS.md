@@ -70,7 +70,24 @@
 
 - [ ] 51. Criar mapas mentais individuais para temas prioritarios, iniciando pelos subtemas de Infectologia ja revisados editorialmente. A aba atual e um indice navegavel; ela nao substitui diagramas de estudo por tema.
 - [x] 52. Criar a aba `Meu Curso` com estrutura de 12 semestres, pronta para receber matriz curricular, disciplinas, cronogramas e documentos enviados pelo usuario.
-- [ ] 53. Preencher `Meu Curso` somente a partir dos documentos curriculares enviados pelo usuario; nao inferir grade, ementas ou ordem da instituicao.
+- [x] 53. Preencher `Meu Curso` a partir da matriz oficial consultada no SISCAD, sem inferir grade, ementas ou ordem da instituicao.
+
+## Plano mestre de extração e curso
+
+> O estado detalhado e os critérios de conclusão estão em
+> `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md`. Localizar ou converter um arquivo não
+> significa que ele já foi analisado clinicamente.
+
+- [ ] 54. Reconciliar o inventário atual de 824 PDFs do Estratégia com a contagem histórica de 871.
+- [ ] 55. Gerar manifesto unificado com hash, origem, cache e estado de cada fonte.
+- [ ] 56. Triar LANN, UE e Farmacologia.
+- [ ] 57. Capturar planos e ementas históricos disponíveis no SISCAD.
+- [ ] 58. Criar atualização privada dos semestres por formulário e importação Markdown/CSV.
+- [ ] 59. Triar os 30 arquivos da pasta `RESUMOS` por lacunas reais.
+- [ ] 60. Conectar o Drive `Resumos e cursos` e inventariar metadados antes de baixar.
+- [ ] 61. Deduplicar Drive e acervo local antes da conversão de novos lotes.
+- [ ] 62. Extrair e classificar imagens clínicas embutidas, separando uso privado de publicação licenciada.
+- [ ] 63. Integrar os lotes aprovados com casos, questões, mapas mentais e Anki, seguidos de QA clínico e técnico.
 
 ## Regra de retomada
 
