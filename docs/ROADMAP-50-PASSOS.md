@@ -37,7 +37,7 @@
 
 > Execução pré-arquitetada em `docs/PLANO-PROXIMOS-BLOCOS.md`. Antes de aumentar o banco, aplicar o portão de qualidade editorial identificado na auditoria de 2026-07-27.
 
-- [ ] 26. Triar HCPM.
+- [x] 26. Triar HCPM — inventário, limites e destinos registrados em `docs/TRIAGEM-HCPM.md`; nenhuma importação clínica automática.
 - [ ] 27. Triar BBPM III, IV, VII e VIII.
 - [ ] 28. Triar LANN, UE e Farmacologia.
 - [ ] 29. Abrir Estratégia 2024 Extensivo para Hemato/Gastro.
@@ -65,6 +65,12 @@
 - [x] 48. Criar aba Mapas Mentais baseada na taxonomia e nos resumos publicados.
 - [x] 49. Evoluir hubs e links do Obsidian para Anki e Mapas Mentais.
 - [x] 50. Fazer auditoria de fechamento: código, fontes de configuração, progresso, deploy, backup e roadmap.
+
+## Expansoes pendentes apos os 50 passos
+
+- [ ] 51. Criar mapas mentais individuais para temas prioritarios, iniciando pelos subtemas de Infectologia ja revisados editorialmente. A aba atual e um indice navegavel; ela nao substitui diagramas de estudo por tema.
+- [x] 52. Criar a aba `Meu Curso` com estrutura de 12 semestres, pronta para receber matriz curricular, disciplinas, cronogramas e documentos enviados pelo usuario.
+- [ ] 53. Preencher `Meu Curso` somente a partir dos documentos curriculares enviados pelo usuario; nao inferir grade, ementas ou ordem da instituicao.
 
 ## Regra de retomada
 

@@ -69,6 +69,8 @@ Para extração, preferir Mapas Mentais; flashcards são úteis para questões. 
 
 ## Operação
 
+- **PDFs:** regra obrigatória: `PDF -> Markdown cacheado -> leitura/triagem`. Localizar o cache antes de abrir o original; converter somente se ainda não houver Markdown verificável. Isso reduz releituras, consumo de contexto e risco de usar extração incompleta.
+
 - Instalação: `npm ci`
 - Desenvolvimento: `npm run dev`
 - Typecheck: `npm run typecheck`

@@ -24,6 +24,10 @@ Dentro de cada disciplina, priorizar os subtemas marcados `altoRendimento` na ta
 
 ## FONTES DE CONTEÚDO (usar nesta ordem)
 
+### Regra permanente para PDFs: Markdown antes da leitura
+
+Todo PDF novo deve passar pelo fluxo `PDF -> Markdown cacheado -> leitura/triagem`. Nunca usar a leitura direta do PDF como etapa rotineira: primeiro localizar um `.md` correspondente em `_md-cache`; se não existir, converter com o script de extração aprovado, registrar origem, data e limitações, e então ler o Markdown em trechos necessários. Se a extração vier vazia ou corrompida, registrar a lacuna e pedir uma cópia legível/reexportada em vez de inferir o conteúdo.
+
 1. **Estratégia MED — PDFs já extraídos** (fonte mais nova e mais densa; ver seção própria
    abaixo "CURSO ESTRATÉGIA MED" para estrutura completa e mapeamento por disciplina):
    `C:\Users\Adm\Desktop\MEDICINA\_pdfs-estrategia\<DISCIPLINA>\` — Slides, Mapas Mentais e
