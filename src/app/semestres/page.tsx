@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { BookOpen, CheckCircle2, Clock3, FileText, GraduationCap } from "lucide-react";
 
 import { SEMESTRES, type StatusSemestre } from "@/content/semestres";
@@ -13,6 +14,14 @@ const STATUS: Record<StatusSemestre, { label: string; className: string }> = {
   "em-curso": { label: "Em curso", className: "bg-surface-2 text-gold" },
   futuro: { label: "Futuro", className: "bg-surface-2 text-text-faint" },
 };
+
+const CONEXOES = [
+  { href: "/biblioteca", label: "Resumos", description: "Conteúdo revisado por disciplina e subtema" },
+  { href: "/questoes", label: "Questões", description: "Treino com progresso salvo" },
+  { href: "/casos", label: "Casos clínicos", description: "Raciocínio clínico em etapas" },
+  { href: "/mapas-mentais", label: "Mapas mentais", description: "Visão conectada dos resumos publicados" },
+  { href: "/midia", label: "Mídia", description: "Figuras clínicas com fonte e contexto" },
+] as const;
 
 export default function SemestresPage() {
   return (
@@ -46,6 +55,19 @@ export default function SemestresPage() {
             </article>
           );
         })}
+      </section>
+
+      <section className="mt-7 rounded-2xl border border-border bg-surface p-5 sm:p-6" style={{ boxShadow: "var(--shadow)" }}>
+        <h2 className="text-lg font-bold text-text">Acervos conectados</h2>
+        <p className="mt-2 text-sm leading-6 text-text-muted">Use estes atalhos enquanto o vínculo fino entre cada componente, a versão do plano e seus subtemas passa por revisão de proveniência.</p>
+        <nav aria-label="Acervos relacionados ao curso" className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {CONEXOES.map((conexao) => (
+            <Link key={conexao.href} href={conexao.href} className="rounded-xl border border-border bg-surface-2 p-3 transition-colors hover:border-accent/50 hover:bg-accent-soft">
+              <span className="text-sm font-semibold text-accent">{conexao.label}</span>
+              <span className="mt-1 block text-xs leading-5 text-text-muted">{conexao.description}</span>
+            </Link>
+          ))}
+        </nav>
       </section>
 
       <section className="mt-7 rounded-2xl border border-dashed border-border bg-surface-2 p-5 text-sm leading-6 text-text-muted"><div className="flex gap-3"><Clock3 className="mt-0.5 size-5 shrink-0 text-text-faint" aria-hidden="true" /><p>Fonte curricular: semestralização e planos de ensino do SISCAD/UFMS, consultados em 28/07/2026. Dados de identificação, matrícula e notas não são publicados. Todo PDF futuro será convertido para Markdown antes da leitura.</p></div></section>
