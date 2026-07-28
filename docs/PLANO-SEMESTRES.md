@@ -2,11 +2,11 @@
 
 ## Estado
 
-A rota `/semestres` oferece uma estrutura neutra de 12 semestres. Ela não representa uma grade curricular oficial e não deve receber disciplinas, ementas ou cronogramas inferidos.
+A rota `/semestres` representa agora a semestralização oficial do curso de Medicina consultada no SISCAD/UFMS em 28/07/2026. Os 12 períodos e seus componentes obrigatórios foram transcritos da análise curricular; notas, matrícula, identificadores e nomes de docentes não são publicados.
 
 ## Entrada esperada
 
-Para cada semestre, priorizar: matriz curricular, plano de ensino/ementa, cronograma, listas de atividades e materiais liberados pelo usuário. PDF recebido segue obrigatoriamente `PDF -> Markdown cacheado -> leitura/triagem` antes de qualquer síntese.
+Seis dos sete planos da matrícula atual estavam aprovados e visíveis no SISCAD. O plano de HCPM VI ainda não estava liberado e permanece como lacuna documentada. Novos PDFs continuam seguindo obrigatoriamente `PDF -> Markdown cacheado -> leitura/triagem` antes de qualquer síntese.
 
 ## Saída por semestre
 
@@ -17,4 +17,4 @@ Para cada semestre, priorizar: matriz curricular, plano de ensino/ementa, cronog
 
 ## Critério para publicar conteúdo
 
-O semestre só deixa o estado de "aguardando material" quando houver ao menos uma fonte documental identificada e sua conversão para Markdown tiver sido conferida. A organização deve preservar a incerteza onde a documentação for incompleta.
+O status curricular deriva da análise oficial: concluído/aproveitado, em curso ou futuro. Conteúdo clínico detalhado só entra após revisão de fonte; a organização deve preservar a incerteza onde um plano estiver incompleto ou indisponível.

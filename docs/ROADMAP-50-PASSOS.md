@@ -38,7 +38,7 @@
 > Execução pré-arquitetada em `docs/PLANO-PROXIMOS-BLOCOS.md`. Antes de aumentar o banco, aplicar o portão de qualidade editorial identificado na auditoria de 2026-07-27.
 
 - [x] 26. Triar HCPM — inventário, limites e destinos registrados em `docs/TRIAGEM-HCPM.md`; nenhuma importação clínica automática.
-- [ ] 27. Triar BBPM III, IV, VII e VIII.
+- [x] 27. Triar BBPM III, IV, VII e VIII — inventário, amostras, exclusões e duplicidades registrados em `docs/TRIAGEM-BBPM-III-IV-VII-VIII.md`.
 - [ ] 28. Triar LANN, UE e Farmacologia.
 - [ ] 29. Abrir Estratégia 2024 Extensivo para Hemato/Gastro.
 - [ ] 30. Extrair os 15 ZIPs de Cardio, Neuro e Cirurgia.
