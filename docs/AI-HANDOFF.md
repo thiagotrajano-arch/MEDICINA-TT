@@ -103,3 +103,10 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - `SUPABASE_DB_URL` e `SUPABASE_SERVICE_ROLE_KEY` já estão cadastrados como GitHub Actions Secrets com autorização explícita do usuário. O backup semanal foi validado no run `29885112038`; usa Supavisor session mode/IPv4 e `postgres:17-alpine`, pois o endpoint direto é IPv6 e o servidor está no PostgreSQL 17.
 - Para Drive, obter autorização Google própria e `DRIVE_FOLDER_IDS`; nunca inventar, solicitar senha de e-mail ou reutilizar credencial alheia.
 - Não há nova extração segura até o usuário fornecer os PDFs faltantes descritos em `PROXIMOS-PASSOS.md`.
+
+## Fechamento de 2026-07-28
+
+- SISCAD reconciliado em área privada: 37 componentes, 36 planos analisados e um plano indisponível; não há página pendente. Nenhum dado individual foi copiado para o repositório.
+- As fontes LANN, UE, Farmacologia e `RESUMOS` (30/30) foram triadas privadamente. As 34 variantes distintas de colisão do Estratégia foram recuperadas com hash e proveniência preservados; o inventário agora distingue 863 entradas ZIP, 824 nomes iniciais, cinco duplicatas exatas e 858 PDFs distintos preservados.
+- A prioridade não é extrair em massa: primeiro criar o manifesto unificado de fontes, depois a matriz `plano → tema → subtema → recurso`, e então aplicar o portão editorial em Infectologia e GO.
+- Para o estado privado completo e a fila de retomada, consultar `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian. Não publicar material comercial nem derivado de SISCAD sem validação clínica, licença e revisão de privacidade.

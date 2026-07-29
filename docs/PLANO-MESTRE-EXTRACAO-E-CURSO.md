@@ -9,11 +9,11 @@
 
 | Fonte | Estado confirmado | O que ainda falta |
 |---|---|---|
-| SISCAD | Estrutura oficial dos 12 períodos mapeada; histórico acadêmico analisado em área privada; seis planos atuais lidos | Capturar planos/ementas históricos disponíveis; tentar novamente o plano indisponível; criar atualização semestral reutilizável |
+| SISCAD | Estrutura oficial dos 12 períodos mapeada; 37 componentes com estado explícito; 36 planos analisados e 1 indisponível em área privada | Reconsultar somente o plano indisponível e criar atualização semestral reutilizável |
 | `Desktop\\MEDICINA` | 1.401 arquivos, 14,24 GB; 1.094 PDFs; nove pastas principais têm cache Markdown | Análise clínica completa, deduplicação, extração de imagens embutidas e integração seletiva |
-| Estratégia local | 824 PDFs na fotografia atual; 125 tópicos das cinco áreas principais já mapeados | Reconciliar a contagem histórica de 871; não confundir cobertura temática com extração página a página |
-| `RESUMOS` | 30 arquivos; 29 caches de texto e 1 parcial | Triagem clínica e integração do que for útil, com respeito aos direitos autorais |
-| BBPM/HCPM | HCPM e BBPM III/IV/VII/VIII triados | LANN, UE e Farmacologia ainda precisam de triagem detalhada |
+| Estratégia local | 863 entradas nos ZIPs; 824 nomes iniciais; 34 variantes distintas recuperadas; 858 PDFs distintos preservados | Manifesto unificado e seleção por lacuna clínica; não confundir cobertura temática com extração página a página |
+| `RESUMOS` | 30 arquivos, 2.862 páginas; triagem 30/30 concluída | Integração seletiva após validação clínica e respeito aos direitos autorais |
+| BBPM/HCPM | HCPM, BBPM III/IV/VII/VIII, LANN, UE e Farmacologia triados | Integrar somente síntese clinicamente validada |
 | Imagens clínicas do site | Acervo público existente e registro estruturado | Auditoria exata de IDs/arquivos/licenças; extrair candidatos embutidos e buscar equivalentes licenciados |
 | Drive `Resumos e cursos` | Estrutura geral reconhecida em sessão anterior | Conectar o Drive, fazer inventário por metadados, deduplicar e baixar apenas lotes prioritários |
 
@@ -31,7 +31,7 @@
 
 ### Bloco 0 — Fechar a fonte de verdade
 
-- [ ] Recontar os 824 PDFs locais e explicar a divergência com a contagem histórica de 871.
+- [x] Recontar os PDFs locais e explicar a divergência histórica: 863 entradas, 824 nomes e 858 PDFs distintos após recuperar 34 variantes; 871 era transcrição incorreta.
 - [ ] Gerar manifestos com caminho relativo, tamanho, hash, tipo, cache e data de análise.
 - [ ] Marcar explicitamente o que é privado, publicável, duplicado ou protegido.
 - [ ] Fazer auditoria estrutural do registro atual de figuras e dos arquivos físicos.
@@ -43,10 +43,10 @@
 - [x] Mapear a matriz oficial dos 12 períodos.
 - [x] Analisar o desempenho desde o primeiro período em notas privadas do Obsidian.
 - [x] Ler seis planos de ensino do período atual.
-- [ ] Capturar, disciplina por disciplina, plano, ementa, objetivos, programa e avaliação de todos os períodos em que esses dados estiverem disponíveis.
+- [x] Capturar, disciplina por disciplina, plano, ementa, objetivos, programa e avaliação de todos os períodos em que esses dados estiverem disponíveis.
 - [ ] Reconsultar o plano atual ainda indisponível.
 - [ ] Se houver PDF, convertê-lo uma vez para Markdown antes da leitura.
-- [ ] Normalizar a coleta em arquivo privado versionado, com origem e data de atualização.
+- [x] Normalizar a coleta em arquivos privados versionados, com origem e data de atualização.
 
 **Saída:** mapa curricular completo e atualizável, sem expor notas ou identificadores.
 
@@ -66,8 +66,8 @@
 - [x] Inventariar a pasta completa.
 - [x] Criar cache Markdown para as nove fontes principais.
 - [x] Triar HCPM e BBPM III/IV/VII/VIII.
-- [ ] Triar LANN, UE e Farmacologia, nesta ordem.
-- [ ] Triar os 30 arquivos de `RESUMOS`, começando por lacunas reais do site e do semestre.
+- [x] Triar LANN, UE e Farmacologia, nesta ordem.
+- [x] Triar os 30 arquivos de `RESUMOS`, começando por lacunas reais do site e do semestre.
 - [ ] Deduplicar os quatro DOCX de questões contra o banco já publicado.
 - [ ] Classificar os materiais restantes por disciplina, subtema, semestre, valor clínico e prioridade OMED.
 

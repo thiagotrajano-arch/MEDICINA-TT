@@ -1,17 +1,17 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-28. O roteiro priorizado está em `docs/ROADMAP-50-PASSOS.md` e a nova fonte de verdade para SISCAD, pasta local, Drive e imagens é `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md`.
+> Atualizado em 2026-07-28. O roteiro priorizado está em `docs/ROADMAP-50-PASSOS.md`; para o fechamento privado da sessão, consultar também `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian.
 
 ## Plano mestre de extração e curso — 2026-07-28
 
 - A matriz dos 12 períodos e o desempenho acadêmico foram analisados; os dados pessoais permanecem apenas no Obsidian privado.
-- Seis planos atuais foram lidos, mas os planos e ementas históricos ainda não foram capturados integralmente.
+- Todos os planos disponíveis foram capturados: 37 componentes, 36 planos analisados e um plano indisponível, sem dados individuais no repositório.
 - `Desktop\\MEDICINA` está inventariada (1.401 arquivos; 1.094 PDFs; 14,24 GB) e as nove fontes principais têm cache Markdown, mas a análise clínica não está completa.
-- O lote local do Estratégia tem 824 PDFs na fotografia atual; a divergência com a contagem histórica de 871 deve ser reconciliada antes de novas afirmações quantitativas.
-- HCPM e BBPM III/IV/VII/VIII foram triados. A próxima triagem local é LANN, UE e Farmacologia; depois vêm os 30 arquivos de `RESUMOS`.
+- O lote local do Estratégia foi reconciliado: 863 entradas, 824 nomes, cinco duplicatas exatas e 34 variantes distintas recuperadas; o total preservado é 858 PDFs distintos.
+- HCPM, BBPM III/IV/VII/VIII, LANN, UE, Farmacologia e os 30 arquivos de `RESUMOS` foram triados privadamente. A integração continua dependente de validação clínica, licença e deduplicação.
 - O Drive `Resumos e cursos` foi apenas reconhecido. Falta conexão, inventário por metadados, deduplicação e extração seletiva.
 - Imagens clínicas embutidas em PDFs ainda precisam de extração dirigida. Material comercial fica privado; o site público recebe apenas imagens com direito de uso verificável.
-- Seguir os blocos 0–7 do plano mestre e atualizar o Obsidian ao fechar cada lote.
+- Próxima sequência: manifesto unificado de fontes → matriz plano–tema–subtema → portão editorial de Infectologia e GO. Atualizar o Obsidian ao fechar cada lote.
 
 ## Estado atual
 

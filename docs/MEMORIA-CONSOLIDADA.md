@@ -44,3 +44,10 @@ O estado quantitativo e as pendências atuais devem ser obtidos de `PROXIMOS-PAS
 ## Nota de segurança
 
 Credenciais e permissões históricas não fazem parte desta memória. O `.env.local` é a única localização operacional local e deve permanecer fora do Git.
+
+## Atualização de continuidade — 2026-07-28
+
+- SISCAD concluído no cofre privado: 37 componentes, 36 planos disponíveis analisados e um indisponível; dados individuais continuam fora do repositório e do site.
+- Estratégia reconciliado: 863 entradas ZIP, 824 nomes iniciais, cinco duplicatas exatas e 34 variantes distintas recuperadas; 858 PDFs distintos preservados. Ainda falta manifesto unificado e seleção por lacuna clínica.
+- LANN, UE, Farmacologia e os 30 arquivos de `RESUMOS` foram triados privadamente. O Drive tem inventário prioritário por metadados, mas exige deduplicação antes de qualquer novo download/lote.
+- Próxima fila: manifesto de fontes, matriz plano–tema–subtema, revisão editorial de Infectologia/GO, mapas mentais individuais e camada privada autenticada de atualização do curso.

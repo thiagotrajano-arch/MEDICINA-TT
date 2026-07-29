@@ -2,6 +2,9 @@
 
 > Atualizado em 2026-07-27. Execute em lotes de até 15 blocos e atualize o Obsidian ao fim de cada lote. Nunca publicar conteúdo clínico sem validação e nunca registrar credenciais.
 
+> [!IMPORTANT]
+> Reconciliação de 2026-07-28: os itens 28, 30 e 31 receberam execução seletiva e registro privado; as tarefas 54, 56, 57, 59 e 60 também avançaram. A lista histórica de caixas abaixo não substitui o estado consolidado em `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` e na nota privada de fechamento do Obsidian.
+
 ## Feitos hoje
 
 - [x] 1. Consolidar contagens reais do código e corrigir os handoffs.
