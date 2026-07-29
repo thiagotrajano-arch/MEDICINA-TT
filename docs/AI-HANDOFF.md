@@ -140,3 +140,9 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - As migrations `20260729170921_cria_camada_privada_do_curso.sql` e `20260729172234_restringe_permissoes_curso_privado.sql` foram aplicadas. As tabelas `curso_disciplina_usuario` e `curso_disciplina_evento` têm RLS por `owner_id`; acesso anônimo é revogado e o papel autenticado possui somente `select`, `insert`, `update` e `delete`. A verificação foi estrutural e não consultou registros de usuários.
 - Validações locais concluídas: parser Markdown/CSV, TypeScript, lint, auditoria de privacidade, revisão de diff e build de produção com 366 páginas. Antes de ampliar a camada, testar uma atualização autenticada real em produção; não usar senha de usuário em scripts ou registros.
 - Próxima sequência: passos 27–28 do `docs/PLANO-100-PASSOS.md` (matriz privada completa e painel longitudinal de materiais, lacunas e próximos estudos), mantendo SISCAD, Drive e acervo comercial fora do repositório público.
+
+### Recorte público seguro do painel longitudinal
+
+- O painel privado passou a receber um catálogo serializável calculado no servidor a partir de taxonomia, resumos, questões e casos já públicos. Ele nunca recebe SISCAD, PDFs, observações, notas, arquivos do Drive ou credenciais.
+- Para cada disciplina registrada, exibe cobertura publicada (resumos, questões, casos e figuras ancoradas), lacunas de conteúdo na taxonomia e até três tópicos recomendados. A prioridade local ordena `revisar`, `cursando`, `planejada` e `concluida`, usando dificuldade como desempate.
+- O passo 27 não está encerrado: faltam documentos/materiais privados autorizados e a matriz longitudinal real. Não substituir esses vínculos por inferência ou dados publicados.

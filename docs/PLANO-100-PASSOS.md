@@ -68,6 +68,12 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 > permissões autenticadas restritas às operações necessárias. Falta a matriz
 > curricular privada completa e o painel ampliado de materiais/lacunas (27–28).
 
+> Primeiro recorte do passo 27 entregue em 2026-07-29: o painel privado agora
+> deriva, da taxonomia pública, contagens de resumos, questões, casos e figuras
+> ancoradas; sugere um próximo tópico por status/dificuldade; e mostra lacunas
+> de conteúdo publicado. O passo permanece aberto até incluir vínculos privados
+> reais de materiais/documentos e a matriz curricular longitudinal (18–20).
+
 ## 3. Drive e acervo local: ingestão seletiva (29–42)
 
 - [ ] 29. Conectar o Google Drive com autorização própria e IDs de pasta, sem reutilizar credenciais de terceiros.

@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { CursoPrivadoClient } from "@/components/curso/CursoPrivadoClient";
+import { CASOS } from "@/content/casos";
+import { CONTEUDOS } from "@/content/conteudos";
+import { QUESTOES } from "@/content/questoes";
+import { criarRecursosPublicosPorDisciplina } from "@/lib/curso-publico";
 import { getContentRepository } from "@/infra/content";
 
 export const metadata: Metadata = {
@@ -11,5 +15,6 @@ export const metadata: Metadata = {
 export default async function MeuCursoPage() {
   const repository = await getContentRepository();
   const disciplinas = await repository.getDisciplinas();
-  return <CursoPrivadoClient disciplinasDisponiveis={disciplinas.map(({ id, nome, slug, marca }) => ({ id, nome, slug, marca }))} />;
+  const recursosPublicos = criarRecursosPublicosPorDisciplina({ disciplinas, conteudos: CONTEUDOS, questoes: QUESTOES, casos: CASOS });
+  return <CursoPrivadoClient disciplinasDisponiveis={recursosPublicos} />;
 }
