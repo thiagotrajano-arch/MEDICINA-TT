@@ -33,3 +33,10 @@ distratores e trocar a referência genérica por fonte oficial específica.
 Itens de meningite, sepse, malária, tuberculose congênita e intervenções
 fetais invasivas continuam fora deste lote até haver diretriz específica e
 revisão individual rastreável.
+
+## Publicação confirmada
+
+- Commit publicado: `31b3a36`.
+- Produção conferida: `/`, `/semestres/` e `/questoes/` responderam HTTP 200.
+- A checagem de conteúdo de `/semestres/` confirmou a trilha pública nova e a
+  ausência do marcador individual legado.
