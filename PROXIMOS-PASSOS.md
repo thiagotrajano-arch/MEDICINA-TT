@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-28. O roteiro priorizado está em `docs/ROADMAP-50-PASSOS.md`; para o fechamento privado da sessão, consultar também `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian.
+> Atualizado em 2026-07-28. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o fechamento privado da sessão, consultar também `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian.
 
 ## Plano mestre de extração e curso — 2026-07-28
 

@@ -51,3 +51,4 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - Estratégia reconciliado: 863 entradas ZIP, 824 nomes iniciais, cinco duplicatas exatas e 34 variantes distintas recuperadas; 858 PDFs distintos preservados. Ainda falta manifesto unificado e seleção por lacuna clínica.
 - LANN, UE, Farmacologia e os 30 arquivos de `RESUMOS` foram triados privadamente. O Drive tem inventário prioritário por metadados, mas exige deduplicação antes de qualquer novo download/lote.
 - Próxima fila: manifesto de fontes, matriz plano–tema–subtema, revisão editorial de Infectologia/GO, mapas mentais individuais e camada privada autenticada de atualização do curso.
+- O roteiro de encerramento foi consolidado em `docs/PLANO-100-PASSOS.md`. A próxima retomada começa pelos passos 1–5 (manifesto, classificação, auditoria de mídia e ligação curricular), sem repetir as triagens já fechadas.
