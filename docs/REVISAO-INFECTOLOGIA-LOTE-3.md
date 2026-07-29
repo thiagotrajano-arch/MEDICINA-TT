@@ -27,3 +27,10 @@ segundo o critério atual.
 Este lote não encerra os passos 44–46. O próximo recorte continua sendo os
 comentários curtos de Infectologia; meningites e sepse só devem ser alteradas
 depois de encontrar uma diretriz primária atual e específica para cada conduta.
+
+## Validação e publicação
+
+O lote foi publicado no commit `6dcc44f`. Typecheck, lint e auditoria filtrada
+passaram; o GitHub Pages
+[`30457470874`](https://github.com/thiagotrajano-arch/MEDICINA-TT/actions/runs/30457470874)
+concluiu com sucesso, e `/` e `/questoes/` responderam HTTP 200.

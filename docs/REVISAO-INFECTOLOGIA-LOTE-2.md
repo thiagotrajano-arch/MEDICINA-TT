@@ -32,3 +32,10 @@ Este lote não encerra os passos 44–46. O próximo recorte deve abordar
 comentários curtos de Infectologia, começando pelos itens de meningites apenas
 quando houver uma diretriz atual e específica para a conduta que se pretende
 validar.
+
+## Validação e publicação
+
+O lote foi publicado em conjunto com o lote 3 no commit `6dcc44f`. Typecheck,
+lint e auditoria filtrada passaram; o GitHub Pages
+[`30457470874`](https://github.com/thiagotrajano-arch/MEDICINA-TT/actions/runs/30457470874)
+concluiu com sucesso, e `/` e `/questoes/` responderam HTTP 200.
