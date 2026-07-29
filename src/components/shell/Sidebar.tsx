@@ -12,6 +12,7 @@ import {
   Images,
   Network,
   GraduationCap,
+  LockKeyhole,
   ChevronRight,
   Sparkles,
 } from "lucide-react";
@@ -26,7 +27,8 @@ const NAV = [
   { href: "/casos", label: "Casos clínicos", icon: Stethoscope },
   { href: "/midia", label: "Mídia", icon: Images },
   { href: "/mapas-mentais", label: "Mapas mentais", icon: Network },
-  { href: "/semestres", label: "Meu Curso", icon: GraduationCap },
+  { href: "/semestres", label: "Trilhas", icon: GraduationCap },
+  { href: "/meu-curso", label: "Meu curso", icon: LockKeyhole },
 ];
 
 export function Sidebar({

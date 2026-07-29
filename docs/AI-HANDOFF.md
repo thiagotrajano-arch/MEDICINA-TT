@@ -133,3 +133,10 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - A telemetria cliente foi reduzida a um envelope sanitizado, limitado por carregamento e restrito ao usuário autenticado. A migration `0007_restringe_monitoramento_autenticado.sql` foi aplicada e a política RLS foi verificada sem ler dados de usuários.
 - O lote 4 de Infectologia revisou cinco itens contra fontes oficiais específicas; a auditoria filtrada passou de 33 para 23 comentários curtos em 16 questões, mantendo zero repetições e zero fontes vazias. Consultar `docs/REVISAO-INFECTOLOGIA-LOTE-4.md`.
 - O bloco foi publicado no commit `31b3a36`. A produção respondeu HTTP 200 em `/`, `/semestres/` e `/questoes/`; a checagem de conteúdo confirmou a trilha pública nova e a ausência do marcador individual antigo. O backup restaurado e o inventário/baseline do Drive continuam pendências externas deliberadas.
+
+## Camada privada do curso — 2026-07-29
+
+- A rota `/meu-curso` é a camada autenticada para progresso acadêmico individual. Ela oferece formulário manual, rascunho local, importação de Markdown/CSV com pré-visualização e confirmação, edição e histórico mínimo. A rota pública `/semestres` continua somente com trilhas genéricas.
+- As migrations `20260729170921_cria_camada_privada_do_curso.sql` e `20260729172234_restringe_permissoes_curso_privado.sql` foram aplicadas. As tabelas `curso_disciplina_usuario` e `curso_disciplina_evento` têm RLS por `owner_id`; acesso anônimo é revogado e o papel autenticado possui somente `select`, `insert`, `update` e `delete`. A verificação foi estrutural e não consultou registros de usuários.
+- Validações locais concluídas: parser Markdown/CSV, TypeScript, lint, auditoria de privacidade, revisão de diff e build de produção com 366 páginas. Antes de ampliar a camada, testar uma atualização autenticada real em produção; não usar senha de usuário em scripts ou registros.
+- Próxima sequência: passos 27–28 do `docs/PLANO-100-PASSOS.md` (matriz privada completa e painel longitudinal de materiais, lacunas e próximos estudos), mantendo SISCAD, Drive e acervo comercial fora do repositório público.

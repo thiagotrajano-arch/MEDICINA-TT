@@ -48,18 +48,25 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 - [ ] 18. Atualizar a matriz privada dos 12 períodos com origem, data e vínculos para conteúdos de revisão.
 - [ ] 19. Comparar planos, ementas e objetivos com a matriz curricular e ligar cada matéria já cursada aos temas, resumos, questões, casos e mídia correspondentes.
 - [ ] 20. Registrar somente diferenças curriculares relevantes, sem copiar dados pessoais ao repositório.
-- [ ] 21. Definir o esquema da camada privada do curso: disciplina, período, status, datas e dificuldades.
+- [x] 21. Definir o esquema da camada privada do curso: disciplina, período, status, datas e dificuldades.
 - [x] 22. Separar definitivamente o catálogo público de disciplinas do progresso acadêmico privado.
-- [ ] 23. Criar formulário autenticado de atualização semestral para o próprio usuário.
-- [ ] 24. Permitir importar atualização privada por Markdown e por CSV com pré-visualização.
-- [ ] 25. Implementar edição manual, validação de campos e confirmação antes de salvar alterações.
-- [ ] 26. Guardar histórico de alterações, origem e data sem expor informações sensíveis.
+- [x] 23. Criar formulário autenticado de atualização semestral para o próprio usuário.
+- [x] 24. Permitir importar atualização privada por Markdown e por CSV com pré-visualização.
+- [x] 25. Implementar edição manual, validação de campos e confirmação antes de salvar alterações.
+- [x] 26. Guardar histórico de alterações, origem e data sem expor informações sensíveis.
 - [ ] 27. Exibir, no painel privado, disciplinas, documentos, lacunas, próximos estudos e materiais relacionados, inclusive das matérias já concluídas.
 - [ ] 28. Criar rotinas reutilizáveis de abertura, acompanhamento, encerramento e revisão longitudinal por período/matéria.
 
 > Passo 22 concluído em 2026-07-29: a rota pública de trilhas foi reduzida a
 > ciclos genéricos e passou a ter auditoria estática. O mapa individual segue
 > no cofre privado até existir uma camada autenticada revisada (23–28).
+
+> Passos 21 e 23–26 concluídos em 2026-07-29: a rota autenticada `/meu-curso`
+> ganhou tabela privada por conta, edição manual, rascunho local, importação
+> Markdown/CSV com pré-visualização e confirmação, e histórico mínimo sem
+> observações. As tabelas têm RLS por `owner_id`, acesso anônimo revogado e
+> permissões autenticadas restritas às operações necessárias. Falta a matriz
+> curricular privada completa e o painel ampliado de materiais/lacunas (27–28).
 
 ## 3. Drive e acervo local: ingestão seletiva (29–42)
 
