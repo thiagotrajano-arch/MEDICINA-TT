@@ -17,28 +17,32 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 
 ## 1. Fonte de verdade, inventário e privacidade (1–15)
 
-- [ ] 1. Confirmar o snapshot inicial do repositório e do cofre privado antes do próximo lote.
-- [ ] 2. Criar manifesto unificado das fontes locais com caminho relativo, tamanho, tipo e data.
-- [ ] 3. Calcular hash dos arquivos elegíveis e registrar cópias idênticas sem apagar originais.
-- [ ] 4. Marcar cada fonte como privada, publicável, duplicada, protegida ou pendente de revisão.
-- [ ] 5. Relacionar cada cache Markdown à sua fonte e registrar limitações de extração/OCR.
-- [ ] 6. Criar relatório de divergências entre ZIPs, PDFs soltos, cache e inventário histórico.
-- [ ] 7. Consolidar a matriz `fonte → disciplina → tema → subtema → destino permitido`.
-- [ ] 8. Separar, no manifesto, evidência de estudo privado de material apto ao site público.
-- [ ] 9. Revisar o registro de figuras: IDs, arquivo físico, fonte, autoria, licença e âncora.
-- [ ] 10. Registrar as lacunas visuais honestas que continuam sem fonte aberta clinicamente adequada.
-- [ ] 11. Criar checklist único de privacidade para SISCAD, Drive, PDFs comerciais e imagens.
-- [ ] 12. Auditar `.gitignore` e o histórico recente para garantir que arquivos locais não entrem no Git.
+> Requisito longitudinal adicionado: **todo material já acessado** — SISCAD, acervo local, Drive autorizado, PDFs, DOCX, caches Markdown, resumos, questões, casos, mapas e mídia — será ligado às matérias e períodos já cursados. Os arquivos privados `Fundamentos_MFC_por_Subtema_OMED_VI.md` e `Cross-Referencia_Ciencias_Basicas_por_Subtema_OMED_VI.md` são apenas duas fontes dessa matriz. Ciências Básicas do primeiro semestre permanecem uma camada de revisão permanente; MFC mantém seus fundamentos próprios de epidemiologia, SUS e abordagem familiar.
+
+- [x] 1. Confirmar o snapshot inicial do repositório e do cofre privado antes do próximo lote.
+- [x] 2. Criar manifesto unificado das fontes locais com caminho relativo, tamanho, tipo e data.
+- [x] 3. Calcular hash dos arquivos elegíveis e registrar cópias idênticas sem apagar originais.
+- [x] 4. Marcar cada fonte como privada, publicável, duplicada, protegida ou pendente de revisão.
+- [x] 5. Relacionar cada cache Markdown à sua fonte e registrar limitações de extração/OCR.
+
+> Bloco 1 concluído em 2026-07-29, em área privada: 1.161 arquivos inventariados, todos com SHA-256, cinco grupos de cópias idênticas preservadas e 253 ligações diretas com cache Markdown. O catálogo de conversão separa texto, extração parcial, páginas sem camada textual e erros históricos; nenhum conteúdo ou metadado pessoal foi publicado.
+- [x] 6. Criar relatório de divergências entre ZIPs, PDFs soltos, cache e inventário histórico.
+- [x] 7. Consolidar a matriz `fonte → componente/período do curso → disciplina → tema → subtema → destino permitido`, incluindo os eixos de Ciências Básicas quando forem pertinentes.
+- [x] 8. Separar, no manifesto, evidência de estudo privado de material apto ao site público.
+- [x] 9. Revisar o registro de figuras: IDs, arquivo físico, fonte, autoria, licença e âncora.
+- [x] 10. Registrar as lacunas visuais honestas que continuam sem fonte aberta clinicamente adequada.
+- [x] 11. Criar checklist único de privacidade para SISCAD, Drive, PDFs comerciais e imagens.
+- [x] 12. Auditar `.gitignore` e o histórico recente para garantir que arquivos locais não entrem no Git.
 - [ ] 13. Testar restauração do backup lógico do Supabase em ambiente seguro, sem dados pessoais.
-- [ ] 14. Documentar responsáveis, origem e data de revisão para cada artefato novo.
+- [x] 14. Documentar responsáveis, origem e data de revisão para cada artefato novo.
 - [ ] 15. Publicar somente a documentação sanitizada do inventário, quando o lote estiver revisado.
 
 ## 2. Curso, SISCAD e atualização semestral privada (16–28)
 
 - [ ] 16. Reconsultar o único plano de ensino do SISCAD que estava indisponível.
 - [ ] 17. Converter esse plano para Markdown antes da leitura, se ele estiver em PDF.
-- [ ] 18. Atualizar a matriz privada dos 12 períodos com a origem e data da nova consulta.
-- [ ] 19. Comparar planos, ementas e objetivos com a matriz curricular já registrada.
+- [ ] 18. Atualizar a matriz privada dos 12 períodos com origem, data e vínculos para conteúdos de revisão.
+- [ ] 19. Comparar planos, ementas e objetivos com a matriz curricular e ligar cada matéria já cursada aos temas, resumos, questões, casos e mídia correspondentes.
 - [ ] 20. Registrar somente diferenças curriculares relevantes, sem copiar dados pessoais ao repositório.
 - [ ] 21. Definir o esquema da camada privada do curso: disciplina, período, status, datas e dificuldades.
 - [ ] 22. Separar definitivamente o catálogo público de disciplinas do progresso acadêmico privado.
@@ -46,15 +50,15 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 - [ ] 24. Permitir importar atualização privada por Markdown e por CSV com pré-visualização.
 - [ ] 25. Implementar edição manual, validação de campos e confirmação antes de salvar alterações.
 - [ ] 26. Guardar histórico de alterações, origem e data sem expor informações sensíveis.
-- [ ] 27. Exibir, no painel privado, disciplinas, documentos, lacunas, próximos estudos e materiais relacionados.
-- [ ] 28. Criar rotinas reutilizáveis de abertura, acompanhamento e encerramento de semestre.
+- [ ] 27. Exibir, no painel privado, disciplinas, documentos, lacunas, próximos estudos e materiais relacionados, inclusive das matérias já concluídas.
+- [ ] 28. Criar rotinas reutilizáveis de abertura, acompanhamento, encerramento e revisão longitudinal por período/matéria.
 
 ## 3. Drive e acervo local: ingestão seletiva (29–42)
 
 - [ ] 29. Conectar o Google Drive com autorização própria e IDs de pasta, sem reutilizar credenciais de terceiros.
 - [ ] 30. Inventariar primeiro apenas metadados do Drive: árvore, nomes, datas, extensão e tamanho.
 - [ ] 31. Comparar nomes e hashes do Drive com o manifesto local antes de baixar qualquer arquivo.
-- [ ] 32. Priorizar a seleção de fontes por lacuna real do site, semestre e peso da OMED.
+- [ ] 32. Priorizar a seleção de fontes por lacuna real do site, semestre atual, matérias já cursadas e peso da OMED.
 - [ ] 33. Verificar Estrategia 2024 para Hematologia e Gastroenterologia apenas no recorte prioritário.
 - [ ] 34. Catalogar Cirurgia, MEDCOF 2026 e Medcurso 2024 antes de qualquer conversão.
 - [ ] 35. Triar as pastas Bagagem e verificar se BBPM I/II possuem conteúdo real distinto.
@@ -63,7 +67,7 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 - [ ] 38. Aplicar OCR ou solicitar reexportação apenas onde a página relevante não for legível.
 - [ ] 39. Reprocessar os PDFs com trailer malformado por rota segura, sem insistir em parser falho.
 - [ ] 40. Deduplicar os quatro DOCX de questões contra o banco publicado antes de adaptar qualquer item.
-- [ ] 41. Classificar os materiais restantes por disciplina, subtema, semestre, valor clínico e prioridade OMED.
+- [ ] 41. Classificar os materiais restantes por componente curricular, disciplina, subtema, semestre, eixo básico, valor clínico e prioridade OMED.
 - [ ] 42. Atualizar o Obsidian e o manifesto ao fechar cada fonte, inclusive as rejeitadas.
 
 ## 4. Portão editorial e conteúdo clínico prioritário (43–61)
@@ -105,21 +109,21 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 
 ## 6. Mídia clínica e biblioteca visual (74–83)
 
-- [ ] 74. Localizar páginas candidatas a imagens nos caches Markdown por tema, legenda e contexto.
+- [ ] 74. Localizar páginas candidatas a imagens nos caches Markdown por tema, legenda, contexto e vínculo com a matéria cursada.
 - [ ] 75. Renderizar somente páginas selecionadas e registrar diagnóstico, modalidade e restrição de uso.
 - [ ] 76. Manter separado o acervo privado de estudo e o acervo público licenciado.
 - [ ] 77. Buscar equivalentes abertos somente para lacunas clínicas reais e de alto retorno.
 - [ ] 78. Validar autoria, fonte, licença, tipo de arquivo e correlação clínica antes de baixar cada imagem.
-- [ ] 79. Priorizar as lacunas de GO, Pediatria, Cirurgia e as onze imagens ainda indisponíveis.
+- [ ] 79. Tratar imagens clínicas como recurso central: priorizar lacunas de GO, Pediatria, Cirurgia e as onze imagens ainda indisponíveis, sempre com licença verificável.
 - [ ] 80. Ancorar toda figura pública em um bloco específico de resumo ou caso clínico.
-- [ ] 81. Organizar a aba Mídia por disciplina, tema, subtema, modalidade e caso relacionado.
+- [ ] 81. Organizar a aba Mídia por disciplina, componente/período cursado, tema, subtema, modalidade e caso relacionado.
 - [ ] 82. Criar filtros de fonte/licença e indicar claramente imagens apenas de referência visual.
 - [ ] 83. Rodar auditoria de arquivos, IDs, âncoras, créditos e licenças antes de cada publicação.
 
 ## 7. Mapas mentais, Anki e segundo cérebro (84–91)
 
-- [ ] 84. Manter a lista pública de 60 mapas ligada apenas a resumos já publicados e revisados.
-- [ ] 85. Transformar os temas prioritários em mapas mentais verdadeiros, começando pelos dez já curados.
+- [ ] 84. Manter a lista pública de 60 mapas ligada apenas a resumos já publicados e revisados, com filtro futuro por matéria/período já cursado.
+- [ ] 85. Transformar os temas prioritários em mapas mentais verdadeiros, começando pelos dez já curados e incluindo as conexões de Ciências Básicas pertinentes.
 - [ ] 86. Completar mapas individuais para os demais temas prioritários sem reduzir o mapa a uma lista de links.
 - [ ] 87. Ligar cada mapa a resumo, questões, caso, mídia e referências no Obsidian.
 - [ ] 88. Validar a ponte AnkiConnect com o aplicativo Anki Desktop aberto, sem enviar dados ao site.

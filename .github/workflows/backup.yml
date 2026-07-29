@@ -36,6 +36,27 @@ jobs:
           name: db-backup
           path: ${{ env.BACKUP_FILE }}
           retention-days: 90
+      - name: Validar restauração em PostgreSQL temporário
+        if: ${{ env.BACKUP_FILE != '' }}
+        run: |
+          docker run --detach --name restore-check \
+            --env POSTGRES_PASSWORD=restore-check \
+            postgres:17-alpine
+          for attempt in $(seq 1 30); do
+            if docker exec restore-check pg_isready -U postgres -d postgres; then
+              break
+            fi
+            sleep 1
+          done
+          docker exec restore-check pg_isready -U postgres -d postgres
+          docker run --rm --network container:restore-check \
+            --volume "$PWD:/backup:ro" \
+            --env BACKUP_FILE \
+            postgres:17-alpine \
+            sh -c 'pg_restore --exit-on-error --no-owner --no-privileges --dbname=postgresql://postgres:restore-check@localhost:5432/postgres "/backup/$BACKUP_FILE"'
+      - name: Remover banco temporário de restauração
+        if: ${{ always() }}
+        run: docker rm --force restore-check || true
 
   keepalive:
     runs-on: ubuntu-latest

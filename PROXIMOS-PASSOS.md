@@ -11,7 +11,7 @@
 - HCPM, BBPM III/IV/VII/VIII, LANN, UE, Farmacologia e os 30 arquivos de `RESUMOS` foram triados privadamente. A integração continua dependente de validação clínica, licença e deduplicação.
 - O Drive `Resumos e cursos` foi apenas reconhecido. Falta conexão, inventário por metadados, deduplicação e extração seletiva.
 - Imagens clínicas embutidas em PDFs ainda precisam de extração dirigida. Material comercial fica privado; o site público recebe apenas imagens com direito de uso verificável.
-- Próxima sequência: manifesto unificado de fontes → matriz plano–tema–subtema → portão editorial de Infectologia e GO. Atualizar o Obsidian ao fechar cada lote.
+- Bloco de proveniência concluído em 2026-07-29: manifesto, hashes, divergências, matriz inicial, classificação de visibilidade, auditoria de figuras, checklist, lacunas visuais e registro de artefatos. O workflow de backup foi instrumentado para testar restauração em PostgreSQL temporário; aguardar o primeiro run antes de considerá-lo validado. Próxima sequência clínica: portão editorial de Infectologia e GO. Atualizar o Obsidian ao fechar cada lote.
 
 ## Estado atual
 

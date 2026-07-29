@@ -111,3 +111,10 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - A prioridade não é extrair em massa: primeiro criar o manifesto unificado de fontes, depois a matriz `plano → tema → subtema → recurso`, e então aplicar o portão editorial em Infectologia e GO.
 - Para o estado privado completo e a fila de retomada, consultar `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian. Não publicar material comercial nem derivado de SISCAD sem validação clínica, licença e revisão de privacidade.
 - O roteiro consolidado de continuidade é `docs/PLANO-100-PASSOS.md`. Ele não autoriza executar os itens automaticamente: respeitar dependências, portões editoriais e autorizações externas.
+
+## Fechamento de 2026-07-29
+
+- Os passos 1–5 do plano foram concluídos em armazenamento privado: snapshot, manifesto unificado, SHA-256, classificação inicial e catálogo de caches. O acervo `Desktop/MEDICINA` tem 1.161 arquivos inventariados; todos receberam hash sem erro. Há cinco grupos de cópias idênticas, preservadas sem remoção.
+- A continuidade começa pelo passo 6 (divergências entre ZIPs, PDFs, caches e inventários) e pelo passo 7 (matriz longitudinal fonte → período/componente → disciplina → tema/subtema → destino permitido). Não reabrir PDFs já convertidos sem uma lacuna concreta.
+- Os passos 6–9, 11–12 e 14 também foram concluídos em seguida: divergências reconciliadas por escopo, matriz inicial criada no cofre, classificação privada/pública definida, figuras auditadas e checklist sanitizado criado. A próxima tarefa desse eixo é normalizar os onze alvos visuais históricos (passo 10); o restore do backup Supabase permanece separado, pois requer ambiente seguro.
+- A normalização visual foi concluída: cinco lacunas reais permanecem em `docs/LACUNAS-VISUAIS.md`. O passo 13 foi instrumentado, mas ainda não concluído: `backup.yml` agora restaurará o próximo dump em PostgreSQL 17 temporário e apagará o contêiner ao final. Conferir o primeiro run antes de marcar a restauração como validada.
