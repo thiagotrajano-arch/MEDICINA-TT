@@ -1,6 +1,6 @@
 # Handoff para outra IA — Codex Medicus
 
-Atualizado em 2026-07-25.
+Atualizado em 2026-07-29.
 
 **Antes de mais nada, leia `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` e `docs/PLANO-INTEGRACAO-MEDICINA-DESKTOP.md`** — documentos vivos com o
 inventário completo de `Desktop\MEDICINA\`, Downloads e Google Drive, o que já foi mapeado/construído,
@@ -119,3 +119,4 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - Os passos 6–9, 11–12 e 14 também foram concluídos em seguida: divergências reconciliadas por escopo, matriz inicial criada no cofre, classificação privada/pública definida, figuras auditadas e checklist sanitizado criado. A próxima tarefa desse eixo é normalizar os onze alvos visuais históricos (passo 10); o restore do backup Supabase permanece separado, pois requer ambiente seguro.
 - A normalização visual foi concluída: cinco lacunas reais permanecem em `docs/LACUNAS-VISUAIS.md`. O passo 13 foi instrumentado, mas ainda não concluído: `backup.yml` agora restaurará o próximo dump em PostgreSQL 17 temporário e apagará o contêiner ao final. Conferir o primeiro run antes de marcar a restauração como validada.
 - A documentação sanitizada e o workflow foram publicados no commit `6a126af` em `main`; o deploy GitHub Pages `30452513229` concluiu com sucesso. O próximo run de **Backup e keep-alive** é a evidência necessária para fechar o passo 13.
+- Os passos 15 e 43 foram reconciliados como concluídos. O relatório sanitizado de qualidade das questões está em `docs/RELATORIO-QUALIDADE-QUESTOES.md` e pode ser refeito com `npm run audit:questoes`: 1.072 questões, 686 com repetição normalizada, 118 comentários curtos em 81 questões, 48 questões sem fonte e nenhum comentário vazio. Não alterar o banco inteiro em massa; a sequência editorial é Infectologia (44–46), depois GO e Pediatria, com diretrizes vigentes nomeadas e revisão de gabarito antes de qualquer publicação clínica.

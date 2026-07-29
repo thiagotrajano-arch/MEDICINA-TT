@@ -35,7 +35,11 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 - [x] 12. Auditar `.gitignore` e o histórico recente para garantir que arquivos locais não entrem no Git.
 - [ ] 13. Testar restauração do backup lógico do Supabase em ambiente seguro, sem dados pessoais.
 - [x] 14. Documentar responsáveis, origem e data de revisão para cada artefato novo.
-- [ ] 15. Publicar somente a documentação sanitizada do inventário, quando o lote estiver revisado.
+- [x] 15. Publicar somente a documentação sanitizada do inventário, quando o lote estiver revisado.
+
+> Passo 15 concluído em 2026-07-29: o lote sanitizado de inventário, privacidade,
+> lacunas visuais, responsáveis e restore preparado foi publicado sem acervo privado,
+> dados pessoais ou credenciais.
 
 ## 2. Curso, SISCAD e atualização semestral privada (16–28)
 
@@ -72,7 +76,11 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 
 ## 4. Portão editorial e conteúdo clínico prioritário (43–61)
 
-- [ ] 43. Estabelecer o relatório-base de qualidade por disciplina: comentários repetidos, curtos e sem fonte.
+- [x] 43. Estabelecer o relatório-base de qualidade por disciplina: comentários repetidos, curtos e sem fonte.
+
+> Passo 43 concluído em 2026-07-29: `docs/RELATORIO-QUALIDADE-QUESTOES.md` e
+> `npm run audit:questoes` registram uma linha de base reproduzível sem expor
+> enunciados ou fontes privadas. A próxima frente é Infectologia (44–46).
 - [ ] 44. Revisar primeiro o lote de Infectologia de maior peso OMED.
 - [ ] 45. Diferenciar e ampliar os comentários das alternativas de Infectologia, mantendo uma correta.
 - [ ] 46. Confirmar todas as condutas de Infectologia em diretrizes vigentes e nomeadas.

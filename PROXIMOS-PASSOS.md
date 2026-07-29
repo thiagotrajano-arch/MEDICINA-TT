@@ -1,6 +1,6 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-28. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o fechamento privado da sessão, consultar também `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian.
+> Atualizado em 2026-07-29. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o fechamento privado da sessão, consultar também `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian.
 
 ## Plano mestre de extração e curso — 2026-07-28
 
@@ -11,7 +11,7 @@
 - HCPM, BBPM III/IV/VII/VIII, LANN, UE, Farmacologia e os 30 arquivos de `RESUMOS` foram triados privadamente. A integração continua dependente de validação clínica, licença e deduplicação.
 - O Drive `Resumos e cursos` foi apenas reconhecido. Falta conexão, inventário por metadados, deduplicação e extração seletiva.
 - Imagens clínicas embutidas em PDFs ainda precisam de extração dirigida. Material comercial fica privado; o site público recebe apenas imagens com direito de uso verificável.
-- Bloco de proveniência concluído em 2026-07-29: manifesto, hashes, divergências, matriz inicial, classificação de visibilidade, auditoria de figuras, checklist, lacunas visuais e registro de artefatos. O workflow de backup foi instrumentado para testar restauração em PostgreSQL temporário; aguardar o primeiro run antes de considerá-lo validado. Próxima sequência clínica: portão editorial de Infectologia e GO. Atualizar o Obsidian ao fechar cada lote.
+- Bloco de proveniência concluído em 2026-07-29: manifesto, hashes, divergências, matriz inicial, classificação de visibilidade, auditoria de figuras, checklist, lacunas visuais e registro de artefatos. O workflow de backup foi instrumentado para testar restauração em PostgreSQL temporário; aguardar o primeiro run antes de considerá-lo validado. O relatório-base de qualidade das questões também foi fechado com auditoria reproduzível. Próxima sequência clínica: portão editorial de Infectologia (44–46), depois GO e Pediatria. Atualizar o Obsidian ao fechar cada lote.
 
 ## Estado atual
 
@@ -27,7 +27,7 @@
 | **Fonte do conteúdo publicado** | Arquivos TS (`src/content/**`), sempre — build não depende mais do Supabase estar sincronizado (corrigido 2026-07-24, ver relatório abaixo) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
 
-> Publicação mais recente: commit `0525e59` em `main`. Lote 8–25 validado com typecheck, lint, integridade estrutural e build de produção (363 páginas). O `npm run seed` não concluiu localmente em 10 min; o GitHub Pages renderiza a partir dos arquivos TS e não depende do seed para publicar.
+> Publicação de referência confirmada: o lote sanitizado de proveniência foi enviado em `6a126af` e o GitHub Pages concluiu com sucesso no run `30452513229`. Consulte o histórico Git e o workflow de deploy para a versão mais recente antes de declarar um novo lote em produção. O `npm run seed` não concluiu localmente em 10 min; o GitHub Pages renderiza a partir dos arquivos TS e não depende do seed para publicar.
 
 ## O que foi feito nesta sessão (2026-07-27 — Codex, passos 8 a 25)
 

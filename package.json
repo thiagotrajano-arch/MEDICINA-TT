@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "audit:questoes": "tsx scripts/audit-questoes.mts",
     "seed": "tsx scripts/seed-supabase.mts",
     "sync-drive": "tsx scripts/sync-drive.mts",
     "anki:status": "tsx scripts/anki-connect.mts status",
