@@ -13,7 +13,11 @@ O relatório é reproduzível com:
 ```powershell
 npm run audit:questoes
 npm run audit:questoes -- --disciplina inf --subtemas
+npm run audit:questoes -- --disciplina inf --subtemas --ids
 ```
+
+Com `--ids`, o resultado inclui somente os IDs dos itens sinalizados, sem
+imprimir enunciados ou alternativas.
 
 O script `scripts/audit-questoes.mts` aplica estes critérios:
 
@@ -70,11 +74,13 @@ melhor comentários pedagogicamente indistintos.
 
 ## Próxima fila editorial
 
-1. **Infectologia (passos 44–46):** revisar as 122 questões pelo peso OMED,
-   começando pelos 35 comentários curtos, pelo único par repetido após
-   normalização e pelos subtemas com maior concentração de itens curtos.
-   Confirmar cada conduta em diretriz vigente e nomeada antes de alterar o
-   banco.
+1. **Infectologia (passos 44–46):** o lote 1 de quatro itens STORCH foi
+   revisado e documentado em
+   [`REVISAO-INFECTOLOGIA-LOTE-1.md`](./REVISAO-INFECTOLOGIA-LOTE-1.md). Seguir
+   com as demais 118 questões pelo peso OMED, começando pelos 35 comentários
+   curtos, pelo único par repetido após normalização e pelos subtemas com maior
+   concentração de itens curtos. Confirmar cada conduta em diretriz vigente e
+   nomeada antes de alterar o banco.
 2. **Ginecologia & Obstetrícia e Pediatria:** tratar os comentários curtos
    após concluir Infectologia, mantendo uma única alternativa correta e uma
    explicação distinta para cada alternativa.

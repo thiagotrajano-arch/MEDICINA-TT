@@ -17,6 +17,7 @@ const indiceDisciplina = args.indexOf("--disciplina");
 const disciplinaSelecionada =
   indiceDisciplina >= 0 ? args[indiceDisciplina + 1] : undefined;
 const detalharSubtemas = args.includes("--subtemas");
+const listarIds = args.includes("--ids");
 
 if (indiceDisciplina >= 0 && !disciplinaSelecionada) {
   throw new Error("Use --disciplina seguido do ID da disciplina.");
@@ -83,6 +84,11 @@ const questoes = disciplinaSelecionada
 
 const porDisciplina = new Map<string, LinhaAuditoria>();
 const porSubtema = new Map<string, LinhaAuditoria>();
+const ids = {
+  repetidasNormalizadas: [] as string[],
+  comentariosCurtos: [] as string[],
+  semFonte: [] as string[],
+};
 for (const questao of questoes) {
   const linhaDisciplina =
     porDisciplina.get(questao.disciplinaId) ?? criarLinha(questao.disciplinaId);
@@ -95,6 +101,17 @@ for (const questao of questoes) {
     registrar(linhaSubtema, questao);
     porSubtema.set(questao.subtemaId, linhaSubtema);
   }
+
+  const comentarios = questao.alternativas.map((alternativa) =>
+    alternativa.comentario.trim(),
+  );
+  if (contarRepetidas(comentarios.map(normalizarComentario)) > 0) {
+    ids.repetidasNormalizadas.push(questao.id);
+  }
+  if (comentarios.some((comentario) => comentario.length < 40)) {
+    ids.comentariosCurtos.push(questao.id);
+  }
+  if (!questao.fonte?.trim()) ids.semFonte.push(questao.id);
 }
 
 const ordenar = (linhas: LinhaAuditoria[]) =>
@@ -133,6 +150,7 @@ console.log(
       ...(detalharSubtemas
         ? { porSubtema: ordenar(Array.from(porSubtema.values())) }
         : {}),
+      ...(listarIds ? { ids } : {}),
     },
     null,
     2,

@@ -24,6 +24,14 @@ const SUB = {
 const FONTE = "Simulado OMED Infectologia — 160 questões comentadas (material do usuário)";
 const FONTE_CONGENITA = "Google Drive — 'Exame Nacional de Infectologia Perinatal e Medicina Fetal' (material do usuário)";
 const FONTE_IRAS = "Estratégia MED — Mapa Mental de IRAS; Anvisa; OMS; SHEA/IDSA";
+const FONTE_TOXOPLASMOSE_GESTACIONAL =
+  "Material do usuário (enunciado); Ministério da Saúde — Toxoplasmose adquirida na gestação: interpretação, conduta e seguimento (verificado em 2026-07-29).";
+const FONTE_SIFILIS_GESTACIONAL =
+  "Material do usuário (enunciado); Ministério da Saúde — Sífilis em gestantes / PCDT para prevenção da transmissão vertical (verificado em 2026-07-29).";
+const FONTE_RUBEOLA_CONGENITA =
+  "Material do usuário (enunciado); Ministério da Saúde — Nota Técnica Conjunta nº 344/2025: rubéola e síndrome da rubéola congênita (verificado em 2026-07-29).";
+const FONTE_HBV_VERTICAL =
+  "Material do usuário (enunciado); Ministério da Saúde — Instrução Normativa do Calendário Nacional de Vacinação 2025: imunoprofilaxia de RN de mães HBsAg positivas (verificado em 2026-07-29).";
 
 export const QUESTOES_INF: Questao[] = [
   // ── TUBERCULOSE ─────────────────────────────────────────────────
@@ -596,7 +604,7 @@ export const QUESTOES_INF: Questao[] = [
     dificuldade: "avancada",
     estilo: "conduta",
     tags: ["toxoplasmose", "avidez de IgG", "gestação"],
-    fonte: FONTE_CONGENITA,
+    fonte: FONTE_TOXOPLASMOSE_GESTACIONAL,
   },
   {
     id: "inf-cong-02",
@@ -642,7 +650,7 @@ export const QUESTOES_INF: Questao[] = [
       "Gestante no 1º trimestre, VDRL 1:4 e teste treponêmico rápido positivo, sem registro de tratamento prévio. Qual a conduta correta segundo o Ministério da Saúde?",
     alternativas: [
       { letra: "A", texto: "Tratar como sífilis latente tardia/de duração ignorada: penicilina benzatina 2,4 milhões UI IM semanal, 3 semanas.", correta: true, comentario: "Sem informação que permita estadiar a infecção (assintomática, achado de rastreio), trata-se como duração ignorada — esquema de 3 doses (7,2 milhões UI totais) para cobrir também a possibilidade de infecção mais antiga." },
-      { letra: "B", texto: "Aguardar novo VDRL em 15 dias para confirmar aumento de títulos antes de tratar.", correta: false, comentario: "Sífilis na gestação nunca deve aguardar confirmação por cinética de títulos — tratamento é imediato após teste treponêmico + não treponêmico reagentes." },
+      { letra: "B", texto: "Aguardar novo VDRL em 15 dias para confirmar aumento de títulos antes de tratar.", correta: false, comentario: "Na gestação, o Ministério da Saúde recomenda iniciar o tratamento após somente um teste reagente (treponêmico ou não treponêmico); não se deve aguardar a cinética de títulos." },
       { letra: "C", texto: "Penicilina G Benzatina 2,4 milhões UI em dose única.", correta: false, comentario: "Dose única é para sífilis recente (primária/secundária/latente precoce) comprovada — não é o caso de duração ignorada." },
       { letra: "D", texto: "Solicitar radiografia de ossos longos e líquor da gestante antes de tratar.", correta: false, comentario: "Esses exames são para o RN exposto, não pré-requisito para iniciar o tratamento materno." },
       { letra: "E", texto: "Tratar com ceftriaxona se a paciente relatar alergia não confirmada à penicilina.", correta: false, comentario: "Alergia não confirmada exige investigação/dessensibilização — a penicilina é insubstituível na gestação." },
@@ -650,7 +658,7 @@ export const QUESTOES_INF: Questao[] = [
     dificuldade: "intermediaria",
     estilo: "conduta",
     tags: ["sífilis", "gestação", "penicilina"],
-    fonte: FONTE_CONGENITA,
+    fonte: FONTE_SIFILIS_GESTACIONAL,
   },
   {
     id: "inf-cong-05",
@@ -668,7 +676,7 @@ export const QUESTOES_INF: Questao[] = [
     dificuldade: "fixacao",
     estilo: "fixacao",
     tags: ["rubéola congênita", "tríade de Gregg"],
-    fonte: FONTE_CONGENITA,
+    fonte: FONTE_RUBEOLA_CONGENITA,
   },
   {
     id: "inf-cong-06",
@@ -713,7 +721,7 @@ export const QUESTOES_INF: Questao[] = [
     enunciado: "Qual a estratégia mais eficaz para reduzir o risco de cronificação da hepatite B no RN de mãe HBsAg reagente?",
     alternativas: [
       { letra: "A", texto: "Cesárea eletiva em todas as gestantes HBsAg (+).", correta: false, comentario: "A via de parto não altera significativamente o risco quando a imunoprofilaxia neonatal é feita corretamente." },
-      { letra: "B", texto: "Vacina contra HBV + imunoglobulina específica (HBIG) nas primeiras 12–24h de vida.", correta: true, comentario: "A combinação vacina + HBIG logo após o nascimento é a estratégia com maior eficácia comprovada na prevenção da transmissão vertical/cronificação." },
+      { letra: "B", texto: "Vacina contra HBV + imunoglobulina específica (HBIG), preferencialmente nas primeiras 12 horas; se não for possível, em até 24 horas de vida.", correta: true, comentario: "Para RN de mãe HBsAg positiva, o PNI recomenda vacina monovalente e imunoglobulina em sítios distintos, idealmente na sala de parto ou nas primeiras 12 horas; se isso não for possível, a vacina pode ser aplicada em até 24 horas." },
       { letra: "C", texto: "Interferon peguilado na gestante no 3º trimestre.", correta: false, comentario: "Não é a estratégia padrão; antivirais orais (tenofovir) em alta carga viral podem ser usados, não o interferon." },
       { letra: "D", texto: "Proibição estrita do aleitamento materno.", correta: false, comentario: "O aleitamento materno é permitido em mãe HBsAg+ quando o RN recebeu a imunoprofilaxia adequada." },
       { letra: "E", texto: "Lamivudina pela gestante desde o 1º trimestre, independente da carga viral.", correta: false, comentario: "O uso de antiviral na gestante é reservado a alta carga viral no 3º trimestre, não rotina desde o 1º trimestre." },
@@ -721,7 +729,7 @@ export const QUESTOES_INF: Questao[] = [
     dificuldade: "intermediaria",
     estilo: "conduta",
     tags: ["hepatite B", "HBIG", "transmissão vertical"],
-    fonte: FONTE_CONGENITA,
+    fonte: FONTE_HBV_VERTICAL,
   },
   {
     id: "inf-cong-09",
