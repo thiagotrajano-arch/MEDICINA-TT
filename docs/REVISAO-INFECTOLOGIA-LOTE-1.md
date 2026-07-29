@@ -29,3 +29,17 @@ Infectologia permanecem para revisão individual, mantendo uma única alternativ
 correta, comentários realmente distintos e fonte vigente nomeada. Questões de
 meningite e sepse exigem uma fonte de conduta empírica atual e específica antes
 de qualquer alteração de gabarito, dose ou esquema.
+
+## Validação e publicação
+
+- Auditoria filtrada, typecheck e lint concluídos sem erro.
+- A build local compilou e gerou as páginas estáticas; ela atingiu o limite de
+  tempo apenas na otimização final. A validação completa ocorreu no GitHub
+  Pages.
+- Publicado no commit `a89fc83`; o deploy
+  [`30456204375`](https://github.com/thiagotrajano-arch/MEDICINA-TT/actions/runs/30456204375)
+  foi concluído com sucesso. A página inicial e `/questoes/` responderam HTTP
+  200 em produção.
+- O seed Supabase não respondeu dentro do limite seguro local. A sincronização
+  do banco permanece pendente de uma execução verificável; a publicação
+  estática não depende dela.
