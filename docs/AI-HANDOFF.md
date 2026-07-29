@@ -100,8 +100,8 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 ## Pendências externas exatas
 
 - Corrigir `Site URL` e redirect allowlist no Auth do Supabase para o domínio público. Isso requer painel administrativo ou PAT do Management API; não tentar com service role.
-- `SUPABASE_DB_URL` e `SUPABASE_SERVICE_ROLE_KEY` já estão cadastrados como GitHub Actions Secrets com autorização explícita do usuário. O backup semanal foi validado no run `29885112038`; usa Supavisor session mode/IPv4 e `postgres:17-alpine`, pois o endpoint direto é IPv6 e o servidor está no PostgreSQL 17.
-- Para Drive, obter autorização Google própria e `DRIVE_FOLDER_IDS`; nunca inventar, solicitar senha de e-mail ou reutilizar credencial alheia.
+- `SUPABASE_DB_URL` e `SUPABASE_SERVICE_ROLE_KEY` já estão cadastrados como GitHub Actions Secrets com autorização explícita do usuário. O run `29885112038` confirma um dump anterior, mas não valida a restauração instrumentada depois; o próximo run deve comprovar dump, artefato e restore em PostgreSQL temporário. Ausência do segredo agora é falha explícita, não sucesso por etapas puladas.
+- Para Drive, obter autorização Google própria, uma allowlist explícita de pastas e um baseline revisado; a rotina incremental exige `DRIVE_SYNC_ENABLED=true` e não deve ser habilitada antes de `npm run drive:inventory`. Nunca inventar, solicitar senha de e-mail ou reutilizar credencial alheia.
 - Não há nova extração segura até o usuário fornecer os PDFs faltantes descritos em `PROXIMOS-PASSOS.md`.
 
 ## Fechamento de 2026-07-28
@@ -124,3 +124,11 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - O lote foi publicado no commit `a89fc83`; GitHub Pages `30456204375` concluiu com sucesso e `/` e `/questoes/` responderam HTTP 200. Typecheck, lint e auditoria filtrada passaram. A build local gerou as páginas estáticas, mas atingiu o limite na otimização final; o seed Supabase não respondeu no limite seguro e continua pendente de execução verificável. O site estático publicado não depende desse seed.
 - O segundo e o terceiro micro-lotes estão documentados em `docs/REVISAO-INFECTOLOGIA-LOTE-2.md` e `docs/REVISAO-INFECTOLOGIA-LOTE-3.md`: duas questões de imunizações receberam fontes atuais do PNI e um item de sífilis recebeu o PCDT IST. A auditoria filtrada agora encontra zero comentários repetidos após normalização em Infectologia e 33 comentários curtos em 21 questões. Não alterar meningite ou sepse sem diretriz primária atual e específica.
 - Os lotes 2 e 3 foram publicados no commit `6dcc44f`; GitHub Pages `30457470874` concluiu com sucesso e `/` e `/questoes/` responderam HTTP 200. Typecheck, lint e auditoria filtrada passaram. O seed Supabase continua pendente de execução verificável; não assumir sincronização remota por causa desta publicação estática.
+
+## Bloco de privacidade e operação — 2026-07-29
+
+- A rota pública `/semestres` foi neutralizada: exibe apenas ciclos genéricos de revisão. Todo vínculo individual de curso permanece no cofre privado; `npm run audit:privacidade` impede o retorno de marcadores curriculares protegidos aos arquivos públicos dessa rota.
+- A ingestão do Drive foi separada em inventário de metadados e sincronização incremental. O inventário não baixa, não grava e não imprime identificadores; a sincronização só aceita allowlist, opt-in e baseline. Os logs usam apenas contagens e códigos seguros.
+- O backup agora falha sem conexão configurada, confirma dump não vazio e torna o keep-alive estrito. A restauração real segue pendente até um run novo com evidência.
+- A telemetria cliente foi reduzida a um envelope sanitizado, limitado por carregamento e restrito ao usuário autenticado. A migration `0007_restringe_monitoramento_autenticado.sql` foi aplicada e a política RLS foi verificada sem ler dados de usuários.
+- O lote 4 de Infectologia revisou cinco itens contra fontes oficiais específicas; a auditoria filtrada passou de 33 para 23 comentários curtos em 16 questões, mantendo zero repetições e zero fontes vazias. Consultar `docs/REVISAO-INFECTOLOGIA-LOTE-4.md`.

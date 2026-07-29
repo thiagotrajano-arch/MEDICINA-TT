@@ -1,13 +1,26 @@
 name: Sync Google Drive
 
-# Sincronização incremental dos materiais do Drive → banco (detecta novos,
-# atualizados e removidos). Custo zero (GitHub Actions). Roda no-op seguro
-# enquanto os secrets não estiverem configurados.
+# Sync incremental only runs after explicit opt-in and a reviewed metadata baseline.
+# Logs never show file names, identifiers, paths, or raw source errors.
 
 on:
   schedule:
-    - cron: "0 */6 * * *" # a cada 6 horas
-  workflow_dispatch: {} # execução manual pela aba Actions
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      operacao:
+        description: Operacao segura a executar
+        required: true
+        default: incremental
+        type: choice
+        options:
+          - inventario
+          - baseline
+          - incremental
+      confirmacao:
+        description: Para baseline, digite CRIAR_BASELINE
+        required: false
+        type: string
 
 jobs:
   sync:
@@ -19,11 +32,26 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Rodar sync
+      - name: Rodar operacao segura
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           DRIVE_FOLDER_IDS: ${{ secrets.DRIVE_FOLDER_IDS }}
-        run: npx tsx scripts/sync-drive.mts
+          DRIVE_SYNC_ENABLED: ${{ vars.DRIVE_SYNC_ENABLED }}
+          OPERACAO: ${{ inputs.operacao || 'incremental' }}
+          CONFIRMACAO: ${{ inputs.confirmacao }}
+        run: |
+          case "$OPERACAO" in
+            inventario) npm run drive:inventory ;;
+            baseline)
+              if [ "$CONFIRMACAO" != "CRIAR_BASELINE" ]; then
+                echo "::error::Confirmação de baseline ausente."
+                exit 1
+              fi
+              DRIVE_BASELINE_APPROVED=true npm run drive:baseline
+              ;;
+            incremental) npm run sync-drive ;;
+            *) echo "::error::Operação inválida."; exit 1 ;;
+          esac

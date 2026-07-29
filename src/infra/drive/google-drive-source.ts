@@ -20,6 +20,7 @@ import type {
 export class GoogleDriveSource implements DriveSource {
   private drive: drive_v3.Drive;
   private folderIds: string[];
+  private readonly scopeCache = new Map<string, boolean>();
 
   constructor() {
     this.drive = google.drive({ version: "v3", auth: buildAuth() });
@@ -52,7 +53,8 @@ export class GoogleDriveSource implements DriveSource {
         }
         const f = change.file;
         if (!f?.id) continue;
-        if (!this.inScope(f.parents ?? undefined)) continue;
+        if (f.mimeType === "application/vnd.google-apps.folder") continue;
+        if (!(await this.inScope(f.parents ?? undefined))) continue;
         const ref = toRef(f);
         // Changes API doesn't distinguish create vs update reliably; the
         // use-case dedupes by content hash, so classing all as "atualizado"
@@ -101,10 +103,35 @@ export class GoogleDriveSource implements DriveSource {
     return { ref, bytes, hashSha256 };
   }
 
-  private inScope(parents?: string[]): boolean {
-    if (!this.folderIds.length) return true; // no filter configured → accept all
+  private async inScope(parents?: string[]): Promise<boolean> {
+    // Sem allowlist explícita não existe escopo seguro para ingestão.
+    if (!this.folderIds.length) return false;
     if (!parents?.length) return false;
-    return parents.some((p) => this.folderIds.includes(p));
+    for (const parent of parents) {
+      if (await this.folderEstaNoEscopo(parent, new Set())) return true;
+    }
+    return false;
+  }
+
+  private async folderEstaNoEscopo(folderId: string, visitados: Set<string>): Promise<boolean> {
+    if (this.folderIds.includes(folderId)) return true;
+    const cache = this.scopeCache.get(folderId);
+    if (cache !== undefined) return cache;
+    if (visitados.has(folderId)) return false;
+    visitados.add(folderId);
+
+    const res = await this.drive.files.get({ fileId: folderId, fields: "parents" });
+    const dentro = await this.inScopeInterno(res.data.parents ?? undefined, visitados);
+    this.scopeCache.set(folderId, dentro);
+    return dentro;
+  }
+
+  private async inScopeInterno(parents: string[] | undefined, visitados: Set<string>): Promise<boolean> {
+    if (!parents?.length) return false;
+    for (const parent of parents) {
+      if (await this.folderEstaNoEscopo(parent, visitados)) return true;
+    }
+    return false;
   }
 }
 

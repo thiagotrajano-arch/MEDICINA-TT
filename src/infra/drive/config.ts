@@ -7,8 +7,13 @@ export function isDriveConfigured(): boolean {
     (process.env.GOOGLE_SERVICE_ACCOUNT_JSON ||
       process.env.GOOGLE_SERVICE_ACCOUNT_FILE ||
       process.env.GOOGLE_OAUTH_REFRESH_TOKEN) &&
-      process.env.DRIVE_FOLDER_IDS
+      driveFolderIds().length > 0
   );
+}
+
+/** Drive nunca é sincronizado por acidente: exige opt-in explícito. */
+export function isDriveSyncExplicitlyEnabled(): boolean {
+  return process.env.DRIVE_SYNC_ENABLED === "true";
 }
 
 export function driveFolderIds(): string[] {

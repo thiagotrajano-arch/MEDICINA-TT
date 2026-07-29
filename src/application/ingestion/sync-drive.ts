@@ -31,7 +31,10 @@ export class SyncDrive {
       erros: [],
     };
 
-    const token = (await this.store.lastPageToken()) ?? (await this.source.getStartPageToken());
+    const token = await this.store.lastPageToken();
+    if (!token) {
+      throw new Error("BASELINE_OBRIGATORIO");
+    }
     const changes = await this.source.listChanges(token);
     result.nextPageToken = changes.nextPageToken;
 
@@ -46,7 +49,7 @@ export class SyncDrive {
         await this.store.archiveByDriveId(driveFileId);
         result.removidos++;
       } catch (e) {
-        result.erros.push(`remover ${driveFileId}: ${String(e)}`);
+        result.erros.push({ etapa: "removido", codigo: codigoSeguro(e) });
       }
     }
 
@@ -84,7 +87,16 @@ export class SyncDrive {
       if (tipo === "novo") result.novos++;
       else result.atualizados++;
     } catch (e) {
-      result.erros.push(`${ref.nome}: ${String(e)}`);
+      result.erros.push({ etapa: tipo, codigo: codigoSeguro(e) });
     }
   }
+}
+
+function codigoSeguro(erro: unknown): string {
+  const resposta = erro as { response?: { status?: unknown }; code?: unknown };
+  const status = resposta?.response?.status;
+  if (typeof status === "number") return `http-${status}`;
+  const code = resposta?.code;
+  if (code === "ETIMEDOUT" || code === "ECONNRESET" || code === "ENOTFOUND") return "rede";
+  return "operacional";
 }

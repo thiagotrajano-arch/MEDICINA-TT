@@ -36,6 +36,12 @@ export interface DownloadedFile {
   hashSha256: string;
 }
 
+/** Código seguro para logs: nunca inclui nome, ID, caminho ou erro cru da fonte. */
+export interface SyncErro {
+  etapa: "novo" | "atualizado" | "removido";
+  codigo: string;
+}
+
 /** Outcome of one sync run, persisted for history/auditing. */
 export interface SyncResult {
   novos: number;
@@ -43,5 +49,5 @@ export interface SyncResult {
   removidos: number;
   ignoradosDuplicados: number;
   nextPageToken: string;
-  erros: string[];
+  erros: SyncErro[];
 }

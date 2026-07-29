@@ -17,8 +17,13 @@ jobs:
       SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
     steps:
       - uses: actions/checkout@v4
+      - name: Validar configuração do backup
+        run: |
+          if [ -z "$SUPABASE_DB_URL" ]; then
+            echo "::error::SUPABASE_DB_URL ausente. O backup não foi executado."
+            exit 1
+          fi
       - name: pg_dump
-        if: ${{ env.SUPABASE_DB_URL != '' }}
         run: |
           STAMP=$(date -u +%Y%m%d)
           BACKUP_FILE="backup_${STAMP}.dump"
@@ -28,6 +33,7 @@ jobs:
             -v "$PWD:/backup" \
             postgres:17-alpine \
             sh -c 'pg_dump "$SUPABASE_DB_URL" --no-owner --no-privileges -Fc -f "/backup/$BACKUP_FILE"'
+          test -s "$BACKUP_FILE"
           echo "BACKUP_FILE=$BACKUP_FILE" >> "$GITHUB_ENV"
       - name: Guardar backup como artefato
         if: ${{ env.BACKUP_FILE != '' }}
@@ -64,9 +70,15 @@ jobs:
       SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
       SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
     steps:
-      - name: Ping Supabase (anti-hibernação)
-        if: ${{ env.SUPABASE_URL != '' }}
+      - name: Validar configuração do keep-alive
         run: |
-          curl -sS -o /dev/null -w "%{http_code}\n" \
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "::error::Variáveis públicas do Supabase ausentes. O keep-alive não foi executado."
+            exit 1
+          fi
+      - name: Ping Supabase (anti-hibernação)
+        run: |
+          STATUS=$(curl --fail --silent --show-error --output /dev/null --write-out "%{http_code}" \
             "${SUPABASE_URL}/rest/v1/disciplina?select=id&limit=1" \
-            -H "apikey: ${SUPABASE_ANON_KEY}" || true
+            -H "apikey: ${SUPABASE_ANON_KEY}")
+          echo "Supabase respondeu HTTP ${STATUS}."

@@ -1,20 +1,34 @@
-# Meu Curso — plano orientado por documentos
+# Trilhas do Curso — contrato de privacidade
 
-## Estado
+## Camada pública
 
-A rota `/semestres` representa agora a semestralização oficial do curso de Medicina consultada no SISCAD/UFMS em 28/07/2026. Os 12 períodos e seus componentes obrigatórios foram transcritos da análise curricular; notas, matrícula, identificadores e nomes de docentes não são publicados.
+A rota `/semestres` é uma orientação de revisão em três ciclos da formação
+médica. Ela pode listar apenas eixos genéricos, os períodos como referência e
+atalhos para conteúdo já publicado no Codex Medicus.
 
-## Entrada esperada
+Ela nunca contém dados individualizados, documentos de origem, situação de
+componentes, percentuais, cronogramas pessoais, nomes, identificadores ou
+anotações de estudo.
 
-Seis dos sete planos da matrícula atual estavam aprovados e visíveis no SISCAD. O plano de HCPM VI ainda não estava liberado e permanece como lacuna documentada. Novos PDFs continuam seguindo obrigatoriamente `PDF -> Markdown cacheado -> leitura/triagem` antes de qualquer síntese.
+## Camada privada
 
-## Saída por semestre
+O mapa curricular individual, os materiais autorizados, as conexões por
+disciplina e as lacunas de estudo são mantidos exclusivamente no cofre privado
+do Obsidian. Eles não entram no Git, no bundle estático, em logs do Actions ou
+em qualquer página pública.
 
-1. Disciplinas com carga/objetivos somente quando documentados.
-2. Links para fontes, resumos, questões, casos e futuros mapas mentais relacionados.
-3. Estado de organização: aguardando documentos, em organização ou pronto.
-4. Proveniência de cada informação curricular, sem reproduzir texto protegido em excesso.
+## Atualização segura
 
-## Critério para publicar conteúdo
+1. Receber uma nova fonte somente no ambiente privado.
+2. Se a fonte for PDF, criar ou conferir seu Markdown cacheado antes da leitura.
+3. Atualizar a matriz privada com proveniência, data e destino permitido.
+4. Publicar apenas uma síntese original, clínica e licenciada quando houver
+   uma lacuna real no acervo público.
+5. Executar `npm run audit:privacidade` antes de cada publicação que tocar na
+   rota de trilhas.
 
-O status curricular deriva da análise oficial: concluído/aproveitado, em curso ou futuro. Conteúdo clínico detalhado só entra após revisão de fonte; a organização deve preservar a incerteza onde um plano estiver incompleto ou indisponível.
+## Próxima evolução
+
+Uma área autenticada de atualização semestral só será construída depois de
+revisar autenticação, RLS, importação e histórico de alterações. Até lá, o
+cofre privado é a fonte de verdade para qualquer acompanhamento individual.
