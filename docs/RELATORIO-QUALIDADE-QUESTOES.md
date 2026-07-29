@@ -77,10 +77,14 @@ melhor comentários pedagogicamente indistintos.
 1. **Infectologia (passos 44–46):** o lote 1 de quatro itens STORCH foi
    revisado e documentado em
    [`REVISAO-INFECTOLOGIA-LOTE-1.md`](./REVISAO-INFECTOLOGIA-LOTE-1.md). Seguir
-   com as demais 118 questões pelo peso OMED, começando pelos 35 comentários
-   curtos, pelo único par repetido após normalização e pelos subtemas com maior
-   concentração de itens curtos. Confirmar cada conduta em diretriz vigente e
-   nomeada antes de alterar o banco.
+   com o lote 2 de imunizações
+   ([`REVISAO-INFECTOLOGIA-LOTE-2.md`](./REVISAO-INFECTOLOGIA-LOTE-2.md)), que
+   eliminou o único par repetido, e com o lote 3 de sífilis
+   ([`REVISAO-INFECTOLOGIA-LOTE-3.md`](./REVISAO-INFECTOLOGIA-LOTE-3.md)).
+   Restam 115 questões fora dos três micro-lotes e 33 comentários curtos em 21
+   questões; começar pelos subtemas com maior concentração de itens curtos.
+   Confirmar cada conduta em diretriz vigente e nomeada antes de alterar o
+   banco.
 2. **Ginecologia & Obstetrícia e Pediatria:** tratar os comentários curtos
    após concluir Infectologia, mantendo uma única alternativa correta e uma
    explicação distinta para cada alternativa.

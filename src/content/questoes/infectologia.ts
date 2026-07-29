@@ -32,6 +32,12 @@ const FONTE_RUBEOLA_CONGENITA =
   "Material do usuário (enunciado); Ministério da Saúde — Nota Técnica Conjunta nº 344/2025: rubéola e síndrome da rubéola congênita (verificado em 2026-07-29).";
 const FONTE_HBV_VERTICAL =
   "Material do usuário (enunciado); Ministério da Saúde — Instrução Normativa do Calendário Nacional de Vacinação 2025: imunoprofilaxia de RN de mães HBsAg positivas (verificado em 2026-07-29).";
+const FONTE_CALENDARIO_GESTANTE_2026 =
+  "Ministério da Saúde — Calendário Técnico Nacional de Vacinação da Gestante / Instrução Normativa do Calendário Nacional de Vacinação 2026 (verificado em 2026-07-29).";
+const FONTE_IMUNOSSUPRESSAO_E_VACINAS =
+  "Ministério da Saúde — Manual de Normas e Procedimentos para Vacinação: imunossupressão por corticosteroide e vacinas vivas atenuadas (verificado em 2026-07-29).";
+const FONTE_ULCERAS_GENITAIS =
+  "Ministério da Saúde — PCDT para Atenção Integral às Pessoas com IST: sífilis primária e cancroide (verificado em 2026-07-29).";
 
 export const QUESTOES_INF: Questao[] = [
   // ── TUBERCULOSE ─────────────────────────────────────────────────
@@ -247,15 +253,15 @@ export const QUESTOES_INF: Questao[] = [
     disciplinaId: "inf",
     enunciado: "Qual característica diferencia classicamente o cancro duro (sífilis primária) do cancro mole (H. ducreyi)?",
     alternativas: [
-      { letra: "A", texto: "O cancro duro é doloroso e o cancro mole é indolor.", correta: false, comentario: "Está invertido." },
+      { letra: "A", texto: "O cancro duro é doloroso e o cancro mole é indolor.", correta: false, comentario: "Está invertido: na apresentação clássica, o cancro duro é indolor e o cancroide (cancro mole) é doloroso." },
       { letra: "B", texto: "O cancro duro é indolor e o cancro mole é doloroso.", correta: true, comentario: "Cancro duro (T. pallidum): úlcera única, indolor, base endurecida, fundo limpo. Cancro mole (H. ducreyi): múltiplas, dolorosas, fundo sujo." },
       { letra: "C", texto: "Apenas o cancro mole apresenta adenopatia satélite.", correta: false, comentario: "Ambos cursam com adenopatia; no cancro mole ela supura (bubão)." },
-      { letra: "D", texto: "O cancro duro é sempre múltiplo.", correta: false, comentario: "Classicamente é lesão ÚNICA." },
+      { letra: "D", texto: "O cancro duro é sempre múltiplo.", correta: false, comentario: "O cancro duro é geralmente único; lesões múltiplas podem ocorrer, mas não constituem sua apresentação clássica." },
     ],
     dificuldade: "fixacao",
     estilo: "diagnostico",
     tags: ["sífilis", "cancro duro", "cancro mole"],
-    fonte: FONTE,
+    fonte: FONTE_ULCERAS_GENITAIS,
   },
   {
     id: "inf-sif-014",
@@ -1752,14 +1758,14 @@ export const QUESTOES_INF: Questao[] = [
     enunciado: "Gestante no 2º trimestre procura a UBS para atualização vacinal. Qual vacina é especificamente recomendada nesse momento para proteger o recém-nascido contra coqueluche?",
     alternativas: [
       { letra: "A", texto: "dTpa (tríplice bacteriana acelular do tipo adulto).", correta: true, comentario: "A dTpa é recomendada a partir da 20ª semana, em toda gestação, justamente para transferir anticorpos protetores contra coqueluche ao recém-nascido antes que ele possa ser vacinado diretamente." },
-      { letra: "B", texto: "Tríplice viral (SCR).", correta: false, comentario: "É uma vacina de vírus vivo atenuado, CONTRAINDICADA na gestação." },
-      { letra: "C", texto: "Varicela.", correta: false, comentario: "É uma vacina de vírus vivo atenuado, contraindicada na gestação." },
+      { letra: "B", texto: "Tríplice viral (SCR).", correta: false, comentario: "A SCR é vacina de vírus vivos atenuados e não é aplicada durante a gestação; ela não substitui a dTpa para proteção do recém-nascido contra coqueluche." },
+      { letra: "C", texto: "Varicela.", correta: false, comentario: "A vacina contra varicela também é viva atenuada e não é indicada na gestação. Ela previne catapora, não oferece a proteção específica contra coqueluche procurada nesta consulta." },
       { letra: "D", texto: "Febre amarela, sempre indicada na gestação.", correta: false, comentario: "É contraindicação relativa na gestação, reservada a situações de risco epidemiológico elevado, avaliando risco-benefício." },
     ],
     dificuldade: "fixacao",
     estilo: "conduta",
     tags: ["imunização", "dTpa", "gestação"],
-    fonte: "Ministério da Saúde — Programa Nacional de Imunizações",
+    fonte: FONTE_CALENDARIO_GESTANTE_2026,
   },
   {
     id: "inf-imun-02",
@@ -1768,14 +1774,14 @@ export const QUESTOES_INF: Questao[] = [
     enunciado: "Paciente imunossuprimido, em uso de corticoide em dose imunossupressora, necessita de atualização vacinal. Qual tipo de vacina deve ser evitado nesse contexto?",
     alternativas: [
       { letra: "A", texto: "Vacinas inativadas (ex.: influenza fracionada).", correta: false, comentario: "Vacinas inativadas são geralmente seguras em imunossuprimidos, podendo apenas ter resposta imune reduzida." },
-      { letra: "B", texto: "Vacinas de vírus vivo atenuado (ex.: tríplice viral, varicela, febre amarela).", correta: true, comentario: "Vacinas de vírus vivo atenuado são contraindicadas em pacientes imunossuprimidos, pelo risco de doença vacinal disseminada." },
+      { letra: "B", texto: "Vacinas de vírus vivo atenuado (ex.: tríplice viral, varicela, febre amarela).", correta: true, comentario: "Em uso de corticoide em dose imunossupressora, vacinas vivas atenuadas devem ser adiadas; o Ministério da Saúde orienta aguardar pelo menos 30 dias após a interrupção do tratamento antes de aplicá-las." },
       { letra: "C", texto: "Vacinas de subunidade proteica.", correta: false, comentario: "Não representam risco de replicação viral, sendo geralmente seguras nesse contexto." },
       { letra: "D", texto: "Toxoides (ex.: tetânico).", correta: false, comentario: "Toxoides não contêm organismo vivo, sendo seguros em imunossuprimidos." },
     ],
     dificuldade: "intermediaria",
     estilo: "conduta",
     tags: ["imunização", "imunossupressão", "vacina de vírus vivo"],
-    fonte: "Ministério da Saúde — Programa Nacional de Imunizações",
+    fonte: FONTE_IMUNOSSUPRESSAO_E_VACINAS,
   },
 
   {

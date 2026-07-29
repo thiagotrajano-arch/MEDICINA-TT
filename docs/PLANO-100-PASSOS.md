@@ -85,11 +85,13 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 - [ ] 45. Diferenciar e ampliar os comentários das alternativas de Infectologia, mantendo uma correta.
 - [ ] 46. Confirmar todas as condutas de Infectologia em diretrizes vigentes e nomeadas.
 
-> Primeiro lote clínico em andamento, registrado em 2026-07-29 em
-> `docs/REVISAO-INFECTOLOGIA-LOTE-1.md`: quatro itens STORCH tiveram
-> rastreabilidade oficial atualizada e um ajuste temporal de imunoprofilaxia
-> neonatal do HBV. Os passos 44–46 continuam abertos até a revisão integral,
-> item a item, do lote prioritário.
+> Três micro-lotes clínicos foram registrados em 2026-07-29:
+> `docs/REVISAO-INFECTOLOGIA-LOTE-1.md` atualiza quatro itens STORCH e
+> `docs/REVISAO-INFECTOLOGIA-LOTE-2.md` revisa duas questões de imunizações,
+> eliminando a única repetição normalizada, e
+> `docs/REVISAO-INFECTOLOGIA-LOTE-3.md` revisa um item de sífilis. A auditoria
+> atual marca 33 comentários curtos em 21 questões; os passos 44–46 continuam
+> abertos até a revisão integral, item a item, do lote prioritário.
 - [ ] 47. Revisar, depois, o lote prioritário de Ginecologia e Obstetrícia.
 - [ ] 48. Atualizar condutas obstétricas e ginecológicas contra diretrizes vigentes antes de qualquer expansão.
 - [ ] 49. Revisar o lote de Pediatria com o mesmo portão editorial.
