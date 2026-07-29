@@ -45,7 +45,7 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 
 - [ ] 16. Reconsultar o único plano de ensino do SISCAD que estava indisponível.
 - [ ] 17. Converter esse plano para Markdown antes da leitura, se ele estiver em PDF.
-- [ ] 18. Atualizar a matriz privada dos 12 períodos com origem, data e vínculos para conteúdos de revisão.
+- [x] 18. Atualizar a matriz privada dos 12 períodos com origem, data e vínculos para conteúdos de revisão.
 - [ ] 19. Comparar planos, ementas e objetivos com a matriz curricular e ligar cada matéria já cursada aos temas, resumos, questões, casos e mídia correspondentes.
 - [ ] 20. Registrar somente diferenças curriculares relevantes, sem copiar dados pessoais ao repositório.
 - [x] 21. Definir o esquema da camada privada do curso: disciplina, período, status, datas e dificuldades.
@@ -73,6 +73,12 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 > ancoradas; sugere um próximo tópico por status/dificuldade; e mostra lacunas
 > de conteúdo publicado. O passo permanece aberto até incluir vínculos privados
 > reais de materiais/documentos e a matriz curricular longitudinal (18–20).
+
+> Passo 18 concluído em 2026-07-29 no cofre privado: [[Matriz Longitudinal -
+> Cobertura Operacional 2026-07-29]] organiza os 12 semestres, os 37
+> componentes catalogados e as famílias de fonte já acessadas por destino de
+> revisão permitido. Ainda faltam os vínculos revisados plano → tema → subtema
+> dos passos 19–20; nenhum documento privado foi enviado ao site.
 
 ## 3. Drive e acervo local: ingestão seletiva (29–42)
 
@@ -166,11 +172,16 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 
 ## 8. Produto, autenticação e progresso (92–96)
 
-- [ ] 92. Ajustar no painel do Supabase o Site URL e a allowlist de redirecionamento para o domínio público.
+- [x] 92. Ajustar no painel do Supabase o Site URL e a allowlist de redirecionamento para o domínio público.
 - [ ] 93. Testar, com a conta do usuário e sem registrar senha, login, recuperação de acesso e sessão persistente.
 - [ ] 94. Realizar teste ponta a ponta de respostas, simulados, resumos e casos em dois dispositivos/sessões.
 - [ ] 95. Confirmar RLS, ausência de chaves privilegiadas no cliente e tratamento de falhas de rede.
 - [ ] 96. Melhorar feedback de sincronização, conflito e recuperação local no dashboard sem alterar dados indevidamente.
+
+> Passo 92 concluído em 2026-07-29: o painel do Supabase confirma o domínio
+> GitHub Pages como Site URL e permite o redirecionamento exato usado pelo
+> aplicativo. Os testes reais de login, recuperação, sessão persistente e
+> sincronização continuam separados nos passos 93–96, sem registrar senha.
 
 ## 9. Fechamento, publicação e manutenção (97–100)
 

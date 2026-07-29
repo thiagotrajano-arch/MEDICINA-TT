@@ -99,7 +99,7 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 
 ## Pendências externas exatas
 
-- Corrigir `Site URL` e redirect allowlist no Auth do Supabase para o domínio público. Isso requer painel administrativo ou PAT do Management API; não tentar com service role.
+- O `Site URL` e a allowlist de redirect do Auth do Supabase foram confirmados no painel administrativo para o domínio público em 2026-07-29. Ainda falta testar, na conta do usuário e sem registrar senha, login, recuperação e sessão persistente (passo 93).
 - `SUPABASE_DB_URL` e `SUPABASE_SERVICE_ROLE_KEY` já estão cadastrados como GitHub Actions Secrets com autorização explícita do usuário. O run `29885112038` confirma um dump anterior, mas não valida a restauração instrumentada depois; o próximo run deve comprovar dump, artefato e restore em PostgreSQL temporário. Ausência do segredo agora é falha explícita, não sucesso por etapas puladas.
 - Para Drive, obter autorização Google própria, uma allowlist explícita de pastas e um baseline revisado; a rotina incremental exige `DRIVE_SYNC_ENABLED=true` e não deve ser habilitada antes de `npm run drive:inventory`. Nunca inventar, solicitar senha de e-mail ou reutilizar credencial alheia.
 - Não há nova extração segura até o usuário fornecer os PDFs faltantes descritos em `PROXIMOS-PASSOS.md`.
@@ -146,3 +146,9 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - O painel privado passou a receber um catálogo serializável calculado no servidor a partir de taxonomia, resumos, questões e casos já públicos. Ele nunca recebe SISCAD, PDFs, observações, notas, arquivos do Drive ou credenciais.
 - Para cada disciplina registrada, exibe cobertura publicada (resumos, questões, casos e figuras ancoradas), lacunas de conteúdo na taxonomia e até três tópicos recomendados. A prioridade local ordena `revisar`, `cursando`, `planejada` e `concluida`, usando dificuldade como desempate.
 - O passo 27 não está encerrado: faltam documentos/materiais privados autorizados e a matriz longitudinal real. Não substituir esses vínculos por inferência ou dados publicados.
+
+## Publicação e retomada — 2026-07-29
+
+- Os commits `cc08b86` (camada privada do curso) e `cac0eae` (recorte longitudinal seguro) foram enviados para `main`. O deploy GitHub Pages `30482759219` concluiu com sucesso; `/` e `/meu-curso/` responderam HTTP 200.
+- O cofre privado recebeu `Matriz Longitudinal - Cobertura Operacional 2026-07-29`, que fecha o passo 18 em nível de metadados. Os passos 19–20 e 27–28 continuam abertos: exigem curadoria manual dos vínculos plano → tema → subtema e materiais privados, sem publicar SISCAD, Drive, PDFs comerciais ou dados pessoais.
+- Próxima retomada recomendada: primeiro confirmar os testes pessoais 93–96 (login, recuperação, sessão e sincronização); em paralelo passivo, aguardar o backup restaurado do passo 13 e a eventual liberação de HCPM VI. O próximo bloco clínico autorizado deve retomar a revisão editorial de Infectologia (44–46), antes de GO e Pediatria.

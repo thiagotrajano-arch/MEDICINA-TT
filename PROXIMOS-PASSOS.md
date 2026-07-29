@@ -2,6 +2,13 @@
 
 > Atualizado em 2026-07-29. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o fechamento privado da sessão, consultar também `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian.
 
+## Fechamento e retomada — 2026-07-29
+
+- Publicação confirmada: `cc08b86` e `cac0eae` estão em `main`; GitHub Pages `30482759219` concluiu com sucesso. A raiz e `/meu-curso/` responderam HTTP 200.
+- Supabase: Site URL e allowlist de redirecionamento confirmados para o domínio GitHub Pages. Ainda falta testar login, recuperação, sessão persistente e sincronização com a conta real, sem registrar senha.
+- Curso privado: a matriz operacional dos 12 semestres e das fontes acessadas foi atualizada no Obsidian. Faltam curadoria plano → tema → subtema, diferenças curriculares relevantes e materiais privados vinculados; nada de SISCAD, Drive, PDF comercial ou dado pessoal entra no site público.
+- Próximo bloco recomendado: (1) testes privados 93–96; (2) aguardar/testar restore de backup, passo 13; (3) retomar Infectologia 44–46 com fontes primárias; depois GO e Pediatria. HCPM VI só volta à fila quando o plano existir.
+
 ## Plano mestre de extração e curso — 2026-07-28
 
 - A matriz dos 12 períodos e o desempenho acadêmico foram analisados; os dados pessoais permanecem apenas no Obsidian privado.
