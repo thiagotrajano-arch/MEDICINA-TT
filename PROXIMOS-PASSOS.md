@@ -9,6 +9,17 @@
 - Curso privado: a matriz operacional dos 12 semestres e das fontes acessadas foi atualizada no Obsidian. Faltam curadoria plano → tema → subtema, diferenças curriculares relevantes e materiais privados vinculados; nada de SISCAD, Drive, PDF comercial ou dado pessoal entra no site público.
 - Próximo bloco recomendado: (1) testes privados 93–96; (2) aguardar/testar restore de backup, passo 13; (3) retomar Infectologia 44–46 com fontes primárias; depois GO e Pediatria. HCPM VI só volta à fila quando o plano existir.
 
+## Ordem mestra adicionada — 2026-07-29
+
+- A varredura futura deve cobrir todo o Drive autorizado por metadados e localizar assuntos médicos úteis; a extração profunda será feita em lotes priorizados, com deduplicação e cache Markdown.
+- Imagens úteis dentro de PDFs devem ser detectadas, renderizadas e recortadas com origem/página/contexto. Captura de material comercial vai para biblioteca autenticada em armazenamento privado, fora do Git e do GitHub Pages; publicação exige imagem própria ou licença aberta verificável.
+- Imagens de pacientes ficam privadas e só entram após anonimização e autorização apropriada. O login existente será reutilizado, com RLS por proprietário e URLs assinadas; não haverá segunda senha nem arquivo privado em `public/`.
+- Todo material analisado será correlacionado aos semestres e matérias já cursados e aparecerá para revisão na área autenticada, nunca na camada curricular pública individualizada.
+- A biblioteca de mídia será reorganizada por disciplina, tema, subtema, modalidade, caso, licença e vínculo curricular. Os mapas serão refeitos como mapas conceituais com nós, setas nomeadas e conceitos-chave, não listas de links.
+- Anki fica para depois de acervo, correlação curricular, mídia e mapas. O redesign geral do site será a última fase e terá escopo apenas visual/UX.
+- Fonte de verdade dessa ordem: `docs/ORDEM-MESTRA-ACERVO-MIDIA-MAPAS-DESIGN.md`.
+- Biblioteca privada implementada em `/minha-midia`: reutiliza o login atual, grava imagens no bucket privado `midia-privada`, limita tabela e objetos ao proprietário via RLS e usa URLs assinadas de cinco minutos. A migration `20260729194500_cria_biblioteca_midia_privada.sql` foi aplicada e verificada: bucket não público, RLS ativo, cinco políticas e nenhum privilégio de tabela para `anon`. Nenhuma imagem privada foi enviada nesta implantação.
+
 ## Plano mestre de extração e curso — 2026-07-28
 
 - A matriz dos 12 períodos e o desempenho acadêmico foram analisados; os dados pessoais permanecem apenas no Obsidian privado.
@@ -17,7 +28,7 @@
 - O lote local do Estratégia foi reconciliado: 863 entradas, 824 nomes, cinco duplicatas exatas e 34 variantes distintas recuperadas; o total preservado é 858 PDFs distintos.
 - HCPM, BBPM III/IV/VII/VIII, LANN, UE, Farmacologia e os 30 arquivos de `RESUMOS` foram triados privadamente. A integração continua dependente de validação clínica, licença e deduplicação.
 - O Drive `Resumos e cursos` foi apenas reconhecido. Falta conexão, inventário por metadados, deduplicação e extração seletiva.
-- Imagens clínicas embutidas em PDFs ainda precisam de extração dirigida. Material comercial fica privado; o site público recebe apenas imagens com direito de uso verificável.
+- Imagens clínicas embutidas em PDFs ainda precisam de extração dirigida. Material comercial fica no bucket privado autenticado; o site público recebe apenas imagens próprias ou com licença aberta verificável. Imagem de paciente exige anonimização e autorização apropriada.
 - Bloco de proveniência concluído em 2026-07-29: manifesto, hashes, divergências, matriz inicial, classificação de visibilidade, auditoria de figuras, checklist, lacunas visuais e registro de artefatos. O workflow de backup foi instrumentado para testar restauração em PostgreSQL temporário; aguardar o primeiro run antes de considerá-lo validado. O relatório-base de qualidade das questões também foi fechado com auditoria reproduzível. O primeiro micro-lote STORCH de Infectologia foi revisado contra fontes atuais do Ministério da Saúde e registrado em `docs/REVISAO-INFECTOLOGIA-LOTE-1.md`; os passos 44–46 continuam abertos. Próxima sequência clínica: concluir o portão editorial de Infectologia, depois GO e Pediatria. Atualizar o Obsidian ao fechar cada lote.
 - A publicação do micro-lote (`a89fc83`) foi confirmada no GitHub Pages run `30456204375`; raiz e `/questoes/` responderam HTTP 200. Typecheck, lint e auditoria filtrada passaram. O seed Supabase não respondeu no limite seguro local: manter como pendente e não usar isso como evidência de sincronização remota.
 - Em 2026-07-29, a camada privada de atualização do curso foi criada em `/meu-curso`: requer sessão, mantém dados individuais fora da rota pública, aceita edição manual e importação Markdown/CSV revisável, e registra histórico mínimo. A migração `20260729170921_cria_camada_privada_do_curso.sql` foi aplicada, seguida de `20260729172234_restringe_permissoes_curso_privado.sql`; RLS e permissões mínimas foram verificadas estruturalmente sem consultar dados de usuários. Antes do próximo lote, validar a rota autenticada em produção; depois seguir para a matriz privada e o painel longitudinal dos passos 27–28.

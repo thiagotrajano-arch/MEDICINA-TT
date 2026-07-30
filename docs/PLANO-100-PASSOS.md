@@ -7,6 +7,13 @@
 > público. Cada lote clínico exige fonte atual, revisão de gabarito, licença e
 > validação técnica antes de publicação.
 
+> **Ordem de execução confirmada pelo usuário em 2026-07-29:** aplicar
+> `docs/ORDEM-MESTRA-ACERVO-MIDIA-MAPAS-DESIGN.md`. Após os portões técnicos,
+> a sequência é acervo/Drive → correlação com semestres cursados → conteúdo
+> validado → mídia clínica → mapas conceituais reais → Anki → design visual.
+> A numeração abaixo organiza dependências, mas não autoriza antecipar Anki ou
+> redesign antes das etapas anteriores.
+
 ## Marco de conclusão
 
 O projeto estará operacionalmente concluído quando o acervo tiver proveniência e
@@ -150,7 +157,7 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 
 - [ ] 74. Localizar páginas candidatas a imagens nos caches Markdown por tema, legenda, contexto e vínculo com a matéria cursada.
 - [ ] 75. Renderizar somente páginas selecionadas e registrar diagnóstico, modalidade e restrição de uso.
-- [ ] 76. Manter separado o acervo privado de estudo e o acervo público licenciado.
+- [x] 76. Manter separado o acervo público próprio/licenciado e a biblioteca privada autenticada, com arquivos fora do repositório e do GitHub Pages.
 - [ ] 77. Buscar equivalentes abertos somente para lacunas clínicas reais e de alto retorno.
 - [ ] 78. Validar autoria, fonte, licença, tipo de arquivo e correlação clínica antes de baixar cada imagem.
 - [ ] 79. Tratar imagens clínicas como recurso central: priorizar lacunas de GO, Pediatria, Cirurgia e as onze imagens ainda indisponíveis, sempre com licença verificável.
@@ -158,6 +165,18 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 - [ ] 81. Organizar a aba Mídia por disciplina, componente/período cursado, tema, subtema, modalidade e caso relacionado.
 - [ ] 82. Criar filtros de fonte/licença e indicar claramente imagens apenas de referência visual.
 - [ ] 83. Rodar auditoria de arquivos, IDs, âncoras, créditos e licenças antes de cada publicação.
+
+> Arquitetura obrigatória da biblioteca privada: reutilizar o login existente;
+> bucket privado no Supabase Storage; objetos sob pasta do `auth.uid()`; metadados
+> e políticas RLS por proprietário; URLs assinadas de curta duração. Capturas de
+> PDFs comerciais registram origem/página. Imagens de pacientes só entram após
+> anonimização e autorização apropriada. Nenhuma dessas imagens pode existir em
+> `public/`, no Git, no bundle estático ou ser servida por URL pública permanente.
+>
+> Passo 76 concluído em 2026-07-29: `/minha-midia` usa bucket privado,
+> metadados/objetos escopados ao proprietário e URLs assinadas por cinco minutos.
+> A migration foi aplicada e validada estruturalmente; falta o teste funcional com
+> a conta real e o primeiro lote curado de imagens.
 
 ## 7. Mapas mentais, Anki e segundo cérebro (84–91)
 
@@ -169,6 +188,10 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 - [ ] 89. Criar o primeiro deck de teste a partir de um resumo aprovado e confirmar que não há duplicação.
 - [ ] 90. Criar fluxo de flashcards baseados em erros de questões e revisar a qualidade dos cartões.
 - [ ] 91. Documentar backup/exportação nativa `.apkg`, CSV de contingência e recuperação do fluxo Anki.
+
+> Anki foi reposicionado pelo usuário para o fim da construção educacional.
+> Executar 88–91 somente depois de consolidar o acervo útil, a correlação
+> curricular, a mídia clínica e os mapas mentais prioritários.
 
 ## 8. Produto, autenticação e progresso (92–96)
 
@@ -196,3 +219,10 @@ Executar em blocos de 5 a 15 passos dependentes; fechar o bloco com evidência e
 Obsidian antes de passar ao seguinte. Pedir autorização específica somente para ações externas ou
 irreversíveis (painel do Supabase, download de material novo, publicação de conteúdo clínico ou
 qualquer dado derivado do SISCAD).
+
+## Fase posterior ao passo 100 — design visual
+
+O redesign geral do site será feito somente após a consolidação funcional. Essa
+fase deve melhorar hierarquia, organização, navegação, responsividade,
+acessibilidade e consistência visual sem misturar mudanças clínicas, de banco ou
+de sincronização no mesmo lote.

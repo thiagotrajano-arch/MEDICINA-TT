@@ -26,6 +26,7 @@ const NAV = [
   { href: "/simulado", label: "Simulado", icon: Timer },
   { href: "/casos", label: "Casos clínicos", icon: Stethoscope },
   { href: "/midia", label: "Mídia", icon: Images },
+  { href: "/minha-midia", label: "Minha mídia", icon: LockKeyhole },
   { href: "/mapas-mentais", label: "Mapas mentais", icon: Network },
   { href: "/semestres", label: "Trilhas", icon: GraduationCap },
   { href: "/meu-curso", label: "Meu curso", icon: LockKeyhole },

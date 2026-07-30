@@ -88,13 +88,15 @@
 
 - [ ] Localizar páginas candidatas nos PDFs por tema, legenda e contexto clínico.
 - [ ] Renderizar apenas as páginas relevantes e registrar diagnóstico, modalidade, origem e restrição de uso.
-- [ ] Manter separadas as imagens de estudo privado e as autorizadas para publicação.
+- [ ] Manter separadas a biblioteca pública própria/licenciada e a biblioteca privada autenticada.
+- [ ] Armazenar capturas comerciais fora do repositório/GitHub Pages, em bucket privado com RLS por proprietário e URLs assinadas.
+- [ ] Aceitar imagens de pacientes somente após anonimização e autorização apropriada; mantê-las privadas por padrão.
 - [ ] Para material comercial, procurar equivalente aberto/licenciado antes de publicar.
 - [ ] Priorizar imagens úteis ao semestre atual e às lacunas do Raio-X OMED.
 - [ ] Organizar a aba de mídia por disciplina, tema, subtema, modalidade e caso clínico.
 - [ ] Ancorar cada figura em um resumo ou caso, evitando galeria sem contexto.
 
-**Saída:** coleção privada de candidatos e coleção pública auditada.
+**Saída:** coleção privada protegida pelo login existente e coleção pública auditada. A interface pode estar no site, mas arquivos privados nunca entram em `public/` nem recebem URL pública permanente.
 
 ### Bloco 6 — Conteúdo, casos, questões, mapas e Anki
 
@@ -128,6 +130,11 @@
 8. Blocos 6 e 7: integrar, validar e publicar em lotes.
 
 ## 5. Critério de conclusão
+
+Antes de considerar o projeto educacional concluído, aplicar também a ordem em
+`docs/ORDEM-MESTRA-ACERVO-MIDIA-MAPAS-DESIGN.md`: varredura ampla do Drive
+autorizado, correlação longitudinal, mídia clínica contextualizada, mapas
+conceituais reais, Anki ao fim e redesign visual como última fase isolada.
 
 Uma fonte só será considerada **concluída** quando existir um manifesto completo,
 os itens úteis tiverem sido analisados, duplicidades e restrições tiverem sido
