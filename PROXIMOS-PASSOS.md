@@ -19,6 +19,7 @@
 - Anki fica para depois de acervo, correlação curricular, mídia e mapas. O redesign geral do site será a última fase e terá escopo apenas visual/UX.
 - Fonte de verdade dessa ordem: `docs/ORDEM-MESTRA-ACERVO-MIDIA-MAPAS-DESIGN.md`.
 - Biblioteca privada implementada em `/minha-midia`: reutiliza o login atual, grava imagens no bucket privado `midia-privada`, limita tabela e objetos ao proprietário via RLS e usa URLs assinadas de cinco minutos. A migration `20260729194500_cria_biblioteca_midia_privada.sql` foi aplicada e verificada: bucket não público, RLS ativo, cinco políticas e nenhum privilégio de tabela para `anon`. Nenhuma imagem privada foi enviada nesta implantação.
+- Publicação confirmada no commit `8b37d84`: o GitHub Pages run `30501713751` concluiu com sucesso, e `/` e `/minha-midia/` responderam HTTP 200. A rotina automática das 9h foi removida e não foi recriada.
 
 ## Plano mestre de extração e curso — 2026-07-28
 
