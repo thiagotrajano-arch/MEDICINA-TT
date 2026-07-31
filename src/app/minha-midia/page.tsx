@@ -3,7 +3,7 @@ import { MidiaPrivadaClient } from "@/components/midia/MidiaPrivadaClient";
 
 export const metadata: Metadata = {
   title: "Minha Midia Privada | Codex Medicus",
-  description: "Biblioteca autenticada de imagens privadas para estudo pessoal.",
+  description: "Biblioteca autenticada de imagens privadas, curadas e correlacionadas para estudo pessoal.",
   robots: { index: false, follow: false },
 };
 
