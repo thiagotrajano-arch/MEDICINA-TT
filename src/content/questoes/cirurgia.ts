@@ -91,7 +91,7 @@ export const QUESTOES_CIR: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Espessamento da parede vesicular maior que 4 mm.", correta: false, comentario: "Achado de imagem valorizado pela TG18 como critério diagnóstico." },
       { letra: "B", texto: "Sinal de Murphy ultrassonográfico.", correta: false, comentario: "Achado clínico-imagem valorizado pela TG18 como critério diagnóstico." },
-      { letra: "C", texto: "Líquido pericolecístico.", correta: false, comentario: "Achado de imagem valorizado pela TG18 como critério diagnóstico." },
+      { letra: "C", texto: "Líquido pericolecístico.", correta: false, comentario: "Achado de imagem valorizado pela TG18 como critério diagnóstico; presença de líquido livre ao redor da vesícula." },
       { letra: "D", texto: "Dilatação do ducto pancreático principal.", correta: true, comentario: "Relaciona-se a doença pancreática (obstrutiva ou pancreatite crônica) — não faz parte dos critérios de imagem de colecistite." },
     ],
     dificuldade: "intermediaria",
