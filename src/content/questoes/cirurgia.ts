@@ -40,10 +40,10 @@ export const QUESTOES_CIR: Questao[] = [
     enunciado:
       "De acordo com a WSES 2020, qual o momento ideal da colecistectomia videolaparoscópica na colecistite aguda grau I ou II?",
     alternativas: [
-      { letra: "A", texto: "Após 6 semanas, quando a inflamação 'esfriar'.", correta: false, comentario: "É a conduta antiga, hoje superada." },
+      { letra: "A", texto: "Após 6 semanas, quando a inflamação 'esfriar'.", correta: false, comentario: "É a conduta antiga (espera a inflamação ceder), hoje superada pela evidência de cirurgia precoce." },
       { letra: "B", texto: "Precocemente, idealmente em até 7 dias do início dos sintomas, na mesma internação.", correta: true, comentario: "Mudança de paradigma da WSES 2020: colecistectomia precoce (≤7 dias) reduz tempo total de internação sem aumentar complicações." },
-      { letra: "C", texto: "Somente após 3 episódios de repetição.", correta: false, comentario: "Não tem base em diretriz." },
-      { letra: "D", texto: "Nunca por via laparoscópica na fase aguda; sempre aberta.", correta: false, comentario: "A via laparoscópica é preferida mesmo na fase aguda." },
+      { letra: "C", texto: "Somente após 3 episódios de repetição.", correta: false, comentario: "Não tem base em diretriz atual; a indicação não depende do número de episódios." },
+      { letra: "D", texto: "Nunca por via laparoscópica na fase aguda; sempre aberta.", correta: false, comentario: "A via laparoscópica é preferida mesmo na fase aguda, salvo contraindicação específica." },
     ],
     dificuldade: "intermediaria",
     estilo: "conduta",
@@ -59,7 +59,7 @@ export const QUESTOES_CIR: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Colangiopancreatografia retrógrada endoscópica (CPRE).", correta: false, comentario: "É diagnóstica E terapêutica, porém invasiva — não é o exame confirmatório inicial de escolha." },
       { letra: "B", texto: "Colangiorressonância magnética (CPRM).", correta: true, comentario: "Confirma coledocolitíase de forma não invasiva e com alta sensibilidade, antes de partir para a CPRE." },
-      { letra: "C", texto: "Colecistografia oral.", correta: false, comentario: "Exame obsoleto." },
+      { letra: "C", texto: "Colecistografia oral.", correta: false, comentario: "Exame obsoleto, substituído por métodos de imagem não invasivos modernos." },
       { letra: "D", texto: "Cintilografia hepatobiliar (HIDA).", correta: false, comentario: "Avalia função/obstrução cística; não é o método de escolha para o colédoco." },
     ],
     dificuldade: "intermediaria",
@@ -89,9 +89,9 @@ export const QUESTOES_CIR: Questao[] = [
     disciplinaId: "cir",
     enunciado: "Qual achado ultrassonográfico NÃO é utilizado nos critérios diagnósticos de colecistite aguda?",
     alternativas: [
-      { letra: "A", texto: "Espessamento da parede vesicular maior que 4 mm.", correta: false, comentario: "É achado valorizado pela TG18." },
-      { letra: "B", texto: "Sinal de Murphy ultrassonográfico.", correta: false, comentario: "É achado valorizado pela TG18." },
-      { letra: "C", texto: "Líquido pericolecístico.", correta: false, comentario: "É achado valorizado pela TG18." },
+      { letra: "A", texto: "Espessamento da parede vesicular maior que 4 mm.", correta: false, comentario: "Achado de imagem valorizado pela TG18 como critério diagnóstico." },
+      { letra: "B", texto: "Sinal de Murphy ultrassonográfico.", correta: false, comentario: "Achado clínico-imagem valorizado pela TG18 como critério diagnóstico." },
+      { letra: "C", texto: "Líquido pericolecístico.", correta: false, comentario: "Achado de imagem valorizado pela TG18 como critério diagnóstico." },
       { letra: "D", texto: "Dilatação do ducto pancreático principal.", correta: true, comentario: "Relaciona-se a doença pancreática (obstrutiva ou pancreatite crônica) — não faz parte dos critérios de imagem de colecistite." },
     ],
     dificuldade: "intermediaria",
@@ -107,8 +107,8 @@ export const QUESTOES_CIR: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Fístula entre vesícula biliar e duodeno.", correta: false, comentario: "Descreve fístula colecistoentérica (associada ao íleo biliar)." },
       { letra: "B", texto: "Compressão extrínseca do ducto hepático comum por cálculo impactado no infundíbulo vesicular ou ducto cístico.", correta: true, comentario: "Causa icterícia obstrutiva mesmo sem cálculo no colédoco; relevante por aumentar o risco de lesão iatrogênica de via biliar na colecistectomia." },
-      { letra: "C", texto: "Obstrução do ducto pancreático por cálculo migrado.", correta: false, comentario: "Corresponde a outro mecanismo (pancreatite biliar)." },
-      { letra: "D", texto: "Perfuração livre da vesícula para a cavidade peritoneal.", correta: false, comentario: "É complicação distinta da colecistite." },
+      { letra: "C", texto: "Obstrução do ducto pancreático por cálculo migrado.", correta: false, comentario: "Corresponde a outro mecanismo (pancreatite biliar), não à síndrome de Mirizzi." },
+      { letra: "D", texto: "Perfuração livre da vesícula para a cavidade peritoneal.", correta: false, comentario: "É complicação distinta da colecistite (perfuração vesicular livre)." },
     ],
     dificuldade: "avancada",
     estilo: "diagnostico",
@@ -121,9 +121,9 @@ export const QUESTOES_CIR: Questao[] = [
     disciplinaId: "cir",
     enunciado: "Os cálculos biliares pigmentares PRETOS estão classicamente associados a:",
     alternativas: [
-      { letra: "A", texto: "Obesidade e dislipidemia.", correta: false, comentario: "Associam-se aos cálculos de colesterol." },
+      { letra: "A", texto: "Obesidade e dislipidemia.", correta: false, comentario: "Fatores de risco clássicos para cálculos de colesterol, não para cálculos pigmentares pretos." },
       { letra: "B", texto: "Hemólise crônica (anemia falciforme, esferocitose) e cirrose.", correta: true, comentario: "Formam-se por excesso de bilirrubina não conjugada na bile — típico de hemólise crônica e cirrose." },
-      { letra: "C", texto: "Infecção biliar crônica e estase.", correta: false, comentario: "Associam-se aos cálculos pigmentares CASTANHOS, não pretos." },
+      { letra: "C", texto: "Infecção biliar crônica e estase.", correta: false, comentario: "Fatores associados aos cálculos pigmentares CASTANHOS, não pretos." },
       { letra: "D", texto: "Nutrição parenteral prolongada isoladamente.", correta: false, comentario: "Favorece lama biliar/colecistite alitiásica, não especificamente cálculos pretos." },
     ],
     dificuldade: "intermediaria",

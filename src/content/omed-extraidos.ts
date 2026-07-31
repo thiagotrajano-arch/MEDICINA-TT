@@ -167,6 +167,14 @@ function questoes(
   mapa: Record<number, string>,
   disciplinaId: "cir" | "mfc"
 ): Questao[] {
+  const comentarioVariacoes = [
+    "Esta alternativa não corresponde à melhor conduta. ",
+    "Esta opção não reflete a conduta recomendada. ",
+    "Esta resposta não está alinhada com a diretriz atual. ",
+    "Esta alternativa diverge do padrão-ouro. ",
+    "Esta opção não é a conduta de escolha. ",
+  ];
+
   return acervo.questions.map((questao, index) => ({
     id: `${disciplinaId}-omed-arquivo-${String(index + 1).padStart(3, "0")}`,
     subtemaId: mapa[questao.tema_num],
@@ -179,7 +187,7 @@ function questoes(
       comentario:
         alternativaIndex === questao.correta
           ? questao.coment
-          : `Esta alternativa não é a melhor resposta. ${questao.coment}`,
+          : comentarioVariacoes[alternativaIndex % comentarioVariacoes.length] + questao.coment,
     })),
     dificuldade:
       questao.dif.toLowerCase().startsWith("f")
