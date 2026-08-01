@@ -24,7 +24,7 @@ export const QUESTOES_OTORRINO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Coriza isolada.", correta: false, comentario: "Coriza acompanha IVAS e não confirma acometimento de orelha média." },
       { letra: "B", texto: "Abaulamento da membrana timpânica com efusão.", correta: true, comentario: "Correta: abaulamento com efusão traduz pus/pressão na orelha média e é o achado otoscópico decisivo." },
-      { letra: "C", texto: "Prurido nasal.", correta: false, comentario: "Prurido nasal sugere rinite, não OMA." },
+      { letra: "C", texto: "Prurido nasal.", correta: false, comentario: "Prurido nasal aponta mais para rinite alérgica e não confirma efusão ou inflamação da orelha média." },
       { letra: "D", texto: "Dor apenas ao abrir a boca.", correta: false, comentario: "Dor mandibular isolada sugere causa odontológica ou ATM." },
     ],
     dificuldade: "intermediaria",

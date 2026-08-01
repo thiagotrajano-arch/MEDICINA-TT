@@ -24,7 +24,7 @@ export const QUESTOES_DERMA: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Biópsia excisional com margens estreitas quando factível.", correta: true, comentario: "Correta: suspeita de melanoma exige diagnóstico histológico adequado, preferencialmente excisional, para medir Breslow." },
       { letra: "B", texto: "Crioterapia imediata sem histologia.", correta: false, comentario: "Crioterapia destrói tecido e impede estadiamento histológico." },
-      { letra: "C", texto: "Antibiótico tópico por 14 dias.", correta: false, comentario: "Não há padrão infeccioso." },
+      { letra: "C", texto: "Antibiótico tópico por 14 dias.", correta: false, comentario: "Não há padrão infeccioso; uma lesão pigmentada assimétrica e em crescimento exige investigação histológica para melanoma." },
       { letra: "D", texto: "Raspar superficialmente apenas a parte pigmentada.", correta: false, comentario: "Biópsia superficial pode subestimar profundidade e prejudicar conduta." },
     ],
     dificuldade: "avancada",

@@ -109,8 +109,8 @@ export const QUESTOES_MFC: Questao[] = [
     enunciado: "Um Risco Relativo de 3,0 significa que o grupo exposto tem, em relação ao não exposto:",
     alternativas: [
       { letra: "A", texto: "300% de risco a mais.", correta: false, comentario: "Pegadinha clássica: 3× o risco equivale a 200% A MAIS, não 300% a mais." },
-      { letra: "B", texto: "30% de risco a mais.", correta: false, comentario: "Corresponderia a RR = 1,3 (30% a mais)." },
-      { letra: "C", texto: "Risco idêntico.", correta: false, comentario: "Risco idêntico é RR = 1,0 (sem diferença entre expostos e não expostos)." },
+      { letra: "B", texto: "30% de risco a mais.", correta: false, comentario: "Trinta por cento de risco a mais corresponderia a RR = 1,3, e não ao RR = 3,0 apresentado no enunciado." },
+      { letra: "C", texto: "Risco idêntico.", correta: false, comentario: "Risco idêntico significa RR = 1,0, sem diferença entre a incidência nos expostos e nos não expostos." },
       { letra: "D", texto: "3 vezes o risco (ou seja, 200% de risco a mais).", correta: true, comentario: "RR = 3,0 → risco 3× maior; o aumento percentual é (3−1)×100 = 200%." },
     ],
     dificuldade: "intermediaria",
