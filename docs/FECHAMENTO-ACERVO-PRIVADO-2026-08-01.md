@@ -34,7 +34,8 @@ sem abrir integralmente livros ou cursos comerciais.
 - A pasta médica principal contém 1.144 fontes-alvo; 1.143 já estão no manifesto
   sem divergência de tamanho. O único ausente é um temporário inválido de 162
   bytes, não material médico.
-- Há 253 caches íntegros e 878 fontes médicas ainda sem cache Markdown.
+- Há 253 caches íntegros e 878 fontes médicas ainda sem cache Markdown: 858 do
+  lote Estratégia, 13 livros e sete fontes de outros grupos.
 - Os 14 arquivos OOXML são estruturalmente válidos e contêm 81 mídias
   incorporadas, ainda não classificadas como clínicas ou reutilizáveis.
 - O recorte auxiliar contém 16 provas OMED e 21 imagens clínicas já usadas pelo
@@ -42,10 +43,13 @@ sem abrir integralmente livros ou cursos comerciais.
 - Em Downloads, 79 candidatos médicos foram reconhecidos: 29 ZIPs, 24 vídeos,
   16 PDFs e 10 Markdown. Os 29 ZIPs abriram sem falha de diretório e somam 1.120
   entradas; seis arquivos internos são candidatos visuais ainda não revisados.
-- A comparação por SHA-256 confirmou 32 arquivos pequenos ou médios novos por
-  conteúdo. Outros 53 arquivos grandes permanecem somente catalogados por
-  metadados. Dois PDFs têm cabeçalho válido, mas não exibem marcador final
-  convencional e precisam de validação antes do parser.
+- A comparação por SHA-256 encontrou 32 arquivos pequenos ou médios sem
+  correspondente no manifesto. Entre as próprias raízes locais há seis pares
+  Markdown e dois pares PDF duplicados, que precisam ser reduzidos a cópias
+  canônicas antes de chamar o conjunto de conteúdo novo. Outros 53 arquivos
+  grandes permanecem somente catalogados por metadados. Dois PDFs têm cabeçalho
+  válido, mas não exibem marcador final convencional e precisam de validação
+  antes do parser.
 
 ## Catálogo autenticado
 

@@ -118,9 +118,11 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 > Reconciliação local complementar em 2026-08-01: 1.143 de 1.144 fontes da pasta
 > médica principal já constam no manifesto; a exceção é um temporário inválido.
 > Existem 253 caches íntegros e 878 fontes médicas sem cache. Foram identificadas
-> 81 mídias em OOXML, 32 arquivos pequenos/médios novos por SHA-256, 53 arquivos
-> grandes ainda apenas catalogados e dois PDFs estruturalmente anômalos. Isso
-> mantém 36–39 abertos e define a fila seletiva; não autoriza conversão em massa.
+> 81 mídias em OOXML, 32 arquivos pequenos/médios ausentes do manifesto, 53
+> arquivos grandes ainda apenas catalogados e dois PDFs estruturalmente
+> anômalos. Os 32 incluem seis pares Markdown e dois pares PDF duplicados entre
+> raízes; a cópia canônica ainda precisa ser escolhida. Isso mantém 36–39
+> abertos e define a fila seletiva; não autoriza conversão em massa.
 
 ## 4. Portão editorial e conteúdo clínico prioritário (43–61)
 
