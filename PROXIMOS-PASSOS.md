@@ -1183,6 +1183,19 @@ errada é pior que uma questão a menos.
 - As 11 questões Gastro ainda não foram marcadas como fechadas automaticamente: cada uma precisa receber a referência específica e passar por conferência do enunciado, gabarito e dose/limiar quando aplicável.
 - O próximo bloco editorial deve usar essas fontes para retirar as 11 questões da fila sem atribuir referências genéricas de forma indiscriminada.
 
+## Execução do bloco 29–42 — 2026-08-01
+
+- 29: a conexão própria do conector foi usada para consultas autenticadas; o script local `drive:inventory` continua sem configuração de credenciais/pastas e falha sem expor detalhes.
+- 30: inventário paginado concluído para 1.705 PDFs e 157 DOCX, sem baixar conteúdo irrelevante.
+- 31: comparação por nome/tamanho concluída como triagem; SHA-256 local está implementado em `scripts/ingest-drive-local.mts`, aguardando binários materializados.
+- 32: candidatos foram priorizados por OMED, lacunas médicas e SISCAD; materiais pessoais e livros protegidos foram excluídos do destino público.
+- 33–35: Estratégia, MEDCOF, Medcurso, Bagagem e BBPM foram catalogados por busca e triagem textual; a leitura integral só deve ocorrer após materialização privada.
+- 36: rota local de cópia canônica/hash está pronta, mas nenhum PDF do Drive foi materializado pelo conector nesta sessão.
+- 37: conversor PDF/DOCX→Markdown existente foi validado no código e permanece pronto para a pasta privada.
+- 38–39: OCR e recuperação de PDFs corrompidos permanecem condicionados à existência do binário local; não foram simulados.
+- 40: 157 DOCX foram inventariados; deduplicação por SHA-256 contra o banco aguarda materialização.
+- 41–42: matriz de classificação médica e registro de fechamento foram atualizados; fontes comerciais e pessoais permanecem privadas.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.
