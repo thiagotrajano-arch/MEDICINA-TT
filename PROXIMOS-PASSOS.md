@@ -1191,6 +1191,7 @@ errada é pior que uma questão a menos.
 - 32: candidatos foram priorizados por OMED, lacunas médicas e SISCAD; materiais pessoais e livros protegidos foram excluídos do destino público.
 - 33–35: Estratégia, MEDCOF, Medcurso, Bagagem e BBPM foram catalogados por busca e triagem textual; a leitura integral só deve ocorrer após materialização privada.
 - 36: rota local de cópia canônica/hash está pronta, mas nenhum PDF do Drive foi materializado pelo conector nesta sessão.
+- 36: criada também a rota `npm run drive:download-local -- --out <pasta>`; ela baixa apenas PDF/DOCX dentro de `DRIVE_FOLDER_IDS`, calcula SHA-256 durante o download e grava manifesto privado. O teste seguro abortou porque nenhum ID de pasta foi configurado.
 - 37: conversor PDF/DOCX→Markdown existente foi validado no código e permanece pronto para a pasta privada.
 - 38–39: OCR e recuperação de PDFs corrompidos permanecem condicionados à existência do binário local; não foram simulados.
 - 40: 157 DOCX foram inventariados; deduplicação por SHA-256 contra o banco aguarda materialização.
