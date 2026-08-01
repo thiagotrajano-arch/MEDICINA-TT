@@ -1125,6 +1125,14 @@ errada é pior que uma questão a menos.
 
 ## Bloco de 20 passos - 2026-08-01
 
+## Extração privada do Drive — lote OMED (2026-08-01)
+
+- Foi concluída a leitura textual privada de um lote prioritário de 12 materiais do Drive: Pneumologia, Cardiologia, Pediatria, Infectologia, Cirurgia, MFC, Neurologia, GO, Nefrologia/Hemato-Oncologia, Psiquiatria/Reumatologia/Endocrinologia, Gastroenterologia e Hematologia.
+- A leitura serviu para identificar subtemas, sobreposições e material que precisa de validação. PDFs comerciais continuam restritos à biblioteca privada; nenhum texto integral foi publicado.
+- Temas novos confirmados para correlação: histopatologia glomerular, litíase e hipertensão renovascular; tireoide/eixo adrenal; doenças intestinais; anemias e plaquetopenias.
+- Ainda faltam a materialização local dos binários, hashes, deduplicação completa, OCR seletivo, extração visual e correlação sistemática com todos os semestres do SISCAD.
+- Próximo portão: validar as 48 questões sem fonte antes de gerar conteúdo derivado desses materiais.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.
