@@ -19,6 +19,7 @@ export const QUESTOES_GASTRO: Questao[] = [
     ],
     dificuldade: "fixacao",
     estilo: "exame",
+    fonte: "AASLD-IDSA HCV Guidance; https://www.hcvguidelines.org/evaluate/testing-and-linkage (consultado em 2026-08-01)",
     tags: ["hepatite C", "HCV-RNA", "sorologia", "diagnóstico"],
   },
   {
@@ -34,6 +35,7 @@ export const QUESTOES_GASTRO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "diagnostico",
+    fonte: "CDC Hepatitis B Testing and Interpretation; https://www.cdc.gov/hepatitis-b/hcp/diagnosis-testing/index.html (consultado em 2026-08-01)",
     tags: ["hepatite B", "HBsAg", "anti-HBc IgM", "janela imunológica"],
   },
   {
@@ -49,6 +51,7 @@ export const QUESTOES_GASTRO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "conduta",
+    fonte: "CDC Clinical Overview of Perinatal Hepatitis B; https://www.cdc.gov/hepatitis-b/hcp/perinatal-provider-overview/index.html (consultado em 2026-08-01)",
     tags: ["hepatite B", "transmissão vertical", "vacina", "imunoglobulina"],
   },
   {
@@ -64,6 +67,7 @@ export const QUESTOES_GASTRO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "caso",
+    fonte: "AASLD Practice Guidance on Ascites and SBP; https://www.aasld.org/practice-guidelines/diagnosis-evaluation-and-management-ascites-spontaneous-bacterial-peritonitis (consultado em 2026-08-01)",
     tags: ["ascite", "GASA", "hipertensão portal", "cirrose"],
   },
   {
@@ -79,6 +83,7 @@ export const QUESTOES_GASTRO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "AASLD Practice Guidance on Ascites and SBP; https://www.aasld.org/practice-guidelines/diagnosis-evaluation-and-management-ascites-spontaneous-bacterial-peritonitis (consultado em 2026-08-01)",
     tags: ["PBE", "peritonite bacteriana espontânea", "antibioticoterapia", "ascite"],
   },
   {
@@ -94,6 +99,7 @@ export const QUESTOES_GASTRO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "conduta",
+    fonte: "AASLD Hepatic Encephalopathy Guideline; https://www.aasld.org/practice-guidelines/hepatic-encephalopathy (consultado em 2026-08-01)",
     tags: ["encefalopatia hepática", "lactulose", "fatores precipitantes", "cirrose"],
   },
   {
@@ -109,6 +115,7 @@ export const QUESTOES_GASTRO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "exame",
+    fonte: "ACG Guideline Highlights: Acute Pancreatitis 2024; https://webfiles.gi.org/links/journals/AJG-Clinical-Guidelines-Highlights-Acute-Pancreatitis-2024-FINAL.pdf (consultado em 2026-08-01)",
     tags: ["pancreatite aguda", "lipase", "amilase", "diagnóstico", "Atlanta"],
   },
   {
@@ -124,6 +131,7 @@ export const QUESTOES_GASTRO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "ACG Guideline Highlights: Acute Pancreatitis 2024; https://webfiles.gi.org/links/journals/AJG-Clinical-Guidelines-Highlights-Acute-Pancreatitis-2024-FINAL.pdf (consultado em 2026-08-01)",
     tags: ["pancreatite aguda", "nutrição enteral", "conduta", "gravidade"],
   },
   {
@@ -139,6 +147,7 @@ export const QUESTOES_GASTRO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "ACG Guideline Highlights: Acute Pancreatitis 2024; https://webfiles.gi.org/links/journals/AJG-Clinical-Guidelines-Highlights-Acute-Pancreatitis-2024-FINAL.pdf (consultado em 2026-08-01)",
     tags: ["pancreatite aguda", "antibiótico", "necrose pancreática", "conduta"],
   },
 ];

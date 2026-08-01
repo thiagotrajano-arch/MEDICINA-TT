@@ -14,6 +14,7 @@ export const QUESTOES_GASTRO_EXTRA: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "diagnostico",
+    fonte: "AASLD Diagnosis and Treatment of Wilson Disease; https://www.aasld.org/sites/default/files/2022-04/Wilson-Disease2009.pdf (consultado em 2026-08-01)",
     tags: ["Wilson", "ceruloplasmina", "Kayser-Fleischer"],
   },
   {
@@ -29,6 +30,7 @@ export const QUESTOES_GASTRO_EXTRA: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "diagnostico",
+    fonte: "ACG Guideline Highlights: Alcohol-Associated Liver Disease 2024; https://webfiles.gi.org/links/journals/ACG-Alcohol-Associated-Liver-Disease-Guidelines-Highlights-2024.pdf (consultado em 2026-08-01)",
     tags: ["hepatite alcoÃ³lica", "AST ALT", "cirrose"],
   },
 ];
