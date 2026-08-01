@@ -19,6 +19,7 @@ export const QUESTOES_NEFRO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "caso",
+    fonte: "KDIGO 2021 Glomerular Diseases Guideline; https://kdigo.org/wp-content/uploads/2017/02/KDIGO-Glomerular-Diseases-Guideline-2021-English.pdf (consultado em 2026-08-01)",
     tags: ["GNPE", "nefropatia por IgA", "síndrome nefrítica", "complemento"],
   },
   {
@@ -34,6 +35,7 @@ export const QUESTOES_NEFRO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "caso",
+    fonte: "KDIGO 2021 Glomerular Diseases Guideline; https://kdigo.org/wp-content/uploads/2017/02/KDIGO-Glomerular-Diseases-Guideline-2021-English.pdf (consultado em 2026-08-01)",
     tags: ["síndrome nefrótica", "complicações", "trombose de veia renal", "hipercoagulabilidade"],
   },
   {
@@ -49,6 +51,7 @@ export const QUESTOES_NEFRO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "KDIGO 2021 Glomerular Diseases Guideline; https://kdigo.org/wp-content/uploads/2017/02/KDIGO-Glomerular-Diseases-Guideline-2021-English.pdf (consultado em 2026-08-01)",
     tags: ["nefropatia membranosa", "anti-PLA2R", "biópsia renal", "síndrome nefrótica"],
   },
   {
@@ -64,6 +67,7 @@ export const QUESTOES_NEFRO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "caso",
+    fonte: "KDIGO 2012 AKI Guideline e revisão pública KDIGO AKI/AKD 2026; https://kdigo.org/guidelines/acute-kidney-injury/ (consultado em 2026-08-01)",
     tags: ["IRA", "pré-renal", "FeNa", "sepse", "diagnóstico diferencial"],
   },
   {
@@ -79,6 +83,7 @@ export const QUESTOES_NEFRO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "KDIGO 2024 CKD Guideline; https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf (consultado em 2026-08-01)",
     tags: ["DRC", "iSGLT2", "nefroproteção", "KDIGO", "diabetes"],
   },
   {
@@ -94,6 +99,7 @@ export const QUESTOES_NEFRO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "conduta",
+    fonte: "KDIGO 2024 CKD Guideline; https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf (consultado em 2026-08-01)",
     tags: ["hipercalemia", "diálise de urgência", "AEIOU", "DRC", "emergência"],
   },
 ];
