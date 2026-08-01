@@ -1,8 +1,10 @@
 # Conexao local segura com Google Drive
 
-Esta conexao existe somente para materializar fontes privadas autorizadas fora
-do Git. O conector do aplicativo permite busca e leitura, mas nao fornece sua
-credencial ao processo local; por isso ele nao substitui a configuracao abaixo.
+O fluxo padrao e usar o conector autenticado do aplicativo para inventario,
+busca e leitura textual privada. Ele ja esta conectado e nao exige nova
+autenticacao Google. Esta conexao local e estritamente opcional: so existe se
+um lote futuro realmente precisar de binarios materializados para hash, OCR ou
+extracao visual fora do Git.
 
 ## Escopo minimo
 
@@ -17,12 +19,6 @@ credencial ao processo local; por isso ele nao substitui a configuracao abaixo.
    os materiais OMED selecionados, e nao pela raiz do Drive.
 4. Definir `DRIVE_SYNC_ENABLED=true` somente depois de `npm run drive:inventory`
    responder com escopo esperado.
-
-Como alternativa sem token em arquivo do projeto, o processo aceita as
-Application Default Credentials do Google Cloud CLI. Defina
-`GOOGLE_USE_APPLICATION_DEFAULT_CREDENTIALS=true` em `.env.local` e execute
-`gcloud auth application-default login` com escopo somente-leitura. A sessao
-fica no perfil local do sistema e nao deve ser copiada para o repositorio.
 
 ## Variaveis esperadas
 

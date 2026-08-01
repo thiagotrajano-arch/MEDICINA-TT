@@ -163,8 +163,5 @@ function buildAuth() {
     oauth.setCredentials({ refresh_token: refreshToken });
     return oauth;
   }
-  if (process.env.GOOGLE_USE_APPLICATION_DEFAULT_CREDENTIALS === "true") {
-    return new google.auth.GoogleAuth({ scopes: DRIVE_READONLY });
-  }
   throw new Error("Google Drive não configurado (service account ou OAuth ausente).");
 }
