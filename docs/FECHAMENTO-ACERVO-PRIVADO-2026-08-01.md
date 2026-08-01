@@ -26,6 +26,27 @@ Síndrome do Respirador Oral possui 10. Oncologia, Otorrinolaringologia,
 Endocrinologia e Dermatologia existem, mas ainda têm baixa densidade. Esses itens
 podem orientar produção autoral, nunca importação automática de gabarito.
 
+## Reconciliação local adicional
+
+A varredura final foi metadata-first e reutilizou manifestos e caches existentes,
+sem abrir integralmente livros ou cursos comerciais.
+
+- A pasta médica principal contém 1.144 fontes-alvo; 1.143 já estão no manifesto
+  sem divergência de tamanho. O único ausente é um temporário inválido de 162
+  bytes, não material médico.
+- Há 253 caches íntegros e 878 fontes médicas ainda sem cache Markdown.
+- Os 14 arquivos OOXML são estruturalmente válidos e contêm 81 mídias
+  incorporadas, ainda não classificadas como clínicas ou reutilizáveis.
+- O recorte auxiliar contém 16 provas OMED e 21 imagens clínicas já usadas pelo
+  site; esses 37 itens não pertencem ao manifesto da pasta médica principal.
+- Em Downloads, 79 candidatos médicos foram reconhecidos: 29 ZIPs, 24 vídeos,
+  16 PDFs e 10 Markdown. Os 29 ZIPs abriram sem falha de diretório e somam 1.120
+  entradas; seis arquivos internos são candidatos visuais ainda não revisados.
+- A comparação por SHA-256 confirmou 32 arquivos pequenos ou médios novos por
+  conteúdo. Outros 53 arquivos grandes permanecem somente catalogados por
+  metadados. Dois PDFs têm cabeçalho válido, mas não exibem marcador final
+  convencional e precisam de validação antes do parser.
+
 ## Catálogo autenticado
 
 A rota `/minha-midia` agora contém também um catálogo de materiais privados. O
@@ -73,6 +94,9 @@ sobre extensões no schema `public`; movê-las exige migração planejada porque
 - As 78 entradas ainda precisam da comparação final com a cobertura existente,
   fontes clínicas primárias e associação completa aos planos do SISCAD,
   sobretudo em Pediatria e Psiquiatria.
+- A presença de 878 fontes locais sem cache não autoriza conversão em massa:
+  primeiro é necessário deduplicar e priorizar por lacuna clínica, semestre e
+  OMED, mantendo livros e cursos comerciais apenas na camada privada.
 
 ## GitHub Pages ou Vercel
 
