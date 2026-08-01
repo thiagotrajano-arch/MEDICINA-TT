@@ -1099,3 +1099,51 @@ errada é pior que uma questão a menos.
 - Auditoria estrutural aprovada: 37 disciplinas, 293 subtemas, 225 resumos, 1.072 questões, zero IDs duplicados e zero vínculos órfãos; typecheck e lint aprovados.
 - Qualidade pedagógica: 0 questões sem/múltiplas corretas e 0 resumos sem referência. Há dívida editorial legada: 685 questões com comentários repetidos, 81 comentários curtos, 48 sem fonte e 151 resumos com menos de 12 blocos. Não apresentar o banco inteiro como revisão final sem tratar esses lotes.
 - Próximos passos 26–40 foram pré-arquitetados em `docs/PLANO-PROXIMOS-BLOCOS.md`: primeiro revisar lote de maior peso, depois HCPM e demais triagens, então cursos grandes/provas/mídia.
+
+## Atualizacao OpenCode/Nemotron - 2026-07-31
+
+- O OpenCode com Nemotron publicou tres commits de qualidade editorial no topo de `main`: `72c5fbd`, `2084268` e `de7c7a2`.
+- A auditoria atual de questoes (`npm run audit:questoes`) confirma 1.072 questoes, 1 repeticao normalizada restante, 18 comentarios curtos, 0 comentarios vazios e 48 questoes sem fonte.
+- Nao refazer a limpeza massiva de repeticoes ja concluida. A proxima fila editorial e: resolver a repeticao restante em Pediatria, expandir os 18 comentarios curtos e revisar as 48 questoes sem fonte com fontes verificaveis.
+- `git status --short` estava limpo apos a conferencia. Nenhuma credencial, dado do SISCAD ou conteudo bruto privado foi registrado nesta atualizacao.
+
+## Atualizacao editorial - 2026-08-01
+
+- Revisao de Pediatria concluida: corrigida a unica repeticao normalizada restante (`ped-des-07`) e expandidos os 14 comentarios curtos identificados na disciplina.
+- Auditoria apos o bloco: 1.072 questoes; 0 repeticoes exatas/normalizadas; 4 comentarios curtos; 0 comentarios vazios; 48 questoes sem fonte explicita.
+- Tipagem do projeto passou com `npm.cmd run typecheck`.
+- Proxima fila: expandir os 4 comentarios curtos remanescentes (Otorrino, Derma, Cardio e MFC), revisar as 48 questoes sem fonte e somente depois retomar a triagem de novas extracoes e mapas.
+- Nenhum commit ou publicacao foi feito neste bloco.
+
+## Atualizacao bloco ampliado - 2026-08-01
+
+- Bloco ampliado concluido: os quatro comentarios curtos remanescentes foram revisados em MFC, Cardiologia, Otorrino e Dermatologia; a questao `cardio-037` tambem teve a justificativa corrigida para alinhar o gabarito de cardiomiopatia hipertrofica em atletas jovens.
+- Auditoria final do bloco: 1.072 questoes; 0 repeticoes exatas/normalizadas; 0 comentarios vazios; 0 comentarios abaixo de 40 caracteres; 48 questoes continuam sem fonte explicita.
+- As 48 sem fonte foram mantidas sem atribuicao inventada e permanecem concentradas em Hemato (15), Gastro (11), Nefro (6), Otorrino (4), Onco (4), Endocrino (3), Reumato (3) e Derma (2).
+- O proximo bloco grande deve mapear cada grupo a diretrizes ou revisoes primarias verificaveis; enquanto a fonte nao for validada, nao marcar a questao como editorialmente fechada.
+- `npm.cmd run typecheck` passou. Nenhum commit ou publicacao foi feito.
+
+## Bloco de 20 passos - 2026-08-01
+
+1. Executar auditoria geral do banco.
+2. Filtrar Pediatria e listar IDs problematicos.
+3. Localizar a duplicacao em `ped-des-07`.
+4. Corrigir a justificativa duplicada da alternativa D.
+5. Medir todos os comentarios curtos de Pediatria.
+6. Expandir os 14 comentarios curtos de Pediatria.
+7. Reexecutar a auditoria de Pediatria.
+8. Isolar os quatro comentarios curtos remanescentes.
+9. Revisar o gabarito e a justificativa de `cardio-037`.
+10. Expandir o comentario curto de Cardiologia.
+11. Expandir o comentario curto de MFC.
+12. Expandir o comentario curto de Otorrino.
+13. Expandir o comentario curto de Dermatologia.
+14. Reexecutar a auditoria geral.
+15. Confirmar zero repeticoes normalizadas.
+16. Confirmar zero comentarios abaixo de 40 caracteres.
+17. Confirmar zero comentarios vazios.
+18. Agrupar as 48 questoes sem fonte por disciplina.
+19. Criar `docs/QUESTOES-FONTES-PENDENTES.md` com IDs e portao de validacao.
+20. Registrar o estado no handoff e no Obsidian, sem inventar fontes ou publicar.
+
+Resultado: 1.072 questoes auditadas, 0 repeticoes, 0 comentarios curtos, 0 vazios e 48 fontes pendentes.
