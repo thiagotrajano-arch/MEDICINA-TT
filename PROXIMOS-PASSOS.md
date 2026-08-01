@@ -1226,3 +1226,11 @@ errada é pior que uma questão a menos.
 20. Registrar o estado no handoff e no Obsidian, sem inventar fontes ou publicar.
 
 Resultado: 1.072 questoes auditadas, 0 repeticoes, 0 comentarios curtos, 0 vazios e 48 fontes pendentes.
+
+## Consolidacao operacional - 2026-08-01
+
+- O `main` reune os lotes ja aprovados de auditoria editorial, fontes por questao e triagem privada do Drive. O estado verificavel do banco e: 1.072 questoes, zero repeticoes exatas ou normalizadas, zero comentarios curtos/vazios e zero campos de fonte ausentes.
+- O inventario autenticado do Drive percorreu 1.705 PDFs e 157 DOCX. Isso **nao** significa que todo o Drive foi baixado, convertido, lido ou integrado: a materializacao local ainda depende da configuracao propria do conector e da allowlist de pastas. Sem binarios locais nao ha SHA-256 real, deduplicacao final, OCR seletivo ou extracao de imagens.
+- As rotas privadas `drive:download-local` e `drive:local` estao prontas para baixar somente PDF/DOCX autorizados, calcular hashes, conservar uma copia canonica e escrever manifesto privado. Elas devem ser executadas somente com credenciais Google proprias e escopo de pastas configurado, nunca com segredos em Git.
+- A proxima retomada nao deve reabrir os lotes de questoes ja fechados. A ordem e: materializacao privada seletiva do Drive -> PDF/DOCX para Markdown -> OCR/renderizacao apenas quando necessario -> matriz fonte/plano/semestre/tema/subtema/destino -> revisao clinica autoral baseada em diretrizes vigentes -> midia licenciada e mapas conceituais reais. Anki e redesign geral ficam depois desses blocos.
+- Permanecem pendentes os testes reais de login, recuperacao, sessao persistente, sincronizacao em duas sessoes/dispositivos, RLS e experiencia de falha de rede. Nenhuma senha deve ser usada em script, commit ou documento.
