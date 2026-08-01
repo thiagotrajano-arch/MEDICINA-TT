@@ -14,6 +14,8 @@
     "sync-drive": "tsx scripts/sync-drive.mts",
     "drive:inventory": "tsx scripts/sync-drive.mts --inventario",
     "drive:baseline": "tsx scripts/sync-drive.mts --baseline",
+    "drive:local": "tsx scripts/ingest-drive-local.mts",
+    "fonte:md": "tsx scripts/fonte-para-md.mts",
     "anki:status": "tsx scripts/anki-connect.mts status",
     "anki:resumo": "tsx scripts/anki-connect.mts resumo",
     "anki:erros": "tsx scripts/anki-connect.mts erros",
