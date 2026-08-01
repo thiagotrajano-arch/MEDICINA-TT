@@ -1140,6 +1140,14 @@ errada é pior que uma questão a menos.
 - A próxima filtragem deve separar Medicina/OMED/SISCAD por nome e pasta, calcular hash apenas dos candidatos médicos e materializar os binários em acervo privado.
 - Não publicar IDs, PDFs, texto comercial, dados pessoais ou imagens de pacientes.
 
+## Triagem médica ampliada — 30 arquivos (2026-08-01)
+
+- Foram processados 30 candidatos médicos adicionais, totalizando aproximadamente 7,2 milhões de caracteres de texto extraível.
+- O lote inclui as provas OMED 2022–2025, materiais OMED de GO/Psiq/Reumato/Endócrino, materiais de Cardiologia/Pneumo/Cirurgia/Neuro/Hemato e arquivos acadêmicos da UFMS.
+- Foram identificados 9 materiais comerciais que devem permanecer exclusivamente privados, sem cópia integral para o site.
+- Pelo menos 1 arquivo grande retornou sem texto extraível; ele foi marcado para OCR/renderização seletiva, não descartado.
+- Os temas foram classificados para a próxima matriz: OMED, clínica médica, cirurgia, nefrologia, hematologia, gastroenterologia, SISCAD/UFMS e materiais não médicos.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.
