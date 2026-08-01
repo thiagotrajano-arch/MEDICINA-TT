@@ -18,6 +18,12 @@ credencial ao processo local; por isso ele nao substitui a configuracao abaixo.
 4. Definir `DRIVE_SYNC_ENABLED=true` somente depois de `npm run drive:inventory`
    responder com escopo esperado.
 
+Como alternativa sem token em arquivo do projeto, o processo aceita as
+Application Default Credentials do Google Cloud CLI. Defina
+`GOOGLE_USE_APPLICATION_DEFAULT_CREDENTIALS=true` em `.env.local` e execute
+`gcloud auth application-default login` com escopo somente-leitura. A sessao
+fica no perfil local do sistema e nao deve ser copiada para o repositorio.
+
 ## Variaveis esperadas
 
 ```text

@@ -6,7 +6,8 @@ export function isDriveConfigured(): boolean {
   return Boolean(
     (process.env.GOOGLE_SERVICE_ACCOUNT_JSON ||
       process.env.GOOGLE_SERVICE_ACCOUNT_FILE ||
-      process.env.GOOGLE_OAUTH_REFRESH_TOKEN) &&
+      process.env.GOOGLE_OAUTH_REFRESH_TOKEN ||
+      process.env.GOOGLE_USE_APPLICATION_DEFAULT_CREDENTIALS === "true") &&
       driveFolderIds().length > 0
   );
 }
