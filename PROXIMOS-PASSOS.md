@@ -1170,6 +1170,13 @@ errada é pior que uma questão a menos.
 - A tentativa de abrir essa URI pelo sistema operacional falhou por esquema não reconhecido; portanto, nenhum SHA-256 foi inventado e nenhum PDF foi gravado no repositório.
 - O texto legível continua disponível para triagem via Drive. Hash, OCR e extração visual exigem materialização real do binário por uma rota de download do conector ou arquivo fornecido localmente.
 
+## Fechamento de lacunas médicas — triagem adicional (2026-08-01)
+
+- Foram lidos mais 35 candidatos de Gastro, Hemato/Onco, Infecto, Pediatria e clínica médica.
+- Foram identificados tópicos úteis para a fila autoral: pólipos/neoplasias intestinais, hemorragia digestiva alta/baixa, anatomia e fisiologia do cólon, gastroparesia/dispepsia, medicina transfusional, nefrotoxicidade, bases do diagnóstico sindrômico e epilepsia.
+- Livros integrais protegidos (Semiologia, Tratado de Pediatria, Rotinas em Obstetrícia e equivalentes) foram classificados como referência privada e não serão convertidos/publicados integralmente.
+- Arquivos com texto vazio foram marcados para OCR somente se forem fontes médicas elegíveis; não será aplicado OCR em documentos pessoais ou livros protegidos sem necessidade clínica específica.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.
