@@ -1148,6 +1148,14 @@ errada é pior que uma questão a menos.
 - Pelo menos 1 arquivo grande retornou sem texto extraível; ele foi marcado para OCR/renderização seletiva, não descartado.
 - Os temas foram classificados para a próxima matriz: OMED, clínica médica, cirurgia, nefrologia, hematologia, gastroenterologia, SISCAD/UFMS e materiais não médicos.
 
+## Lote acadêmico UFMS/SISCAD — 2026-08-01
+
+- Foram lidos 25 PDFs encontrados na busca de planos de ensino e documentos acadêmicos.
+- O lote contém planos de ensino, cadernos HCPM, materiais de metodologia ativa, radiografia torácica, ECG e documentos institucionais.
+- Foram identificados históricos escolares e documentos com dados pessoais; eles ficam estritamente privados e não entram no repositório, Obsidian compartilhável ou site.
+- O plano de ensino de Bases Complementares da Medicina VI e o caderno HCPM IV foram confirmados como fontes para a matriz curricular; ainda é necessário percorrer os demais períodos e disciplinas.
+- Duplicatas aparentes foram marcadas por título e tamanho para a etapa de hash; nenhuma foi apagada do Drive.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.
