@@ -1133,6 +1133,13 @@ errada é pior que uma questão a menos.
 - Ainda faltam a materialização local dos binários, hashes, deduplicação completa, OCR seletivo, extração visual e correlação sistemática com todos os semestres do SISCAD.
 - Próximo portão: validar as 48 questões sem fonte antes de gerar conteúdo derivado desses materiais.
 
+## Inventário paginado do Drive — 2026-08-01
+
+- A busca paginada percorreu 18 páginas de resultados, totalizando 1.705 PDFs não excluídos.
+- O inventário confirmou que o Drive é muito maior que o lote OMED; portanto, download e conversão integral exigem processamento incremental para não baixar material irrelevante nem misturar documentos pessoais, vestibular e cursos comerciais.
+- A próxima filtragem deve separar Medicina/OMED/SISCAD por nome e pasta, calcular hash apenas dos candidatos médicos e materializar os binários em acervo privado.
+- Não publicar IDs, PDFs, texto comercial, dados pessoais ou imagens de pacientes.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.
