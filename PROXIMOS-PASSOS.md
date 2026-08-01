@@ -1177,6 +1177,12 @@ errada é pior que uma questão a menos.
 - Livros integrais protegidos (Semiologia, Tratado de Pediatria, Rotinas em Obstetrícia e equivalentes) foram classificados como referência privada e não serão convertidos/publicados integralmente.
 - Arquivos com texto vazio foram marcados para OCR somente se forem fontes médicas elegíveis; não será aplicado OCR em documentos pessoais ou livros protegidos sem necessidade clínica específica.
 
+## Validação de fontes Gastro — 2026-08-01
+
+- Foram verificadas fontes primárias para o lote Gastro: AASLD para hepatites/cirrose, ascite, PBE e encefalopatia; ACG para pancreatite aguda.
+- As 11 questões Gastro ainda não foram marcadas como fechadas automaticamente: cada uma precisa receber a referência específica e passar por conferência do enunciado, gabarito e dose/limiar quando aplicável.
+- O próximo bloco editorial deve usar essas fontes para retirar as 11 questões da fila sem atribuir referências genéricas de forma indiscriminada.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.
