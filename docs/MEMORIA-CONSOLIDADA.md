@@ -15,6 +15,10 @@ O projeto já registra arquitetura Next.js/React/TypeScript/Tailwind, GitHub Pag
 
 O estado quantitativo e as pendências atuais devem ser obtidos de `PROXIMOS-PASSOS.md`, que é a fonte operacional e deve ser atualizado ao fim de cada sessão relevante.
 
+O fechamento de 2026-08-01 do acervo privado, incluindo o catálogo autenticado,
+a triagem do Drive e dos DOCX locais, a segurança aplicada e os limites de
+materialização, está em `docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`.
+
 ## Decisões duradouras
 
 - Preservar o material original do usuário.

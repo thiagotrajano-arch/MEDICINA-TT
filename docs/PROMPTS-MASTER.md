@@ -44,7 +44,7 @@ Todo PDF novo deve passar pelo fluxo `PDF -> Markdown cacheado -> leitura/triage
 4. **Pastas locais** (via Cowork / filesystem):
    - `C:\Users\Adm\Desktop\MEDICINA\` (RESUMOS, HCPM, Farmacologia, BBPM I–VIII, UE, livros gerais, `NEOPLASIA TUDO.docx`, `IMUNO RADIO E FARMACOLOGIA.docx`, `OTORRINO QUESTOES PROVA.docx`).
    - `C:\Users\Adm\Downloads\Estratégia 2024 Extensivo\` (Extensivo + Atualizações Residência/Revalida — pasta antiga, verificar se ainda existe).
-   - ZIPs em Downloads: `BAGAGEM GABS`, `BAGAGEM DO JOTA`, `00. Materiais` (extrair sob demanda).
+   - ZIPs em Downloads: bagagens autorizadas de colegas e `00. Materiais` (extrair sob demanda).
      ⚠️ **Downloads volta a ser uma fonte válida** (o usuário repovoou a pasta em 2026-07-18
      com os 33 ZIPs do Estratégia MED — a advertência antiga de "pasta vazia, não usar" não
      vale mais para esse lote). Os ZIPs em si (~2 GB cada, contêm videoaulas) continuam em

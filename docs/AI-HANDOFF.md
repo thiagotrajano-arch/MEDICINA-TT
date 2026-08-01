@@ -1,6 +1,6 @@
 # Handoff para outra IA — Codex Medicus
 
-Atualizado em 2026-07-29.
+Atualizado em 2026-08-01.
 
 **Antes de mais nada, leia `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` e `docs/PLANO-INTEGRACAO-MEDICINA-DESKTOP.md`** — documentos vivos com o
 inventário completo de `Desktop\MEDICINA\`, Downloads e Google Drive, o que já foi mapeado/construído,
@@ -8,6 +8,11 @@ o que está pendente, e o passo a passo consolidado (sua seção 11 é o resumo 
 está). Sem ler isso primeiro, é fácil redescobrir fontes já catalogadas ou re-perguntar autorizações
 já concedidas (uso de RESUMOS licenciado, uso de pastas de terceiros no Drive — ambas já autorizadas
 pelo usuário, não perguntar de novo).
+
+O fechamento verificável mais recente do catálogo privado, da triagem do Drive,
+dos quatro DOCX locais e dos limites ainda reais está em
+`docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`. Leia-o antes de repetir OAuth,
+triagem, hashing ou deduplicação.
 
 ## Acessos públicos
 

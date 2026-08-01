@@ -5,6 +5,7 @@ import Link from "next/link";
 import NextImage from "next/image";
 import { FileImage, Image as ImageIcon, LockKeyhole, RefreshCw, ShieldCheck, Trash2, Upload } from "lucide-react";
 import { carregarMidiaPrivada, excluirMidiaPrivada, salvarMidiaPrivada, type EntradaMidiaPrivada, type MidiaPrivada, type TipoOrigemMidiaPrivada } from "@/lib/midia-privada";
+import { CatalogoMateriaisPrivados } from "@/components/midia/CatalogoMateriaisPrivados";
 
 const vazio: EntradaMidiaPrivada = { titulo: "", tipoOrigem: "pdf_comercial", disciplina: "", tema: "", subtema: "", diagnostico: "", modalidade: "", fonte: "", pagina: null, observacao: "", pacienteAnonimizado: false, autorizacaoPaciente: false };
 const ROTULOS: Record<TipoOrigemMidiaPrivada, string> = { pdf_comercial: "PDF comercial - uso privado", paciente: "Paciente anonimizado e autorizado", propria_privada: "Imagem propria mantida privada" };
@@ -31,6 +32,7 @@ export function MidiaPrivadaClient() {
     {mensagem && <p role="status" className="mt-5 rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-text-muted">{mensagem}</p>}
     <section className="mt-6 grid gap-4 md:grid-cols-3"><Regra titulo="Publica" texto="Imagem propria ou com licenca aberta verificada vai para a aba Midia." /><Regra titulo="PDF comercial" texto="Somente aqui, para estudo pessoal, com origem e pagina." /><Regra titulo="Paciente" texto="Somente anonimizada e com autorizacao apropriada; privada por padrao." /></section>
     <section className="mt-6 rounded-2xl border border-border bg-surface p-5 sm:p-6"><div className="flex items-start gap-3"><span className="rounded-xl bg-surface-2 p-2.5 text-accent"><ShieldCheck className="size-5" /></span><div><h2 className="text-lg font-bold text-text">Curadoria feita pelo Codex</h2><p className="mt-2 max-w-3xl text-sm leading-6 text-text-muted">Nos lotes de acervo, o Codex identifica imagens clinicamente uteis, confere origem e restricao de uso, classifica por disciplina, tema, subtema, achado e modalidade, e as correlaciona ao resumo ou caso correto. Voce nao precisa fazer essa ligacao manualmente.</p><p className="mt-2 max-w-3xl text-sm leading-6 text-text-muted">Imagem propria ou aberta pode ser preparada para a biblioteca publica com credito e licenca. Captura de material comercial continua somente aqui, com origem e pagina, e imagem de paciente continua privada e exige anonimato e autorizacao.</p></div></div></section>
+    <CatalogoMateriaisPrivados />
     <form onSubmit={enviar} className="mt-6 rounded-2xl border border-border bg-surface p-5 sm:p-6"><h2 className="flex items-center gap-2 text-lg font-bold text-text"><Upload className="size-5 text-accent" /> Adicionar imagem privada</h2><div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       <Campo label="Imagem"><input required type="file" accept="image/jpeg,image/png,image/webp,image/avif" onChange={(e: ChangeEvent<HTMLInputElement>) => setArquivo(e.target.files?.[0] ?? null)} className={input} /></Campo>
       <Campo label="Titulo"><input required value={entrada.titulo} maxLength={180} onChange={(e) => alterar("titulo", e.target.value)} className={input} /></Campo>

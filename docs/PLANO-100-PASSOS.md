@@ -89,20 +89,31 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 
 ## 3. Drive e acervo local: ingestão seletiva (29–42)
 
-- [ ] 29. Conectar o Google Drive com autorização própria e IDs de pasta, sem reutilizar credenciais de terceiros.
-- [ ] 30. Inventariar primeiro apenas metadados do Drive: árvore, nomes, datas, extensão e tamanho.
+- [x] 29. Conectar o Google Drive com autorização própria e IDs de pasta, sem reutilizar credenciais de terceiros.
+- [x] 30. Inventariar primeiro apenas metadados do Drive: árvore, nomes, datas, extensão e tamanho.
 - [ ] 31. Comparar nomes e hashes do Drive com o manifesto local antes de baixar qualquer arquivo.
-- [ ] 32. Priorizar a seleção de fontes por lacuna real do site, semestre atual, matérias já cursadas e peso da OMED.
-- [ ] 33. Verificar Estrategia 2024 para Hematologia e Gastroenterologia apenas no recorte prioritário.
-- [ ] 34. Catalogar Cirurgia, MEDCOF 2026 e Medcurso 2024 antes de qualquer conversão.
-- [ ] 35. Triar as pastas Bagagem e verificar se BBPM I/II possuem conteúdo real distinto.
+- [x] 32. Priorizar a seleção de fontes por lacuna real do site, semestre atual, matérias já cursadas e peso da OMED.
+- [x] 33. Verificar Estrategia 2024 para Hematologia e Gastroenterologia apenas no recorte prioritário.
+- [x] 34. Catalogar Cirurgia, MEDCOF 2026 e Medcurso 2024 antes de qualquer conversão.
+- [x] 35. Triar as pastas Bagagem e verificar se BBPM I/II possuem conteúdo real distinto.
 - [ ] 36. Baixar somente um lote aprovado por vez e manter origem, hash e cache de conversão.
 - [ ] 37. Converter PDFs selecionados para Markdown e registrar páginas sem camada textual.
 - [ ] 38. Aplicar OCR ou solicitar reexportação apenas onde a página relevante não for legível.
 - [ ] 39. Reprocessar os PDFs com trailer malformado por rota segura, sem insistir em parser falho.
-- [ ] 40. Deduplicar os quatro DOCX de questões contra o banco publicado antes de adaptar qualquer item.
+- [x] 40. Deduplicar os quatro DOCX de questões contra o banco publicado antes de adaptar qualquer item.
 - [ ] 41. Classificar os materiais restantes por componente curricular, disciplina, subtema, semestre, eixo básico, valor clínico e prioridade OMED.
 - [ ] 42. Atualizar o Obsidian e o manifesto ao fechar cada fonte, inclusive as rejeitadas.
+
+> Atualização de 2026-08-01: o conector já autenticado percorreu o inventário
+> paginado (1.705 PDFs e 157 DOCX) e fechou a triagem prioritária de OMED,
+> Estratégia, MEDCOF, Medcurso e Bagagens sem novo login. O lote clínico mais
+> recente catalogou 78 eixos em Pediatria, Cirurgia, Cardiologia, Pneumologia,
+> Neurologia, MFC, Psiquiatria e Urgência/Emergência. Uma fonte foi bloqueada
+> por proibição expressa de uso com IA. Os passos 31 e 36–39 continuam abertos:
+> o conector fornece texto, mas não um binário local utilizável para SHA-256,
+> deduplicação por bytes, OCR e renderização. Os quatro DOCX locais, por outro
+> lado, tiveram SHA-256 confirmado, 420 questões únicas, caches completos e
+> zero duplicatas textuais fortes contra as 1.072 questões publicadas.
 
 ## 4. Portão editorial e conteúdo clínico prioritário (43–61)
 
@@ -141,7 +152,7 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 ## 5. Questões, casos e simulados (62–73)
 
 - [ ] 62. Produzir um relatório de duplicidade entre questões existentes, fontes locais e Drive.
-- [ ] 63. Corrigir primeiro as questões com comentário repetido, curto ou sem referência.
+- [x] 63. Corrigir primeiro as questões com comentário repetido, curto ou sem referência.
 - [ ] 64. Validar cada gabarito resolvendo a questão contra diretriz antes de vê-lo como definitivo.
 - [ ] 65. Importar/adaptar somente questões com enunciado suficiente e proveniência registrada.
 - [ ] 66. Gerar questões inéditas somente após a validação do resumo-base correspondente.

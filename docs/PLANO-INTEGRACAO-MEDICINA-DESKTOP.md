@@ -269,19 +269,19 @@ Videoaulas em `.mp4` (**não analisar**, por instrução do usuário — só fic
 Downloads ou nunca baixadas. Conferir se aparecem mais ZIPs quando o usuário mandar a próxima pasta.)*
 
 ### 9.3 — Google Drive (reconhecimento feito via conector, nada baixado ainda)
-- **"Resumos e cursos"** (pasta raiz, dono `xxmedxx29@gmail.com` — conta de terceiro que hospeda
+- **"Resumos e cursos"** (pasta raiz, hospedada em conta de terceiro que contém
   cursos pagos, compartilhada com o usuário): contém `MEDCOF 2026`, `Estratégia 2025 extensivo`,
   `Estratégia 2024 Extensivo`, `Medcurso 2024`, `Farmacologia`. Só `Estratégia [ano] Extensivo` tem
   precedente de uso confirmado no projeto — **MEDCOF e MedCurso são cursos novos**, ainda não
   explorados, potencialmente com disciplinas/tópicos que nem a Estratégia MED nem o RESUMOS cobrem.
-- **"BAGAGEM DO JOTA"** (dono `joao.ricartes@ufms.br`, colega de turma): estrutura em espelho às
+- **Bagagem de colega A** (material autorizado): estrutura em espelho às
   pastas `BBPM I-VIII`/`HCPM`/`UE`/`Farmacologia` do próprio usuário — `BBPM 3`, `BBPM 4`, `Tutoria
   1`, `Tutoria 2`, `APS 1/3`, `HCPM 3`, `UE 1`, `Anatomia 1`, `Habilidades Clínicas 1`, `Integrada
   1/2`, provas (`T1`-`T10`, `RESPOSTA DAS DISSERTATIVAS INTEGRADA`), organizado por `1º-4º Semestre`
   + `B7`/`B8` à parte. **Importante**: as pastas `BBPM I` e `BBPM II` do próprio usuário estão vazias
-  — a cópia do João pode preencher exatamente essa lacuna, mais provas reais (`T1`-`T10`) com
+  — a cópia autorizada pode preencher exatamente essa lacuna, mais provas reais (`T1`-`T10`) com
   respostas, que o usuário sozinho não tem.
-- **"BAGAGEM GABS"**, **"Bagagem Gabriel Peres"**, **"BAGAGEM DA Bia"**: não abertas ainda (mesmo
+- **Bagagens de colegas B, C e D**: não abertas ainda (mesmo
   padrão esperado — bagagem pessoal de colega). Conteúdo de qualidade variável por ser nota pessoal
   informal, não curso comercial — tratar com o mesmo rigor de conferência que o resto (nunca herdar
   erro de terceiro sem checar contra diretriz).
@@ -295,12 +295,12 @@ Downloads ou nunca baixadas. Conferir se aparecem mais ZIPs quando o usuário ma
     fonte via `.docx`/RESUMOS até agora. Prioridade alta pra abrir antes de escrever os subtemas
     dessas duas disciplinas — pode ser fonte mais rica que a atual.
   - `MEDCOF 2026` tem ao menos `Cirurgia` e `00. Materiais` — não aberto em profundidade ainda.
-  - `BAGAGEM GABS` (Gabriel Jacinto) revela algo importante sobre as pastas do PRÓPRIO usuário:
+  - A bagagem de colega B revela algo importante sobre as pastas do PRÓPRIO usuário:
     **`BBPM7 - CARDIO, PNEUMO E VASCULAR`** e **`BBPM8 - CCP, ORL e HEMATO`** — ou seja, `BBPM VII` e
     `BBPM VIII` do usuário (34 e 54 PDFs, ainda não triados) provavelmente cobrem exatamente essas
     disciplinas. **BBPM VIII em especial pode ter conteúdo nativo de Otorrino e Hematologia**,
     complementando (ou até substituindo com mais autoridade) o que viria só da Estratégia MED/docx.
-  - `Bagagem Gabriel Peres`: Neuroanato, GO, Farmacologia Clínica, Clínica 5/6, Patologia, Medcurso
+  - A bagagem de colega C: Neuroanato, GO, Farmacologia Clínica, Clínica 5/6, Patologia, Medcurso
     aulas e apostilas, 4º semestre — valor misto, menor prioridade que os achados acima.
 
 ### 9.4 — Plano de extração de imagens clínicas (a pergunta central desta rodada)
@@ -349,7 +349,7 @@ dentro de PDFs de slide/resumo. Caminho proposto:
   entrar na mesma leva de Hematologia/Oncologia/Otorrino da Etapa B.
 - **Cardiologia** não precisa de conteúdo novo (já completa) — o lote serve só pra imagem e para
   cruzar/verificar o que já existe, prioridade baixa de tempo.
-- **BBPM I/II** (vazias no usuário) podem ser preenchidas via "BAGAGEM DO JOTA" — mas só faz sentido
+- **BBPM I/II** (vazias no usuário) podem ser preenchidas via bagagem de colega A — mas só faz sentido
   investigar depois de entender que matéria BBPM I/II cobre (não checado ainda).
 - Os 175 questões dos simulados (seção 9.1) servem qualquer subtema já existente ou a ser criado —
   não mudam prioridade, só engordam o banco de questões em paralelo à Etapa B.
@@ -406,8 +406,8 @@ dentro de PDFs de slide/resumo. Caminho proposto:
 - `HCPM`, `BBPM III/IV/VII/VIII`, `LANN`, `UE`, `Farmacologia` (pastas do próprio usuário).
 - 15 ZIPs em Downloads = Cardiologia/Neurologia/Cirurgia da Estratégia MED (357 PDFs) — só o índice
   de tópicos foi visto, nenhum conteúdo lido ainda.
-- `MEDCOF 2026`, `Medcurso 2024`, `Estratégia 2024 Extensivo` (Hemato/Gastro), `Bagagem GABS/Gabriel
-  Peres/Bia` no Google Drive — reconhecimento de pastas feito, conteúdo interno não aberto.
+- `MEDCOF 2026`, `Medcurso 2024`, `Estratégia 2024 Extensivo` (Hemato/Gastro) e bagagens de colegas
+  no Google Drive — reconhecimento de pastas feito, conteúdo interno não aberto.
 - 22 arquivos do RESUMOS nunca abertos.
 
 ### O que está BLOQUEADO tecnicamente (não é falta de autorização)
@@ -440,8 +440,8 @@ dentro de PDFs de slide/resumo. Caminho proposto:
 - [ ] HCPM, BBPM III/IV/VII/VIII, LANN, UE, Farmacologia (pastas do próprio usuário) — não triados, ver Etapa A.
 - [ ] Extrair os 15 ZIPs (Cardio/Neuro/Cirurgia) pra `_pdfs-estrategia` — ver seção 9.2, ainda não feito.
 - [ ] Abrir `MEDCOF 2026` e `Medcurso 2024` no Drive (cursos novos, nunca explorados) — ver seção 9.3.
-- [ ] Abrir `BAGAGEM GABS`, `Bagagem Gabriel Peres`, `BAGAGEM DA Bia` no Drive — só o índice de `BAGAGEM DO JOTA` foi conferido até agora.
-- [ ] Checar se `BBPM I`/`BBPM II` (vazias no usuário) têm conteúdo real em `BAGAGEM DO JOTA` antes de decidir se vale importar de lá.
+- [ ] Abrir as bagagens de colegas B, C e D no Drive — só o índice da bagagem A foi conferido até agora.
+- [ ] Checar se `BBPM I`/`BBPM II` (vazias no usuário) têm conteúdo real na bagagem A antes de decidir se vale importar de lá.
 - [ ] Extração de imagens clínicas (seção 9.4) — plano definido, execução não iniciada.
 - [ ] Checar duplicidade entre arquivos soltos de colegas (ex.: `Eletrocardiograma ESTRATÉGIA.pdf`) e o que já está nos ZIPs, antes de reprocessar.
 - [ ] Aba "Mapas Mentais" (seção 10, task #39) — registrado, não iniciar sem autorização explícita.

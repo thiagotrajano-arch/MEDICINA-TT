@@ -31,7 +31,7 @@ Antes de importar nova leva de questões, executar a revisão em ordem de peso O
 2. Indexar os 15 ZIPs de Cardio/Neuro/Cirurgia sem extrair vídeo; extrair somente PDFs úteis em diretório temporário validado.
 3. Calcular hash/nome/tópico para eliminar duplicidades antes de qualquer escrita.
 4. Triar MEDCOF, Medcurso e Bagagem; registrar licença/origem e rejeitar livros de editora.
-5. Conferir BBPM I/II na Bagagem do Jota somente se houver conteúdo distinto.
+5. Conferir BBPM I/II na bagagem autorizada de colega A somente se houver conteúdo distinto.
 
 **Critério de fechamento:** planilha/Markdown de proveniência por arquivo, sem PDF duplicado entrando no pipeline e sem conteúdo copiado de livro protegido.
 

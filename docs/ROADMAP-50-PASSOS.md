@@ -48,7 +48,7 @@
 - [ ] 31. Identificar e eliminar duplicidades entre os ZIPs e arquivos soltos.
 - [ ] 32. Abrir MEDCOF 2026 e Medcurso 2024 autorizados.
 - [ ] 33. Triar as pastas Bagagem autorizadas.
-- [ ] 34. Verificar BBPM I e II no material Bagagem do Jota.
+- [ ] 34. Verificar BBPM I e II na bagagem autorizada de colega A.
 - [ ] 35. Extrair questão a questão todas as fases OMED II–V restantes.
 - [ ] 36. Atualizar o Raio-X OMED com contagens exatas por disciplina e subtema.
 - [ ] 37. Resolver a extração de imagens dos PDFs com trailer malformado.

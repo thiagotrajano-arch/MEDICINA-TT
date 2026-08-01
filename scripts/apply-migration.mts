@@ -41,6 +41,8 @@ async function main() {
       aplicada_em timestamptz not null default now()
     )
   `);
+  await client.query("revoke all on public.schema_migrations from public, anon, authenticated");
+  await client.query("alter table public.schema_migrations enable row level security");
   const arquivos = readdirSync(MIGRATIONS_DIR)
     .filter((f) => f.endsWith(".sql"))
     .sort();
@@ -78,7 +80,10 @@ async function main() {
     try {
       await client.query("begin");
       await client.query(sql);
-      await client.query("insert into public.schema_migrations (versao) values ($1)", [arquivo]);
+      await client.query(
+        "insert into public.schema_migrations (versao) values ($1) on conflict do nothing",
+        [arquivo]
+      );
       await client.query("commit");
       console.log("ok");
     } catch (e) {

@@ -79,7 +79,7 @@
 - [ ] Fazer primeiro um inventário somente por metadados: árvore, contagens, tamanhos, extensões e datas.
 - [ ] Comparar hashes/nomes com o acervo local antes de qualquer download.
 - [ ] Priorizar: Estratégia 2024 Hematologia/Gastroenterologia; Cirurgia; MEDCOF 2026; Medcurso 2024; Bagagens.
-- [ ] Verificar BBPM I/II na Bagagem do Jota, hoje vazios localmente.
+- [ ] Verificar BBPM I/II na bagagem autorizada de colega A, hoje vazios localmente.
 - [ ] Baixar e converter apenas o lote escolhido, mantendo cache e proveniência.
 
 **Saída:** catálogo do Drive e fila sem duplicações; não uma cópia indiscriminada de milhares de PDFs.

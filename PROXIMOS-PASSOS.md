@@ -1,6 +1,10 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-07-29. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o fechamento privado da sessão, consultar também `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian.
+> Atualizado em 2026-08-01. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o fechamento privado da sessão, consultar também `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian.
+
+> Fechamento mais recente: `docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`.
+> O catálogo autenticado já contém os metadados de 22 materiais privados; o
+> documento registra o que foi concluído e os limites ainda verificáveis.
 
 ## Fechamento e retomada — 2026-07-29
 
