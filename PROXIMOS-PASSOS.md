@@ -1197,6 +1197,13 @@ errada é pior que uma questão a menos.
 - 40: 157 DOCX foram inventariados; deduplicação por SHA-256 contra o banco aguarda materialização.
 - 41–42: matriz de classificação médica e registro de fechamento foram atualizados; fontes comerciais e pessoais permanecem privadas.
 
+## Dez blocos clínicos de fontes — 2026-08-01
+
+- Blocos concluídos: Hematologia (anemias; leucemias/linfomas; mieloma/MDS; transfusão), Oncologia, Otorrinolaringologia, Endocrinologia, Reumatologia, Dermatologia e Gastroenterologia.
+- Foram registradas fontes oficiais rastreáveis por questão, sem utilizar PDFs comerciais como fonte pública.
+- Auditoria final: 1.072 questões, zero duplicações, zero comentários curtos/vazios e zero questões sem fonte explícita.
+- Validações técnicas: TypeScript e auditoria de privacidade aprovados.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.

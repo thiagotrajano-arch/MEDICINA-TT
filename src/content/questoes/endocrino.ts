@@ -19,6 +19,7 @@ export const QUESTOES_ENDOCRINO: Questao[] = [
     ],
     dificuldade: "fixacao",
     estilo: "conduta",
+    fonte: "American Thyroid Association Guidelines and Statements; https://www.thyroid.org/professionals/ata-professional-guidelines/ (consultado em 2026-08-01)",
     tags: ["nodulo tireoidiano", "TSH", "cintilografia", "nodulo quente", "algoritmo diagnostico"],
   },
   {
@@ -34,6 +35,7 @@ export const QUESTOES_ENDOCRINO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "conduta",
+    fonte: "American Thyroid Association Thyroid Nodules Guidance; https://www.thyroid.org/thyroid-nodules/ (consultado em 2026-08-01)",
     tags: ["Bethesda IV", "neoplasia folicular", "PAAF", "lobectomia", "teste molecular"],
   },
   {
@@ -49,6 +51,7 @@ export const QUESTOES_ENDOCRINO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "caso",
+    fonte: "American Thyroid Association Medullary Thyroid Carcinoma Guidelines; https://www.thyroid.org/professionals/ata-professional-guidelines/ (consultado em 2026-08-01)",
     tags: ["carcinoma medular", "RET", "NEM2", "feocromocitoma", "calcitonina"],
   },
 ];

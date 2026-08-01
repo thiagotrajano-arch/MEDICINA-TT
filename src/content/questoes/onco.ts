@@ -14,6 +14,7 @@ export const QUESTOES_ONCO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "ASCO Guideline: Management of Fever and Neutropenia in Adults; https://www.asco.org/practice-patients/guidelines/guidelines-recently-published-development (consultado em 2026-08-01)",
     tags: ["neutropenia febril", "emergência oncológica", "antibiótico"],
   },
   {
@@ -29,6 +30,7 @@ export const QUESTOES_ONCO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "ASCO Living Guideline: Stage IV Non-Small-Cell Lung Cancer; https://www.asco.org/practice-patients/guidelines/guidelines-recently-published-development (consultado em 2026-08-01)",
     tags: ["câncer de pulmão", "biomarcadores", "PD-L1"],
   },
   {
@@ -44,6 +46,7 @@ export const QUESTOES_ONCO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "caso",
+    fonte: "AJCC Cancer Staging Manual; https://www.facs.org/quality-programs/cancer-programs/american-joint-committee-on-cancer/ (consultado em 2026-08-01)",
     tags: ["TNM", "estadiamento", "oncologia"],
   },
   {
@@ -59,6 +62,7 @@ export const QUESTOES_ONCO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "diagnostico",
+    fonte: "ASCO Guideline Update: Immune-Related Adverse Events; https://www.asco.org/practice-patients/guidelines/guidelines-recently-published-development (consultado em 2026-08-01)",
     tags: ["imunoterapia", "anti-PD-1", "colite imunomediada"],
   },
 ];

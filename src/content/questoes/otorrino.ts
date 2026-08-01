@@ -14,6 +14,7 @@ export const QUESTOES_OTORRINO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "caso",
+    fonte: "AAO-HNS Clinical Practice Guideline: Adult Sinusitis Update 2025; https://www.entnet.org/quality-practice/quality-products/clinical-practice-guidelines/cpg-adult-sinusitis/ (consultado em 2026-08-01)",
     tags: ["rinossinusite", "antibiótico", "otorrino"],
   },
   {
@@ -29,6 +30,7 @@ export const QUESTOES_OTORRINO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "caso",
+    fonte: "AAP Acute Otitis Media Guideline, summarized by AAFP; https://www.aafp.org/pubs/afp/issues/2019/0915/p350.html (consultado em 2026-08-01)",
     tags: ["otite média aguda", "otoscopia"],
   },
   {
@@ -44,6 +46,7 @@ export const QUESTOES_OTORRINO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "exame",
+    fonte: "GRACE-3 Guideline for Acute Dizziness and Vertigo; https://www.saem.org/publications/grace/grace-3 (consultado em 2026-08-01)",
     tags: ["vertigem", "HINTS", "AVC posterior"],
   },
   {
@@ -59,6 +62,7 @@ export const QUESTOES_OTORRINO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "diagnostico",
+    fonte: "AAO-HNS guidance on neck masses and facial paralysis; https://www.entnet.org/quality-practice/quality-products/clinical-practice-guidelines/ (consultado em 2026-08-01)",
     tags: ["parótida", "neoplasia", "paralisia facial"],
   },
 ];

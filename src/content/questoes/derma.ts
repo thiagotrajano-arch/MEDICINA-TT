@@ -14,6 +14,7 @@ export const QUESTOES_DERMA: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "conduta",
+    fonte: "IDSA Skin and Soft Tissue Infection Guideline; https://www.idsociety.org/practice-guideline/skin-and-soft-tissue-infections/ (consultado em 2026-08-01)",
     tags: ["abscesso", "piodermite", "drenagem"],
   },
   {
@@ -29,6 +30,7 @@ export const QUESTOES_DERMA: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "American Academy of Dermatology Melanoma guidance; https://www.aad.org/member/clinical-quality/guidelines/melanoma (consultado em 2026-08-01)",
     tags: ["melanoma", "ABCDE", "Breslow"],
   },
 ];

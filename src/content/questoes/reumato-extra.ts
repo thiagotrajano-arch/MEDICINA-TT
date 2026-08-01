@@ -14,6 +14,7 @@ export const QUESTOES_REUMATO_EXTRA: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "diagnostico",
+    fonte: "ACR guidance for Sjögren disease; https://acrjournals.onlinelibrary.wiley.com/doi/10.1002/acr.22968 (consultado em 2026-08-01)",
     tags: ["SjÃ¶gren", "anti-Ro", "linfoma"],
   },
   {
@@ -29,6 +30,7 @@ export const QUESTOES_REUMATO_EXTRA: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "diagnostico",
+    fonte: "KDIGO Glomerular Diseases Guideline 2021, IgA vasculitis section; https://kdigo.org/guidelines/gd/ (consultado em 2026-08-01)",
     tags: ["vasculite por IgA", "pÃºrpura palpÃ¡vel", "hematÃºria"],
   },
   {
@@ -44,6 +46,7 @@ export const QUESTOES_REUMATO_EXTRA: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "International Myositis Assessment and Clinical Studies cancer-screening guidance; https://www.myositis.org/ (consultado em 2026-08-01)",
     tags: ["dermatomiosite", "CK", "neoplasia"],
   },
 ];

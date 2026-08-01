@@ -19,6 +19,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "caso",
+    fonte: "ASH Clinical Practice Guidelines; https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines (consultado em 2026-08-01)",
     tags: ["anemia ferropriva", "anemia de doenca cronica", "receptor soluvel de transferrina", "cinetica do ferro", "ferritina"],
   },
   {
@@ -34,6 +35,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "NIH Office of Dietary Supplements: Vitamin B12; https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/ (consultado em 2026-08-01)",
     tags: ["anemia megaloblastica", "vitamina B12", "acido metilmalonico", "anemia perniciosa", "degeneracao combinada subaguda"],
   },
   {
@@ -49,6 +51,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "exame",
+    fonte: "ASH Hematology educational resources on hemolytic anemias; https://www.hematology.org/education (consultado em 2026-08-01)",
     tags: ["esferocitose hereditaria", "anemia hemolitica", "coombs direto", "CHCM", "eosina-5-maleimida"],
   },
   {
@@ -64,6 +67,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "European LeukemiaNet recommendations for acute promyelocytic leukemia, cited by ASH; https://www.hematology.org/education/trainees/fellows/case-studies/male-history-fatigue-fevers-gingival-bleeding (consultado em 2026-08-01)",
     tags: ["leucemia promielocítica aguda", "LPA", "t(15;17)", "PML-RARA", "ATRA", "CIVD", "emergência hematológica"],
   },
   {
@@ -79,6 +83,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "conduta",
+    fonte: "ASH Chronic Lymphocytic Leukemia educational resource; https://www.hematology.org/education/educators/resources-for-hematology-course-directors/learning-objectives/chronic-lymphocytic-leukemia (consultado em 2026-08-01)",
     tags: ["leucemia linfocítica crônica", "LLC", "smudge cells", "iwCLL", "observação vigilante", "CD5 CD23"],
   },
   {
@@ -94,6 +99,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "caso",
+    fonte: "ASH Clinical Practice Guidelines for ALL in adolescents and young adults; https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines (consultado em 2026-08-01)",
     tags: ["síndrome de lise tumoral", "Cairo-Bishop", "rasburicase", "hipercalemia", "LLA", "lesão renal aguda"],
   },
   {
@@ -109,6 +115,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "diagnostico",
+    fonte: "ASH Clinical Practice Guidelines and lymphoma educational resources; https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines (consultado em 2026-08-01)",
     tags: ["linfoma de Hodgkin", "biópsia excisional", "PAAF", "diagnóstico"],
   },
   {
@@ -124,6 +131,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "ASH Clinical Practice Guidelines and tumor lysis prevention principles; https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines (consultado em 2026-08-01)",
     tags: ["linfoma de Burkitt", "síndrome de lise tumoral", "t(8;14)", "MYC", "emergência oncológica"],
   },
   {
@@ -139,6 +147,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "caso",
+    fonte: "ASH Clinical Practice Guidelines and lymphoma educational resources; https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines (consultado em 2026-08-01)",
     tags: ["linfoma folicular", "transformação histológica", "LDGCB", "LDH", "watch and wait"],
   },
   {
@@ -154,6 +163,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "diagnostico",
+    fonte: "International Myeloma Working Group diagnostic criteria, referenced by ASH; https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines (consultado em 2026-08-01)",
     tags: ["mieloma múltiplo", "SLiM-CRAB", "cadeias leves livres", "IMWG"],
   },
   {
@@ -169,6 +179,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "exame",
+    fonte: "International Myeloma Working Group imaging recommendations; https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines (consultado em 2026-08-01)",
     tags: ["mieloma múltiplo", "lesão lítica", "cintilografia óssea", "imagem óssea"],
   },
   {
@@ -184,6 +195,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "caso",
+    fonte: "ASH Hematology Physician Performance Measures: MDS; https://www.hematology.org/-/media/hematology/files/clinicians/guidelines/overview-of-hematology-performance-measures-updated.pdf (consultado em 2026-08-01)",
     tags: ["síndrome mielodisplásica", "del5q", "lenalidomida", "sideroblastos"],
   },
   {
@@ -199,6 +211,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "caso",
+    fonte: "ASH Red Cell Transfusion pocket guide, TRALI section; https://www.hematology.org/-/media/hematology/files/education/clinicians/guidelines-quality/documents/redcellstxpocketguideweb2016.pdf (consultado em 2026-08-01)",
     tags: ["TRALI", "TACO", "reação transfusional", "hemocomponentes", "plasma fresco congelado"],
   },
   {
@@ -214,6 +227,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "avancada",
     estilo: "conduta",
+    fonte: "ISTH guidance for immune thrombotic thrombocytopenic purpura; https://www.isth.org/page/ClinicalGuidance (consultado em 2026-08-01)",
     tags: ["PTT", "microangiopatia trombótica", "plaquetas", "plasmaférese", "contraindicação transfusional"],
   },
   {
@@ -229,6 +243,7 @@ export const QUESTOES_HEMATO: Questao[] = [
     ],
     dificuldade: "intermediaria",
     estilo: "conduta",
+    fonte: "AASLD Practice Guidance on procedural bleeding risk in cirrhosis; https://www.aasld.org/practice-guidelines/diagnosis-evaluation-and-management-ascites-spontaneous-bacterial-peritonitis (consultado em 2026-08-01)",
     tags: ["plasma fresco congelado", "cirrose", "INR", "indicação inadequada", "paracentese"],
   },
 ];
