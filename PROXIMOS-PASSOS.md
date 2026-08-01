@@ -1164,6 +1164,12 @@ errada é pior que uma questão a menos.
 - Exemplos de duplicatas prováveis incluem cópias numeradas de provas OMED/vestibular e cadernos repetidos.
 - O próximo passo seguro é materializar apenas os candidatos médicos, calcular SHA-256 localmente e conservar uma cópia canônica por conteúdo.
 
+## Tentativa de materialização local — 2026-08-01
+
+- As referências raw autenticadas do Drive foram obtidas para os candidatos médicos, mas o conector retornou apenas URIs `sediment://` internas, sem caminho de arquivo local acessível ao ambiente.
+- A tentativa de abrir essa URI pelo sistema operacional falhou por esquema não reconhecido; portanto, nenhum SHA-256 foi inventado e nenhum PDF foi gravado no repositório.
+- O texto legível continua disponível para triagem via Drive. Hash, OCR e extração visual exigem materialização real do binário por uma rota de download do conector ou arquivo fornecido localmente.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.
