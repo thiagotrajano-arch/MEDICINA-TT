@@ -1156,6 +1156,14 @@ errada é pior que uma questão a menos.
 - O plano de ensino de Bases Complementares da Medicina VI e o caderno HCPM IV foram confirmados como fontes para a matriz curricular; ainda é necessário percorrer os demais períodos e disciplinas.
 - Duplicatas aparentes foram marcadas por título e tamanho para a etapa de hash; nenhuma foi apagada do Drive.
 
+## Deduplicação por metadados — 2026-08-01
+
+- As 1.705 entradas de PDF foram reprocessadas em 18 páginas.
+- Foram encontrados 117 grupos com nomes normalizados coincidentes (361 arquivos) e 76 grupos com tamanhos coincidentes (164 arquivos).
+- Esses números são apenas candidatos: nomes/tamanhos não substituem SHA-256. Nenhum arquivo foi excluído ou movido.
+- Exemplos de duplicatas prováveis incluem cópias numeradas de provas OMED/vestibular e cadernos repetidos.
+- O próximo passo seguro é materializar apenas os candidatos médicos, calcular SHA-256 localmente e conservar uma cópia canônica por conteúdo.
+
 1. Executar auditoria geral do banco.
 2. Filtrar Pediatria e listar IDs problematicos.
 3. Localizar a duplicacao em `ped-des-07`.
