@@ -1343,3 +1343,12 @@ Os binarios, hashes, caches e qualquer imagem deste lote permanecem fora do GitH
 - Patologia e Fisiologia devem ser camadas de apoio ligadas a clinica; Anatomia, Histologia, Embriologia, Bioquimica, Microbiologia, Parasitologia, Genetica e Saude Publica ficam para integracao sob demanda.
 - A busca metadata-only do Drive confirmou candidatos para Endocrino (31 PDFs), Gastro (27), Nefro (30), Radio (25), Farmaco (14), Psiquiatria (28) e UE (25), mas esses numeros incluem duplicatas e livros protegidos; nao sao autorizacao para baixar tudo.
 - Fila recomendada: Endocrino -> Gastro -> Nefro -> Hemato; em paralelo, imagens/casos de Radio -> UE -> Cardio/Neuro/Pneumo.
+
+### Lote prioritario executado - Endocrino/Gastro/Nefro/Hemato
+
+- [x] Selecionados e materializados 30 PDFs direcionados às quatro lacunas OMED.
+- [x] SHA-256: 30 unicos, 0 duplicatas internas e 0 coincidencias com manifestos privados anteriores.
+- [x] Conversao Markdown: 1.479 paginas, 2.010.026 caracteres; 21 completos, 9 parciais e 0 erros fatais.
+- [x] Renderizacao privada: 30 primeiras paginas e 544 paginas dos candidatos parciais.
+- [ ] Revisar as 9 conversoes parciais, aplicar OCR seletivo e separar duplicatas conceituais antes da escrita autoral.
+- [ ] Fechar Endocrino (diabetes/adrenais), Gastro (DRGE/ulcera), Nefro (hidroeletrolitico) e Hemato (hemostasia) contra a taxonomia.
