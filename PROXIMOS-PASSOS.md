@@ -1352,3 +1352,5 @@ Os binarios, hashes, caches e qualquer imagem deste lote permanecem fora do GitH
 - [x] Renderizacao privada: 30 primeiras paginas e 544 paginas dos candidatos parciais.
 - [ ] Revisar as 9 conversoes parciais, aplicar OCR seletivo e separar duplicatas conceituais antes da escrita autoral.
 - [ ] Fechar Endocrino (diabetes/adrenais), Gastro (DRGE/ulcera), Nefro (hidroeletrolitico) e Hemato (hemostasia) contra a taxonomia.
+- [x] Triagem visual das 9 conversoes parciais: slides comerciais predominantemente graficos, mantidos somente na biblioteca privada.
+- [ ] Habilitar OCR local em sessao futura; Tesseract/OCRmyPDF e Kimi/OpenRouter nao estao disponiveis neste runtime.

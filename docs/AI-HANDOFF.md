@@ -218,3 +218,5 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - Conversao: 1.479 paginas e 2.010.026 caracteres; 21 completas, 9 parciais e nenhum erro fatal.
 - Renderizacao: 30 primeiras paginas e 544 paginas dos nove candidatos parciais.
 - Nenhum binario, hash, PNG, texto integral ou ID do Drive foi publicado. A proxima etapa e OCR seletivo/reparo e matriz fonte -> subtema, nao uma nova busca ampla.
+- A triagem visual confirmou que as 9 conversoes parciais sao slides comerciais graficos; 544 paginas renderizadas foram preservadas para revisao privada.
+- O runtime local nao possui Tesseract/OCRmyPDF e nao ha ferramenta Kimi/OpenRouter disponivel nesta sessao. Nao enviar material privado a servicos externos sem aprovacao e rota segura.
