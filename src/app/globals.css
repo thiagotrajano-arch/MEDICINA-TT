@@ -81,6 +81,43 @@ body {
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 2px; }
 
+/* Clinical mind-map canvas: central concept, directional branches, and a mobile-safe collapse. */
+.mindmap-visual { display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, 0.9fr) minmax(0, 1fr); align-items: center; gap: 1.25rem; min-height: 230px; padding: 1.5rem; background: radial-gradient(circle at center, color-mix(in srgb, var(--accent-soft) 58%, transparent), transparent 58%), var(--bg); }
+.mindmap-column { display: grid; gap: .7rem; }
+.mindmap-column-left { justify-items: end; }
+.mindmap-column-right { justify-items: start; }
+.mindmap-root { position: relative; z-index: 1; display: grid; min-height: 132px; place-items: center; align-content: center; gap: .3rem; border: 2px solid var(--accent); border-radius: 1rem; padding: 1rem; text-align: center; color: var(--accent-contrast); background: var(--accent); box-shadow: 0 10px 24px color-mix(in srgb, var(--accent) 22%, transparent); transition: transform .2s ease, box-shadow .2s ease; }
+.mindmap-root:hover { transform: translateY(-2px); box-shadow: 0 14px 30px color-mix(in srgb, var(--accent) 30%, transparent); }
+.mindmap-root strong { max-width: 13rem; font-size: .98rem; line-height: 1.25; }
+.mindmap-root-kicker, .mindmap-root-hint { font-size: .58rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; opacity: .78; }
+.mindmap-root-hint { font-size: .63rem; letter-spacing: .02em; text-transform: none; }
+.mindmap-node { position: relative; display: flex; max-width: 14rem; align-items: center; gap: .45rem; border: 1px solid currentColor; border-radius: .65rem; padding: .55rem .65rem; font-size: .72rem; font-weight: 700; line-height: 1.2; background: var(--surface); transition: transform .18s ease, filter .18s ease; }
+.mindmap-node:hover { transform: translateY(-2px); filter: saturate(1.12); }
+.mindmap-node-left { text-align: right; }
+.mindmap-node-right { text-align: left; }
+.mindmap-arrow { flex: none; font-size: .95rem; font-weight: 900; }
+.mindmap-amber { color: #a45b00; background: #fff4d8; }
+.mindmap-pink { color: #a52a62; background: #ffe3ef; }
+.mindmap-sky { color: #075985; background: #dff3ff; }
+.mindmap-violet { color: #6d28d9; background: #eee6ff; }
+.mindmap-orange { color: #c2410c; background: #ffeadf; }
+.mindmap-emerald { color: #047857; background: #dcfce9; }
+.dark .mindmap-amber { color: #f7ca6a; background: #493719; }
+.dark .mindmap-pink { color: #f5a2c2; background: #4c2035; }
+.dark .mindmap-sky { color: #8bd8ff; background: #113b52; }
+.dark .mindmap-violet { color: #c6a8ff; background: #322052; }
+.dark .mindmap-orange { color: #ffb08a; background: #522719; }
+.dark .mindmap-emerald { color: #8ee8b0; background: #103f32; }
+
+@media (max-width: 700px) {
+  .mindmap-visual { grid-template-columns: 1fr; gap: .85rem; padding: 1rem; }
+  .mindmap-root { order: 1; min-height: 104px; }
+  .mindmap-column-left, .mindmap-column-right { order: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-items: stretch; gap: .55rem; }
+  .mindmap-node, .mindmap-node-left, .mindmap-node-right { max-width: none; text-align: left; }
+  .mindmap-node-left .mindmap-arrow { order: 2; margin-left: auto; }
+  .mindmap-column-right { order: 3; }
+}
+
 ::selection {
   background: color-mix(in srgb, var(--accent) 22%, transparent);
 }
