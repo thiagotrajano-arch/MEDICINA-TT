@@ -86,6 +86,7 @@ interface GrupoFiguras {
 export function MidiaClient() {
   const [q, setQ] = useState("");
   const [area, setArea] = useState<string>("todas");
+  const [limite, setLimite] = useState(12);
 
   const figuras = useMemo(() => Object.values(FIGURAS), []);
   const areas = useMemo(
@@ -106,13 +107,15 @@ export function MidiaClient() {
     });
   }, [figuras, q, area]);
 
+  const renderizadas = filtradas.slice(0, limite);
+
   // Separa por tema/subtema (derivado da taxonomia via ONDE_APARECE) — figuras
   // ainda não ancoradas a um resumo ficam num grupo à parte, honestamente rotulado,
   // em vez de se misturarem soltas entre as organizadas.
   const grupos = useMemo(() => {
     const porTema = new Map<string, GrupoFiguras>();
     const semTema: Figura[] = [];
-    for (const f of filtradas) {
+    for (const f of renderizadas) {
       const onde = ONDE_APARECE[f.id];
       const info = onde ? TEMA_POR_SUBTEMA[onde.subtemaId] : undefined;
       if (!info) {
@@ -140,7 +143,7 @@ export function MidiaClient() {
       });
     }
     return ordenados;
-  }, [filtradas]);
+  }, [renderizadas]);
 
   return (
     <div className="mx-auto max-w-5xl px-5 py-8 sm:px-8 sm:py-10">
@@ -151,6 +154,11 @@ export function MidiaClient() {
         Diagramas originais dos resumos — fluxogramas, comparativos e esquemas.
         Cada um leva ao tema onde é usado.
       </p>
+
+      <div className="mt-5 flex flex-wrap gap-2 rounded-xl border border-border bg-surface p-2" aria-label="Camadas de mídia">
+        <Link href="/midia" className="rounded-lg bg-accent-soft px-3 py-2 text-sm font-semibold text-accent">Pública e licenciada</Link>
+        <Link href="/minha-midia" className="rounded-lg px-3 py-2 text-sm font-semibold text-text-muted hover:bg-surface-2 hover:text-text">Minha mídia privada <span className="ml-1 text-[10px] text-text-faint">login</span></Link>
+      </div>
 
       {/* busca + filtros */}
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -174,6 +182,7 @@ export function MidiaClient() {
       <p className="mt-4 text-xs text-text-faint">
         {filtradas.length} {filtradas.length === 1 ? "figura" : "figuras"}
         {grupos.length > 0 && ` · ${grupos.length} ${grupos.length === 1 ? "tema" : "temas"}`}
+        {renderizadas.length < filtradas.length && " · carregamento progressivo"}
       </p>
 
       {/* galeria, agrupada por tema/subtema — preserva os vínculos "Estudar X" de sempre */}
@@ -197,6 +206,8 @@ export function MidiaClient() {
       {filtradas.length === 0 && (
         <p className="mt-12 text-center text-sm text-text-faint">Nenhuma figura encontrada para “{q}”.</p>
       )}
+
+      {renderizadas.length < filtradas.length && <button onClick={() => setLimite((n) => n + 12)} className="mx-auto mt-7 flex rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text-muted hover:border-accent hover:text-accent">Carregar mais imagens</button>}
 
       <p className="mt-10 rounded-xl border border-border bg-surface-2 p-4 text-xs leading-relaxed text-text-muted">
         <strong className="text-text">Sobre as imagens:</strong> os{" "}
