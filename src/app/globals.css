@@ -7,39 +7,39 @@
    Premium, minimal, calm. Light + dark.
    ───────────────────────────────────────────── */
 :root {
-  --bg: #f7f8f8;
+  --bg: #f5f7fa;
   --surface: #ffffff;
-  --surface-2: #f1f3f3;
-  --border: #e4e7e7;
-  --border-strong: #d3d8d8;
-  --text: #10201f;
-  --text-muted: #5b6b69;
-  --text-faint: #8a9997;
-  --accent: #0f766e;
-  --accent-soft: #d7efe9;
+  --surface-2: #edf2f5;
+  --border: #dce4e9;
+  --border-strong: #c5d1d8;
+  --text: #102a43;
+  --text-muted: #526779;
+  --text-faint: #7f929f;
+  --accent: #087f8c;
+  --accent-soft: #d9f0f1;
   --accent-contrast: #ffffff;
-  --gold: #b7862f;
-  --danger: #b4342b;
+  --gold: #b7791f;
+  --danger: #b83a3a;
   --danger-soft: #fbeae8;
-  --shadow: 0 1px 2px rgba(16, 32, 31, 0.04), 0 8px 24px rgba(16, 32, 31, 0.06);
+  --shadow: 0 1px 2px rgba(16, 42, 67, 0.04), 0 12px 30px rgba(16, 42, 67, 0.07);
   --sidebar-w: 288px;
 }
 
 .dark {
-  --bg: #0a0c0c;
-  --surface: #121516;
-  --surface-2: #181c1d;
-  --border: #242a2b;
-  --border-strong: #333b3c;
-  --text: #e8eded;
-  --text-muted: #9aa8a6;
-  --text-faint: #6b7a78;
-  --accent: #2dd4bf;
-  --accent-soft: #10312e;
-  --accent-contrast: #06110f;
-  --gold: #d7b673;
-  --danger: #f2837a;
-  --danger-soft: #2a1614;
+  --bg: #081522;
+  --surface: #0e2032;
+  --surface-2: #142a3e;
+  --border: #244158;
+  --border-strong: #365770;
+  --text: #edf6fa;
+  --text-muted: #a8bfcc;
+  --text-faint: #7893a3;
+  --accent: #4fd1c5;
+  --accent-soft: #123c4a;
+  --accent-contrast: #06212c;
+  --gold: #f1c46a;
+  --danger: #ff8989;
+  --danger-soft: #452633;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
@@ -77,6 +77,9 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 2px; }
 
 ::selection {
   background: color-mix(in srgb, var(--accent) 22%, transparent);
