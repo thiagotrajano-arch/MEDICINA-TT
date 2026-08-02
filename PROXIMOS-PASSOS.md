@@ -1333,3 +1333,13 @@ Os binarios, hashes, caches e qualquer imagem deste lote permanecem fora do GitH
 - [x] Conversao do lote novo: 1.194 paginas e 2.133.689 caracteres; 23 completas, 3 parciais e 1 erro estrutural preservado.
 - [x] Poppler corrigido com chamada direta ao `pdftoppm.exe`; 217 PNGs foram renderizados para triagem privada (27 primeiras paginas + 190 paginas de candidatos visuais/parciais).
 - [ ] Revisar visualmente os PNGs, aplicar OCR apenas nas paginas medicas sem camada textual e reparar o PDF estruturalmente invalido.
+
+## Analise de lacunas por OMED e por disciplinas cursadas - 2026-08-02
+
+- OMED: Cardiologia, Neurologia e Pneumologia estao completas em subtemas; o ganho agora e imagens/casos, nao mais PDFs em massa.
+- Lacunas OMED prioritarias: Endocrinologia (33%, faltam Diabetes e Adrenais), Nefrologia (67%, falta Hidroeletrolitico), Gastroenterologia (71%, faltam DRGE e Doenca Ulcerosa) e Hematologia (83%, falta Hemostasia).
+- Cirurgia (48%) e MFC (52%) precisam de expansao seletiva, mas ficam depois das quatro lacunas clinicas acima por frequencia e retorno OMED.
+- Disciplinas cursadas com scaffold publico vazio: Radiologia, Farmacologia, Imunologia e Urgencia/Emergencia. Ja existem fontes/questoes privadas suficientes para comecar sem baixar o Drive inteiro.
+- Patologia e Fisiologia devem ser camadas de apoio ligadas a clinica; Anatomia, Histologia, Embriologia, Bioquimica, Microbiologia, Parasitologia, Genetica e Saude Publica ficam para integracao sob demanda.
+- A busca metadata-only do Drive confirmou candidatos para Endocrino (31 PDFs), Gastro (27), Nefro (30), Radio (25), Farmaco (14), Psiquiatria (28) e UE (25), mas esses numeros incluem duplicatas e livros protegidos; nao sao autorizacao para baixar tudo.
+- Fila recomendada: Endocrino -> Gastro -> Nefro -> Hemato; em paralelo, imagens/casos de Radio -> UE -> Cardio/Neuro/Pneumo.

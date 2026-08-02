@@ -201,3 +201,12 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - O Poppler foi corrigido usando diretamente `pdftoppm.exe` do runtime nativo. Foram gerados 217 PNGs privados para triagem (primeiras paginas e candidatos visuais/parciais).
 - O wrapper `.cmd` permanece evitado por falha de caminho; o script seguro `scripts/render-private-pdfs.ps1` e o comando `npm run render:private` documentam a rota funcional.
 - Nenhum PDF, PNG, hash, ID do Drive ou texto derivado foi adicionado ao site publico ou ao GitHub.
+
+## Analise de lacunas e proxima selecao - 2026-08-02
+
+- A cobertura OMED foi recalculada por subtema: GO, Pediatria, Infectologia, Cardiologia, Pneumologia, Neurologia, Oncologia e Otorrino estao completas; Cirurgia e MFC estao parciais.
+- As quatro lacunas de maior retorno sao Endocrinologia (33%), Nefrologia (67%), Gastroenterologia (71%) e Hematologia (83%). A fila de conteudo fica Endocrino -> Gastro -> Nefro -> Hemato.
+- Cardiologia/Neurologia/Pneumologia nao precisam de mais apostilas em massa; precisam de imagens licenciadas, casos e revisao de diretrizes.
+- O cruzamento com os periodos privados 2024-1 a 2026-2 mostrou lacunas publicas claras em Radiologia, Farmacologia, Imunologia e Urgencia/Emergencia, apesar de existirem questoes e fontes privadas. A fila de imagens/casos fica Radio -> UE -> Cardio/Neuro/Pneumo.
+- Patologia e Fisiologia serao camadas transversais; as demais ciencias basicas so devem ser integradas quando houver um vinculo clinico ou curricular concreto.
+- A busca metadata-only do Drive encontrou candidatos em todas essas areas, mas os resultados incluem duplicatas e livros protegidos. Nao interpretar contagem de resultados como necessidade de download.
