@@ -167,3 +167,11 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - A base dessa arquitetura foi implementada em `/minha-midia` e na migration `20260729194500_cria_biblioteca_midia_privada.sql`. O bucket `midia-privada` é não público, aceita somente JPG/PNG/WebP/AVIF até 20 MB, e os objetos usam caminho `<auth.uid()>/<uuid>.<ext>`. O cliente gera URL assinada por cinco minutos; sem sessão, não consulta metadados nem Storage. Antes de considerar o fluxo encerrado, testar com a conta real: bloqueio deslogado, upload comercial, renovação, logout e exclusão. Nenhum arquivo privado faz parte do repositório.
 - O commit `8b37d84` foi publicado; o deploy `30501713751` passou e `/minha-midia/` respondeu HTTP 200. Typecheck, lint, auditoria de privacidade e build oficial passaram. A rotina das 9h foi apagada; não criar novo agendamento sem pedido explícito.
 - Os mapas mentais atuais não devem ser considerados concluídos apenas por existirem 60 entradas. A meta é transformá-los em grafos legíveis com conceitos-chave e relações nomeadas por setas.
+## Atualizacao privada do Drive - 2026-08-01
+
+- O conector autenticado agora permitiu materializar um lote seletivo privado: sete PDFs iniciais, mais treze arquivos de ampliacao. Todos foram mantidos fora do repositorio.
+- Foram calculados hashes, gerados caches Markdown e produzidos manifestos privados. O lote OMED de onze fontes confirmou copias identicas ja existentes localmente; dois materiais adicionais foram preservados somente na biblioteca privada.
+- Foram extraidas imagens embutidas e executados renderizacao/OCR seletivos. Resultados de OCR de baixa confianca continuam em fila de revisao humana; nenhum texto OCR foi integrado automaticamente.
+- A matriz privada Drive -> SISCAD recebeu vinculos candidatos por componente/período. Esses vinculos exigem revisao manual e clinica antes de qualquer uso no site.
+- Nao publicar PDFs, textos derivados, imagens, hashes, identificadores de Drive ou dados curriculares individuais. O estado completo desta rodada esta no Obsidian e em `Desktop\\MEDICINA\\_private-corpus\\drive-lote-20260801`.
+- Proxima sequencia: comparar apenas novos hashes com o manifesto amplo, priorizar fontes realmente unicas por lacuna OMED, revisar clinicamente com diretrizes atuais e separar candidatos a conteudo autoral de referencias privadas.

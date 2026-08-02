@@ -128,3 +128,8 @@ para o uso privado atual.
 4. Fechar a matriz tema → disciplina → semestre → subtema → prioridade OMED.
 5. Transformar lacunas comprovadas em conteúdo autoral apoiado por fontes
    primárias; manter material comercial apenas como referência privada.
+## Atualizacao de continuacao do Drive
+
+- Um lote adicional de PDFs foi materializado em area privada, recebeu SHA-256, cache Markdown e triagem. Os materiais OMED repetidos foram reconhecidos como duplicatas exatas de fontes locais; novos materiais ficaram no catalogo privado.
+- Imagens embutidas foram extraidas para revisao privada; renderizacao e OCR seletivo passaram a ser possiveis no runtime. Nao ha liberacao automatica de imagem, texto ou questao para o site.
+- O cruzamento candidato com planos privados do SISCAD foi registrado sem copiar dados pessoais. A integracao exige revisao manual, diretriz vigente, licenca e privacidade.
