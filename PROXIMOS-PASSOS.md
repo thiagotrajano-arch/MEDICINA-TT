@@ -1325,3 +1325,11 @@ P0 seguranca/autenticacao -> P1 especificacao e benchmarking -> P2 arquitetura v
 - [ ] Continuar com Cirurgia, Cardiologia, Neurologia, Hematologia e Gastroenterologia somente apos deduplicacao contra os caches existentes.
 
 Os binarios, hashes, caches e qualquer imagem deste lote permanecem fora do GitHub e da documentacao publica.
+
+### Lote ampliado concluido na mesma sessao
+
+- [x] Materializados mais 27 PDFs medicos candidatos, totalizando 30 PDFs processados nesta sessao.
+- [x] O lote novo tem 27 unicos, 0 duplicatas internas e 0 coincidencias de SHA-256 com o lote inicial.
+- [x] Conversao do lote novo: 1.194 paginas e 2.133.689 caracteres; 23 completas, 3 parciais e 1 erro estrutural preservado.
+- [x] Poppler corrigido com chamada direta ao `pdftoppm.exe`; 217 PNGs foram renderizados para triagem privada (27 primeiras paginas + 190 paginas de candidatos visuais/parciais).
+- [ ] Revisar visualmente os PNGs, aplicar OCR apenas nas paginas medicas sem camada textual e reparar o PDF estruturalmente invalido.

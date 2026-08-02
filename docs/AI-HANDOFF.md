@@ -192,3 +192,12 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - O pipeline `PDF -> Markdown` foi executado uma vez para cada arquivo: 230 paginas, 521.699 caracteres extraiveis, nenhuma pagina exclusivamente-imagem e nenhum erro de conversao.
 - O lote e privado: nenhum binario, hash, texto comercial ou imagem foi adicionado ao repositorio, ao site publico ou a uma nota compartilhavel. A renderizacao visual permanece pendente porque o wrapper Poppler local nao esta operacional neste runtime.
 - Proxima fila: comparar hashes com o manifesto amplo, selecionar somente fontes novas, relacionar ao mapa privado de semestres/SISCAD e validar clinicamente antes de produzir conteudo autoral.
+
+### Lote de 30 PDFs e triagem visual - 2026-08-02
+
+- Foram materializados 27 PDFs novos, somados aos 3 do lote inicial: 30 PDFs na sessao.
+- O lote novo tem 27 unicos, nenhuma duplicata interna e nenhuma colisao de hash com o lote inicial.
+- A conversao produziu 1.194 paginas e 2.133.689 caracteres: 23 completas, 3 parciais e 1 erro estrutural preservado para reparo/OCR.
+- O Poppler foi corrigido usando diretamente `pdftoppm.exe` do runtime nativo. Foram gerados 217 PNGs privados para triagem (primeiras paginas e candidatos visuais/parciais).
+- O wrapper `.cmd` permanece evitado por falha de caminho; o script seguro `scripts/render-private-pdfs.ps1` e o comando `npm run render:private` documentam a rota funcional.
+- Nenhum PDF, PNG, hash, ID do Drive ou texto derivado foi adicionado ao site publico ou ao GitHub.

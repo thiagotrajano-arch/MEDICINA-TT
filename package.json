@@ -17,6 +17,7 @@
     "drive:local": "tsx scripts/ingest-drive-local.mts",
     "drive:download-local": "tsx scripts/download-drive-local.mts",
     "fonte:md": "tsx scripts/fonte-para-md.mts",
+    "render:private": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/render-private-pdfs.ps1",
     "anki:status": "tsx scripts/anki-connect.mts status",
     "anki:resumo": "tsx scripts/anki-connect.mts resumo",
     "anki:erros": "tsx scripts/anki-connect.mts erros",
