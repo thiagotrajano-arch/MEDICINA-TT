@@ -108,6 +108,11 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 .dark .mindmap-violet { color: #c6a8ff; background: #322052; }
 .dark .mindmap-orange { color: #ffb08a; background: #522719; }
 .dark .mindmap-emerald { color: #8ee8b0; background: #103f32; }
+.dashboard-hero { background: radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent-soft) 72%, transparent), transparent 30%), var(--surface); box-shadow: var(--shadow); }
+.page-hero { background: radial-gradient(circle at 88% 10%, color-mix(in srgb, var(--accent-soft) 68%, transparent), transparent 32%), var(--surface); box-shadow: var(--shadow); }
+.dashboard-page > section { animation: rise-in .45s ease both; }
+@keyframes rise-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .dashboard-page > section { animation: none; } }
 
 @media (max-width: 700px) {
   .mindmap-visual { grid-template-columns: 1fr; gap: .85rem; padding: 1rem; }

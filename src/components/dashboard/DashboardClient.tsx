@@ -58,13 +58,13 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
   const anotacoes = conteudos.filter((item) => item.anotacao.trim()).length;
 
   return (
-    <div className="mx-auto max-w-5xl px-5 py-8 sm:px-8 sm:py-10">
+    <div className="dashboard-page mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-10">
       {/* Hero */}
-      <div className="mb-7">
+      <div className="dashboard-hero mb-7 rounded-3xl border border-border bg-surface p-6 sm:p-8">
         <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-text-muted">
           <Sparkles className="size-3 text-gold" /> Foco atual: OMED VI · Ciclo Clínico
         </div>
-        <h1 className="text-2xl font-bold tracking-tight text-text sm:text-3xl">Bom estudo, Thiago.</h1>
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div><h1 className="text-2xl font-bold tracking-tight text-text sm:text-3xl">Bom estudo, Thiago.</h1>
         <p className="mt-1.5 max-w-2xl text-[15px] text-text-muted">
           {temProgresso
             ? "Seu progresso abaixo. Continue de onde parou ou faça um simulado cronometrado."
@@ -74,7 +74,7 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
           <p className="mt-1 text-xs text-text-faint">
             {sincronizado ? "Progresso sincronizado com segurança." : "Progresso salvo neste dispositivo; sincronização será tentada novamente."}
           </p>
-        )}
+        )}</div><div className="flex flex-wrap gap-2"><Link href="/questoes" className="rounded-xl bg-accent px-4 py-2.5 text-sm font-bold text-accent-contrast hover:opacity-90">Continuar questoes</Link><Link href="/mapas-mentais" className="rounded-xl border border-border bg-bg px-4 py-2.5 text-sm font-bold text-text-muted hover:border-accent hover:text-accent">Revisar mapas</Link></div></div>
       </div>
 
       <section className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4" aria-label="Progresso de leitura e casos">
