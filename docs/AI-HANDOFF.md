@@ -175,3 +175,12 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - A matriz privada Drive -> SISCAD recebeu vinculos candidatos por componente/período. Esses vinculos exigem revisao manual e clinica antes de qualquer uso no site.
 - Nao publicar PDFs, textos derivados, imagens, hashes, identificadores de Drive ou dados curriculares individuais. O estado completo desta rodada esta no Obsidian e em `Desktop\\MEDICINA\\_private-corpus\\drive-lote-20260801`.
 - Proxima sequencia: comparar apenas novos hashes com o manifesto amplo, priorizar fontes realmente unicas por lacuna OMED, revisar clinicamente com diretrizes atuais e separar candidatos a conteudo autoral de referencias privadas.
+
+## Auditoria de design e produto - 2026-08-02
+
+- A solicitacao de novo redesign foi registrada como pendencia; esta rodada nao alterou a interface nem instalou plugins.
+- Rotas publicadas verificadas responderam HTTP 200; deploy remoto passou; auditorias de questoes e privacidade passaram.
+- Pendencias tecnicas encontradas: avisos de Supabase para protecao contra senhas vazadas desativada, tabelas com RLS sem politica, extensoes no schema public, chaves estrangeiras sem indices de cobertura e politicas RLS com `auth.*` sem initplan otimizado.
+- Pendencias de produto: benchmarking de AMBOSS/Osmosis e design systems acessiveis; brief visual; arquitetura de informacao; kit de componentes; leitura sem distracao; treino de questoes com retomada; midia publica/privada; mapas clinicos com relacoes nomeadas; estados de erro/loading; Lighthouse/axe; testes de fluxos.
+- Antigravity nao esta disponivel na sessao atual. Product Design/Figma/Build Web Apps/Sentry/PostHog/Vercel foram apenas listados como candidatos para avaliacao posterior; nenhum foi instalado.
+- Preservar todo o acervo atual, progresso, autentificacao, catalogos privados e separacao entre publico/comercial/paciente. A ordem recomendada e: seguranca e autenticacao -> aprendizagem/benchmarking -> arquitetura -> qualidade -> acervo e SISCAD -> Anki.

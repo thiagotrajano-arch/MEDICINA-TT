@@ -1244,3 +1244,72 @@ Resultado: 1.072 questoes auditadas, 0 repeticoes, 0 comentarios curtos, 0 vazio
 - Auditoria atual: 1.072 questoes, zero repeticoes, comentarios curtos, comentarios vazios ou fontes ausentes.
 - Drive: inventario amplo concluido e lotes seletivos ja processados; falta continuar somente com fontes medicas unicas e ligacao final a planos/subtemas.
 - Prioridades seguintes: validar login/progresso em producao, concluir matriz privada curso-material, revisar conteudo clinico por diretrizes vigentes, organizar midia licenciada, mapas mentais reais e Anki Desktop.
+
+## Auditoria de produto, design e erros - 2026-08-02
+
+Esta rodada foi somente de auditoria e planejamento. Nenhuma nova alteracao visual foi iniciada.
+
+### Evidencias positivas
+
+- As rotas publicadas testadas (`/`, `/biblioteca`, `/questoes`, `/simulado`, `/casos`, `/midia`, `/minha-midia`, `/mapas-mentais`, `/semestres` e `/meu-curso`) responderam HTTP 200.
+- O ultimo deploy remoto do GitHub Pages concluiu com sucesso.
+- Auditoria de questoes: 1.072 questoes, zero repeticoes exatas/normalizadas, zero comentarios curtos/vazios e zero fontes ausentes.
+- Auditoria de privacidade: 188 arquivos publicos e 3 arquivos curriculares aprovados.
+- Logs recentes de autenticacao mostram logins e renovacoes de sessao bem-sucedidos; nao foram observados erros recentes no Storage.
+- A verificacao nao alterou dados, progresso, imagens, catalogos ou configuracoes privadas.
+
+### Pendencias P0 - proteger antes de novo redesign
+
+1. Testar login, logout, recuperacao, expiracao/renovacao e sincronizacao em duas sessoes reais, sem registrar credenciais.
+2. Importar e validar o primeiro lote de imagens privadas: hoje o catalogo possui metadados, mas o bucket ainda nao possui objetos de imagem.
+3. Revisar os avisos de seguranca do Supabase: protecao contra senhas vazadas desativada; tabelas `arquivo_importado`, `extracao`, `schema_migrations` e `sync_drive` com RLS sem politica; extensoes `pg_trgm`, `unaccent` e `vector` no schema `public`.
+4. Confirmar politicas de acesso de todas as tabelas privadas com testes de proprietario, anonimo e conta diferente.
+5. Criar uma matriz de erros de rede, sessao expirada, upload interrompido, link assinado expirado e resposta vazia.
+
+### Pendencias P1 - aprender e especificar o design profissional
+
+6. Estudar e documentar Material Design 3, USWDS/CMS Design System, Radix/WAI-ARIA e os padroes de producao do Next.js antes de escolher novas dependencias.
+7. Fazer benchmarking estruturado de AMBOSS, Osmosis e plataformas de revisao: arquitetura de navegacao, busca, filtros, progresso, leitura, questoes e feedback.
+8. Criar um design brief unico: personalidade, densidade, tipografia, escala de espacamento, raios, sombras, estados, contrastes e regras para nao poluir a interface.
+9. Criar um mapa de arquitetura de informacao com cinco areas: Hoje, Biblioteca, Treino, Revisao visual e Meu curso.
+10. Definir tokens semanticos de cor e componentes antes de alterar paginas novamente.
+11. Avaliar instalacao futura de Product Design/Figma/Build Web Apps, Sentry, PostHog e Vercel apenas depois de comparar necessidade, privacidade e custo. Antigravity nao esta disponivel nesta sessao.
+12. Preparar um kit visual em Storybook ou equivalente, sem substituir dados atuais: Button, Input, Select, Card, Tabs, Modal, Toast, EmptyState, Skeleton, Progress, QuestionCard e MindMap.
+
+### Pendencias P2 - arquitetura de interface
+
+13. Refazer o shell global com hierarquia definitiva, menu contextual por area, busca global real, breadcrumbs consistentes e estados de pagina.
+14. Criar layouts de leitura sem distracao para resumos e casos, com indice lateral, progresso, fonte e retorno ao ponto anterior.
+15. Transformar Biblioteca em explorador de conhecimento com filtros persistentes por disciplina, semestre, tema, subtema, prioridade OMED e estado.
+16. Transformar Questoes em fluxo de treino: fila nao respondida, fila de erros, revisao espaçada, filtros persistentes e retomada exata.
+17. Criar um painel Hoje com proxima revisao, lacunas prioritarias, questoes pendentes e acesso rapido a mapas.
+18. Separar claramente conteudo publico, biblioteca privada, curso/SISCAD e material comercial em todas as telas, textos e estados vazios.
+19. Refazer Mídia com colecoes por modalidade, patologia e subtema; preservar fonte, autor, licenca, privacidade e vinculo de estudo.
+20. Refazer os mapas como grafos clinicos reais: no central, ramos nomeados, setas com relacao, hierarquia e modo leitura mobile.
+21. Criar componentes de carregamento progressivo, skeleton, erro recuperavel, vazio orientado e confirmacao para operacoes destrutivas.
+
+### Pendencias P3 - qualidade tecnica e acessibilidade
+
+22. Rodar Lighthouse/PageSpeed em desktop e celular e registrar Core Web Vitals por rota.
+23. Rodar axe/WCAG 2.2 AA: foco, contraste, teclado, leitor de tela, rotulos, ordem semantica e anuncios de mudanca de rota.
+24. Corrigir todos os `eslint-disable` justificados ou substituir imagens nativas por componente otimizado quando possivel.
+25. Auditar imagens ausentes, dimensoes, alt text, lazy loading, formatos WebP/AVIF e peso por rota.
+26. Auditar links internos automaticamente, incluindo rotas dinamicas de disciplina, subtema, caso e imagem.
+27. Adicionar `global-error`, `not-found`, `loading` e boundaries por area, conforme o checklist de producao do Next.js.
+28. Criar testes de componentes e fluxos criticos: responder questao, sair e voltar, login, upload privado, busca, filtros e mapa.
+29. Medir bundle e dependencias; instalar pacote novo somente se houver ganho comprovado e lockfile revisado.
+
+### Pendencias P4 - dados e conteudo
+
+30. Materializar seletivamente Drive, calcular SHA-256, converter PDF/DOCX para Markdown, OCR seletivo e extrair imagens sem publicar material protegido.
+31. Fechar a matriz fonte -> semestre -> disciplina -> tema -> subtema -> prioridade OMED -> destino permitido.
+32. Percorrer os demais periodos e planos do SISCAD na camada privada, sem expor dados academicos pessoais.
+33. Revisar clinicamente as questoes e resumos com diretrizes atuais, mantendo fonte especifica e data de revisao.
+34. Fechar as lacunas de conteudo por disciplina, com prioridade OMED e cobertura de ciencias basicas.
+35. Criar mapas mensais de revisao e recomendações baseadas em progresso real, nao em dados inventados.
+36. Importar imagens privadas curadas e testar URLs assinadas, renovacao, logout e exclusao.
+37. Integrar Anki Desktop somente ao fim da estabilizacao do conteudo, com exportacao revisavel e sem envio automatico destrutivo.
+
+### Ordem recomendada de retomada
+
+P0 seguranca/autenticacao -> P1 especificacao e benchmarking -> P2 arquitetura visual -> P3 qualidade e acessibilidade -> P4 acervo/SISCAD/conteudo -> Anki -> nova publicacao.
