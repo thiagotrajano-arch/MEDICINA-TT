@@ -1354,3 +1354,13 @@ Os binarios, hashes, caches e qualquer imagem deste lote permanecem fora do GitH
 - [ ] Fechar Endocrino (diabetes/adrenais), Gastro (DRGE/ulcera), Nefro (hidroeletrolitico) e Hemato (hemostasia) contra a taxonomia.
 - [x] Triagem visual das 9 conversoes parciais: slides comerciais predominantemente graficos, mantidos somente na biblioteca privada.
 - [ ] Habilitar OCR local em sessao futura; Tesseract/OCRmyPDF e Kimi/OpenRouter nao estao disponiveis neste runtime.
+
+## Auditoria publicada e nova fila metadata-only - 2026-08-02
+
+- Rotas publicadas verificadas: `/`, `/biblioteca/`, `/questoes/`, `/simulado/`, `/casos/`, `/midia/`, `/minha-midia/`, `/mapas-mentais/`, `/semestres/` e `/meu-curso/` responderam HTTP 200 sem marcadores de erro de aplicação.
+- Auditorias determinísticas continuam aprovadas: TypeScript, privacidade pública e banco de questões; o lint terminou sem erros e deixou apenas cinco avisos de variáveis não usadas em scripts auxiliares.
+- `sitemap.xml` e `robots.txt` não estão publicados; registrar como melhoria técnica de descoberta/indexação, sem bloquear o uso do site.
+- A build local excedeu o limite de execução nesta rodada, mas a build oficial do GitHub Actions e o deploy remoto passaram; repetir a otimização local quando houver janela maior.
+- Busca metadata-only do Drive gerou 67 candidatos médicos distintos para pendência privada, agrupados em Endocrinologia, Gastroenterologia, Nefrologia, Hematologia, Cirurgia/Trauma, Urgência/Emergência, Radiologia, Farmacologia, Imunologia e integração clínica. A lista nominal está somente no cofre Obsidian em `Pendência Drive - 70 PDFs Médicos para Triagem 2026-08-02`.
+- Os 67 candidatos não foram baixados, convertidos ou publicados. Muitos são duplicatas aparentes, livros ou cursos comerciais; aplicar hash, deduplicação e portão de direitos autorais antes de qualquer materialização.
+- Pendências de produto e qualidade confirmadas: Lighthouse/PageSpeed, axe/WCAG, teste de fluxos autenticados, matriz de falhas de rede, sitemap/robots, filtros persistentes, estados loading/erro/vazio, mapas com relações nomeadas e matriz privada fonte → semestre → subtema.

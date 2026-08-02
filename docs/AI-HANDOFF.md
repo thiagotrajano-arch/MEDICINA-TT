@@ -220,3 +220,12 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - Nenhum binario, hash, PNG, texto integral ou ID do Drive foi publicado. A proxima etapa e OCR seletivo/reparo e matriz fonte -> subtema, nao uma nova busca ampla.
 - A triagem visual confirmou que as 9 conversoes parciais sao slides comerciais graficos; 544 paginas renderizadas foram preservadas para revisao privada.
 - O runtime local nao possui Tesseract/OCRmyPDF e nao ha ferramenta Kimi/OpenRouter disponivel nesta sessao. Nao enviar material privado a servicos externos sem aprovacao e rota segura.
+
+## Auditoria do site e fila adicional do Drive - 2026-08-02
+
+- A revisão pós-publicação testou dez rotas públicas/autenticadas estáticas; todas responderam HTTP 200 e nenhuma continha `Application error`, `Unhandled Runtime Error`, `404` ou `Not Found`.
+- `npm run typecheck`, `npm run lint`, `npm run audit:privacidade` e `npm run audit:questoes` passaram. O lint produz somente cinco warnings em scripts de manutenção; não há erros bloqueantes.
+- A publicação oficial pelo GitHub Actions passou; a build local excedeu o tempo máximo nesta rodada e deve ser repetida quando for necessário otimizar o bundle.
+- `sitemap.xml` e `robots.txt` ainda não existem no Pages; tratar como P3 de SEO/descoberta, não como falha funcional.
+- A conexão autenticada do Drive foi consultada apenas por metadados e resultou em 67 candidatos médicos para a fila privada. A lista nominal está no Obsidian, não no site: `Pendência Drive - 70 PDFs Médicos para Triagem 2026-08-02`.
+- Próxima ordem segura: hash/deduplicação dos candidatos → PDF/DOCX para Markdown → OCR/renderização seletivos → vinculação a disciplina/semestre/subtema → revisão clínica e de licença → somente então conteúdo autoral ou mídia privada.
