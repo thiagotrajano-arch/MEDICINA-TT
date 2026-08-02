@@ -246,3 +246,8 @@ O redesign geral do site será feito somente após a consolidação funcional. E
 fase deve melhorar hierarquia, organização, navegação, responsividade,
 acessibilidade e consistência visual sem misturar mudanças clínicas, de banco ou
 de sincronização no mesmo lote.
+## Atualizacao operacional - 2026-08-01
+
+O lote privado do Drive avancou sem encerrar a etapa inteira: houve inventario amplo, materializacao seletiva, SHA-256, cache Markdown, imagens extraidas, renderizacao/OCR seletivos e vinculos curriculares candidatos. Nao marcar os passos 31, 36 a 42 como concluidos globalmente: ainda faltam candidatos unicos, comparacao ampla de hashes e revisao manual. Nenhum material privado foi publicado.
+
+Auditoria atual do banco publico: 1.072 questoes, zero repeticoes, comentarios curtos, comentarios vazios ou fontes ausentes. Os proximos itens editoriais sao revisao clinica por diretriz vigente e expansao somente de lacunas comprovadas.

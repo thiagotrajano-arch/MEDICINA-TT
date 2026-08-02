@@ -1238,3 +1238,9 @@ Resultado: 1.072 questoes auditadas, 0 repeticoes, 0 comentarios curtos, 0 vazio
 - As rotas privadas `drive:download-local` e `drive:local` estao prontas para baixar somente PDF/DOCX autorizados, calcular hashes, conservar uma copia canonica e escrever manifesto privado. Elas devem ser executadas somente com credenciais Google proprias e escopo de pastas configurado, nunca com segredos em Git.
 - A proxima retomada nao deve reabrir os lotes de questoes ja fechados. A ordem e: materializacao privada seletiva do Drive -> PDF/DOCX para Markdown -> OCR/renderizacao apenas quando necessario -> matriz fonte/plano/semestre/tema/subtema/destino -> revisao clinica autoral baseada em diretrizes vigentes -> midia licenciada e mapas conceituais reais. Anki e redesign geral ficam depois desses blocos.
 - Permanecem pendentes os testes reais de login, recuperacao, sessao persistente, sincronizacao em duas sessoes/dispositivos, RLS e experiencia de falha de rede. Nenhuma senha deve ser usada em script, commit ou documento.
+## Estado atual - 2026-08-01
+
+- Publicacao mais recente: documentacao sanitizada do lote privado do Drive; PDFs, OCR, imagens e identificadores ficaram fora do Git.
+- Auditoria atual: 1.072 questoes, zero repeticoes, comentarios curtos, comentarios vazios ou fontes ausentes.
+- Drive: inventario amplo concluido e lotes seletivos ja processados; falta continuar somente com fontes medicas unicas e ligacao final a planos/subtemas.
+- Prioridades seguintes: validar login/progresso em producao, concluir matriz privada curso-material, revisar conteudo clinico por diretrizes vigentes, organizar midia licenciada, mapas mentais reais e Anki Desktop.
