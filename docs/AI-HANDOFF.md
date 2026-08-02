@@ -184,3 +184,11 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - Pendencias de produto: benchmarking de AMBOSS/Osmosis e design systems acessiveis; brief visual; arquitetura de informacao; kit de componentes; leitura sem distracao; treino de questoes com retomada; midia publica/privada; mapas clinicos com relacoes nomeadas; estados de erro/loading; Lighthouse/axe; testes de fluxos.
 - Antigravity nao esta disponivel na sessao atual. Product Design/Figma/Build Web Apps/Sentry/PostHog/Vercel foram apenas listados como candidatos para avaliacao posterior; nenhum foi instalado.
 - Preservar todo o acervo atual, progresso, autentificacao, catalogos privados e separacao entre publico/comercial/paciente. A ordem recomendada e: seguranca e autenticacao -> aprendizagem/benchmarking -> arquitetura -> qualidade -> acervo e SISCAD -> Anki.
+
+## Atualizacao do acervo privado - 2026-08-02
+
+- A conexao autenticada do Drive foi reutilizada sem novo fluxo de login.
+- Tres PDFs de resumo OMED foram materializados seletivamente em `Desktop\\MEDICINA\\_private-corpus\\drive-lote-20260802` (Pneumologia, GO e Pediatria). O lote tem 3 arquivos unicos, com SHA-256 e copia canonica por hash.
+- O pipeline `PDF -> Markdown` foi executado uma vez para cada arquivo: 230 paginas, 521.699 caracteres extraiveis, nenhuma pagina exclusivamente-imagem e nenhum erro de conversao.
+- O lote e privado: nenhum binario, hash, texto comercial ou imagem foi adicionado ao repositorio, ao site publico ou a uma nota compartilhavel. A renderizacao visual permanece pendente porque o wrapper Poppler local nao esta operacional neste runtime.
+- Proxima fila: comparar hashes com o manifesto amplo, selecionar somente fontes novas, relacionar ao mapa privado de semestres/SISCAD e validar clinicamente antes de produzir conteudo autoral.

@@ -1313,3 +1313,15 @@ Esta rodada foi somente de auditoria e planejamento. Nenhuma nova alteracao visu
 ### Ordem recomendada de retomada
 
 P0 seguranca/autenticacao -> P1 especificacao e benchmarking -> P2 arquitetura visual -> P3 qualidade e acessibilidade -> P4 acervo/SISCAD/conteudo -> Anki -> nova publicacao.
+
+## Materializacao privada do Drive - 2026-08-02
+
+- [x] Reutilizar a conexao autenticada do Google Drive e buscar candidatos medicos por metadados.
+- [x] Materializar seletivamente tres PDFs de resumos OMED (Pneumologia, GO e Pediatria) em `Desktop\\MEDICINA\\_private-corpus\\drive-lote-20260802`.
+- [x] Calcular SHA-256 real e criar copia canonica por hash; o lote atual tem 3 arquivos unicos e 0 duplicatas.
+- [x] Converter os tres PDFs para Markdown cacheado; 230 paginas e 521.699 caracteres extraiveis, 0 paginas exclusivamente-imagem e 0 erros.
+- [ ] Renderizar paginas clinicas selecionadas e extrair/revisar imagens quando o runtime Poppler estiver disponivel; nao publicar capturas comerciais.
+- [ ] Comparar os hashes do lote com o manifesto amplo, fechar a matriz fonte -> semestre -> disciplina -> subtema -> destino e revisar clinicamente antes de qualquer integracao.
+- [ ] Continuar com Cirurgia, Cardiologia, Neurologia, Hematologia e Gastroenterologia somente apos deduplicacao contra os caches existentes.
+
+Os binarios, hashes, caches e qualquer imagem deste lote permanecem fora do GitHub e da documentacao publica.
