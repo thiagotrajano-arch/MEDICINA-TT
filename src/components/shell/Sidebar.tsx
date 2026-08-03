@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { LayoutDashboard, Library, ListChecks, Timer, Stethoscope, Images, Network, GraduationCap, LockKeyhole, ChevronRight, Sparkles } from "lucide-react";
+import { LayoutDashboard, Library, ListChecks, Timer, Stethoscope, Images, Network, GraduationCap, LockKeyhole, CalendarDays, ChevronRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { Disciplina, GrupoDisciplina } from "@/domain/content/types";
 
@@ -16,6 +16,7 @@ const NAV = [
   { href: "/mapas-mentais", label: "Mapas mentais", icon: Network },
   { href: "/semestres", label: "Trilhas por semestre", icon: GraduationCap },
   { href: "/meu-curso", label: "Meu curso", icon: LockKeyhole },
+  { href: "/agenda", label: "Agenda privada", icon: CalendarDays },
 ];
 const NAV_MEDIA = [
   { href: "/midia", label: "Midia publica", icon: Images },
