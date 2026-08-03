@@ -19,6 +19,8 @@
     "fonte:md": "tsx scripts/fonte-para-md.mts",
     "render:private": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/render-private-pdfs.ps1",
     "anki:status": "tsx scripts/anki-connect.mts status",
+    "anki:progresso": "tsx scripts/anki-connect.mts progresso",
+    "anki:neuro-pendente": "tsx scripts/anki-connect.mts lote-neuro-pendente",
     "anki:resumo": "tsx scripts/anki-connect.mts resumo",
     "anki:erros": "tsx scripts/anki-connect.mts erros",
     "anki:csv": "tsx scripts/anki-connect.mts csv-resumo"

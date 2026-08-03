@@ -17,6 +17,7 @@ import {
   sincronizarProgressoConteudos,
   type ProgressoConteudo,
 } from "@/lib/progresso-conteudo";
+import { AnkiProgressImport } from "@/components/dashboard/AnkiProgressImport";
 
 interface Props {
   disciplinas: Disciplina[];
@@ -120,6 +121,8 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
           <Atividade dias={stats.ultimos14Dias} />
         </section>
       )}
+
+      <AnkiProgressImport />
 
       {/* Desempenho por disciplina */}
       {temProgresso && stats && (

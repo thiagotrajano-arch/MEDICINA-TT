@@ -30,7 +30,7 @@ async function anki<T>(action: string, params: Record<string, unknown> = {}): Pr
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ action, version: 6, params }),
-    signal: AbortSignal.timeout(4000),
+    signal: AbortSignal.timeout(15000),
   });
   if (!resposta.ok) throw new Error(`AnkiConnect respondeu HTTP ${resposta.status}.`);
   const corpo = await resposta.json() as RespostaAnki<T>;
@@ -138,6 +138,73 @@ async function status() {
   console.log(`[anki] conectado ao AnkiConnect v${versao}. ${decks.length} deck(s) disponíveis.`);
 }
 
+async function exportarProgressoAnki() {
+  const decks = (await anki<string[]>("deckNames"))
+    .filter((deck) => deck.startsWith("Codex Medicus - "));
+  const estatisticas: Record<string, {
+    name: string;
+    new: number;
+    learn: number;
+    review: number;
+    due: number;
+    cards: number;
+    newToday: number;
+    learnToday: number;
+    reviewToday: number;
+  }> = {};
+  // O AnkiConnect instalado nesta máquina não expõe deckStats. A leitura
+  // equivalente por findCards/cardsInfo é compatível com a versão atual e
+  // não altera intervalos, histórico ou conteúdo dos cartões.
+  for (const deck of decks) {
+    const cardIds = await anki<number[]>("findCards", { query: `deck:"${deck}"` });
+    const cards: Array<{ queue: number; type: number; due: number; mod: number; reps: number }> = [];
+    for (let i = 0; i < cardIds.length; i += 25) {
+      const lote = cardIds.slice(i, i + 25);
+      try {
+        cards.push(...await anki<Array<{ queue: number; type: number; due: number; mod: number; reps: number }>>("cardsInfo", { cards: lote }));
+      } catch {
+        // Algumas compilações do Anki no Windows recusam lotes; degrade para
+        // chamadas unitárias, sem interromper a exportação.
+        for (const cardId of lote) {
+          try { cards.push(...await anki<Array<{ queue: number; type: number; due: number; mod: number; reps: number }>>("cardsInfo", { cards: [cardId] })); } catch { /* cartão removido durante a leitura */ }
+        }
+      }
+    }
+    const inicioHoje = Math.floor(Date.now() / 86400000) * 86400;
+    estatisticas[deck] = {
+      name: deck,
+      cards: cards.length,
+      new: cards.filter((card) => card.type === 0).length,
+      learn: cards.filter((card) => card.queue === 1 || card.queue === 3).length,
+      review: cards.filter((card) => card.queue === 2).length,
+      due: cards.filter((card) => card.queue === 1 || card.queue === 2 || card.queue === 3).length,
+      newToday: 0,
+      learnToday: 0,
+      reviewToday: cards.filter((card) => card.reps > 0 && card.mod >= inicioHoje).length,
+    };
+  }
+  const relatorio = {
+    schemaVersion: 1 as const,
+    generatedAt: new Date().toISOString(),
+    source: "anki-connect-local" as const,
+    decks: Object.entries(estatisticas).map(([, dados]) => ({
+      name: dados.name,
+      cards: Number(dados.cards ?? 0),
+      new: Number(dados.new ?? 0),
+      learn: Number(dados.learn ?? 0),
+      review: Number(dados.review ?? 0),
+      due: Number(dados.due ?? 0),
+      newToday: Number(dados.newToday ?? 0),
+      learnToday: Number(dados.learnToday ?? 0),
+      reviewToday: Number(dados.reviewToday ?? 0),
+    })),
+  };
+  const destino = resolve(saidaArg ?? "exports/anki/progresso.json");
+  await mkdir(dirname(destino), { recursive: true });
+  await writeFile(destino, `${JSON.stringify(relatorio, null, 2)}\n`, "utf8");
+  console.log(`[anki] Relatório local criado: ${destino} (${relatorio.decks.length} deck(s)).`);
+}
+
 async function garantirDeck(deck: string): Promise<void> {
   const decks = await anki<string[]>("deckNames");
   if (decks.includes(deck)) return;
@@ -240,8 +307,14 @@ async function criarLotePrioritario() {
       continue;
     }
     const esperados = CONTEUDOS[item.id].blocos.filter((bloco) => textoLimpo(bloco.corpo).length >= 40).length;
-    const existentes = await anki<number[]>("findNotes", { query: `deck:"${deck}" tag:${tagSubtema(item.id)}` });
-    if (existentes.length < esperados) {
+    try {
+      const existentes = await anki<number[]>("findNotes", { query: `deck:"${deck}" tag:${tagSubtema(item.id)}` });
+      if (existentes.length < esperados) {
+        pendentes.push(item);
+        incompletos += 1;
+      }
+    } catch (erro) {
+      console.error(`[anki] não foi possível conferir ${item.id}; será tratado como pendente: ${erro instanceof Error ? erro.message : String(erro)}`);
       pendentes.push(item);
       incompletos += 1;
     }
@@ -249,6 +322,48 @@ async function criarLotePrioritario() {
   console.log(`[anki] Prioritárias OMED: ${candidatos.length} subtemas com resumo; ${semDeck} sem deck; ${incompletos} incompletos.`);
   for (const [index, item] of pendentes.entries()) {
     console.log(`[anki] ${index + 1}/${pendentes.length} — ${item.id}`);
+    try {
+      await criarDeResumo(item.id);
+    } catch (erro) {
+      console.error(`[anki] falha registrada: ${item.id} — ${erro instanceof Error ? erro.message : String(erro)}`);
+    }
+  }
+}
+
+async function criarLoteNeuroPendente() {
+  const disciplina = DISCIPLINAS.find((item) => item.id === "neuro");
+  if (!disciplina) throw new Error("Disciplina de Neurologia não encontrada.");
+  const decks = await anki<string[]>("deckNames");
+  const candidatos = disciplina.temas.flatMap((tema) => tema.subtemas
+    .filter((subtema) => CONTEUDOS[subtema.id])
+    .map((subtema) => ({ id: subtema.id, slug: subtema.slug, disciplina, altoRendimento: Boolean(subtema.altoRendimento) })))
+    .sort((a, b) => Number(b.altoRendimento) - Number(a.altoRendimento));
+  const pendentes: typeof candidatos = [];
+  let semDeck = 0;
+  let incompletos = 0;
+  for (const item of candidatos) {
+    const deck = nomeDeck(item.id, item.disciplina.slug, item.slug);
+    if (!decks.includes(deck)) {
+      pendentes.push(item);
+      semDeck += 1;
+      continue;
+    }
+    const esperados = CONTEUDOS[item.id].blocos.filter((bloco) => textoLimpo(bloco.corpo).length >= 40).length;
+    try {
+      const existentes = await anki<number[]>("findNotes", { query: `deck:"${deck}" tag:${tagSubtema(item.id)}` });
+      if (existentes.length < esperados) {
+        pendentes.push(item);
+        incompletos += 1;
+      }
+    } catch (erro) {
+      console.error(`[anki] não foi possível conferir ${item.id}; será tratado como pendente: ${erro instanceof Error ? erro.message : String(erro)}`);
+      pendentes.push(item);
+      incompletos += 1;
+    }
+  }
+  console.log(`[anki] Neurologia: ${candidatos.length} subtemas com resumo; ${semDeck} sem deck; ${incompletos} incompletos.`);
+  for (const [index, item] of pendentes.entries()) {
+    console.log(`[anki] Neuro ${index + 1}/${pendentes.length} — ${item.id}`);
     try {
       await criarDeResumo(item.id);
     } catch (erro) {
@@ -281,6 +396,7 @@ async function exportarResumoCsv(id: string) {
 
 async function main() {
   if (comando === "status") return status();
+  if (comando === "progresso") return exportarProgressoAnki();
   if (comando === "resumo") {
     if (!subtemaId) throw new Error("Informe --subtema <id>.");
     return criarDeResumo(subtemaId);
@@ -295,6 +411,7 @@ async function main() {
   }
   if (comando === "lote-omed-neuro") return criarLoteOmedNeuro();
   if (comando === "lote-prioritario") return criarLotePrioritario();
+  if (comando === "lote-neuro-pendente") return criarLoteNeuroPendente();
   throw new Error("Comando inválido. Use status, resumo, erros ou csv-resumo.");
 }
 
