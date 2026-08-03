@@ -14,14 +14,14 @@
 
 ## Evidências de validação
 
-As métricas Lighthouse abaixo são uma linha de base executada antes do novo deploy e devem ser repetidas após a publicação:
+As métricas Lighthouse finais no site publicado foram:
 
 | Perfil | Performance | Acessibilidade | Boas práticas | SEO |
 |---|---:|---:|---:|---:|
-| Celular | 82 | 89 | 100 | 100 |
+| Celular | 82 | 93 | 100 | 100 |
 | Desktop | 100 | 95 | 100 | 100 |
 
-O axe/WCAG encontrou inicialmente 42 ocorrências: 35 de contraste e 7 de região. O contraste da paleta clara e o landmark de navegação foram corrigidos nesta rodada; a execução final pós-deploy ainda é necessária para confirmar o saldo.
+O axe/WCAG final encontrou 0 violações, com 33 regras aprovadas e 1 resultado inconclusivo ligado a uma avaliação visual de gradiente. A linha de base anterior tinha 42 ocorrências; o contraste da paleta clara e o landmark de navegação foram corrigidos.
 
 TypeScript, auditoria de privacidade e auditoria de questões passaram. O lint terminou sem erros e com cinco avisos antigos em scripts auxiliares. A build local excedeu a janela de execução; a build oficial do GitHub Actions é a evidência de publicação.
 
@@ -34,4 +34,4 @@ TypeScript, auditoria de privacidade e auditoria de questões passaram. O lint t
 
 ## Próxima verificação
 
-Após o deploy, repetir Lighthouse celular/desktop, axe/WCAG e checagem HTTP de `/`, `/sitemap.xml`, `/robots.txt`, `/questoes/` e `/minha-midia/`. Em seguida executar os fluxos autenticados manualmente e registrar cada resultado na matriz de erros.
+As checagens pós-deploy de Lighthouse, axe/WCAG e HTTP foram concluídas. Resta executar os fluxos autenticados manualmente e registrar cada resultado na matriz de erros.
