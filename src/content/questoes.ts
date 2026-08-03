@@ -1,5 +1,6 @@
 import type { Questao } from "@/domain/content/types";
 import { QUESTOES_GO } from "./questoes/go";
+import { QUESTOES_GO_LOTE_01 } from "./questoes/go-lote-01";
 import { QUESTOES_PED } from "./questoes/pediatria";
 import { QUESTOES_CIR } from "./questoes/cirurgia";
 import { QUESTOES_INF } from "./questoes/infectologia";
@@ -35,6 +36,7 @@ import { QUESTOES_DERMA } from "./questoes/derma";
  */
 export const QUESTOES: Questao[] = [
   ...QUESTOES_GO,
+  ...QUESTOES_GO_LOTE_01,
   ...QUESTOES_PED,
   ...QUESTOES_CIR,
   ...QUESTOES_INF,
