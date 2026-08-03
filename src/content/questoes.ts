@@ -3,6 +3,7 @@ import { QUESTOES_GO } from "./questoes/go";
 import { QUESTOES_PED } from "./questoes/pediatria";
 import { QUESTOES_CIR } from "./questoes/cirurgia";
 import { QUESTOES_INF } from "./questoes/infectologia";
+import { QUESTOES_INF_LOTE_01 } from "./questoes/infectologia-lote-01";
 import { QUESTOES_MFC } from "./questoes/mfc";
 import { QUESTOES_ORIGINAIS } from "./questoes/originais";
 import { QUESTOES_OMED_EXTRAIDAS } from "./omed-extraidos";
@@ -37,6 +38,7 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_PED,
   ...QUESTOES_CIR,
   ...QUESTOES_INF,
+  ...QUESTOES_INF_LOTE_01,
   ...QUESTOES_MFC,
   ...QUESTOES_OMED_EXTRAIDAS,
   ...QUESTOES_PENDENTES_EXTRAIDAS,
