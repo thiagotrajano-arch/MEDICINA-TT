@@ -26,7 +26,7 @@ export function Sidebar({ disciplinas, grupos, onNavigate }: { disciplinas: Disc
   const pathname = usePathname();
   const [openGrupo, setOpenGrupo] = useState<string | null>("Materno-Infantil");
   const itemClass = (active: boolean) => cn("flex min-h-10 items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors", active ? "bg-accent-soft text-accent" : "text-text-muted hover:bg-surface-2 hover:text-text");
-  return <div className="flex h-full flex-col">
+  return <div role="navigation" aria-label="Navegação lateral" className="flex h-full flex-col">
     <div className="flex items-center gap-2.5 px-5 py-4"><div className="grid size-9 place-items-center rounded-xl bg-accent font-black text-accent-contrast shadow-sm">C</div><div className="leading-tight"><div className="text-sm font-bold text-text">Codex Medicus</div><div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-text-faint">Estudo · OMED · Residencia</div></div></div>
     <nav className="px-3 pb-2" aria-label="Navegacao principal">
       <p className="mb-2 px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-text-faint">Estudo</p>

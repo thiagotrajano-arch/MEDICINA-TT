@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Check, X, ChevronRight, RotateCcw, ListChecks, PartyPopper } from "lucide-react";
+import { Check, X, ChevronRight, RotateCcw, ListChecks, PartyPopper, CalendarClock, History } from "lucide-react";
 import type { Disciplina, Questao } from "@/domain/content/types";
 import { registrarResposta, lerRespostas, sincronizarProgresso } from "@/lib/progresso";
 import { cn } from "@/lib/cn";
@@ -22,9 +22,13 @@ export function QuizClient({
   questoes: Questao[];
   disciplinas: Disciplina[];
 }) {
+  type ModoFila = "novas" | "erros" | "revisao" | "todas";
+  const CHAVE_FILTROS = "codex:questoes-filtros";
   const [filtro, setFiltro] = useState<string>("todas");
+  const [modoFila, setModoFila] = useState<ModoFila>("novas");
   const [mostrarRespondidas, setMostrarRespondidas] = useState(false);
   const [respondidasBase, setRespondidasBase] = useState<Set<string>>(new Set());
+  const [historico, setHistorico] = useState<ReturnType<typeof lerRespostas>>([]);
 
   const [fila, setFila] = useState<Questao[]>(questoes);
   const [totalNaSelecao, setTotalNaSelecao] = useState(questoes.length);
@@ -38,9 +42,26 @@ export function QuizClient({
     return disciplinas.filter((d) => ids.has(d.id));
   }, [questoes, disciplinas]);
 
-  function montarFila(filtroAtual: string, incluirRespondidas: boolean, base: Set<string>) {
+  function montarFila(filtroAtual: string, incluirRespondidas: boolean, base: Set<string>, historicoAtual: ReturnType<typeof lerRespostas>, modoAtual: ModoFila) {
     const pool = filtroAtual === "todas" ? questoes : questoes.filter((q) => q.disciplinaId === filtroAtual);
-    const disponiveis = incluirRespondidas ? pool : pool.filter((q) => !base.has(q.id));
+    const maisRecente = new Map<string, ReturnType<typeof lerRespostas>[number]>();
+    for (const resposta of historicoAtual) {
+      const anterior = maisRecente.get(resposta.questaoId);
+      if (!anterior || resposta.em > anterior.em) maisRecente.set(resposta.questaoId, resposta);
+    }
+    const agora = Date.now();
+    const disponiveis = pool.filter((q) => {
+      if (incluirRespondidas || modoAtual === "todas") return true;
+      const resposta = maisRecente.get(q.id);
+      if (modoAtual === "novas") return !resposta && !base.has(q.id);
+      if (modoAtual === "erros") return resposta ? !resposta.correta : false;
+      if (modoAtual === "revisao") {
+        if (!resposta) return true;
+        const intervalo = resposta.correta ? 7 : 1;
+        return agora - resposta.em >= intervalo * 24 * 60 * 60 * 1000;
+      }
+      return true;
+    });
     setFila(disponiveis);
     setTotalNaSelecao(pool.length);
     setTotalFila(disponiveis.length);
@@ -55,21 +76,30 @@ export function QuizClient({
     let ativo = true;
     void Promise.resolve().then(() => {
       if (!ativo) return;
-      const base = new Set(lerRespostas().map((r) => r.questaoId));
+      const locais = lerRespostas();
+      const preferencias = (() => { try { return JSON.parse(window.localStorage.getItem(CHAVE_FILTROS) ?? "{}"); } catch { return {}; } })() as { filtro?: string; modo?: ModoFila };
+      const filtroInicial = preferencias.filtro && disciplinas.some((d) => d.id === preferencias.filtro) ? preferencias.filtro : "todas";
+      const modoInicial: ModoFila = preferencias.modo === "erros" || preferencias.modo === "revisao" || preferencias.modo === "todas" ? preferencias.modo : "novas";
+      setFiltro(filtroInicial);
+      setModoFila(modoInicial);
+      setHistorico(locais);
+      const base = new Set(locais.map((r) => r.questaoId));
       setRespondidasBase(base);
-      montarFila(filtro, mostrarRespondidas, base);
+      montarFila(filtroInicial, false, base, locais, modoInicial);
     });
     void sincronizarProgresso().then((p) => {
       if (!ativo) return;
       // A resposta pode ter sido dada enquanto a leitura remota estava em voo.
       // Releia o armazenamento local antes de reconstruir a fila para nunca
       // reintroduzir uma questão recém-respondida por uma resposta remota antiga.
+      const historicoAtual = p.respostas;
       const base = new Set([
         ...lerRespostas().map((r) => r.questaoId),
-        ...p.respostas.map((r) => r.questaoId),
+        ...historicoAtual.map((r) => r.questaoId),
       ]);
       setRespondidasBase(base);
-      montarFila(filtro, mostrarRespondidas, base);
+      setHistorico(historicoAtual);
+      montarFila(filtro, mostrarRespondidas, base, historicoAtual, modoFila);
     });
     return () => {
       ativo = false;
@@ -88,6 +118,7 @@ export function QuizClient({
     // Alimenta o progresso do dashboard (persistido no navegador).
     registrarResposta(questao, acertou);
     setRespondidasBase((base) => new Set(base).add(questao.id));
+    setHistorico(lerRespostas());
   };
 
   const proxima = () => {
@@ -98,12 +129,20 @@ export function QuizClient({
   const reset = (novoFiltro: string) => {
     setFiltro(novoFiltro);
     setMostrarRespondidas(false);
-    montarFila(novoFiltro, false, respondidasBase);
+    window.localStorage.setItem(CHAVE_FILTROS, JSON.stringify({ filtro: novoFiltro, modo: modoFila }));
+    montarFila(novoFiltro, false, respondidasBase, historico, modoFila);
+  };
+
+  const trocarModo = (novoModo: ModoFila) => {
+    setModoFila(novoModo);
+    setMostrarRespondidas(false);
+    window.localStorage.setItem(CHAVE_FILTROS, JSON.stringify({ filtro, modo: novoModo }));
+    montarFila(filtro, false, respondidasBase, historico, novoModo);
   };
 
   const revisarRespondidas = () => {
     setMostrarRespondidas(true);
-    montarFila(filtro, true, respondidasBase);
+    montarFila(filtro, true, respondidasBase, historico, "todas");
   };
 
   const ocultas = totalNaSelecao - totalFila;
@@ -163,7 +202,13 @@ export function QuizClient({
       </div>
 
       {/* Filters */}
-      <div className="mb-6 flex flex-wrap gap-2">
+      <div className="mb-3 flex flex-wrap gap-2" aria-label="Fila de questões">
+        <FiltroChip label="Novas" active={modoFila === "novas"} onClick={() => trocarModo("novas")} />
+        <FiltroChip label="Erros" active={modoFila === "erros"} onClick={() => trocarModo("erros")} />
+        <FiltroChip label="Revisão" active={modoFila === "revisao"} onClick={() => trocarModo("revisao")} />
+        <FiltroChip label="Todas" active={modoFila === "todas"} onClick={() => trocarModo("todas")} />
+      </div>
+      <div className="mb-6 flex flex-wrap gap-2" aria-label="Filtrar por disciplina">
         <FiltroChip label="Todas" active={filtro === "todas"} onClick={() => reset("todas")} />
         {disciplinasComQ.map((d) => (
           <FiltroChip
@@ -174,6 +219,11 @@ export function QuizClient({
           />
         ))}
       </div>
+
+      <p className="mb-4 flex items-center gap-1.5 text-xs text-text-faint">
+        {modoFila === "revisao" ? <CalendarClock className="size-3.5" /> : <History className="size-3.5" />}
+        A fila é salva neste dispositivo e sincronizada quando sua sessão estiver ativa.
+      </p>
 
       {/* Card */}
       <div

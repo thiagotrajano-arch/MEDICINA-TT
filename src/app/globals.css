@@ -14,8 +14,8 @@
   --border-strong: #c5d1d8;
   --text: #102a43;
   --text-muted: #526779;
-  --text-faint: #7f929f;
-  --accent: #087f8c;
+  --text-faint: #5e7180;
+  --accent: #006b76;
   --accent-soft: #d9f0f1;
   --accent-contrast: #ffffff;
   --gold: #b7791f;
@@ -96,6 +96,7 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 .mindmap-node-left { text-align: right; }
 .mindmap-node-right { text-align: left; }
 .mindmap-arrow { flex: none; font-size: .95rem; font-weight: 900; }
+.mindmap-relation { font-size: .57rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; opacity: .72; }
 .mindmap-amber { color: #a45b00; background: #fff4d8; }
 .mindmap-pink { color: #a52a62; background: #ffe3ef; }
 .mindmap-sky { color: #075985; background: #dff3ff; }

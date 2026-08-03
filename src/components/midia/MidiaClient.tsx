@@ -86,6 +86,8 @@ interface GrupoFiguras {
 export function MidiaClient() {
   const [q, setQ] = useState("");
   const [area, setArea] = useState<string>("todas");
+  const [modalidade, setModalidade] = useState<"todas" | "imagem" | "diagrama">("todas");
+  const [licenca, setLicenca] = useState("todas");
   const [limite, setLimite] = useState(12);
 
   const figuras = useMemo(() => Object.values(FIGURAS), []);
@@ -93,11 +95,18 @@ export function MidiaClient() {
     () => Array.from(new Set(figuras.map((f) => areaDe(f.id)))).sort(),
     [figuras]
   );
+  const licencas = useMemo(
+    () => Array.from(new Set(figuras.map((f) => f.imagem?.licenca ?? "Autoral"))).sort((a, b) => a.localeCompare(b, "pt-BR")),
+    [figuras],
+  );
 
   const filtradas = useMemo(() => {
     const termo = normalizar(q.trim());
     return figuras.filter((f) => {
       if (area !== "todas" && areaDe(f.id) !== area) return false;
+      if (modalidade === "imagem" && !f.imagem) return false;
+      if (modalidade === "diagrama" && f.imagem) return false;
+      if (licenca !== "todas" && (f.imagem?.licenca ?? "Autoral") !== licenca) return false;
       if (!termo) return true;
       return (
         normalizar(f.titulo).includes(termo) ||
@@ -105,7 +114,7 @@ export function MidiaClient() {
         normalizar(ONDE_APARECE[f.id]?.rotulo ?? "").includes(termo)
       );
     });
-  }, [figuras, q, area]);
+  }, [figuras, q, area, modalidade, licenca]);
 
   const renderizadas = filtradas.slice(0, limite);
 
@@ -161,7 +170,7 @@ export function MidiaClient() {
       </div>
 
       {/* busca + filtros */}
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+      <div className="mt-6 flex flex-col gap-3">
         <div className="flex h-10 flex-1 items-center gap-2.5 rounded-lg border border-border bg-surface px-3">
           <Search className="size-4 flex-none text-text-faint" />
           <input
@@ -171,11 +180,15 @@ export function MidiaClient() {
             className="w-full bg-transparent text-sm text-text outline-none placeholder:text-text-faint"
           />
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2" aria-label="Filtrar por disciplina">
           <Chip label="Todas" ativo={area === "todas"} onClick={() => setArea("todas")} />
           {areas.map((a) => (
             <Chip key={a} label={a} ativo={area === a} onClick={() => setArea(a)} />
           ))}
+        </div>
+        <div className="grid gap-2 sm:grid-cols-2" aria-label="Filtrar mídia por tipo e licença">
+          <label className="flex items-center gap-2 text-xs text-text-muted"><span>Tipo</span><select value={modalidade} onChange={(e) => { setModalidade(e.target.value as typeof modalidade); setLimite(12); }} className="min-w-0 flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm text-text"><option value="todas">Todos</option><option value="imagem">Imagens clínicas</option><option value="diagrama">Diagramas autorais</option></select></label>
+          <label className="flex items-center gap-2 text-xs text-text-muted"><span>Licença</span><select value={licenca} onChange={(e) => { setLicenca(e.target.value); setLimite(12); }} className="min-w-0 flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm text-text"><option value="todas">Todas</option>{licencas.map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
         </div>
       </div>
 
@@ -230,6 +243,7 @@ function FiguraCard({
   figura: Figura;
   onde: { subtemaId: string; rotulo: string } | undefined;
 }) {
+  const webp = f.imagem && /\.(jpe?g|png)$/i.test(f.imagem.src) ? `${f.imagem.src}.webp` : null;
   return (
     <figure className="overflow-hidden rounded-xl border border-border bg-surface-2">
       <div className="flex items-center justify-between gap-2 border-b border-border px-4 py-2">
@@ -240,13 +254,10 @@ function FiguraCard({
       </div>
       {f.imagem ? (
         <div className="bg-black/[0.03] px-3 py-4 dark:bg-white/[0.02]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={asset(f.imagem.src)}
-            alt={f.imagem.alt}
-            loading="lazy"
-            className="mx-auto max-h-[340px] w-auto max-w-full rounded-lg"
-          />
+          <picture>
+            {webp && <source srcSet={asset(webp)} type="image/webp" />}
+            <img src={asset(f.imagem.src)} alt={f.imagem.alt} loading="lazy" decoding="async" className="mx-auto max-h-[340px] w-auto max-w-full rounded-lg" />
+          </picture>
         </div>
       ) : (
         <div className="overflow-x-auto px-3 py-4">

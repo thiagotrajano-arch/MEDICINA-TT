@@ -28,6 +28,7 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
   const [preview, setPreview] = useState<LinhaImportacaoCurso[]>([]);
   const [confirmarImportacao, setConfirmarImportacao] = useState(false);
   const [filtroStatus, setFiltroStatus] = useState<FiltroStatus>("todos");
+  const [filtroPeriodo, setFiltroPeriodo] = useState("todos");
 
   const porId = useMemo(() => new Map(disciplinasDisponiveis.map((disciplina) => [disciplina.disciplinaId, disciplina])), [disciplinasDisponiveis]);
   const aliasesDisciplinas = useMemo(() => new Map(disciplinasDisponiveis.flatMap((disciplina) => [
@@ -37,7 +38,7 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
   ])), [disciplinasDisponiveis]);
   const validosImportacao = preview.filter((linha) => linha.entrada);
   const errosImportacao = preview.filter((linha) => linha.erros.length);
-  const disciplinasFiltradas = filtroStatus === "todos" ? disciplinas : disciplinas.filter((disciplina) => disciplina.status === filtroStatus);
+  const disciplinasFiltradas = disciplinas.filter((disciplina) => (filtroStatus === "todos" || disciplina.status === filtroStatus) && (filtroPeriodo === "todos" || String(disciplina.periodo ?? "") === filtroPeriodo));
   const prioridades = useMemo(() => disciplinas.map((registro) => ({ registro, recurso: porId.get(registro.disciplinaId) })).filter((item): item is { registro: DisciplinaCursoPrivado; recurso: DisciplinaDisponivel } => Boolean(item.recurso)).sort((a, b) => ORDEM_STATUS[a.registro.status] - ORDEM_STATUS[b.registro.status] || (b.registro.dificuldade ?? 0) - (a.registro.dificuldade ?? 0) || b.recurso.lacunasDeConteudo - a.recurso.lacunasDeConteudo).slice(0, 3), [disciplinas, porId]);
   const cobertura = useMemo(() => disciplinas.reduce((total, registro) => {
     const recurso = porId.get(registro.disciplinaId);
@@ -71,7 +72,26 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
     return () => { ativo = false; };
   }, []);
 
+  useEffect(() => {
+    void Promise.resolve().then(() => {
+      try {
+        const salvo = window.localStorage.getItem("codex:curso-filtros");
+        if (salvo) {
+          const valor = JSON.parse(salvo) as { status?: FiltroStatus; periodo?: string };
+          if (valor.status) setFiltroStatus(valor.status);
+          if (valor.periodo) setFiltroPeriodo(valor.periodo);
+        }
+      } catch { /* preferência local opcional */ }
+    });
+  }, []);
+
   useEffect(() => { if (autenticado) salvarRascunhoCurso(rascunho); }, [autenticado, rascunho]);
+
+  const salvarFiltros = (status: FiltroStatus, periodo: string) => {
+    setFiltroStatus(status);
+    setFiltroPeriodo(periodo);
+    window.localStorage.setItem("codex:curso-filtros", JSON.stringify({ status, periodo }));
+  };
 
   const alterar = <K extends keyof EntradaCursoPrivado>(campo: K, valor: EntradaCursoPrivado[K]) => {
     setRascunho((atual) => ({ ...atual, [campo]: valor }));
@@ -186,7 +206,7 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
       </section>
 
       <section className="mt-6 rounded-2xl border border-border bg-surface p-5 sm:p-6" style={{ boxShadow: "var(--shadow)" }}>
-        <div className="flex flex-wrap items-center justify-between gap-3"><h2 className="flex items-center gap-2 text-lg font-bold text-text"><BookOpen className="size-5 text-accent" /> Disciplinas registradas</h2>{disciplinas.length > 0 && <div className="flex items-center gap-1 rounded-lg bg-surface-2 p-1 text-xs"><ListFilter className="ml-1 size-3 text-text-faint" />{(["todos", ...STATUS_CURSO] as FiltroStatus[]).map((status) => <button key={status} aria-pressed={filtroStatus === status} onClick={() => setFiltroStatus(status)} className={`rounded-md px-2 py-1 font-semibold ${filtroStatus === status ? "bg-surface text-accent shadow-sm" : "text-text-muted hover:text-text"}`}>{status === "todos" ? "Todas" : STATUS_LABEL[status]}</button>)}</div>}</div>
+        <div className="flex flex-wrap items-center justify-between gap-3"><h2 className="flex items-center gap-2 text-lg font-bold text-text"><BookOpen className="size-5 text-accent" /> Disciplinas registradas</h2>{disciplinas.length > 0 && <div className="flex flex-wrap items-center gap-1 rounded-lg bg-surface-2 p-1 text-xs"><ListFilter className="ml-1 size-3 text-text-faint" />{(["todos", ...STATUS_CURSO] as FiltroStatus[]).map((status) => <button key={status} aria-pressed={filtroStatus === status} onClick={() => salvarFiltros(status, filtroPeriodo)} className={`rounded-md px-2 py-1 font-semibold ${filtroStatus === status ? "bg-surface text-accent shadow-sm" : "text-text-muted hover:text-text"}`}>{status === "todos" ? "Todas" : STATUS_LABEL[status]}</button>)}<label className="sr-only" htmlFor="filtro-periodo">Filtrar período</label><select id="filtro-periodo" value={filtroPeriodo} onChange={(e) => salvarFiltros(filtroStatus, e.target.value)} className="rounded-md border border-border bg-surface px-2 py-1 text-xs text-text"><option value="todos">Todos os períodos</option>{Array.from({ length: 12 }, (_, i) => String(i + 1)).map((periodo) => <option key={periodo} value={periodo}>{periodo}º período</option>)}</select></div>}</div>
         {!disciplinas.length ? <p className="mt-3 text-sm text-text-muted">Nenhuma disciplina privada registrada ainda.</p> : !disciplinasFiltradas.length ? <p className="mt-3 text-sm text-text-muted">Nenhuma disciplina com este status.</p> : <div className="mt-4 grid gap-3 md:grid-cols-2">{disciplinasFiltradas.map((item) => { const disciplina = porId.get(item.disciplinaId); return <article key={item.disciplinaId} className="rounded-xl border border-border bg-surface-2 p-4"><div className="flex items-start gap-3"><span className="grid size-8 place-items-center rounded-lg bg-accent-soft text-xs font-bold text-accent">{disciplina?.marca ?? "CM"}</span><div className="min-w-0 flex-1"><h3 className="font-semibold text-text">{disciplina?.nome ?? item.disciplinaId}</h3><p className="mt-1 text-xs text-text-muted">{item.periodo ? `${item.periodo}o periodo` : "Periodo nao informado"} - {STATUS_LABEL[item.status]}{item.dificuldade ? ` - dificuldade ${item.dificuldade}/5` : ""}</p>{disciplina && <p className="mt-2 text-xs leading-5 text-text-muted">{disciplina.resumos} resumos · {disciplina.questoes} questoes · {disciplina.casos} casos · {disciplina.figuras} midias ancoradas</p>}{disciplina && <p className="mt-1 text-xs text-text-faint">{disciplina.lacunasDeConteudo ? `${disciplina.lacunasDeConteudo} topico(s) ainda sem resumo publicado.` : "Cobertura de resumos completa para a taxonomia atual."}</p>}{item.observacao && <p className="mt-2 line-clamp-2 text-xs leading-5 text-text-muted">{item.observacao}</p>}</div></div><div className="mt-3 flex gap-3 text-xs font-semibold"><button onClick={() => editar(item)} className="text-accent hover:underline">Editar</button>{disciplina && <Link href={`/biblioteca/${disciplina.slug}`} className="text-text-muted hover:text-accent hover:underline">Ver conteudo</Link>}</div></article>; })}</div>}
       </section>
 
