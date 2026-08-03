@@ -1,15 +1,13 @@
 import type { Questao } from "@/domain/content/types";
 
 type Row = [string, string, string, string, string, string, string];
-const build = (disciplinaId: string, fonte: string, rows: Row[]): Questao[] => rows.map(([id, subtemaId, enunciado, correta, d1, d2, d3]) => {
+const build = (disciplinaId: string, fonte: string, rows: Row[]): Questao[] => rows.map(([id, subtemaId, enunciado, correta, d1, d2, d3], rowIndex) => {
   const disciplina = subtemaId.split("--")[0] || disciplinaId;
+  const corretaIndex = rowIndex % 4;
+  const textos = [d1, d2, d3]; textos.splice(corretaIndex, 0, correta);
+  const alternativas = textos.map((texto, index) => ({ letra: String.fromCharCode(65 + index), texto, correta: index === corretaIndex, comentario: index === corretaIndex ? `Correta: ${correta}. O raciocínio deve ser aplicado junto ao quadro clínico e às diretrizes vigentes.` : `Distrator: ${texto}. Essa opção não responde ao achado central do caso.` }));
   return ({ id, disciplinaId: disciplina, subtemaId, enunciado,
-  alternativas: [
-    { letra: "A", texto: correta, correta: true, comentario: `Correta: ${correta}. O raciocínio deve ser aplicado junto ao quadro clínico e às diretrizes vigentes.` },
-    { letra: "B", texto: d1, correta: false, comentario: `Distrator: ${d1}. Essa opção não responde ao achado central do caso.` },
-    { letra: "C", texto: d2, correta: false, comentario: `Distrator: ${d2}. Não é a melhor interpretação neste contexto.` },
-    { letra: "D", texto: d3, correta: false, comentario: `Distrator: ${d3}. A conduta deve ser individualizada e não se baseia apenas nessa afirmação.` },
-  ], dificuldade: "intermediaria", estilo: "residencia", tags: [disciplina, "lote-editorial-2026"], fonte,
+  alternativas: alternativas.map((item, index) => ({ ...item, correta: index === corretaIndex })), dificuldade: "intermediaria", estilo: "residencia", tags: [disciplina, "lote-editorial-2026"], fonte,
   });
 });
 
