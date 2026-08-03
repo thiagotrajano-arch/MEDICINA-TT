@@ -24,6 +24,7 @@ import { QUESTOES_ONCO } from "./questoes/onco";
 import { QUESTOES_OTORRINO } from "./questoes/otorrino";
 import { QUESTOES_DERMA } from "./questoes/derma";
 import { QUESTOES_PED_LOTE_01, QUESTOES_CIR_MFC_LOTE_01, QUESTOES_CARDIO_NEURO_PNEUMO_LOTE_01, QUESTOES_NEFRO_GASTRO_HEMATO_ENDO_LOTE_01 } from "./questoes/lotes-04-a-07";
+import { QUESTOES_CARDIO_LOTE_02, QUESTOES_NEURO_LOTE_02, QUESTOES_PNEUMO_LOTE_02 } from "./questoes/cardio-neuro-pneumo-lote-02";
 
 /**
  * Banco de questões — agregador.
@@ -64,4 +65,7 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_CIR_MFC_LOTE_01,
   ...QUESTOES_CARDIO_NEURO_PNEUMO_LOTE_01,
   ...QUESTOES_NEFRO_GASTRO_HEMATO_ENDO_LOTE_01,
+  ...QUESTOES_CARDIO_LOTE_02,
+  ...QUESTOES_NEURO_LOTE_02,
+  ...QUESTOES_PNEUMO_LOTE_02,
 ];
