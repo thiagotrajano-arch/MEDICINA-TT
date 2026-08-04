@@ -8,6 +8,7 @@ As skills ficam instaladas em `C:\Users\Adm\.codex\skills` e são descobertas au
 |---|---|---|
 | Handoff | `$codex-medicus-handoff` | Retomar o projeto, conferir status, reconciliar planos e atualizar contexto sanitizado. |
 | Drive privado | `$codex-medicus-drive-private` | Inventariar, aplicar hash, deduplicar, converter PDF/DOCX, OCR e classificar lotes privados. |
+| PDF → Markdown | `$codex-medicus-pdf-markdown` | Converter PDFs para Markdown antes da leitura, com marcadores de página e OCR seletivo. |
 | Currículo/SISCAD | `$codex-medicus-curriculum-linker` | Relacionar períodos, disciplinas, planos e materiais na camada privada. |
 | Editorial clínico | `$codex-medicus-clinical-editorial` | Criar/revisar resumos, questões e casos com fontes atuais e prioridade OMED. |
 | Mídia clínica | `$codex-medicus-media-curation` | Triar imagens, licenças, privacidade, alt text, âncoras e URLs privadas. |
@@ -29,7 +30,7 @@ $codex-medicus-release-audit audite o lote atual e diga se está pronto para pub
 ## Ordem recomendada
 
 1. `$codex-medicus-handoff`
-2. `$codex-medicus-drive-private` e `$codex-medicus-curriculum-linker`
+2. `$codex-medicus-drive-private` + `$codex-medicus-pdf-markdown` e `$codex-medicus-curriculum-linker`
 3. `$codex-medicus-clinical-editorial` e `$codex-medicus-media-curation`
 4. `$codex-medicus-anki-bridge`
 5. `$codex-medicus-release-audit`
