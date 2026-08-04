@@ -204,8 +204,8 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 - [ ] 85. Transformar os temas prioritários em mapas mentais verdadeiros, começando pelos dez já curados e incluindo as conexões de Ciências Básicas pertinentes.
 - [ ] 86. Completar mapas individuais para os demais temas prioritários sem reduzir o mapa a uma lista de links.
 - [ ] 87. Ligar cada mapa a resumo, questões, caso, mídia e referências no Obsidian.
-- [ ] 88. Validar a ponte AnkiConnect com o aplicativo Anki Desktop aberto, sem enviar dados ao site.
-- [ ] 89. Criar o primeiro deck de teste a partir de um resumo aprovado e confirmar que não há duplicação.
+- [x] 88. Validar a ponte AnkiConnect com o aplicativo Anki Desktop aberto, sem enviar dados ao site.
+- [x] 89. Criar o primeiro deck de teste a partir de um resumo aprovado e confirmar que não há duplicação.
 - [ ] 90. Criar fluxo de flashcards baseados em erros de questões e revisar a qualidade dos cartões.
 - [ ] 91. Documentar backup/exportação nativa `.apkg`, CSV de contingência e recuperação do fluxo Anki.
 
@@ -251,3 +251,10 @@ de sincronização no mesmo lote.
 O lote privado do Drive avancou sem encerrar a etapa inteira: houve inventario amplo, materializacao seletiva, SHA-256, cache Markdown, imagens extraidas, renderizacao/OCR seletivos e vinculos curriculares candidatos. Nao marcar os passos 31, 36 a 42 como concluidos globalmente: ainda faltam candidatos unicos, comparacao ampla de hashes e revisao manual. Nenhum material privado foi publicado.
 
 Auditoria atual do banco publico: 1.072 questoes, zero repeticoes, comentarios curtos, comentarios vazios ou fontes ausentes. Os proximos itens editoriais sao revisao clinica por diretriz vigente e expansao somente de lacunas comprovadas.
+
+## Reconciliação operacional — 2026-08-03
+
+- Os passos 88 e 89 foram executados localmente via AnkiConnect e agora estão marcados como concluídos.
+- Os passos 90 e 91 continuam pendentes: fluxo de cartões derivado de erros e documentação/teste de backup `.apkg` e CSV.
+- O passo 97 continua pendente para o commit de integração do Anki porque a build local excedeu o limite de execução nesta rodada; não confundir os checks anteriores com uma validação final desse commit.
+- O passo 100 continua pendente: o commit `f319ede` ainda precisa de publicação e confirmação do GitHub Actions antes de ser considerado entregue no site.

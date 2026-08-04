@@ -1364,3 +1364,14 @@ Os binarios, hashes, caches e qualquer imagem deste lote permanecem fora do GitH
 - Busca metadata-only do Drive gerou 67 candidatos médicos distintos para pendência privada, agrupados em Endocrinologia, Gastroenterologia, Nefrologia, Hematologia, Cirurgia/Trauma, Urgência/Emergência, Radiologia, Farmacologia, Imunologia e integração clínica. A lista nominal está somente no cofre Obsidian em `Pendência Drive - 70 PDFs Médicos para Triagem 2026-08-02`.
 - Os 67 candidatos não foram baixados, convertidos ou publicados. Muitos são duplicatas aparentes, livros ou cursos comerciais; aplicar hash, deduplicação e portão de direitos autorais antes de qualquer materialização.
 - Pendências de produto e qualidade confirmadas: Lighthouse/PageSpeed, axe/WCAG, teste de fluxos autenticados, matriz de falhas de rede, sitemap/robots, filtros persistentes, estados loading/erro/vazio, mapas com relações nomeadas e matriz privada fonte → semestre → subtema.
+
+## Consolidação operacional — 2026-08-03
+
+- O checkout estava limpo em `main` antes desta consolidação; esta atualização documental deixou três arquivos modificados. Os commits de código mais recentes são `f319ede` (importação segura do progresso do Anki no dashboard), `00c1bb3` (lotes OMED prioritários no AnkiConnect) e `4df8856` (casos e questões de lacunas clínicas).
+- Anki Desktop/AnkiConnect foi configurado localmente. Os decks de Cardiologia, Pneumologia, Nefrologia, Endocrinologia, Hematologia, Oncologia, Dermatologia e os 14 subtemas de Neurologia foram preenchidos sem duplicação deliberada; a conferência remota pelo site ainda não existe.
+- O dashboard já aceita o JSON local exportado pelo Anki (`npm run anki:progresso`) e armazena o último snapshot apenas no navegador. Isso não é sincronização Anki↔Supabase nem sincronização entre dispositivos.
+- Notion foi instalado e recebeu uma central privada com as bases `Rotina de Estudos` e `Fila de Revisão`; ainda falta alimentá-las de forma contínua e ligar os registros ao progresso real do site/Anki.
+- Correção do plano dos 100 passos: os passos 88 e 89 estão efetivamente concluídos por evidência local, embora a caixa de seleção histórica ainda precise ser reconciliada; os passos 90–91 continuam pendentes.
+- A build local do commit de integração do Anki não foi confirmada nesta rodada por exceder o limite de execução; lint/typecheck/auditorias anteriores passaram, mas a publicação desse commit ainda não foi feita.
+- Pendências novas: validar o componente de importação no navegador, testar o fluxo Anki sem AnkiConnect exposto ao site, decidir se haverá sincronização autenticada opcional e documentar backup `.apkg`/CSV.
+- O contexto sanitizado desta conversa foi consolidado em `docs/CHAT-CONSOLIDADO-SITE-2026-08-04.md`; ler esse arquivo junto do handoff antes de iniciar a próxima tarefa.

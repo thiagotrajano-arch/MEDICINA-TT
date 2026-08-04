@@ -229,3 +229,13 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - `sitemap.xml` e `robots.txt` ainda não existem no Pages; tratar como P3 de SEO/descoberta, não como falha funcional.
 - A conexão autenticada do Drive foi consultada apenas por metadados e resultou em 67 candidatos médicos para a fila privada. A lista nominal está no Obsidian, não no site: `Pendência Drive - 70 PDFs Médicos para Triagem 2026-08-02`.
 - Próxima ordem segura: hash/deduplicação dos candidatos → PDF/DOCX para Markdown → OCR/renderização seletivos → vinculação a disciplina/semestre/subtema → revisão clínica e de licença → somente então conteúdo autoral ou mídia privada.
+
+## Atualização Codex — 2026-08-03
+
+- O checkout estava limpo em `main` antes desta atualização; a consolidação atual modifica apenas estes documentos de continuidade. Os commits de código mais recentes são `4df8856`, `00c1bb3` e `f319ede`.
+- A camada Anki local foi ampliada: decks OMED prioritários e os 14 subtemas de Neurologia foram criados/completados via AnkiConnect, com proteção contra notas duplicadas. Image Occlusion Enhanced e FSRS Helper foram instalados somente no Anki Desktop local.
+- O dashboard recebeu importação manual de `exports/anki/progresso.json`; por segurança, a ponte continua local e não abre `127.0.0.1:8765` no navegador público. A sincronização autenticada entre dispositivos ainda não foi implementada.
+- Notion Desktop foi instalado e uma central privada foi criada com as bases de rotina e fila de revisão. Falta povoamento contínuo e integração de dados, sem copiar material comercial ou dados pessoais para o repositório.
+- O plano histórico dos 100 passos ainda subestima o avanço do Anki: os passos 88 e 89 devem ser tratados como concluídos na próxima reconciliação documental. Permanecem 90–91 (flashcards por erros e backup/exportação), além dos testes de produto e publicação.
+- A última auditoria publicada confirmou rotas sem erro e auditorias estruturais; `sitemap.xml`/`robots.txt` ainda precisam de verificação no artefato Pages, e a build local do commit de integração Anki excedeu o limite de execução. Não declarar esse commit publicado sem um run remoto confirmado.
+- A consolidação sanitizada de todo o contexto desta conversa está em `docs/CHAT-CONSOLIDADO-SITE-2026-08-04.md`. Usá-la junto de `PROXIMOS-PASSOS.md` e `docs/PLANO-100-PASSOS.md` na próxima retomada; ela não contém credenciais nem dados pessoais brutos.
