@@ -111,7 +111,7 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 
 ## Fechamento de 2026-07-28
 
-- SISCAD reconciliado em área privada: 37 componentes, 36 planos analisados e um plano indisponível; não há página pendente. Nenhum dado individual foi copiado para o repositório.
+- SISCAD reconciliado em área privada: 37 componentes, 36 planos aprovados e um plano acessível com status “Submetido para aprovação”. Nenhum dado individual foi copiado para o repositório.
 - As fontes LANN, UE, Farmacologia e `RESUMOS` (30/30) foram triadas privadamente. As 34 variantes distintas de colisão do Estratégia foram recuperadas com hash e proveniência preservados; o inventário agora distingue 863 entradas ZIP, 824 nomes iniciais, cinco duplicatas exatas e 858 PDFs distintos preservados.
 - A prioridade não é extrair em massa: primeiro criar o manifesto unificado de fontes, depois a matriz `plano → tema → subtema → recurso`, e então aplicar o portão editorial em Infectologia e GO.
 - Para o estado privado completo e a fila de retomada, consultar `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian. Não publicar material comercial nem derivado de SISCAD sem validação clínica, licença e revisão de privacidade.
@@ -239,3 +239,9 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - O plano histórico dos 100 passos ainda subestima o avanço do Anki: os passos 88 e 89 devem ser tratados como concluídos na próxima reconciliação documental. Permanecem 90–91 (flashcards por erros e backup/exportação), além dos testes de produto e publicação.
 - A última auditoria publicada confirmou rotas sem erro e auditorias estruturais; `sitemap.xml`/`robots.txt` ainda precisam de verificação no artefato Pages, e a build local do commit de integração Anki excedeu o limite de execução. Não declarar esse commit publicado sem um run remoto confirmado.
 - A consolidação sanitizada de todo o contexto desta conversa está em `docs/CHAT-CONSOLIDADO-SITE-2026-08-04.md`. Usá-la junto de `PROXIMOS-PASSOS.md` e `docs/PLANO-100-PASSOS.md` na próxima retomada; ela não contém credenciais nem dados pessoais brutos.
+
+## Atualização Codex — 2026-08-04
+
+- A sessão autenticada do SISCAD foi revisada novamente. O plano de Habilidades Clínicas da Prática Médica VI está acessível, porém ainda submetido para aprovação; tratá-lo como fonte curricular provisória.
+- Foi criado um plano privado de consolidação curricular em 12 semanas, compatível com Obsidian e sem datas fixas. Ele não deve ser publicado no GitHub Pages.
+- Retomada recomendada do site: matriz privada curso → disciplina → subtema → recurso, painel longitudinal autenticado e auditoria do commit local do Anki; redesign visual permanece posterior.

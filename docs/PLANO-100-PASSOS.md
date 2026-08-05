@@ -50,8 +50,8 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 
 ## 2. Curso, SISCAD e atualização semestral privada (16–28)
 
-- [ ] 16. Reconsultar o único plano de ensino do SISCAD que estava indisponível.
-- [ ] 17. Converter esse plano para Markdown antes da leitura, se ele estiver em PDF.
+- [x] 16. Reconsultar o único plano de ensino do SISCAD que estava indisponível. Reconsultado em 2026-08-04; o componente está acessível, mas o plano aparece como “Submetido para aprovação”.
+- [x] 17. Converter esse plano para Markdown antes da leitura, se ele estiver em PDF. Não aplicável nesta reconsulta: a fonte estava disponível diretamente em HTML no SISCAD; a síntese privada foi registrada em Markdown.
 - [x] 18. Atualizar a matriz privada dos 12 períodos com origem, data e vínculos para conteúdos de revisão.
 - [ ] 19. Comparar planos, ementas e objetivos com a matriz curricular e ligar cada matéria já cursada aos temas, resumos, questões, casos e mídia correspondentes.
 - [ ] 20. Registrar somente diferenças curriculares relevantes, sem copiar dados pessoais ao repositório.
@@ -258,3 +258,10 @@ Auditoria atual do banco publico: 1.072 questoes, zero repeticoes, comentarios c
 - Os passos 90 e 91 continuam pendentes: fluxo de cartões derivado de erros e documentação/teste de backup `.apkg` e CSV.
 - O passo 97 continua pendente para o commit de integração do Anki porque a build local excedeu o limite de execução nesta rodada; não confundir os checks anteriores com uma validação final desse commit.
 - O passo 100 continua pendente: o commit `f319ede` ainda precisa de publicação e confirmação do GitHub Actions antes de ser considerado entregue no site.
+
+## Retomada de planejamento — 2026-08-04
+
+- A lista autenticada do SISCAD foi conferida novamente: 37 componentes entre 2024/1 e 2026/2; 36 planos aparecem aprovados e Habilidades Clínicas da Prática Médica VI permanece com status “Submetido para aprovação”.
+- Foi criado um plano privado de consolidação em 12 semanas, sem datas fixas, cobrindo todos os componentes, subáreas, questões, casos, mapas, mídia e revisão espaçada. O documento não entra no site público.
+- O próximo bloco do site não é redesign: primeiro deve ligar a matriz curricular privada a disciplinas, subtemas, recursos e lacunas no painel autenticado (passos 19, 27 e 28), mantendo SISCAD/Drive e materiais comerciais fora do Pages.
+- Depois disso, executar a auditoria de publicação do commit de integração do Anki e somente então decidir se ele será publicado; a ponte Anki continua local e não deve ser exposta ao navegador público.

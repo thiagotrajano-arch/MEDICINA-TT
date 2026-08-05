@@ -1375,3 +1375,10 @@ Os binarios, hashes, caches e qualquer imagem deste lote permanecem fora do GitH
 - A build local do commit de integração do Anki não foi confirmada nesta rodada por exceder o limite de execução; lint/typecheck/auditorias anteriores passaram, mas a publicação desse commit ainda não foi feita.
 - Pendências novas: validar o componente de importação no navegador, testar o fluxo Anki sem AnkiConnect exposto ao site, decidir se haverá sincronização autenticada opcional e documentar backup `.apkg`/CSV.
 - O contexto sanitizado desta conversa foi consolidado em `docs/CHAT-CONSOLIDADO-SITE-2026-08-04.md`; ler esse arquivo junto do handoff antes de iniciar a próxima tarefa.
+
+## Retomada de planejamento — 2026-08-04
+
+- SISCAD foi conferido novamente em sessão autenticada: 37 componentes entre 2024/1 e 2026/2; 36 planos aprovados e Habilidades Clínicas da Prática Médica VI acessível, mas ainda “Submetido para aprovação”.
+- O plano privado de 12 semanas foi criado fora do repositório para organizar a consolidação de todas as matérias e subáreas; ele não é conteúdo público nem substitui a ementa oficial.
+- Ordem imediata do site: (1) reconciliar plano → disciplina → tema/subtema → recurso; (2) concluir o painel privado de matérias já cursadas, lacunas e próximos estudos; (3) criar rotinas reutilizáveis de acompanhamento por período; (4) auditar o commit local do Anki; (5) só depois publicar o lote aprovado.
+- O redesign visual, mapas conceituais completos, ingestão profunda do Drive e novas expansões de conteúdo continuam subordinados aos portões de privacidade, qualidade e proveniência.
