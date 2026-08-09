@@ -1492,3 +1492,14 @@ As caixas abaixo continuam abertas no plano mestre. Algumas são tarefas recorre
 O lote permanece isolado na branch de agente. Não foi adicionada flag em
 produção porque a própria branch não publicada é a fronteira reversível desta
 fase.
+
+## Acabamento adicional do redesign — 2026-08-09
+
+- [x] Compactar os filtros de disciplina da fila de questões em painel
+  expansível, sem remover filtros ou alterar a fila/progresso.
+- [x] Impedir que o drawer móvel fechado receba foco de teclado (`inert`).
+- [x] Melhorar a hierarquia tipográfica de h2/h3 nas leituras e respeitar
+  movimento reduzido.
+- [x] Revalidar questões em 390 x 844, incluindo alternativas, barra móvel e
+  ausência de overflow.
+- [ ] Rodar novamente Lighthouse/axe e QA autenticada após o acabamento.

@@ -101,7 +101,11 @@ export function AppShell({
         />
       </aside>
 
-      <div className={cn("fixed inset-0 z-50 lg:hidden", mobileOpen ? "pointer-events-auto" : "pointer-events-none")}>
+      <div
+        className={cn("fixed inset-0 z-50 lg:hidden", mobileOpen ? "pointer-events-auto" : "pointer-events-none")}
+        aria-hidden={!mobileOpen}
+        inert={!mobileOpen}
+      >
         <button
           type="button"
           className={cn("absolute inset-0 bg-black/45 transition-opacity", mobileOpen ? "opacity-100" : "opacity-0")}

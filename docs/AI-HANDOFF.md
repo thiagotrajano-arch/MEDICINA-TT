@@ -329,3 +329,15 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - Antes de publicar ainda faltam Lighthouse/axe completos, QA autenticada e
   aprovação visual. Próximo bloco funcional: semana atual privada + primeiro
   vínculo diário de PDF convertido para Markdown.
+
+## Acabamento visual adicional — 2026-08-09
+
+- A tela de questões deixou de despejar todas as disciplinas na primeira dobra:
+  os modos Novas/Erros/Revisão/Todas ficam visíveis e o filtro de disciplina
+  abre um painel compacto, mantendo a escolha atual em destaque.
+- O drawer móvel fechado foi marcado como `inert`; seus links não entram mais no
+  foco do teclado enquanto a navegação desktop está ativa.
+- A leitura clínica recebeu hierarquia tipográfica para títulos intermediários
+  e respeito explícito a `prefers-reduced-motion`.
+- A prévia móvel foi revisada novamente em 390 x 844, com alternativas visíveis,
+  sem rolagem horizontal e sem sobreposição da barra de áreas.

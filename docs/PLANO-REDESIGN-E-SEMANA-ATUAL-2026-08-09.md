@@ -443,3 +443,15 @@ aprovação visual do usuário e a auditoria final de release.
 Implementar o modelo privado de semana atual e a primeira entrada diária de
 PDF: inventário e hash -> Markdown privado -> classificação -> sugestão de
 disciplina/subtema -> confirmação -> vínculo com semana e próxima ação.
+
+## Acabamento adicional — lote 2 visual — 2026-08-09
+
+- A fila de questões passou a exibir apenas os modos principais por padrão;
+  disciplinas ficam em um painel expansível com seleção persistente e resumo da
+  escolha atual, reduzindo poluição visual em telas estreitas.
+- O drawer móvel fechado agora é `inert`, não entra na navegação por teclado e
+  não duplica foco com o shell desktop.
+- A tipografia de leitura ganhou hierarquia explícita para `h2` e `h3`, com
+  espaçamento e pesos próprios, respeitando movimento reduzido.
+- Teste visual adicional em 390 px confirmou cabeçalho, filtros, enunciado,
+  alternativas e barra de áreas sem overflow horizontal.

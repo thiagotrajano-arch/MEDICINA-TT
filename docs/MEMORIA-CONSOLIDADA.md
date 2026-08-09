@@ -126,3 +126,13 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
   build com 402 páginas aprovados.
 - Produção não foi alterada. Publicar somente após Lighthouse/axe, QA
   autenticada e aprovação visual.
+
+## Acabamento visual adicional — 2026-08-09
+
+- O filtro de disciplina de `Questões` é expansível e mantém a seleção resumida;
+  não reintroduzir a parede de chips na primeira dobra.
+- O drawer móvel usa `inert` quando fechado para evitar foco invisível e
+  duplicado.
+- `prose-med` agora estiliza h2/h3 e desliga rolagem suave quando o usuário
+  prefere movimento reduzido.
+- QA visual extra em 390 x 844 passou para questões, menu e barra móvel.
