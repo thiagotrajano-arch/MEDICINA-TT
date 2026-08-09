@@ -12,12 +12,11 @@ import {
 
 export function AnkiProgressImport() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [snapshot, setSnapshot] = useState<AnkiProgressSnapshot | null>(null);
+  const [snapshot, setSnapshot] = useState<AnkiProgressSnapshot | null>(() => lerProgressoAnki());
   const [mensagem, setMensagem] = useState<string>("");
   const [erro, setErro] = useState<string>("");
 
   useEffect(() => {
-    setSnapshot(lerProgressoAnki());
     return observarProgressoAnki(setSnapshot);
   }, []);
 

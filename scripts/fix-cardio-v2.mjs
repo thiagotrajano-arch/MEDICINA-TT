@@ -25,10 +25,7 @@ const lines = content.split('\n');
 
 const outputLines = [];
 let i = 0;
-let inAlternativas = false;
-let alternativasStart = -1;
 let bracketDepth = 0;
-let alternativasLines = [];
 
 function processAlternativasBlock(blockLines) {
   const text = blockLines.join('\n');

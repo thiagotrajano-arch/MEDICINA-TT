@@ -1382,3 +1382,69 @@ Os binarios, hashes, caches e qualquer imagem deste lote permanecem fora do GitH
 - O plano privado de 12 semanas foi criado fora do repositório para organizar a consolidação de todas as matérias e subáreas; ele não é conteúdo público nem substitui a ementa oficial.
 - Ordem imediata do site: (1) reconciliar plano → disciplina → tema/subtema → recurso; (2) concluir o painel privado de matérias já cursadas, lacunas e próximos estudos; (3) criar rotinas reutilizáveis de acompanhamento por período; (4) auditar o commit local do Anki; (5) só depois publicar o lote aprovado.
 - O redesign visual, mapas conceituais completos, ingestão profunda do Drive e novas expansões de conteúdo continuam subordinados aos portões de privacidade, qualidade e proveniência.
+
+## Ajuste de fluxo diário e Anki — 2026-08-09
+
+- [x] Preparada a nova organização do Anki: novos lotes passam a usar um deck curto por disciplina (`Codex Medicus::...`) e mantêm o subtema em tags/campos.
+- [x] Títulos de novos cartões foram compactados e o estilo do modelo `OMED Bonito` recebeu CSS para reduzir tamanho, melhorar hierarquia e limitar largura.
+- [x] Criado `npm run anki:organizar`: primeiro gera um plano; com `--aplicar`, move cartões de decks legados sem apagar os decks antigos. A execução real aguarda Anki Desktop + AnkiConnect abertos.
+- [x] `Minha mídia` agora concentra a biblioteca autenticada, com busca, filtro por origem, referência visível e classificação clínica. A separação pública continua protegida por licença/RLS.
+- [x] Agenda recebeu foco de hoje, rotinas rápidas (estudo, erros, caso, mapa), busca, filtro por tipo e lista de pendências.
+- [x] Dashboard ganhou atalhos diretos para agenda do dia e Minha mídia.
+- [x] Anki Desktop respondeu e a organização foi aplicada: 209 decks legados foram consolidados em decks curtos por disciplina, sem apagar os antigos; o relatório local passou a listar 226 decks.
+- [x] Backup automático do Anki de 09/08/2026 estava disponível antes da migração; estilo do modelo `OMED Bonito` foi atualizado com CSS para títulos compactos.
+- [ ] Revisar decks `Probe/Piloto` separadamente e validar extensões já instaladas (AnkiConnect, Image Occlusion Enhanced, FSRS Helper e Deckhand).
+- [ ] Com o perfil do Anki aberto, executar `npm run anki:organizar -- --aplicar --limpar-vazios`: mover cartões para `Codex Medicus::disciplina`, remover somente decks legados comprovadamente vazios e preservar cartões.
+- [ ] Instalar e testar uma extensão visual compatível (candidato atual: Modernki, código AnkiWeb `739968151`) somente após confirmar a versão do Anki e fazer backup; evitar Onigiri por ser beta e mais invasivo no Windows.
+- [ ] Testar autenticado no navegador: upload, renovação do link temporário, busca/filtros, exclusão de mídia e agenda do dia.
+- [x] Extrair imagens dos PDFs privados, inclusive comerciais, após conversão PDF → Markdown e renderização seletiva; registrar fonte, página, modalidade, achado, disciplina e subtema. O lote canônico de 215 imagens foi processado; a triagem conservadora separou capas/branding e manteve revisão visual pendente onde não havia evidência suficiente.
+- [x] Importar essas imagens na biblioteca autenticada `Minha mídia`, independentemente da licença, mantendo-as fora do repositório e da área pública. A conta agora possui 312 registros privados e 297 imagens exibíveis.
+- [ ] Validar o lote de imagens privadas: visualização, renovação da URL assinada, logout, exclusão e bloqueio para usuário anônimo/diferente.
+
+## Triagem visual, vínculos e auditoria do site — 2026-08-09
+
+- [x] Adicionada visualização ampliada em tela/modal para cada imagem privada, com metadados, fonte/página, status de triagem e botão direto para o resumo relacionado.
+- [x] Adicionado filtro por origem e por status (`contextual`, `não usar`, `revisão pendente`), sem esconder material do acervo.
+- [x] Criada a migração `20260809120000_triagem_vinculos_midia_privada.sql` com `subtema_id`, status e motivo de triagem, protegida pelas mesmas políticas RLS.
+- [x] Vínculos automáticos seguros aplicados a Hematologia/Anemias, Neurologia/Doenças neuromusculares, Pediatria/Neonatologia e Pneumologia/TEP; 177 registros já têm resumo relacionado.
+- [x] Triagem remota verificada: 2 itens contextuais, 6 marcados para não usar e 295 aguardando revisão visual; nenhum item foi promovido artificialmente a "útil" sem revisão.
+- [x] As rotas publicadas raiz, Biblioteca, Mídia, Mapas, Semestres e Minha mídia responderam sem `Application error`, `Unhandled Runtime Error`, `404` ou `Not Found`; console sem erros na amostra.
+- [x] Typecheck, ESLint direcionado e `git diff --check` aprovados; a build completa ainda excede o limite local de execução e permanece pendência de otimização/CI.
+- [ ] Converter os 30 JPEG 2000 restantes com um decodificador compatível e repetir a revisão visual; o runtime atual não suporta JP2 e nenhum arquivo foi falsamente convertido.
+- [ ] Revisar visualmente os 295 itens pendentes, promovendo somente os realmente úteis e ancorando-os nos blocos dos resumos, questões e casos.
+- [ ] Resolver os avisos de segurança do Supabase sem quebrar o banco: proteção contra senhas vazadas está desativada e `pg_trgm`, `unaccent` e `vector` permanecem no schema `public`; qualquer mudança exige migração/teste separado.
+
+## Retomada Opera/Kimi e Anki — 2026-08-09
+
+- [x] Confirmar que a janela do Opera com o chat `Prompt Med - Kimi - Opera` está aberta; a leitura do conteúdo ficou bloqueada pela ponte visual atual e não houve uso de credenciais.
+- [x] Fazer inventário somente leitura do perfil Anki: 318 decks, 2.830 cartões, 209 decks legados vazios e 164 nomes longos (>70 caracteres); nenhuma alteração no banco vivo.
+- [ ] Reabrir a coleção `Usuário 1` até o AnkiConnect responder `deckNames`; então executar o plano curto com `--aplicar --limpar-vazios` e conferir contagem antes/depois.
+- [ ] Confirmar a versão do Anki, criar backup manual e instalar/testar Modernki (`739968151`) pelo próprio Anki; não instalar extensões beta ou por cópia manual.
+- [ ] Com a sessão do Opera autenticada e o chat aberto, importar apenas instruções e conteúdo autorizado do chat Kimi para o handoff, sem copiar credenciais ou material protegido.
+- [x] Decodificar localmente os 30 JP2 canônicos com Pillow/OpenJPEG, mantendo os originais privados e promovendo cópias JPG somente na biblioteca autenticada.
+- [x] Atualizar a triagem privada após a conversão: 333 registros no catálogo, 314 JPG exibíveis e 30 URLs assinadas testadas com sucesso.
+- [x] Corrigir o erro de lint no importador de progresso do Anki e remover os avisos de scripts auxiliares; lint, typecheck, auditorias de privacidade/questões e diff-check estão limpos.
+
+## Pendências reconciliadas — snapshot operacional 2026-08-09
+
+As caixas abaixo continuam abertas no plano mestre. Algumas são tarefas recorrentes ou globais: os lotes já processados não encerram a etapa inteira.
+
+- **Dados, recuperação e currículo:** 13 (teste de restore Supabase); 19–20 (ligar planos/ementas aos temas e registrar diferenças); 27–28 (painel privado completo e rotinas longitudinais).
+- **Drive e fontes privadas:** 31 (comparar hashes do inventário amplo); 36 (baixar apenas lotes aprovados); 37 (converter toda fonte selecionada para Markdown); 38 (OCR seletivo); 39 (reparar PDFs truncados); 41 (classificar todas as fontes por semestre/disciplina/subtema/OMED); 42 (fechar manifesto e Obsidian para cada fonte, inclusive rejeitadas).
+- **Revisão clínica e lacunas:** 44–46 (Infectologia); 47–48 (GO); 49 (Pediatria); 50 (Cirurgia/MFC); 51 (Cardio/Neuro/Pneumo); 52 (Nefro/KDIGO); 53 (Gastro/Endócrino/Hemato); 54 (Onco/ORL/Reumato/Derma); 55–59 (resumos, sínteses autorais, referências, lacunas e Obsidian); 60–61 (atualizar e repriorizar o Raio-X OMED).
+- **Questões e casos:** 62 (relatório de duplicidade Drive/local/banco); 64–65 (validar gabaritos e proveniência); 66–69 (novas questões/casos somente após lacuna comprovada); 70–71 (discursivas de GO e provas OMED contextualizadas); 72–73 (simulados, fila de revisão e sincronização real no navegador).
+- **Mídia:** 74–75 (localizar e renderizar páginas candidatas); 77–79 (equivalentes abertos, licença e prioridade clínica); 80 (anclar figuras públicas); 81–82 (organização/filtros completos); 83 (auditoria de IDs, créditos e licenças). Os 30 JP2 já foram convertidos; permanecem a revisão visual dos itens e os testes autenticados de exclusão/logout.
+- **Mapas e Anki:** 84–87 (mapas reais com setas, relações, ligações e filtro curricular); 90–91 (flashcards por erros e backup/restore `.apkg`/CSV). A organização dos decks continua bloqueada enquanto o AnkiConnect retorna `collection is not available`; Modernki ainda não foi instalado.
+- **Produto, autenticação e qualidade:** 93–96 (login, recuperação, sessão, RLS, rede e sincronização); 97 (build final, pois o build local excedeu o limite); 98 (privacidade, direitos, links e acessibilidade); 99 (fechamento documental recorrente); 100 (publicar somente lote validado e confirmar deploy).
+- **Integração Kimi/Opera, fora dos 100:** ler o chat `Prompt Med` pela sessão autenticada do Opera quando a ponte visual permitir, importar apenas instruções autorizadas e nunca registrar credenciais.
+
+**Contagem atual:** 64 caixas permanecem abertas no `docs/PLANO-100-PASSOS.md`. Nenhuma pendência foi apagada; o snapshot acima apenas separa o que é parcial, recorrente ou bloqueado por infraestrutura.
+
+## Fechamento operacional — 2026-08-09
+
+- Build, TypeScript, lint, privacidade e auditoria editorial passaram. A auditoria agora bloqueia comentários que neguem uma alternativa marcada como correta; 342 ocorrências antigas foram normalizadas sem alterar gabaritos.
+- O build gerou 402 rotas estáticas. As rotas lentas do Next foram reprocessadas e concluíram; o tempo alto fica registrado como item de otimização, não como falha.
+- Supabase remoto confirmou 10 migrations aplicadas. Permanecem os avisos de extensões no schema público, leaked-password protection desativada e índices sem uso; não alterar às cegas.
+- O conector do Drive encontrou as pastas autorizáveis, mas o workflow remoto falhou por configuração ausente (`DRIVE_FOLDER_IDS`/credencial). Nenhum PDF foi publicado ou baixado pelo job.
+- Snapshot atual do Anki: 226 decks, 1.703 cartões e 210 decks vazios legados. A API responde v6, porém a coleção não está disponível; nenhuma escrita foi feita.
+- Registro detalhado: `docs/FECHAMENTO-2026-08-09.md` e nota privada `Auditoria e Proximos Passos 2026-08-09` no Obsidian.

@@ -15,7 +15,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Em um paciente com dor toracica sugestiva de SCA, qual o intervalo maximo aceitavel entre a chegada ao hospital e a realizacao do ECG de 12 derivacoes?",
     alternativas: [
       { letra: "A", texto: "5 minutos", correta: false, comentario: "Diretriz da SBC/AHA/ESC: porta-ECG ≤10 min. E o exame que bifurca todo o algoritmo (IAMCSST vs. sem supra)." },
-      { letra: "B", texto: "10 minutos", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Diretriz da SBC/AHA/ESC: porta-ECG ≤10 min. E o exame que bifurca todo o algoritmo (IAMCSST vs. sem supra)." },
+      { letra: "B", texto: "10 minutos", correta: true, comentario: "Alternativa correta. Diretriz da SBC/AHA/ESC: porta-ECG ≤10 min. E o exame que bifurca todo o algoritmo (IAMCSST vs. sem supra)." },
       { letra: "C", texto: "15 minutos", correta: false, comentario: "Esta opção diverge da diretriz atual. Diretriz da SBC/AHA/ESC: porta-ECG ≤10 min. E o exame que bifurca todo o algoritmo (IAMCSST vs. sem supra)." },
       { letra: "D", texto: "30 minutos", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Diretriz da SBC/AHA/ESC: porta-ECG ≤10 min. E o exame que bifurca todo o algoritmo (IAMCSST vs. sem supra)." },
     ],
@@ -31,7 +31,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "No IAM com supra de ST, qual e a meta de tempo porta-agulha para trombolise?",
     alternativas: [
       { letra: "A", texto: "≤10 minutos", correta: false, comentario: "Porta-agulha ≤30 min (trombolise); porta-balao ≤90 min (angioplastia primaria), estendendo-se a ≤120 min se ha transferencia." },
-      { letra: "B", texto: "≤30 minutos", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Porta-agulha ≤30 min (trombolise); porta-balao ≤90 min (angioplastia primaria), estendendo-se a ≤120 min se ha transferencia." },
+      { letra: "B", texto: "≤30 minutos", correta: true, comentario: "Alternativa correta. Porta-agulha ≤30 min (trombolise); porta-balao ≤90 min (angioplastia primaria), estendendo-se a ≤120 min se ha transferencia." },
       { letra: "C", texto: "≤60 minutos", correta: false, comentario: "Esta opção diverge da diretriz atual. Porta-agulha ≤30 min (trombolise); porta-balao ≤90 min (angioplastia primaria), estendendo-se a ≤120 min se ha transferencia." },
       { letra: "D", texto: "≤90 minutos", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Porta-agulha ≤30 min (trombolise); porta-balao ≤90 min (angioplastia primaria), estendendo-se a ≤120 min se ha transferencia." },
     ],
@@ -47,7 +47,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e a energia inicial recomendada para desfibrilacao com aparelho bifasico em FV/TV sem pulso?",
     alternativas: [
       { letra: "A", texto: "50-100 J", correta: false, comentario: "Bifasico: 120-200 J conforme o fabricante. Monofasico: 360 J. Desfibrilacao e ASSINCRONA (paciente sem pulso)." },
-      { letra: "B", texto: "120-200 J", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Bifasico: 120-200 J conforme o fabricante. Monofasico: 360 J. Desfibrilacao e ASSINCRONA (paciente sem pulso)." },
+      { letra: "B", texto: "120-200 J", correta: true, comentario: "Alternativa correta. Bifasico: 120-200 J conforme o fabricante. Monofasico: 360 J. Desfibrilacao e ASSINCRONA (paciente sem pulso)." },
       { letra: "C", texto: "300 J", correta: false, comentario: "Esta opção diverge da diretriz atual. Bifasico: 120-200 J conforme o fabricante. Monofasico: 360 J. Desfibrilacao e ASSINCRONA (paciente sem pulso)." },
       { letra: "D", texto: "360 J obrigatoriamente", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Bifasico: 120-200 J conforme o fabricante. Monofasico: 360 J. Desfibrilacao e ASSINCRONA (paciente sem pulso)." },
     ],
@@ -64,7 +64,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "≥0,5mm", correta: false, comentario: "V2-V3: ≥2mm em homens ≥40a; ≥2,5mm em homens <40a; ≥1,5mm em mulheres. Restante das derivacoes: ≥1mm em 2 contiguas." },
       { letra: "B", texto: "≥1mm", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. V2-V3: ≥2mm em homens ≥40a; ≥2,5mm em homens <40a; ≥1,5mm em mulheres. Restante das derivacoes: ≥1mm em 2 contiguas." },
-      { letra: "C", texto: "≥2mm", correta: true, comentario: "Esta opção diverge da diretriz atual. V2-V3: ≥2mm em homens ≥40a; ≥2,5mm em homens <40a; ≥1,5mm em mulheres. Restante das derivacoes: ≥1mm em 2 contiguas." },
+      { letra: "C", texto: "≥2mm", correta: true, comentario: "Alternativa correta. V2-V3: ≥2mm em homens ≥40a; ≥2,5mm em homens <40a; ≥1,5mm em mulheres. Restante das derivacoes: ≥1mm em 2 contiguas." },
       { letra: "D", texto: "≥3mm", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. V2-V3: ≥2mm em homens ≥40a; ≥2,5mm em homens <40a; ≥1,5mm em mulheres. Restante das derivacoes: ≥1mm em 2 contiguas." },
     ],
     dificuldade: "fixacao",
@@ -80,7 +80,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Choque cardiogenico por Killip IV", correta: false, comentario: "IAM inferior + hipotensao com nitrato = VD comprometido (pre-carga dependente). Conduta: VOLUME, nunca nitrato/diuretico. Rastrear com V3R/V4R." },
       { letra: "B", texto: "Insuficiencia mitral aguda", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. IAM inferior + hipotensao com nitrato = VD comprometido (pre-carga dependente). Conduta: VOLUME, nunca nitrato/diuretico. Rastrear com V3R/V4R." },
-      { letra: "C", texto: "Comprometimento de ventriculo direito", correta: true, comentario: "Esta opção diverge da diretriz atual. IAM inferior + hipotensao com nitrato = VD comprometido (pre-carga dependente). Conduta: VOLUME, nunca nitrato/diuretico. Rastrear com V3R/V4R." },
+      { letra: "C", texto: "Comprometimento de ventriculo direito", correta: true, comentario: "Alternativa correta. IAM inferior + hipotensao com nitrato = VD comprometido (pre-carga dependente). Conduta: VOLUME, nunca nitrato/diuretico. Rastrear com V3R/V4R." },
       { letra: "D", texto: "Ruptura de parede livre", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. IAM inferior + hipotensao com nitrato = VD comprometido (pre-carga dependente). Conduta: VOLUME, nunca nitrato/diuretico. Rastrear com V3R/V4R." },
     ],
     dificuldade: "fixacao",
@@ -95,7 +95,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Sobre o padrao De Winter no ECG, e correto afirmar:",
     alternativas: [
       { letra: "A", texto: "E um IAM sem supra tipico", correta: false, comentario: "De Winter = infra ascendente em V1-V6 + T apiculada simetrica alta = oclusao proximal de DA. E equivalente de IAMCSST — tratar como supra." },
-      { letra: "B", texto: "Indica oclusao proximal de descendente anterior", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. De Winter = infra ascendente em V1-V6 + T apiculada simetrica alta = oclusao proximal de DA. E equivalente de IAMCSST — tratar como supra." },
+      { letra: "B", texto: "Indica oclusao proximal de descendente anterior", correta: true, comentario: "Alternativa correta. De Winter = infra ascendente em V1-V6 + T apiculada simetrica alta = oclusao proximal de DA. E equivalente de IAMCSST — tratar como supra." },
       { letra: "C", texto: "So aparece em pericardite", correta: false, comentario: "Esta opção diverge da diretriz atual. De Winter = infra ascendente em V1-V6 + T apiculada simetrica alta = oclusao proximal de DA. E equivalente de IAMCSST — tratar como supra." },
       { letra: "D", texto: "Nao muda a conduta terapeutica", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. De Winter = infra ascendente em V1-V6 + T apiculada simetrica alta = oclusao proximal de DA. E equivalente de IAMCSST — tratar como supra." },
     ],
@@ -112,7 +112,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Ticagrelor", correta: false, comentario: "Apos fibrinolitico, o inibidor P2Y12 de escolha e o CLOPIDOGREL. Ticagrelor e prasugrel nao sao recomendados nesse cenario." },
       { letra: "B", texto: "Prasugrel", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Apos fibrinolitico, o inibidor P2Y12 de escolha e o CLOPIDOGREL. Ticagrelor e prasugrel nao sao recomendados nesse cenario." },
-      { letra: "C", texto: "Clopidogrel", correta: true, comentario: "Esta opção diverge da diretriz atual. Apos fibrinolitico, o inibidor P2Y12 de escolha e o CLOPIDOGREL. Ticagrelor e prasugrel nao sao recomendados nesse cenario." },
+      { letra: "C", texto: "Clopidogrel", correta: true, comentario: "Alternativa correta. Apos fibrinolitico, o inibidor P2Y12 de escolha e o CLOPIDOGREL. Ticagrelor e prasugrel nao sao recomendados nesse cenario." },
       { letra: "D", texto: "Cangrelor", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Apos fibrinolitico, o inibidor P2Y12 de escolha e o CLOPIDOGREL. Ticagrelor e prasugrel nao sao recomendados nesse cenario." },
     ],
     dificuldade: "fixacao",
@@ -127,7 +127,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Segundo a 4a Definicao Universal de IAM, o IAM tipo 2 e caracterizado por:",
     alternativas: [
       { letra: "A", texto: "Trombose intracoronariana por ruptura de placa", correta: false, comentario: "IAM tipo 2: desbalanco oferta/demanda (anemia grave, sepse, taquiarritmia sustentada). Nao se trata como IAM tipo 1 — trata-se a CAUSA." },
-      { letra: "B", texto: "Desbalanco entre oferta e demanda de oxigenio, sem trombo aterosclerotico", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. IAM tipo 2: desbalanco oferta/demanda (anemia grave, sepse, taquiarritmia sustentada). Nao se trata como IAM tipo 1 — trata-se a CAUSA." },
+      { letra: "B", texto: "Desbalanco entre oferta e demanda de oxigenio, sem trombo aterosclerotico", correta: true, comentario: "Alternativa correta. IAM tipo 2: desbalanco oferta/demanda (anemia grave, sepse, taquiarritmia sustentada). Nao se trata como IAM tipo 1 — trata-se a CAUSA." },
       { letra: "C", texto: "IAM peri-angioplastia", correta: false, comentario: "Esta opção diverge da diretriz atual. IAM tipo 2: desbalanco oferta/demanda (anemia grave, sepse, taquiarritmia sustentada). Nao se trata como IAM tipo 1 — trata-se a CAUSA." },
       { letra: "D", texto: "IAM peri-cirurgia de revascularizacao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. IAM tipo 2: desbalanco oferta/demanda (anemia grave, sepse, taquiarritmia sustentada). Nao se trata como IAM tipo 1 — trata-se a CAUSA." },
     ],
@@ -143,7 +143,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Sobre o supra de ST em pericardite aguda comparado ao IAMCSST:",
     alternativas: [
       { letra: "A", texto: "Ambos sao localizados por territorio", correta: false, comentario: "Pericardite: supra DIFUSO, CONCAVO, SEM espelho, com infra de PR. IAMCSST: supra localizado, convexo, com imagem em espelho." },
-      { letra: "B", texto: "Pericardite: supra difuso, concavo, sem imagem em espelho", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Pericardite: supra DIFUSO, CONCAVO, SEM espelho, com infra de PR. IAMCSST: supra localizado, convexo, com imagem em espelho." },
+      { letra: "B", texto: "Pericardite: supra difuso, concavo, sem imagem em espelho", correta: true, comentario: "Alternativa correta. Pericardite: supra DIFUSO, CONCAVO, SEM espelho, com infra de PR. IAMCSST: supra localizado, convexo, com imagem em espelho." },
       { letra: "C", texto: "Pericardite tem sempre troponina muito elevada", correta: false, comentario: "Esta opção diverge da diretriz atual. Pericardite: supra DIFUSO, CONCAVO, SEM espelho, com infra de PR. IAMCSST: supra localizado, convexo, com imagem em espelho." },
       { letra: "D", texto: "IAMCSST tem infra de PR mais frequentemente", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Pericardite: supra DIFUSO, CONCAVO, SEM espelho, com infra de PR. IAMCSST: supra localizado, convexo, com imagem em espelho." },
     ],
@@ -159,7 +159,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual sinal clinico e mais especifico para infarto de ventriculo direito?",
     alternativas: [
       { letra: "A", texto: "Estertores pulmonares bibasais", correta: false, comentario: "Triade classica do IAM de VD: hipotensao + turgencia jugular + PULMOES LIMPOS. Muito diferente da IC esquerda (estertores)." },
-      { letra: "B", texto: "Hipotensao + turgencia jugular + pulmoes limpos", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Triade classica do IAM de VD: hipotensao + turgencia jugular + PULMOES LIMPOS. Muito diferente da IC esquerda (estertores)." },
+      { letra: "B", texto: "Hipotensao + turgencia jugular + pulmoes limpos", correta: true, comentario: "Alternativa correta. Triade classica do IAM de VD: hipotensao + turgencia jugular + PULMOES LIMPOS. Muito diferente da IC esquerda (estertores)." },
       { letra: "C", texto: "Sopro sistolico novo em foco mitral", correta: false, comentario: "Esta opção diverge da diretriz atual. Triade classica do IAM de VD: hipotensao + turgencia jugular + PULMOES LIMPOS. Muito diferente da IC esquerda (estertores)." },
       { letra: "D", texto: "B3 audivel", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Triade classica do IAM de VD: hipotensao + turgencia jugular + PULMOES LIMPOS. Muito diferente da IC esquerda (estertores)." },
     ],
@@ -176,7 +176,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Sem sinais de congestao", correta: false, comentario: "Killip I sem congestao (~6%); II estertores/B3 (~17%); III edema agudo (~38%); IV choque (~67-81%)." },
       { letra: "B", texto: "Estertores em bases, B3 ou turgencia jugular", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Killip I sem congestao (~6%); II estertores/B3 (~17%); III edema agudo (~38%); IV choque (~67-81%)." },
-      { letra: "C", texto: "Edema agudo de pulmao", correta: true, comentario: "Esta opção diverge da diretriz atual. Killip I sem congestao (~6%); II estertores/B3 (~17%); III edema agudo (~38%); IV choque (~67-81%)." },
+      { letra: "C", texto: "Edema agudo de pulmao", correta: true, comentario: "Alternativa correta. Killip I sem congestao (~6%); II estertores/B3 (~17%); III edema agudo (~38%); IV choque (~67-81%)." },
       { letra: "D", texto: "Choque cardiogenico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Killip I sem congestao (~6%); II estertores/B3 (~17%); III edema agudo (~38%); IV choque (~67-81%)." },
     ],
     dificuldade: "fixacao",
@@ -191,7 +191,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "O padrao de Wellens no ECG (ondas T bifasicas ou profundamente invertidas em V2-V3, sem dor) indica:",
     alternativas: [
       { letra: "A", texto: "Isquemia subaguda benigna, alta ambulatorial", correta: false, comentario: "Wellens = suboclusao critica de DA. Alto risco de IAM anterior extenso — NAO estressar (teste ergometrico contraindicado), pedir cateterismo." },
-      { letra: "B", texto: "Suboclusao critica de descendente anterior", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Wellens = suboclusao critica de DA. Alto risco de IAM anterior extenso — NAO estressar (teste ergometrico contraindicado), pedir cateterismo." },
+      { letra: "B", texto: "Suboclusao critica de descendente anterior", correta: true, comentario: "Alternativa correta. Wellens = suboclusao critica de DA. Alto risco de IAM anterior extenso — NAO estressar (teste ergometrico contraindicado), pedir cateterismo." },
       { letra: "C", texto: "Pericardite viral", correta: false, comentario: "Esta opção diverge da diretriz atual. Wellens = suboclusao critica de DA. Alto risco de IAM anterior extenso — NAO estressar (teste ergometrico contraindicado), pedir cateterismo." },
       { letra: "D", texto: "Repolarizacao precoce fisiologica", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Wellens = suboclusao critica de DA. Alto risco de IAM anterior extenso — NAO estressar (teste ergometrico contraindicado), pedir cateterismo." },
     ],
@@ -207,7 +207,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e a caracteristica que MELHOR diferencia semiologicamente a dor da dissecao aortica da dor do IAM?",
     alternativas: [
       { letra: "A", texto: "Localizacao retroesternal", correta: false, comentario: "Dissecao: dor subita, MAXIMA ja no inicio, migratoria, 'em rasgo'. IAM: dor crescendo em minutos. Este e o discriminador semiologico chave." },
-      { letra: "B", texto: "Inicio subito com intensidade maxima ja no primeiro momento", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Dissecao: dor subita, MAXIMA ja no inicio, migratoria, 'em rasgo'. IAM: dor crescendo em minutos. Este e o discriminador semiologico chave." },
+      { letra: "B", texto: "Inicio subito com intensidade maxima ja no primeiro momento", correta: true, comentario: "Alternativa correta. Dissecao: dor subita, MAXIMA ja no inicio, migratoria, 'em rasgo'. IAM: dor crescendo em minutos. Este e o discriminador semiologico chave." },
       { letra: "C", texto: "Irradiacao para o braco esquerdo", correta: false, comentario: "Esta opção diverge da diretriz atual. Dissecao: dor subita, MAXIMA ja no inicio, migratoria, 'em rasgo'. IAM: dor crescendo em minutos. Este e o discriminador semiologico chave." },
       { letra: "D", texto: "Duracao superior a 20 minutos", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Dissecao: dor subita, MAXIMA ja no inicio, migratoria, 'em rasgo'. IAM: dor crescendo em minutos. Este e o discriminador semiologico chave." },
     ],
@@ -239,7 +239,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "No manejo agudo da dissecao aortica, qual e a ordem correta dos farmacos?",
     alternativas: [
       { letra: "A", texto: "Vasodilatador primeiro, depois betabloqueador", correta: false, comentario: "SEMPRE beta antes de vaso. Vasodilatador isolado causa taquicardia reflexa, aumenta o dP/dt e PROPAGA a dissecao. Alvo: FC<60." },
-      { letra: "B", texto: "Betabloqueador primeiro, depois vasodilatador", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. SEMPRE beta antes de vaso. Vasodilatador isolado causa taquicardia reflexa, aumenta o dP/dt e PROPAGA a dissecao. Alvo: FC<60." },
+      { letra: "B", texto: "Betabloqueador primeiro, depois vasodilatador", correta: true, comentario: "Alternativa correta. SEMPRE beta antes de vaso. Vasodilatador isolado causa taquicardia reflexa, aumenta o dP/dt e PROPAGA a dissecao. Alvo: FC<60." },
       { letra: "C", texto: "Vasodilatador isolado e suficiente", correta: false, comentario: "Esta opção diverge da diretriz atual. SEMPRE beta antes de vaso. Vasodilatador isolado causa taquicardia reflexa, aumenta o dP/dt e PROPAGA a dissecao. Alvo: FC<60." },
       { letra: "D", texto: "Diuretico e a base", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. SEMPRE beta antes de vaso. Vasodilatador isolado causa taquicardia reflexa, aumenta o dP/dt e PROPAGA a dissecao. Alvo: FC<60." },
     ],
@@ -255,7 +255,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e o alvo terapeutico primario de frequencia cardiaca na dissecao aortica aguda?",
     alternativas: [
       { letra: "A", texto: "<70 bpm", correta: false, comentario: "FC <60 bpm reduz o dP/dt (forca de cisalhamento). Alvo pressorico: PAS 100-120 mmHg — mas o CARDIAL controla mais o dano do que a PA." },
-      { letra: "B", texto: "<60 bpm", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. FC <60 bpm reduz o dP/dt (forca de cisalhamento). Alvo pressorico: PAS 100-120 mmHg — mas o CARDIAL controla mais o dano do que a PA." },
+      { letra: "B", texto: "<60 bpm", correta: true, comentario: "Alternativa correta. FC <60 bpm reduz o dP/dt (forca de cisalhamento). Alvo pressorico: PAS 100-120 mmHg — mas o CARDIAL controla mais o dano do que a PA." },
       { letra: "C", texto: "<50 bpm", correta: false, comentario: "Esta opção diverge da diretriz atual. FC <60 bpm reduz o dP/dt (forca de cisalhamento). Alvo pressorico: PAS 100-120 mmHg — mas o CARDIAL controla mais o dano do que a PA." },
       { letra: "D", texto: "<80 bpm", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. FC <60 bpm reduz o dP/dt (forca de cisalhamento). Alvo pressorico: PAS 100-120 mmHg — mas o CARDIAL controla mais o dano do que a PA." },
     ],
@@ -288,7 +288,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Exclui o diagnostico", correta: false, comentario: "RX pode ser normal em ate 10-20% dos casos. NAO exclui. D-dimero baixo tambem so exclui em baixa probabilidade pre-teste." },
       { letra: "B", texto: "Torna o diagnostico improvavel", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. RX pode ser normal em ate 10-20% dos casos. NAO exclui. D-dimero baixo tambem so exclui em baixa probabilidade pre-teste." },
-      { letra: "C", texto: "Nao exclui — pode ser normal em ate 10-20%", correta: true, comentario: "Esta opção diverge da diretriz atual. RX pode ser normal em ate 10-20% dos casos. NAO exclui. D-dimero baixo tambem so exclui em baixa probabilidade pre-teste." },
+      { letra: "C", texto: "Nao exclui — pode ser normal em ate 10-20%", correta: true, comentario: "Alternativa correta. RX pode ser normal em ate 10-20% dos casos. NAO exclui. D-dimero baixo tambem so exclui em baixa probabilidade pre-teste." },
       { letra: "D", texto: "So exclui se acompanhada de D-dimero normal", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. RX pode ser normal em ate 10-20% dos casos. NAO exclui. D-dimero baixo tambem so exclui em baixa probabilidade pre-teste." },
     ],
     dificuldade: "fixacao",
@@ -304,7 +304,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Marfan", correta: false, comentario: "HAS mal controlada = principal fator de risco (65-75% dos casos no registro IRAD). Marfan/Ehlers-Danlos sao classicos, mas menos prevalentes." },
       { letra: "B", texto: "Cocaina", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. HAS mal controlada = principal fator de risco (65-75% dos casos no registro IRAD). Marfan/Ehlers-Danlos sao classicos, mas menos prevalentes." },
-      { letra: "C", texto: "Hipertensao arterial", correta: true, comentario: "Esta opção diverge da diretriz atual. HAS mal controlada = principal fator de risco (65-75% dos casos no registro IRAD). Marfan/Ehlers-Danlos sao classicos, mas menos prevalentes." },
+      { letra: "C", texto: "Hipertensao arterial", correta: true, comentario: "Alternativa correta. HAS mal controlada = principal fator de risco (65-75% dos casos no registro IRAD). Marfan/Ehlers-Danlos sao classicos, mas menos prevalentes." },
       { letra: "D", texto: "Trauma toracico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. HAS mal controlada = principal fator de risco (65-75% dos casos no registro IRAD). Marfan/Ehlers-Danlos sao classicos, mas menos prevalentes." },
     ],
     dificuldade: "fixacao",
@@ -320,7 +320,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Manter conduta clinica, alta em 72h", correta: false, comentario: "Stanford B complicada (ma-perfusao mesenterica no caso) exige intervencao — TEVAR e a preferencial. Dor abdominal desproporcional ao exame = isquemia mesenterica." },
       { letra: "B", texto: "Reavaliar em 24h", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Stanford B complicada (ma-perfusao mesenterica no caso) exige intervencao — TEVAR e a preferencial. Dor abdominal desproporcional ao exame = isquemia mesenterica." },
-      { letra: "C", texto: "Encaminhar para intervencao endovascular (TEVAR)", correta: true, comentario: "Esta opção diverge da diretriz atual. Stanford B complicada (ma-perfusao mesenterica no caso) exige intervencao — TEVAR e a preferencial. Dor abdominal desproporcional ao exame = isquemia mesenterica." },
+      { letra: "C", texto: "Encaminhar para intervencao endovascular (TEVAR)", correta: true, comentario: "Alternativa correta. Stanford B complicada (ma-perfusao mesenterica no caso) exige intervencao — TEVAR e a preferencial. Dor abdominal desproporcional ao exame = isquemia mesenterica." },
       { letra: "D", texto: "Angioplastia coronaria", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Stanford B complicada (ma-perfusao mesenterica no caso) exige intervencao — TEVAR e a preferencial. Dor abdominal desproporcional ao exame = isquemia mesenterica." },
     ],
     dificuldade: "fixacao",
@@ -337,7 +337,7 @@ export const QUESTOES_CARDIO: Questao[] = [
       { letra: "A", texto: "<130 mg/dL", correta: false, comentario: "Doenca aterosclerotica estabelecida = muito alto risco AUTOMATICO. Meta LDL <50 mg/dL. Nao se calcula escore." },
       { letra: "B", texto: "<100 mg/dL", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Doenca aterosclerotica estabelecida = muito alto risco AUTOMATICO. Meta LDL <50 mg/dL. Nao se calcula escore." },
       { letra: "C", texto: "<70 mg/dL", correta: false, comentario: "Esta opção diverge da diretriz atual. Doenca aterosclerotica estabelecida = muito alto risco AUTOMATICO. Meta LDL <50 mg/dL. Nao se calcula escore." },
-      { letra: "D", texto: "<50 mg/dL", correta: true, comentario: "Esta resposta não reflete o padrão-ouro. Doenca aterosclerotica estabelecida = muito alto risco AUTOMATICO. Meta LDL <50 mg/dL. Nao se calcula escore." },
+      { letra: "D", texto: "<50 mg/dL", correta: true, comentario: "Alternativa correta. Doenca aterosclerotica estabelecida = muito alto risco AUTOMATICO. Meta LDL <50 mg/dL. Nao se calcula escore." },
     ],
     dificuldade: "fixacao",
     estilo: "fixacao",
@@ -351,7 +351,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual medicamento e considerado o segundo passo terapeutico quando a meta de LDL-c nao e atingida com estatina em dose maxima tolerada?",
     alternativas: [
       { letra: "A", texto: "Fibrato", correta: false, comentario: "Ordem de escalada: estatina de alta intensidade -> ezetimiba (~20% adicional) -> inibidor de PCSK9 se ainda muito alto risco." },
-      { letra: "B", texto: "Ezetimiba", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Ordem de escalada: estatina de alta intensidade -> ezetimiba (~20% adicional) -> inibidor de PCSK9 se ainda muito alto risco." },
+      { letra: "B", texto: "Ezetimiba", correta: true, comentario: "Alternativa correta. Ordem de escalada: estatina de alta intensidade -> ezetimiba (~20% adicional) -> inibidor de PCSK9 se ainda muito alto risco." },
       { letra: "C", texto: "Inibidor de PCSK9", correta: false, comentario: "Esta opção diverge da diretriz atual. Ordem de escalada: estatina de alta intensidade -> ezetimiba (~20% adicional) -> inibidor de PCSK9 se ainda muito alto risco." },
       { letra: "D", texto: "Colestiramina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Ordem de escalada: estatina de alta intensidade -> ezetimiba (~20% adicional) -> inibidor de PCSK9 se ainda muito alto risco." },
     ],
@@ -369,7 +369,7 @@ export const QUESTOES_CARDIO: Questao[] = [
       { letra: "A", texto: ">150 mg/dL", correta: false, comentario: "Friedewald so vale com TG <400 mg/dL. Acima disso, medir LDL diretamente ou usar colesterol nao-HDL como alvo." },
       { letra: "B", texto: ">200 mg/dL", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Friedewald so vale com TG <400 mg/dL. Acima disso, medir LDL diretamente ou usar colesterol nao-HDL como alvo." },
       { letra: "C", texto: ">300 mg/dL", correta: false, comentario: "Esta opção diverge da diretriz atual. Friedewald so vale com TG <400 mg/dL. Acima disso, medir LDL diretamente ou usar colesterol nao-HDL como alvo." },
-      { letra: "D", texto: ">400 mg/dL", correta: true, comentario: "Esta resposta não reflete o padrão-ouro. Friedewald so vale com TG <400 mg/dL. Acima disso, medir LDL diretamente ou usar colesterol nao-HDL como alvo." },
+      { letra: "D", texto: ">400 mg/dL", correta: true, comentario: "Alternativa correta. Friedewald so vale com TG <400 mg/dL. Acima disso, medir LDL diretamente ou usar colesterol nao-HDL como alvo." },
     ],
     dificuldade: "fixacao",
     estilo: "fixacao",
@@ -383,7 +383,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e a conduta prioritaria em paciente com triglicerideos de 1200 mg/dL?",
     alternativas: [
       { letra: "A", texto: "Iniciar estatina de alta intensidade", correta: false, comentario: "TG >500-1000 mg/dL: risco iminente de PANCREATITE. Prioridade e o fibrato (fenofibrato preferencial se em uso de estatina)." },
-      { letra: "B", texto: "Fibrato, para prevenir pancreatite aguda", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. TG >500-1000 mg/dL: risco iminente de PANCREATITE. Prioridade e o fibrato (fenofibrato preferencial se em uso de estatina)." },
+      { letra: "B", texto: "Fibrato, para prevenir pancreatite aguda", correta: true, comentario: "Alternativa correta. TG >500-1000 mg/dL: risco iminente de PANCREATITE. Prioridade e o fibrato (fenofibrato preferencial se em uso de estatina)." },
       { letra: "C", texto: "Ezetimiba isolada", correta: false, comentario: "Esta opção diverge da diretriz atual. TG >500-1000 mg/dL: risco iminente de PANCREATITE. Prioridade e o fibrato (fenofibrato preferencial se em uso de estatina)." },
       { letra: "D", texto: "Dieta e reavaliar em 6 meses", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. TG >500-1000 mg/dL: risco iminente de PANCREATITE. Prioridade e o fibrato (fenofibrato preferencial se em uso de estatina)." },
     ],
@@ -399,7 +399,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual efeito adverso raro, porem grave, deve ser monitorado em pacientes em uso de estatina?",
     alternativas: [
       { letra: "A", texto: "Cirrose hepatica", correta: false, comentario: "Mialgia e comum (leve); RABDOMIOLISE e o efeito grave. CK apenas se sintomas musculares, nao de rotina. Suspender se CK >10x + lesao renal." },
-      { letra: "B", texto: "Rabdomiolise", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Mialgia e comum (leve); RABDOMIOLISE e o efeito grave. CK apenas se sintomas musculares, nao de rotina. Suspender se CK >10x + lesao renal." },
+      { letra: "B", texto: "Rabdomiolise", correta: true, comentario: "Alternativa correta. Mialgia e comum (leve); RABDOMIOLISE e o efeito grave. CK apenas se sintomas musculares, nao de rotina. Suspender se CK >10x + lesao renal." },
       { letra: "C", texto: "Anemia hemolitica", correta: false, comentario: "Esta opção diverge da diretriz atual. Mialgia e comum (leve); RABDOMIOLISE e o efeito grave. CK apenas se sintomas musculares, nao de rotina. Suspender se CK >10x + lesao renal." },
       { letra: "D", texto: "Insuficiencia renal cronica", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Mialgia e comum (leve); RABDOMIOLISE e o efeito grave. CK apenas se sintomas musculares, nao de rotina. Suspender se CK >10x + lesao renal." },
     ],
@@ -415,7 +415,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Uma paciente com LDL-c 210 mg/dL em jejum, sem outras alteracoes, com pai que teve IAM aos 42 anos, deve ser abordada como:",
     alternativas: [
       { letra: "A", texto: "Dislipidemia leve, mudanca de estilo de vida", correta: false, comentario: "LDL >=190 mg/dL + historia familiar precoce = suspeita de HIPERCOLESTEROLEMIA FAMILIAR. Rastrear parentes em cascata, estatina de alta intensidade." },
-      { letra: "B", texto: "Hipercolesterolemia familiar — investigar e rastrear familiares", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. LDL >=190 mg/dL + historia familiar precoce = suspeita de HIPERCOLESTEROLEMIA FAMILIAR. Rastrear parentes em cascata, estatina de alta intensidade." },
+      { letra: "B", texto: "Hipercolesterolemia familiar — investigar e rastrear familiares", correta: true, comentario: "Alternativa correta. LDL >=190 mg/dL + historia familiar precoce = suspeita de HIPERCOLESTEROLEMIA FAMILIAR. Rastrear parentes em cascata, estatina de alta intensidade." },
       { letra: "C", texto: "Erro laboratorial", correta: false, comentario: "Esta opção diverge da diretriz atual. LDL >=190 mg/dL + historia familiar precoce = suspeita de HIPERCOLESTEROLEMIA FAMILIAR. Rastrear parentes em cascata, estatina de alta intensidade." },
       { letra: "D", texto: "Hipotireoidismo primario", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. LDL >=190 mg/dL + historia familiar precoce = suspeita de HIPERCOLESTEROLEMIA FAMILIAR. Rastrear parentes em cascata, estatina de alta intensidade." },
     ],
@@ -431,7 +431,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e a caracteristica eletrocardiografica DEFINIDORA de fibrilacao atrial?",
     alternativas: [
       { letra: "A", texto: "Ondas P bifasicas em V1", correta: false, comentario: "FA = ausencia de onda P + linha de base fibrilatoria + R-R IRREGULARMENTE irregular. Regularmente irregular sugere flutter." },
-      { letra: "B", texto: "Ausencia de onda P + R-R irregularmente irregular", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. FA = ausencia de onda P + linha de base fibrilatoria + R-R IRREGULARMENTE irregular. Regularmente irregular sugere flutter." },
+      { letra: "B", texto: "Ausencia de onda P + R-R irregularmente irregular", correta: true, comentario: "Alternativa correta. FA = ausencia de onda P + linha de base fibrilatoria + R-R IRREGULARMENTE irregular. Regularmente irregular sugere flutter." },
       { letra: "C", texto: "Ondas em serrote em D2-D3", correta: false, comentario: "Esta opção diverge da diretriz atual. FA = ausencia de onda P + linha de base fibrilatoria + R-R IRREGULARMENTE irregular. Regularmente irregular sugere flutter." },
       { letra: "D", texto: "QRS alargado", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. FA = ausencia de onda P + linha de base fibrilatoria + R-R IRREGULARMENTE irregular. Regularmente irregular sugere flutter." },
     ],
@@ -448,7 +448,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Diabetes", correta: false, comentario: "Valem 2 pontos: idade >=75 e AVC/AIT previo. Todos os outros valem 1. O 'sc' (sexo feminino) e modificador — nao anticoagula isoladamente." },
       { letra: "B", texto: "Insuficiencia cardiaca", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Valem 2 pontos: idade >=75 e AVC/AIT previo. Todos os outros valem 1. O 'sc' (sexo feminino) e modificador — nao anticoagula isoladamente." },
-      { letra: "C", texto: "Idade >=75 anos", correta: true, comentario: "Esta opção diverge da diretriz atual. Valem 2 pontos: idade >=75 e AVC/AIT previo. Todos os outros valem 1. O 'sc' (sexo feminino) e modificador — nao anticoagula isoladamente." },
+      { letra: "C", texto: "Idade >=75 anos", correta: true, comentario: "Alternativa correta. Valem 2 pontos: idade >=75 e AVC/AIT previo. Todos os outros valem 1. O 'sc' (sexo feminino) e modificador — nao anticoagula isoladamente." },
       { letra: "D", texto: "Sexo feminino", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Valem 2 pontos: idade >=75 e AVC/AIT previo. Todos os outros valem 1. O 'sc' (sexo feminino) e modificador — nao anticoagula isoladamente." },
     ],
     dificuldade: "fixacao",
@@ -463,7 +463,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Um homem com FA e CHA2DS2-VASc = 2 (HAS + DM) tem indicacao de anticoagulacao?",
     alternativas: [
       { letra: "A", texto: "Nao, escore muito baixo", correta: false, comentario: "Homem >=2 ou mulher >=3 = anticoagular. ADO preferencial (menor risco de hemorragia intracraniana). Varfarina obrigatoria apenas em estenose mitral moderada-grave ou protese mecanica." },
-      { letra: "B", texto: "Sim, ADO preferencial a varfarina", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Homem >=2 ou mulher >=3 = anticoagular. ADO preferencial (menor risco de hemorragia intracraniana). Varfarina obrigatoria apenas em estenose mitral moderada-grave ou protese mecanica." },
+      { letra: "B", texto: "Sim, ADO preferencial a varfarina", correta: true, comentario: "Alternativa correta. Homem >=2 ou mulher >=3 = anticoagular. ADO preferencial (menor risco de hemorragia intracraniana). Varfarina obrigatoria apenas em estenose mitral moderada-grave ou protese mecanica." },
       { letra: "C", texto: "Sim, so varfarina", correta: false, comentario: "Esta opção diverge da diretriz atual. Homem >=2 ou mulher >=3 = anticoagular. ADO preferencial (menor risco de hemorragia intracraniana). Varfarina obrigatoria apenas em estenose mitral moderada-grave ou protese mecanica." },
       { letra: "D", texto: "Nao, apenas AAS", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Homem >=2 ou mulher >=3 = anticoagular. ADO preferencial (menor risco de hemorragia intracraniana). Varfarina obrigatoria apenas em estenose mitral moderada-grave ou protese mecanica." },
     ],
@@ -480,7 +480,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Amiodarona IV, aguardar reversao", correta: false, comentario: "Instabilidade autoriza cardioversao imediata, independente do tempo de FA. Salva vida. Sincronizar sempre (paciente com pulso)." },
       { letra: "B", texto: "Adenosina IV", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Instabilidade autoriza cardioversao imediata, independente do tempo de FA. Salva vida. Sincronizar sempre (paciente com pulso)." },
-      { letra: "C", texto: "Cardioversao eletrica sincronizada imediata", correta: true, comentario: "Esta opção diverge da diretriz atual. Instabilidade autoriza cardioversao imediata, independente do tempo de FA. Salva vida. Sincronizar sempre (paciente com pulso)." },
+      { letra: "C", texto: "Cardioversao eletrica sincronizada imediata", correta: true, comentario: "Alternativa correta. Instabilidade autoriza cardioversao imediata, independente do tempo de FA. Salva vida. Sincronizar sempre (paciente com pulso)." },
       { letra: "D", texto: "Metoprolol IV", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Instabilidade autoriza cardioversao imediata, independente do tempo de FA. Salva vida. Sincronizar sempre (paciente com pulso)." },
     ],
     dificuldade: "fixacao",
@@ -495,7 +495,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "A regra de anticoagulacao para cardioversao ELETIVA de FA com duracao >48 horas ou indeterminada e:",
     alternativas: [
       { letra: "A", texto: "Cardioverter direto, iniciar ADO apos", correta: false, comentario: "3 semanas antes E 4 semanas depois (por causa do atordoamento atrial). Alternativa: ETE para excluir trombo + as 4 semanas depois obrigatorias." },
-      { letra: "B", texto: "3 semanas antes + 4 semanas depois; ou ETE + 4 semanas depois", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. 3 semanas antes E 4 semanas depois (por causa do atordoamento atrial). Alternativa: ETE para excluir trombo + as 4 semanas depois obrigatorias." },
+      { letra: "B", texto: "3 semanas antes + 4 semanas depois; ou ETE + 4 semanas depois", correta: true, comentario: "Alternativa correta. 3 semanas antes E 4 semanas depois (por causa do atordoamento atrial). Alternativa: ETE para excluir trombo + as 4 semanas depois obrigatorias." },
       { letra: "C", texto: "1 semana antes", correta: false, comentario: "Esta opção diverge da diretriz atual. 3 semanas antes E 4 semanas depois (por causa do atordoamento atrial). Alternativa: ETE para excluir trombo + as 4 semanas depois obrigatorias." },
       { letra: "D", texto: "So iniciar apos AVC", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. 3 semanas antes E 4 semanas depois (por causa do atordoamento atrial). Alternativa: ETE para excluir trombo + as 4 semanas depois obrigatorias." },
     ],
@@ -511,7 +511,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual medicamento e a primeira linha para controle de FREQUENCIA em FA estavel com FE preservada?",
     alternativas: [
       { letra: "A", texto: "Digoxina", correta: false, comentario: "Controle de FC: BB ou bloqueador de canal de calcio nao di-idropiridinico. Digoxina e adjuvante em IC ou sedentario, controla mal FC ao esforco." },
-      { letra: "B", texto: "Betabloqueador ou diltiazem/verapamil", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Controle de FC: BB ou bloqueador de canal de calcio nao di-idropiridinico. Digoxina e adjuvante em IC ou sedentario, controla mal FC ao esforco." },
+      { letra: "B", texto: "Betabloqueador ou diltiazem/verapamil", correta: true, comentario: "Alternativa correta. Controle de FC: BB ou bloqueador de canal de calcio nao di-idropiridinico. Digoxina e adjuvante em IC ou sedentario, controla mal FC ao esforco." },
       { letra: "C", texto: "Amiodarona", correta: false, comentario: "Esta opção diverge da diretriz atual. Controle de FC: BB ou bloqueador de canal de calcio nao di-idropiridinico. Digoxina e adjuvante em IC ou sedentario, controla mal FC ao esforco." },
       { letra: "D", texto: "Sotalol", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Controle de FC: BB ou bloqueador de canal de calcio nao di-idropiridinico. Digoxina e adjuvante em IC ou sedentario, controla mal FC ao esforco." },
     ],
@@ -527,7 +527,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Bloqueio AV do 2o grau tipo Mobitz II tem qual conduta padrao?",
     alternativas: [
       { letra: "A", texto: "Observar, geralmente benigno", correta: false, comentario: "Mobitz II (P bloqueia subito, PR fixo) = infrahissiano, alto risco de progressao para BAVT = MARCAPASSO. Mobitz I (Wenckebach) e benigno, so observa." },
-      { letra: "B", texto: "Marcapasso definitivo", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Mobitz II (P bloqueia subito, PR fixo) = infrahissiano, alto risco de progressao para BAVT = MARCAPASSO. Mobitz I (Wenckebach) e benigno, so observa." },
+      { letra: "B", texto: "Marcapasso definitivo", correta: true, comentario: "Alternativa correta. Mobitz II (P bloqueia subito, PR fixo) = infrahissiano, alto risco de progressao para BAVT = MARCAPASSO. Mobitz I (Wenckebach) e benigno, so observa." },
       { letra: "C", texto: "Ablacao", correta: false, comentario: "Esta opção diverge da diretriz atual. Mobitz II (P bloqueia subito, PR fixo) = infrahissiano, alto risco de progressao para BAVT = MARCAPASSO. Mobitz I (Wenckebach) e benigno, so observa." },
       { letra: "D", texto: "Adenosina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Mobitz II (P bloqueia subito, PR fixo) = infrahissiano, alto risco de progressao para BAVT = MARCAPASSO. Mobitz I (Wenckebach) e benigno, so observa." },
     ],
@@ -544,7 +544,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "FA em paciente com HAS", correta: false, comentario: "ADOs (apixabana, rivaroxabana, dabigatrana, edoxabana) contraindicados em: estenose mitral moderada-grave E protese valvar MECANICA. Nesses casos, VARFARINA." },
       { letra: "B", texto: "FA com DM tipo 2", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. ADOs (apixabana, rivaroxabana, dabigatrana, edoxabana) contraindicados em: estenose mitral moderada-grave E protese valvar MECANICA. Nesses casos, VARFARINA." },
-      { letra: "C", texto: "Estenose mitral moderada a grave", correta: true, comentario: "Esta opção diverge da diretriz atual. ADOs (apixabana, rivaroxabana, dabigatrana, edoxabana) contraindicados em: estenose mitral moderada-grave E protese valvar MECANICA. Nesses casos, VARFARINA." },
+      { letra: "C", texto: "Estenose mitral moderada a grave", correta: true, comentario: "Alternativa correta. ADOs (apixabana, rivaroxabana, dabigatrana, edoxabana) contraindicados em: estenose mitral moderada-grave E protese valvar MECANICA. Nesses casos, VARFARINA." },
       { letra: "D", texto: "FA em idoso >75 anos", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. ADOs (apixabana, rivaroxabana, dabigatrana, edoxabana) contraindicados em: estenose mitral moderada-grave E protese valvar MECANICA. Nesses casos, VARFARINA." },
     ],
     dificuldade: "fixacao",
@@ -576,7 +576,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Suspender anticoagulacao imediatamente", correta: false, comentario: "HAS-BLED alto NAO contraindica anticoagular. Serve para IDENTIFICAR fatores modificaveis (PA nao controlada, drogas, INR labil) e intensificar o seguimento." },
       { letra: "B", texto: "Trocar por AAS", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. HAS-BLED alto NAO contraindica anticoagular. Serve para IDENTIFICAR fatores modificaveis (PA nao controlada, drogas, INR labil) e intensificar o seguimento." },
-      { letra: "C", texto: "Manter anticoagulacao, corrigir fatores modificaveis", correta: true, comentario: "Esta opção diverge da diretriz atual. HAS-BLED alto NAO contraindica anticoagular. Serve para IDENTIFICAR fatores modificaveis (PA nao controlada, drogas, INR labil) e intensificar o seguimento." },
+      { letra: "C", texto: "Manter anticoagulacao, corrigir fatores modificaveis", correta: true, comentario: "Alternativa correta. HAS-BLED alto NAO contraindica anticoagular. Serve para IDENTIFICAR fatores modificaveis (PA nao controlada, drogas, INR labil) e intensificar o seguimento." },
       { letra: "D", texto: "Cirurgia de fechamento de apendice atrial", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. HAS-BLED alto NAO contraindica anticoagular. Serve para IDENTIFICAR fatores modificaveis (PA nao controlada, drogas, INR labil) e intensificar o seguimento." },
     ],
     dificuldade: "fixacao",
@@ -607,7 +607,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "O commotio cordis e caracterizado por:",
     alternativas: [
       { letra: "A", texto: "FV induzida por infarto extenso", correta: false, comentario: "Impacto trivial (bola, cotovelada) em 10-30 ms antes do pico da onda T -> FV. Coracao ESTRUTURALMENTE NORMAL. Timing importa mais que forca." },
-      { letra: "B", texto: "FV desencadeada por impacto toracico de baixa energia em janela vulneravel", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Impacto trivial (bola, cotovelada) em 10-30 ms antes do pico da onda T -> FV. Coracao ESTRUTURALMENTE NORMAL. Timing importa mais que forca." },
+      { letra: "B", texto: "FV desencadeada por impacto toracico de baixa energia em janela vulneravel", correta: true, comentario: "Alternativa correta. Impacto trivial (bola, cotovelada) em 10-30 ms antes do pico da onda T -> FV. Coracao ESTRUTURALMENTE NORMAL. Timing importa mais que forca." },
       { letra: "C", texto: "Cardiomiopatia estrutural", correta: false, comentario: "Esta opção diverge da diretriz atual. Impacto trivial (bola, cotovelada) em 10-30 ms antes do pico da onda T -> FV. Coracao ESTRUTURALMENTE NORMAL. Timing importa mais que forca." },
       { letra: "D", texto: "Miocardite viral", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Impacto trivial (bola, cotovelada) em 10-30 ms antes do pico da onda T -> FV. Coracao ESTRUTURALMENTE NORMAL. Timing importa mais que forca." },
     ],
@@ -639,7 +639,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Sincope AO esforco em atleta jovem:",
     alternativas: [
       { letra: "A", texto: "E geralmente vasovagal, benigna", correta: false, comentario: "Sincope DURANTE o esforco (nao apos) e alarme para causa cardiaca. Sincope pos-esforco tende a ser vasovagal. Investigar sempre com eco." },
-      { letra: "B", texto: "Bandeira vermelha para causa cardiaca — investigar", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Sincope DURANTE o esforco (nao apos) e alarme para causa cardiaca. Sincope pos-esforco tende a ser vasovagal. Investigar sempre com eco." },
+      { letra: "B", texto: "Bandeira vermelha para causa cardiaca — investigar", correta: true, comentario: "Alternativa correta. Sincope DURANTE o esforco (nao apos) e alarme para causa cardiaca. Sincope pos-esforco tende a ser vasovagal. Investigar sempre com eco." },
       { letra: "C", texto: "Nao merece investigacao", correta: false, comentario: "Esta opção diverge da diretriz atual. Sincope DURANTE o esforco (nao apos) e alarme para causa cardiaca. Sincope pos-esforco tende a ser vasovagal. Investigar sempre com eco." },
       { letra: "D", texto: "So trata se recorrer", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Sincope DURANTE o esforco (nao apos) e alarme para causa cardiaca. Sincope pos-esforco tende a ser vasovagal. Investigar sempre com eco." },
     ],
@@ -655,7 +655,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Como se define hipertensao arterial resistente?",
     alternativas: [
       { letra: "A", texto: "PA >180x110", correta: false, comentario: "HAR: fora da meta com 3 classes otimizadas INCLUINDO DIURETICO; ou PA controlada com >=4 classes. Antes de rotular, excluir pseudorresistencia." },
-      { letra: "B", texto: "Fora da meta com 3 classes otimizadas incluindo diuretico, ou controlada com >=4", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. HAR: fora da meta com 3 classes otimizadas INCLUINDO DIURETICO; ou PA controlada com >=4 classes. Antes de rotular, excluir pseudorresistencia." },
+      { letra: "B", texto: "Fora da meta com 3 classes otimizadas incluindo diuretico, ou controlada com >=4", correta: true, comentario: "Alternativa correta. HAR: fora da meta com 3 classes otimizadas INCLUINDO DIURETICO; ou PA controlada com >=4 classes. Antes de rotular, excluir pseudorresistencia." },
       { letra: "C", texto: "Fora da meta em 2 medidas de consultorio", correta: false, comentario: "Esta opção diverge da diretriz atual. HAR: fora da meta com 3 classes otimizadas INCLUINDO DIURETICO; ou PA controlada com >=4 classes. Antes de rotular, excluir pseudorresistencia." },
       { letra: "D", texto: "PA >140x90 em uso de qualquer medicacao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. HAR: fora da meta com 3 classes otimizadas INCLUINDO DIURETICO; ou PA controlada com >=4 classes. Antes de rotular, excluir pseudorresistencia." },
     ],
@@ -672,7 +672,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Betabloqueador", correta: false, comentario: "Estudo PATHWAY-2 mostrou superioridade da espironolactona sobre bisoprolol e doxazosina. E a 4a droga preferencial, mesmo sem hiperaldosteronismo confirmado." },
       { letra: "B", texto: "Alfabloqueador", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Estudo PATHWAY-2 mostrou superioridade da espironolactona sobre bisoprolol e doxazosina. E a 4a droga preferencial, mesmo sem hiperaldosteronismo confirmado." },
-      { letra: "C", texto: "Espironolactona", correta: true, comentario: "Esta opção diverge da diretriz atual. Estudo PATHWAY-2 mostrou superioridade da espironolactona sobre bisoprolol e doxazosina. E a 4a droga preferencial, mesmo sem hiperaldosteronismo confirmado." },
+      { letra: "C", texto: "Espironolactona", correta: true, comentario: "Alternativa correta. Estudo PATHWAY-2 mostrou superioridade da espironolactona sobre bisoprolol e doxazosina. E a 4a droga preferencial, mesmo sem hiperaldosteronismo confirmado." },
       { letra: "D", texto: "Clonidina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Estudo PATHWAY-2 mostrou superioridade da espironolactona sobre bisoprolol e doxazosina. E a 4a droga preferencial, mesmo sem hiperaldosteronismo confirmado." },
     ],
     dificuldade: "fixacao",
@@ -687,7 +687,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e a definicao de hipertensao REFRATARIA?",
     alternativas: [
       { letra: "A", texto: "Nao controlada com 3 drogas", correta: false, comentario: "Refrataria = fora da meta com >=5 classes incluindo diuretico + espironolactona. E o subgrupo mais grave — investigar causa secundaria + centro especializado." },
-      { letra: "B", texto: "Nao controlada com 5 ou mais classes incluindo diuretico e antagonista mineralocorticoide", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Refrataria = fora da meta com >=5 classes incluindo diuretico + espironolactona. E o subgrupo mais grave — investigar causa secundaria + centro especializado." },
+      { letra: "B", texto: "Nao controlada com 5 ou mais classes incluindo diuretico e antagonista mineralocorticoide", correta: true, comentario: "Alternativa correta. Refrataria = fora da meta com >=5 classes incluindo diuretico + espironolactona. E o subgrupo mais grave — investigar causa secundaria + centro especializado." },
       { letra: "C", texto: "Nao controlada com betabloqueador", correta: false, comentario: "Esta opção diverge da diretriz atual. Refrataria = fora da meta com >=5 classes incluindo diuretico + espironolactona. E o subgrupo mais grave — investigar causa secundaria + centro especializado." },
       { letra: "D", texto: "Nao controlada com IECA + BRA", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Refrataria = fora da meta com >=5 classes incluindo diuretico + espironolactona. E o subgrupo mais grave — investigar causa secundaria + centro especializado." },
     ],
@@ -719,7 +719,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Manguito de PA muito estreito para a circunferencia do braco tende a:",
     alternativas: [
       { letra: "A", texto: "Subestimar a PA", correta: false, comentario: "Manguito estreito SUPERESTIMA a PA. Erro tecnico comum em obesos (que sao justamente os mais propensos a HAR verdadeira). Bracadeira ~40% da circunferencia." },
-      { letra: "B", texto: "Superestimar a PA", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Manguito estreito SUPERESTIMA a PA. Erro tecnico comum em obesos (que sao justamente os mais propensos a HAR verdadeira). Bracadeira ~40% da circunferencia." },
+      { letra: "B", texto: "Superestimar a PA", correta: true, comentario: "Alternativa correta. Manguito estreito SUPERESTIMA a PA. Erro tecnico comum em obesos (que sao justamente os mais propensos a HAR verdadeira). Bracadeira ~40% da circunferencia." },
       { letra: "C", texto: "Nao alterar a PA", correta: false, comentario: "Esta opção diverge da diretriz atual. Manguito estreito SUPERESTIMA a PA. Erro tecnico comum em obesos (que sao justamente os mais propensos a HAR verdadeira). Bracadeira ~40% da circunferencia." },
       { letra: "D", texto: "So altera se paciente estiver obeso", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Manguito estreito SUPERESTIMA a PA. Erro tecnico comum em obesos (que sao justamente os mais propensos a HAR verdadeira). Bracadeira ~40% da circunferencia." },
     ],
@@ -735,7 +735,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e a substancia mais frequentemente associada a piora do controle pressorico em HAR?",
     alternativas: [
       { letra: "A", texto: "Cafeina", correta: false, comentario: "AINEs sao a substancia mais comumente encontrada agravando HAR. Rastrear sempre. Outras: corticoide, ACO, descongestionante nasal, cocaina." },
-      { letra: "B", texto: "AINEs", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. AINEs sao a substancia mais comumente encontrada agravando HAR. Rastrear sempre. Outras: corticoide, ACO, descongestionante nasal, cocaina." },
+      { letra: "B", texto: "AINEs", correta: true, comentario: "Alternativa correta. AINEs sao a substancia mais comumente encontrada agravando HAR. Rastrear sempre. Outras: corticoide, ACO, descongestionante nasal, cocaina." },
       { letra: "C", texto: "Vitamina D", correta: false, comentario: "Esta opção diverge da diretriz atual. AINEs sao a substancia mais comumente encontrada agravando HAR. Rastrear sempre. Outras: corticoide, ACO, descongestionante nasal, cocaina." },
       { letra: "D", texto: "Estatina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. AINEs sao a substancia mais comumente encontrada agravando HAR. Rastrear sempre. Outras: corticoide, ACO, descongestionante nasal, cocaina." },
     ],
@@ -751,7 +751,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e a principal causa secundaria de hipertensao arterial no adulto?",
     alternativas: [
       { letra: "A", texto: "Feocromocitoma", correta: false, comentario: "AOS = causa secundaria mais prevalente e mais subdiagnosticada. Padrao non-dipper na MAPA. Tratamento com CPAP melhora controle." },
-      { letra: "B", texto: "Apneia obstrutiva do sono", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. AOS = causa secundaria mais prevalente e mais subdiagnosticada. Padrao non-dipper na MAPA. Tratamento com CPAP melhora controle." },
+      { letra: "B", texto: "Apneia obstrutiva do sono", correta: true, comentario: "Alternativa correta. AOS = causa secundaria mais prevalente e mais subdiagnosticada. Padrao non-dipper na MAPA. Tratamento com CPAP melhora controle." },
       { letra: "C", texto: "Sindrome de Cushing", correta: false, comentario: "Esta opção diverge da diretriz atual. AOS = causa secundaria mais prevalente e mais subdiagnosticada. Padrao non-dipper na MAPA. Tratamento com CPAP melhora controle." },
       { letra: "D", texto: "Coarctacao de aorta", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. AOS = causa secundaria mais prevalente e mais subdiagnosticada. Padrao non-dipper na MAPA. Tratamento com CPAP melhora controle." },
     ],
@@ -767,7 +767,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Elevacao >30% da creatinina apos inicio de IECA/BRA em hipertenso e sugestiva de:",
     alternativas: [
       { letra: "A", texto: "Nefrite intersticial medicamentosa", correta: false, comentario: "Bandeira vermelha classica: estenose bilateral de arteria renal (ou unilateral em rim unico). Sem angiotensina II, a arteriola eferente dilata e a filtracao despenca." },
-      { letra: "B", texto: "Estenose bilateral de arteria renal", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Bandeira vermelha classica: estenose bilateral de arteria renal (ou unilateral em rim unico). Sem angiotensina II, a arteriola eferente dilata e a filtracao despenca." },
+      { letra: "B", texto: "Estenose bilateral de arteria renal", correta: true, comentario: "Alternativa correta. Bandeira vermelha classica: estenose bilateral de arteria renal (ou unilateral em rim unico). Sem angiotensina II, a arteriola eferente dilata e a filtracao despenca." },
       { letra: "C", texto: "Hipovolemia leve", correta: false, comentario: "Esta opção diverge da diretriz atual. Bandeira vermelha classica: estenose bilateral de arteria renal (ou unilateral em rim unico). Sem angiotensina II, a arteriola eferente dilata e a filtracao despenca." },
       { letra: "D", texto: "Rabdomiolise", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Bandeira vermelha classica: estenose bilateral de arteria renal (ou unilateral em rim unico). Sem angiotensina II, a arteriola eferente dilata e a filtracao despenca." },
     ],
@@ -783,7 +783,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "A displasia fibromuscular tipicamente acomete qual porcao da arteria renal?",
     alternativas: [
       { letra: "A", texto: "Ostial/proximal", correta: false, comentario: "Fibromuscular: mulher jovem, media/distal, colar de contas. Angioplastia com balao (sem stent) e frequentemente CURATIVA. Aterosclerotica: idoso, ostial." },
-      { letra: "B", texto: "Media/distal, com aspecto de 'colar de contas'", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Fibromuscular: mulher jovem, media/distal, colar de contas. Angioplastia com balao (sem stent) e frequentemente CURATIVA. Aterosclerotica: idoso, ostial." },
+      { letra: "B", texto: "Media/distal, com aspecto de 'colar de contas'", correta: true, comentario: "Alternativa correta. Fibromuscular: mulher jovem, media/distal, colar de contas. Angioplastia com balao (sem stent) e frequentemente CURATIVA. Aterosclerotica: idoso, ostial." },
       { letra: "C", texto: "Ramos intraparenquimatosos", correta: false, comentario: "Esta opção diverge da diretriz atual. Fibromuscular: mulher jovem, media/distal, colar de contas. Angioplastia com balao (sem stent) e frequentemente CURATIVA. Aterosclerotica: idoso, ostial." },
       { letra: "D", texto: "Nao afeta arteria renal", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Fibromuscular: mulher jovem, media/distal, colar de contas. Angioplastia com balao (sem stent) e frequentemente CURATIVA. Aterosclerotica: idoso, ostial." },
     ],
@@ -799,7 +799,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Na abordagem terapeutica do feocromocitoma, qual e a ORDEM correta?",
     alternativas: [
       { letra: "A", texto: "Betabloqueio + alfabloqueio simultaneos", correta: false, comentario: "ALFA antes de BETA, sempre. Betabloqueio isolado bloqueia a vasodilatacao beta-2 sem oposicao ao alfa-1 -> vasoconstricao intensa e crise. Regra imutavel." },
-      { letra: "B", texto: "Alfabloqueio primeiro, depois betabloqueio", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. ALFA antes de BETA, sempre. Betabloqueio isolado bloqueia a vasodilatacao beta-2 sem oposicao ao alfa-1 -> vasoconstricao intensa e crise. Regra imutavel." },
+      { letra: "B", texto: "Alfabloqueio primeiro, depois betabloqueio", correta: true, comentario: "Alternativa correta. ALFA antes de BETA, sempre. Betabloqueio isolado bloqueia a vasodilatacao beta-2 sem oposicao ao alfa-1 -> vasoconstricao intensa e crise. Regra imutavel." },
       { letra: "C", texto: "Betabloqueio primeiro, depois alfabloqueio", correta: false, comentario: "Esta opção diverge da diretriz atual. ALFA antes de BETA, sempre. Betabloqueio isolado bloqueia a vasodilatacao beta-2 sem oposicao ao alfa-1 -> vasoconstricao intensa e crise. Regra imutavel." },
       { letra: "D", texto: "So betabloqueio isolado", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. ALFA antes de BETA, sempre. Betabloqueio isolado bloqueia a vasodilatacao beta-2 sem oposicao ao alfa-1 -> vasoconstricao intensa e crise. Regra imutavel." },
     ],
@@ -815,7 +815,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "No hiperaldosteronismo primario, o achado laboratorial classico e:",
     alternativas: [
       { letra: "A", texto: "Renina alta, aldosterona alta", correta: false, comentario: "Hiperaldosteronismo primario: aldosterona autonoma -> feedback negativo suprime a renina. Diferente da estenose renal (renina ALTA). Rastreio: relacao aldosterona/renina." },
-      { letra: "B", texto: "Renina SUPRIMIDA, aldosterona alta", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Hiperaldosteronismo primario: aldosterona autonoma -> feedback negativo suprime a renina. Diferente da estenose renal (renina ALTA). Rastreio: relacao aldosterona/renina." },
+      { letra: "B", texto: "Renina SUPRIMIDA, aldosterona alta", correta: true, comentario: "Alternativa correta. Hiperaldosteronismo primario: aldosterona autonoma -> feedback negativo suprime a renina. Diferente da estenose renal (renina ALTA). Rastreio: relacao aldosterona/renina." },
       { letra: "C", texto: "Renina baixa, aldosterona baixa", correta: false, comentario: "Esta opção diverge da diretriz atual. Hiperaldosteronismo primario: aldosterona autonoma -> feedback negativo suprime a renina. Diferente da estenose renal (renina ALTA). Rastreio: relacao aldosterona/renina." },
       { letra: "D", texto: "Renina alta, aldosterona baixa", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Hiperaldosteronismo primario: aldosterona autonoma -> feedback negativo suprime a renina. Diferente da estenose renal (renina ALTA). Rastreio: relacao aldosterona/renina." },
     ],
@@ -831,7 +831,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e a diferenca fundamental entre cardioversao eletrica e desfibrilacao?",
     alternativas: [
       { letra: "A", texto: "A voltagem utilizada", correta: false, comentario: "CARDIOVERSAO: sincronizada, paciente COM pulso (FA, flutter, TSVP, TV com pulso). DESFIBRILACAO: assincrona, paciente SEM pulso (FV, TV sem pulso)." },
-      { letra: "B", texto: "A cardioversao e sincronizada com o QRS; a desfibrilacao e assincrona", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. CARDIOVERSAO: sincronizada, paciente COM pulso (FA, flutter, TSVP, TV com pulso). DESFIBRILACAO: assincrona, paciente SEM pulso (FV, TV sem pulso)." },
+      { letra: "B", texto: "A cardioversao e sincronizada com o QRS; a desfibrilacao e assincrona", correta: true, comentario: "Alternativa correta. CARDIOVERSAO: sincronizada, paciente COM pulso (FA, flutter, TSVP, TV com pulso). DESFIBRILACAO: assincrona, paciente SEM pulso (FV, TV sem pulso)." },
       { letra: "C", texto: "So difere no tipo de aparelho", correta: false, comentario: "Esta opção diverge da diretriz atual. CARDIOVERSAO: sincronizada, paciente COM pulso (FA, flutter, TSVP, TV com pulso). DESFIBRILACAO: assincrona, paciente SEM pulso (FV, TV sem pulso)." },
       { letra: "D", texto: "A cardioversao usa monofasico e a desfibrilacao bifasico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. CARDIOVERSAO: sincronizada, paciente COM pulso (FA, flutter, TSVP, TV com pulso). DESFIBRILACAO: assincrona, paciente SEM pulso (FV, TV sem pulso)." },
     ],
@@ -847,7 +847,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Quais sao os ritmos chocaveis na parada cardiorrespiratoria?",
     alternativas: [
       { letra: "A", texto: "Assistolia e AESP", correta: false, comentario: "So DOIS ritmos chocaveis: FV e TV sem pulso. AESP e assistolia = NAO chocaveis (RCP + adrenalina precoce + 5H/5T)." },
-      { letra: "B", texto: "FV e TV sem pulso", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. So DOIS ritmos chocaveis: FV e TV sem pulso. AESP e assistolia = NAO chocaveis (RCP + adrenalina precoce + 5H/5T)." },
+      { letra: "B", texto: "FV e TV sem pulso", correta: true, comentario: "Alternativa correta. So DOIS ritmos chocaveis: FV e TV sem pulso. AESP e assistolia = NAO chocaveis (RCP + adrenalina precoce + 5H/5T)." },
       { letra: "C", texto: "BAV total e assistolia", correta: false, comentario: "Esta opção diverge da diretriz atual. So DOIS ritmos chocaveis: FV e TV sem pulso. AESP e assistolia = NAO chocaveis (RCP + adrenalina precoce + 5H/5T)." },
       { letra: "D", texto: "Flutter e FA", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. So DOIS ritmos chocaveis: FV e TV sem pulso. AESP e assistolia = NAO chocaveis (RCP + adrenalina precoce + 5H/5T)." },
     ],
@@ -864,7 +864,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Antes do 1o choque", correta: false, comentario: "Adrenalina apos o 2o choque (a cada 3-5 min). Amiodarona 300mg apos o 3o choque (segunda dose 150mg)." },
       { letra: "B", texto: "Apos o 1o choque", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Adrenalina apos o 2o choque (a cada 3-5 min). Amiodarona 300mg apos o 3o choque (segunda dose 150mg)." },
-      { letra: "C", texto: "Apos o 2o choque", correta: true, comentario: "Esta opção diverge da diretriz atual. Adrenalina apos o 2o choque (a cada 3-5 min). Amiodarona 300mg apos o 3o choque (segunda dose 150mg)." },
+      { letra: "C", texto: "Apos o 2o choque", correta: true, comentario: "Alternativa correta. Adrenalina apos o 2o choque (a cada 3-5 min). Amiodarona 300mg apos o 3o choque (segunda dose 150mg)." },
       { letra: "D", texto: "Apos o 4o choque", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Adrenalina apos o 2o choque (a cada 3-5 min). Amiodarona 300mg apos o 3o choque (segunda dose 150mg)." },
     ],
     dificuldade: "fixacao",
@@ -879,7 +879,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Em taquicardia estavel com QRS estreito e regular, apos manobra vagal ineficaz, a primeira medicacao e:",
     alternativas: [
       { letra: "A", texto: "Amiodarona 300mg", correta: false, comentario: "TSVP responde a bloqueio transitorio do no AV (que faz parte do circuito de reentrada). Adenosina 6mg, podendo repetir 12mg. Meia-vida ~10 seg." },
-      { letra: "B", texto: "Adenosina 6mg IV em bolus rapido", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. TSVP responde a bloqueio transitorio do no AV (que faz parte do circuito de reentrada). Adenosina 6mg, podendo repetir 12mg. Meia-vida ~10 seg." },
+      { letra: "B", texto: "Adenosina 6mg IV em bolus rapido", correta: true, comentario: "Alternativa correta. TSVP responde a bloqueio transitorio do no AV (que faz parte do circuito de reentrada). Adenosina 6mg, podendo repetir 12mg. Meia-vida ~10 seg." },
       { letra: "C", texto: "Verapamil 5mg", correta: false, comentario: "Esta opção diverge da diretriz atual. TSVP responde a bloqueio transitorio do no AV (que faz parte do circuito de reentrada). Adenosina 6mg, podendo repetir 12mg. Meia-vida ~10 seg." },
       { letra: "D", texto: "Metoprolol 5mg", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. TSVP responde a bloqueio transitorio do no AV (que faz parte do circuito de reentrada). Adenosina 6mg, podendo repetir 12mg. Meia-vida ~10 seg." },
     ],
@@ -896,7 +896,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Adenosina 6mg", correta: false, comentario: "Largo + irregular = alerta para FA em WPW (nao bloquear no AV — pode degenerar em FV) ou torsades (magnesio). Cardioversao ou procainamida sao opcoes." },
       { letra: "B", texto: "Amiodarona", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Largo + irregular = alerta para FA em WPW (nao bloquear no AV — pode degenerar em FV) ou torsades (magnesio). Cardioversao ou procainamida sao opcoes." },
-      { letra: "C", texto: "Considerar FA pre-excitada ou torsades — NAO usar bloqueador do no AV", correta: true, comentario: "Esta opção diverge da diretriz atual. Largo + irregular = alerta para FA em WPW (nao bloquear no AV — pode degenerar em FV) ou torsades (magnesio). Cardioversao ou procainamida sao opcoes." },
+      { letra: "C", texto: "Considerar FA pre-excitada ou torsades — NAO usar bloqueador do no AV", correta: true, comentario: "Alternativa correta. Largo + irregular = alerta para FA em WPW (nao bloquear no AV — pode degenerar em FV) ou torsades (magnesio). Cardioversao ou procainamida sao opcoes." },
       { letra: "D", texto: "Verapamil", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Largo + irregular = alerta para FA em WPW (nao bloquear no AV — pode degenerar em FV) ou torsades (magnesio). Cardioversao ou procainamida sao opcoes." },
     ],
     dificuldade: "fixacao",
@@ -911,7 +911,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Torsades de pointes deve ser tratado com:",
     alternativas: [
       { letra: "A", texto: "Amiodarona", correta: false, comentario: "Magnesio 1-2g IV. Corrigir potassio, suspender drogas que prolongam QT. Se perder pulso -> desfibrilar." },
-      { letra: "B", texto: "Sulfato de magnesio, mesmo se magnesio serico normal", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Magnesio 1-2g IV. Corrigir potassio, suspender drogas que prolongam QT. Se perder pulso -> desfibrilar." },
+      { letra: "B", texto: "Sulfato de magnesio, mesmo se magnesio serico normal", correta: true, comentario: "Alternativa correta. Magnesio 1-2g IV. Corrigir potassio, suspender drogas que prolongam QT. Se perder pulso -> desfibrilar." },
       { letra: "C", texto: "Adenosina", correta: false, comentario: "Esta opção diverge da diretriz atual. Magnesio 1-2g IV. Corrigir potassio, suspender drogas que prolongam QT. Se perder pulso -> desfibrilar." },
       { letra: "D", texto: "Betabloqueador", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Magnesio 1-2g IV. Corrigir potassio, suspender drogas que prolongam QT. Se perder pulso -> desfibrilar." },
     ],
@@ -927,7 +927,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Quais sao os 5H reversiveis do ACLS?",
     alternativas: [
       { letra: "A", texto: "Hipertensao, hepatite, hipoxia, hipovolemia, hipertermia", correta: false, comentario: "5H: Hipovolemia, Hipoxia, Hidrogenio (acidose), Hipo/hipercalemia, Hipotermia. 5T: Tensao no torax (pneumo), Tamponamento, Toxinas, Trombose pulmonar/coronaria." },
-      { letra: "B", texto: "Hipovolemia, hipoxia, hidrogenio (acidose), hipo/hipercalemia, hipotermia", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. 5H: Hipovolemia, Hipoxia, Hidrogenio (acidose), Hipo/hipercalemia, Hipotermia. 5T: Tensao no torax (pneumo), Tamponamento, Toxinas, Trombose pulmonar/coronaria." },
+      { letra: "B", texto: "Hipovolemia, hipoxia, hidrogenio (acidose), hipo/hipercalemia, hipotermia", correta: true, comentario: "Alternativa correta. 5H: Hipovolemia, Hipoxia, Hidrogenio (acidose), Hipo/hipercalemia, Hipotermia. 5T: Tensao no torax (pneumo), Tamponamento, Toxinas, Trombose pulmonar/coronaria." },
       { letra: "C", texto: "Hipoglicemia, hipertireoidismo, hiponatremia, hipertensao, hipoxia", correta: false, comentario: "Esta opção diverge da diretriz atual. 5H: Hipovolemia, Hipoxia, Hidrogenio (acidose), Hipo/hipercalemia, Hipotermia. 5T: Tensao no torax (pneumo), Tamponamento, Toxinas, Trombose pulmonar/coronaria." },
       { letra: "D", texto: "Hipoxia, hipotensao, hepatite, hipomagnesemia, hipotermia", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. 5H: Hipovolemia, Hipoxia, Hidrogenio (acidose), Hipo/hipercalemia, Hipotermia. 5T: Tensao no torax (pneumo), Tamponamento, Toxinas, Trombose pulmonar/coronaria." },
     ],
@@ -943,7 +943,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Na FA pre-excitada (WPW), qual conduta e CONTRAINDICADA?",
     alternativas: [
       { letra: "A", texto: "Cardioversao eletrica", correta: false, comentario: "Em WPW com FA, bloquear no AV -> estimulo passa TODO pela via acessoria -> resposta ventricular >250 bpm -> FV. Cardioversao eletrica ou procainamida." },
-      { letra: "B", texto: "Bloqueador do no AV (verapamil, diltiazem, adenosina)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Em WPW com FA, bloquear no AV -> estimulo passa TODO pela via acessoria -> resposta ventricular >250 bpm -> FV. Cardioversao eletrica ou procainamida." },
+      { letra: "B", texto: "Bloqueador do no AV (verapamil, diltiazem, adenosina)", correta: true, comentario: "Alternativa correta. Em WPW com FA, bloquear no AV -> estimulo passa TODO pela via acessoria -> resposta ventricular >250 bpm -> FV. Cardioversao eletrica ou procainamida." },
       { letra: "C", texto: "Procainamida", correta: false, comentario: "Esta opção diverge da diretriz atual. Em WPW com FA, bloquear no AV -> estimulo passa TODO pela via acessoria -> resposta ventricular >250 bpm -> FV. Cardioversao eletrica ou procainamida." },
       { letra: "D", texto: "Anticoagulacao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Em WPW com FA, bloquear no AV -> estimulo passa TODO pela via acessoria -> resposta ventricular >250 bpm -> FV. Cardioversao eletrica ou procainamida." },
     ],
@@ -959,7 +959,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "O perfil hemodinamico mais COMUM na descompensacao de IC e:",
     alternativas: [
       { letra: "A", texto: "A (quente e seco)", correta: false, comentario: "Perfil B (quente-umido) e o mais frequente: congesto, mas perfusao preservada. Base do tratamento = DIURETICO IV. Perfil C (frio-umido) e o mais grave." },
-      { letra: "B", texto: "B (quente e umido)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Perfil B (quente-umido) e o mais frequente: congesto, mas perfusao preservada. Base do tratamento = DIURETICO IV. Perfil C (frio-umido) e o mais grave." },
+      { letra: "B", texto: "B (quente e umido)", correta: true, comentario: "Alternativa correta. Perfil B (quente-umido) e o mais frequente: congesto, mas perfusao preservada. Base do tratamento = DIURETICO IV. Perfil C (frio-umido) e o mais grave." },
       { letra: "C", texto: "L (frio e seco)", correta: false, comentario: "Esta opção diverge da diretriz atual. Perfil B (quente-umido) e o mais frequente: congesto, mas perfusao preservada. Base do tratamento = DIURETICO IV. Perfil C (frio-umido) e o mais grave." },
       { letra: "D", texto: "C (frio e umido)", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Perfil B (quente-umido) e o mais frequente: congesto, mas perfusao preservada. Base do tratamento = DIURETICO IV. Perfil C (frio-umido) e o mais grave." },
     ],
@@ -975,7 +975,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Sobre os 4 pilares da ICFER (com beneficio de mortalidade), qual afirmativa e CORRETA?",
     alternativas: [
       { letra: "A", texto: "Todos os betabloqueadores tem beneficio comprovado", correta: false, comentario: "So 3 BB especificos tem evidencia — NAO e efeito de classe. Diuretico NAO reduz mortalidade (so alivia congestao). iSGLT2 beneficia INDEPENDENTE de diabetes." },
-      { letra: "B", texto: "Apenas carvedilol, bisoprolol e succinato de metoprolol tem evidencia", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. So 3 BB especificos tem evidencia — NAO e efeito de classe. Diuretico NAO reduz mortalidade (so alivia congestao). iSGLT2 beneficia INDEPENDENTE de diabetes." },
+      { letra: "B", texto: "Apenas carvedilol, bisoprolol e succinato de metoprolol tem evidencia", correta: true, comentario: "Alternativa correta. So 3 BB especificos tem evidencia — NAO e efeito de classe. Diuretico NAO reduz mortalidade (so alivia congestao). iSGLT2 beneficia INDEPENDENTE de diabetes." },
       { letra: "C", texto: "Diuretico e um dos 4 pilares", correta: false, comentario: "Esta opção diverge da diretriz atual. So 3 BB especificos tem evidencia — NAO e efeito de classe. Diuretico NAO reduz mortalidade (so alivia congestao). iSGLT2 beneficia INDEPENDENTE de diabetes." },
       { letra: "D", texto: "iSGLT2 so beneficia se paciente for diabetico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. So 3 BB especificos tem evidencia — NAO e efeito de classe. Diuretico NAO reduz mortalidade (so alivia congestao). iSGLT2 beneficia INDEPENDENTE de diabetes." },
     ],
@@ -991,7 +991,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Uma paciente com ICFER cronica descompensada em uso de carvedilol, enalapril e espironolactona chega ao PS. A conduta correta e:",
     alternativas: [
       { letra: "A", texto: "Suspender as 3 medicacoes", correta: false, comentario: "Descompensacao NAO e motivo para suspender os pilares. Trata-se adicionando diuretico, nao subtraindo o que reduz mortalidade. Foi exatamente o que a OMED cobrou." },
-      { letra: "B", texto: "Manter as 3 medicacoes, adicionar diuretico IV", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Descompensacao NAO e motivo para suspender os pilares. Trata-se adicionando diuretico, nao subtraindo o que reduz mortalidade. Foi exatamente o que a OMED cobrou." },
+      { letra: "B", texto: "Manter as 3 medicacoes, adicionar diuretico IV", correta: true, comentario: "Alternativa correta. Descompensacao NAO e motivo para suspender os pilares. Trata-se adicionando diuretico, nao subtraindo o que reduz mortalidade. Foi exatamente o que a OMED cobrou." },
       { letra: "C", texto: "Suspender apenas o carvedilol", correta: false, comentario: "Esta opção diverge da diretriz atual. Descompensacao NAO e motivo para suspender os pilares. Trata-se adicionando diuretico, nao subtraindo o que reduz mortalidade. Foi exatamente o que a OMED cobrou." },
       { letra: "D", texto: "Trocar enalapril por losartana", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Descompensacao NAO e motivo para suspender os pilares. Trata-se adicionando diuretico, nao subtraindo o que reduz mortalidade. Foi exatamente o que a OMED cobrou." },
     ],
@@ -1008,7 +1008,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Betabloqueador", correta: false, comentario: "Estudos EMPEROR-Preserved e DELIVER: iSGLT2 (dapa/empa) sao a unica classe com beneficio consistente na ICFEP. Os outros 4 pilares tem evidencia robusta so em ICFER." },
       { letra: "B", texto: "IECA", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Estudos EMPEROR-Preserved e DELIVER: iSGLT2 (dapa/empa) sao a unica classe com beneficio consistente na ICFEP. Os outros 4 pilares tem evidencia robusta so em ICFER." },
-      { letra: "C", texto: "iSGLT2", correta: true, comentario: "Esta opção diverge da diretriz atual. Estudos EMPEROR-Preserved e DELIVER: iSGLT2 (dapa/empa) sao a unica classe com beneficio consistente na ICFEP. Os outros 4 pilares tem evidencia robusta so em ICFER." },
+      { letra: "C", texto: "iSGLT2", correta: true, comentario: "Alternativa correta. Estudos EMPEROR-Preserved e DELIVER: iSGLT2 (dapa/empa) sao a unica classe com beneficio consistente na ICFEP. Os outros 4 pilares tem evidencia robusta so em ICFER." },
       { letra: "D", texto: "Digoxina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Estudos EMPEROR-Preserved e DELIVER: iSGLT2 (dapa/empa) sao a unica classe com beneficio consistente na ICFEP. Os outros 4 pilares tem evidencia robusta so em ICFER." },
     ],
     dificuldade: "fixacao",
@@ -1023,7 +1023,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "O sacubitril-valsartana (INRA) tem uma peculiaridade importante na transicao a partir de IECA:",
     alternativas: [
       { letra: "A", texto: "Nao pode ser usado apos IECA", correta: false, comentario: "Washout de 36h ao trocar de IECA -> INRA, por risco de angioedema (potencializado pelo bloqueio adicional de neprilisina + de ECA)." },
-      { letra: "B", texto: "Requer washout de 36 horas para evitar angioedema", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Washout de 36h ao trocar de IECA -> INRA, por risco de angioedema (potencializado pelo bloqueio adicional de neprilisina + de ECA)." },
+      { letra: "B", texto: "Requer washout de 36 horas para evitar angioedema", correta: true, comentario: "Alternativa correta. Washout de 36h ao trocar de IECA -> INRA, por risco de angioedema (potencializado pelo bloqueio adicional de neprilisina + de ECA)." },
       { letra: "C", texto: "Deve ser iniciado no mesmo dia do IECA", correta: false, comentario: "Esta opção diverge da diretriz atual. Washout de 36h ao trocar de IECA -> INRA, por risco de angioedema (potencializado pelo bloqueio adicional de neprilisina + de ECA)." },
       { letra: "D", texto: "So funciona se ha estenose mitral", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Washout de 36h ao trocar de IECA -> INRA, por risco de angioedema (potencializado pelo bloqueio adicional de neprilisina + de ECA)." },
     ],
@@ -1055,7 +1055,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Como interpretar um BNP de 40 pg/mL em paciente com dispneia?",
     alternativas: [
       { letra: "A", texto: "Confirma IC aguda", correta: false, comentario: "BNP <100 (ou NT-proBNP <300) tem alto VPN para EXCLUIR IC aguda. Cuidado: BNP pode ser falsamente BAIXO em obeso — armadilha classica." },
-      { letra: "B", texto: "Torna IC aguda pouco provavel (alto valor preditivo negativo)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. BNP <100 (ou NT-proBNP <300) tem alto VPN para EXCLUIR IC aguda. Cuidado: BNP pode ser falsamente BAIXO em obeso — armadilha classica." },
+      { letra: "B", texto: "Torna IC aguda pouco provavel (alto valor preditivo negativo)", correta: true, comentario: "Alternativa correta. BNP <100 (ou NT-proBNP <300) tem alto VPN para EXCLUIR IC aguda. Cuidado: BNP pode ser falsamente BAIXO em obeso — armadilha classica." },
       { letra: "C", texto: "Nao ajuda no diagnostico", correta: false, comentario: "Esta opção diverge da diretriz atual. BNP <100 (ou NT-proBNP <300) tem alto VPN para EXCLUIR IC aguda. Cuidado: BNP pode ser falsamente BAIXO em obeso — armadilha classica." },
       { letra: "D", texto: "So exclui IC se paciente for obeso", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. BNP <100 (ou NT-proBNP <300) tem alto VPN para EXCLUIR IC aguda. Cuidado: BNP pode ser falsamente BAIXO em obeso — armadilha classica." },
     ],
@@ -1071,7 +1071,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "O diuretico de escolha para descongestionar em IC descompensada agudizada e:",
     alternativas: [
       { letra: "A", texto: "Hidroclorotiazida oral", correta: false, comentario: "Furosemida IV: pelo menos 2x a dose oral (absorcao intestinal comprometida pela congestao). Se paciente virgem de diuretico: 20-40mg IV." },
-      { letra: "B", texto: "Furosemida IV", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Furosemida IV: pelo menos 2x a dose oral (absorcao intestinal comprometida pela congestao). Se paciente virgem de diuretico: 20-40mg IV." },
+      { letra: "B", texto: "Furosemida IV", correta: true, comentario: "Alternativa correta. Furosemida IV: pelo menos 2x a dose oral (absorcao intestinal comprometida pela congestao). Se paciente virgem de diuretico: 20-40mg IV." },
       { letra: "C", texto: "Espironolactona", correta: false, comentario: "Esta opção diverge da diretriz atual. Furosemida IV: pelo menos 2x a dose oral (absorcao intestinal comprometida pela congestao). Se paciente virgem de diuretico: 20-40mg IV." },
       { letra: "D", texto: "Manitol", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Furosemida IV: pelo menos 2x a dose oral (absorcao intestinal comprometida pela congestao). Se paciente virgem de diuretico: 20-40mg IV." },
     ],
@@ -1087,7 +1087,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Quando iniciar/titular betabloqueador em paciente internado por IC descompensada?",
     alternativas: [
       { letra: "A", texto: "Assim que chegar no PS, junto com o diuretico", correta: false, comentario: "Start low, go slow. Iniciar/titular BB com o paciente ja COMPENSADO. Se descompensado agudo, adiar. Nunca suspender se ja em uso, salvo hipotensao/bradicardia grave." },
-      { letra: "B", texto: "Apos compensacao, com paciente estavel", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Start low, go slow. Iniciar/titular BB com o paciente ja COMPENSADO. Se descompensado agudo, adiar. Nunca suspender se ja em uso, salvo hipotensao/bradicardia grave." },
+      { letra: "B", texto: "Apos compensacao, com paciente estavel", correta: true, comentario: "Alternativa correta. Start low, go slow. Iniciar/titular BB com o paciente ja COMPENSADO. Se descompensado agudo, adiar. Nunca suspender se ja em uso, salvo hipotensao/bradicardia grave." },
       { letra: "C", texto: "Nunca durante a internacao", correta: false, comentario: "Esta opção diverge da diretriz atual. Start low, go slow. Iniciar/titular BB com o paciente ja COMPENSADO. Se descompensado agudo, adiar. Nunca suspender se ja em uso, salvo hipotensao/bradicardia grave." },
       { letra: "D", texto: "So depois da alta hospitalar", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Start low, go slow. Iniciar/titular BB com o paciente ja COMPENSADO. Se descompensado agudo, adiar. Nunca suspender se ja em uso, salvo hipotensao/bradicardia grave." },
     ],
@@ -1103,7 +1103,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Em paciente idoso internado por IC que desenvolve confusao aguda flutuante no 3o dia, com desatencao, sem sinais focais, o diagnostico mais provavel e:",
     alternativas: [
       { letra: "A", texto: "AVC isquemico", correta: false, comentario: "Delirium — multifatorial: internacao, priv. do sono, disturbio hidroeletrolitico por diuretico, hipoxia. Medidas nao farmacologicas primeiro. EVITAR benzodiazepinico." },
-      { letra: "B", texto: "Delirium", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Delirium — multifatorial: internacao, priv. do sono, disturbio hidroeletrolitico por diuretico, hipoxia. Medidas nao farmacologicas primeiro. EVITAR benzodiazepinico." },
+      { letra: "B", texto: "Delirium", correta: true, comentario: "Alternativa correta. Delirium — multifatorial: internacao, priv. do sono, disturbio hidroeletrolitico por diuretico, hipoxia. Medidas nao farmacologicas primeiro. EVITAR benzodiazepinico." },
       { letra: "C", texto: "Encefalopatia hepatica", correta: false, comentario: "Esta opção diverge da diretriz atual. Delirium — multifatorial: internacao, priv. do sono, disturbio hidroeletrolitico por diuretico, hipoxia. Medidas nao farmacologicas primeiro. EVITAR benzodiazepinico." },
       { letra: "D", texto: "Demencia vascular", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Delirium — multifatorial: internacao, priv. do sono, disturbio hidroeletrolitico por diuretico, hipoxia. Medidas nao farmacologicas primeiro. EVITAR benzodiazepinico." },
     ],
@@ -1119,7 +1119,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Quais sao as MANIFESTACOES MAIORES nos criterios de Jones revisados?",
     alternativas: [
       { letra: "A", texto: "Febre, artralgia, VHS alta, PR alargado, cardite", correta: false, comentario: "CANCE: Cardite, Artrite (migratoria de grandes articulacoes), Nodulos subcutaneos, Coreia de Sydenham, Eritema marginado." },
-      { letra: "B", texto: "Cardite, artrite, nodulos, coreia, eritema marginado (mnemonico CANCE)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. CANCE: Cardite, Artrite (migratoria de grandes articulacoes), Nodulos subcutaneos, Coreia de Sydenham, Eritema marginado." },
+      { letra: "B", texto: "Cardite, artrite, nodulos, coreia, eritema marginado (mnemonico CANCE)", correta: true, comentario: "Alternativa correta. CANCE: Cardite, Artrite (migratoria de grandes articulacoes), Nodulos subcutaneos, Coreia de Sydenham, Eritema marginado." },
       { letra: "C", texto: "Vasculite, artrite, cardite, febre, prurido", correta: false, comentario: "Esta opção diverge da diretriz atual. CANCE: Cardite, Artrite (migratoria de grandes articulacoes), Nodulos subcutaneos, Coreia de Sydenham, Eritema marginado." },
       { letra: "D", texto: "Cardite, febre, mialgia, artralgia, eritema", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. CANCE: Cardite, Artrite (migratoria de grandes articulacoes), Nodulos subcutaneos, Coreia de Sydenham, Eritema marginado." },
     ],
@@ -1136,7 +1136,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "5 anos apos o surto", correta: false, comentario: "Regra 5/10/40: sem cardite = 5 anos ou ate 21a; cardite curada = 10 anos ou ate 25a; com sequela valvar = ate 40 anos ou vitalicia. Item mais cobrado." },
       { letra: "B", texto: "10 anos ou ate os 25 anos", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Regra 5/10/40: sem cardite = 5 anos ou ate 21a; cardite curada = 10 anos ou ate 25a; com sequela valvar = ate 40 anos ou vitalicia. Item mais cobrado." },
-      { letra: "C", texto: "Ate os 40 anos ou vitalicia em selecionados", correta: true, comentario: "Esta opção diverge da diretriz atual. Regra 5/10/40: sem cardite = 5 anos ou ate 21a; cardite curada = 10 anos ou ate 25a; com sequela valvar = ate 40 anos ou vitalicia. Item mais cobrado." },
+      { letra: "C", texto: "Ate os 40 anos ou vitalicia em selecionados", correta: true, comentario: "Alternativa correta. Regra 5/10/40: sem cardite = 5 anos ou ate 21a; cardite curada = 10 anos ou ate 25a; com sequela valvar = ate 40 anos ou vitalicia. Item mais cobrado." },
       { letra: "D", texto: "1 ano", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Regra 5/10/40: sem cardite = 5 anos ou ate 21a; cardite curada = 10 anos ou ate 25a; com sequela valvar = ate 40 anos ou vitalicia. Item mais cobrado." },
     ],
     dificuldade: "fixacao",
@@ -1151,7 +1151,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Sobre a poliartrite da febre reumatica, qual e a caracteristica mais tipica?",
     alternativas: [
       { letra: "A", texto: "Aditiva, simetrica, deixa deformidade", correta: false, comentario: "Poliartrite MIGRATORIA (melhora em uma articulacao enquanto surge em outra), assimetrica, grandes articulacoes. Nao deixa sequela. Resposta dramatica a AAS/naproxeno." },
-      { letra: "B", texto: "Migratoria, assimetrica, sem sequela", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Poliartrite MIGRATORIA (melhora em uma articulacao enquanto surge em outra), assimetrica, grandes articulacoes. Nao deixa sequela. Resposta dramatica a AAS/naproxeno." },
+      { letra: "B", texto: "Migratoria, assimetrica, sem sequela", correta: true, comentario: "Alternativa correta. Poliartrite MIGRATORIA (melhora em uma articulacao enquanto surge em outra), assimetrica, grandes articulacoes. Nao deixa sequela. Resposta dramatica a AAS/naproxeno." },
       { letra: "C", texto: "Monoartrite persistente", correta: false, comentario: "Esta opção diverge da diretriz atual. Poliartrite MIGRATORIA (melhora em uma articulacao enquanto surge em outra), assimetrica, grandes articulacoes. Nao deixa sequela. Resposta dramatica a AAS/naproxeno." },
       { letra: "D", texto: "Poliartrite de pequenas articulacoes", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Poliartrite MIGRATORIA (melhora em uma articulacao enquanto surge em outra), assimetrica, grandes articulacoes. Nao deixa sequela. Resposta dramatica a AAS/naproxeno." },
     ],
@@ -1168,7 +1168,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Vacinacao contra estreptococo", correta: false, comentario: "Profilaxia primaria = tratar toda faringite estrepto adequadamente (penicilina benzatina dose unica, ou penicilina V oral 10 dias). Iniciada ate 9 dias apos o inicio previne FR." },
       { letra: "B", texto: "Penicilina benzatina em surtos comunitarios", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Profilaxia primaria = tratar toda faringite estrepto adequadamente (penicilina benzatina dose unica, ou penicilina V oral 10 dias). Iniciada ate 9 dias apos o inicio previne FR." },
-      { letra: "C", texto: "Tratamento adequado da faringoamigdalite estreptococica", correta: true, comentario: "Esta opção diverge da diretriz atual. Profilaxia primaria = tratar toda faringite estrepto adequadamente (penicilina benzatina dose unica, ou penicilina V oral 10 dias). Iniciada ate 9 dias apos o inicio previne FR." },
+      { letra: "C", texto: "Tratamento adequado da faringoamigdalite estreptococica", correta: true, comentario: "Alternativa correta. Profilaxia primaria = tratar toda faringite estrepto adequadamente (penicilina benzatina dose unica, ou penicilina V oral 10 dias). Iniciada ate 9 dias apos o inicio previne FR." },
       { letra: "D", texto: "Radioterapia local", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Profilaxia primaria = tratar toda faringite estrepto adequadamente (penicilina benzatina dose unica, ou penicilina V oral 10 dias). Iniciada ate 9 dias apos o inicio previne FR." },
     ],
     dificuldade: "fixacao",
@@ -1183,7 +1183,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "A cardiopatia reumatica cronica classicamente acomete qual valva?",
     alternativas: [
       { letra: "A", texto: "Aortica", correta: false, comentario: "Valva mitral (agudo: insuficiencia; cronico: estenose). Aortica pode ser acometida em ~30% (isolada em  FA + varfarina obrigatoria." },
-      { letra: "B", texto: "Mitral", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Valva mitral (agudo: insuficiencia; cronico: estenose). Aortica pode ser acometida em ~30% (isolada em  FA + varfarina obrigatoria." },
+      { letra: "B", texto: "Mitral", correta: true, comentario: "Alternativa correta. Valva mitral (agudo: insuficiencia; cronico: estenose). Aortica pode ser acometida em ~30% (isolada em  FA + varfarina obrigatoria." },
       { letra: "C", texto: "Pulmonar", correta: false, comentario: "Esta opção diverge da diretriz atual. Valva mitral (agudo: insuficiencia; cronico: estenose). Aortica pode ser acometida em ~30% (isolada em  FA + varfarina obrigatoria." },
       { letra: "D", texto: "Tricuspide", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Valva mitral (agudo: insuficiencia; cronico: estenose). Aortica pode ser acometida em ~30% (isolada em  FA + varfarina obrigatoria." },
     ],
@@ -1199,7 +1199,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e o valor de indice tornozelo-braquial (ITB) que confirma o diagnostico de DAP?",
     alternativas: [
       { letra: "A", texto: "<=1,0", correta: false, comentario: "ITB 1,40 = arteria incompressivel (diabetico, DRC) — usar indice halux-braquial." },
-      { letra: "B", texto: "<=0,9", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. ITB 1,40 = arteria incompressivel (diabetico, DRC) — usar indice halux-braquial." },
+      { letra: "B", texto: "<=0,9", correta: true, comentario: "Alternativa correta. ITB 1,40 = arteria incompressivel (diabetico, DRC) — usar indice halux-braquial." },
       { letra: "C", texto: "<=1,3", correta: false, comentario: "Esta opção diverge da diretriz atual. ITB 1,40 = arteria incompressivel (diabetico, DRC) — usar indice halux-braquial." },
       { letra: "D", texto: "<=0,7", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. ITB 1,40 = arteria incompressivel (diabetico, DRC) — usar indice halux-braquial." },
     ],
@@ -1215,7 +1215,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "A intervencao isolada de MAIOR IMPACTO no tratamento da DAP e:",
     alternativas: [
       { letra: "A", texto: "Cilostazol", correta: false, comentario: "Cessacao do tabagismo — tanto para sintomas quanto para desfechos CV. E o fator de risco mais fortemente associado a DAP (mais que dislipidemia ou HAS)." },
-      { letra: "B", texto: "Cessacao do tabagismo", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Cessacao do tabagismo — tanto para sintomas quanto para desfechos CV. E o fator de risco mais fortemente associado a DAP (mais que dislipidemia ou HAS)." },
+      { letra: "B", texto: "Cessacao do tabagismo", correta: true, comentario: "Alternativa correta. Cessacao do tabagismo — tanto para sintomas quanto para desfechos CV. E o fator de risco mais fortemente associado a DAP (mais que dislipidemia ou HAS)." },
       { letra: "C", texto: "AAS", correta: false, comentario: "Esta opção diverge da diretriz atual. Cessacao do tabagismo — tanto para sintomas quanto para desfechos CV. E o fator de risco mais fortemente associado a DAP (mais que dislipidemia ou HAS)." },
       { letra: "D", texto: "Meia elastica de compressao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Cessacao do tabagismo — tanto para sintomas quanto para desfechos CV. E o fator de risco mais fortemente associado a DAP (mais que dislipidemia ou HAS)." },
     ],
@@ -1248,7 +1248,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Hipertensao", correta: false, comentario: "Cilostazol e inibidor de PDE III — a classe esta associada a maior mortalidade em IC. Pegadinha classica: paciente com DAP + IC ficaria idealmente sem cilostazol." },
       { letra: "B", texto: "Diabetes", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Cilostazol e inibidor de PDE III — a classe esta associada a maior mortalidade em IC. Pegadinha classica: paciente com DAP + IC ficaria idealmente sem cilostazol." },
-      { letra: "C", texto: "Insuficiencia cardiaca", correta: true, comentario: "Esta opção diverge da diretriz atual. Cilostazol e inibidor de PDE III — a classe esta associada a maior mortalidade em IC. Pegadinha classica: paciente com DAP + IC ficaria idealmente sem cilostazol." },
+      { letra: "C", texto: "Insuficiencia cardiaca", correta: true, comentario: "Alternativa correta. Cilostazol e inibidor de PDE III — a classe esta associada a maior mortalidade em IC. Pegadinha classica: paciente com DAP + IC ficaria idealmente sem cilostazol." },
       { letra: "D", texto: "Dislipidemia", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Cilostazol e inibidor de PDE III — a classe esta associada a maior mortalidade em IC. Pegadinha classica: paciente com DAP + IC ficaria idealmente sem cilostazol." },
     ],
     dificuldade: "fixacao",
@@ -1263,7 +1263,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Qual e o achado eletrocardiografico ALTAMENTE especifico de pericardite aguda (alem do supra difuso)?",
     alternativas: [
       { letra: "A", texto: "QT longo", correta: false, comentario: "Infra de PR (aVR mostra supra de PR e infra de ST — padrao inverso). Supra difuso concavo sem imagem em espelho + infra de PR = assinatura ECG classica." },
-      { letra: "B", texto: "Infradesnivelamento de PR", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Infra de PR (aVR mostra supra de PR e infra de ST — padrao inverso). Supra difuso concavo sem imagem em espelho + infra de PR = assinatura ECG classica." },
+      { letra: "B", texto: "Infradesnivelamento de PR", correta: true, comentario: "Alternativa correta. Infra de PR (aVR mostra supra de PR e infra de ST — padrao inverso). Supra difuso concavo sem imagem em espelho + infra de PR = assinatura ECG classica." },
       { letra: "C", texto: "Onda U proeminente", correta: false, comentario: "Esta opção diverge da diretriz atual. Infra de PR (aVR mostra supra de PR e infra de ST — padrao inverso). Supra difuso concavo sem imagem em espelho + infra de PR = assinatura ECG classica." },
       { letra: "D", texto: "BAV 1o grau", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Infra de PR (aVR mostra supra de PR e infra de ST — padrao inverso). Supra difuso concavo sem imagem em espelho + infra de PR = assinatura ECG classica." },
     ],
@@ -1280,7 +1280,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Corticoide em alta dose", correta: false, comentario: "AINE (ibuprofeno 600mg 8/8h) + COLCHICINA 0,5mg 12/12h por 3 meses. A colchicina reduz recorrencia (ICAP, CORP). Corticoide precoce AUMENTA recorrencia." },
       { letra: "B", texto: "AINE isolado", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. AINE (ibuprofeno 600mg 8/8h) + COLCHICINA 0,5mg 12/12h por 3 meses. A colchicina reduz recorrencia (ICAP, CORP). Corticoide precoce AUMENTA recorrencia." },
-      { letra: "C", texto: "AINE + colchicina (colchicina reduz recorrencia)", correta: true, comentario: "Esta opção diverge da diretriz atual. AINE (ibuprofeno 600mg 8/8h) + COLCHICINA 0,5mg 12/12h por 3 meses. A colchicina reduz recorrencia (ICAP, CORP). Corticoide precoce AUMENTA recorrencia." },
+      { letra: "C", texto: "AINE + colchicina (colchicina reduz recorrencia)", correta: true, comentario: "Alternativa correta. AINE (ibuprofeno 600mg 8/8h) + COLCHICINA 0,5mg 12/12h por 3 meses. A colchicina reduz recorrencia (ICAP, CORP). Corticoide precoce AUMENTA recorrencia." },
       { letra: "D", texto: "AAS + clopidogrel + enoxaparina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. AINE (ibuprofeno 600mg 8/8h) + COLCHICINA 0,5mg 12/12h por 3 meses. A colchicina reduz recorrencia (ICAP, CORP). Corticoide precoce AUMENTA recorrencia." },
     ],
     dificuldade: "fixacao",
@@ -1295,7 +1295,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem de 62 anos, hipertenso e tabagista (30 macos-ano), procura o PS com dor precordial em aperto ha 40 minutos, irradiando para MSE e mandibula, com sudorese. Nega sincope. Ao exame: BEG, PA 145/90 em ambos os bracos, FC 88 bpm, SpO2 96%, ausculta cardiaca com B1 e B2 normofoneticas, pulmoes limpos, pulsos simetricos. ECG realizado em 8 minutos: supra de ST de 2,5mm em D2, D3 e aVF, com infra em espelho em D1 e aVL. Angioplastia primaria disponivel em 40 minutos. Qual a conduta imediata?",
     alternativas: [
       { letra: "A", texto: "Aguardar troponina para confirmar IAM antes de reperfundir", correta: false, comentario: "IAMCSST inferior classico. Angioplastia primaria disponivel em ≤120 min (aqui em 40 min) = escolha preferencial. Nao aguardar troponina — supra de ST decide a conduta." },
-      { letra: "B", texto: "Encaminhar imediatamente para angioplastia primaria (porta-balao ≤90 min)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. IAMCSST inferior classico. Angioplastia primaria disponivel em ≤120 min (aqui em 40 min) = escolha preferencial. Nao aguardar troponina — supra de ST decide a conduta." },
+      { letra: "B", texto: "Encaminhar imediatamente para angioplastia primaria (porta-balao ≤90 min)", correta: true, comentario: "Alternativa correta. IAMCSST inferior classico. Angioplastia primaria disponivel em ≤120 min (aqui em 40 min) = escolha preferencial. Nao aguardar troponina — supra de ST decide a conduta." },
       { letra: "C", texto: "Trombolisar antes da angioplastia", correta: false, comentario: "Esta opção diverge da diretriz atual. IAMCSST inferior classico. Angioplastia primaria disponivel em ≤120 min (aqui em 40 min) = escolha preferencial. Nao aguardar troponina — supra de ST decide a conduta." },
       { letra: "D", texto: "Iniciar apenas nitrato e AAS, sem reperfusao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. IAMCSST inferior classico. Angioplastia primaria disponivel em ≤120 min (aqui em 40 min) = escolha preferencial. Nao aguardar troponina — supra de ST decide a conduta." },
     ],
@@ -1311,7 +1311,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "O mesmo paciente da questao anterior, apos coleta de exames, apresenta hipotensao (PA 85/50) apos administracao de 5mg de dinitrato IV. Pulmoes seguem limpos, veias jugulares turgidas. Qual e a causa mais provavel e a conduta?",
     alternativas: [
       { letra: "A", texto: "Choque cardiogenico Killip IV — iniciar noradrenalina", correta: false, comentario: "IAM inferior + hipotensao ao nitrato + pulmoes limpos + turgencia jugular = IAM de VD. Pedir V3R/V4R. Conduta: VOLUME, nunca nitrato/diuretico. Nitrato ja causou o dano — expandir agora." },
-      { letra: "B", texto: "Comprometimento de VD — expandir com volume", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. IAM inferior + hipotensao ao nitrato + pulmoes limpos + turgencia jugular = IAM de VD. Pedir V3R/V4R. Conduta: VOLUME, nunca nitrato/diuretico. Nitrato ja causou o dano — expandir agora." },
+      { letra: "B", texto: "Comprometimento de VD — expandir com volume", correta: true, comentario: "Alternativa correta. IAM inferior + hipotensao ao nitrato + pulmoes limpos + turgencia jugular = IAM de VD. Pedir V3R/V4R. Conduta: VOLUME, nunca nitrato/diuretico. Nitrato ja causou o dano — expandir agora." },
       { letra: "C", texto: "Ruptura de parede livre — pericardiocentese", correta: false, comentario: "Esta opção diverge da diretriz atual. IAM inferior + hipotensao ao nitrato + pulmoes limpos + turgencia jugular = IAM de VD. Pedir V3R/V4R. Conduta: VOLUME, nunca nitrato/diuretico. Nitrato ja causou o dano — expandir agora." },
       { letra: "D", texto: "Reacao alergica — corticoide", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. IAM inferior + hipotensao ao nitrato + pulmoes limpos + turgencia jugular = IAM de VD. Pedir V3R/V4R. Conduta: VOLUME, nunca nitrato/diuretico. Nitrato ja causou o dano — expandir agora." },
     ],
@@ -1327,7 +1327,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Mulher de 68 anos, diabetica, chega ao PS com dispneia progressiva ha 4 horas + fadiga. Nega dor toracica. Ao exame: PA 130/80, FC 100, SpO2 94%, estertores em bases. ECG: supra de 1,5mm em V2, V3, V4 e V5 com imagem em espelho inferior. Troponina hs elevada com padrao dinamico. Qual e o diagnostico e a caracteristica particular deste caso?",
     alternativas: [
       { letra: "A", texto: "Pericardite aguda com apresentacao dispneica", correta: false, comentario: "IAM em diabetico/idoso/mulher pode se apresentar SEM dor toracica classica: dispneia isolada, fadiga, sincope, epigastralgia. E armadilha comum — nao esquecer que 1/3 pode ser atipico." },
-      { letra: "B", texto: "IAMCSST anterior — apresentacao atipica (equivalente anginoso), comum em diabeticos, idosos e mulheres", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. IAM em diabetico/idoso/mulher pode se apresentar SEM dor toracica classica: dispneia isolada, fadiga, sincope, epigastralgia. E armadilha comum — nao esquecer que 1/3 pode ser atipico." },
+      { letra: "B", texto: "IAMCSST anterior — apresentacao atipica (equivalente anginoso), comum em diabeticos, idosos e mulheres", correta: true, comentario: "Alternativa correta. IAM em diabetico/idoso/mulher pode se apresentar SEM dor toracica classica: dispneia isolada, fadiga, sincope, epigastralgia. E armadilha comum — nao esquecer que 1/3 pode ser atipico." },
       { letra: "C", texto: "IC descompensada primaria", correta: false, comentario: "Esta opção diverge da diretriz atual. IAM em diabetico/idoso/mulher pode se apresentar SEM dor toracica classica: dispneia isolada, fadiga, sincope, epigastralgia. E armadilha comum — nao esquecer que 1/3 pode ser atipico." },
       { letra: "D", texto: "Miocardite viral", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. IAM em diabetico/idoso/mulher pode se apresentar SEM dor toracica classica: dispneia isolada, fadiga, sincope, epigastralgia. E armadilha comum — nao esquecer que 1/3 pode ser atipico." },
     ],
@@ -1359,7 +1359,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente de 58 anos, hipertenso, chega ao PS com dor toracica atipica ha 6 horas + tontura. ECG: BRE novo (nao havia antes). Troponina inicial 0,05 (VR <0,04), com previsao de nova coleta em 1h. A conduta correta e:",
     alternativas: [
       { letra: "A", texto: "Aguardar segunda troponina antes de reperfundir", correta: false, comentario: "BRE novo (ou presumivelmente novo) com clinica de isquemia = EQUIVALENTE de IAMCSST. Sgarbossa ajuda a confirmar quando ha ECG previo. Nao aguardar troponina." },
-      { letra: "B", texto: "Tratar como equivalente de IAMCSST — reperfusao imediata", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. BRE novo (ou presumivelmente novo) com clinica de isquemia = EQUIVALENTE de IAMCSST. Sgarbossa ajuda a confirmar quando ha ECG previo. Nao aguardar troponina." },
+      { letra: "B", texto: "Tratar como equivalente de IAMCSST — reperfusao imediata", correta: true, comentario: "Alternativa correta. BRE novo (ou presumivelmente novo) com clinica de isquemia = EQUIVALENTE de IAMCSST. Sgarbossa ajuda a confirmar quando ha ECG previo. Nao aguardar troponina." },
       { letra: "C", texto: "Iniciar AAS e alta em 24h", correta: false, comentario: "Esta opção diverge da diretriz atual. BRE novo (ou presumivelmente novo) com clinica de isquemia = EQUIVALENTE de IAMCSST. Sgarbossa ajuda a confirmar quando ha ECG previo. Nao aguardar troponina." },
       { letra: "D", texto: "So investigar ambulatorialmente", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. BRE novo (ou presumivelmente novo) com clinica de isquemia = EQUIVALENTE de IAMCSST. Sgarbossa ajuda a confirmar quando ha ECG previo. Nao aguardar troponina." },
     ],
@@ -1375,7 +1375,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com IAM inferior tratado com sucesso com angioplastia primaria da CD. No 4o dia de internacao, subitamente evolui com edema agudo de pulmao (SpO2 78%, estertores difusos, PA 170/100) e novo sopro sistolico intenso em foco mitral. Qual e o diagnostico mais provavel?",
     alternativas: [
       { letra: "A", texto: "Reoclusao coronariana", correta: false, comentario: "Ruptura de musculo papilar posteromedial (irrigacao unica pela CD, mais frequente em IAM inferior). Complicacao mecanica classica no dia 3-7. Emergencia cirurgica." },
-      { letra: "B", texto: "Ruptura de musculo papilar com insuficiencia mitral aguda", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Ruptura de musculo papilar posteromedial (irrigacao unica pela CD, mais frequente em IAM inferior). Complicacao mecanica classica no dia 3-7. Emergencia cirurgica." },
+      { letra: "B", texto: "Ruptura de musculo papilar com insuficiencia mitral aguda", correta: true, comentario: "Alternativa correta. Ruptura de musculo papilar posteromedial (irrigacao unica pela CD, mais frequente em IAM inferior). Complicacao mecanica classica no dia 3-7. Emergencia cirurgica." },
       { letra: "C", texto: "Sindrome de Dressler", correta: false, comentario: "Esta opção diverge da diretriz atual. Ruptura de musculo papilar posteromedial (irrigacao unica pela CD, mais frequente em IAM inferior). Complicacao mecanica classica no dia 3-7. Emergencia cirurgica." },
       { letra: "D", texto: "Pericardite epistenocardica", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Ruptura de musculo papilar posteromedial (irrigacao unica pela CD, mais frequente em IAM inferior). Complicacao mecanica classica no dia 3-7. Emergencia cirurgica." },
     ],
@@ -1391,7 +1391,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem de 45 anos, sem comorbidades, dor toracica ha 24h em uso de dipirona, apos quadro gripal ha 1 semana. ECG: supra de ST de 1mm em D1, D2, D3, aVF, V3-V6 (difuso), concavo, sem imagem em espelho + infra de PR. Troponina normal. Qual e o diagnostico e conduta?",
     alternativas: [
       { letra: "A", texto: "IAMCSST anterolateral — trombolise", correta: false, comentario: "Supra difuso, concavo, sem espelho + infra de PR + troponina normal + quadro viral recente = pericardite aguda. Tratar com AINE (ibuprofeno) + colchicina por 3 meses." },
-      { letra: "B", texto: "Pericardite aguda — AINE + colchicina", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Supra difuso, concavo, sem espelho + infra de PR + troponina normal + quadro viral recente = pericardite aguda. Tratar com AINE (ibuprofeno) + colchicina por 3 meses." },
+      { letra: "B", texto: "Pericardite aguda — AINE + colchicina", correta: true, comentario: "Alternativa correta. Supra difuso, concavo, sem espelho + infra de PR + troponina normal + quadro viral recente = pericardite aguda. Tratar com AINE (ibuprofeno) + colchicina por 3 meses." },
       { letra: "C", texto: "Pericardite pos-IAM (Dressler)", correta: false, comentario: "Esta opção diverge da diretriz atual. Supra difuso, concavo, sem espelho + infra de PR + troponina normal + quadro viral recente = pericardite aguda. Tratar com AINE (ibuprofeno) + colchicina por 3 meses." },
       { letra: "D", texto: "TEP — heparina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Supra difuso, concavo, sem espelho + infra de PR + troponina normal + quadro viral recente = pericardite aguda. Tratar com AINE (ibuprofeno) + colchicina por 3 meses." },
     ],
@@ -1407,7 +1407,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com IAMCSST anterior tratado com trombolise ha 45 minutos apresenta reducao do supra de 3mm para 1,5mm em V2-V3, com alivio da dor e episodios de ritmo idioventricular acelerado. A interpretacao correta e:",
     alternativas: [
       { letra: "A", texto: "Falha de reperfusao — angioplastia de resgate", correta: false, comentario: "Reperfusao bem-sucedida: queda do supra >50% + alivio da dor + arritmia de reperfusao (RIVA — ritmo idioventricular acelerado, benigno). NAO tratar RIVA." },
-      { letra: "B", texto: "Reperfusao bem-sucedida — RIVA e sinal benigno, nao tratar", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Reperfusao bem-sucedida: queda do supra >50% + alivio da dor + arritmia de reperfusao (RIVA — ritmo idioventricular acelerado, benigno). NAO tratar RIVA." },
+      { letra: "B", texto: "Reperfusao bem-sucedida — RIVA e sinal benigno, nao tratar", correta: true, comentario: "Alternativa correta. Reperfusao bem-sucedida: queda do supra >50% + alivio da dor + arritmia de reperfusao (RIVA — ritmo idioventricular acelerado, benigno). NAO tratar RIVA." },
       { letra: "C", texto: "Nova oclusao — repetir trombolise", correta: false, comentario: "Esta opção diverge da diretriz atual. Reperfusao bem-sucedida: queda do supra >50% + alivio da dor + arritmia de reperfusao (RIVA — ritmo idioventricular acelerado, benigno). NAO tratar RIVA." },
       { letra: "D", texto: "Choque cardiogenico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Reperfusao bem-sucedida: queda do supra >50% + alivio da dor + arritmia de reperfusao (RIVA — ritmo idioventricular acelerado, benigno). NAO tratar RIVA." },
     ],
@@ -1425,7 +1425,7 @@ export const QUESTOES_CARDIO: Questao[] = [
       { letra: "A", texto: "Conservadora, alta em 24h", correta: false, comentario: "GRACE >140 = invasiva precoce (cateterismo <24h). GRACE 109-140 = <72h. Trombolise NAO tem beneficio em IAMSSST — pode piorar." },
       { letra: "B", texto: "Trombolise imediata", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. GRACE >140 = invasiva precoce (cateterismo <24h). GRACE 109-140 = <72h. Trombolise NAO tem beneficio em IAMSSST — pode piorar." },
       { letra: "C", texto: "Cateterismo em ate 72h", correta: false, comentario: "Esta opção diverge da diretriz atual. GRACE >140 = invasiva precoce (cateterismo <24h). GRACE 109-140 = <72h. Trombolise NAO tem beneficio em IAMSSST — pode piorar." },
-      { letra: "D", texto: "Estrategia invasiva precoce (<24h)", correta: true, comentario: "Esta resposta não reflete o padrão-ouro. GRACE >140 = invasiva precoce (cateterismo <24h). GRACE 109-140 = <72h. Trombolise NAO tem beneficio em IAMSSST — pode piorar." },
+      { letra: "D", texto: "Estrategia invasiva precoce (<24h)", correta: true, comentario: "Alternativa correta. GRACE >140 = invasiva precoce (cateterismo <24h). GRACE 109-140 = <72h. Trombolise NAO tem beneficio em IAMSSST — pode piorar." },
     ],
     dificuldade: "intermediaria",
     estilo: "caso",
@@ -1439,7 +1439,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem de 50 anos chega com dor toracica e ECG diagnostico de IAMCSST anterior. A angioplastia disponivel exige transferencia com previsao total (primeiro contato ate balao) de 140 minutos. A conduta correta e:",
     alternativas: [
       { letra: "A", texto: "Aguardar a transferencia para angioplastia primaria", correta: false, comentario: "Se porta-balao previsto >120 min = trombolisar em ate 30 min da chegada. Estrategia farmaco-invasiva: cateterismo 2-24h apos, mesmo se trombolise bem-sucedida." },
-      { letra: "B", texto: "Trombolisar agora (porta-agulha ≤30 min) e considerar estrategia farmaco-invasiva", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Se porta-balao previsto >120 min = trombolisar em ate 30 min da chegada. Estrategia farmaco-invasiva: cateterismo 2-24h apos, mesmo se trombolise bem-sucedida." },
+      { letra: "B", texto: "Trombolisar agora (porta-agulha ≤30 min) e considerar estrategia farmaco-invasiva", correta: true, comentario: "Alternativa correta. Se porta-balao previsto >120 min = trombolisar em ate 30 min da chegada. Estrategia farmaco-invasiva: cateterismo 2-24h apos, mesmo se trombolise bem-sucedida." },
       { letra: "C", texto: "So AAS, sem reperfusao", correta: false, comentario: "Esta opção diverge da diretriz atual. Se porta-balao previsto >120 min = trombolisar em ate 30 min da chegada. Estrategia farmaco-invasiva: cateterismo 2-24h apos, mesmo se trombolise bem-sucedida." },
       { letra: "D", texto: "Encaminhar para cirurgia de revascularizacao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Se porta-balao previsto >120 min = trombolisar em ate 30 min da chegada. Estrategia farmaco-invasiva: cateterismo 2-24h apos, mesmo se trombolise bem-sucedida." },
     ],
@@ -1455,7 +1455,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com IAMCSST tratado com trombolitico ha 90 minutos: dor persiste, supra caiu de 4mm para 3mm (reducao <50%), sem alivio clinico. A conduta imediata e:",
     alternativas: [
       { letra: "A", texto: "Aguardar mais 30 minutos", correta: false, comentario: "Falha de reperfusao (queda do supra <50% + dor persistente aos 60-90 min) = ANGIOPLASTIA DE RESGATE imediata. Repetir trombolitico NAO e recomendado." },
-      { letra: "B", texto: "Angioplastia de resgate", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Falha de reperfusao (queda do supra <50% + dor persistente aos 60-90 min) = ANGIOPLASTIA DE RESGATE imediata. Repetir trombolitico NAO e recomendado." },
+      { letra: "B", texto: "Angioplastia de resgate", correta: true, comentario: "Alternativa correta. Falha de reperfusao (queda do supra <50% + dor persistente aos 60-90 min) = ANGIOPLASTIA DE RESGATE imediata. Repetir trombolitico NAO e recomendado." },
       { letra: "C", texto: "Nova dose de trombolitico", correta: false, comentario: "Esta opção diverge da diretriz atual. Falha de reperfusao (queda do supra <50% + dor persistente aos 60-90 min) = ANGIOPLASTIA DE RESGATE imediata. Repetir trombolitico NAO e recomendado." },
       { letra: "D", texto: "Alta hospitalar em 24h", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Falha de reperfusao (queda do supra <50% + dor persistente aos 60-90 min) = ANGIOPLASTIA DE RESGATE imediata. Repetir trombolitico NAO e recomendado." },
     ],
@@ -1471,7 +1471,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem de 40 anos, jovem, saudavel, chega ao PS com dor toracica e ECG com supra difuso. Troponina elevada, coronarias normais na angio-TC. Ecocardiograma: hipocinesia inferior moderada, funcao ventricular preservada. Qual e o diagnostico mais provavel?",
     alternativas: [
       { letra: "A", texto: "IAMSSST", correta: false, comentario: "Jovem + supra + troponina elevada + coronarias normais + disfuncao regional = miocardite. Etiologia mais comum: viral. RM cardiaca ajuda no diagnostico." },
-      { letra: "B", texto: "Miocardite (frequentemente pos-viral)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Jovem + supra + troponina elevada + coronarias normais + disfuncao regional = miocardite. Etiologia mais comum: viral. RM cardiaca ajuda no diagnostico." },
+      { letra: "B", texto: "Miocardite (frequentemente pos-viral)", correta: true, comentario: "Alternativa correta. Jovem + supra + troponina elevada + coronarias normais + disfuncao regional = miocardite. Etiologia mais comum: viral. RM cardiaca ajuda no diagnostico." },
       { letra: "C", texto: "Sindrome de Takotsubo", correta: false, comentario: "Esta opção diverge da diretriz atual. Jovem + supra + troponina elevada + coronarias normais + disfuncao regional = miocardite. Etiologia mais comum: viral. RM cardiaca ajuda no diagnostico." },
       { letra: "D", texto: "Pericardite constritiva", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Jovem + supra + troponina elevada + coronarias normais + disfuncao regional = miocardite. Etiologia mais comum: viral. RM cardiaca ajuda no diagnostico." },
     ],
@@ -1488,7 +1488,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Angio-TC de torax e abdome imediata", correta: false, comentario: "Suspeita altissima de dissecao (dor MAXIMA de inicio + assimetria PA >20mmHg + sopro IAo novo). SEMPRE beta primeiro (alvo FC<60), depois vasodilatador. Confirmar com angio-TC em paralelo." },
       { letra: "B", texto: "Trombolise por suspeita de IAM", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Suspeita altissima de dissecao (dor MAXIMA de inicio + assimetria PA >20mmHg + sopro IAo novo). SEMPRE beta primeiro (alvo FC<60), depois vasodilatador. Confirmar com angio-TC em paralelo." },
-      { letra: "C", texto: "Betabloqueador IV (esmolol) para reduzir FC <60 e dP/dt, em paralelo com solicitacao de angio-TC", correta: true, comentario: "Esta opção diverge da diretriz atual. Suspeita altissima de dissecao (dor MAXIMA de inicio + assimetria PA >20mmHg + sopro IAo novo). SEMPRE beta primeiro (alvo FC<60), depois vasodilatador. Confirmar com angio-TC em paralelo." },
+      { letra: "C", texto: "Betabloqueador IV (esmolol) para reduzir FC <60 e dP/dt, em paralelo com solicitacao de angio-TC", correta: true, comentario: "Alternativa correta. Suspeita altissima de dissecao (dor MAXIMA de inicio + assimetria PA >20mmHg + sopro IAo novo). SEMPRE beta primeiro (alvo FC<60), depois vasodilatador. Confirmar com angio-TC em paralelo." },
       { letra: "D", texto: "Nitroprussiato isolado para PA", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Suspeita altissima de dissecao (dor MAXIMA de inicio + assimetria PA >20mmHg + sopro IAo novo). SEMPRE beta primeiro (alvo FC<60), depois vasodilatador. Confirmar com angio-TC em paralelo." },
     ],
     dificuldade: "intermediaria",
@@ -1503,7 +1503,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Angio-TC de torax do paciente anterior mostra dissecao envolvendo aorta ascendente + arco + toracica descendente, com hemopericardio de 300mL sem sinais de tamponamento. Classificacao e conduta?",
     alternativas: [
       { letra: "A", texto: "Stanford B (DeBakey III) — clinico", correta: false, comentario: "Envolve ascendente + arco + descendente = DeBakey I = Stanford A. Mortalidade ~1-2%/hora nas primeiras 48h. CIRURGIA IMEDIATA (substituicao da aorta ascendente + reimplante coronariano)." },
-      { letra: "B", texto: "Stanford A (DeBakey I) — cirurgia de urgencia", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Envolve ascendente + arco + descendente = DeBakey I = Stanford A. Mortalidade ~1-2%/hora nas primeiras 48h. CIRURGIA IMEDIATA (substituicao da aorta ascendente + reimplante coronariano)." },
+      { letra: "B", texto: "Stanford A (DeBakey I) — cirurgia de urgencia", correta: true, comentario: "Alternativa correta. Envolve ascendente + arco + descendente = DeBakey I = Stanford A. Mortalidade ~1-2%/hora nas primeiras 48h. CIRURGIA IMEDIATA (substituicao da aorta ascendente + reimplante coronariano)." },
       { letra: "C", texto: "Stanford A DeBakey II — TEVAR", correta: false, comentario: "Esta opção diverge da diretriz atual. Envolve ascendente + arco + descendente = DeBakey I = Stanford A. Mortalidade ~1-2%/hora nas primeiras 48h. CIRURGIA IMEDIATA (substituicao da aorta ascendente + reimplante coronariano)." },
       { letra: "D", texto: "Stanford B DeBakey I — manejo em UTI", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Envolve ascendente + arco + descendente = DeBakey I = Stanford A. Mortalidade ~1-2%/hora nas primeiras 48h. CIRURGIA IMEDIATA (substituicao da aorta ascendente + reimplante coronariano)." },
     ],
@@ -1519,7 +1519,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Mulher de 32 anos, alta e magra, com aracnodactilia e ectopia lentis, chega com dor toracica subita em rasgo, PA 140/90, assimetria de pulsos. Angio-TC: dissecao restrita a aorta ascendente. Qual e o provavel substrato genetico e conduta?",
     alternativas: [
       { letra: "A", texto: "Ehlers-Danlos vascular — TEVAR", correta: false, comentario: "Habito marfanoide + jovem + dissecao = SINDROME DE MARFAN. Dissecao restrita a ascendente = DeBakey II = Stanford A. Cirurgia obrigatoria. Investigar arvore familiar." },
-      { letra: "B", texto: "Sindrome de Marfan (mutacao em FBN1) — cirurgia de urgencia (Stanford A)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Habito marfanoide + jovem + dissecao = SINDROME DE MARFAN. Dissecao restrita a ascendente = DeBakey II = Stanford A. Cirurgia obrigatoria. Investigar arvore familiar." },
+      { letra: "B", texto: "Sindrome de Marfan (mutacao em FBN1) — cirurgia de urgencia (Stanford A)", correta: true, comentario: "Alternativa correta. Habito marfanoide + jovem + dissecao = SINDROME DE MARFAN. Dissecao restrita a ascendente = DeBakey II = Stanford A. Cirurgia obrigatoria. Investigar arvore familiar." },
       { letra: "C", texto: "Tromboangeite obliterante — cessacao do tabagismo", correta: false, comentario: "Esta opção diverge da diretriz atual. Habito marfanoide + jovem + dissecao = SINDROME DE MARFAN. Dissecao restrita a ascendente = DeBakey II = Stanford A. Cirurgia obrigatoria. Investigar arvore familiar." },
       { letra: "D", texto: "Fibromuscular displasia — angioplastia", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Habito marfanoide + jovem + dissecao = SINDROME DE MARFAN. Dissecao restrita a ascendente = DeBakey II = Stanford A. Cirurgia obrigatoria. Investigar arvore familiar." },
     ],
@@ -1535,7 +1535,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com dissecao Stanford B nao complicada. Foi iniciado esmolol IV. Apos 30 min, FC 55, PA 165/95. Qual e o proximo passo?",
     alternativas: [
       { letra: "A", texto: "Interromper esmolol", correta: false, comentario: "FC ja no alvo (<60). Agora adicionar vasodilatador (nitroprussiato) para atingir PAS 100-120 mmHg. Sempre BETA antes do VASO, nunca ao contrario." },
-      { letra: "B", texto: "Adicionar nitroprussiato para PAS 100-120", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. FC ja no alvo (<60). Agora adicionar vasodilatador (nitroprussiato) para atingir PAS 100-120 mmHg. Sempre BETA antes do VASO, nunca ao contrario." },
+      { letra: "B", texto: "Adicionar nitroprussiato para PAS 100-120", correta: true, comentario: "Alternativa correta. FC ja no alvo (<60). Agora adicionar vasodilatador (nitroprussiato) para atingir PAS 100-120 mmHg. Sempre BETA antes do VASO, nunca ao contrario." },
       { letra: "C", texto: "Angioplastia coronaria", correta: false, comentario: "Esta opção diverge da diretriz atual. FC ja no alvo (<60). Agora adicionar vasodilatador (nitroprussiato) para atingir PAS 100-120 mmHg. Sempre BETA antes do VASO, nunca ao contrario." },
       { letra: "D", texto: "Trombolise", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. FC ja no alvo (<60). Agora adicionar vasodilatador (nitroprussiato) para atingir PAS 100-120 mmHg. Sempre BETA antes do VASO, nunca ao contrario." },
     ],
@@ -1551,7 +1551,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem 60 anos com dor toracica subita + assimetria de pulsos, encaminhado para trombolise por suspeita de IAM em UBS local. Qual e a conduta ANTES da trombolise?",
     alternativas: [
       { letra: "A", texto: "Trombolise imediata", correta: false, comentario: "Dissecao aortica e CONTRAINDICACAO ABSOLUTA a trombolise. Assimetria de pulsos + dor 'em rasgo' obrigam angio-TC antes. Trombolisar dissecao = catastrofe." },
-      { letra: "B", texto: "Angio-TC de torax para excluir dissecao ANTES", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Dissecao aortica e CONTRAINDICACAO ABSOLUTA a trombolise. Assimetria de pulsos + dor 'em rasgo' obrigam angio-TC antes. Trombolisar dissecao = catastrofe." },
+      { letra: "B", texto: "Angio-TC de torax para excluir dissecao ANTES", correta: true, comentario: "Alternativa correta. Dissecao aortica e CONTRAINDICACAO ABSOLUTA a trombolise. Assimetria de pulsos + dor 'em rasgo' obrigam angio-TC antes. Trombolisar dissecao = catastrofe." },
       { letra: "C", texto: "AAS + clopidogrel", correta: false, comentario: "Esta opção diverge da diretriz atual. Dissecao aortica e CONTRAINDICACAO ABSOLUTA a trombolise. Assimetria de pulsos + dor 'em rasgo' obrigam angio-TC antes. Trombolisar dissecao = catastrofe." },
       { letra: "D", texto: "So repetir ECG", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Dissecao aortica e CONTRAINDICACAO ABSOLUTA a trombolise. Assimetria de pulsos + dor 'em rasgo' obrigam angio-TC antes. Trombolisar dissecao = catastrofe." },
     ],
@@ -1567,7 +1567,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com dissecao Stanford A operada com sucesso ha 3 anos, agora com dilatacao progressiva da aorta descendente (aneurisma cronico pos-dissecao) de 6 cm. A conduta e:",
     alternativas: [
       { letra: "A", texto: "Observacao anual", correta: false, comentario: "Aneurisma cronico pos-dissecao >=5,5-6 cm ou expansao rapida = indicacao de intervencao. Seguimento vitalicio com imagem apos dissecao — nao terminou o problema com a cirurgia inicial." },
-      { letra: "B", texto: "Consideracao de intervencao (TEVAR ou cirurgia aberta) devido ao diametro", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Aneurisma cronico pos-dissecao >=5,5-6 cm ou expansao rapida = indicacao de intervencao. Seguimento vitalicio com imagem apos dissecao — nao terminou o problema com a cirurgia inicial." },
+      { letra: "B", texto: "Consideracao de intervencao (TEVAR ou cirurgia aberta) devido ao diametro", correta: true, comentario: "Alternativa correta. Aneurisma cronico pos-dissecao >=5,5-6 cm ou expansao rapida = indicacao de intervencao. Seguimento vitalicio com imagem apos dissecao — nao terminou o problema com a cirurgia inicial." },
       { letra: "C", texto: "Betabloqueador isolado", correta: false, comentario: "Esta opção diverge da diretriz atual. Aneurisma cronico pos-dissecao >=5,5-6 cm ou expansao rapida = indicacao de intervencao. Seguimento vitalicio com imagem apos dissecao — nao terminou o problema com a cirurgia inicial." },
       { letra: "D", texto: "Sem seguimento necessario", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Aneurisma cronico pos-dissecao >=5,5-6 cm ou expansao rapida = indicacao de intervencao. Seguimento vitalicio com imagem apos dissecao — nao terminou o problema com a cirurgia inicial." },
     ],
@@ -1583,7 +1583,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Idoso 75a com dissecao Stanford A extensa e comorbidades multiplas (DPOC O2-dependente, DRC dialitica, demencia moderada). Cirurgia foi discutida em equipe. Qual e a abordagem?",
     alternativas: [
       { letra: "A", texto: "Cirurgia obrigatoria — mortalidade sem cirurgia e 100%", correta: false, comentario: "Stanford A operada tem morbimortalidade cirurgica alta em fragilidade extrema. Decisao individualizada com paciente/familia, considerando prognostico global. Nao e recusa reflexiva — e decisao compartilhada." },
-      { letra: "B", texto: "Individualizar — em pacientes muito idosos com multiplas comorbidades, decisao compartilhada considerando qualidade de vida", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Stanford A operada tem morbimortalidade cirurgica alta em fragilidade extrema. Decisao individualizada com paciente/familia, considerando prognostico global. Nao e recusa reflexiva — e decisao compartilhada." },
+      { letra: "B", texto: "Individualizar — em pacientes muito idosos com multiplas comorbidades, decisao compartilhada considerando qualidade de vida", correta: true, comentario: "Alternativa correta. Stanford A operada tem morbimortalidade cirurgica alta em fragilidade extrema. Decisao individualizada com paciente/familia, considerando prognostico global. Nao e recusa reflexiva — e decisao compartilhada." },
       { letra: "C", texto: "So TEVAR", correta: false, comentario: "Esta opção diverge da diretriz atual. Stanford A operada tem morbimortalidade cirurgica alta em fragilidade extrema. Decisao individualizada com paciente/familia, considerando prognostico global. Nao e recusa reflexiva — e decisao compartilhada." },
       { letra: "D", texto: "Nao tratar", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Stanford A operada tem morbimortalidade cirurgica alta em fragilidade extrema. Decisao individualizada com paciente/familia, considerando prognostico global. Nao e recusa reflexiva — e decisao compartilhada." },
     ],
@@ -1615,7 +1615,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 55 anos, IAM ha 6 meses, em uso de rosuvastatina 20mg, AAS, clopidogrel, IECA. Perfil lipidico atual: LDL 78 mg/dL. Qual a conduta?",
     alternativas: [
       { letra: "A", texto: "Manter, meta atingida", correta: false, comentario: "Doenca aterosclerotica = MUITO alto risco = meta LDL <50 mg/dL. LDL 78 esta acima. Adicionar ezetimiba 10mg (~20% adicional). Se ainda persistir, iSGLT2/PCSK9." },
-      { letra: "B", texto: "Nao esta na meta — adicionar ezetimiba", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Doenca aterosclerotica = MUITO alto risco = meta LDL <50 mg/dL. LDL 78 esta acima. Adicionar ezetimiba 10mg (~20% adicional). Se ainda persistir, iSGLT2/PCSK9." },
+      { letra: "B", texto: "Nao esta na meta — adicionar ezetimiba", correta: true, comentario: "Alternativa correta. Doenca aterosclerotica = MUITO alto risco = meta LDL <50 mg/dL. LDL 78 esta acima. Adicionar ezetimiba 10mg (~20% adicional). Se ainda persistir, iSGLT2/PCSK9." },
       { letra: "C", texto: "Trocar por atorvastatina", correta: false, comentario: "Esta opção diverge da diretriz atual. Doenca aterosclerotica = MUITO alto risco = meta LDL <50 mg/dL. LDL 78 esta acima. Adicionar ezetimiba 10mg (~20% adicional). Se ainda persistir, iSGLT2/PCSK9." },
       { letra: "D", texto: "Reduzir dose da estatina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Doenca aterosclerotica = MUITO alto risco = meta LDL <50 mg/dL. LDL 78 esta acima. Adicionar ezetimiba 10mg (~20% adicional). Se ainda persistir, iSGLT2/PCSK9." },
     ],
@@ -1631,7 +1631,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 45 anos, sem historia cardiovascular, LDL 165 mg/dL, ERG 3% em 10 anos. Como estratificar e tratar?",
     alternativas: [
       { letra: "A", texto: "Muito alto risco — estatina alta intensidade, meta <50", correta: false, comentario: "ERG <5% = baixo risco. Meta LDL <130. MEV como base; estatina se meta nao atingida com MEV apos alguns meses (ou fatores agravantes)." },
-      { letra: "B", texto: "Baixo risco — mudanca de estilo de vida, meta <130", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. ERG <5% = baixo risco. Meta LDL <130. MEV como base; estatina se meta nao atingida com MEV apos alguns meses (ou fatores agravantes)." },
+      { letra: "B", texto: "Baixo risco — mudanca de estilo de vida, meta <130", correta: true, comentario: "Alternativa correta. ERG <5% = baixo risco. Meta LDL <130. MEV como base; estatina se meta nao atingida com MEV apos alguns meses (ou fatores agravantes)." },
       { letra: "C", texto: "Alto risco — estatina", correta: false, comentario: "Esta opção diverge da diretriz atual. ERG <5% = baixo risco. Meta LDL <130. MEV como base; estatina se meta nao atingida com MEV apos alguns meses (ou fatores agravantes)." },
       { letra: "D", texto: "Refazer perfil em 5 anos, sem intervencao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. ERG <5% = baixo risco. Meta LDL <130. MEV como base; estatina se meta nao atingida com MEV apos alguns meses (ou fatores agravantes)." },
     ],
@@ -1647,7 +1647,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem 42a com TG 850 mg/dL, LDL nao calculavel por Friedewald (TG >400), HDL 32, glicemia 220, HbA1c 9%. Qual a conduta principal?",
     alternativas: [
       { letra: "A", texto: "Estatina alta intensidade", correta: false, comentario: "TG 500-1000+ = risco de pancreatite. Fibrato primeiro (fenofibrato). Controlar DM (glicose descompensada eleva TG). Reintroduzir estatina apos TG cair." },
-      { letra: "B", texto: "Fibrato como primeira linha para reduzir risco de pancreatite; controle glicemico rigoroso", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. TG 500-1000+ = risco de pancreatite. Fibrato primeiro (fenofibrato). Controlar DM (glicose descompensada eleva TG). Reintroduzir estatina apos TG cair." },
+      { letra: "B", texto: "Fibrato como primeira linha para reduzir risco de pancreatite; controle glicemico rigoroso", correta: true, comentario: "Alternativa correta. TG 500-1000+ = risco de pancreatite. Fibrato primeiro (fenofibrato). Controlar DM (glicose descompensada eleva TG). Reintroduzir estatina apos TG cair." },
       { letra: "C", texto: "Ezetimiba", correta: false, comentario: "Esta opção diverge da diretriz atual. TG 500-1000+ = risco de pancreatite. Fibrato primeiro (fenofibrato). Controlar DM (glicose descompensada eleva TG). Reintroduzir estatina apos TG cair." },
       { letra: "D", texto: "Colestiramina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. TG 500-1000+ = risco de pancreatite. Fibrato primeiro (fenofibrato). Controlar DM (glicose descompensada eleva TG). Reintroduzir estatina apos TG cair." },
     ],
@@ -1663,7 +1663,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Mulher 60a em uso de atorvastatina 40mg ha 3 meses. Queixa-se de mialgia difusa moderada, sem fraqueza. CK: 250 U/L (VR ate 170). A conduta e:",
     alternativas: [
       { letra: "A", texto: "Suspender definitivamente estatinas", correta: false, comentario: "Mialgia com CK 10x + lesao renal. Nao suspender definitivamente por mialgia leve — reintroducao gradual e frequentemente possivel." },
-      { letra: "B", texto: "Suspender temporariamente, reavaliar em 2 semanas; reintroduzir dose menor ou trocar por rosuvastatina em dias alternados", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Mialgia com CK 10x + lesao renal. Nao suspender definitivamente por mialgia leve — reintroducao gradual e frequentemente possivel." },
+      { letra: "B", texto: "Suspender temporariamente, reavaliar em 2 semanas; reintroduzir dose menor ou trocar por rosuvastatina em dias alternados", correta: true, comentario: "Alternativa correta. Mialgia com CK 10x + lesao renal. Nao suspender definitivamente por mialgia leve — reintroducao gradual e frequentemente possivel." },
       { letra: "C", texto: "Manter e adicionar coenzima Q10", correta: false, comentario: "Esta opção diverge da diretriz atual. Mialgia com CK 10x + lesao renal. Nao suspender definitivamente por mialgia leve — reintroducao gradual e frequentemente possivel." },
       { letra: "D", texto: "Investigar por rabdomiolise imediata", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Mialgia com CK 10x + lesao renal. Nao suspender definitivamente por mialgia leve — reintroducao gradual e frequentemente possivel." },
     ],
@@ -1679,7 +1679,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 70a com dislipidemia primaria em investigacao. Perfil: CT 320, LDL 240, HDL 45, TG 180. TSH: 12 mU/L (VR 0,4-4). Antes de rotular como HF, deve-se:",
     alternativas: [
       { letra: "A", texto: "Iniciar estatina imediatamente", correta: false, comentario: "TSH alto sugere hipotireoidismo — causa secundaria classica de dislipidemia. Tratar tireoide primeiro e reavaliar perfil. Outras: DM descompensado, sindrome nefrotica, farmacos, colestase." },
-      { letra: "B", texto: "Iniciar reposicao com levotiroxina — hipotireoidismo pode estar causando dislipidemia secundaria", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. TSH alto sugere hipotireoidismo — causa secundaria classica de dislipidemia. Tratar tireoide primeiro e reavaliar perfil. Outras: DM descompensado, sindrome nefrotica, farmacos, colestase." },
+      { letra: "B", texto: "Iniciar reposicao com levotiroxina — hipotireoidismo pode estar causando dislipidemia secundaria", correta: true, comentario: "Alternativa correta. TSH alto sugere hipotireoidismo — causa secundaria classica de dislipidemia. Tratar tireoide primeiro e reavaliar perfil. Outras: DM descompensado, sindrome nefrotica, farmacos, colestase." },
       { letra: "C", texto: "Cirurgia bariatrica", correta: false, comentario: "Esta opção diverge da diretriz atual. TSH alto sugere hipotireoidismo — causa secundaria classica de dislipidemia. Tratar tireoide primeiro e reavaliar perfil. Outras: DM descompensado, sindrome nefrotica, farmacos, colestase." },
       { letra: "D", texto: "Repetir em 6 meses", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. TSH alto sugere hipotireoidismo — causa secundaria classica de dislipidemia. Tratar tireoide primeiro e reavaliar perfil. Outras: DM descompensado, sindrome nefrotica, farmacos, colestase." },
     ],
@@ -1711,7 +1711,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem 72a, hipertenso, diabetico, com AVC previo (2020), chega ao PS com palpitacoes ha 6 horas. Assintomatico do ponto de vista hemodinamico. ECG: FA com FC 110. CHA2DS2-VASc = 5. Qual a conduta ideal?",
     alternativas: [
       { letra: "A", texto: "Cardioversao eletrica imediata", correta: false, comentario: "CHA2DS2-VASc = 5 (HAS+DM+AVC(2)+idade65-74(1)) = alto risco embolico. Anticoagular com ADO. Estavel = estrategia de controle de FC (BB ou diltiazem). Discutir cardioversao apos anticoagulacao adequada." },
-      { letra: "B", texto: "Anticoagulacao com ADO + controle de FC com BB", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. CHA2DS2-VASc = 5 (HAS+DM+AVC(2)+idade65-74(1)) = alto risco embolico. Anticoagular com ADO. Estavel = estrategia de controle de FC (BB ou diltiazem). Discutir cardioversao apos anticoagulacao adequada." },
+      { letra: "B", texto: "Anticoagulacao com ADO + controle de FC com BB", correta: true, comentario: "Alternativa correta. CHA2DS2-VASc = 5 (HAS+DM+AVC(2)+idade65-74(1)) = alto risco embolico. Anticoagular com ADO. Estavel = estrategia de controle de FC (BB ou diltiazem). Discutir cardioversao apos anticoagulacao adequada." },
       { letra: "C", texto: "Aspirina + observacao", correta: false, comentario: "Esta opção diverge da diretriz atual. CHA2DS2-VASc = 5 (HAS+DM+AVC(2)+idade65-74(1)) = alto risco embolico. Anticoagular com ADO. Estavel = estrategia de controle de FC (BB ou diltiazem). Discutir cardioversao apos anticoagulacao adequada." },
       { letra: "D", texto: "Antiarritmico class I", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. CHA2DS2-VASc = 5 (HAS+DM+AVC(2)+idade65-74(1)) = alto risco embolico. Anticoagular com ADO. Estavel = estrategia de controle de FC (BB ou diltiazem). Discutir cardioversao apos anticoagulacao adequada." },
     ],
@@ -1727,7 +1727,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Mulher 66a com FA persistente ha 3 semanas, muito sintomatica (EHRA IIIb). Decidido cardioverter eletivamente. Como proceder quanto a anticoagulacao?",
     alternativas: [
       { letra: "A", texto: "Cardioverter direto, iniciar ADO apos", correta: false, comentario: "FA >=48h ou duracao indeterminada: 3 semanas ANTES E 4 semanas DEPOIS (atordoamento atrial). Alternativa: ETE para 'pular' as 3 semanas antes, mas as 4 depois sao OBRIGATORIAS." },
-      { letra: "B", texto: "Anticoagulacao efetiva por 3 semanas ANTES + 4 semanas DEPOIS; ou ETE para excluir trombo e ainda manter 4 semanas apos", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. FA >=48h ou duracao indeterminada: 3 semanas ANTES E 4 semanas DEPOIS (atordoamento atrial). Alternativa: ETE para 'pular' as 3 semanas antes, mas as 4 depois sao OBRIGATORIAS." },
+      { letra: "B", texto: "Anticoagulacao efetiva por 3 semanas ANTES + 4 semanas DEPOIS; ou ETE para excluir trombo e ainda manter 4 semanas apos", correta: true, comentario: "Alternativa correta. FA >=48h ou duracao indeterminada: 3 semanas ANTES E 4 semanas DEPOIS (atordoamento atrial). Alternativa: ETE para 'pular' as 3 semanas antes, mas as 4 depois sao OBRIGATORIAS." },
       { letra: "C", texto: "So 4 semanas apos, sem preparo", correta: false, comentario: "Esta opção diverge da diretriz atual. FA >=48h ou duracao indeterminada: 3 semanas ANTES E 4 semanas DEPOIS (atordoamento atrial). Alternativa: ETE para 'pular' as 3 semanas antes, mas as 4 depois sao OBRIGATORIAS." },
       { letra: "D", texto: "Nao precisa anticoagular se ritmo sinusal for restaurado", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. FA >=48h ou duracao indeterminada: 3 semanas ANTES E 4 semanas DEPOIS (atordoamento atrial). Alternativa: ETE para 'pular' as 3 semanas antes, mas as 4 depois sao OBRIGATORIAS." },
     ],
@@ -1743,7 +1743,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 58a com FA persistente em uso de metoprolol 100mg/dia, ritmo controlado (FC 78), mas persiste muito sintomatico (EHRA III), com boa FE. Qual a proxima abordagem?",
     alternativas: [
       { letra: "A", texto: "Aumentar metoprolol", correta: false, comentario: "Muito sintomatico apesar do controle de FC = considerar controle de RITMO. Coracao 'normal' = propafenona/flecainida ou ablacao. Ablacao das veias pulmonares como primeira linha em selecionados." },
-      { letra: "B", texto: "Estrategia de controle de ritmo — cardioversao ou amiodarona ou ablacao das veias pulmonares", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Muito sintomatico apesar do controle de FC = considerar controle de RITMO. Coracao 'normal' = propafenona/flecainida ou ablacao. Ablacao das veias pulmonares como primeira linha em selecionados." },
+      { letra: "B", texto: "Estrategia de controle de ritmo — cardioversao ou amiodarona ou ablacao das veias pulmonares", correta: true, comentario: "Alternativa correta. Muito sintomatico apesar do controle de FC = considerar controle de RITMO. Coracao 'normal' = propafenona/flecainida ou ablacao. Ablacao das veias pulmonares como primeira linha em selecionados." },
       { letra: "C", texto: "Adicionar digoxina", correta: false, comentario: "Esta opção diverge da diretriz atual. Muito sintomatico apesar do controle de FC = considerar controle de RITMO. Coracao 'normal' = propafenona/flecainida ou ablacao. Ablacao das veias pulmonares como primeira linha em selecionados." },
       { letra: "D", texto: "Marcapasso", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Muito sintomatico apesar do controle de FC = considerar controle de RITMO. Coracao 'normal' = propafenona/flecainida ou ablacao. Ablacao das veias pulmonares como primeira linha em selecionados." },
     ],
@@ -1759,7 +1759,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem 80a com FA permanente, ha 5 anos, assintomatico. Historia de IC previa (FE 30%). ECG: FA com FC 65. Anticoagulacao com apixabana. Como abordar?",
     alternativas: [
       { letra: "A", texto: "Tentar cardioversao", correta: false, comentario: "FA permanente = decisao consciente de nao tentar sinusal. Longa duracao + assintomatico + FC controlada + IC = manter estrategia. Foco: pilares da IC + anticoagulacao continuada." },
-      { letra: "B", texto: "Manter FA permanente aceita — controle de FC e anticoagulacao, foco no tratamento da IC", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. FA permanente = decisao consciente de nao tentar sinusal. Longa duracao + assintomatico + FC controlada + IC = manter estrategia. Foco: pilares da IC + anticoagulacao continuada." },
+      { letra: "B", texto: "Manter FA permanente aceita — controle de FC e anticoagulacao, foco no tratamento da IC", correta: true, comentario: "Alternativa correta. FA permanente = decisao consciente de nao tentar sinusal. Longa duracao + assintomatico + FC controlada + IC = manter estrategia. Foco: pilares da IC + anticoagulacao continuada." },
       { letra: "C", texto: "Ablacao", correta: false, comentario: "Esta opção diverge da diretriz atual. FA permanente = decisao consciente de nao tentar sinusal. Longa duracao + assintomatico + FC controlada + IC = manter estrategia. Foco: pilares da IC + anticoagulacao continuada." },
       { letra: "D", texto: "Suspender apixabana", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. FA permanente = decisao consciente de nao tentar sinusal. Longa duracao + assintomatico + FC controlada + IC = manter estrategia. Foco: pilares da IC + anticoagulacao continuada." },
     ],
@@ -1776,7 +1776,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Amiodarona IV, aguardar reversao", correta: false, comentario: "FA + instabilidade (hipotensao + alteracao de consciencia + dispneia) = cardioversao eletrica sincronizada imediata, mesmo sem anticoagulacao previa. Risco imediato da instabilidade supera o embolico." },
       { letra: "B", texto: "Adenosina IV", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. FA + instabilidade (hipotensao + alteracao de consciencia + dispneia) = cardioversao eletrica sincronizada imediata, mesmo sem anticoagulacao previa. Risco imediato da instabilidade supera o embolico." },
-      { letra: "C", texto: "Cardioversao eletrica sincronizada IMEDIATA", correta: true, comentario: "Esta opção diverge da diretriz atual. FA + instabilidade (hipotensao + alteracao de consciencia + dispneia) = cardioversao eletrica sincronizada imediata, mesmo sem anticoagulacao previa. Risco imediato da instabilidade supera o embolico." },
+      { letra: "C", texto: "Cardioversao eletrica sincronizada IMEDIATA", correta: true, comentario: "Alternativa correta. FA + instabilidade (hipotensao + alteracao de consciencia + dispneia) = cardioversao eletrica sincronizada imediata, mesmo sem anticoagulacao previa. Risco imediato da instabilidade supera o embolico." },
       { letra: "D", texto: "Metoprolol IV", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. FA + instabilidade (hipotensao + alteracao de consciencia + dispneia) = cardioversao eletrica sincronizada imediata, mesmo sem anticoagulacao previa. Risco imediato da instabilidade supera o embolico." },
     ],
     dificuldade: "intermediaria",
@@ -1791,7 +1791,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Idoso 82a com FA cronica, CHA2DS2-VASc = 6, HAS-BLED = 4 (hipertensao nao controlada, funcao renal comprometida, idade, uso ocasional de AINE). Qual conduta?",
     alternativas: [
       { letra: "A", texto: "Suspender anticoagulacao", correta: false, comentario: "HAS-BLED alto NAO contraindica — serve para IDENTIFICAR fatores modificaveis. Controle da HAS, retirada de AINE, ajuste de dose de ADO conforme ClCr. Anticoagular preserva." },
-      { letra: "B", texto: "Manter anticoagulacao, controlar PA, ajustar dose de ADO conforme funcao renal, retirar AINE", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. HAS-BLED alto NAO contraindica — serve para IDENTIFICAR fatores modificaveis. Controle da HAS, retirada de AINE, ajuste de dose de ADO conforme ClCr. Anticoagular preserva." },
+      { letra: "B", texto: "Manter anticoagulacao, controlar PA, ajustar dose de ADO conforme funcao renal, retirar AINE", correta: true, comentario: "Alternativa correta. HAS-BLED alto NAO contraindica — serve para IDENTIFICAR fatores modificaveis. Controle da HAS, retirada de AINE, ajuste de dose de ADO conforme ClCr. Anticoagular preserva." },
       { letra: "C", texto: "So aspirina", correta: false, comentario: "Esta opção diverge da diretriz atual. HAS-BLED alto NAO contraindica — serve para IDENTIFICAR fatores modificaveis. Controle da HAS, retirada de AINE, ajuste de dose de ADO conforme ClCr. Anticoagular preserva." },
       { letra: "D", texto: "AAS + clopidogrel", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. HAS-BLED alto NAO contraindica — serve para IDENTIFICAR fatores modificaveis. Controle da HAS, retirada de AINE, ajuste de dose de ADO conforme ClCr. Anticoagular preserva." },
     ],
@@ -1807,7 +1807,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com estenose mitral reumatica moderada e FA cronica. Ha 3 meses fez cardioversao com ETE previo, mantendo agora ritmo sinusal + varfarina. Perguntou se pode trocar para apixabana. Resposta?",
     alternativas: [
       { letra: "A", texto: "Sim, apixabana e superior", correta: false, comentario: "Estenose mitral moderada-grave e protese mecanica sao contraindicacao a ADO. Manter varfarina com INR alvo. FA valvular (por definicao atual) exige varfarina." },
-      { letra: "B", texto: "Nao — estenose mitral moderada-grave e contraindicacao a ADO; manter varfarina", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Estenose mitral moderada-grave e protese mecanica sao contraindicacao a ADO. Manter varfarina com INR alvo. FA valvular (por definicao atual) exige varfarina." },
+      { letra: "B", texto: "Nao — estenose mitral moderada-grave e contraindicacao a ADO; manter varfarina", correta: true, comentario: "Alternativa correta. Estenose mitral moderada-grave e protese mecanica sao contraindicacao a ADO. Manter varfarina com INR alvo. FA valvular (por definicao atual) exige varfarina." },
       { letra: "C", texto: "Sim, mas com dose reduzida", correta: false, comentario: "Esta opção diverge da diretriz atual. Estenose mitral moderada-grave e protese mecanica sao contraindicacao a ADO. Manter varfarina com INR alvo. FA valvular (por definicao atual) exige varfarina." },
       { letra: "D", texto: "Nao precisa mais de anticoagulacao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Estenose mitral moderada-grave e protese mecanica sao contraindicacao a ADO. Manter varfarina com INR alvo. FA valvular (por definicao atual) exige varfarina." },
     ],
@@ -1823,7 +1823,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 60a em consulta com queixa de palpitacoes 'imperceptiveis' ha 6 semanas. Sem alteracoes ao exame no momento. Como investigar suspeita de FA paroxistica?",
     alternativas: [
       { letra: "A", texto: "ECG em consulta unico e suficiente", correta: false, comentario: "FA paroxistica pode nao aparecer em ECG unico. Holter 24-48h e o proximo passo; se negativo e alta suspeita, monitor de eventos por semanas. Monitor implantavel em casos selecionados (AVC criptogenico)." },
-      { letra: "B", texto: "Holter 24-48h ou monitor de eventos por 2-4 semanas", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. FA paroxistica pode nao aparecer em ECG unico. Holter 24-48h e o proximo passo; se negativo e alta suspeita, monitor de eventos por semanas. Monitor implantavel em casos selecionados (AVC criptogenico)." },
+      { letra: "B", texto: "Holter 24-48h ou monitor de eventos por 2-4 semanas", correta: true, comentario: "Alternativa correta. FA paroxistica pode nao aparecer em ECG unico. Holter 24-48h e o proximo passo; se negativo e alta suspeita, monitor de eventos por semanas. Monitor implantavel em casos selecionados (AVC criptogenico)." },
       { letra: "C", texto: "So ecocardiograma", correta: false, comentario: "Esta opção diverge da diretriz atual. FA paroxistica pode nao aparecer em ECG unico. Holter 24-48h e o proximo passo; se negativo e alta suspeita, monitor de eventos por semanas. Monitor implantavel em casos selecionados (AVC criptogenico)." },
       { letra: "D", texto: "Reavaliar em 1 ano", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. FA paroxistica pode nao aparecer em ECG unico. Holter 24-48h e o proximo passo; se negativo e alta suspeita, monitor de eventos por semanas. Monitor implantavel em casos selecionados (AVC criptogenico)." },
     ],
@@ -1839,7 +1839,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem 70a em uso cronico de amiodarona para FA, apresenta TSH 12 (VR 0,4-4), sem sintomas evidentes. Qual e a conduta?",
     alternativas: [
       { letra: "A", texto: "Suspender amiodarona imediatamente", correta: false, comentario: "Hipotireoidismo induzido por amiodarona (14% de incidencia) — habitualmente manejado com levotiroxina, mantendo amiodarona. Alternativa e hipertireoidismo (mais complicado, tipo I ou II)." },
-      { letra: "B", texto: "Manter amiodarona, reposicao com levotiroxina, monitorar", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Hipotireoidismo induzido por amiodarona (14% de incidencia) — habitualmente manejado com levotiroxina, mantendo amiodarona. Alternativa e hipertireoidismo (mais complicado, tipo I ou II)." },
+      { letra: "B", texto: "Manter amiodarona, reposicao com levotiroxina, monitorar", correta: true, comentario: "Alternativa correta. Hipotireoidismo induzido por amiodarona (14% de incidencia) — habitualmente manejado com levotiroxina, mantendo amiodarona. Alternativa e hipertireoidismo (mais complicado, tipo I ou II)." },
       { letra: "C", texto: "Trocar por sotalol", correta: false, comentario: "Esta opção diverge da diretriz atual. Hipotireoidismo induzido por amiodarona (14% de incidencia) — habitualmente manejado com levotiroxina, mantendo amiodarona. Alternativa e hipertireoidismo (mais complicado, tipo I ou II)." },
       { letra: "D", texto: "Aumentar amiodarona", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Hipotireoidismo induzido por amiodarona (14% de incidencia) — habitualmente manejado com levotiroxina, mantendo amiodarona. Alternativa e hipertireoidismo (mais complicado, tipo I ou II)." },
     ],
@@ -1855,7 +1855,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 55a com FA paroxistica frequente, muito sintomatica (EHRA III), refrataria a 2 antiarritmicos (propafenona e amiodarona). Qual e o proximo passo?",
     alternativas: [
       { letra: "A", texto: "Aceitar FA como permanente", correta: false, comentario: "FA paroxistica sintomatica refrataria = ABLACAO POR CATETER (isolamento das veias pulmonares). Alternativa: primeira linha em pacientes selecionados. Eficacia superior aos antiarritmicos em manter sinusal." },
-      { letra: "B", texto: "Ablacao por cateter das veias pulmonares", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. FA paroxistica sintomatica refrataria = ABLACAO POR CATETER (isolamento das veias pulmonares). Alternativa: primeira linha em pacientes selecionados. Eficacia superior aos antiarritmicos em manter sinusal." },
+      { letra: "B", texto: "Ablacao por cateter das veias pulmonares", correta: true, comentario: "Alternativa correta. FA paroxistica sintomatica refrataria = ABLACAO POR CATETER (isolamento das veias pulmonares). Alternativa: primeira linha em pacientes selecionados. Eficacia superior aos antiarritmicos em manter sinusal." },
       { letra: "C", texto: "Marcapasso definitivo", correta: false, comentario: "Esta opção diverge da diretriz atual. FA paroxistica sintomatica refrataria = ABLACAO POR CATETER (isolamento das veias pulmonares). Alternativa: primeira linha em pacientes selecionados. Eficacia superior aos antiarritmicos em manter sinusal." },
       { letra: "D", texto: "Digoxina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. FA paroxistica sintomatica refrataria = ABLACAO POR CATETER (isolamento das veias pulmonares). Alternativa: primeira linha em pacientes selecionados. Eficacia superior aos antiarritmicos em manter sinusal." },
     ],
@@ -1871,7 +1871,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Jogador de basquete de 22 anos apresenta colapso subito durante o jogo, sem trauma. FV constatada pelo DEA. Antecedente: sopro sistolico que 'nao era importante'. Historia familiar: tio faleceu subitamente aos 30 anos. Qual a hipotese mais provavel?",
     alternativas: [
       { letra: "A", texto: "Doenca arterial coronariana", correta: false, comentario: "Jovem + sopro sistolico ignorado + historia familiar de morte subita precoce + FV em esforco = CMH. Rastreio familiar obrigatorio. Sopro que AUMENTA com Valsalva confirma na semiologia." },
-      { letra: "B", texto: "Cardiomiopatia hipertrofica", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Jovem + sopro sistolico ignorado + historia familiar de morte subita precoce + FV em esforco = CMH. Rastreio familiar obrigatorio. Sopro que AUMENTA com Valsalva confirma na semiologia." },
+      { letra: "B", texto: "Cardiomiopatia hipertrofica", correta: true, comentario: "Alternativa correta. Jovem + sopro sistolico ignorado + historia familiar de morte subita precoce + FV em esforco = CMH. Rastreio familiar obrigatorio. Sopro que AUMENTA com Valsalva confirma na semiologia." },
       { letra: "C", texto: "Miocardite viral", correta: false, comentario: "Esta opção diverge da diretriz atual. Jovem + sopro sistolico ignorado + historia familiar de morte subita precoce + FV em esforco = CMH. Rastreio familiar obrigatorio. Sopro que AUMENTA com Valsalva confirma na semiologia." },
       { letra: "D", texto: "Pericardite constritiva", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Jovem + sopro sistolico ignorado + historia familiar de morte subita precoce + FV em esforco = CMH. Rastreio familiar obrigatorio. Sopro que AUMENTA com Valsalva confirma na semiologia." },
     ],
@@ -1887,7 +1887,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Menino de 12 anos joga baseball; e atingido no torax por bola em baixa velocidade e colapsa imediatamente. RCP iniciada em 30 segundos, DEA aplicado -> FV -> desfibrilado com sucesso. Ecocardiograma pos-evento sem lesoes estruturais. Diagnostico?",
     alternativas: [
       { letra: "A", texto: "Contusao miocardica", correta: false, comentario: "Impacto trivial + colapso imediato + coracao estruturalmente normal = COMMOTIO CORDIS. Impacto na janela vulneravel (10-30ms antes do pico da T) -> FV. Tempo ate desfibrilar decide desfecho." },
-      { letra: "B", texto: "Commotio cordis", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Impacto trivial + colapso imediato + coracao estruturalmente normal = COMMOTIO CORDIS. Impacto na janela vulneravel (10-30ms antes do pico da T) -> FV. Tempo ate desfibrilar decide desfecho." },
+      { letra: "B", texto: "Commotio cordis", correta: true, comentario: "Alternativa correta. Impacto trivial + colapso imediato + coracao estruturalmente normal = COMMOTIO CORDIS. Impacto na janela vulneravel (10-30ms antes do pico da T) -> FV. Tempo ate desfibrilar decide desfecho." },
       { letra: "C", texto: "Miocardite fulminante", correta: false, comentario: "Esta opção diverge da diretriz atual. Impacto trivial + colapso imediato + coracao estruturalmente normal = COMMOTIO CORDIS. Impacto na janela vulneravel (10-30ms antes do pico da T) -> FV. Tempo ate desfibrilar decide desfecho." },
       { letra: "D", texto: "Sindrome do QT longo", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Impacto trivial + colapso imediato + coracao estruturalmente normal = COMMOTIO CORDIS. Impacto na janela vulneravel (10-30ms antes do pico da T) -> FV. Tempo ate desfibrilar decide desfecho." },
     ],
@@ -1903,7 +1903,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Corredora de 45 anos apresenta sincope durante maratona apos 3h de prova. Recuperou consciencia rapidamente, sem trauma. ECG basal normal. Ha fatores de risco: HAS, dislipidemia. A hipotese mais provavel e:",
     alternativas: [
       { letra: "A", texto: "Cardiomiopatia hipertrofica", correta: false, comentario: "Atleta >=35 anos + sincope apos esforco intenso + fatores de risco CV = DAC. Nesta faixa etaria, ruptura de placa no esforco domina como causa de morte subita/sincope." },
-      { letra: "B", texto: "Doenca arterial coronariana induzida por esforco", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Atleta >=35 anos + sincope apos esforco intenso + fatores de risco CV = DAC. Nesta faixa etaria, ruptura de placa no esforco domina como causa de morte subita/sincope." },
+      { letra: "B", texto: "Doenca arterial coronariana induzida por esforco", correta: true, comentario: "Alternativa correta. Atleta >=35 anos + sincope apos esforco intenso + fatores de risco CV = DAC. Nesta faixa etaria, ruptura de placa no esforco domina como causa de morte subita/sincope." },
       { letra: "C", texto: "Sincope vasovagal pos-esforco", correta: false, comentario: "Esta opção diverge da diretriz atual. Atleta >=35 anos + sincope apos esforco intenso + fatores de risco CV = DAC. Nesta faixa etaria, ruptura de placa no esforco domina como causa de morte subita/sincope." },
       { letra: "D", texto: "Sindrome de QT longo", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Atleta >=35 anos + sincope apos esforco intenso + fatores de risco CV = DAC. Nesta faixa etaria, ruptura de placa no esforco domina como causa de morte subita/sincope." },
     ],
@@ -1919,7 +1919,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Atleta de 24 anos em avaliacao pre-participacao. Historia: prima morreu aos 20 anos 'do coracao'. Sem sintomas. Exame fisico normal. ECG do atleta: onda T invertida em D3 e V1 (isolado), bradicardia sinusal 48 bpm, HVE por criterios de voltagem isolados. Interpretacao?",
     alternativas: [
       { letra: "A", texto: "Anormalidades patologicas — proibir esporte", correta: false, comentario: "Bradicardia e HVE por voltagem isolada sao fisiologicos em atleta. Historia familiar de morte subita precoce obriga eco e talvez teste genetico, mesmo com ECG limitrofe." },
-      { letra: "B", texto: "Achados fisiologicos do treino (bradicardia, HVE isolada) — mas historia familiar exige eco", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Bradicardia e HVE por voltagem isolada sao fisiologicos em atleta. Historia familiar de morte subita precoce obriga eco e talvez teste genetico, mesmo com ECG limitrofe." },
+      { letra: "B", texto: "Achados fisiologicos do treino (bradicardia, HVE isolada) — mas historia familiar exige eco", correta: true, comentario: "Alternativa correta. Bradicardia e HVE por voltagem isolada sao fisiologicos em atleta. Historia familiar de morte subita precoce obriga eco e talvez teste genetico, mesmo com ECG limitrofe." },
       { letra: "C", texto: "Cardiomiopatia hipertrofica confirmada", correta: false, comentario: "Esta opção diverge da diretriz atual. Bradicardia e HVE por voltagem isolada sao fisiologicos em atleta. Historia familiar de morte subita precoce obriga eco e talvez teste genetico, mesmo com ECG limitrofe." },
       { letra: "D", texto: "Sindrome de Brugada", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Bradicardia e HVE por voltagem isolada sao fisiologicos em atleta. Historia familiar de morte subita precoce obriga eco e talvez teste genetico, mesmo com ECG limitrofe." },
     ],
@@ -1935,7 +1935,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 55a, PA no consultorio 158/95 em 3 aferimentos, em uso de enalapril 40mg, anlodipino 10mg, hidroclorotiazida 25mg. MRPA em casa: PA media 122/78. Qual e o diagnostico?",
     alternativas: [
       { letra: "A", texto: "Hipertensao resistente verdadeira", correta: false, comentario: "Diferenca >20mmHg entre consultorio e MRPA = jaleco branco. NAO adicionar 4a droga. Reforcar MRPA regular, avaliar tecnica de medida no consultorio." },
-      { letra: "B", texto: "Efeito do jaleco branco (pseudorresistencia) — nao adicionar droga", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Diferenca >20mmHg entre consultorio e MRPA = jaleco branco. NAO adicionar 4a droga. Reforcar MRPA regular, avaliar tecnica de medida no consultorio." },
+      { letra: "B", texto: "Efeito do jaleco branco (pseudorresistencia) — nao adicionar droga", correta: true, comentario: "Alternativa correta. Diferenca >20mmHg entre consultorio e MRPA = jaleco branco. NAO adicionar 4a droga. Reforcar MRPA regular, avaliar tecnica de medida no consultorio." },
       { letra: "C", texto: "Hipertensao secundaria", correta: false, comentario: "Esta opção diverge da diretriz atual. Diferenca >20mmHg entre consultorio e MRPA = jaleco branco. NAO adicionar 4a droga. Reforcar MRPA regular, avaliar tecnica de medida no consultorio." },
       { letra: "D", texto: "Refrataria", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Diferenca >20mmHg entre consultorio e MRPA = jaleco branco. NAO adicionar 4a droga. Reforcar MRPA regular, avaliar tecnica de medida no consultorio." },
     ],
@@ -1967,7 +1967,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 65a com HAR em uso de losartana, anlodipino, hidroclorotiazida 25mg. Ao rever a lista de medicacoes, encontra-se: ibuprofeno 600mg 8/8h ha 6 meses para osteoartrite. Qual conduta primeira?",
     alternativas: [
       { letra: "A", texto: "Adicionar espironolactona", correta: false, comentario: "AINE cronico e causa comum de descontrole. RETIRAR AINE + reavaliar PA em 2-4 semanas. Alternativas: paracetamol, dipirona, nao esteroidal topico. Investigar HAR verdadeira apos suspensao." },
-      { letra: "B", texto: "Suspender AINE e reavaliar em 2-4 semanas", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. AINE cronico e causa comum de descontrole. RETIRAR AINE + reavaliar PA em 2-4 semanas. Alternativas: paracetamol, dipirona, nao esteroidal topico. Investigar HAR verdadeira apos suspensao." },
+      { letra: "B", texto: "Suspender AINE e reavaliar em 2-4 semanas", correta: true, comentario: "Alternativa correta. AINE cronico e causa comum de descontrole. RETIRAR AINE + reavaliar PA em 2-4 semanas. Alternativas: paracetamol, dipirona, nao esteroidal topico. Investigar HAR verdadeira apos suspensao." },
       { letra: "C", texto: "Adicionar clonidina", correta: false, comentario: "Esta opção diverge da diretriz atual. AINE cronico e causa comum de descontrole. RETIRAR AINE + reavaliar PA em 2-4 semanas. Alternativas: paracetamol, dipirona, nao esteroidal topico. Investigar HAR verdadeira apos suspensao." },
       { letra: "D", texto: "Trocar hidroclorotiazida por clortalidona", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. AINE cronico e causa comum de descontrole. RETIRAR AINE + reavaliar PA em 2-4 semanas. Alternativas: paracetamol, dipirona, nao esteroidal topico. Investigar HAR verdadeira apos suspensao." },
     ],
@@ -1983,7 +1983,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com PA descontrolada em uso de 3 drogas otimizadas. Ao anamnese detalhada: paciente esquece medicacoes 3 dias/semana; refere ganhar em dispensacao a cada 3 meses (para receita de 30 dias). Qual e o problema?",
     alternativas: [
       { letra: "A", texto: "Hipertensao secundaria", correta: false, comentario: "Dispensacao trimestral para receita mensal = nao adesao. Antes de rotular como resistente, resolver adesao. Estrategias: fixacao dose (combinacoes), simplificacao, ajuda de familia, apps." },
-      { letra: "B", texto: "Nao adesao (pseudorresistencia)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Dispensacao trimestral para receita mensal = nao adesao. Antes de rotular como resistente, resolver adesao. Estrategias: fixacao dose (combinacoes), simplificacao, ajuda de familia, apps." },
+      { letra: "B", texto: "Nao adesao (pseudorresistencia)", correta: true, comentario: "Alternativa correta. Dispensacao trimestral para receita mensal = nao adesao. Antes de rotular como resistente, resolver adesao. Estrategias: fixacao dose (combinacoes), simplificacao, ajuda de familia, apps." },
       { letra: "C", texto: "Refratariedade verdadeira", correta: false, comentario: "Esta opção diverge da diretriz atual. Dispensacao trimestral para receita mensal = nao adesao. Antes de rotular como resistente, resolver adesao. Estrategias: fixacao dose (combinacoes), simplificacao, ajuda de familia, apps." },
       { letra: "D", texto: "Interacao medicamentosa", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Dispensacao trimestral para receita mensal = nao adesao. Antes de rotular como resistente, resolver adesao. Estrategias: fixacao dose (combinacoes), simplificacao, ajuda de familia, apps." },
     ],
@@ -1999,7 +1999,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente HAR em uso de 4 drogas (incluindo espironolactona 50mg) com PA 148/90 apos 6 semanas. MRPA confirma. Sem edema, sem obesidade. Ronca a noite, sonolencia diurna referida pela esposa. Escore Epworth 15/24. Proximo passo?",
     alternativas: [
       { letra: "A", texto: "Adicionar clonidina", correta: false, comentario: "Sintomas classicos de AOS + HAR = altissima prevalencia (60-80%). CPAP reduz PA sobretudo noturna. Alta suspeita clinica -> polissonografia." },
-      { letra: "B", texto: "Polissonografia — apneia obstrutiva do sono e altamente prevalente na HAR", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Sintomas classicos de AOS + HAR = altissima prevalencia (60-80%). CPAP reduz PA sobretudo noturna. Alta suspeita clinica -> polissonografia." },
+      { letra: "B", texto: "Polissonografia — apneia obstrutiva do sono e altamente prevalente na HAR", correta: true, comentario: "Alternativa correta. Sintomas classicos de AOS + HAR = altissima prevalencia (60-80%). CPAP reduz PA sobretudo noturna. Alta suspeita clinica -> polissonografia." },
       { letra: "C", texto: "So ajustar espironolactona", correta: false, comentario: "Esta opção diverge da diretriz atual. Sintomas classicos de AOS + HAR = altissima prevalencia (60-80%). CPAP reduz PA sobretudo noturna. Alta suspeita clinica -> polissonografia." },
       { letra: "D", texto: "Nefrectomia por denervacao renal", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Sintomas classicos de AOS + HAR = altissima prevalencia (60-80%). CPAP reduz PA sobretudo noturna. Alta suspeita clinica -> polissonografia." },
     ],
@@ -2015,7 +2015,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com HAR verdadeira em investigacao. Descoberto: hipocalemia espontanea K 3,1, alcalose metabolica leve. Sem uso de diuretico ha 4 semanas. Qual investigacao ideal?",
     alternativas: [
       { letra: "A", texto: "Cateterismo de arteria renal", correta: false, comentario: "Hipocalemia espontanea + HAS = hiperaldosteronismo primario ate prova em contrario. Rastrear com RAR (relacao aldosterona/renina). Adenoma de Conn e a etiologia mais frequente." },
-      { letra: "B", texto: "Relacao aldosterona/renina", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Hipocalemia espontanea + HAS = hiperaldosteronismo primario ate prova em contrario. Rastrear com RAR (relacao aldosterona/renina). Adenoma de Conn e a etiologia mais frequente." },
+      { letra: "B", texto: "Relacao aldosterona/renina", correta: true, comentario: "Alternativa correta. Hipocalemia espontanea + HAS = hiperaldosteronismo primario ate prova em contrario. Rastrear com RAR (relacao aldosterona/renina). Adenoma de Conn e a etiologia mais frequente." },
       { letra: "C", texto: "Metanefrinas fracionadas", correta: false, comentario: "Esta opção diverge da diretriz atual. Hipocalemia espontanea + HAS = hiperaldosteronismo primario ate prova em contrario. Rastrear com RAR (relacao aldosterona/renina). Adenoma de Conn e a etiologia mais frequente." },
       { letra: "D", texto: "TSH", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Hipocalemia espontanea + HAS = hiperaldosteronismo primario ate prova em contrario. Rastrear com RAR (relacao aldosterona/renina). Adenoma de Conn e a etiologia mais frequente." },
     ],
@@ -2031,7 +2031,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Mulher 28a, PA 165/105 confirmada em MAPA, K 3,0 sem uso de diuretico. Ao exame: sopro abdominal periumbilical. Angio-TC renal: estenose da porcao media da arteria renal esquerda com aspecto de 'colar de contas'. Qual e o diagnostico e a conduta?",
     alternativas: [
       { letra: "A", texto: "Aterosclerose renal — clinico", correta: false, comentario: "Mulher jovem + porcao media + colar de contas = DISPLASIA FIBROMUSCULAR. Angioplastia com balao (sem stent) e frequentemente curativa. Aterosclerose seria em idoso, porcao ostial." },
-      { letra: "B", texto: "Displasia fibromuscular — angioplastia com balao", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Mulher jovem + porcao media + colar de contas = DISPLASIA FIBROMUSCULAR. Angioplastia com balao (sem stent) e frequentemente curativa. Aterosclerose seria em idoso, porcao ostial." },
+      { letra: "B", texto: "Displasia fibromuscular — angioplastia com balao", correta: true, comentario: "Alternativa correta. Mulher jovem + porcao media + colar de contas = DISPLASIA FIBROMUSCULAR. Angioplastia com balao (sem stent) e frequentemente curativa. Aterosclerose seria em idoso, porcao ostial." },
       { letra: "C", texto: "Feocromocitoma — alfabloqueio + cirurgia", correta: false, comentario: "Esta opção diverge da diretriz atual. Mulher jovem + porcao media + colar de contas = DISPLASIA FIBROMUSCULAR. Angioplastia com balao (sem stent) e frequentemente curativa. Aterosclerose seria em idoso, porcao ostial." },
       { letra: "D", texto: "Coarctacao de aorta", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Mulher jovem + porcao media + colar de contas = DISPLASIA FIBROMUSCULAR. Angioplastia com balao (sem stent) e frequentemente curativa. Aterosclerose seria em idoso, porcao ostial." },
     ],
@@ -2047,7 +2047,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 68a com HAS mal controlada, DM, dislipidemia, tabagista. Iniciou losartana ha 2 semanas e retorna com creatinina de 1,5 (previa 0,9), sem outras queixas. Qual e a hipotese?",
     alternativas: [
       { letra: "A", texto: "Nefrite intersticial", correta: false, comentario: "Elevacao >30% da creatinina apos IECA/BRA = ESTENOSE BILATERAL de arteria renal (ou unilateral em rim unico) — a angiotensina II mantinha a filtracao. Suspender IECA/BRA e investigar com angio-TC/RM." },
-      { letra: "B", texto: "Estenose bilateral de arteria renal (ou unilateral em rim unico)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Elevacao >30% da creatinina apos IECA/BRA = ESTENOSE BILATERAL de arteria renal (ou unilateral em rim unico) — a angiotensina II mantinha a filtracao. Suspender IECA/BRA e investigar com angio-TC/RM." },
+      { letra: "B", texto: "Estenose bilateral de arteria renal (ou unilateral em rim unico)", correta: true, comentario: "Alternativa correta. Elevacao >30% da creatinina apos IECA/BRA = ESTENOSE BILATERAL de arteria renal (ou unilateral em rim unico) — a angiotensina II mantinha a filtracao. Suspender IECA/BRA e investigar com angio-TC/RM." },
       { letra: "C", texto: "Rabdomiolise", correta: false, comentario: "Esta opção diverge da diretriz atual. Elevacao >30% da creatinina apos IECA/BRA = ESTENOSE BILATERAL de arteria renal (ou unilateral em rim unico) — a angiotensina II mantinha a filtracao. Suspender IECA/BRA e investigar com angio-TC/RM." },
       { letra: "D", texto: "Nefropatia por contraste", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Elevacao >30% da creatinina apos IECA/BRA = ESTENOSE BILATERAL de arteria renal (ou unilateral em rim unico) — a angiotensina II mantinha a filtracao. Suspender IECA/BRA e investigar com angio-TC/RM." },
     ],
@@ -2064,7 +2064,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Cirurgia imediata", correta: false, comentario: "Feocromocitoma: ORDEM OBRIGATORIA e alfa (fenoxibenzamina/doxazosina) por 7-14 dias + sal + agua, depois beta se taquicardia, entao cirurgia laparoscopica. Beta isolado = crise fatal." },
       { letra: "B", texto: "Betabloqueio -> alfabloqueio -> cirurgia", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Feocromocitoma: ORDEM OBRIGATORIA e alfa (fenoxibenzamina/doxazosina) por 7-14 dias + sal + agua, depois beta se taquicardia, entao cirurgia laparoscopica. Beta isolado = crise fatal." },
-      { letra: "C", texto: "Alfabloqueio + expansao volemica -> depois betabloqueio se taquicardia -> cirurgia", correta: true, comentario: "Esta opção diverge da diretriz atual. Feocromocitoma: ORDEM OBRIGATORIA e alfa (fenoxibenzamina/doxazosina) por 7-14 dias + sal + agua, depois beta se taquicardia, entao cirurgia laparoscopica. Beta isolado = crise fatal." },
+      { letra: "C", texto: "Alfabloqueio + expansao volemica -> depois betabloqueio se taquicardia -> cirurgia", correta: true, comentario: "Alternativa correta. Feocromocitoma: ORDEM OBRIGATORIA e alfa (fenoxibenzamina/doxazosina) por 7-14 dias + sal + agua, depois beta se taquicardia, entao cirurgia laparoscopica. Beta isolado = crise fatal." },
       { letra: "D", texto: "So diuretico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Feocromocitoma: ORDEM OBRIGATORIA e alfa (fenoxibenzamina/doxazosina) por 7-14 dias + sal + agua, depois beta se taquicardia, entao cirurgia laparoscopica. Beta isolado = crise fatal." },
     ],
     dificuldade: "intermediaria",
@@ -2079,7 +2079,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem 55a com HAS de dificil controle, obeso (IMC 34), ronca alto e apresenta sonolencia diurna. MAPA: padrao non-dipper. Qual investigacao e conduta prioritaria?",
     alternativas: [
       { letra: "A", texto: "Cateterismo renal", correta: false, comentario: "AOS + HAS resistente + padrao non-dipper = altissima suspeita. Polissonografia e o padrao ouro. CPAP reduz PA e melhora prognostico CV." },
-      { letra: "B", texto: "Polissonografia + CPAP se AOS confirmada", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. AOS + HAS resistente + padrao non-dipper = altissima suspeita. Polissonografia e o padrao ouro. CPAP reduz PA e melhora prognostico CV." },
+      { letra: "B", texto: "Polissonografia + CPAP se AOS confirmada", correta: true, comentario: "Alternativa correta. AOS + HAS resistente + padrao non-dipper = altissima suspeita. Polissonografia e o padrao ouro. CPAP reduz PA e melhora prognostico CV." },
       { letra: "C", texto: "Metanefrinas", correta: false, comentario: "Esta opção diverge da diretriz atual. AOS + HAS resistente + padrao non-dipper = altissima suspeita. Polissonografia e o padrao ouro. CPAP reduz PA e melhora prognostico CV." },
       { letra: "D", texto: "Cortisol serico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. AOS + HAS resistente + padrao non-dipper = altissima suspeita. Polissonografia e o padrao ouro. CPAP reduz PA e melhora prognostico CV." },
     ],
@@ -2095,7 +2095,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 25a jovem, sem historia familiar, PA 175/110 em membros superiores, PA 130/85 em MMII, com sopro sistolico interescapular. Qual e o diagnostico e proximo exame?",
     alternativas: [
       { letra: "A", texto: "Feocromocitoma", correta: false, comentario: "PA > em MMSS que MMII + sopro interescapular = COARCTACAO DE AORTA. Rx pode mostrar sinal de Roesler (erosao costal por circulacao colateral). Correcao cirurgica ou endovascular." },
-      { letra: "B", texto: "Coarctacao de aorta — eco/angio-TC de aorta", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. PA > em MMSS que MMII + sopro interescapular = COARCTACAO DE AORTA. Rx pode mostrar sinal de Roesler (erosao costal por circulacao colateral). Correcao cirurgica ou endovascular." },
+      { letra: "B", texto: "Coarctacao de aorta — eco/angio-TC de aorta", correta: true, comentario: "Alternativa correta. PA > em MMSS que MMII + sopro interescapular = COARCTACAO DE AORTA. Rx pode mostrar sinal de Roesler (erosao costal por circulacao colateral). Correcao cirurgica ou endovascular." },
       { letra: "C", texto: "Displasia fibromuscular renal", correta: false, comentario: "Esta opção diverge da diretriz atual. PA > em MMSS que MMII + sopro interescapular = COARCTACAO DE AORTA. Rx pode mostrar sinal de Roesler (erosao costal por circulacao colateral). Correcao cirurgica ou endovascular." },
       { letra: "D", texto: "Hiperaldosteronismo", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. PA > em MMSS que MMII + sopro interescapular = COARCTACAO DE AORTA. Rx pode mostrar sinal de Roesler (erosao costal por circulacao colateral). Correcao cirurgica ou endovascular." },
     ],
@@ -2111,7 +2111,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem 50a colapsa em restaurante. Iniciada RCP em 30 segundos. DEA aplicado -> ritmo chocavel (FV). Choque bifasico 200J aplicado. Sem retorno da circulacao apos 2 minutos de RCP. Novo ritmo: FV. Proximo passo?",
     alternativas: [
       { letra: "A", texto: "Adrenalina agora, aguardar 3 minutos", correta: false, comentario: "Segundo choque -> RCP -> adrenalina 1mg IV. Se persistir FV apos 3o choque, adicionar amiodarona 300mg. RCP de alta qualidade minimizando interrupcoes." },
-      { letra: "B", texto: "Segundo choque + continuar RCP; adrenalina apos o 2o choque", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Segundo choque -> RCP -> adrenalina 1mg IV. Se persistir FV apos 3o choque, adicionar amiodarona 300mg. RCP de alta qualidade minimizando interrupcoes." },
+      { letra: "B", texto: "Segundo choque + continuar RCP; adrenalina apos o 2o choque", correta: true, comentario: "Alternativa correta. Segundo choque -> RCP -> adrenalina 1mg IV. Se persistir FV apos 3o choque, adicionar amiodarona 300mg. RCP de alta qualidade minimizando interrupcoes." },
       { letra: "C", texto: "Amiodarona ja", correta: false, comentario: "Esta opção diverge da diretriz atual. Segundo choque -> RCP -> adrenalina 1mg IV. Se persistir FV apos 3o choque, adicionar amiodarona 300mg. RCP de alta qualidade minimizando interrupcoes." },
       { letra: "D", texto: "Cardioversao sincronizada", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Segundo choque -> RCP -> adrenalina 1mg IV. Se persistir FV apos 3o choque, adicionar amiodarona 300mg. RCP de alta qualidade minimizando interrupcoes." },
     ],
@@ -2127,7 +2127,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 55a chega ao PS em parada. Monitor: ritmo com atividade eletrica mas sem pulso central. RCP em curso. Qual e a conduta?",
     alternativas: [
       { letra: "A", texto: "Desfibrilar imediatamente", correta: false, comentario: "AESP e ritmo NAO chocavel. Adrenalina 1mg IV a cada 3-5 min (o mais precoce possivel). Buscar causa reversivel (hipovolemia, hipoxia, acidose, hipo/hipercalemia, hipotermia, pneumo, tamponamento, tox, TEP, IAM)." },
-      { letra: "B", texto: "AESP — RCP + adrenalina precoce + buscar 5H e 5T", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. AESP e ritmo NAO chocavel. Adrenalina 1mg IV a cada 3-5 min (o mais precoce possivel). Buscar causa reversivel (hipovolemia, hipoxia, acidose, hipo/hipercalemia, hipotermia, pneumo, tamponamento, tox, TEP, IAM)." },
+      { letra: "B", texto: "AESP — RCP + adrenalina precoce + buscar 5H e 5T", correta: true, comentario: "Alternativa correta. AESP e ritmo NAO chocavel. Adrenalina 1mg IV a cada 3-5 min (o mais precoce possivel). Buscar causa reversivel (hipovolemia, hipoxia, acidose, hipo/hipercalemia, hipotermia, pneumo, tamponamento, tox, TEP, IAM)." },
       { letra: "C", texto: "Cardioversao sincronizada", correta: false, comentario: "Esta opção diverge da diretriz atual. AESP e ritmo NAO chocavel. Adrenalina 1mg IV a cada 3-5 min (o mais precoce possivel). Buscar causa reversivel (hipovolemia, hipoxia, acidose, hipo/hipercalemia, hipotermia, pneumo, tamponamento, tox, TEP, IAM)." },
       { letra: "D", texto: "Amiodarona", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. AESP e ritmo NAO chocavel. Adrenalina 1mg IV a cada 3-5 min (o mais precoce possivel). Buscar causa reversivel (hipovolemia, hipoxia, acidose, hipo/hipercalemia, hipotermia, pneumo, tamponamento, tox, TEP, IAM)." },
     ],
@@ -2143,7 +2143,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Mulher 30a com palpitacoes de inicio subito, sensacao de 'coracao acelerado'. FC 180, PA 110/70, sem outras queixas. ECG: taquicardia de QRS estreito, regular, sem ondas P visiveis. Qual a conduta inicial?",
     alternativas: [
       { letra: "A", texto: "Cardioversao imediata", correta: false, comentario: "TSVP em paciente estavel: Valsalva modificada (REVERT — elevacao de pernas ao final) e primeira linha. Se falhar, adenosina 6mg em bolus rapido, depois 12mg se necessario." },
-      { letra: "B", texto: "Manobra de Valsalva modificada, se ineficaz adenosina 6mg IV", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. TSVP em paciente estavel: Valsalva modificada (REVERT — elevacao de pernas ao final) e primeira linha. Se falhar, adenosina 6mg em bolus rapido, depois 12mg se necessario." },
+      { letra: "B", texto: "Manobra de Valsalva modificada, se ineficaz adenosina 6mg IV", correta: true, comentario: "Alternativa correta. TSVP em paciente estavel: Valsalva modificada (REVERT — elevacao de pernas ao final) e primeira linha. Se falhar, adenosina 6mg em bolus rapido, depois 12mg se necessario." },
       { letra: "C", texto: "Amiodarona", correta: false, comentario: "Esta opção diverge da diretriz atual. TSVP em paciente estavel: Valsalva modificada (REVERT — elevacao de pernas ao final) e primeira linha. Se falhar, adenosina 6mg em bolus rapido, depois 12mg se necessario." },
       { letra: "D", texto: "Metoprolol", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. TSVP em paciente estavel: Valsalva modificada (REVERT — elevacao de pernas ao final) e primeira linha. Se falhar, adenosina 6mg em bolus rapido, depois 12mg se necessario." },
     ],
@@ -2159,7 +2159,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 65a com TV monomorfica sustentada, com pulso, PA 100/60, discretamente sintomatico. Qual a conduta?",
     alternativas: [
       { letra: "A", texto: "Verapamil IV", correta: false, comentario: "TV monomorfica com pulso, estavel: AMIODARONA 150mg IV em 10 min. Nunca verapamil (pode causar colapso hemodinamico em TV). Se instabilizar, cardioverter (sincronizada) 100J." },
-      { letra: "B", texto: "Amiodarona 150mg IV em 10 min", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. TV monomorfica com pulso, estavel: AMIODARONA 150mg IV em 10 min. Nunca verapamil (pode causar colapso hemodinamico em TV). Se instabilizar, cardioverter (sincronizada) 100J." },
+      { letra: "B", texto: "Amiodarona 150mg IV em 10 min", correta: true, comentario: "Alternativa correta. TV monomorfica com pulso, estavel: AMIODARONA 150mg IV em 10 min. Nunca verapamil (pode causar colapso hemodinamico em TV). Se instabilizar, cardioverter (sincronizada) 100J." },
       { letra: "C", texto: "Adenosina 6mg", correta: false, comentario: "Esta opção diverge da diretriz atual. TV monomorfica com pulso, estavel: AMIODARONA 150mg IV em 10 min. Nunca verapamil (pode causar colapso hemodinamico em TV). Se instabilizar, cardioverter (sincronizada) 100J." },
       { letra: "D", texto: "Cardioversao imediata sem sedacao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. TV monomorfica com pulso, estavel: AMIODARONA 150mg IV em 10 min. Nunca verapamil (pode causar colapso hemodinamico em TV). Se instabilizar, cardioverter (sincronizada) 100J." },
     ],
@@ -2176,7 +2176,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Cardioversao eletrica", correta: false, comentario: "Em FA + WPW, TODOS os bloqueadores do no AV sao contraindicados — deixam a via acessoria descer livre -> FV. Cardioverter ou procainamida." },
       { letra: "B", texto: "Procainamida", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Em FA + WPW, TODOS os bloqueadores do no AV sao contraindicados — deixam a via acessoria descer livre -> FV. Cardioverter ou procainamida." },
-      { letra: "C", texto: "Adenosina, diltiazem, verapamil, betabloqueador, digoxina", correta: true, comentario: "Esta opção diverge da diretriz atual. Em FA + WPW, TODOS os bloqueadores do no AV sao contraindicados — deixam a via acessoria descer livre -> FV. Cardioverter ou procainamida." },
+      { letra: "C", texto: "Adenosina, diltiazem, verapamil, betabloqueador, digoxina", correta: true, comentario: "Alternativa correta. Em FA + WPW, TODOS os bloqueadores do no AV sao contraindicados — deixam a via acessoria descer livre -> FV. Cardioverter ou procainamida." },
       { letra: "D", texto: "Anticoagulacao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Em FA + WPW, TODOS os bloqueadores do no AV sao contraindicados — deixam a via acessoria descer livre -> FV. Cardioverter ou procainamida." },
     ],
     dificuldade: "intermediaria",
@@ -2191,7 +2191,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem 45a com sincope + palpitacoes intermitentes. Monitor: TV polimorfica com QRS 'girando' em torno da linha de base, ha intervalo QT longo no ritmo basal. Uso recente de sotalol + ondansetrona. Qual a conduta?",
     alternativas: [
       { letra: "A", texto: "Amiodarona", correta: false, comentario: "Torsades de pointes! Magnesio (mesmo com Mg normal), suspender drogas culpadas, corrigir K/Mg. Marcapasso de overdrive ou isoprenalina em bradi-dependente. Se perder pulso, desfibrilar." },
-      { letra: "B", texto: "Sulfato de magnesio 1-2g IV + suspender drogas que prolongam QT", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Torsades de pointes! Magnesio (mesmo com Mg normal), suspender drogas culpadas, corrigir K/Mg. Marcapasso de overdrive ou isoprenalina em bradi-dependente. Se perder pulso, desfibrilar." },
+      { letra: "B", texto: "Sulfato de magnesio 1-2g IV + suspender drogas que prolongam QT", correta: true, comentario: "Alternativa correta. Torsades de pointes! Magnesio (mesmo com Mg normal), suspender drogas culpadas, corrigir K/Mg. Marcapasso de overdrive ou isoprenalina em bradi-dependente. Se perder pulso, desfibrilar." },
       { letra: "C", texto: "Adenosina", correta: false, comentario: "Esta opção diverge da diretriz atual. Torsades de pointes! Magnesio (mesmo com Mg normal), suspender drogas culpadas, corrigir K/Mg. Marcapasso de overdrive ou isoprenalina em bradi-dependente. Se perder pulso, desfibrilar." },
       { letra: "D", texto: "AAS", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Torsades de pointes! Magnesio (mesmo com Mg normal), suspender drogas culpadas, corrigir K/Mg. Marcapasso de overdrive ou isoprenalina em bradi-dependente. Se perder pulso, desfibrilar." },
     ],
@@ -2207,7 +2207,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 78a com bradicardia sinusal 38 bpm, hipotenso (PA 85/50), tonto, sudoreico. ECG: BAV total com QRS largo, dissociacao AV completa. Atropina 1mg IV administrada sem resposta. Proxima conduta?",
     alternativas: [
       { letra: "A", texto: "Repetir atropina indefinidamente", correta: false, comentario: "BAV total com QRS largo = infrahissiano — atropina tende a ser INEFICAZ (nao ha via para atuar). Prosseguir com MP transcutaneo (sedar!), dopamina/adrenalina, preparo para MP transvenoso e definitivo." },
-      { letra: "B", texto: "Marcapasso transcutaneo + preparo para marcapasso transvenoso", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. BAV total com QRS largo = infrahissiano — atropina tende a ser INEFICAZ (nao ha via para atuar). Prosseguir com MP transcutaneo (sedar!), dopamina/adrenalina, preparo para MP transvenoso e definitivo." },
+      { letra: "B", texto: "Marcapasso transcutaneo + preparo para marcapasso transvenoso", correta: true, comentario: "Alternativa correta. BAV total com QRS largo = infrahissiano — atropina tende a ser INEFICAZ (nao ha via para atuar). Prosseguir com MP transcutaneo (sedar!), dopamina/adrenalina, preparo para MP transvenoso e definitivo." },
       { letra: "C", texto: "Adenosina", correta: false, comentario: "Esta opção diverge da diretriz atual. BAV total com QRS largo = infrahissiano — atropina tende a ser INEFICAZ (nao ha via para atuar). Prosseguir com MP transcutaneo (sedar!), dopamina/adrenalina, preparo para MP transvenoso e definitivo." },
       { letra: "D", texto: "Cardioversao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. BAV total com QRS largo = infrahissiano — atropina tende a ser INEFICAZ (nao ha via para atuar). Prosseguir com MP transcutaneo (sedar!), dopamina/adrenalina, preparo para MP transvenoso e definitivo." },
     ],
@@ -2223,7 +2223,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com IAM extenso desenvolve TV sustentada com pulso, PA 60/40, alteracao do nivel de consciencia, dor toracica. Conduta imediata:",
     alternativas: [
       { letra: "A", texto: "Amiodarona IV", correta: false, comentario: "TV com pulso + instabilidade = cardioversao sincronizada imediata. 100J bifasico e usual para TV monomorfica. Sedacao rapida se tempo permitir. Ambiente de UTI apos." },
-      { letra: "B", texto: "Cardioversao eletrica SINCRONIZADA imediata (100J bifasico)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. TV com pulso + instabilidade = cardioversao sincronizada imediata. 100J bifasico e usual para TV monomorfica. Sedacao rapida se tempo permitir. Ambiente de UTI apos." },
+      { letra: "B", texto: "Cardioversao eletrica SINCRONIZADA imediata (100J bifasico)", correta: true, comentario: "Alternativa correta. TV com pulso + instabilidade = cardioversao sincronizada imediata. 100J bifasico e usual para TV monomorfica. Sedacao rapida se tempo permitir. Ambiente de UTI apos." },
       { letra: "C", texto: "Adenosina", correta: false, comentario: "Esta opção diverge da diretriz atual. TV com pulso + instabilidade = cardioversao sincronizada imediata. 100J bifasico e usual para TV monomorfica. Sedacao rapida se tempo permitir. Ambiente de UTI apos." },
       { letra: "D", texto: "Metoprolol", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. TV com pulso + instabilidade = cardioversao sincronizada imediata. 100J bifasico e usual para TV monomorfica. Sedacao rapida se tempo permitir. Ambiente de UTI apos." },
     ],
@@ -2239,7 +2239,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Mulher 65a com ICFER (FE 30%) previa, chega ao PS com dispneia progressiva ha 5 dias, ortopneia (3 travesseiros), edema MMII 2+/4, PA 155/95, FC 105, SpO2 88%, estertores em bases, refluxo hepatojugular, extremidades AQUECIDAS. Perfil hemodinamico?",
     alternativas: [
       { letra: "A", texto: "A (quente-seco)", correta: false, comentario: "Congesta (ortopneia, estertores, edema, refluxo HJ) + boa perfusao (aquecida, PA preservada) = perfil B. Tratamento: DIURETICO IV + vasodilatador se PA permitir + VNI se edema agudo." },
-      { letra: "B", texto: "B (quente-umido)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Congesta (ortopneia, estertores, edema, refluxo HJ) + boa perfusao (aquecida, PA preservada) = perfil B. Tratamento: DIURETICO IV + vasodilatador se PA permitir + VNI se edema agudo." },
+      { letra: "B", texto: "B (quente-umido)", correta: true, comentario: "Alternativa correta. Congesta (ortopneia, estertores, edema, refluxo HJ) + boa perfusao (aquecida, PA preservada) = perfil B. Tratamento: DIURETICO IV + vasodilatador se PA permitir + VNI se edema agudo." },
       { letra: "C", texto: "L (frio-seco)", correta: false, comentario: "Esta opção diverge da diretriz atual. Congesta (ortopneia, estertores, edema, refluxo HJ) + boa perfusao (aquecida, PA preservada) = perfil B. Tratamento: DIURETICO IV + vasodilatador se PA permitir + VNI se edema agudo." },
       { letra: "D", texto: "C (frio-umido)", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Congesta (ortopneia, estertores, edema, refluxo HJ) + boa perfusao (aquecida, PA preservada) = perfil B. Tratamento: DIURETICO IV + vasodilatador se PA permitir + VNI se edema agudo." },
     ],
@@ -2255,7 +2255,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Mesma paciente. Uso cronico de carvedilol 25mg 2x/dia, enalapril 20mg 2x/dia, espironolactona 25mg, dapagliflozina 10mg. Ao PS, dispneia intensa em repouso. Como manejar as medicacoes cronicas?",
     alternativas: [
       { letra: "A", texto: "Suspender tudo enquanto congesta", correta: false, comentario: "Descompensacao NAO justifica retirar os 4 pilares (mortalidade). Adicionar furosemida IV. Se hipotensao/bradicardia grave: reduzir/pausar BB ate estabilizar. Nao retirar espironolactona salvo hipercalemia." },
-      { letra: "B", texto: "Manter os 4 pilares + adicionar furosemida IV (pelo menos 2x a dose oral)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Descompensacao NAO justifica retirar os 4 pilares (mortalidade). Adicionar furosemida IV. Se hipotensao/bradicardia grave: reduzir/pausar BB ate estabilizar. Nao retirar espironolactona salvo hipercalemia." },
+      { letra: "B", texto: "Manter os 4 pilares + adicionar furosemida IV (pelo menos 2x a dose oral)", correta: true, comentario: "Alternativa correta. Descompensacao NAO justifica retirar os 4 pilares (mortalidade). Adicionar furosemida IV. Se hipotensao/bradicardia grave: reduzir/pausar BB ate estabilizar. Nao retirar espironolactona salvo hipercalemia." },
       { letra: "C", texto: "Manter so IECA e espironolactona", correta: false, comentario: "Esta opção diverge da diretriz atual. Descompensacao NAO justifica retirar os 4 pilares (mortalidade). Adicionar furosemida IV. Se hipotensao/bradicardia grave: reduzir/pausar BB ate estabilizar. Nao retirar espironolactona salvo hipercalemia." },
       { letra: "D", texto: "So diuretico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Descompensacao NAO justifica retirar os 4 pilares (mortalidade). Adicionar furosemida IV. Se hipotensao/bradicardia grave: reduzir/pausar BB ate estabilizar. Nao retirar espironolactona salvo hipercalemia." },
     ],
@@ -2287,7 +2287,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Idoso 82a com IC descompensada, PA 82/50, FC 115, TEC 5 seg, extremidades frias, oliguria (300 mL em 12h), lactato 4,5. SpO2 92%. Qual perfil e conduta?",
     alternativas: [
       { letra: "A", texto: "Perfil B — diuretico IV isolado", correta: false, comentario: "Perfil C = frio (hipoperfundido) + umido (congesta). Inotropico (dobutamina; milrinona se em uso cronico de BB). Vasopressor se PA muito baixa. Ambiente de UTI. Muito grave." },
-      { letra: "B", texto: "Perfil C (frio-umido) — dobutamina IV +/- noradrenalina + diuretico com cautela", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Perfil C = frio (hipoperfundido) + umido (congesta). Inotropico (dobutamina; milrinona se em uso cronico de BB). Vasopressor se PA muito baixa. Ambiente de UTI. Muito grave." },
+      { letra: "B", texto: "Perfil C (frio-umido) — dobutamina IV +/- noradrenalina + diuretico com cautela", correta: true, comentario: "Alternativa correta. Perfil C = frio (hipoperfundido) + umido (congesta). Inotropico (dobutamina; milrinona se em uso cronico de BB). Vasopressor se PA muito baixa. Ambiente de UTI. Muito grave." },
       { letra: "C", texto: "Perfil A — alta", correta: false, comentario: "Esta opção diverge da diretriz atual. Perfil C = frio (hipoperfundido) + umido (congesta). Inotropico (dobutamina; milrinona se em uso cronico de BB). Vasopressor se PA muito baixa. Ambiente de UTI. Muito grave." },
       { letra: "D", texto: "Perfil L — expansao empirica sem monitorizacao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Perfil C = frio (hipoperfundido) + umido (congesta). Inotropico (dobutamina; milrinona se em uso cronico de BB). Vasopressor se PA muito baixa. Ambiente de UTI. Muito grave." },
     ],
@@ -2319,7 +2319,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 70a com ICFER, no 5o dia de internacao por descompensacao. Melhorou congestao. Ao 3o dia de alta programada, apresenta confusao aguda flutuante noturna. Sem sinais focais neurologicos. Qual e a hipotese principal e conduta?",
     alternativas: [
       { letra: "A", texto: "AVC — TC de cranio", correta: false, comentario: "Delirium hospitalar em idoso e comum e multifatorial. Corrigir K/Mg/Na (frequentes com diureticos), tratar infeccao/dor. Reorientacao, familia junto, luz natural, evitar benzo. Foi cobrado na OMED IV." },
-      { letra: "B", texto: "Delirium — medidas nao farmacologicas + investigar causas reversiveis (hidroeletroliticos, hipoxia, infeccao)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Delirium hospitalar em idoso e comum e multifatorial. Corrigir K/Mg/Na (frequentes com diureticos), tratar infeccao/dor. Reorientacao, familia junto, luz natural, evitar benzo. Foi cobrado na OMED IV." },
+      { letra: "B", texto: "Delirium — medidas nao farmacologicas + investigar causas reversiveis (hidroeletroliticos, hipoxia, infeccao)", correta: true, comentario: "Alternativa correta. Delirium hospitalar em idoso e comum e multifatorial. Corrigir K/Mg/Na (frequentes com diureticos), tratar infeccao/dor. Reorientacao, familia junto, luz natural, evitar benzo. Foi cobrado na OMED IV." },
       { letra: "C", texto: "Encefalopatia hepatica", correta: false, comentario: "Esta opção diverge da diretriz atual. Delirium hospitalar em idoso e comum e multifatorial. Corrigir K/Mg/Na (frequentes com diureticos), tratar infeccao/dor. Reorientacao, familia junto, luz natural, evitar benzo. Foi cobrado na OMED IV." },
       { letra: "D", texto: "Demencia subita", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Delirium hospitalar em idoso e comum e multifatorial. Corrigir K/Mg/Na (frequentes com diureticos), tratar infeccao/dor. Reorientacao, familia junto, luz natural, evitar benzo. Foi cobrado na OMED IV." },
     ],
@@ -2335,7 +2335,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 60a com ICFER, ritmo sinusal, FC 82 bpm apesar de carvedilol 25mg 2x, muito sintomatico. Qual e o proximo passo?",
     alternativas: [
       { letra: "A", texto: "Aumentar carvedilol", correta: false, comentario: "Ivabradina reduz FC via corrente If, indicada em ICFER com FC >=70 bpm apesar de BB otimizado. Nao age em FA. Reduz internacao por IC no SHIFT." },
-      { letra: "B", texto: "Adicionar ivabradina se FC persistir >=70 e ritmo sinusal", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Ivabradina reduz FC via corrente If, indicada em ICFER com FC >=70 bpm apesar de BB otimizado. Nao age em FA. Reduz internacao por IC no SHIFT." },
+      { letra: "B", texto: "Adicionar ivabradina se FC persistir >=70 e ritmo sinusal", correta: true, comentario: "Alternativa correta. Ivabradina reduz FC via corrente If, indicada em ICFER com FC >=70 bpm apesar de BB otimizado. Nao age em FA. Reduz internacao por IC no SHIFT." },
       { letra: "C", texto: "Reduzir carvedilol", correta: false, comentario: "Esta opção diverge da diretriz atual. Ivabradina reduz FC via corrente If, indicada em ICFER com FC >=70 bpm apesar de BB otimizado. Nao age em FA. Reduz internacao por IC no SHIFT." },
       { letra: "D", texto: "Amiodarona", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Ivabradina reduz FC via corrente If, indicada em ICFER com FC >=70 bpm apesar de BB otimizado. Nao age em FA. Reduz internacao por IC no SHIFT." },
     ],
@@ -2351,7 +2351,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Mulher 68a com ICFER decorrente de IAM anterior extenso ha 2 anos, FE 30%. Assintomatica em NYHA I com terapia otimizada (4 pilares em dose alvo). Qual a conduta profilatica para morte subita?",
     alternativas: [
       { letra: "A", texto: "Nada, ja esta estavel", correta: false, comentario: "Indicacao classica de CDI para prevencao primaria: FE =3 meses (>=40 dias pos-IAM) + expectativa de vida >1 ano. Reduz mortalidade." },
-      { letra: "B", texto: "CDI para prevencao primaria (FE =3 meses de terapia otimizada + >=40 dias pos-IAM)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Indicacao classica de CDI para prevencao primaria: FE =3 meses (>=40 dias pos-IAM) + expectativa de vida >1 ano. Reduz mortalidade." },
+      { letra: "B", texto: "CDI para prevencao primaria (FE =3 meses de terapia otimizada + >=40 dias pos-IAM)", correta: true, comentario: "Alternativa correta. Indicacao classica de CDI para prevencao primaria: FE =3 meses (>=40 dias pos-IAM) + expectativa de vida >1 ano. Reduz mortalidade." },
       { letra: "C", texto: "So amiodarona", correta: false, comentario: "Esta opção diverge da diretriz atual. Indicacao classica de CDI para prevencao primaria: FE =3 meses (>=40 dias pos-IAM) + expectativa de vida >1 ano. Reduz mortalidade." },
       { letra: "D", texto: "Cardioversao ambulatorial", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Indicacao classica de CDI para prevencao primaria: FE =3 meses (>=40 dias pos-IAM) + expectativa de vida >1 ano. Reduz mortalidade." },
     ],
@@ -2368,7 +2368,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Betabloqueador", correta: false, comentario: "ICFEP: iSGLT2 sao a classe com evidencia mais consistente (EMPEROR-Preserved, DELIVER). Betabloqueador e IECA/BRA tem beneficio marginal. Espironolactona (TOPCAT) tem beneficio em subgrupos." },
       { letra: "B", texto: "IECA", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. ICFEP: iSGLT2 sao a classe com evidencia mais consistente (EMPEROR-Preserved, DELIVER). Betabloqueador e IECA/BRA tem beneficio marginal. Espironolactona (TOPCAT) tem beneficio em subgrupos." },
-      { letra: "C", texto: "iSGLT2 (dapa/empa)", correta: true, comentario: "Esta opção diverge da diretriz atual. ICFEP: iSGLT2 sao a classe com evidencia mais consistente (EMPEROR-Preserved, DELIVER). Betabloqueador e IECA/BRA tem beneficio marginal. Espironolactona (TOPCAT) tem beneficio em subgrupos." },
+      { letra: "C", texto: "iSGLT2 (dapa/empa)", correta: true, comentario: "Alternativa correta. ICFEP: iSGLT2 sao a classe com evidencia mais consistente (EMPEROR-Preserved, DELIVER). Betabloqueador e IECA/BRA tem beneficio marginal. Espironolactona (TOPCAT) tem beneficio em subgrupos." },
       { letra: "D", texto: "Espironolactona", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. ICFEP: iSGLT2 sao a classe com evidencia mais consistente (EMPEROR-Preserved, DELIVER). Betabloqueador e IECA/BRA tem beneficio marginal. Espironolactona (TOPCAT) tem beneficio em subgrupos." },
     ],
     dificuldade: "intermediaria",
@@ -2383,7 +2383,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente com IC descompensada apresenta piora da funcao renal (creatinina de 1,3 para 2,1) durante uso de furosemida IV. Nao esta desidratado; ainda congesto ao exame. Como manejar?",
     alternativas: [
       { letra: "A", texto: "Suspender furosemida e transferir para dialise", correta: false, comentario: "Sindrome cardiorrenal tipo 1: a piora renal na descompensacao vem MAIS da congestao venosa renal que do baixo debito. Descongestionar frequentemente melhora a creatinina. Nao suspender diuretico se ainda congesta." },
-      { letra: "B", texto: "Manter descongestao — a piora renal e frequentemente por congestao venosa renal, que MELHORA com diurese", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Sindrome cardiorrenal tipo 1: a piora renal na descompensacao vem MAIS da congestao venosa renal que do baixo debito. Descongestionar frequentemente melhora a creatinina. Nao suspender diuretico se ainda congesta." },
+      { letra: "B", texto: "Manter descongestao — a piora renal e frequentemente por congestao venosa renal, que MELHORA com diurese", correta: true, comentario: "Alternativa correta. Sindrome cardiorrenal tipo 1: a piora renal na descompensacao vem MAIS da congestao venosa renal que do baixo debito. Descongestionar frequentemente melhora a creatinina. Nao suspender diuretico se ainda congesta." },
       { letra: "C", texto: "Iniciar dobutamina", correta: false, comentario: "Esta opção diverge da diretriz atual. Sindrome cardiorrenal tipo 1: a piora renal na descompensacao vem MAIS da congestao venosa renal que do baixo debito. Descongestionar frequentemente melhora a creatinina. Nao suspender diuretico se ainda congesta." },
       { letra: "D", texto: "Ecocardiograma urgente", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Sindrome cardiorrenal tipo 1: a piora renal na descompensacao vem MAIS da congestao venosa renal que do baixo debito. Descongestionar frequentemente melhora a creatinina. Nao suspender diuretico se ainda congesta." },
     ],
@@ -2399,7 +2399,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Menina 10a, dor migratoria em joelhos e tornozelos que 'passeia' entre articulacoes, febre baixa, apos faringite ha 3 semanas. Ao exame: sopro sistolico apical de recente, VHS 78, PCR 6,5, ASLO 800 UI. ECG: PR 240ms. Diagnostico?",
     alternativas: [
       { letra: "A", texto: "Artrite idiopatica juvenil", correta: false, comentario: "Jones: 2 maiores (poliartrite migratoria + cardite pelo sopro novo) + evidencia de infeccao estreptococica previa (ASLO alto) = FEBRE REUMATICA. Iniciar tratamento e profilaxia." },
-      { letra: "B", texto: "Febre reumatica (Jones: 2 maiores — poliartrite migratoria + cardite)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Jones: 2 maiores (poliartrite migratoria + cardite pelo sopro novo) + evidencia de infeccao estreptococica previa (ASLO alto) = FEBRE REUMATICA. Iniciar tratamento e profilaxia." },
+      { letra: "B", texto: "Febre reumatica (Jones: 2 maiores — poliartrite migratoria + cardite)", correta: true, comentario: "Alternativa correta. Jones: 2 maiores (poliartrite migratoria + cardite pelo sopro novo) + evidencia de infeccao estreptococica previa (ASLO alto) = FEBRE REUMATICA. Iniciar tratamento e profilaxia." },
       { letra: "C", texto: "Lupus", correta: false, comentario: "Esta opção diverge da diretriz atual. Jones: 2 maiores (poliartrite migratoria + cardite pelo sopro novo) + evidencia de infeccao estreptococica previa (ASLO alto) = FEBRE REUMATICA. Iniciar tratamento e profilaxia." },
       { letra: "D", texto: "Kawasaki", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Jones: 2 maiores (poliartrite migratoria + cardite pelo sopro novo) + evidencia de infeccao estreptococica previa (ASLO alto) = FEBRE REUMATICA. Iniciar tratamento e profilaxia." },
     ],
@@ -2415,7 +2415,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Menino 8a com poliartrite migratoria + carditisce leve confirmada por eco (regurgitacao mitral valvar). Vamos tratar. Sobre a erradicacao estreptococica:",
     alternativas: [
       { letra: "A", texto: "Nao precisa, ja passou o estreptococo", correta: false, comentario: "Erradicar SEMPRE, mesmo com cultura negativa (latencia de 2-4 semanas para o quadro reumatico). Penicilina benzatina IM em dose unica. Se alergia, macrolideo ou cefalosporina 1G." },
-      { letra: "B", texto: "Penicilina benzatina IM em dose unica (600.000 UI se =20kg) mesmo com cultura negativa", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Erradicar SEMPRE, mesmo com cultura negativa (latencia de 2-4 semanas para o quadro reumatico). Penicilina benzatina IM em dose unica. Se alergia, macrolideo ou cefalosporina 1G." },
+      { letra: "B", texto: "Penicilina benzatina IM em dose unica (600.000 UI se =20kg) mesmo com cultura negativa", correta: true, comentario: "Alternativa correta. Erradicar SEMPRE, mesmo com cultura negativa (latencia de 2-4 semanas para o quadro reumatico). Penicilina benzatina IM em dose unica. Se alergia, macrolideo ou cefalosporina 1G." },
       { letra: "C", texto: "So se cultura positiva", correta: false, comentario: "Esta opção diverge da diretriz atual. Erradicar SEMPRE, mesmo com cultura negativa (latencia de 2-4 semanas para o quadro reumatico). Penicilina benzatina IM em dose unica. Se alergia, macrolideo ou cefalosporina 1G." },
       { letra: "D", texto: "AZitromicina VO por 30 dias", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Erradicar SEMPRE, mesmo com cultura negativa (latencia de 2-4 semanas para o quadro reumatico). Penicilina benzatina IM em dose unica. Se alergia, macrolideo ou cefalosporina 1G." },
     ],
@@ -2432,7 +2432,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Nao precisa profilaxia", correta: false, comentario: "Teve cardite mas resolveu sem sequela = 10 anos ou ate os 25a (o mais longo). Se sem cardite: 5 anos/21a. Se com sequela valvar: ate 40 anos ou vitalicia." },
       { letra: "B", texto: "5 anos ou ate 21 anos (sem cardite)", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Teve cardite mas resolveu sem sequela = 10 anos ou ate os 25a (o mais longo). Se sem cardite: 5 anos/21a. Se com sequela valvar: ate 40 anos ou vitalicia." },
-      { letra: "C", texto: "10 anos ou ate 25 anos (cardite curada sem sequela)", correta: true, comentario: "Esta opção diverge da diretriz atual. Teve cardite mas resolveu sem sequela = 10 anos ou ate os 25a (o mais longo). Se sem cardite: 5 anos/21a. Se com sequela valvar: ate 40 anos ou vitalicia." },
+      { letra: "C", texto: "10 anos ou ate 25 anos (cardite curada sem sequela)", correta: true, comentario: "Alternativa correta. Teve cardite mas resolveu sem sequela = 10 anos ou ate os 25a (o mais longo). Se sem cardite: 5 anos/21a. Se com sequela valvar: ate 40 anos ou vitalicia." },
       { letra: "D", texto: "Ate os 40 anos", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Teve cardite mas resolveu sem sequela = 10 anos ou ate os 25a (o mais longo). Se sem cardite: 5 anos/21a. Se com sequela valvar: ate 40 anos ou vitalicia." },
     ],
     dificuldade: "intermediaria",
@@ -2447,7 +2447,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Adolescente com febre reumatica, coreia de Sydenham dominante, sem outras manifestacoes. Provas inflamatorias ja normalizadas. Diagnostico e conduta?",
     alternativas: [
       { letra: "A", texto: "Excluir febre reumatica (nao ha 2 maiores)", correta: false, comentario: "COREIA DE SYDENHAM isolada fecha diagnostico de FR, dispensando outros criterios (surge tardiamente, quando provas inflamatorias podem ja ter normalizado). Iniciar profilaxia secundaria." },
-      { letra: "B", texto: "Coreia isoladamente FECHA diagnostico — tratar como febre reumatica + iniciar profilaxia", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. COREIA DE SYDENHAM isolada fecha diagnostico de FR, dispensando outros criterios (surge tardiamente, quando provas inflamatorias podem ja ter normalizado). Iniciar profilaxia secundaria." },
+      { letra: "B", texto: "Coreia isoladamente FECHA diagnostico — tratar como febre reumatica + iniciar profilaxia", correta: true, comentario: "Alternativa correta. COREIA DE SYDENHAM isolada fecha diagnostico de FR, dispensando outros criterios (surge tardiamente, quando provas inflamatorias podem ja ter normalizado). Iniciar profilaxia secundaria." },
       { letra: "C", texto: "Doenca de Wilson", correta: false, comentario: "Esta opção diverge da diretriz atual. COREIA DE SYDENHAM isolada fecha diagnostico de FR, dispensando outros criterios (surge tardiamente, quando provas inflamatorias podem ja ter normalizado). Iniciar profilaxia secundaria." },
       { letra: "D", texto: "So sintomatico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. COREIA DE SYDENHAM isolada fecha diagnostico de FR, dispensando outros criterios (surge tardiamente, quando provas inflamatorias podem ja ter normalizado). Iniciar profilaxia secundaria." },
     ],
@@ -2464,7 +2464,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Apixabana", correta: false, comentario: "Estenose mitral moderada/grave + FA = FA valvular = VARFARINA obrigatoria (nao usar ADO). Manter INR alvo 2-3 (ou 2,5-3,5 se protese mecanica). Rastrear complicacoes." },
       { letra: "B", texto: "Rivaroxabana", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Estenose mitral moderada/grave + FA = FA valvular = VARFARINA obrigatoria (nao usar ADO). Manter INR alvo 2-3 (ou 2,5-3,5 se protese mecanica). Rastrear complicacoes." },
-      { letra: "C", texto: "Varfarina", correta: true, comentario: "Esta opção diverge da diretriz atual. Estenose mitral moderada/grave + FA = FA valvular = VARFARINA obrigatoria (nao usar ADO). Manter INR alvo 2-3 (ou 2,5-3,5 se protese mecanica). Rastrear complicacoes." },
+      { letra: "C", texto: "Varfarina", correta: true, comentario: "Alternativa correta. Estenose mitral moderada/grave + FA = FA valvular = VARFARINA obrigatoria (nao usar ADO). Manter INR alvo 2-3 (ou 2,5-3,5 se protese mecanica). Rastrear complicacoes." },
       { letra: "D", texto: "So AAS", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Estenose mitral moderada/grave + FA = FA valvular = VARFARINA obrigatoria (nao usar ADO). Manter INR alvo 2-3 (ou 2,5-3,5 se protese mecanica). Rastrear complicacoes." },
     ],
     dificuldade: "intermediaria",
@@ -2479,7 +2479,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Homem 68a, tabagista, DM2, dislipidemia, com claudicacao em panturrilha bilateral apos 200m. ITB: 0,60 esq / 0,63 dir. Pulsos distais nao palpaveis. Qual a conduta inicial?",
     alternativas: [
       { letra: "A", texto: "Angioplastia imediata", correta: false, comentario: "Fontaine II (claudicacao) — tratamento CLINICO primeiro. Cessacao do tabagismo (o mais importante), exercicio supervisionado (o mais eficaz para distancia), estatina alta intensidade (meta LDL<50), AAS. Cilostazol se sem IC. Revascularizar so se claudicacao incapacitante refrataria ou isquemia critica." },
-      { letra: "B", texto: "Tratamento clinico OTIMIZADO: cessacao do tabagismo + exercicio supervisionado + estatina alta intensidade + AAS +/- cilostazol; investigacao com Doppler", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Fontaine II (claudicacao) — tratamento CLINICO primeiro. Cessacao do tabagismo (o mais importante), exercicio supervisionado (o mais eficaz para distancia), estatina alta intensidade (meta LDL<50), AAS. Cilostazol se sem IC. Revascularizar so se claudicacao incapacitante refrataria ou isquemia critica." },
+      { letra: "B", texto: "Tratamento clinico OTIMIZADO: cessacao do tabagismo + exercicio supervisionado + estatina alta intensidade + AAS +/- cilostazol; investigacao com Doppler", correta: true, comentario: "Alternativa correta. Fontaine II (claudicacao) — tratamento CLINICO primeiro. Cessacao do tabagismo (o mais importante), exercicio supervisionado (o mais eficaz para distancia), estatina alta intensidade (meta LDL<50), AAS. Cilostazol se sem IC. Revascularizar so se claudicacao incapacitante refrataria ou isquemia critica." },
       { letra: "C", texto: "Amputacao", correta: false, comentario: "Esta opção diverge da diretriz atual. Fontaine II (claudicacao) — tratamento CLINICO primeiro. Cessacao do tabagismo (o mais importante), exercicio supervisionado (o mais eficaz para distancia), estatina alta intensidade (meta LDL<50), AAS. Cilostazol se sem IC. Revascularizar so se claudicacao incapacitante refrataria ou isquemia critica." },
       { letra: "D", texto: "So aspirina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Fontaine II (claudicacao) — tratamento CLINICO primeiro. Cessacao do tabagismo (o mais importante), exercicio supervisionado (o mais eficaz para distancia), estatina alta intensidade (meta LDL<50), AAS. Cilostazol se sem IC. Revascularizar so se claudicacao incapacitante refrataria ou isquemia critica." },
     ],
@@ -2495,7 +2495,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente diabetico 70a com DAP grave (dor em repouso, ulcera no halux esquerdo ha 3 semanas, nao cicatriza). ITB direito 0,45, esquerdo nao mensuravel (arteria incompressivel). Qual a conduta?",
     alternativas: [
       { letra: "A", texto: "Manter apenas tratamento clinico", correta: false, comentario: "CLTI: dor em repouso >2 semanas + ulcera isquemica + confirmacao hemodinamica. Risco de amputacao. Revascularizacao urgente (endo ou aberta) + cuidados com o pe + controle glicemico/pressorico rigoroso." },
-      { letra: "B", texto: "Isquemia critica de membro — encaminhamento urgente para vascular; avaliar para revascularizacao (endo/aberta)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. CLTI: dor em repouso >2 semanas + ulcera isquemica + confirmacao hemodinamica. Risco de amputacao. Revascularizacao urgente (endo ou aberta) + cuidados com o pe + controle glicemico/pressorico rigoroso." },
+      { letra: "B", texto: "Isquemia critica de membro — encaminhamento urgente para vascular; avaliar para revascularizacao (endo/aberta)", correta: true, comentario: "Alternativa correta. CLTI: dor em repouso >2 semanas + ulcera isquemica + confirmacao hemodinamica. Risco de amputacao. Revascularizacao urgente (endo ou aberta) + cuidados com o pe + controle glicemico/pressorico rigoroso." },
       { letra: "C", texto: "Antibiotico apenas", correta: false, comentario: "Esta opção diverge da diretriz atual. CLTI: dor em repouso >2 semanas + ulcera isquemica + confirmacao hemodinamica. Risco de amputacao. Revascularizacao urgente (endo ou aberta) + cuidados com o pe + controle glicemico/pressorico rigoroso." },
       { letra: "D", texto: "Enfaixamento compressivo", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. CLTI: dor em repouso >2 semanas + ulcera isquemica + confirmacao hemodinamica. Risco de amputacao. Revascularizacao urgente (endo ou aberta) + cuidados com o pe + controle glicemico/pressorico rigoroso." },
     ],
@@ -2511,7 +2511,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 55a com quadro tipico de claudicacao neurogenica (alivia sentando/inclinando para frente, pulsos presentes, ITB 1,15). Ha extenso historico de sedentarismo. Qual o diagnostico e proximo exame?",
     alternativas: [
       { letra: "A", texto: "DAP — angio-TC", correta: false, comentario: "Alivio postural + pulsos presentes + ITB normal = ESTENOSE DE CANAL LOMBAR. RM da coluna lombar confirma. Tratamento inicial conservador (fisio, analgesia, epidural); cirurgia em refratarios." },
-      { letra: "B", texto: "Estenose de canal lombar — RM da coluna lombar", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Alivio postural + pulsos presentes + ITB normal = ESTENOSE DE CANAL LOMBAR. RM da coluna lombar confirma. Tratamento inicial conservador (fisio, analgesia, epidural); cirurgia em refratarios." },
+      { letra: "B", texto: "Estenose de canal lombar — RM da coluna lombar", correta: true, comentario: "Alternativa correta. Alivio postural + pulsos presentes + ITB normal = ESTENOSE DE CANAL LOMBAR. RM da coluna lombar confirma. Tratamento inicial conservador (fisio, analgesia, epidural); cirurgia em refratarios." },
       { letra: "C", texto: "Doenca de Buerger", correta: false, comentario: "Esta opção diverge da diretriz atual. Alivio postural + pulsos presentes + ITB normal = ESTENOSE DE CANAL LOMBAR. RM da coluna lombar confirma. Tratamento inicial conservador (fisio, analgesia, epidural); cirurgia em refratarios." },
       { letra: "D", texto: "Claudicacao vascular oculta", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Alivio postural + pulsos presentes + ITB normal = ESTENOSE DE CANAL LOMBAR. RM da coluna lombar confirma. Tratamento inicial conservador (fisio, analgesia, epidural); cirurgia em refratarios." },
     ],
@@ -2527,7 +2527,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     enunciado: "Paciente 62a com DAP + IC (FE 35%), consulta ambulatorial para claudicacao moderada. Ja em uso de AAS, estatina, IECA, BB. Considerou-se cilostazol. Qual a orientacao?",
     alternativas: [
       { letra: "A", texto: "Iniciar cilostazol 100mg 12/12h", correta: false, comentario: "Cilostazol e CONTRAINDICADO em IC. Alternativa: intensificar exercicio supervisionado, pentoxifilina (evidencia fraca). Se refratario, consultar vascular para revascularizacao." },
-      { letra: "B", texto: "CONTRAINDICADO — cilostazol e inibidor de PDE III, associado a maior mortalidade em IC", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Cilostazol e CONTRAINDICADO em IC. Alternativa: intensificar exercicio supervisionado, pentoxifilina (evidencia fraca). Se refratario, consultar vascular para revascularizacao." },
+      { letra: "B", texto: "CONTRAINDICADO — cilostazol e inibidor de PDE III, associado a maior mortalidade em IC", correta: true, comentario: "Alternativa correta. Cilostazol e CONTRAINDICADO em IC. Alternativa: intensificar exercicio supervisionado, pentoxifilina (evidencia fraca). Se refratario, consultar vascular para revascularizacao." },
       { letra: "C", texto: "Reduzir a dose", correta: false, comentario: "Esta opção diverge da diretriz atual. Cilostazol e CONTRAINDICADO em IC. Alternativa: intensificar exercicio supervisionado, pentoxifilina (evidencia fraca). Se refratario, consultar vascular para revascularizacao." },
       { letra: "D", texto: "So se necessario", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Cilostazol e CONTRAINDICADO em IC. Alternativa: intensificar exercicio supervisionado, pentoxifilina (evidencia fraca). Se refratario, consultar vascular para revascularizacao." },
     ],
@@ -2544,7 +2544,7 @@ export const QUESTOES_CARDIO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "AAS + clopidogrel + enoxaparina (tratar como SCA)", correta: false, comentario: "Cenario classico da OMED V (2a fase Q1). Pericardite viral. Tratamento: AINE (ibuprofeno 600mg 8/8h) + colchicina 0,5mg 12/12h por 3 meses + restricao ao exercicio. Corticoide precoce AUMENTA recorrencia." },
       { letra: "B", texto: "Angio-TC de torax", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Cenario classico da OMED V (2a fase Q1). Pericardite viral. Tratamento: AINE (ibuprofeno 600mg 8/8h) + colchicina 0,5mg 12/12h por 3 meses + restricao ao exercicio. Corticoide precoce AUMENTA recorrencia." },
-      { letra: "C", texto: "Ibuprofeno + colchicina por 3 meses", correta: true, comentario: "Esta opção diverge da diretriz atual. Cenario classico da OMED V (2a fase Q1). Pericardite viral. Tratamento: AINE (ibuprofeno 600mg 8/8h) + colchicina 0,5mg 12/12h por 3 meses + restricao ao exercicio. Corticoide precoce AUMENTA recorrencia." },
+      { letra: "C", texto: "Ibuprofeno + colchicina por 3 meses", correta: true, comentario: "Alternativa correta. Cenario classico da OMED V (2a fase Q1). Pericardite viral. Tratamento: AINE (ibuprofeno 600mg 8/8h) + colchicina 0,5mg 12/12h por 3 meses + restricao ao exercicio. Corticoide precoce AUMENTA recorrencia." },
       { letra: "D", texto: "Cardioversao", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Cenario classico da OMED V (2a fase Q1). Pericardite viral. Tratamento: AINE (ibuprofeno 600mg 8/8h) + colchicina 0,5mg 12/12h por 3 meses + restricao ao exercicio. Corticoide precoce AUMENTA recorrencia." },
     ],
     dificuldade: "intermediaria",

@@ -245,3 +245,50 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - A sessão autenticada do SISCAD foi revisada novamente. O plano de Habilidades Clínicas da Prática Médica VI está acessível, porém ainda submetido para aprovação; tratá-lo como fonte curricular provisória.
 - Foi criado um plano privado de consolidação curricular em 12 semanas, compatível com Obsidian e sem datas fixas. Ele não deve ser publicado no GitHub Pages.
 - Retomada recomendada do site: matriz privada curso → disciplina → subtema → recurso, painel longitudinal autenticado e auditoria do commit local do Anki; redesign visual permanece posterior.
+
+## Atualização Codex — 2026-08-09
+
+- O fluxo do Anki foi aplicado: 209 decks legados foram consolidados em decks curtos por disciplina (`Codex Medicus::...`), títulos novos são compactos e o estilo do modelo `OMED Bonito` foi atualizado; nenhum deck antigo foi apagado. `npm run anki:organizar` continua disponível para novas migrações.
+- AnkiConnect, Image Occlusion Enhanced, FSRS Helper e Deckhand já estavam instalados localmente. A ponte continua somente em `127.0.0.1`; nenhuma extensão nova foi instalada às cegas.
+- `Minha mídia` foi unificada como biblioteca autenticada com busca, filtros por origem e referência/proveniência visível. Conteúdo restrito continua fora do site público, mesmo quando aparece junto dos demais itens na biblioteca da conta.
+- A agenda agora oferece foco de hoje, rotinas rápidas, filtros, busca e lista de pendências; o dashboard ganhou atalhos para Agenda e Minha mídia.
+- O checkout foi validado com `npm run typecheck`, auditorias públicas e ESLint direcionado aos arquivos alterados; não houve erros. A QA autenticada do site (upload, URL assinada, filtros e agenda) ainda aguarda teste no navegador.
+- Nova prioridade registrada: extrair imagens dos PDFs privados (inclusive comerciais) via PDF → Markdown + renderização seletiva, anexar fonte/página e classificá-las na biblioteca autenticada `Minha mídia`, sem publicar esse material.
+- O prompt fornecido pelo usuário para imagens médicas de alta fidelidade foi incorporado como regra operacional em `docs/PROMPT-IMAGENS-MEDICAS-ALTA-FIDELIDADE.md` e referenciado no `PROMPTS-MASTER.md`. Ele exige modalidade, anatomia, achados, diferenciais, fonte/licença, privacidade e QA; imagens geradas devem ser rotuladas como ilustração didática e não como exame real.
+
+## Atualização Codex — triagem visual e auditoria do site — 2026-08-09
+
+- O lote canônico privado foi processado: 215 imagens elegíveis, 179 importações novas anteriores e 36 objetos já existentes. O catálogo remoto agora tem 312 registros, dos quais 297 possuem imagem exibível.
+- A tabela privada recebeu `subtema_id`, `triagem_status` e `triagem_motivo`; 177 registros têm vínculo com resumo, 2 são contextuais, 6 não devem ser usados e 295 aguardam revisão visual conservadora.
+- `Minha mídia` agora abre cada imagem em modal ampliado, mostra proveniência/status e oferece link para o resumo relacionado; filtros por origem e triagem foram adicionados.
+- Foram encontrados 30 JPEG 2000 canônicos que não puderam ser decodificados pelo runtime atual; permanecem privados e documentados como pendência, sem conversão inventada.
+- Rotas publicadas raiz, Biblioteca, Mídia, Mapas, Semestres e Minha mídia responderam sem erro visível; console da amostra sem erros. Typecheck, ESLint direcionado e diff-check passaram. A build completa ainda excede o limite local.
+- Próxima prioridade real: revisão visual em lote dos 295 pendentes, conversão JP2 com ferramenta compatível, ancoragem dos itens úteis nos blocos de resumo/caso/questão e, depois, QA autenticada de URL assinada, logout, exclusão e bloqueio entre contas.
+- O Advisor do Supabase não encontrou mais FK sem índice após a correção; restam avisos de segurança pré-existentes (proteção contra senha vazada desativada e extensões no schema `public`) que exigem decisão/migração própria, não devem ser alterados às cegas.
+- O AnkiConnect está respondendo à versão, mas o perfil não abriu a coleção (`collection is not available`); não foi feita nenhuma escrita nesta sessão. O script agora aceita `--limpar-vazios` para remover apenas decks legados sem cartões após mover tudo para nomes curtos. A extensão visual candidata é Modernki (`739968151`), compatível com Anki 25.09.2+, mas requer backup e confirmação da versão antes da instalação.
+
+## Retomada Opera/Kimi e inventário Anki — 2026-08-09
+
+- A janela nativa do Opera foi localizada com o título `Prompt Med - Kimi - Opera`. A ponte de controle conseguiu confirmar a janela, mas não conseguiu inspecionar o conteúdo/DOM; portanto o chat não foi lido e nenhuma credencial foi solicitada ou usada. Para continuar, o usuário precisa deixar a sessão autenticada e o chat aberto quando a ponte visual estiver disponível.
+- O inventário somente leitura de uma cópia temporária do perfil `Usuário 1` encontrou 318 decks e 2.830 cartões. Há 209 decks legados `Codex Medicus - ...`, todos vazios na cópia auditada; 164 decks excedem 70 caracteres. Nenhum banco vivo foi alterado.
+- `npm run anki:organizar -- --aplicar --limpar-vazios` continua preparado, mas só deve ser executado quando `deckNames` voltar a responder com a coleção aberta. O comando move cartões para decks curtos e remove apenas decks legados comprovadamente vazios, preservando o backup existente.
+- Nenhuma extensão nova foi instalada nesta retomada. Modernki permanece candidato visual, condicionado à confirmação da versão do Anki e a um backup recente; as extensões locais existentes foram preservadas.
+- Auditorias repetidas: 1.296 questões, sem duplicatas/comentários curtos/fontes ausentes; 217 arquivos públicos e 3 curriculares passaram a auditoria de privacidade; typecheck, ESLint direcionado e diff-check aprovados.
+- Os 30 JP2 canônicos foram decodificados localmente com Pillow/OpenJPEG e processados sem enviar o material a serviço externo. O catálogo privado passou a 333 registros, 314 imagens JPG exibíveis; 30 URLs assinadas foram testadas por 300 s e responderam sem erro.
+- A auditoria de lint deixou de ter erro no componente de importação do progresso do Anki; a inicialização agora usa estado lazy e a rotina de observação continua local. Os cinco avisos de scripts auxiliares também foram removidos.
+
+### Snapshot de pendências
+
+- O plano mestre permanece com 64 caixas abertas: 13, 19–20, 27–28, 31, 36–39, 41–42, 44–61, 62, 64–73, 74–75, 77–83, 84–87, 90–91, 93–96 e 97–100.
+- A maior fila ainda é revisão clínica rastreável, integração curricular privada e QA autenticada; não é falta de imagens JP2, pois os 30 arquivos canônicos já foram decodificados e testados.
+- Fora do plano de 100 passos, permanecem leitura do chat Kimi/Opera e instalação opcional de extensão visual do Anki, ambas condicionadas à ponte/versão local.
+
+## Fechamento operacional confirmado — 2026-08-09
+
+- Portões aprovados: auditoria de 1.296 questões, privacidade (218 públicos + 3 curriculares), TypeScript, lint e build de produção com 402 rotas.
+- A auditoria semântica nova corrigiu 342 comentários que negavam alternativas marcadas como corretas; nenhum gabarito ou conteúdo clínico foi alterado.
+- Supabase confirmou 10 migrations remotas; advisors ainda têm avisos de extensões no schema público, leaked-password protection desativada e índices sem uso.
+- Drive via conector encontra as pastas médicas, mas GitHub/local estão sem `DRIVE_FOLDER_IDS` e credencial do workflow; o job de inventário falhou sem processar arquivos.
+- Anki snapshot atual: 226 decks, 1.703 cartões e 210 vazios; AnkiConnect v6 responde, mas a coleção não está disponível. Nenhuma escrita foi feita.
+- Próxima ordem: configurar allowlist privada do Drive → materializar GO/Obstetrícia → PDF→Markdown/hashes/deduplicação/OCR seletivo → vínculos curriculares → QA autenticada → Anki → Lighthouse/axe → publicação.
+- Registro completo: `docs/FECHAMENTO-2026-08-09.md`.

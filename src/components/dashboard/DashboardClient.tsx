@@ -75,7 +75,7 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
           <p className="mt-1 text-xs text-text-faint">
             {sincronizado ? "Progresso sincronizado com segurança." : "Progresso salvo neste dispositivo; sincronização será tentada novamente."}
           </p>
-        )}</div><div className="flex flex-wrap gap-2"><Link href="/questoes" className="rounded-xl bg-accent px-4 py-2.5 text-sm font-bold text-accent-contrast hover:opacity-90">Continuar questoes</Link><Link href="/mapas-mentais" className="rounded-xl border border-border bg-bg px-4 py-2.5 text-sm font-bold text-text-muted hover:border-accent hover:text-accent">Revisar mapas</Link></div></div>
+        )}</div><div className="flex flex-wrap gap-2"><Link href="/questoes" className="rounded-xl bg-accent px-4 py-2.5 text-sm font-bold text-accent-contrast hover:opacity-90">Continuar questões</Link><Link href="/agenda" className="rounded-xl border border-border bg-bg px-4 py-2.5 text-sm font-bold text-text-muted hover:border-accent hover:text-accent">Ver meu dia</Link></div></div>
       </div>
 
       <section className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4" aria-label="Progresso de leitura e casos">
@@ -147,7 +147,7 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
       )}
 
       {/* Ações rápidas */}
-      <section className="mt-7 grid gap-3 sm:grid-cols-2">
+      <section className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Link
           href="/simulado"
           className="group flex items-center gap-3 rounded-xl border border-border bg-surface p-4 transition-all hover:border-accent"
@@ -170,6 +170,24 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
             <div className="font-semibold text-text">Treinar questões</div>
             <div className="text-xs text-text-faint">Gabarito na hora, comentado</div>
           </div>
+          <ArrowRight className="ml-auto size-4 text-text-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
+        </Link>
+        <Link
+          href="/agenda"
+          className="group flex items-center gap-3 rounded-xl border border-border bg-surface p-4 transition-all hover:border-accent"
+          style={{ boxShadow: "var(--shadow)" }}
+        >
+          <span className="grid size-10 flex-none place-items-center rounded-lg bg-accent-soft"><BookMarked className="size-5 text-accent" /></span>
+          <div className="min-w-0"><div className="font-semibold text-text">Organizar meu dia</div><div className="text-xs text-text-faint">Agenda, foco e pendências</div></div>
+          <ArrowRight className="ml-auto size-4 text-text-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
+        </Link>
+        <Link
+          href="/minha-midia"
+          className="group flex items-center gap-3 rounded-xl border border-border bg-surface p-4 transition-all hover:border-accent"
+          style={{ boxShadow: "var(--shadow)" }}
+        >
+          <span className="grid size-10 flex-none place-items-center rounded-lg bg-accent-soft"><Stethoscope className="size-5 text-accent" /></span>
+          <div className="min-w-0"><div className="font-semibold text-text">Minha mídia</div><div className="text-xs text-text-faint">Imagens e referências privadas</div></div>
           <ArrowRight className="ml-auto size-4 text-text-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
         </Link>
       </section>

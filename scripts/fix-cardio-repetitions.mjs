@@ -68,7 +68,7 @@ while (i < lines.length) {
         // Replace comments in the alternativas block
         let newAlternativasText = alternativasText;
         let matchIndex = 0;
-        newAlternativasText = newAlternativasText.replace(/comentario:\s*"([^"]*)"/g, (match) => {
+        newAlternativasText = newAlternativasText.replace(/comentario:\s*"([^"]*)"/g, () => {
           const replacement = `comentario: "${newComments[matchIndex]}"`;
           matchIndex++;
           return replacement;

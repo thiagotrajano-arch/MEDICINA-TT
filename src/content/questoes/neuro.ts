@@ -15,7 +15,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual é o exame de imagem inicial obrigatório antes da trombólise no AVC isquêmico agudo?",
     alternativas: [
       { letra: "A", texto: "RM com difusão", correta: false, comentario: "A TC sem contraste é rápida e serve principalmente para excluir hemorragia, não para confirmar isquemia (que pode ainda não aparecer nas primeiras horas)." },
-      { letra: "B", texto: "TC de crânio sem contraste", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A TC sem contraste é rápida e serve principalmente para excluir hemorragia, não para confirmar isquemia (que pode ainda não aparecer nas primeiras horas)." },
+      { letra: "B", texto: "TC de crânio sem contraste", correta: true, comentario: "Alternativa correta. A TC sem contraste é rápida e serve principalmente para excluir hemorragia, não para confirmar isquemia (que pode ainda não aparecer nas primeiras horas)." },
       { letra: "C", texto: "Angio-TC de crânio", correta: false, comentario: "Esta opção diverge da diretriz atual. A TC sem contraste é rápida e serve principalmente para excluir hemorragia, não para confirmar isquemia (que pode ainda não aparecer nas primeiras horas)." },
       { letra: "D", texto: "Doppler transcraniano", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A TC sem contraste é rápida e serve principalmente para excluir hemorragia, não para confirmar isquemia (que pode ainda não aparecer nas primeiras horas)." },
     ],
@@ -32,7 +32,7 @@ export const QUESTOES_NEURO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "Até 1,5 h", correta: false, comentario: "A janela clássica é 4,5h do início dos sintomas (ou último-visto-bem), com critérios adicionais de exclusão relativa entre 3-4,5h." },
       { letra: "B", texto: "Até 3 h para todos, sem exceção", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. A janela clássica é 4,5h do início dos sintomas (ou último-visto-bem), com critérios adicionais de exclusão relativa entre 3-4,5h." },
-      { letra: "C", texto: "Até 4,5 h, respeitando critérios de inclusão/exclusão", correta: true, comentario: "Esta opção diverge da diretriz atual. A janela clássica é 4,5h do início dos sintomas (ou último-visto-bem), com critérios adicionais de exclusão relativa entre 3-4,5h." },
+      { letra: "C", texto: "Até 4,5 h, respeitando critérios de inclusão/exclusão", correta: true, comentario: "Alternativa correta. A janela clássica é 4,5h do início dos sintomas (ou último-visto-bem), com critérios adicionais de exclusão relativa entre 3-4,5h." },
       { letra: "D", texto: "Até 24 h para todos os pacientes", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A janela clássica é 4,5h do início dos sintomas (ou último-visto-bem), com critérios adicionais de exclusão relativa entre 3-4,5h." },
     ],
     dificuldade: "fixacao",
@@ -47,7 +47,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Trombectomia mecânica está mais bem indicada em qual cenário?",
     alternativas: [
       { letra: "A", texto: "Oclusão de pequeno vaso lentiforme", correta: false, comentario: "A trombectomia é indicada para oclusão de grandes vasos proximais (ACI, M1), podendo se estender até 24h em pacientes selecionados por imagem de perfusão." },
-      { letra: "B", texto: "Oclusão de grande vaso de circulação anterior, podendo se estender até 24h com critérios de imagem favoráveis", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A trombectomia é indicada para oclusão de grandes vasos proximais (ACI, M1), podendo se estender até 24h em pacientes selecionados por imagem de perfusão." },
+      { letra: "B", texto: "Oclusão de grande vaso de circulação anterior, podendo se estender até 24h com critérios de imagem favoráveis", correta: true, comentario: "Alternativa correta. A trombectomia é indicada para oclusão de grandes vasos proximais (ACI, M1), podendo se estender até 24h em pacientes selecionados por imagem de perfusão." },
       { letra: "C", texto: "AVC hemorrágico extenso", correta: false, comentario: "Esta opção diverge da diretriz atual. A trombectomia é indicada para oclusão de grandes vasos proximais (ACI, M1), podendo se estender até 24h em pacientes selecionados por imagem de perfusão." },
       { letra: "D", texto: "AIT sem déficit à admissão", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A trombectomia é indicada para oclusão de grandes vasos proximais (ACI, M1), podendo se estender até 24h em pacientes selecionados por imagem de perfusão." },
     ],
@@ -63,7 +63,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual escala quantifica a gravidade do déficit neurológico no AVC agudo, orientando a decisão terapêutica?",
     alternativas: [
       { letra: "A", texto: "Escala de Glasgow", correta: false, comentario: "O NIHSS quantifica o déficit agudo; a Rankin modificada avalia incapacidade funcional após o evento, não na fase aguda." },
-      { letra: "B", texto: "NIHSS", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. O NIHSS quantifica o déficit agudo; a Rankin modificada avalia incapacidade funcional após o evento, não na fase aguda." },
+      { letra: "B", texto: "NIHSS", correta: true, comentario: "Alternativa correta. O NIHSS quantifica o déficit agudo; a Rankin modificada avalia incapacidade funcional após o evento, não na fase aguda." },
       { letra: "C", texto: "Escala de Rankin modificada", correta: false, comentario: "Esta opção diverge da diretriz atual. O NIHSS quantifica o déficit agudo; a Rankin modificada avalia incapacidade funcional após o evento, não na fase aguda." },
       { letra: "D", texto: "APACHE II", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. O NIHSS quantifica o déficit agudo; a Rankin modificada avalia incapacidade funcional após o evento, não na fase aguda." },
     ],
@@ -80,7 +80,7 @@ export const QUESTOES_NEURO: Questao[] = [
     alternativas: [
       { letra: "A", texto: "PA de 150x90 mmHg controlada", correta: false, comentario: "Antecedente de hemorragia intracraniana é contraindicação absoluta pelo risco de ressangramento; PA elevada pode ser corrigida antes do trombolítico se dentro de metas." },
       { letra: "B", texto: "Uso de AAS em dose profilática", correta: false, comentario: "Esta alternativa não corresponde à conduta recomendada. Antecedente de hemorragia intracraniana é contraindicação absoluta pelo risco de ressangramento; PA elevada pode ser corrigida antes do trombolítico se dentro de metas." },
-      { letra: "C", texto: "Hemorragia intracraniana prévia", correta: true, comentario: "Esta opção diverge da diretriz atual. Antecedente de hemorragia intracraniana é contraindicação absoluta pelo risco de ressangramento; PA elevada pode ser corrigida antes do trombolítico se dentro de metas." },
+      { letra: "C", texto: "Hemorragia intracraniana prévia", correta: true, comentario: "Alternativa correta. Antecedente de hemorragia intracraniana é contraindicação absoluta pelo risco de ressangramento; PA elevada pode ser corrigida antes do trombolítico se dentro de metas." },
       { letra: "D", texto: "Idade de 78 anos", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Antecedente de hemorragia intracraniana é contraindicação absoluta pelo risco de ressangramento; PA elevada pode ser corrigida antes do trombolítico se dentro de metas." },
     ],
     dificuldade: "fixacao",
@@ -95,7 +95,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual território vascular está mais associado à afasia de Broca com hemiparesia direita de predomínio braquiofacial?",
     alternativas: [
       { letra: "A", texto: "Artéria cerebral posterior direita", correta: false, comentario: "O território superior da ACM esquerda supre o giro frontal inferior (área de Broca) e o córtex motor primário da face/braço.\n\n## Fixação — AVC Hemorrágico e Hemorragia Subaracnóidea" },
-      { letra: "B", texto: "Artéria cerebral média esquerda (território superior)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. O território superior da ACM esquerda supre o giro frontal inferior (área de Broca) e o córtex motor primário da face/braço.\n\n## Fixação — AVC Hemorrágico e Hemorragia Subaracnóidea" },
+      { letra: "B", texto: "Artéria cerebral média esquerda (território superior)", correta: true, comentario: "Alternativa correta. O território superior da ACM esquerda supre o giro frontal inferior (área de Broca) e o córtex motor primário da face/braço.\n\n## Fixação — AVC Hemorrágico e Hemorragia Subaracnóidea" },
       { letra: "C", texto: "Artéria cerebelar posteroinferior", correta: false, comentario: "Esta opção diverge da diretriz atual. O território superior da ACM esquerda supre o giro frontal inferior (área de Broca) e o córtex motor primário da face/braço.\n\n## Fixação — AVC Hemorrágico e Hemorragia Subaracnóidea" },
       { letra: "D", texto: "Artéria basilar", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. O território superior da ACM esquerda supre o giro frontal inferior (área de Broca) e o córtex motor primário da face/braço.\n\n## Fixação — AVC Hemorrágico e Hemorragia Subaracnóidea" },
     ],
@@ -111,7 +111,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual a apresentação clínica clássica da hemorragia subaracnóidea espontânea?",
     alternativas: [
       { letra: "A", texto: "Cefaleia progressiva ao longo de semanas", correta: false, comentario: "A cefaleia thunderclap (pico em segundos) é o marco clínico da HSA, mais comumente por ruptura de aneurisma sacular." },
-      { letra: "B", texto: "Cefaleia thunderclap, de início súbito e intensidade máxima em segundos", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A cefaleia thunderclap (pico em segundos) é o marco clínico da HSA, mais comumente por ruptura de aneurisma sacular." },
+      { letra: "B", texto: "Cefaleia thunderclap, de início súbito e intensidade máxima em segundos", correta: true, comentario: "Alternativa correta. A cefaleia thunderclap (pico em segundos) é o marco clínico da HSA, mais comumente por ruptura de aneurisma sacular." },
       { letra: "C", texto: "Cefaleia occipital pulsátil apenas ao esforço", correta: false, comentario: "Esta opção diverge da diretriz atual. A cefaleia thunderclap (pico em segundos) é o marco clínico da HSA, mais comumente por ruptura de aneurisma sacular." },
       { letra: "D", texto: "Ausência de cefaleia, apenas déficit focal", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A cefaleia thunderclap (pico em segundos) é o marco clínico da HSA, mais comumente por ruptura de aneurisma sacular." },
     ],
@@ -127,7 +127,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual a principal causa de HSA espontânea não traumática?",
     alternativas: [
       { letra: "A", texto: "Malformação arteriovenosa", correta: false, comentario: "Aneurismas saculares, frequentemente no polígono de Willis, respondem pela maioria dos casos de HSA espontânea." },
-      { letra: "B", texto: "Ruptura de aneurisma sacular", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Aneurismas saculares, frequentemente no polígono de Willis, respondem pela maioria dos casos de HSA espontânea." },
+      { letra: "B", texto: "Ruptura de aneurisma sacular", correta: true, comentario: "Alternativa correta. Aneurismas saculares, frequentemente no polígono de Willis, respondem pela maioria dos casos de HSA espontânea." },
       { letra: "C", texto: "Angiopatia amiloide", correta: false, comentario: "Esta opção diverge da diretriz atual. Aneurismas saculares, frequentemente no polígono de Willis, respondem pela maioria dos casos de HSA espontânea." },
       { letra: "D", texto: "Trombose venosa cerebral", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Aneurismas saculares, frequentemente no polígono de Willis, respondem pela maioria dos casos de HSA espontânea." },
     ],
@@ -143,7 +143,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Se a TC de crânio for normal em paciente com forte suspeita de HSA, qual o próximo passo?",
     alternativas: [
       { letra: "A", texto: "Descartar HSA definitivamente", correta: false, comentario: "A sensibilidade da TC cai após as primeiras horas; punção lombar ou angiografia complementam a investigação quando a suspeita clínica é alta." },
-      { letra: "B", texto: "Punção lombar em busca de xantocromia ou angio-TC/RM", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A sensibilidade da TC cai após as primeiras horas; punção lombar ou angiografia complementam a investigação quando a suspeita clínica é alta." },
+      { letra: "B", texto: "Punção lombar em busca de xantocromia ou angio-TC/RM", correta: true, comentario: "Alternativa correta. A sensibilidade da TC cai após as primeiras horas; punção lombar ou angiografia complementam a investigação quando a suspeita clínica é alta." },
       { letra: "C", texto: "Repetir a TC em 7 dias", correta: false, comentario: "Esta opção diverge da diretriz atual. A sensibilidade da TC cai após as primeiras horas; punção lombar ou angiografia complementam a investigação quando a suspeita clínica é alta." },
       { letra: "D", texto: "Iniciar anticoagulação empírica", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A sensibilidade da TC cai após as primeiras horas; punção lombar ou angiografia complementam a investigação quando a suspeita clínica é alta." },
     ],
@@ -159,7 +159,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual a principal complicação tardia (dias 4-14) da HSA, responsável por isquemia cerebral secundária?",
     alternativas: [
       { letra: "A", texto: "Ressangramento imediato", correta: false, comentario: "O vasoespasmo cerebral tardio é causa de isquemia secundária na HSA e é monitorado com Doppler transcraniano." },
-      { letra: "B", texto: "Vasoespasmo cerebral", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. O vasoespasmo cerebral tardio é causa de isquemia secundária na HSA e é monitorado com Doppler transcraniano." },
+      { letra: "B", texto: "Vasoespasmo cerebral", correta: true, comentario: "Alternativa correta. O vasoespasmo cerebral tardio é causa de isquemia secundária na HSA e é monitorado com Doppler transcraniano." },
       { letra: "C", texto: "Hidrocefalia obstrutiva aguda", correta: false, comentario: "Esta opção diverge da diretriz atual. O vasoespasmo cerebral tardio é causa de isquemia secundária na HSA e é monitorado com Doppler transcraniano." },
       { letra: "D", texto: "Convulsão neonatal", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. O vasoespasmo cerebral tardio é causa de isquemia secundária na HSA e é monitorado com Doppler transcraniano." },
     ],
@@ -207,7 +207,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual a definição operacional de status epilepticus convulsivo em adultos?",
     alternativas: [
       { letra: "A", texto: "Crise única com duração de 2 minutos", correta: false, comentario: "A definição operacional moderna considera ≥5 minutos de atividade convulsiva contínua como status epilepticus, justificando tratamento imediato." },
-      { letra: "B", texto: "Atividade convulsiva contínua por ≥5 minutos, ou crises recorrentes sem recuperação entre elas", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A definição operacional moderna considera ≥5 minutos de atividade convulsiva contínua como status epilepticus, justificando tratamento imediato." },
+      { letra: "B", texto: "Atividade convulsiva contínua por ≥5 minutos, ou crises recorrentes sem recuperação entre elas", correta: true, comentario: "Alternativa correta. A definição operacional moderna considera ≥5 minutos de atividade convulsiva contínua como status epilepticus, justificando tratamento imediato." },
       { letra: "C", texto: "Qualquer crise que exija internação", correta: false, comentario: "Esta opção diverge da diretriz atual. A definição operacional moderna considera ≥5 minutos de atividade convulsiva contínua como status epilepticus, justificando tratamento imediato." },
       { letra: "D", texto: "Crise que ocorre mais de uma vez ao dia", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A definição operacional moderna considera ≥5 minutos de atividade convulsiva contínua como status epilepticus, justificando tratamento imediato." },
     ],
@@ -223,7 +223,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual a primeira linha farmacológica no status epilepticus?",
     alternativas: [
       { letra: "A", texto: "Fenitoína IV", correta: false, comentario: "Benzodiazepínicos IV são a primeira linha por ação rápida; se a crise persistir, segue-se para droga de segunda linha IV." },
-      { letra: "B", texto: "Benzodiazepínico IV (lorazepam ou diazepam)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Benzodiazepínicos IV são a primeira linha por ação rápida; se a crise persistir, segue-se para droga de segunda linha IV." },
+      { letra: "B", texto: "Benzodiazepínico IV (lorazepam ou diazepam)", correta: true, comentario: "Alternativa correta. Benzodiazepínicos IV são a primeira linha por ação rápida; se a crise persistir, segue-se para droga de segunda linha IV." },
       { letra: "C", texto: "Ácido valproico oral", correta: false, comentario: "Esta opção diverge da diretriz atual. Benzodiazepínicos IV são a primeira linha por ação rápida; se a crise persistir, segue-se para droga de segunda linha IV." },
       { letra: "D", texto: "Levetiracetam oral", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Benzodiazepínicos IV são a primeira linha por ação rápida; se a crise persistir, segue-se para droga de segunda linha IV." },
     ],
@@ -255,7 +255,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Crise de ausência típica caracteriza-se por:",
     alternativas: [
       { letra: "A", texto: "Perda de tônus postural com queda", correta: false, comentario: "A crise de ausência típica cursa com breve desconexão sem aura ou confusão pós-ictal marcante, com padrão eletroencefalográfico característico." },
-      { letra: "B", texto: "Breve interrupção da consciência sem aura, com espícula-onda a 3 Hz no EEG", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A crise de ausência típica cursa com breve desconexão sem aura ou confusão pós-ictal marcante, com padrão eletroencefalográfico característico." },
+      { letra: "B", texto: "Breve interrupção da consciência sem aura, com espícula-onda a 3 Hz no EEG", correta: true, comentario: "Alternativa correta. A crise de ausência típica cursa com breve desconexão sem aura ou confusão pós-ictal marcante, com padrão eletroencefalográfico característico." },
       { letra: "C", texto: "Automatismos orais prolongados com confusão pós-ictal", correta: false, comentario: "Esta opção diverge da diretriz atual. A crise de ausência típica cursa com breve desconexão sem aura ou confusão pós-ictal marcante, com padrão eletroencefalográfico característico." },
       { letra: "D", texto: "Movimentos tônico-clônicos generalizados", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A crise de ausência típica cursa com breve desconexão sem aura ou confusão pós-ictal marcante, com padrão eletroencefalográfico característico." },
     ],
@@ -271,7 +271,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual antiepiléptico é classicamente evitado na gestação pelo alto risco teratogênico?",
     alternativas: [
       { letra: "A", texto: "Lamotrigina", correta: false, comentario: "O ácido valproico tem o maior risco teratogênico entre os antiepilépticos clássicos, sendo evitado em mulheres em idade fértil." },
-      { letra: "B", texto: "Ácido valproico", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. O ácido valproico tem o maior risco teratogênico entre os antiepilépticos clássicos, sendo evitado em mulheres em idade fértil." },
+      { letra: "B", texto: "Ácido valproico", correta: true, comentario: "Alternativa correta. O ácido valproico tem o maior risco teratogênico entre os antiepilépticos clássicos, sendo evitado em mulheres em idade fértil." },
       { letra: "C", texto: "Levetiracetam", correta: false, comentario: "Esta opção diverge da diretriz atual. O ácido valproico tem o maior risco teratogênico entre os antiepilépticos clássicos, sendo evitado em mulheres em idade fértil." },
       { letra: "D", texto: "Carbamazepina em monoterapia baixa dose", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. O ácido valproico tem o maior risco teratogênico entre os antiepilépticos clássicos, sendo evitado em mulheres em idade fértil." },
     ],
@@ -287,7 +287,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual é a principal causa de crise convulsiva sintomática aguda em pacientes idosos previamente hígidos?",
     alternativas: [
       { letra: "A", texto: "Epilepsia genética idiopática", correta: false, comentario: "Em idosos, a etiologia vascular é a causa mais comum de crise convulsiva sintomática.\n\n## Fixação — Cefaleias Primárias (Enxaqueca, Salvas e Sinais de Alarme)" },
-      { letra: "B", texto: "Doença cerebrovascular (AVC agudo ou sequela)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Em idosos, a etiologia vascular é a causa mais comum de crise convulsiva sintomática.\n\n## Fixação — Cefaleias Primárias (Enxaqueca, Salvas e Sinais de Alarme)" },
+      { letra: "B", texto: "Doença cerebrovascular (AVC agudo ou sequela)", correta: true, comentario: "Alternativa correta. Em idosos, a etiologia vascular é a causa mais comum de crise convulsiva sintomática.\n\n## Fixação — Cefaleias Primárias (Enxaqueca, Salvas e Sinais de Alarme)" },
       { letra: "C", texto: "Crise febril", correta: false, comentario: "Esta opção diverge da diretriz atual. Em idosos, a etiologia vascular é a causa mais comum de crise convulsiva sintomática.\n\n## Fixação — Cefaleias Primárias (Enxaqueca, Salvas e Sinais de Alarme)" },
       { letra: "D", texto: "Enxaqueca com aura", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Em idosos, a etiologia vascular é a causa mais comum de crise convulsiva sintomática.\n\n## Fixação — Cefaleias Primárias (Enxaqueca, Salvas e Sinais de Alarme)" },
     ],
@@ -303,7 +303,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual característica diferencia a cefaleia em salvas da enxaqueca?",
     alternativas: [
       { letra: "A", texto: "Dor bilateral e pulsátil, com fotofobia isolada", correta: false, comentario: "A cefaleia em salvas é unilateral periorbitária, de curta duração, com sinais autonômicos trigeminais e inquietação do paciente, diferente da enxaqueca (paciente busca repouso e escuro)." },
-      { letra: "B", texto: "Dor unilateral periorbitária excruciante, com sinais autonômicos ipsilaterais e agitação", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A cefaleia em salvas é unilateral periorbitária, de curta duração, com sinais autonômicos trigeminais e inquietação do paciente, diferente da enxaqueca (paciente busca repouso e escuro)." },
+      { letra: "B", texto: "Dor unilateral periorbitária excruciante, com sinais autonômicos ipsilaterais e agitação", correta: true, comentario: "Alternativa correta. A cefaleia em salvas é unilateral periorbitária, de curta duração, com sinais autonômicos trigeminais e inquietação do paciente, diferente da enxaqueca (paciente busca repouso e escuro)." },
       { letra: "C", texto: "Duração de dias sem períodos livres", correta: false, comentario: "Esta opção diverge da diretriz atual. A cefaleia em salvas é unilateral periorbitária, de curta duração, com sinais autonômicos trigeminais e inquietação do paciente, diferente da enxaqueca (paciente busca repouso e escuro)." },
       { letra: "D", texto: "Predomínio absoluto em mulheres jovens", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A cefaleia em salvas é unilateral periorbitária, de curta duração, com sinais autonômicos trigeminais e inquietação do paciente, diferente da enxaqueca (paciente busca repouso e escuro)." },
     ],
@@ -335,7 +335,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Cefaleia thunderclap (pico de intensidade em segundos) deve levantar suspeita imediata de qual condição?",
     alternativas: [
       { letra: "A", texto: "Enxaqueca comum sem aura", correta: false, comentario: "A cefaleia thunderclap é emergência neurológica até prova em contrário, sendo a HSA a principal etiologia a ser excluída com urgência." },
-      { letra: "B", texto: "Hemorragia subaracnóidea", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A cefaleia thunderclap é emergência neurológica até prova em contrário, sendo a HSA a principal etiologia a ser excluída com urgência." },
+      { letra: "B", texto: "Hemorragia subaracnóidea", correta: true, comentario: "Alternativa correta. A cefaleia thunderclap é emergência neurológica até prova em contrário, sendo a HSA a principal etiologia a ser excluída com urgência." },
       { letra: "C", texto: "Cefaleia tensional crônica", correta: false, comentario: "Esta opção diverge da diretriz atual. A cefaleia thunderclap é emergência neurológica até prova em contrário, sendo a HSA a principal etiologia a ser excluída com urgência." },
       { letra: "D", texto: "Cefaleia por abuso de analgésico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A cefaleia thunderclap é emergência neurológica até prova em contrário, sendo a HSA a principal etiologia a ser excluída com urgência." },
     ],
@@ -351,7 +351,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual classe medicamentosa é contraindicada em pacientes com enxaqueca e doença coronariana estabelecida?",
     alternativas: [
       { letra: "A", texto: "Anti-inflamatórios não esteroidais", correta: false, comentario: "Os triptanos têm efeito vasoconstritor e são contraindicados em pacientes com doença coronariana ou cerebrovascular estabelecida." },
-      { letra: "B", texto: "Triptanos", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Os triptanos têm efeito vasoconstritor e são contraindicados em pacientes com doença coronariana ou cerebrovascular estabelecida." },
+      { letra: "B", texto: "Triptanos", correta: true, comentario: "Alternativa correta. Os triptanos têm efeito vasoconstritor e são contraindicados em pacientes com doença coronariana ou cerebrovascular estabelecida." },
       { letra: "C", texto: "Antieméticos", correta: false, comentario: "Esta opção diverge da diretriz atual. Os triptanos têm efeito vasoconstritor e são contraindicados em pacientes com doença coronariana ou cerebrovascular estabelecida." },
       { letra: "D", texto: "Paracetamol", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Os triptanos têm efeito vasoconstritor e são contraindicados em pacientes com doença coronariana ou cerebrovascular estabelecida." },
     ],
@@ -431,7 +431,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual achado do líquor é característico (embora não universal) na síndrome de Guillain-Barré?",
     alternativas: [
       { letra: "A", texto: "Pleocitose neutrofílica intensa", correta: false, comentario: "A dissociação albumino-citológica — proteína elevada com celularidade normal — é o achado clássico, geralmente evidente após a primeira semana." },
-      { letra: "B", texto: "Dissociação albumino-citológica", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A dissociação albumino-citológica — proteína elevada com celularidade normal — é o achado clássico, geralmente evidente após a primeira semana." },
+      { letra: "B", texto: "Dissociação albumino-citológica", correta: true, comentario: "Alternativa correta. A dissociação albumino-citológica — proteína elevada com celularidade normal — é o achado clássico, geralmente evidente após a primeira semana." },
       { letra: "C", texto: "Glicose muito baixa", correta: false, comentario: "Esta opção diverge da diretriz atual. A dissociação albumino-citológica — proteína elevada com celularidade normal — é o achado clássico, geralmente evidente após a primeira semana." },
       { letra: "D", texto: "Hemácias abundantes", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A dissociação albumino-citológica — proteína elevada com celularidade normal — é o achado clássico, geralmente evidente após a primeira semana." },
     ],
@@ -463,7 +463,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Quais são os tratamentos de primeira linha comprovadamente eficazes na síndrome de Guillain-Barré?",
     alternativas: [
       { letra: "A", texto: "Corticoide oral isolado", correta: false, comentario: "Imunoglobulina IV e plasmaférese têm eficácia comprovada; corticoides isolados não demonstraram benefício nessa condição." },
-      { letra: "B", texto: "Imunoglobulina IV ou plasmaférese", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Imunoglobulina IV e plasmaférese têm eficácia comprovada; corticoides isolados não demonstraram benefício nessa condição." },
+      { letra: "B", texto: "Imunoglobulina IV ou plasmaférese", correta: true, comentario: "Alternativa correta. Imunoglobulina IV e plasmaférese têm eficácia comprovada; corticoides isolados não demonstraram benefício nessa condição." },
       { letra: "C", texto: "Antibioticoterapia de amplo espectro", correta: false, comentario: "Esta opção diverge da diretriz atual. Imunoglobulina IV e plasmaférese têm eficácia comprovada; corticoides isolados não demonstraram benefício nessa condição." },
       { letra: "D", texto: "Anticoagulação plena", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Imunoglobulina IV e plasmaférese têm eficácia comprovada; corticoides isolados não demonstraram benefício nessa condição." },
     ],
@@ -495,7 +495,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual o principal mecanismo fisiopatológico da miastenia gravis?",
     alternativas: [
       { letra: "A", texto: "Desmielinização de nervos periféricos", correta: false, comentario: "A miastenia gravis é doença autoimune com anticorpos anti-AChR na membrana pós-sináptica da junção neuromuscular." },
-      { letra: "B", texto: "Anticorpos contra receptores de acetilcolina na junção neuromuscular pós-sináptica", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A miastenia gravis é doença autoimune com anticorpos anti-AChR na membrana pós-sináptica da junção neuromuscular." },
+      { letra: "B", texto: "Anticorpos contra receptores de acetilcolina na junção neuromuscular pós-sináptica", correta: true, comentario: "Alternativa correta. A miastenia gravis é doença autoimune com anticorpos anti-AChR na membrana pós-sináptica da junção neuromuscular." },
       { letra: "C", texto: "Degeneração de neurônios motores centrais", correta: false, comentario: "Esta opção diverge da diretriz atual. A miastenia gravis é doença autoimune com anticorpos anti-AChR na membrana pós-sináptica da junção neuromuscular." },
       { letra: "D", texto: "Deficiência de vitamina B12", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A miastenia gravis é doença autoimune com anticorpos anti-AChR na membrana pós-sináptica da junção neuromuscular." },
     ],
@@ -511,7 +511,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual é a característica clínica mais marcante da fraqueza na miastenia gravis?",
     alternativas: [
       { letra: "A", texto: "Fraqueza fixa, sem variação ao longo do dia", correta: false, comentario: "A fatigabilidade muscular é a marca clínica da miastenia, frequentemente iniciando com ptose e diplopia." },
-      { letra: "B", texto: "Fatigabilidade — piora com esforço repetido e melhora com repouso", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A fatigabilidade muscular é a marca clínica da miastenia, frequentemente iniciando com ptose e diplopia." },
+      { letra: "B", texto: "Fatigabilidade — piora com esforço repetido e melhora com repouso", correta: true, comentario: "Alternativa correta. A fatigabilidade muscular é a marca clínica da miastenia, frequentemente iniciando com ptose e diplopia." },
       { letra: "C", texto: "Início sempre com fraqueza distal de mãos", correta: false, comentario: "Esta opção diverge da diretriz atual. A fatigabilidade muscular é a marca clínica da miastenia, frequentemente iniciando com ptose e diplopia." },
       { letra: "D", texto: "Ausência completa de acometimento ocular", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A fatigabilidade muscular é a marca clínica da miastenia, frequentemente iniciando com ptose e diplopia." },
     ],
@@ -559,7 +559,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual classe de medicamento deve ser evitada em pacientes miastênicos, por risco de piora da fraqueza?",
     alternativas: [
       { letra: "A", texto: "Piridostigmina", correta: false, comentario: "Aminoglicosídeos e bloqueadores neuromusculares podem piorar a transmissão neuromuscular e precipitar crise miastênica." },
-      { letra: "B", texto: "Aminoglicosídeos e alguns bloqueadores neuromusculares", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Aminoglicosídeos e bloqueadores neuromusculares podem piorar a transmissão neuromuscular e precipitar crise miastênica." },
+      { letra: "B", texto: "Aminoglicosídeos e alguns bloqueadores neuromusculares", correta: true, comentario: "Alternativa correta. Aminoglicosídeos e bloqueadores neuromusculares podem piorar a transmissão neuromuscular e precipitar crise miastênica." },
       { letra: "C", texto: "Prednisona em baixa dose", correta: false, comentario: "Esta opção diverge da diretriz atual. Aminoglicosídeos e bloqueadores neuromusculares podem piorar a transmissão neuromuscular e precipitar crise miastênica." },
       { letra: "D", texto: "Azatioprina", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Aminoglicosídeos e bloqueadores neuromusculares podem piorar a transmissão neuromuscular e precipitar crise miastênica." },
     ],
@@ -591,7 +591,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Quais sinais de alarme na lombalgia sugerem síndrome da cauda equina e exigem investigação de urgência?",
     alternativas: [
       { letra: "A", texto: "Dor lombar crônica isolada, sem outros sintomas", correta: false, comentario: "Anestesia em sela, disfunção esfincteriana e fraqueza bilateral são sinais de alarme para síndrome da cauda equina, exigindo RM de urgência." },
-      { letra: "B", texto: "Anestesia em sela, retenção urinária e fraqueza bilateral de MMII", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Anestesia em sela, disfunção esfincteriana e fraqueza bilateral são sinais de alarme para síndrome da cauda equina, exigindo RM de urgência." },
+      { letra: "B", texto: "Anestesia em sela, retenção urinária e fraqueza bilateral de MMII", correta: true, comentario: "Alternativa correta. Anestesia em sela, disfunção esfincteriana e fraqueza bilateral são sinais de alarme para síndrome da cauda equina, exigindo RM de urgência." },
       { letra: "C", texto: "Dor que melhora com repouso", correta: false, comentario: "Esta opção diverge da diretriz atual. Anestesia em sela, disfunção esfincteriana e fraqueza bilateral são sinais de alarme para síndrome da cauda equina, exigindo RM de urgência." },
       { letra: "D", texto: "Rigidez matinal isolada de curta duração", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Anestesia em sela, disfunção esfincteriana e fraqueza bilateral são sinais de alarme para síndrome da cauda equina, exigindo RM de urgência." },
     ],
@@ -607,7 +607,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Qual exame de imagem é o método de escolha para investigar suspeita de compressão medular aguda?",
     alternativas: [
       { letra: "A", texto: "Radiografia simples de coluna", correta: false, comentario: "A RM de coluna é o exame de escolha por sua alta resolução de partes moles, permitindo avaliar compressão medular e etiologia." },
-      { letra: "B", texto: "Ressonância magnética da coluna", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A RM de coluna é o exame de escolha por sua alta resolução de partes moles, permitindo avaliar compressão medular e etiologia." },
+      { letra: "B", texto: "Ressonância magnética da coluna", correta: true, comentario: "Alternativa correta. A RM de coluna é o exame de escolha por sua alta resolução de partes moles, permitindo avaliar compressão medular e etiologia." },
       { letra: "C", texto: "TC de crânio", correta: false, comentario: "Esta opção diverge da diretriz atual. A RM de coluna é o exame de escolha por sua alta resolução de partes moles, permitindo avaliar compressão medular e etiologia." },
       { letra: "D", texto: "Ultrassonografia de partes moles", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A RM de coluna é o exame de escolha por sua alta resolução de partes moles, permitindo avaliar compressão medular e etiologia." },
     ],
@@ -639,7 +639,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Um nível sensitivo bem definido no tronco, com fraqueza bilateral de MMII e disfunção esfincteriana, sugere lesão em qual estrutura?",
     alternativas: [
       { letra: "A", texto: "Nervo periférico único", correta: false, comentario: "Um nível sensitivo definido associado a comprometimento motor bilateral e esfincteriano é característico de lesão medular." },
-      { letra: "B", texto: "Medula espinhal (mielopatia)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Um nível sensitivo definido associado a comprometimento motor bilateral e esfincteriano é característico de lesão medular." },
+      { letra: "B", texto: "Medula espinhal (mielopatia)", correta: true, comentario: "Alternativa correta. Um nível sensitivo definido associado a comprometimento motor bilateral e esfincteriano é característico de lesão medular." },
       { letra: "C", texto: "Córtex cerebral", correta: false, comentario: "Esta opção diverge da diretriz atual. Um nível sensitivo definido associado a comprometimento motor bilateral e esfincteriano é característico de lesão medular." },
       { letra: "D", texto: "Junção neuromuscular", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Um nível sensitivo definido associado a comprometimento motor bilateral e esfincteriano é característico de lesão medular." },
     ],
@@ -1135,7 +1135,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Cefaleia pós-punção dural tipicamente:",
     alternativas: [
       { letra: "A", texto: "Piora em decúbito e melhora ao sentar/levantar", correta: false, comentario: "A cefaleia pós-punção dural é classicamente postural: piora com a posição ortostática e melhora significativamente com o decúbito, por hipotensão liquórica." },
-      { letra: "B", texto: "Piora ao deitar e melhora ao sentar/ficar em pé", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A cefaleia pós-punção dural é classicamente postural: piora com a posição ortostática e melhora significativamente com o decúbito, por hipotensão liquórica." },
+      { letra: "B", texto: "Piora ao deitar e melhora ao sentar/ficar em pé", correta: true, comentario: "Alternativa correta. A cefaleia pós-punção dural é classicamente postural: piora com a posição ortostática e melhora significativamente com o decúbito, por hipotensão liquórica." },
       { letra: "C", texto: "É idêntica em todas as posições", correta: false, comentario: "Esta opção diverge da diretriz atual. A cefaleia pós-punção dural é classicamente postural: piora com a posição ortostática e melhora significativamente com o decúbito, por hipotensão liquórica." },
       { letra: "D", texto: "Só ocorre à noite, independente de postura", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A cefaleia pós-punção dural é classicamente postural: piora com a posição ortostática e melhora significativamente com o decúbito, por hipotensão liquórica." },
     ],
@@ -1295,7 +1295,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Homem, 68 anos, hipertenso, é trazido por afasia e hemiparesia direita súbitas há 2 horas. TC de crânio sem alterações agudas. PA 170x95 mmHg, glicemia 110. Qual a conduta mais apropriada?",
     alternativas: [
       { letra: "A", texto: "Aguardar RM antes de qualquer decisão", correta: false, comentario: "Dentro da janela de 4,5h, sem hemorragia na TC e sem contraindicações, a trombólise IV é indicada; a RM não deve atrasar o tratamento." },
-      { letra: "B", texto: "Iniciar alteplase IV após checagem de critérios de elegibilidade", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Dentro da janela de 4,5h, sem hemorragia na TC e sem contraindicações, a trombólise IV é indicada; a RM não deve atrasar o tratamento." },
+      { letra: "B", texto: "Iniciar alteplase IV após checagem de critérios de elegibilidade", correta: true, comentario: "Alternativa correta. Dentro da janela de 4,5h, sem hemorragia na TC e sem contraindicações, a trombólise IV é indicada; a RM não deve atrasar o tratamento." },
       { letra: "C", texto: "Anticoagulação plena imediata com heparina", correta: false, comentario: "Esta opção diverge da diretriz atual. Dentro da janela de 4,5h, sem hemorragia na TC e sem contraindicações, a trombólise IV é indicada; a RM não deve atrasar o tratamento." },
       { letra: "D", texto: "Iniciar apenas AAS e reavaliar em 24h", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Dentro da janela de 4,5h, sem hemorragia na TC e sem contraindicações, a trombólise IV é indicada; a RM não deve atrasar o tratamento." },
     ],
@@ -1343,7 +1343,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Homem, 55 anos, tabagista, apresenta fraqueza no braço direito e dificuldade para falar por 20 minutos, resolvidos completamente antes de chegar ao PS. Exame neurológico normal. Qual a conduta?",
     alternativas: [
       { letra: "A", texto: "Descartar isquemia pois os sintomas resolveram", correta: false, comentario: "AIT é emergência que precede AVC estabelecido em proporção significativa dos casos nos dias seguintes; investigação rápida e antiagregação precoce reduzem esse risco." },
-      { letra: "B", texto: "Considerar AIT de alto risco e investigar/estratificar rapidamente", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. AIT é emergência que precede AVC estabelecido em proporção significativa dos casos nos dias seguintes; investigação rápida e antiagregação precoce reduzem esse risco." },
+      { letra: "B", texto: "Considerar AIT de alto risco e investigar/estratificar rapidamente", correta: true, comentario: "Alternativa correta. AIT é emergência que precede AVC estabelecido em proporção significativa dos casos nos dias seguintes; investigação rápida e antiagregação precoce reduzem esse risco." },
       { letra: "C", texto: "Liberar sem investigação adicional", correta: false, comentario: "Esta opção diverge da diretriz atual. AIT é emergência que precede AVC estabelecido em proporção significativa dos casos nos dias seguintes; investigação rápida e antiagregação precoce reduzem esse risco." },
       { letra: "D", texto: "Indicar trombólise imediata", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. AIT é emergência que precede AVC estabelecido em proporção significativa dos casos nos dias seguintes; investigação rápida e antiagregação precoce reduzem esse risco." },
     ],
@@ -1359,7 +1359,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Paciente jovem, 32 anos, sem fatores de risco tradicionais, apresenta AVCi de território de ACM após cefaleia occipital e cervicalgia pós-manipulação quiroprática. Qual etiologia deve ser suspeitada?",
     alternativas: [
       { letra: "A", texto: "Aterosclerose de grandes vasos", correta: false, comentario: "Dissecção arterial cervical é causa importante de AVCi em jovens, classicamente associada a trauma cervical e cefaleia/cervicalgia ipsilateral." },
-      { letra: "B", texto: "Dissecção de artéria cervical", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Dissecção arterial cervical é causa importante de AVCi em jovens, classicamente associada a trauma cervical e cefaleia/cervicalgia ipsilateral." },
+      { letra: "B", texto: "Dissecção de artéria cervical", correta: true, comentario: "Alternativa correta. Dissecção arterial cervical é causa importante de AVCi em jovens, classicamente associada a trauma cervical e cefaleia/cervicalgia ipsilateral." },
       { letra: "C", texto: "Embolia cardiogênica por fibrilação atrial", correta: false, comentario: "Esta opção diverge da diretriz atual. Dissecção arterial cervical é causa importante de AVCi em jovens, classicamente associada a trauma cervical e cefaleia/cervicalgia ipsilateral." },
       { letra: "D", texto: "Vasculite de pequenos vasos", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Dissecção arterial cervical é causa importante de AVCi em jovens, classicamente associada a trauma cervical e cefaleia/cervicalgia ipsilateral." },
     ],
@@ -1375,7 +1375,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Paciente com fibrilação atrial não anticoagulada sofre AVCi extenso de ACM. Qual o momento mais adequado para iniciar anticoagulação oral?",
     alternativas: [
       { letra: "A", texto: "Imediatamente nas primeiras 24h", correta: false, comentario: "A anticoagulação após AVCi cardioembólico é escalonada conforme gravidade, equilibrando risco de recorrência embólica e transformação hemorrágica.\n\n## Casos Clínicos — AVC Hemorrágico e Hemorragia Subaracnóidea" },
-      { letra: "B", texto: "Conforme a regra 1-3-6-12 dias, de acordo com a gravidade do infarto", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A anticoagulação após AVCi cardioembólico é escalonada conforme gravidade, equilibrando risco de recorrência embólica e transformação hemorrágica.\n\n## Casos Clínicos — AVC Hemorrágico e Hemorragia Subaracnóidea" },
+      { letra: "B", texto: "Conforme a regra 1-3-6-12 dias, de acordo com a gravidade do infarto", correta: true, comentario: "Alternativa correta. A anticoagulação após AVCi cardioembólico é escalonada conforme gravidade, equilibrando risco de recorrência embólica e transformação hemorrágica.\n\n## Casos Clínicos — AVC Hemorrágico e Hemorragia Subaracnóidea" },
       { letra: "C", texto: "Nunca deve ser iniciada após AVCi", correta: false, comentario: "Esta opção diverge da diretriz atual. A anticoagulação após AVCi cardioembólico é escalonada conforme gravidade, equilibrando risco de recorrência embólica e transformação hemorrágica.\n\n## Casos Clínicos — AVC Hemorrágico e Hemorragia Subaracnóidea" },
       { letra: "D", texto: "Somente após 3 meses, sem exceção", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A anticoagulação após AVCi cardioembólico é escalonada conforme gravidade, equilibrando risco de recorrência embólica e transformação hemorrágica.\n\n## Casos Clínicos — AVC Hemorrágico e Hemorragia Subaracnóidea" },
     ],
@@ -1391,7 +1391,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Mulher, 45 anos, cefaleia súbita e intensíssima durante esforço, com vômitos e rigidez de nuca, sem déficit focal. TC realizada em 2h é normal. Qual a conduta?",
     alternativas: [
       { letra: "A", texto: "Alta com analgesia, pois a TC descarta HSA", correta: false, comentario: "TC precoce pode ser falso-negativa em até 5-10% dos casos de HSA; diante de quadro clássico, a punção lombar é mandatória antes de excluir o diagnóstico." },
-      { letra: "B", texto: "Punção lombar para avaliar xantocromia/hemácias, dada a alta suspeita clínica", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. TC precoce pode ser falso-negativa em até 5-10% dos casos de HSA; diante de quadro clássico, a punção lombar é mandatória antes de excluir o diagnóstico." },
+      { letra: "B", texto: "Punção lombar para avaliar xantocromia/hemácias, dada a alta suspeita clínica", correta: true, comentario: "Alternativa correta. TC precoce pode ser falso-negativa em até 5-10% dos casos de HSA; diante de quadro clássico, a punção lombar é mandatória antes de excluir o diagnóstico." },
       { letra: "C", texto: "Iniciar profilaxia para enxaqueca", correta: false, comentario: "Esta opção diverge da diretriz atual. TC precoce pode ser falso-negativa em até 5-10% dos casos de HSA; diante de quadro clássico, a punção lombar é mandatória antes de excluir o diagnóstico." },
       { letra: "D", texto: "Solicitar apenas fundo de olho", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. TC precoce pode ser falso-negativa em até 5-10% dos casos de HSA; diante de quadro clássico, a punção lombar é mandatória antes de excluir o diagnóstico." },
     ],
@@ -1407,7 +1407,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Paciente com HSA por aneurisma de comunicante anterior, clipado no 1º dia, evolui no 8º dia com rebaixamento do nível de consciência e nova hemiparesia, sem sinais de ressangramento na TC. Qual a hipótese e conduta?",
     alternativas: [
       { letra: "A", texto: "Ressangramento — reoperar de urgência", correta: false, comentario: "O quadro no intervalo típico (dia 4-14) sem ressangramento na imagem sugere vasoespasmo com isquemia tardia; otimização hemodinâmica e manutenção do nimodipino são a conduta." },
-      { letra: "B", texto: "Vasoespasmo cerebral — otimizar volemia/pressão, mantendo nimodipino", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. O quadro no intervalo típico (dia 4-14) sem ressangramento na imagem sugere vasoespasmo com isquemia tardia; otimização hemodinâmica e manutenção do nimodipino são a conduta." },
+      { letra: "B", texto: "Vasoespasmo cerebral — otimizar volemia/pressão, mantendo nimodipino", correta: true, comentario: "Alternativa correta. O quadro no intervalo típico (dia 4-14) sem ressangramento na imagem sugere vasoespasmo com isquemia tardia; otimização hemodinâmica e manutenção do nimodipino são a conduta." },
       { letra: "C", texto: "Hidrocefalia aguda — apenas observação", correta: false, comentario: "Esta opção diverge da diretriz atual. O quadro no intervalo típico (dia 4-14) sem ressangramento na imagem sugere vasoespasmo com isquemia tardia; otimização hemodinâmica e manutenção do nimodipino são a conduta." },
       { letra: "D", texto: "Crise convulsiva — apenas benzodiazepínico", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. O quadro no intervalo típico (dia 4-14) sem ressangramento na imagem sugere vasoespasmo com isquemia tardia; otimização hemodinâmica e manutenção do nimodipino são a conduta." },
     ],
@@ -1423,7 +1423,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Homem, 60 anos, hipertenso mal controlado, cefaleia súbita, vômitos e hemiparesia direita. TC mostra hematoma hipertensivo em putame esquerdo de 25 mL sem desvio significativo, Glasgow 14. Qual a conduta inicial?",
     alternativas: [
       { letra: "A", texto: "Craniotomia de urgência obrigatória em todos os casos", correta: false, comentario: "Hematomas profundos de volume moderado e paciente estável costumam ser manejados clinicamente; a cirurgia tem papel mais estabelecido em hematomas cerebelares grandes ou lobares com deterioração." },
-      { letra: "B", texto: "Manejo clínico com controle pressórico e monitorização neurológica seriada", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Hematomas profundos de volume moderado e paciente estável costumam ser manejados clinicamente; a cirurgia tem papel mais estabelecido em hematomas cerebelares grandes ou lobares com deterioração." },
+      { letra: "B", texto: "Manejo clínico com controle pressórico e monitorização neurológica seriada", correta: true, comentario: "Alternativa correta. Hematomas profundos de volume moderado e paciente estável costumam ser manejados clinicamente; a cirurgia tem papel mais estabelecido em hematomas cerebelares grandes ou lobares com deterioração." },
       { letra: "C", texto: "Trombólise IV imediata", correta: false, comentario: "Esta opção diverge da diretriz atual. Hematomas profundos de volume moderado e paciente estável costumam ser manejados clinicamente; a cirurgia tem papel mais estabelecido em hematomas cerebelares grandes ou lobares com deterioração." },
       { letra: "D", texto: "Alta hospitalar com anti-hipertensivo oral", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Hematomas profundos de volume moderado e paciente estável costumam ser manejados clinicamente; a cirurgia tem papel mais estabelecido em hematomas cerebelares grandes ou lobares com deterioração." },
     ],
@@ -1439,7 +1439,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Paciente com hemorragia cerebelar espontânea de 3,5 cm evolui com rebaixamento do nível de consciência e sinais de compressão de tronco encefálico. Qual a conduta?",
     alternativas: [
       { letra: "A", texto: "Observação clínica isolada", correta: false, comentario: "Hemorragias cerebelares >3 cm com deterioração neurológica têm indicação cirúrgica de urgência pelo risco de compressão do tronco encefálico." },
-      { letra: "B", texto: "Evacuação cirúrgica de urgência", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Hemorragias cerebelares >3 cm com deterioração neurológica têm indicação cirúrgica de urgência pelo risco de compressão do tronco encefálico." },
+      { letra: "B", texto: "Evacuação cirúrgica de urgência", correta: true, comentario: "Alternativa correta. Hemorragias cerebelares >3 cm com deterioração neurológica têm indicação cirúrgica de urgência pelo risco de compressão do tronco encefálico." },
       { letra: "C", texto: "Anticoagulação profilática", correta: false, comentario: "Esta opção diverge da diretriz atual. Hemorragias cerebelares >3 cm com deterioração neurológica têm indicação cirúrgica de urgência pelo risco de compressão do tronco encefálico." },
       { letra: "D", texto: "Apenas manitol, sem indicação cirúrgica", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Hemorragias cerebelares >3 cm com deterioração neurológica têm indicação cirúrgica de urgência pelo risco de compressão do tronco encefálico." },
     ],
@@ -1455,7 +1455,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Mulher, 50 anos, em uso de varfarina por prótese valvar mecânica, sofre TCE leve e desenvolve hemorragia intracraniana com INR de 4,5. Qual a conduta imediata de reversão?",
     alternativas: [
       { letra: "A", texto: "Apenas suspender a varfarina e aguardar", correta: false, comentario: "Na hemorragia intracraniana associada a varfarina, a reversão rápida com CCP associado à vitamina K é a conduta recomendada." },
-      { letra: "B", texto: "Administrar concentrado de complexo protrombínico e vitamina K", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Na hemorragia intracraniana associada a varfarina, a reversão rápida com CCP associado à vitamina K é a conduta recomendada." },
+      { letra: "B", texto: "Administrar concentrado de complexo protrombínico e vitamina K", correta: true, comentario: "Alternativa correta. Na hemorragia intracraniana associada a varfarina, a reversão rápida com CCP associado à vitamina K é a conduta recomendada." },
       { letra: "C", texto: "Transfusão isolada de plaquetas", correta: false, comentario: "Esta opção diverge da diretriz atual. Na hemorragia intracraniana associada a varfarina, a reversão rápida com CCP associado à vitamina K é a conduta recomendada." },
       { letra: "D", texto: "Protamina IV", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Na hemorragia intracraniana associada a varfarina, a reversão rápida com CCP associado à vitamina K é a conduta recomendada." },
     ],
@@ -1487,7 +1487,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Homem, 30 anos, epiléptico conhecido, é trazido em crise tônico-clônica generalizada contínua há 8 minutos, sem resposta a duas doses de diazepam retal. Qual a conduta na emergência?",
     alternativas: [
       { letra: "A", texto: "Aguardar mais 10 minutos antes de intervir", correta: false, comentario: "Trata-se de status epilepticus estabelecido; segue-se o protocolo escalonado benzodiazepínico IV seguido de droga de segunda linha se não houver resposta." },
-      { letra: "B", texto: "Administrar benzodiazepínico IV e, se refratário, fenitoína ou valproato/levetiracetam IV", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Trata-se de status epilepticus estabelecido; segue-se o protocolo escalonado benzodiazepínico IV seguido de droga de segunda linha se não houver resposta." },
+      { letra: "B", texto: "Administrar benzodiazepínico IV e, se refratário, fenitoína ou valproato/levetiracetam IV", correta: true, comentario: "Alternativa correta. Trata-se de status epilepticus estabelecido; segue-se o protocolo escalonado benzodiazepínico IV seguido de droga de segunda linha se não houver resposta." },
       { letra: "C", texto: "Iniciar apenas antitérmico", correta: false, comentario: "Esta opção diverge da diretriz atual. Trata-se de status epilepticus estabelecido; segue-se o protocolo escalonado benzodiazepínico IV seguido de droga de segunda linha se não houver resposta." },
       { letra: "D", texto: "Alta com orientação de retorno se recorrer", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Trata-se de status epilepticus estabelecido; segue-se o protocolo escalonado benzodiazepínico IV seguido de droga de segunda linha se não houver resposta." },
     ],
@@ -1503,7 +1503,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Mulher, 25 anos, gestante de 32 semanas, hipertensa gestacional, apresenta crise tônico-clônica generalizada e cefaleia prévia. Qual a hipótese e o tratamento específico?",
     alternativas: [
       { letra: "A", texto: "Epilepsia idiopática — iniciar fenitoína", correta: false, comentario: "Crise convulsiva em gestante hipertensa com pré-eclâmpsia caracteriza eclâmpsia; o sulfato de magnésio é a droga de escolha." },
-      { letra: "B", texto: "Eclâmpsia — sulfato de magnésio IV e conduta obstétrica", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Crise convulsiva em gestante hipertensa com pré-eclâmpsia caracteriza eclâmpsia; o sulfato de magnésio é a droga de escolha." },
+      { letra: "B", texto: "Eclâmpsia — sulfato de magnésio IV e conduta obstétrica", correta: true, comentario: "Alternativa correta. Crise convulsiva em gestante hipertensa com pré-eclâmpsia caracteriza eclâmpsia; o sulfato de magnésio é a droga de escolha." },
       { letra: "C", texto: "Crise febril — apenas antitérmico", correta: false, comentario: "Esta opção diverge da diretriz atual. Crise convulsiva em gestante hipertensa com pré-eclâmpsia caracteriza eclâmpsia; o sulfato de magnésio é a droga de escolha." },
       { letra: "D", texto: "Enxaqueca com aura — triptano", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Crise convulsiva em gestante hipertensa com pré-eclâmpsia caracteriza eclâmpsia; o sulfato de magnésio é a droga de escolha." },
     ],
@@ -1535,7 +1535,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Paciente etilista crônico, em abstinência há 36 horas, desenvolve crise tônico-clônica generalizada isolada, exame pós-ictal normal. Qual a principal preocupação adicional a ser descartada?",
     alternativas: [
       { letra: "A", texto: "Apenas observar, sem necessidade de investigação", correta: false, comentario: "Etilistas têm maior risco de hematoma subdural e distúrbios metabólicos que devem ser ativamente excluídos antes de atribuir a crise só à abstinência." },
-      { letra: "B", texto: "Descartar hematoma subdural e distúrbios metabólicos (hipoglicemia, hiponatremia)", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. Etilistas têm maior risco de hematoma subdural e distúrbios metabólicos que devem ser ativamente excluídos antes de atribuir a crise só à abstinência." },
+      { letra: "B", texto: "Descartar hematoma subdural e distúrbios metabólicos (hipoglicemia, hiponatremia)", correta: true, comentario: "Alternativa correta. Etilistas têm maior risco de hematoma subdural e distúrbios metabólicos que devem ser ativamente excluídos antes de atribuir a crise só à abstinência." },
       { letra: "C", texto: "Iniciar antiepiléptico crônico obrigatoriamente", correta: false, comentario: "Esta opção diverge da diretriz atual. Etilistas têm maior risco de hematoma subdural e distúrbios metabólicos que devem ser ativamente excluídos antes de atribuir a crise só à abstinência." },
       { letra: "D", texto: "Solicitar apenas sorologia para HIV", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. Etilistas têm maior risco de hematoma subdural e distúrbios metabólicos que devem ser ativamente excluídos antes de atribuir a crise só à abstinência." },
     ],
@@ -1695,7 +1695,7 @@ export const QUESTOES_NEURO: Questao[] = [
     enunciado: "Paciente com Guillain-Barré, internado há 3 dias, apresenta queda progressiva da capacidade vital forçada e dispneia aos pequenos esforços. Qual a conduta?",
     alternativas: [
       { letra: "A", texto: "Aguardar dessaturação para decidir intubação", correta: false, comentario: "A queda progressiva da capacidade vital é indicação de intubação eletiva antes da insuficiência respiratória franca, já que a descompensação pode ser abrupta." },
-      { letra: "B", texto: "Considerar intubação orotraqueal eletiva antes da falência respiratória franca", correta: true, comentario: "Esta alternativa não corresponde à conduta recomendada. A queda progressiva da capacidade vital é indicação de intubação eletiva antes da insuficiência respiratória franca, já que a descompensação pode ser abrupta." },
+      { letra: "B", texto: "Considerar intubação orotraqueal eletiva antes da falência respiratória franca", correta: true, comentario: "Alternativa correta. A queda progressiva da capacidade vital é indicação de intubação eletiva antes da insuficiência respiratória franca, já que a descompensação pode ser abrupta." },
       { letra: "C", texto: "Apenas oxigênio suplementar por cateter nasal", correta: false, comentario: "Esta opção diverge da diretriz atual. A queda progressiva da capacidade vital é indicação de intubação eletiva antes da insuficiência respiratória franca, já que a descompensação pode ser abrupta." },
       { letra: "D", texto: "Alta hospitalar com fisioterapia domiciliar", correta: false, comentario: "Esta resposta não reflete o padrão-ouro. A queda progressiva da capacidade vital é indicação de intubação eletiva antes da insuficiência respiratória franca, já que a descompensação pode ser abrupta." },
     ],

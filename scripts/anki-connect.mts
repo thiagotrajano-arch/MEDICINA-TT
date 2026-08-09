@@ -17,11 +17,16 @@ import { dirname, resolve } from "node:path";
 
 const ENDPOINT = "http://127.0.0.1:8765";
 const MODEL_NAME = "OMED Bonito";
+const DECK_PREFIXO = "Codex Medicus::";
 const args = process.argv.slice(2);
 const comando = args[0] ?? "status";
-const subtemaId = args[args.indexOf("--subtema") + 1];
-const questoesArg = args[args.indexOf("--questoes") + 1];
-const saidaArg = args[args.indexOf("--saida") + 1];
+const valorDaFlag = (flag: string): string | undefined => {
+  const indice = args.indexOf(flag);
+  return indice >= 0 ? args[indice + 1] : undefined;
+};
+const subtemaId = valorDaFlag("--subtema");
+const questoesArg = valorDaFlag("--questoes");
+const saidaArg = valorDaFlag("--saida");
 
 type RespostaAnki<T> = { result: T; error: string | null };
 
@@ -82,7 +87,21 @@ function tagSubtema(id: string): string {
 }
 
 function nomeDeck(id: string, disciplinaSlug: string, subtemaSlug: string): string {
-  return `Codex Medicus - ${disciplinaSlug} - ${id.replace(/[^a-zA-Z0-9]+/g, "-") || subtemaSlug}`;
+  // Um deck por disciplina deixa o Anki navegavel. O subtema permanece em
+  // tags/Tema, evitando nomes de 100+ caracteres e a proliferacao de decks.
+  const disciplina = (disciplinaSlug || "geral").replace(/[^a-zA-Z0-9_-]+/g, "-").slice(0, 36);
+  return `${DECK_PREFIXO}${disciplina || subtemaSlug}`;
+}
+
+function encurtarTitulo(titulo: string, limite = 88): string {
+  const limpo = titulo.replace(/\s+/g, " ").trim();
+  if (limpo.length <= limite) return limpo;
+  const corte = limpo.slice(0, limite - 1).replace(/\s+\S*$/, "").trim();
+  return `${corte || limpo.slice(0, limite - 1)}...`;
+}
+
+function tituloCartao(titulo: string, secao: string): string {
+  return `<div class="codex-front-title">${encurtarTitulo(titulo)}</div><div class="codex-front-section">${encurtarTitulo(secao, 72)}</div>`;
 }
 
 function adaptarNotaParaModelo(nota: { fields: Record<string, string>; [chave: string]: unknown }) {
@@ -140,7 +159,7 @@ async function status() {
 
 async function exportarProgressoAnki() {
   const decks = (await anki<string[]>("deckNames"))
-    .filter((deck) => deck.startsWith("Codex Medicus - "));
+    .filter((deck) => deck.startsWith("Codex Medicus - ") || deck.startsWith(DECK_PREFIXO));
   const estatisticas: Record<string, {
     name: string;
     new: number;
@@ -235,7 +254,7 @@ async function criarDeResumo(id: string) {
       deckName: deck,
       modelName: MODEL_NAME,
       fields: {
-        Frente: `${conteudo.titulo}<br><br><b>${bloco.secao}</b>`,
+        Frente: tituloCartao(conteudo.titulo, bloco.secao),
         Verso: `${textoLimpo(bloco.corpo).replace(/\n/g, "<br>")}<br><br><small>Fonte: ${conteudo.referencias.join("; ")}</small>`,
         Tema: taxonomia.subtema.nome,
         Referencia: conteudo.referencias.join("; "),
@@ -376,6 +395,47 @@ function csv(valor: string): string {
   return `"${valor.replace(/"/g, '""').replace(/\r?\n/g, "<br>")}"`;
 }
 
+async function organizarDecks(aplicar: boolean) {
+  const decks = await anki<string[]>("deckNames");
+  const limparVazios = args.includes("--limpar-vazios");
+  const legados = decks.filter((deck) => (deck.startsWith("Codex Medicus - ") || (deck.startsWith(DECK_PREFIXO) && deck.split("::").length > 2)) && !deck.includes("Probe") && !deck.includes("Piloto"));
+  const plano = legados.map((origem) => {
+    const partes = origem.startsWith("Codex Medicus - ") ? origem.split(" - ") : origem.split("::");
+    const disciplina = (partes[1] || "geral").replace(/[^a-zA-Z0-9_-]+/g, "-").slice(0, 36) || "geral";
+    return { origem, destino: `${DECK_PREFIXO}${disciplina}` };
+  }).filter((item) => item.origem !== item.destino);
+
+  console.log(`[anki] Plano de organizacao: ${plano.length} deck(s) legado(s). Decks vazios só serão removidos com --limpar-vazios.`);
+  for (const item of plano) console.log(`  ${item.origem} -> ${item.destino}`);
+  if (!aplicar) {
+    console.log("[anki] Simulacao concluida. Para mover os cartoes, use: npm run anki:organizar -- --aplicar");
+    return;
+  }
+  for (const item of plano) {
+    await garantirDeck(item.destino);
+    const cards = await anki<number[]>("findCards", { query: `deck:"${item.origem}"` });
+    for (let indice = 0; indice < cards.length; indice += 200) {
+      await anki("changeDeck", { cards: cards.slice(indice, indice + 200), deck: item.destino });
+    }
+    if (limparVazios && cards.length === 0) await anki("deleteDecks", { decks: [item.origem], cardsToo: false });
+    console.log(`[anki] ${cards.length} cartao(oes) movido(s): ${item.origem} -> ${item.destino}.`);
+  }
+  try {
+    await anki("updateModelStyling", {
+      model: { name: MODEL_NAME, css: `
+.card { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; max-width: 720px; margin: 0 auto; }
+.codex-front-title { font-size: 1.08em; font-weight: 700; line-height: 1.3; margin-bottom: 0.8em; }
+.codex-front-section { display: inline-block; font-size: 0.86em; font-weight: 600; color: #3f6370; padding: 0.25em 0.55em; border-radius: 0.45em; background: #e7f2f3; }
+img { max-width: 100%; height: auto; }
+` },
+    });
+    console.log(`[anki] Estilo do modelo ${MODEL_NAME} ajustado para titulos compactos.`);
+  } catch (erro) {
+    console.warn(`[anki] Nao foi possivel atualizar o estilo agora: ${erro instanceof Error ? erro.message : String(erro)}`);
+  }
+  console.log(limparVazios ? "[anki] Organizacao aplicada; decks legados vazios foram removidos após verificação." : "[anki] Organizacao aplicada. Decks antigos foram mantidos vazios para permitir reversao manual.");
+}
+
 async function exportarResumoCsv(id: string) {
   const conteudo = CONTEUDOS[id];
   const taxonomia = encontrarSubtema(id);
@@ -412,6 +472,7 @@ async function main() {
   if (comando === "lote-omed-neuro") return criarLoteOmedNeuro();
   if (comando === "lote-prioritario") return criarLotePrioritario();
   if (comando === "lote-neuro-pendente") return criarLoteNeuroPendente();
+  if (comando === "organizar") return organizarDecks(args.includes("--aplicar"));
   throw new Error("Comando inválido. Use status, resumo, erros ou csv-resumo.");
 }
 
