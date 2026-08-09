@@ -9,6 +9,7 @@ type LinhaAuditoria = {
   questoesComComentarioCurto: number;
   comentariosCurtos: number;
   comentariosVazios: number;
+  comentariosCorretosContraditorios: number;
   semFonte: number;
 };
 
@@ -25,6 +26,17 @@ if (indiceDisciplina >= 0 && !disciplinaSelecionada) {
 
 const normalizarComentario = (comentario: string) =>
   comentario.trim().replace(/\s+/g, " ").toLocaleLowerCase("pt-BR");
+
+const PREFIXOS_CONTRADITORIOS_EM_RESPOSTA_CORRETA = [
+  /^esta alternativa não corresponde à conduta recomendada\./i,
+  /^esta opção diverge da diretriz atual\./i,
+  /^esta resposta não reflete o padrão-ouro\./i,
+];
+
+const comentarioCorretoContraditorio = (comentario: string) =>
+  PREFIXOS_CONTRADITORIOS_EM_RESPOSTA_CORRETA.some((padrao) =>
+    padrao.test(comentario.trim()),
+  );
 
 const contarRepetidas = (comentarios: string[]) => {
   const ocorrencias = new Map<string, number>();
@@ -46,6 +58,7 @@ const criarLinha = (chave: string): LinhaAuditoria => ({
   questoesComComentarioCurto: 0,
   comentariosCurtos: 0,
   comentariosVazios: 0,
+  comentariosCorretosContraditorios: 0,
   semFonte: 0,
 });
 
@@ -75,6 +88,10 @@ const registrar = (linha: LinhaAuditoria, questao: (typeof QUESTOES)[number]) =>
   linha.comentariosVazios += comentariosAparados.filter(
     (comentario) => comentario.length === 0,
   ).length;
+  linha.comentariosCorretosContraditorios += questao.alternativas.filter(
+    (alternativa) =>
+      alternativa.correta && comentarioCorretoContraditorio(alternativa.comentario),
+  ).length;
   if (!questao.fonte?.trim()) linha.semFonte += 1;
 };
 
@@ -87,6 +104,7 @@ const porSubtema = new Map<string, LinhaAuditoria>();
 const ids = {
   repetidasNormalizadas: [] as string[],
   comentariosCurtos: [] as string[],
+  comentariosCorretosContraditorios: [] as string[],
   semFonte: [] as string[],
 };
 for (const questao of questoes) {
@@ -110,6 +128,14 @@ for (const questao of questoes) {
   }
   if (comentarios.some((comentario) => comentario.length < 40)) {
     ids.comentariosCurtos.push(questao.id);
+  }
+  if (
+    questao.alternativas.some(
+      (alternativa) =>
+        alternativa.correta && comentarioCorretoContraditorio(alternativa.comentario),
+    )
+  ) {
+    ids.comentariosCorretosContraditorios.push(questao.id);
   }
   if (!questao.fonte?.trim()) ids.semFonte.push(questao.id);
 }
@@ -142,6 +168,8 @@ console.log(
         repetidaNormalizada:
           "dois ou mais comentários iguais após remover espaços nas extremidades, colapsar espaços internos e ignorar maiúsculas/minúsculas, na mesma questão",
         comentarioCurto: "comentário com menos de 40 caracteres após aparar espaços",
+        comentarioCorretoContraditorio:
+          "alternativa marcada como correta cujo comentário começa negando a própria resposta",
         semFonte: "campo fonte ausente ou vazio",
       },
       filtro: disciplinaSelecionada ? { disciplina: disciplinaSelecionada } : null,
@@ -156,3 +184,7 @@ console.log(
     2,
   ),
 );
+
+if (total.comentariosCorretosContraditorios > 0) {
+  process.exitCode = 1;
+}

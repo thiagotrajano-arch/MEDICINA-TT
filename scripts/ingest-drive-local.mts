@@ -11,7 +11,7 @@
  */
 import { createHash } from "node:crypto";
 import { copyFileSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
-import { basename, extname, join, resolve } from "node:path";
+import { extname, join, resolve } from "node:path";
 
 type Registro = { origem: string; canonico: string; sha256: string; bytes: number; duplicado: boolean };
 

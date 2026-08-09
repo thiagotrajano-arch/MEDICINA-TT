@@ -75,3 +75,64 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - Ordem futura confirmada pelo usuário: inventariar todo o Drive autorizado e extrair seletivamente conteúdo médico útil; correlacionar todo o acervo com semestres/matérias cursados; ampliar e reorganizar mídia clínica; transformar os mapas atuais em mapas conceituais com setas e conceitos-chave; deixar Anki para o fim; e realizar o redesign somente depois, em fase visual separada. Imagens próprias/licenciadas podem ser públicas. Capturas de PDFs comerciais ficam em biblioteca autenticada e armazenamento privado fora do repositório. Imagens de pacientes exigem anonimização e autorização apropriada. A biblioteca privada reutiliza o login atual, RLS por proprietário e URLs assinadas, sem senha paralela.
 - Em 2026-07-29, a infraestrutura de mídia privada foi criada: rota `/minha-midia`, tabela `midia_privada_usuario`, bucket não público `midia-privada`, RLS por proprietário para metadados e objetos e URLs assinadas de cinco minutos. A validação remota confirmou bucket privado, RLS ativo, cinco políticas e zero privilégios de tabela para `anon`. Nenhuma imagem foi carregada durante a implantação; falta o teste funcional com a conta real.
 - A implementação foi publicada em `8b37d84`; o GitHub Pages run `30501713751` concluiu com sucesso e a raiz e `/minha-midia/` responderam HTTP 200. A rotina das 9h foi removida e não deve ser recriada sem solicitação explícita.
+
+## Estado operacional — 2026-08-09
+
+- Anki: 209 decks legados foram consolidados em decks curtos por disciplina (`Codex Medicus::...`), com tags para subtemas, títulos compactos e estilo CSS mais legível. O backup automático do Anki de 09/08/2026 existia antes da migração; nenhum deck antigo foi apagado.
+- Extensões locais confirmadas: AnkiConnect, Image Occlusion Enhanced, FSRS Helper e Deckhand. Não instalar outras extensões sem verificar utilidade e privacidade.
+- Minha mídia: a rota autenticada concentra imagens próprias, abertas, comerciais e restritas com origem explícita, busca e filtros. A biblioteca pública continua sujeita a licença; referência não concede direito de redistribuição.
+- Rotina: a agenda privada recebeu foco de hoje, rotinas rápidas, busca/filtros e lista de pendências; o dashboard ganhou atalhos de agenda e mídia. Falta QA real com a sessão autenticada e validação da renovação de URLs assinadas.
+- Nova pendência operacional: extrair imagens dos PDFs privados, inclusive comerciais, por PDF → Markdown + renderização seletiva e importá-las na `Minha mídia` autenticada com fonte, página e classificação clínica; não publicar essas capturas.
+
+- Em 2026-08-09, o primeiro lote privado de imagens foi materializado e classificado sem publicação: 215 candidatos canônicos, 312 registros privados no catálogo e 297 imagens exibíveis. A biblioteca ganhou modal ampliado, filtros de triagem e links para resumos. A classificação automática é conservadora: 2 contextuais, 6 não úteis e 295 em revisão; 177 já estão vinculados a subtemas. Permanecem 30 JPEG 2000 sem decodificador local e a revisão visual manual dos pendentes.
+
+## Snapshot operacional — 2026-08-09
+
+- A dívida editorial foi revalidada em 1.296 questões: zero duplicatas, comentários vazios/curtos, fontes ausentes e comentários semânticos contraditórios em respostas corretas.
+- Build de produção aprovado com 402 rotas estáticas. As páginas lentas do Next foram reprocessadas; otimização de tempo continua pendente, não é falha de conteúdo.
+- O conector Drive está autenticado para metadados e localiza Medicina, Resumos e cursos, EstrategiaMED, Memorex e MEDCOF. O workflow remoto ainda está sem credencial/allowlist e não processou binários.
+- Supabase remoto possui 10 migrations aplicadas; advisors ainda apontam extensões no schema público, leaked-password protection e índices sem uso.
+- Anki: snapshot local de 2026-08-09 registra 226 decks, 1.703 cartões e 210 decks vazios. A coleção viva não está disponível no AnkiConnect; não remover nem reorganizar até abrir uma única coleção.
+- Ver `docs/FECHAMENTO-2026-08-09.md` e `PROXIMOS-PASSOS.md` para a sequência retomável.
+
+## Decisão duradoura — design e PDFs diários — 2026-08-09
+
+- O usuário autorizou iniciar o redesign pelo planejamento, preservando dados,
+  conteúdo clínico, autenticação, progresso e acervo.
+- A experiência alvo terá cinco áreas: Hoje, Conhecimento, Treino, Acervo e Meu
+  curso. O centro do produto será a semana atual e a próxima ação de estudo.
+- O usuário enviará PDFs diariamente. Cada arquivo deve ser convertido para
+  Markdown privado antes da leitura, deduplicado e ligado à semana, disciplina,
+  tema/subtema, agenda e recursos existentes. Publicação clínica continua
+  condicionada a lacuna comprovada, fonte vigente e revisão.
+- Plano completo:
+  `docs/PLANO-REDESIGN-E-SEMANA-ATUAL-2026-08-09.md`.
+
+## Implementação duradoura — shell e paleta — 2026-08-09
+
+- O novo shell foi implementado em branch não publicada, preservando todos os
+  dados e rotas. As cinco áreas globais são Hoje, Conhecimento, Treino, Acervo
+  e Meu curso; os destinos antigos permanecem em menus contextuais.
+- A identidade visual atual é editorial clínica: mineral, branco, grafite,
+  verde clínico e petróleo. O tema escuro usa grafite esverdeado; evitar voltar
+  ao ciano neon como cor dominante.
+- Sidebar desktop: 256 px aberta e 76 px recolhida, com preferência local.
+  Celular: cinco alvos de 52 px em uma barra que ocupa espaço real e não cobre
+  o `main`.
+- Hoje prioriza próxima ação e progresso real; não inventa semana, matéria ou
+  calendário. O modelo privado da semana permanece o próximo bloco.
+- Validação deste lote: 390 x 844 e 1440 x 1000, claro/escuro, navegação, foco e
+  semântica básica; TypeScript, lint, privacidade, auditoria de 1.296 questões e
+  build com 402 páginas aprovados.
+- Produção não foi alterada. Publicar somente após Lighthouse/axe, QA
+  autenticada e aprovação visual.
+
+## Acabamento visual adicional — 2026-08-09
+
+- O filtro de disciplina de `Questões` é expansível e mantém a seleção resumida;
+  não reintroduzir a parede de chips na primeira dobra.
+- O drawer móvel usa `inert` quando fechado para evitar foco invisível e
+  duplicado.
+- `prose-med` agora estiliza h2/h3 e desliga rolagem suave quando o usuário
+  prefere movimento reduzido.
+- QA visual extra em 390 x 844 passou para questões, menu e barra móvel.

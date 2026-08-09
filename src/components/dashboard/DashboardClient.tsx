@@ -59,68 +59,102 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
   const anotacoes = conteudos.filter((item) => item.anotacao.trim()).length;
 
   return (
-    <div className="dashboard-page mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-10">
-      {/* Hero */}
-      <div className="dashboard-hero mb-7 rounded-3xl border border-border bg-surface p-6 sm:p-8">
-        <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-text-muted">
-          <Sparkles className="size-3 text-gold" /> Foco atual: OMED VI · Ciclo Clínico
-        </div>
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div><h1 className="text-2xl font-bold tracking-tight text-text sm:text-3xl">Bom estudo, Thiago.</h1>
-        <p className="mt-1.5 max-w-2xl text-[15px] text-text-muted">
-          {temProgresso
-            ? "Seu progresso abaixo. Continue de onde parou ou faça um simulado cronometrado."
-            : "Responda questões ou faça um simulado — seu progresso aparece aqui automaticamente."}
-        </p>
-        {sincronizado !== null && (
-          <p className="mt-1 text-xs text-text-faint">
-            {sincronizado ? "Progresso sincronizado com segurança." : "Progresso salvo neste dispositivo; sincronização será tentada novamente."}
-          </p>
-        )}</div><div className="flex flex-wrap gap-2"><Link href="/questoes" className="rounded-xl bg-accent px-4 py-2.5 text-sm font-bold text-accent-contrast hover:opacity-90">Continuar questoes</Link><Link href="/mapas-mentais" className="rounded-xl border border-border bg-bg px-4 py-2.5 text-sm font-bold text-text-muted hover:border-accent hover:text-accent">Revisar mapas</Link></div></div>
-      </div>
+    <div className="dashboard-page mx-auto max-w-[1180px] px-5 py-7 sm:px-8 sm:py-10">
+      <section className="dashboard-hero overflow-hidden rounded-[2rem] border border-border p-6 sm:p-8 lg:p-10" aria-labelledby="titulo-hoje">
+        <div className="grid gap-7 lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,.72fr)] lg:items-stretch">
+          <div className="flex flex-col justify-center">
+            <div className="mb-4 inline-flex w-fit items-center gap-1.5 rounded-full border border-border bg-surface/80 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.13em] text-text-muted">
+              <Sparkles className="size-3 text-gold" /> Hoje · OMED VI
+            </div>
+            <h1 id="titulo-hoje" className="max-w-2xl text-3xl font-bold tracking-[-0.035em] text-text sm:text-4xl lg:text-[2.7rem] lg:leading-[1.08]">
+              Seu estudo, em uma direção clara.
+            </h1>
+            <p className="mt-4 max-w-2xl text-[15px] leading-6 text-text-muted sm:text-base">
+              {temProgresso
+                ? "Retome o treino, revise seus pontos fracos e use a agenda para decidir o próximo bloco."
+                : "Comece por uma prioridade OMED; o site organiza seu progresso conforme você estuda."}
+            </p>
+            {sincronizado !== null && (
+              <p className="mt-3 inline-flex items-center gap-2 text-xs text-text-faint">
+                <span className={sincronizado ? "size-2 rounded-full bg-accent" : "size-2 rounded-full bg-gold"} />
+                {sincronizado ? "Progresso sincronizado com segurança" : "Salvo neste dispositivo; nova sincronização será tentada"}
+              </p>
+            )}
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              <Link href="/questoes" className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-accent px-5 py-2.5 text-sm font-bold text-accent-contrast shadow-sm transition-colors hover:bg-[var(--accent-hover)]">
+                Continuar questões <ArrowRight className="size-4" />
+              </Link>
+              <Link href="/agenda" className="inline-flex min-h-11 items-center rounded-xl border border-border-strong bg-surface px-5 py-2.5 text-sm font-bold text-text-muted transition-colors hover:border-accent hover:text-accent">
+                Planejar meu dia
+              </Link>
+            </div>
+          </div>
 
-      <section className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4" aria-label="Progresso de leitura e casos">
-        <Tile icon={BookOpen} label="Resumos concluídos" valor={String(resumosConcluidos)} hint={`${totalResumos} disponíveis`} />
-        <Tile icon={Stethoscope} label="Casos concluídos" valor={String(casosConcluidos)} hint={`${totalCasos} disponíveis`} />
-        <Tile icon={BookMarked} label="Favoritos" valor={String(favoritos)} hint="resumos e casos" />
-        <Tile icon={StickyNote} label="Anotações" valor={String(anotacoes)} hint="salvas na conta" />
+          <div className="flex flex-col justify-between rounded-2xl bg-brand p-5 text-brand-contrast sm:p-6" style={{ boxShadow: "var(--shadow-lg)" }}>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] opacity-70">Seu ponto de partida</p>
+              <h2 className="mt-3 text-xl font-bold leading-snug">
+                {stats?.respondidas ? `${stats.respondidas} questões já respondidas` : "Comece pelo alto rendimento"}
+              </h2>
+              <p className="mt-2 text-sm leading-5 opacity-75">
+                {stats?.respondidas
+                  ? `${stats.percentual}% de acerto no histórico atual.`
+                  : "Resumos, casos e questões ficam conectados ao mesmo progresso."}
+              </p>
+            </div>
+            <div className="mt-7 grid grid-cols-2 gap-2">
+              <div className="rounded-xl border border-white/15 bg-black/10 p-3">
+                <strong className="block text-xl tabular-nums">{totalResumos}</strong>
+                <span className="text-[11px] opacity-70">resumos</span>
+              </div>
+              <div className="rounded-xl border border-white/15 bg-black/10 p-3">
+                <strong className="block text-xl tabular-nums">{totalCasos}</strong>
+                <span className="text-[11px] opacity-70">casos clínicos</span>
+              </div>
+            </div>
+            <Link href="/meu-curso" className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold underline-offset-4 hover:underline">
+              Abrir Meu curso <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+        </div>
       </section>
 
-      {/* Stat tiles — os números-síntese */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <Tile
-          icon={ListChecks} label="Respondidas"
-          valor={stats ? String(stats.respondidas) : "—"}
-          hint={`${totalQuestoes} no banco`}
-        />
-        <Tile
-          icon={Target} label="Acerto"
-          valor={stats && stats.respondidas ? `${stats.percentual}%` : "—"}
-          hint={stats && stats.respondidas ? `${stats.acertos} certas · ${stats.erros} erradas` : "sem dados ainda"}
-          destaque={stats && stats.respondidas ? corPct(stats.percentual) : undefined}
-        />
-        <Tile
-          icon={Flame} label="Sequência"
-          valor={stats ? `${stats.sequencia}d` : "—"}
-          hint={stats?.sequencia ? "dias seguidos estudando" : "comece hoje"}
-          destaque={stats && stats.sequencia >= 3 ? "var(--gold)" : undefined}
-        />
-        <Tile
-          icon={Timer} label="Simulados"
-          valor={String(simulados.length)}
-          hint={simulados.length ? `último: ${Math.round((simulados.at(-1)!.acertos / simulados.at(-1)!.total) * 100)}%` : "nenhum ainda"}
-        />
-      </div>
+      <section className="mt-7" aria-labelledby="titulo-progresso">
+        <div className="mb-3 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent">Visão rápida</p>
+            <h2 id="titulo-progresso" className="mt-1 text-lg font-bold text-text">Seu progresso</h2>
+          </div>
+          <Link href="/questoes" className="text-xs font-semibold text-text-faint hover:text-accent">Ver treino completo</Link>
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <Tile icon={ListChecks} label="Respondidas" valor={stats ? String(stats.respondidas) : "—"} hint={`${totalQuestoes} no banco`} />
+          <Tile icon={Target} label="Acerto" valor={stats && stats.respondidas ? `${stats.percentual}%` : "—"} hint={stats && stats.respondidas ? `${stats.acertos} certas · ${stats.erros} erradas` : "sem dados ainda"} destaque={stats && stats.respondidas ? corPct(stats.percentual) : undefined} />
+          <Tile icon={Flame} label="Sequência" valor={stats ? `${stats.sequencia}d` : "—"} hint={stats?.sequencia ? "dias seguidos estudando" : "comece hoje"} destaque={stats && stats.sequencia >= 3 ? "var(--gold)" : undefined} />
+          <Tile icon={Timer} label="Simulados" valor={String(simulados.length)} hint={simulados.length ? `último: ${Math.round((simulados.at(-1)!.acertos / simulados.at(-1)!.total) * 100)}%` : "nenhum ainda"} />
+        </div>
+      </section>
 
-      {/* Atividade — uma série, uma cor, sem legenda */}
-      {stats && (
-        <section className="mt-7 rounded-2xl border border-border bg-surface p-5" style={{ boxShadow: "var(--shadow)" }}>
+      <section className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(260px,.65fr)]" aria-label="Atividade e acervo pessoal">
+        <div className="rounded-2xl border border-border bg-surface p-5 sm:p-6" style={{ boxShadow: "var(--shadow)" }}>
           <h2 className="mb-1 flex items-center gap-2 text-sm font-bold text-text">
             <TrendingUp className="size-4 text-accent" /> Atividade dos últimos 14 dias
           </h2>
           <p className="mb-4 text-xs text-text-faint">Questões respondidas por dia</p>
-          <Atividade dias={stats.ultimos14Dias} />
-        </section>
-      )}
+          {stats ? <Atividade dias={stats.ultimos14Dias} /> : <div className="h-28 animate-pulse rounded-xl bg-surface-2" aria-label="Carregando atividade" />}
+        </div>
+
+        <div className="rounded-2xl border border-border bg-surface p-5 sm:p-6" style={{ boxShadow: "var(--shadow)" }}>
+          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-faint">Conhecimento pessoal</p>
+          <h2 className="mt-1 text-sm font-bold text-text">Leitura e casos</h2>
+          <div className="mt-4 divide-y divide-border">
+            <ProgressLine icon={BookOpen} label="Resumos concluídos" valor={resumosConcluidos} hint={`${totalResumos} disponíveis`} />
+            <ProgressLine icon={Stethoscope} label="Casos concluídos" valor={casosConcluidos} hint={`${totalCasos} disponíveis`} />
+            <ProgressLine icon={BookMarked} label="Favoritos" valor={favoritos} hint="resumos e casos" />
+            <ProgressLine icon={StickyNote} label="Anotações" valor={anotacoes} hint="salvas na conta" />
+          </div>
+        </div>
+      </section>
 
       <AnkiProgressImport />
 
@@ -147,7 +181,7 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
       )}
 
       {/* Ações rápidas */}
-      <section className="mt-7 grid gap-3 sm:grid-cols-2">
+      <section className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Link
           href="/simulado"
           className="group flex items-center gap-3 rounded-xl border border-border bg-surface p-4 transition-all hover:border-accent"
@@ -170,6 +204,24 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
             <div className="font-semibold text-text">Treinar questões</div>
             <div className="text-xs text-text-faint">Gabarito na hora, comentado</div>
           </div>
+          <ArrowRight className="ml-auto size-4 text-text-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
+        </Link>
+        <Link
+          href="/agenda"
+          className="group flex items-center gap-3 rounded-xl border border-border bg-surface p-4 transition-all hover:border-accent"
+          style={{ boxShadow: "var(--shadow)" }}
+        >
+          <span className="grid size-10 flex-none place-items-center rounded-lg bg-accent-soft"><BookMarked className="size-5 text-accent" /></span>
+          <div className="min-w-0"><div className="font-semibold text-text">Organizar meu dia</div><div className="text-xs text-text-faint">Agenda, foco e pendências</div></div>
+          <ArrowRight className="ml-auto size-4 text-text-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
+        </Link>
+        <Link
+          href="/minha-midia"
+          className="group flex items-center gap-3 rounded-xl border border-border bg-surface p-4 transition-all hover:border-accent"
+          style={{ boxShadow: "var(--shadow)" }}
+        >
+          <span className="grid size-10 flex-none place-items-center rounded-lg bg-accent-soft"><Stethoscope className="size-5 text-accent" /></span>
+          <div className="min-w-0"><div className="font-semibold text-text">Minha mídia</div><div className="text-xs text-text-faint">Imagens e referências privadas</div></div>
           <ArrowRight className="ml-auto size-4 text-text-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
         </Link>
       </section>
@@ -228,15 +280,42 @@ function corPct(pct: number): string {
   return "var(--danger)";
 }
 
+function ProgressLine({
+  icon: Icon,
+  label,
+  valor,
+  hint,
+}: {
+  icon: React.ElementType;
+  label: string;
+  valor: number;
+  hint: string;
+}) {
+  return (
+    <div className="flex items-center gap-3 py-3 first:pt-0 last:pb-0">
+      <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-accent-soft text-accent">
+        <Icon className="size-4" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block truncate text-xs font-semibold text-text">{label}</span>
+        <span className="block truncate text-[10px] text-text-faint">{hint}</span>
+      </span>
+      <strong className="text-lg tabular-nums text-text">{valor}</strong>
+    </div>
+  );
+}
+
 function Tile({
   icon: Icon, label, valor, hint, destaque,
 }: {
   icon: React.ElementType; label: string; valor: string; hint: string; destaque?: string;
 }) {
   return (
-    <div className="rounded-xl border border-border bg-surface p-4" style={{ boxShadow: "var(--shadow)" }}>
-      <Icon className="size-4" style={{ color: destaque ?? "var(--accent)" }} />
-      <div className="mt-3 text-2xl font-bold tabular-nums" style={{ color: destaque ?? "var(--text)" }}>
+    <div className="rounded-2xl border border-border bg-surface p-4 sm:p-5" style={{ boxShadow: "var(--shadow)" }}>
+      <span className="grid size-8 place-items-center rounded-lg bg-accent-soft">
+        <Icon className="size-4" style={{ color: destaque ?? "var(--accent)" }} />
+      </span>
+      <div className="mt-4 text-2xl font-bold tabular-nums" style={{ color: destaque ?? "var(--text)" }}>
         {valor}
       </div>
       <div className="text-sm font-medium text-text">{label}</div>

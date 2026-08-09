@@ -13,12 +13,14 @@ export type EntradaMidiaPrivada = {
 };
 export type MidiaPrivada = EntradaMidiaPrivada & {
   id: string; objectPath: string; criadoEm: string; urlTemporaria: string | null;
+  subtemaId: string | null; triagemStatus: "util" | "contextual" | "revisao_pendente" | "nao_util"; triagemMotivo: string;
 };
 type Registro = {
   id: string; object_path: string; titulo: string; tipo_origem: TipoOrigemMidiaPrivada;
   disciplina: string; tema: string; subtema: string; diagnostico: string;
   modalidade: string; fonte: string; pagina: number | null; observacao: string;
   paciente_anonimizado: boolean; autorizacao_paciente: boolean; criado_em: string;
+  subtema_id: string | null; triagem_status: MidiaPrivada["triagemStatus"]; triagem_motivo: string;
 };
 
 async function autenticacao(): Promise<{ supabase: SupabaseClient; userId: string }> {
@@ -34,13 +36,14 @@ function mapear(r: Registro, urlTemporaria: string | null): MidiaPrivada {
     disciplina: r.disciplina, tema: r.tema, subtema: r.subtema, diagnostico: r.diagnostico,
     modalidade: r.modalidade, fonte: r.fonte, pagina: r.pagina, observacao: r.observacao,
     pacienteAnonimizado: r.paciente_anonimizado, autorizacaoPaciente: r.autorizacao_paciente,
-    criadoEm: r.criado_em, urlTemporaria };
+    criadoEm: r.criado_em, urlTemporaria, subtemaId: r.subtema_id,
+    triagemStatus: r.triagem_status, triagemMotivo: r.triagem_motivo };
 }
 
 export async function carregarMidiaPrivada(): Promise<MidiaPrivada[]> {
   const { supabase, userId } = await autenticacao();
   const { data, error } = await supabase.from("midia_privada_usuario")
-    .select("id,object_path,titulo,tipo_origem,disciplina,tema,subtema,diagnostico,modalidade,fonte,pagina,observacao,paciente_anonimizado,autorizacao_paciente,criado_em")
+    .select("id,object_path,titulo,tipo_origem,disciplina,tema,subtema,diagnostico,modalidade,fonte,pagina,observacao,paciente_anonimizado,autorizacao_paciente,criado_em,subtema_id,triagem_status,triagem_motivo")
     .eq("owner_id", userId).order("criado_em", { ascending: false });
   if (error) throw new Error(`Nao foi possivel carregar a biblioteca privada: ${error.message}`);
   return Promise.all(((data ?? []) as Registro[]).map(async (r) => {

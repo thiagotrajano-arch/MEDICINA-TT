@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Check, X, ChevronRight, RotateCcw, ListChecks, PartyPopper, CalendarClock, History } from "lucide-react";
+import { Check, X, ChevronRight, RotateCcw, ListChecks, PartyPopper, CalendarClock, History, ChevronDown, Filter } from "lucide-react";
 import type { Disciplina, Questao } from "@/domain/content/types";
 import { registrarResposta, lerRespostas, sincronizarProgresso } from "@/lib/progresso";
 import { cn } from "@/lib/cn";
@@ -27,6 +27,7 @@ export function QuizClient({
   const [filtro, setFiltro] = useState<string>("todas");
   const [modoFila, setModoFila] = useState<ModoFila>("novas");
   const [mostrarRespondidas, setMostrarRespondidas] = useState(false);
+  const [disciplinasAbertas, setDisciplinasAbertas] = useState(false);
   const [respondidasBase, setRespondidasBase] = useState<Set<string>>(new Set());
   const [historico, setHistorico] = useState<ReturnType<typeof lerRespostas>>([]);
 
@@ -128,6 +129,7 @@ export function QuizClient({
 
   const reset = (novoFiltro: string) => {
     setFiltro(novoFiltro);
+    setDisciplinasAbertas(novoFiltro !== "todas");
     setMostrarRespondidas(false);
     window.localStorage.setItem(CHAVE_FILTROS, JSON.stringify({ filtro: novoFiltro, modo: modoFila }));
     montarFila(novoFiltro, false, respondidasBase, historico, modoFila);
@@ -208,16 +210,29 @@ export function QuizClient({
         <FiltroChip label="Revisão" active={modoFila === "revisao"} onClick={() => trocarModo("revisao")} />
         <FiltroChip label="Todas" active={modoFila === "todas"} onClick={() => trocarModo("todas")} />
       </div>
-      <div className="mb-6 flex flex-wrap gap-2" aria-label="Filtrar por disciplina">
-        <FiltroChip label="Todas" active={filtro === "todas"} onClick={() => reset("todas")} />
-        {disciplinasComQ.map((d) => (
-          <FiltroChip
-            key={d.id}
-            label={d.nome}
-            active={filtro === d.id}
-            onClick={() => reset(d.id)}
-          />
-        ))}
+      <div className="mb-6 rounded-2xl border border-border bg-surface p-3 sm:p-4" aria-label="Filtrar por disciplina">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-accent-soft text-accent"><Filter className="size-4" /></span>
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-text-faint">Disciplina</p>
+              <p className="truncate text-sm font-semibold text-text">{filtro === "todas" ? "Todas as disciplinas" : disciplinasComQ.find((d) => d.id === filtro)?.nome ?? "Disciplina selecionada"}</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => setDisciplinasAbertas((aberta) => !aberta)}
+            aria-expanded={disciplinasAbertas}
+            className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-lg border border-border px-3 text-xs font-semibold text-text-muted transition-colors hover:border-accent hover:text-accent"
+          >
+            {disciplinasAbertas ? "Ocultar" : "Escolher"}
+            <ChevronDown className={cn("size-3.5 transition-transform", disciplinasAbertas && "rotate-180")} />
+          </button>
+        </div>
+        {disciplinasAbertas && <div className="mt-3 flex flex-wrap gap-2 border-t border-border pt-3">
+          <FiltroChip label="Todas" active={filtro === "todas"} onClick={() => reset("todas")} />
+          {disciplinasComQ.map((d) => <FiltroChip key={d.id} label={d.nome} active={filtro === d.id} onClick={() => reset(d.id)} />)}
+        </div>}
       </div>
 
       <p className="mb-4 flex items-center gap-1.5 text-xs text-text-faint">

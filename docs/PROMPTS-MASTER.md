@@ -205,3 +205,12 @@ licenciadas, ancoradas no trecho certo.
 - Figura → `src/components/figuras/registry.tsx`, ancorada por `bloco.figura`.
 - Taxonomia → `src/content/taxonomy.ts`. `temConteudo` é **derivado** (não marcar à mão).
 - Após editar conteúdo: `npx tsx scripts/seed-supabase.mts`, depois `git push` (deploy automático).
+
+## PROMPT MASTER C — Imagens médicas de alta fidelidade
+
+Para toda imagem clínica, usar a ficha, os requisitos por modalidade, as
+restrições e os metadados de QA definidos em
+[`PROMPT-IMAGENS-MEDICAS-ALTA-FIDELIDADE.md`](./PROMPT-IMAGENS-MEDICAS-ALTA-FIDELIDADE.md).
+Imagens privadas ou comerciais ficam exclusivamente na biblioteca autenticada;
+imagens públicas exigem licença compatível e crédito. O prompt não autoriza
+inventar achados nem apresentar uma ilustração gerada como exame real.
