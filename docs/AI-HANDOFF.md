@@ -341,3 +341,17 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
   e respeito explícito a `prefers-reduced-motion`.
 - A prévia móvel foi revisada novamente em 390 x 844, com alternativas visíveis,
   sem rolagem horizontal e sem sobreposição da barra de áreas.
+
+## Publicação do redesign — 2026-08-09
+
+- A branch `agent/auditoria-integracoes-2026-08-09` foi enviada e o PR #2 foi
+  mesclado na `main` pelo commit `c260ef8`.
+- O workflow `Deploy (GitHub Pages)` `31338545947` concluiu build e deploy com
+  sucesso. Rotas `/`, `/questoes/`, `/biblioteca/`, `/mapas-mentais/` e
+  `/meu-curso/` foram verificadas no artefato publicado com HTTP 200 e sem
+  marcadores de erro de aplicação.
+- Auditorias finais: TypeScript, lint, build de 402 rotas, auditoria de 1.296
+  questões e privacidade (220 arquivos públicos + 3 curriculares) aprovados.
+- O redesign está publicado, mas Lighthouse/axe completos e QA autenticada de
+  login, agenda e `Minha mídia` continuam pendentes e não devem ser presumidos
+  como concluídos por este deploy.
