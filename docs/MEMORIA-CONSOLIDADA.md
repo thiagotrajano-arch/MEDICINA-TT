@@ -94,3 +94,16 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - Supabase remoto possui 10 migrations aplicadas; advisors ainda apontam extensões no schema público, leaked-password protection e índices sem uso.
 - Anki: snapshot local de 2026-08-09 registra 226 decks, 1.703 cartões e 210 decks vazios. A coleção viva não está disponível no AnkiConnect; não remover nem reorganizar até abrir uma única coleção.
 - Ver `docs/FECHAMENTO-2026-08-09.md` e `PROXIMOS-PASSOS.md` para a sequência retomável.
+
+## Decisão duradoura — design e PDFs diários — 2026-08-09
+
+- O usuário autorizou iniciar o redesign pelo planejamento, preservando dados,
+  conteúdo clínico, autenticação, progresso e acervo.
+- A experiência alvo terá cinco áreas: Hoje, Conhecimento, Treino, Acervo e Meu
+  curso. O centro do produto será a semana atual e a próxima ação de estudo.
+- O usuário enviará PDFs diariamente. Cada arquivo deve ser convertido para
+  Markdown privado antes da leitura, deduplicado e ligado à semana, disciplina,
+  tema/subtema, agenda e recursos existentes. Publicação clínica continua
+  condicionada a lacuna comprovada, fonte vigente e revisão.
+- Plano completo:
+  `docs/PLANO-REDESIGN-E-SEMANA-ATUAL-2026-08-09.md`.

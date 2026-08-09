@@ -1448,3 +1448,20 @@ As caixas abaixo continuam abertas no plano mestre. Algumas são tarefas recorre
 - O conector do Drive encontrou as pastas autorizáveis, mas o workflow remoto falhou por configuração ausente (`DRIVE_FOLDER_IDS`/credencial). Nenhum PDF foi publicado ou baixado pelo job.
 - Snapshot atual do Anki: 226 decks, 1.703 cartões e 210 decks vazios legados. A API responde v6, porém a coleção não está disponível; nenhuma escrita foi feita.
 - Registro detalhado: `docs/FECHAMENTO-2026-08-09.md` e nota privada `Auditoria e Proximos Passos 2026-08-09` no Obsidian.
+
+## Redesign e rotina contínua autorizados — 2026-08-09
+
+- O usuário autorizou iniciar a fase de design pelo planejamento. O plano
+  detalhado está em `docs/PLANO-REDESIGN-E-SEMANA-ATUAL-2026-08-09.md`.
+- A nova arquitetura terá cinco áreas principais: Hoje, Conhecimento, Treino,
+  Acervo e Meu curso. A árvore completa de disciplinas sairá da navegação global
+  e passará a ser contextual.
+- O site deverá manter uma “semana atual” privada, formada por foco confirmado,
+  disciplinas em curso, agenda, PDFs da semana e atividade recente. Prioridade
+  OMED será desempate, não substituto da rotina real.
+- Todo PDF enviado diariamente seguirá `PDF -> Markdown privado -> leitura
+  seletiva -> vínculo com semana/curso/subtema -> próxima ação`. Conteúdo
+  comercial, dados pessoais e imagens protegidas não serão publicados.
+- O primeiro lote de implementação será Bloco 0 + Bloco 1: linha de base,
+  correção da divergência de mídia privada, sistema visual e novo shell atrás de
+  feature flag. Nenhum dado ou conteúdo clínico será removido.

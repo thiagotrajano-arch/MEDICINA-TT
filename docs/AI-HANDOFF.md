@@ -292,3 +292,16 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - Anki snapshot atual: 226 decks, 1.703 cartões e 210 vazios; AnkiConnect v6 responde, mas a coleção não está disponível. Nenhuma escrita foi feita.
 - Próxima ordem: configurar allowlist privada do Drive → materializar GO/Obstetrícia → PDF→Markdown/hashes/deduplicação/OCR seletivo → vínculos curriculares → QA autenticada → Anki → Lighthouse/axe → publicação.
 - Registro completo: `docs/FECHAMENTO-2026-08-09.md`.
+
+## Redesign e semana atual — decisão de 2026-08-09
+
+- O usuário autorizou começar a fase de design pelo planejamento. Ler
+  `docs/PLANO-REDESIGN-E-SEMANA-ATUAL-2026-08-09.md` antes de alterar o shell
+  ou qualquer página.
+- A mudança não é apenas visual: a arquitetura alvo organiza o produto em Hoje,
+  Conhecimento, Treino, Acervo e Meu curso, com contexto privado de semana atual.
+- PDFs recebidos diariamente devem passar primeiro por Markdown privado e ser
+  ligados à semana, disciplina e subtema. Não copiar material comercial para o
+  conteúdo público e não inferir a rotina sem evidência.
+- Implementar primeiro linha de base + sistema visual + shell por feature flag,
+  preservando rotas, IDs, progresso, autenticação e acervo.
