@@ -206,3 +206,12 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - Push, merge e confirmação do Pages devem ser registrados após o retorno remoto.
 - Publicação não implica migration Supabase aplicada, QA autenticada, Drive,
   Anki, Lighthouse ou axe concluídos.
+
+## Confirmacao pos-publicacao — 2026-08-09
+
+- PR #5 mesclado na `main` no commit `bd98d584906792da9e70e02d9334a010eedd551d`.
+- GitHub Pages run `31341518573` terminou com sucesso; rotas publicas, robots e
+  sitemap responderam HTTP 200.
+- URL: https://thiagotrajano-arch.github.io/MEDICINA-TT/
+- Migration privada, QA autenticada, Lighthouse/axe, Drive, Anki e restore
+  continuam pendentes e nao foram simulados.

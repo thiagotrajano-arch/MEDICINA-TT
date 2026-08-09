@@ -553,3 +553,13 @@ portões separados.
 Este checklist só deve ser marcado como concluído após a confirmação do commit
 remoto e do workflow. Os portões não disponíveis (Lighthouse/axe completo,
 QA autenticada, migration remota e Anki) permanecem explicitamente pendentes.
+
+### Confirmacao pos-publicacao do Bloco 5
+
+- [x] PR #5 mesclado na `main` em `bd98d584906792da9e70e02d9334a010eedd551d`.
+- [x] Pages `31341518573` concluido com sucesso.
+- [x] Rotas publicas e arquivos de indexacao responderam HTTP 200.
+- [x] URL publicada: https://thiagotrajano-arch.github.io/MEDICINA-TT/
+
+O lote de 50 passos esta publicado. Migration Supabase, QA autenticada,
+Lighthouse/axe, Drive, Anki e restore seguem como pendencias independentes.

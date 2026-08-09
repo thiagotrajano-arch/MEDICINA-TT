@@ -419,3 +419,12 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
   PR/merge, workflow Pages e URLs verificadas após o retorno remoto.
 - Não confundir publicação do código com aplicação da migration privada nem com
   QA autenticada, Lighthouse/axe, Drive ou Anki.
+
+## Confirmacao pos-publicacao — 2026-08-09
+
+- PR #5 foi mesclado na `main` (`bd98d584906792da9e70e02d9334a010eedd551d`).
+- Pages run `31341518573` concluiu com sucesso e as rotas principais retornaram
+  HTTP 200 sem marcadores de erro.
+- Site publicado: https://thiagotrajano-arch.github.io/MEDICINA-TT/
+- Nao confundir deploy com migration remota, QA autenticada, Lighthouse/axe,
+  Drive, Anki ou restore; todos continuam como portoes separados.

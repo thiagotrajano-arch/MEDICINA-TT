@@ -1605,3 +1605,13 @@ CSS 51.234 bytes.
 
 O último item depende do retorno do GitHub Pages; não declarar deploy concluído
 até o workflow terminar.
+
+## Confirmacao final do Bloco 5 — publicado — 2026-08-09
+
+- [x] PR #5 mesclado na `main` pelo commit `bd98d584906792da9e70e02d9334a010eedd551d`.
+- [x] Workflow Pages `31341518573` concluido com sucesso.
+- [x] Oito rotas principais mais robots/sitemap responderam HTTP 200.
+- [x] Site publicado: https://thiagotrajano-arch.github.io/MEDICINA-TT/
+
+O lote foi publicado sem PDFs comerciais, imagens privadas, dados curriculares
+individuais ou credenciais. As pendencias externas permanecem registradas.
