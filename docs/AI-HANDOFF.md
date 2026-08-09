@@ -305,3 +305,27 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
   conteúdo público e não inferir a rotina sem evidência.
 - Implementar primeiro linha de base + sistema visual + shell por feature flag,
   preservando rotas, IDs, progresso, autenticação e acervo.
+
+## Redesign visual implementado — 2026-08-09
+
+- O primeiro lote visual foi implementado apenas na branch de agente, sem
+  publicação e sem migração de dados. A branch é a fronteira de rollback; não
+  há flag remota nova em produção.
+- A arquitetura global agora apresenta cinco áreas: Hoje, Conhecimento,
+  Treino, Acervo e Meu curso. Biblioteca, casos, mapas, simulados, mídia,
+  semestres e agenda continuam disponíveis como navegação contextual.
+- A paleta deixou o azul/ciano tecnológico: usa mineral + branco + grafite +
+  verde clínico + petróleo no claro e grafite esverdeado no escuro. Contrastes
+  dos tokens principais foram calculados acima de 4,5:1.
+- A sidebar desktop é recolhível (256/76 px). No celular, a barra de cinco áreas
+  participa do layout, tem alvos de 52 px e não cobre o conteúdo rolável.
+- A página Hoje foi reorganizada em próxima ação, ponto de partida, progresso,
+  atividade e conhecimento pessoal, mantendo todos os dados e destinos
+  anteriores.
+- QA aprovada: desktop 1440 x 1000, celular 390 x 844, claro/escuro, menu,
+  sidebar, navegação principal, sem overflow horizontal, sem erro de console e
+  checagens semânticas básicas. TypeScript, lint completo, privacidade, 1.296
+  questões e build de 402 páginas passaram.
+- Antes de publicar ainda faltam Lighthouse/axe completos, QA autenticada e
+  aprovação visual. Próximo bloco funcional: semana atual privada + primeiro
+  vínculo diário de PDF convertido para Markdown.

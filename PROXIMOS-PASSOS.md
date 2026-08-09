@@ -1465,3 +1465,30 @@ As caixas abaixo continuam abertas no plano mestre. Algumas são tarefas recorre
 - O primeiro lote de implementação será Bloco 0 + Bloco 1: linha de base,
   correção da divergência de mídia privada, sistema visual e novo shell atrás de
   feature flag. Nenhum dado ou conteúdo clínico será removido.
+
+## Execução do redesign — lote 1 — 2026-08-09
+
+- [x] Criar nova paleta acessível nos temas claro e escuro, sem o ciano como
+  identidade dominante.
+- [x] Reduzir a navegação global para Hoje, Conhecimento, Treino, Acervo e Meu
+  curso, preservando todas as rotas anteriores como contexto.
+- [x] Criar sidebar desktop recolhível e persistir apenas a preferência visual.
+- [x] Corrigir a arquitetura móvel: cinco alvos de 52 px, sem overflow e sem
+  sobreposição entre barra e conteúdo.
+- [x] Reorganizar Hoje em próxima ação, ponto de partida, progresso, atividade
+  e conhecimento pessoal sem remover ou fabricar dados.
+- [x] Validar claro/escuro em 1440 x 1000 e 390 x 844, menu, sidebar, rotas,
+  console, nomes acessíveis, `alt`, IDs e foco visível.
+- [x] Passar TypeScript, lint completo, privacidade, auditoria das 1.296
+  questões e build de 402 páginas.
+- [ ] Rodar Lighthouse/PageSpeed e axe completos nas rotas públicas principais.
+- [ ] Testar autenticado login, sessão, agenda e Minha mídia; resolver a
+  divergência de mídia visível por conta antes de publicar.
+- [ ] Obter aprovação visual explícita e somente então publicar o lote.
+- [ ] Implementar o Bloco 2: modelo privado de semana atual e primeiro fluxo
+  diário `PDF -> hash -> Markdown privado -> disciplina/subtema -> confirmação
+  -> semana -> próxima ação`.
+
+O lote permanece isolado na branch de agente. Não foi adicionada flag em
+produção porque a própria branch não publicada é a fronteira reversível desta
+fase.

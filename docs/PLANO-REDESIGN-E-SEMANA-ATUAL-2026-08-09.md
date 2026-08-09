@@ -388,3 +388,58 @@ não publica automaticamente.
 - https://www.amboss.com/int/students/study
 - https://www.osmosis.org/features
 - https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/
+
+## Estado de execução — lote visual de 2026-08-09
+
+O sistema visual e o shell do Bloco 1 foram implementados na branch de agente,
+sem publicação automática e sem alterar IDs, conteúdo clínico, autenticação,
+progresso, agenda, curso ou acervo.
+
+### Concluído neste lote
+
+- Paleta editorial clínica nova: fundo mineral, superfícies brancas, texto
+  grafite, verde clínico contido e petróleo profundo; tema escuro em camadas de
+  grafite esverdeado.
+- Contraste calculado para tokens de texto, identidade e ação nos dois temas;
+  todos os pares avaliados superaram 4,5:1.
+- Navegação global reduzida a Hoje, Conhecimento, Treino, Acervo e Meu curso.
+- Rotas existentes preservadas como navegação contextual de cada área.
+- Sidebar desktop reduzida de 288 px para 256 px, recolhível para 76 px e com
+  preferência persistida somente no navegador.
+- Barra móvel com cinco áreas, alvos de 52 px e espaço próprio no layout; ela
+  não se sobrepõe ao conteúdo rolável.
+- Cabeçalho, contexto de rota, busca e controles de tema/autenticação
+  padronizados.
+- Página Hoje reestruturada em próxima ação, ponto de partida, progresso,
+  atividade e conhecimento pessoal, reutilizando exclusivamente dados já
+  existentes.
+
+### Validação aprovada
+
+- Desktop 1440 x 1000 e celular 390 x 844 inspecionados nos temas claro e
+  escuro.
+- Menu móvel, recolhimento da sidebar e navegação pelas cinco áreas testados.
+- Sem rolagem horizontal em 390 px; barra móvel sem interseção com o `main`.
+- Um `h1`, zero botões/links sem nome acessível, zero imagens sem `alt` e zero
+  IDs duplicados na página Hoje; foco visível de 3 px confirmado.
+- TypeScript, ESLint completo, auditoria de privacidade, auditoria das 1.296
+  questões e build de produção com 402 páginas passaram.
+
+### Decisão de rollout
+
+Não foi criada uma flag remota dentro do produto: a branch ainda não publicada
+é a fronteira reversível deste lote. Produção permanece inalterada até a
+aprovação visual do usuário e a auditoria final de release.
+
+### Ainda aberto antes de publicação
+
+- Lighthouse/PageSpeed e axe completos nas rotas principais.
+- QA autenticada de login, sessão, agenda e mídia privada, incluindo a
+  divergência por conta já registrada.
+- Comparação visual final com produção e aprovação explícita do usuário.
+
+### Próximo bloco
+
+Implementar o modelo privado de semana atual e a primeira entrada diária de
+PDF: inventário e hash -> Markdown privado -> classificação -> sugestão de
+disciplina/subtema -> confirmação -> vínculo com semana e próxima ação.

@@ -107,3 +107,22 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
   condicionada a lacuna comprovada, fonte vigente e revisão.
 - Plano completo:
   `docs/PLANO-REDESIGN-E-SEMANA-ATUAL-2026-08-09.md`.
+
+## Implementação duradoura — shell e paleta — 2026-08-09
+
+- O novo shell foi implementado em branch não publicada, preservando todos os
+  dados e rotas. As cinco áreas globais são Hoje, Conhecimento, Treino, Acervo
+  e Meu curso; os destinos antigos permanecem em menus contextuais.
+- A identidade visual atual é editorial clínica: mineral, branco, grafite,
+  verde clínico e petróleo. O tema escuro usa grafite esverdeado; evitar voltar
+  ao ciano neon como cor dominante.
+- Sidebar desktop: 256 px aberta e 76 px recolhida, com preferência local.
+  Celular: cinco alvos de 52 px em uma barra que ocupa espaço real e não cobre
+  o `main`.
+- Hoje prioriza próxima ação e progresso real; não inventa semana, matéria ou
+  calendário. O modelo privado da semana permanece o próximo bloco.
+- Validação deste lote: 390 x 844 e 1440 x 1000, claro/escuro, navegação, foco e
+  semântica básica; TypeScript, lint, privacidade, auditoria de 1.296 questões e
+  build com 402 páginas aprovados.
+- Produção não foi alterada. Publicar somente após Lighthouse/axe, QA
+  autenticada e aprovação visual.
