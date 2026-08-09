@@ -127,6 +127,20 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - Produção não foi alterada. Publicar somente após Lighthouse/axe, QA
   autenticada e aprovação visual.
 
+## Publicação do redesign — 2026-08-09
+
+- O redesign visual e o shell por contexto foram publicados na `main` pelo
+  commit de merge `c260ef8`, PR #2.
+- O GitHub Pages concluiu o workflow `31338545947` com build e deploy
+  aprovados. As rotas principais foram conferidas com HTTP 200 e sem erro de
+  aplicação.
+- A auditoria final registrou 1.296 questões sem duplicatas, comentários
+  curtos/vazios ou fontes ausentes; privacidade passou com 220 arquivos
+  públicos e 3 curriculares.
+- Permanecem separados do público: PDFs comerciais, imagens privadas,
+  dados curriculares individuais, IDs do Drive e credenciais. Lighthouse/axe
+  completos e QA autenticada continuam como próximo portão.
+
 ## Acabamento visual adicional — 2026-08-09
 
 - O filtro de disciplina de `Questões` é expansível e mantém a seleção resumida;
