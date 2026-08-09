@@ -1,5 +1,12 @@
 # Fechamento operacional — 2026-08-09
 
+## Publicação preparada
+
+- Branch: `agent/auditoria-integracoes-2026-08-09`.
+- Commit: `8662c10`.
+- PR em rascunho: https://github.com/thiagotrajano-arch/MEDICINA-TT/pull/2
+- A produção permanece no commit anterior até revisão/merge.
+
 ## Portões aprovados
 
 - `npm.cmd run audit:questoes`: 1.296 questões, zero duplicatas, comentários vazios/curtos, fontes ausentes ou comentários semanticamente contraditórios em respostas corretas.
