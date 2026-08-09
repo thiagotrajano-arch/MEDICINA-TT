@@ -355,3 +355,22 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - O redesign está publicado, mas Lighthouse/axe completos e QA autenticada de
   login, agenda e `Minha mídia` continuam pendentes e não devem ser presumidos
   como concluídos por este deploy.
+
+## Bloco 2 local — semana atual — 2026-08-09
+
+- Foi criado o módulo privado `src/lib/semana-atual.ts` com semana, foco e
+  tarefas; ele usa Supabase quando disponível e fallback local-first quando a
+  sessão ou a migration ainda não está disponível.
+- A migration aditiva `supabase/migrations/20260809140000_cria_semana_atual_privada.sql`
+  cria quatro tabelas privadas com RLS, grants autenticados e vínculo composto
+  por proprietário. Nenhum conteúdo de Drive, SISCAD ou PDF é copiado.
+- `SemanaAtualPanel` foi integrado ao Hoje. O usuário confirma período, objetivo,
+  disciplina/tema e próximos passos; sem confirmação, o site não inventa a
+  matéria atual. OMED permanece apenas como desempate.
+- Validações: typecheck, lint, auditoria de 1.296 questões, privacidade (224
+  arquivos públicos + 3 curriculares) e build de 402 rotas passaram. A rota
+  local `/` respondeu HTTP 200 e não exibiu erro de aplicação.
+- O lote está somente local na branch `docs/publicacao-redesign`; não afirmar
+  sincronização remota nem publicação até aplicar e testar a migration.
+- Próximo bloco: conectar a entrada diária de PDF ao catálogo privado, sempre
+  `PDF → hash → Markdown → classificação → confirmação → semana`.

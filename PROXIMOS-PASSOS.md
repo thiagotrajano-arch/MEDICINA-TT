@@ -1518,3 +1518,24 @@ fase.
   logout, exclusão e isolamento da `Minha mídia`.
 - [ ] Bloco 2 da semana atual: `PDF -> hash -> Markdown privado ->
   disciplina/subtema -> semana -> próxima ação`.
+
+## Bloco 2 — semana atual privada — 10 passos executados localmente — 2026-08-09
+
+- [x] Modelo privado aditivo de semana, foco, tarefa e vínculo de recurso.
+- [x] RLS e grants por proprietário; sem acesso anônimo.
+- [x] Chave composta impede foco/tarefa de apontar para semana de outra conta.
+- [x] Tipos de domínio e validação de datas, período, prioridade e duração.
+- [x] Carregamento remoto opcional com fallback local-first.
+- [x] Confirmação manual do período e do foco, sem inferência automática.
+- [x] Próximos passos com atividade, data, duração e estado concluído/pendente.
+- [x] Painel integrado à página Hoje, preservando o shell publicado.
+- [x] TypeScript, lint, auditoria de 1.296 questões e privacidade aprovados;
+  build de 402 rotas concluída após reprocessar páginas lentas.
+- [x] Teste local da rota raiz: HTTP 200, painel de semana presente e nenhum
+  marcador de erro de aplicação.
+
+**Não publicado neste bloco:** a migration
+`20260809140000_cria_semana_atual_privada.sql` ainda precisa ser aplicada no
+Supabase remoto e validada com a conta real. O fallback local evita perda de
+rascunho até essa aplicação. A próxima sequência é a entrada diária de PDF
+metadata-first e o vínculo confirmado com a semana.

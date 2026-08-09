@@ -141,6 +141,21 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
   dados curriculares individuais, IDs do Drive e credenciais. Lighthouse/axe
   completos e QA autenticada continuam como próximo portão.
 
+## Bloco 2 local — semana atual privada — 2026-08-09
+
+- A camada de semana atual foi implementada de forma aditiva: semana, foco,
+  tarefas e vínculos de recursos têm tipos próprios, validação e RLS por
+  proprietário. Chaves compostas impedem que um foco/tarefa seja associado à
+  semana de outra conta.
+- O painel Hoje permite confirmar manualmente período, objetivo, disciplina,
+  tema e próximos passos. Enquanto não houver confirmação, a aplicação mostra
+  um estado vazio orientado e não infere a rotina.
+- A sincronização usa Supabase quando a tabela existe e sessão está ativa;
+  fallback local-first mantém o rascunho sem anunciar que houve sincronização.
+- A migration `20260809140000_cria_semana_atual_privada.sql` ainda não foi
+  aplicada no projeto remoto; a ponte PDF → Markdown → semana permanece no
+  próximo bloco. Nenhum dado privado foi publicado.
+
 ## Acabamento visual adicional — 2026-08-09
 
 - O filtro de disciplina de `Questões` é expansível e mantém a seleção resumida;

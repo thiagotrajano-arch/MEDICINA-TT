@@ -18,6 +18,7 @@ import {
   type ProgressoConteudo,
 } from "@/lib/progresso-conteudo";
 import { AnkiProgressImport } from "@/components/dashboard/AnkiProgressImport";
+import { SemanaAtualPanel } from "@/components/semana/SemanaAtualPanel";
 
 interface Props {
   disciplinas: Disciplina[];
@@ -118,6 +119,8 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
           </div>
         </div>
       </section>
+
+      <SemanaAtualPanel disciplinas={disciplinas} compacto />
 
       <section className="mt-7" aria-labelledby="titulo-progresso">
         <div className="mb-3 flex items-end justify-between gap-4">

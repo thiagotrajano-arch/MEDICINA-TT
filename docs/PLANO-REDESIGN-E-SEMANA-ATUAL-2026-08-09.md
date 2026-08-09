@@ -455,3 +455,33 @@ disciplina/subtema -> confirmação -> vínculo com semana e próxima ação.
   espaçamento e pesos próprios, respeitando movimento reduzido.
 - Teste visual adicional em 390 px confirmou cabeçalho, filtros, enunciado,
   alternativas e barra de áreas sem overflow horizontal.
+
+## Bloco 2 — semana atual privada — passos internos 1–10
+
+- [x] Definir a entidade privada da semana com início, fim, período, objetivo,
+  estado, origem e confirmação explícita.
+- [x] Criar tabelas privadas para semana, foco, tarefas e vínculos de recursos,
+  com limites de tamanho e estados controlados.
+- [x] Aplicar RLS por proprietário e grants somente para `authenticated` na
+  migration `20260809140000_cria_semana_atual_privada.sql`.
+- [x] Impedir vínculo de foco/tarefa com semana de outra conta usando chave
+  estrangeira composta `(owner_id, semana_id)`.
+- [x] Criar tipos de domínio para semana, foco, tarefa, atividade, origem e
+  confiança.
+- [x] Implementar carregamento remoto com fallback local-first, sem quebrar a
+  página quando a migration ainda não foi aplicada.
+- [x] Implementar confirmação manual da semana e do foco; o site não infere a
+  matéria atual sem evidência do usuário.
+- [x] Implementar próximos passos com data, atividade, duração e conclusão.
+- [x] Integrar o painel ao Hoje, mantendo sincronização e privacidade fora do
+  HTML público.
+- [x] Validar typecheck, lint, auditorias de questões/privacidade e build de
+  402 rotas; verificar a rota raiz local sem erro de aplicação.
+
+### Estado e próximos portões
+
+- O código está concluído localmente na branch `docs/publicacao-redesign`, mas
+  ainda não foi publicado. A migration precisa ser aplicada no Supabase remoto
+  e testada com a conta real antes de ativar sincronização em nuvem.
+- A entrada diária de PDF ainda será ligada ao catálogo privado no próximo
+  bloco: inventário/hash → Markdown → classificação → confirmação → vínculo.
