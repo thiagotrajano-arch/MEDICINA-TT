@@ -141,6 +141,21 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
   dados curriculares individuais, IDs do Drive e credenciais. Lighthouse/axe
   completos e QA autenticada continuam como próximo portão.
 
+## Bloco 2 local — semana atual privada — 2026-08-09
+
+- A camada de semana atual foi implementada de forma aditiva: semana, foco,
+  tarefas e vínculos de recursos têm tipos próprios, validação e RLS por
+  proprietário. Chaves compostas impedem que um foco/tarefa seja associado à
+  semana de outra conta.
+- O painel Hoje permite confirmar manualmente período, objetivo, disciplina,
+  tema e próximos passos. Enquanto não houver confirmação, a aplicação mostra
+  um estado vazio orientado e não infere a rotina.
+- A sincronização usa Supabase quando a tabela existe e sessão está ativa;
+  fallback local-first mantém o rascunho sem anunciar que houve sincronização.
+- A migration `20260809140000_cria_semana_atual_privada.sql` ainda não foi
+  aplicada no projeto remoto; a ponte PDF → Markdown → semana permanece no
+  próximo bloco. Nenhum dado privado foi publicado.
+
 ## Acabamento visual adicional — 2026-08-09
 
 - O filtro de disciplina de `Questões` é expansível e mantém a seleção resumida;
@@ -150,3 +165,44 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - `prose-med` agora estiliza h2/h3 e desliga rolagem suave quando o usuário
   prefere movimento reduzido.
 - QA visual extra em 390 x 844 passou para questões, menu e barra móvel.
+
+## Bloco 2 local — materiais privados ligados à semana — 2026-08-09
+
+- O painel `MateriaisDaSemanaPanel` permite pesquisar o catálogo privado e
+  confirmar ou remover vínculos da semana atual, sem expor o arquivo bruto.
+- `semana-materiais.ts` usa Supabase quando a sessão e as tabelas existem e
+  mantém vínculos locais pendentes quando a migration ainda não foi aplicada.
+- O vínculo é por material/semana e idempotente; a fonte original permanece
+  intacta ao desvincular.
+- Os defaults SQL inválidos da migration foram corrigidos antes da publicação.
+- Aplicação remota e teste autenticado seguem pendentes; o lote continua local.
+
+## Bloco 3 local — acessibilidade e rotas — 2026-08-09
+
+- Foi criado `npm run audit:rotas` para validar oito rotas principais sem
+  instalar dependências: HTTP, erros de aplicação, alt, nomes de controles,
+  IDs e h1.
+- O último resultado foi PASS em todas as rotas; `/meu-curso`, `/agenda` e
+  `/minha-midia` são client-gated e podem entregar SSR sem h1 antes da sessão.
+- Lighthouse/axe completos, contraste, teclado e QA com conta real continuam
+  pendentes e não foram declarados concluídos.
+
+## Bloco 4 local — editorial, privacidade e performance — 2026-08-09
+
+- Auditoria de questões: 1.296 itens, zero duplicatas, curtos, vazios, fontes
+  ausentes ou comentários corretos contraditórios.
+- Auditoria de privacidade: 227 arquivos públicos e 3 curriculares; nenhum PDF
+  comercial, mídia privada ou credencial entrou no bundle.
+- Migration da semana revisada com RLS/grants por proprietário e defaults SQL
+  válidos; `robots.txt` e `sitemap.xml` mantêm rotas privadas fora da indexação.
+- Export medido em 4,57 MB; build lento permanece alerta separado.
+- Lighthouse/axe, QA autenticada, Drive, SISCAD, Anki e restore continuam abertos.
+
+## Bloco 5 local — release — 2026-08-09
+
+- O lote de 50 passos foi fechado localmente com typecheck, lint, auditorias,
+  rotas e build de 402 páginas; o relatório está em
+  `docs/RELEASE-AUDIT-2026-08-09.md`.
+- Push, merge e confirmação do Pages devem ser registrados após o retorno remoto.
+- Publicação não implica migration Supabase aplicada, QA autenticada, Drive,
+  Anki, Lighthouse ou axe concluídos.

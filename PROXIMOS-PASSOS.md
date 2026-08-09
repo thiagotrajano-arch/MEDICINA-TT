@@ -1518,3 +1518,90 @@ fase.
   logout, exclusão e isolamento da `Minha mídia`.
 - [ ] Bloco 2 da semana atual: `PDF -> hash -> Markdown privado ->
   disciplina/subtema -> semana -> próxima ação`.
+
+## Bloco 2 — semana atual privada — 10 passos executados localmente — 2026-08-09
+
+- [x] Modelo privado aditivo de semana, foco, tarefa e vínculo de recurso.
+- [x] RLS e grants por proprietário; sem acesso anônimo.
+- [x] Chave composta impede foco/tarefa de apontar para semana de outra conta.
+- [x] Tipos de domínio e validação de datas, período, prioridade e duração.
+- [x] Carregamento remoto opcional com fallback local-first.
+- [x] Confirmação manual do período e do foco, sem inferência automática.
+- [x] Próximos passos com atividade, data, duração e estado concluído/pendente.
+- [x] Painel integrado à página Hoje, preservando o shell publicado.
+- [x] TypeScript, lint, auditoria de 1.296 questões e privacidade aprovados;
+  build de 402 rotas concluída após reprocessar páginas lentas.
+- [x] Teste local da rota raiz: HTTP 200, painel de semana presente e nenhum
+  marcador de erro de aplicação.
+
+**Não publicado neste bloco:** a migration
+`20260809140000_cria_semana_atual_privada.sql` ainda precisa ser aplicada no
+Supabase remoto e validada com a conta real. O fallback local evita perda de
+rascunho até essa aplicação. A próxima sequência é a entrada diária de PDF
+metadata-first e o vínculo confirmado com a semana.
+
+## Bloco 2 — materiais privados ligados à semana — 10 passos executados localmente — 2026-08-09
+
+- [x] Reusar o catálogo privado somente como metadados.
+- [x] Criar serviço de leitura de vínculos por semana.
+- [x] Tornar o vínculo material/semana idempotente.
+- [x] Permitir desvinculação sem excluir a fonte.
+- [x] Manter fallback local-first sem prometer nuvem.
+- [x] Exibir materiais privados dentro da Semana atual.
+- [x] Adicionar busca por título, disciplina, tema e subtema.
+- [x] Exibir a classificação antes da confirmação.
+- [x] Ligar à rota autenticada Minha mídia.
+- [x] Corrigir defaults inválidos da migration e validar tipos/lint.
+
+Pendente externo: aplicar `20260809140000_cria_semana_atual_privada.sql` no
+Supabase remoto e testar com a conta do usuário. PDFs comerciais, imagens
+privadas e texto protegido continuam fora do GitHub Pages.
+
+## Bloco 3 — acessibilidade, estados e QA de rotas — 10 passos executados localmente — 2026-08-09
+
+- [x] Criar auditoria repetível das rotas principais.
+- [x] Confirmar HTTP 200 em oito rotas.
+- [x] Procurar erros de aplicação no HTML.
+- [x] Procurar credenciais e tabelas privadas no HTML público.
+- [x] Procurar imagens sem `alt`.
+- [x] Procurar botões sem nome acessível.
+- [x] Procurar IDs duplicados.
+- [x] Aceitar SSR vazio apenas nas rotas protegidas client-gated.
+- [x] Verificar build estático exportado sem conteúdo privado.
+- [x] Registrar a limitação: axe/Lighthouse e QA autenticada continuam pendentes.
+
+Comando criado: `npm run audit:rotas`. O último lote passou em `/`, `/questoes/`,
+`/biblioteca/`, `/mapas-mentais/`, `/meu-curso/`, `/agenda/`, `/minha-midia/` e
+`/semestres/`.
+
+## Bloco 4 — editorial, privacidade e performance — 10 passos executados localmente — 2026-08-09
+
+- [x] Auditoria editorial das 1.296 questões reexecutada.
+- [x] Zero duplicatas, comentários vazios/curtos, fontes ausentes e contradições.
+- [x] Auditoria de privacidade reexecutada: 227 arquivos públicos e 3 curriculares.
+- [x] Busca de senha/credenciais nos arquivos rastreados sem valores expostos.
+- [x] Referências a secrets limitadas a nomes de configuração/workflow.
+- [x] RLS, grants e checks da migration privada revisados.
+- [x] `robots.txt` e `sitemap.xml` confirmados; rotas privadas fora do sitemap.
+- [x] Bundle exportado medido antes de dependências novas.
+- [x] Build lento registrado como alerta de otimização, não como falso sucesso.
+- [x] Pendências externas mantidas: Drive, SISCAD, PDFs, Anki, restore, Lighthouse e axe.
+
+Medição do export: 41 arquivos, 4.567.424 bytes; JavaScript 4.271.371 bytes;
+CSS 51.234 bytes.
+
+## Bloco 5 — fechamento e publicação — 10 passos executados localmente — 2026-08-09
+
+- [x] Diff revisado e escopo separado.
+- [x] Privacidade e segredos verificados.
+- [x] Typecheck, lint, auditorias editorial/privacidade executados.
+- [x] Auditoria estrutural das rotas executada.
+- [x] Build completo de 402 rotas concluído.
+- [x] Bundle medido e alerta de performance registrado.
+- [x] Handoff, memória, plano e Obsidian atualizados.
+- [x] Relatório `docs/RELEASE-AUDIT-2026-08-09.md` criado.
+- [x] Push/PR/merge autorizados preparados.
+- [x] Verificação Pages será registrada após o workflow remoto.
+
+O último item depende do retorno do GitHub Pages; não declarar deploy concluído
+até o workflow terminar.

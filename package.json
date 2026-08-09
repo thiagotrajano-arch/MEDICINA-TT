@@ -11,6 +11,7 @@
     "audit:questoes": "tsx scripts/audit-questoes.mts",
     "fix:feedback-questoes": "tsx scripts/normalizar-feedback-questoes.mts",
     "audit:privacidade": "tsx scripts/audit-privacidade-publica.mts",
+    "audit:rotas": "tsx scripts/audit-static-routes.mts",
     "seed": "tsx scripts/seed-supabase.mts",
     "sync-drive": "tsx scripts/sync-drive.mts",
     "drive:inventory": "tsx scripts/sync-drive.mts --inventario",

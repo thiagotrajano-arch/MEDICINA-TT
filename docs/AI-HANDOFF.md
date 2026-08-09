@@ -355,3 +355,67 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - O redesign está publicado, mas Lighthouse/axe completos e QA autenticada de
   login, agenda e `Minha mídia` continuam pendentes e não devem ser presumidos
   como concluídos por este deploy.
+
+## Bloco 2 local — semana atual — 2026-08-09
+
+- Foi criado o módulo privado `src/lib/semana-atual.ts` com semana, foco e
+  tarefas; ele usa Supabase quando disponível e fallback local-first quando a
+  sessão ou a migration ainda não está disponível.
+- A migration aditiva `supabase/migrations/20260809140000_cria_semana_atual_privada.sql`
+  cria quatro tabelas privadas com RLS, grants autenticados e vínculo composto
+  por proprietário. Nenhum conteúdo de Drive, SISCAD ou PDF é copiado.
+- `SemanaAtualPanel` foi integrado ao Hoje. O usuário confirma período, objetivo,
+  disciplina/tema e próximos passos; sem confirmação, o site não inventa a
+  matéria atual. OMED permanece apenas como desempate.
+- Validações: typecheck, lint, auditoria de 1.296 questões, privacidade (224
+  arquivos públicos + 3 curriculares) e build de 402 rotas passaram. A rota
+  local `/` respondeu HTTP 200 e não exibiu erro de aplicação.
+- O lote está somente local na branch `docs/publicacao-redesign`; não afirmar
+  sincronização remota nem publicação até aplicar e testar a migration.
+- Próximo bloco: conectar a entrada diária de PDF ao catálogo privado, sempre
+  `PDF → hash → Markdown → classificação → confirmação → semana`.
+
+## Bloco 2 local — materiais privados e semana — 2026-08-09
+
+- `src/lib/semana-materiais.ts` lista, vincula e desvincula materiais privados
+  por semana com chave idempotente, RLS e fallback local-first.
+- `src/components/semana/MateriaisDaSemanaPanel.tsx` foi ligado ao painel da
+  Semana atual; a busca usa somente título, disciplina, tema e subtema.
+- A migration `20260809140000_cria_semana_atual_privada.sql` teve os defaults
+  de estado corrigidos para valores aceitos pelos checks SQL.
+- Typecheck e lint passaram; a migration continua local até aplicação remota.
+- Nenhum PDF, DOCX, imagem comercial, hash ou credencial foi publicado.
+
+## Bloco 3 local — acessibilidade e rotas — 2026-08-09
+
+- `scripts/audit-static-routes.mts` foi adicionado como gate leve para oito
+  rotas, sem dependência nova e sem conteúdo privado.
+- O gate verifica status, marcadores de erro, imagens sem `alt`, botões sem nome,
+  IDs duplicados e `h1`; rotas protegidas podem ter SSR vazio antes da hidratação.
+- O lote exportado passou em todas as oito rotas. Isso não substitui axe,
+  Lighthouse/PageSpeed, teclado, contraste ou QA autenticada.
+- O servidor de teste local foi encerrado após a verificação; nenhum cache de
+  build foi incluído no Git.
+
+## Bloco 4 local — editorial, privacidade e performance — 2026-08-09
+
+- Auditorias `audit:questoes` e `audit:privacidade` passaram: 1.296 questões
+  limpas; 227 arquivos públicos e 3 curriculares verificados.
+- Busca rastreada não encontrou senha ou valor de credencial; referências a
+  secrets são apenas nomes em workflow, documentação ou código de configuração.
+- A migration privada foi revisada para RLS, grants autenticados, owner checks
+  e defaults que satisfazem os checks SQL.
+- `robots.txt` bloqueia Minha mídia, Meu curso e Agenda; `sitemap.xml` não os
+  inclui. O export tem 41 assets e 4,57 MB.
+- Build anterior levou cerca de 308 s e reprocessou páginas lentas; otimização
+  continua aberta. Não declarar Lighthouse/axe nem QA autenticada concluídos.
+
+## Bloco 5 local — release — 2026-08-09
+
+- Gate local completo: typecheck, lint, auditorias de questões/privacidade,
+  `audit:rotas`, diff-check e build de 402 rotas.
+- Relatório reproduzível em `docs/RELEASE-AUDIT-2026-08-09.md`.
+- A branch está pronta para push e publicação autorizada; registrar commit,
+  PR/merge, workflow Pages e URLs verificadas após o retorno remoto.
+- Não confundir publicação do código com aplicação da migration privada nem com
+  QA autenticada, Lighthouse/axe, Drive ou Anki.
