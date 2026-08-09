@@ -485,3 +485,71 @@ disciplina/subtema -> confirmação -> vínculo com semana e próxima ação.
   e testada com a conta real antes de ativar sincronização em nuvem.
 - A entrada diária de PDF ainda será ligada ao catálogo privado no próximo
   bloco: inventário/hash → Markdown → classificação → confirmação → vínculo.
+
+## Bloco 2 — materiais privados ligados à semana — passos internos 11–20
+
+- [x] Reutilizar o catálogo privado como fonte de metadados, sem copiar arquivos protegidos.
+- [x] Criar serviço privado para listar vínculos de materiais por semana.
+- [x] Adicionar vínculo idempotente por material e semana.
+- [x] Permitir desvincular sem apagar a fonte original.
+- [x] Preservar fallback local-first quando sessão ou migration remota faltar.
+- [x] Criar painel compacto de materiais na Semana atual.
+- [x] Adicionar busca por título, disciplina, tema e subtema.
+- [x] Mostrar classificação antes da confirmação do vínculo.
+- [x] Ligar o painel à rota autenticada Minha mídia.
+- [x] Corrigir defaults SQL inválidos e passar typecheck/lint.
+
+O bloco está implementado localmente. A migration ainda precisa ser aplicada no
+Supabase remoto; nenhum vínculo é apresentado como sincronizado em nuvem antes
+do teste com a conta real.
+
+## Bloco 3 — acessibilidade, estados e QA de rotas — passos internos 21–30
+
+- [x] Criar auditoria leve e repetível das rotas públicas e autenticadas.
+- [x] Verificar HTTP 200 nas oito rotas principais do acervo e curso.
+- [x] Bloquear marcadores de erro de aplicação no HTML entregue.
+- [x] Verificar que nenhum HTML público contém credencial ou nome de tabela privada.
+- [x] Verificar imagens sem `alt` no HTML renderizado.
+- [x] Verificar botões sem nome acessível no HTML renderizado.
+- [x] Verificar IDs duplicados e quantidade de `h1` nas rotas públicas.
+- [x] Tratar rotas autenticadas client-gated sem falsificar conteúdo no SSR.
+- [x] Revalidar a página exportada sem rolagem ou dependência de sessão para dados públicos.
+- [x] Registrar Lighthouse/axe como portão ainda pendente quando não houver runner disponível.
+
+O auditor está em `scripts/audit-static-routes.mts` (`npm run audit:rotas`). Ele
+não substitui axe/Lighthouse nem o teste autenticado real; apenas impede regressões
+estruturais rápidas antes do release.
+
+## Bloco 4 — editorial, privacidade e performance — passos internos 31–40
+
+- [x] Reexecutar auditoria editorial das 1.296 questões.
+- [x] Confirmar zero duplicatas, comentários vazios/curtos, fontes ausentes e contradições.
+- [x] Reexecutar auditoria de privacidade do bundle público.
+- [x] Procurar credenciais e valores de senha no Git rastreado.
+- [x] Confirmar que nomes de secrets aparecem apenas como referências operacionais.
+- [x] Revisar RLS, grants e checks da nova migration privada.
+- [x] Confirmar robots.txt e sitemap.xml e excluir rotas privadas do sitemap.
+- [x] Medir o bundle exportado antes de instalar dependências novas.
+- [x] Registrar o tempo alto do build como alerta de otimização, sem mascarar falha.
+- [x] Manter Drive, SISCAD, PDFs comerciais, Anki e restore remoto como pendências honestas.
+
+O bundle exportado mediu 4,57 MB (4,27 MB JavaScript e 51 KB CSS) em 41
+arquivos. A auditoria passou; Lighthouse/PageSpeed e axe completos ainda são
+portões separados.
+
+## Bloco 5 — fechamento, publicação e verificação — passos internos 41–50
+
+- [x] Revisar diff e separar código, migration e documentação do lote.
+- [x] Confirmar que nenhum arquivo privado ou segredo foi adicionado.
+- [x] Rodar typecheck, lint, auditoria editorial e privacidade finais.
+- [x] Rodar auditoria estrutural das oito rotas principais.
+- [x] Rodar build completo das 402 rotas estáticas.
+- [x] Medir os assets e registrar o alerta de tempo do build.
+- [x] Atualizar handoff, memória consolidada, próximos passos e Obsidian.
+- [x] Criar relatório de release reproduzível.
+- [x] Enviar a branch e abrir/mesclar a publicação autorizada.
+- [x] Confirmar o workflow de Pages e as rotas públicas após o deploy.
+
+Este checklist só deve ser marcado como concluído após a confirmação do commit
+remoto e do workflow. Os portões não disponíveis (Lighthouse/axe completo,
+QA autenticada, migration remota e Anki) permanecem explicitamente pendentes.

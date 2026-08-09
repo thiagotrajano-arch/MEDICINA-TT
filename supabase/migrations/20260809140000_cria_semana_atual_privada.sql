@@ -31,7 +31,7 @@ create table if not exists public.foco_semana_usuario (
   prioridade text not null default 'media' check (prioridade in ('alta', 'media', 'baixa')),
   origem text not null default 'manual' check (origem in ('manual', 'agenda', 'curso', 'pdf', 'atividade', 'omed')),
   confianca numeric(3,2) not null default 1.00 check (confianca >= 0 and confianca <= 1),
-  estado text not null default 'confirmar' check (estado in ('confirmado', 'sugerido', 'rejeitado')),
+  estado text not null default 'sugerido' check (estado in ('confirmado', 'sugerido', 'rejeitado')),
   criado_em timestamptz not null default now(),
   atualizado_em timestamptz not null default now(),
   unique (owner_id, semana_id, disciplina_id, tema, subtema)
@@ -83,7 +83,7 @@ create table if not exists public.vinculo_recurso_usuario (
   tema text not null default '' check (char_length(tema) <= 180),
   subtema text not null default '' check (char_length(subtema) <= 180),
   confianca numeric(3,2) not null default 1.00 check (confianca >= 0 and confianca <= 1),
-  estado text not null default 'confirmar' check (estado in ('confirmado', 'sugerido', 'rejeitado')),
+  estado text not null default 'sugerido' check (estado in ('confirmado', 'sugerido', 'rejeitado')),
   origem text not null default 'manual' check (origem in ('manual', 'pdf', 'agenda', 'curso', 'atividade')),
   criado_em timestamptz not null default now(),
   atualizado_em timestamptz not null default now(),
@@ -98,6 +98,32 @@ alter table public.vinculo_recurso_usuario
 
 create index if not exists vinculo_recurso_usuario_owner_semana_idx
   on public.vinculo_recurso_usuario(owner_id, semana_id, estado);
+
+-- O ID do material sozinho não prova que ele pertence à mesma conta. O
+-- trigger impede que um vínculo aponte para material privado de outro usuário.
+create or replace function public.validar_vinculo_material_privado_owner()
+returns trigger
+language plpgsql
+security invoker
+set search_path = public
+as $$
+begin
+  if new.material_id is not null and not exists (
+    select 1 from public.material_privado_usuario material
+    where material.id = new.material_id and material.owner_id = new.owner_id
+  ) then
+    raise exception 'material privado não pertence ao proprietário do vínculo';
+  end if;
+  return new;
+end;
+$$;
+
+revoke all on function public.validar_vinculo_material_privado_owner() from public;
+grant execute on function public.validar_vinculo_material_privado_owner() to authenticated;
+drop trigger if exists vinculo_recurso_material_owner_check on public.vinculo_recurso_usuario;
+create trigger vinculo_recurso_material_owner_check
+  before insert or update on public.vinculo_recurso_usuario
+  for each row execute function public.validar_vinculo_material_privado_owner();
 
 revoke all on public.semana_estudo_usuario from anon;
 revoke all on public.foco_semana_usuario from anon;

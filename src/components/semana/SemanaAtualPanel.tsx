@@ -5,6 +5,7 @@ import { CalendarCheck, Check, CircleAlert, Cloud, CloudOff, Plus, RotateCcw, Ta
 import type { Disciplina } from "@/domain/content/types";
 import type { AtividadeSemana, EntradaFoco, SemanaAtualDados, TarefaSemana } from "@/domain/semana/types";
 import { alternarTarefaSemana, carregarSemanaAtual, periodoAtual, salvarFocoSemana, salvarSemanaAtual, salvarTarefaSemana } from "@/lib/semana-atual";
+import { MateriaisDaSemanaPanel } from "@/components/semana/MateriaisDaSemanaPanel";
 
 const ATIVIDADES: Array<{ id: AtividadeSemana; label: string }> = [
   { id: "resumo", label: "Resumo" },
@@ -98,6 +99,7 @@ export function SemanaAtualPanel({ disciplinas, compacto = false }: Props) {
       <div><div className="flex items-center justify-between gap-3"><h3 className="text-sm font-bold text-text">Próximos passos</h3><button type="button" onClick={() => void carregar()} className="inline-flex items-center gap-1.5 text-xs font-semibold text-text-faint hover:text-accent"><RotateCcw className="size-3.5" /> Atualizar</button></div>{!dados.tarefas.length ? <p className="mt-3 rounded-xl bg-surface-2 p-3 text-xs text-text-muted">Nenhum passo planejado. Comece com uma ação pequena e rastreável.</p> : <div className="mt-3 space-y-2">{dados.tarefas.slice(0, 6).map((item) => <Tarefa key={item.id} item={item} onToggle={() => void alternar(item)} disabled={ocupado} />)}</div>}</div>
       <form onSubmit={adicionarTarefa} className="rounded-xl border border-border bg-surface-2 p-4"><h3 className="flex items-center gap-2 text-sm font-bold text-text"><Plus className="size-4 text-accent" /> Adicionar próximo passo</h3><div className="mt-3 grid gap-3"><Campo label="Título"><input required maxLength={180} value={tarefa.titulo} onChange={(e) => setTarefa({ ...tarefa, titulo: e.target.value })} placeholder="Ex.: revisar 10 questões de valvopatias" className={input} /></Campo><div className="grid grid-cols-2 gap-3"><Campo label="Data"><input required type="date" value={tarefa.data} onChange={(e) => setTarefa({ ...tarefa, data: e.target.value })} className={input} /></Campo><Campo label="Duração"><input type="number" min="1" max="720" value={tarefa.duracaoMin} onChange={(e) => setTarefa({ ...tarefa, duracaoMin: e.target.value })} placeholder="min" className={input} /></Campo></div><Campo label="Atividade"><select value={tarefa.atividade} onChange={(e) => setTarefa({ ...tarefa, atividade: e.target.value as AtividadeSemana })} className={input}>{ATIVIDADES.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select></Campo><button disabled={ocupado} className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-sm font-semibold text-text-muted hover:border-accent hover:text-accent disabled:opacity-60"><Plus className="size-4" /> Salvar passo</button></div></form>
     </div>}
+    {dados.semana && <MateriaisDaSemanaPanel semanaId={dados.semana.id} />}
   </section>;
 }
 
