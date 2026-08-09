@@ -30,7 +30,10 @@ Foi criada uma central privada com uma página de visão geral e as bases `Rotin
 
 - Coleção aberta e AnkiConnect v6 confirmado.
 - Backup local pré-ajuste: `exports/anki/backup-pre-repair-20260809.apkg`.
-- Organização aplicada sem apagar decks: títulos compactos e CSS do modelo
-  `OMED Bonito` atualizado.
+- Organização aplicada com títulos compactos e CSS do modelo `OMED Bonito`;
+  depois, os decks legados vazios foram removidos com autorização explícita.
 - Snapshot antes/depois: 1.703 cartões, sem mudança de contagem.
-- Os decks vazios antigos continuam preservados até autorização de remoção.
+- Backup pré-limpeza: `exports/anki/backup-before-deck-cleanup-20260809.apkg`.
+- Estado final: 108 decks totais, 16 decks Codex monitorados, 1.703 cartões e
+  zero decks legados com nomes longos.
+- Snapshot pós-limpeza: `exports/anki/progresso-after-cleanup.json`.

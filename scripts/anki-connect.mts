@@ -417,7 +417,9 @@ async function organizarDecks(aplicar: boolean) {
     for (let indice = 0; indice < cards.length; indice += 200) {
       await anki("changeDeck", { cards: cards.slice(indice, indice + 200), deck: item.destino });
     }
-    if (limparVazios && cards.length === 0) await anki("deleteDecks", { decks: [item.origem], cardsToo: false });
+    // Anki 2.1.28+ requires cardsToo=true to delete a deck. The guard above
+    // proves this deck has no cards, so this cannot remove a card.
+    if (limparVazios && cards.length === 0) await anki("deleteDecks", { decks: [item.origem], cardsToo: true });
     console.log(`[anki] ${cards.length} cartao(oes) movido(s): ${item.origem} -> ${item.destino}.`);
   }
   try {

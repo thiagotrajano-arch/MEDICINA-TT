@@ -222,5 +222,13 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - Backup pré-ajuste salvo localmente em `exports/anki/backup-pre-repair-20260809.apkg`.
 - Reorganização segura aplicada: títulos/modelo compactos, decks curtos por
   disciplina e zero alteração na contagem de 1.703 cartões.
-- 209 decks legados vazios continuam preservados; não apagar sem confirmação.
+- Após autorização explícita, os 210 decks legados vazios foram removidos; a
+  verificação final manteve 1.703 cartões e nenhum nome legado.
 - Progresso antes/depois foi exportado em `exports/anki/` e não é enviado ao site.
+
+### Resultado definitivo da limpeza
+
+- Backup pré-limpeza: `exports/anki/backup-before-deck-cleanup-20260809.apkg`.
+- Estado final: 108 decks totais, 16 decks Codex monitorados, 1.703 cartões;
+  `card_delta = 0`.
+- Snapshot final: `exports/anki/progresso-after-cleanup.json`.

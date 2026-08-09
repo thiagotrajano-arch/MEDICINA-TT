@@ -41,4 +41,12 @@ PDFs comerciais, imagens de pacientes, credenciais, IDs do Drive e dados curricu
 - Foi criado backup local `.apkg` antes da reorganização.
 - O estilo `OMED Bonito` recebeu títulos compactos; os 1.703 cartões foram
   conferidos antes/depois sem alteração de quantidade.
-- Nenhum deck foi removido. Os 209 legados vazios aguardam autorização explícita.
+- Após autorização explícita, os 210 decks legados vazios foram removidos sem
+  apagar cartões; a verificação final manteve 1.703 cartões.
+
+## Resultado final da organização de títulos — 2026-08-09
+
+- Backup pré-limpeza: `exports/anki/backup-before-deck-cleanup-20260809.apkg`.
+- Estado pós-limpeza: 108 decks totais, 16 decks Codex monitorados e 1.703
+  cartões; nenhum nome legado restante.
+- Snapshot: `exports/anki/progresso-after-cleanup.json`.

@@ -434,8 +434,18 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - AnkiConnect v6 respondeu com a coleção aberta; o inventário atual tem 318
   decks, dos quais 226 entram no snapshot do Codex Medicus, com 1.703 cartões.
 - Backup local pré-ajuste: `exports/anki/backup-pre-repair-20260809.apkg`.
-- `anki:organizar -- --aplicar` foi executado sem `--limpar-vazios`: estilo
-  `OMED Bonito` atualizado, cartões preservados e nenhum deck antigo apagado.
+- `anki:organizar -- --aplicar` foi executado e o estilo `OMED Bonito` foi
+  atualizado; a limpeza posterior removeu apenas decks legados vazios, mediante
+  autorização explícita.
 - Snapshots antes/depois têm 1.703 cartões e nenhuma mudança de contagem.
-- Os 209 decks `Codex Medicus - ...` permanecem vazios e preservados; somente
-  remover após confirmação explícita do usuário.
+- Backup pré-limpeza: `exports/anki/backup-before-deck-cleanup-20260809.apkg`.
+- Estado atual: 108 decks totais, 16 decks Codex monitorados, 1.703 cartões e
+  zero nomes legados restantes. Snapshot: `exports/anki/progresso-after-cleanup.json`.
+
+## Limpeza autorizada do Anki — 2026-08-09
+
+- O AnkiConnect v6 respondeu com a coleção aberta.
+- Os 210 alvos tinham `findCards = 0`; a chamada `deleteDecks` usou
+  `cardsToo=true` apenas porque as versões atuais do Anki exigem esse campo.
+- Nenhum cartão foi apagado, movido ou duplicado. A operação não toca no site
+  público nem expõe o endpoint local.

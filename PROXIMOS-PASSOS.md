@@ -1627,7 +1627,21 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
 - [x] Conferência pós-ajuste: 226 decks monitorados e 1.703 cartões antes e
   depois; nenhuma contagem mudou e nenhuma duplicata foi criada.
 - [x] Decks curtos por disciplina preservados (`Codex Medicus::...`).
-- [ ] 209 decks legados vazios continuam preservados; remover exige autorização
-  explícita, pois é uma exclusão de decks, ainda que sem cartões.
+- [x] Após autorização explícita, os 210 decks legados vazios (209 nomes
+  longos e 1 deck aninhado) foram removidos sem apagar cartões.
 - [ ] Validar visualmente o modelo no Anki e instalar extensões somente se a
   versão/backup forem confirmados.
+
+## Fechamento da limpeza de títulos do Anki — 2026-08-09
+
+- [x] Autorização explícita registrada para excluir somente decks vazios.
+- [x] Backup imediatamente anterior preservado em
+  `exports/anki/backup-before-deck-cleanup-20260809.apkg`.
+- [x] A API do Anki exigiu `cardsToo=true`; a rotina só o utilizou depois de
+  confirmar `findCards = 0` em cada alvo.
+- [x] Removidos 210 decks legados; nenhum cartão foi excluído ou movido.
+- [x] Verificação pós-operação: 108 decks totais, 16 decks Codex monitorados e
+  1.703 cartões (delta de cartões = 0); nenhum nome legado restante.
+- [x] Snapshot pós-limpeza: `exports/anki/progresso-after-cleanup.json`.
+- [ ] Validar visualmente o Anki e avaliar extensão visual somente depois de
+  confirmar a versão local; a limpeza de nomes está concluída.
