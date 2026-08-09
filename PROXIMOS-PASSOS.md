@@ -1503,3 +1503,18 @@ fase.
 - [x] Revalidar questões em 390 x 844, incluindo alternativas, barra móvel e
   ausência de overflow.
 - [ ] Rodar novamente Lighthouse/axe e QA autenticada após o acabamento.
+
+## Publicação do redesign — 2026-08-09
+
+- [x] PR #2 mesclado na `main` em `c260ef8`.
+- [x] GitHub Pages `31338545947` concluído com build e deploy aprovados.
+- [x] Rotas públicas `/`, `/questoes/`, `/biblioteca/`, `/mapas-mentais/` e
+  `/meu-curso/` verificadas com HTTP 200 e sem marcadores de erro.
+- [x] Auditoria de privacidade: 220 arquivos públicos e 3 curriculares;
+  nenhum PDF comercial, imagem privada, dado do SISCAD ou credencial foi
+  incluído no bundle público.
+- [ ] Lighthouse/PageSpeed e axe/WCAG completos.
+- [ ] QA autenticada real de login, sessão, agenda, upload, URL assinada,
+  logout, exclusão e isolamento da `Minha mídia`.
+- [ ] Bloco 2 da semana atual: `PDF -> hash -> Markdown privado ->
+  disciplina/subtema -> semana -> próxima ação`.
