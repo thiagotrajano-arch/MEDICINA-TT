@@ -1615,3 +1615,19 @@ até o workflow terminar.
 
 O lote foi publicado sem PDFs comerciais, imagens privadas, dados curriculares
 individuais ou credenciais. As pendencias externas permanecem registradas.
+
+## Ajuste do Anki — 2026-08-09
+
+- [x] AnkiConnect local confirmado na versão 6 com a coleção aberta.
+- [x] Backup `.apkg` criado antes da alteração: `exports/anki/backup-pre-repair-20260809.apkg`.
+- [x] Snapshot de progresso antes/depois exportado localmente.
+- [x] Organização segura aplicada com `npm run anki:organizar -- --aplicar`.
+- [x] Estilo do modelo `OMED Bonito` atualizado para títulos menores e leitura
+  responsiva; CSS não expõe AnkiConnect ao site.
+- [x] Conferência pós-ajuste: 226 decks monitorados e 1.703 cartões antes e
+  depois; nenhuma contagem mudou e nenhuma duplicata foi criada.
+- [x] Decks curtos por disciplina preservados (`Codex Medicus::...`).
+- [ ] 209 decks legados vazios continuam preservados; remover exige autorização
+  explícita, pois é uma exclusão de decks, ainda que sem cartões.
+- [ ] Validar visualmente o modelo no Anki e instalar extensões somente se a
+  versão/backup forem confirmados.

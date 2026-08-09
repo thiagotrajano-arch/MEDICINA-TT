@@ -34,3 +34,11 @@
 ## Limites preservados
 
 PDFs comerciais, imagens de pacientes, credenciais, IDs do Drive e dados curriculares individuais continuam fora do repositório e do site público.
+
+## Correção posterior do Anki — 2026-08-09
+
+- O AnkiConnect voltou a responder com a coleção aberta.
+- Foi criado backup local `.apkg` antes da reorganização.
+- O estilo `OMED Bonito` recebeu títulos compactos; os 1.703 cartões foram
+  conferidos antes/depois sem alteração de quantidade.
+- Nenhum deck foi removido. Os 209 legados vazios aguardam autorização explícita.

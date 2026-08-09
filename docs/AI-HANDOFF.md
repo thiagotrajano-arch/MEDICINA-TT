@@ -428,3 +428,14 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - Site publicado: https://thiagotrajano-arch.github.io/MEDICINA-TT/
 - Nao confundir deploy com migration remota, QA autenticada, Lighthouse/axe,
   Drive, Anki ou restore; todos continuam como portoes separados.
+
+## Ajuste do Anki — 2026-08-09
+
+- AnkiConnect v6 respondeu com a coleção aberta; o inventário atual tem 318
+  decks, dos quais 226 entram no snapshot do Codex Medicus, com 1.703 cartões.
+- Backup local pré-ajuste: `exports/anki/backup-pre-repair-20260809.apkg`.
+- `anki:organizar -- --aplicar` foi executado sem `--limpar-vazios`: estilo
+  `OMED Bonito` atualizado, cartões preservados e nenhum deck antigo apagado.
+- Snapshots antes/depois têm 1.703 cartões e nenhuma mudança de contagem.
+- Os 209 decks `Codex Medicus - ...` permanecem vazios e preservados; somente
+  remover após confirmação explícita do usuário.

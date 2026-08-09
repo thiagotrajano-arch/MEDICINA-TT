@@ -215,3 +215,12 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - URL: https://thiagotrajano-arch.github.io/MEDICINA-TT/
 - Migration privada, QA autenticada, Lighthouse/axe, Drive, Anki e restore
   continuam pendentes e nao foram simulados.
+
+## Ajuste do Anki — 2026-08-09
+
+- A coleção do Anki foi aberta e o AnkiConnect v6 respondeu normalmente.
+- Backup pré-ajuste salvo localmente em `exports/anki/backup-pre-repair-20260809.apkg`.
+- Reorganização segura aplicada: títulos/modelo compactos, decks curtos por
+  disciplina e zero alteração na contagem de 1.703 cartões.
+- 209 decks legados vazios continuam preservados; não apagar sem confirmação.
+- Progresso antes/depois foi exportado em `exports/anki/` e não é enviado ao site.

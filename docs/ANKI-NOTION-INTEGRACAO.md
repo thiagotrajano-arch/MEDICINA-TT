@@ -25,3 +25,12 @@ Testar os complementos após atualizar o Anki antes de rodar novos lotes.
 ## Notion
 
 Foi criada uma central privada com uma página de visão geral e as bases `Rotina de Estudos` e `Fila de Revisão`. Ela guarda organização, links e indicadores, não PDFs comerciais, documentos pessoais, imagens sensíveis ou credenciais. IDs e URLs do workspace ficam fora do repositório.
+
+## Ajuste confirmado — 2026-08-09
+
+- Coleção aberta e AnkiConnect v6 confirmado.
+- Backup local pré-ajuste: `exports/anki/backup-pre-repair-20260809.apkg`.
+- Organização aplicada sem apagar decks: títulos compactos e CSS do modelo
+  `OMED Bonito` atualizado.
+- Snapshot antes/depois: 1.703 cartões, sem mudança de contagem.
+- Os decks vazios antigos continuam preservados até autorização de remoção.
