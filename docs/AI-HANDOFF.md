@@ -466,10 +466,19 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - Gates locais aprovados: typecheck, lint, auditoria editorial (zero duplicatas,
   comentários curtos/vazios, fontes ausentes ou contradições), privacidade,
   build e QA móvel 390 × 844 sem overflow/erros de console.
-- Pendências reais: publicar este lote e confirmar o workflow; aplicar/testar a
+- A publicação está confirmada abaixo. Pendências reais: aplicar/testar a
   migration da semana; QA autenticada de login, catálogo privado e URLs
   assinadas; Lighthouse/axe; e adaptar o restore do backup, atualmente bloqueado
   no PostgreSQL stock pela extensão `supabase_vault`.
 
 Não interpretar a autorização para imagens comerciais como autorização de
 redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
+
+### Publicação confirmada
+
+- PR #7 mesclado na `main` em
+  `e502f5a0eba682c2689ed83d8934f07e4a0e438c`.
+- Workflow Pages `31348422663` aprovado; raiz, Psiquiatria, novo resumo,
+  Questões, robots e sitemap retornaram HTTP 200.
+- O lote público está concluído. Permanecem externos: migration/QA autenticada,
+  Lighthouse/axe e reparo do teste de restore com `supabase_vault`.
