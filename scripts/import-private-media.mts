@@ -25,15 +25,35 @@ const manifestPath = resolve(manifestArg ?? "_private-corpus/drive-lote-20260801
 const MAX_BYTES = 20 * 1024 * 1024;
 const MIME: Record<string, string> = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp", ".avif": "image/avif" };
 
-type ManifestRow = { path: string; sha256: string; bytes: number; width: number; height: number; page: number; destination?: string; canonical?: boolean; visual_review?: string };
+type ManifestRow = {
+  path: string;
+  sha256: string;
+  bytes: number;
+  width: number;
+  height: number;
+  page: number;
+  destination?: string;
+  canonical?: boolean;
+  visual_review?: string;
+  titulo?: string;
+  disciplina?: string;
+  tema?: string;
+  subtema?: string;
+  subtemaId?: string;
+  diagnostico?: string;
+  modalidade?: string;
+  fonte?: string;
+  observacao?: string;
+};
 type CatalogoRow = { owner_id: string; object_path: string };
 
-function tituloFonte(relativePath: string): { disciplina: string; fonte: string } {
-  const nome = basename(relativePath, extname(relativePath));
+function classificar(row: ManifestRow): { disciplina: string; fonte: string; titulo: string } {
+  const nome = basename(row.path, extname(row.path));
   const partes = nome.split("__");
-  const disciplina = (partes[0] || "acervo").replace(/[-_]+/g, " ").trim();
-  const fonte = (partes[1] || partes[0] || nome).replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
-  return { disciplina, fonte };
+  const disciplina = row.disciplina?.trim() || (partes[0] || "acervo").replace(/[-_]+/g, " ").trim();
+  const fonte = row.fonte?.trim() || (partes[1] || partes[0] || nome).replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
+  const titulo = row.titulo?.trim() || `Imagem clínica — ${fonte} — p.${row.page}`;
+  return { disciplina, fonte, titulo };
 }
 
 async function main() {
@@ -57,19 +77,34 @@ async function main() {
     try { await stat(arquivo); } catch { faltantes += 1; continue; }
     const objectPath = `${owner}/${row.sha256.toLowerCase()}${ext}`;
     if (existentes.has(objectPath)) { ignoradas += 1; continue; }
-    const { disciplina, fonte } = tituloFonte(row.path);
-    const titulo = `Imagem clínica — ${fonte} — p.${row.page}`;
+    const { disciplina, fonte, titulo } = classificar(row);
     if (dryRun) { importadas += 1; continue; }
     try {
       const bytes = await readFile(arquivo);
       const { error: uploadErro } = await db.storage.from("midia-privada").upload(objectPath, bytes, { contentType: mime, cacheControl: "31536000", upsert: false });
       if (uploadErro) throw new Error(`upload: ${uploadErro.message}`);
-      const { error: insertErro } = await db.from("midia_privada_usuario").insert({
+      const registro = {
         owner_id: owner, object_path: objectPath, titulo, tipo_origem: "pdf_comercial", disciplina,
-        tema: fonte, subtema: "", diagnostico: "", modalidade: "Imagem extraída de PDF", fonte: `Acervo privado — PDF: ${fonte}`,
-        pagina: row.page, observacao: `Importada automaticamente; revisão visual pendente. SHA-256: ${row.sha256}`,
+        tema: row.tema?.trim() || fonte, subtema: row.subtema?.trim() || "", subtema_id: row.subtemaId?.trim() || null,
+        diagnostico: row.diagnostico?.trim() || "", modalidade: row.modalidade?.trim() || "Imagem extraída de PDF",
+        fonte: `Acervo privado — PDF: ${fonte}`, pagina: row.page,
+        observacao: `${row.observacao?.trim() || "Imagem revisada e classificada para estudo privado."} SHA-256: ${row.sha256}`,
+        triagem_status: row.visual_review === "approved" ? "util" : "revisao_pendente",
+        triagem_motivo: row.visual_review === "approved" ? "Revisão visual concluída; contexto clínico e página conferidos." : "Revisão visual pendente.",
         paciente_anonimizado: false, autorizacao_paciente: false,
-      });
+      };
+      let { error: insertErro } = await db.from("midia_privada_usuario").insert(registro);
+      if (insertErro?.message.includes("midia_privada_usuario_subtema_id_fkey") && registro.subtema_id) {
+        // O catálogo pode receber um subtema novo antes da próxima sincronização
+        // da taxonomia. Preserva a classificação textual e conclui o upload;
+        // a própria UI religa pelo nome assim que a nova rota estiver publicada.
+        const semVinculoPendente = {
+          ...registro,
+          subtema_id: null,
+          triagem_motivo: `${registro.triagem_motivo} Vínculo técnico ao subtema será reconciliado após a sincronização da taxonomia.`,
+        };
+        ({ error: insertErro } = await db.from("midia_privada_usuario").insert(semVinculoPendente));
+      }
       if (insertErro) { await db.storage.from("midia-privada").remove([objectPath]); throw new Error(`catalogo: ${insertErro.message}`); }
       existentes.add(objectPath); importadas += 1;
     } catch (erro) { erros += 1; console.error(`[media] falha em ${row.path}: ${erro instanceof Error ? erro.message : String(erro)}`); }

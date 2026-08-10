@@ -86,11 +86,29 @@ function tagSubtema(id: string): string {
   return `codex-medicus-subtema-${id.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
 }
 
+function nomeDisciplinaAnki(valor: string): string {
+  const chave = valor.trim().toLocaleLowerCase("pt-BR");
+  const disciplina = DISCIPLINAS.find((item) =>
+    item.id.toLocaleLowerCase("pt-BR") === chave
+    || item.slug.toLocaleLowerCase("pt-BR") === chave
+    || item.nome.toLocaleLowerCase("pt-BR") === chave
+  );
+  if (disciplina) return disciplina.nome;
+  return valor
+    .split(/[-_\s]+/)
+    .filter(Boolean)
+    .map((parte) => parte.charAt(0).toLocaleUpperCase("pt-BR") + parte.slice(1).toLocaleLowerCase("pt-BR"))
+    .join(" ");
+}
+
+function deckDaDisciplina(disciplina: string): string {
+  return `${DECK_PREFIXO}${nomeDisciplinaAnki(disciplina)}`;
+}
+
 function nomeDeck(id: string, disciplinaSlug: string, subtemaSlug: string): string {
   // Um deck por disciplina deixa o Anki navegavel. O subtema permanece em
   // tags/Tema, evitando nomes de 100+ caracteres e a proliferacao de decks.
-  const disciplina = (disciplinaSlug || "geral").replace(/[^a-zA-Z0-9_-]+/g, "-").slice(0, 36);
-  return `${DECK_PREFIXO}${disciplina || subtemaSlug}`;
+  return deckDaDisciplina(disciplinaSlug || subtemaSlug || id || "Geral");
 }
 
 function encurtarTitulo(titulo: string, limite = 88): string {
@@ -398,28 +416,64 @@ function csv(valor: string): string {
 async function organizarDecks(aplicar: boolean) {
   const decks = await anki<string[]>("deckNames");
   const limparVazios = args.includes("--limpar-vazios");
-  const legados = decks.filter((deck) => (deck.startsWith("Codex Medicus - ") || (deck.startsWith(DECK_PREFIXO) && deck.split("::").length > 2)) && !deck.includes("Probe") && !deck.includes("Piloto"));
-  const plano = legados.map((origem) => {
+  const candidatos = decks.filter((deck) =>
+    (deck.startsWith("Codex Medicus - ") || deck.startsWith(DECK_PREFIXO))
+    && !deck.includes("Probe")
+    && !deck.includes("Piloto")
+  );
+  const plano = candidatos.map((origem) => {
     const partes = origem.startsWith("Codex Medicus - ") ? origem.split(" - ") : origem.split("::");
-    const disciplina = (partes[1] || "geral").replace(/[^a-zA-Z0-9_-]+/g, "-").slice(0, 36) || "geral";
-    return { origem, destino: `${DECK_PREFIXO}${disciplina}` };
+    return { origem, destino: deckDaDisciplina(partes[1] || "Geral") };
   }).filter((item) => item.origem !== item.destino);
 
-  console.log(`[anki] Plano de organizacao: ${plano.length} deck(s) legado(s). Decks vazios só serão removidos com --limpar-vazios.`);
+  console.log(`[anki] Plano de organizacao: ${plano.length} deck(s) a padronizar. Decks vazios só serão removidos com --limpar-vazios.`);
   for (const item of plano) console.log(`  ${item.origem} -> ${item.destino}`);
   if (!aplicar) {
     console.log("[anki] Simulacao concluida. Para mover os cartoes, use: npm run anki:organizar -- --aplicar");
     return;
   }
   for (const item of plano) {
-    await garantirDeck(item.destino);
     const cards = await anki<number[]>("findCards", { query: `deck:"${item.origem}"` });
+    const mudaSomenteCapitalizacao = item.origem.toLocaleLowerCase("pt-BR") === item.destino.toLocaleLowerCase("pt-BR");
+    if (mudaSomenteCapitalizacao) {
+      const sufixoTemporario = item.origem
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-zA-Z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(-48);
+      const temporario = `Codex Medicus migracao temporaria ${sufixoTemporario}`;
+      await garantirDeck(temporario);
+      for (let indice = 0; indice < cards.length; indice += 200) {
+        await anki("changeDeck", { cards: cards.slice(indice, indice + 200), deck: temporario });
+      }
+      const restantesOrigem = await anki<number[]>("findCards", { query: `deck:"${item.origem}"` });
+      if (restantesOrigem.length > 0) {
+        throw new Error(`A migracao segura foi interrompida: ${restantesOrigem.length} cartao(oes) ainda estao em ${item.origem}.`);
+      }
+      await anki("deleteDecks", { decks: [item.origem], cardsToo: true });
+      await garantirDeck(item.destino);
+      for (let indice = 0; indice < cards.length; indice += 200) {
+        await anki("changeDeck", { cards: cards.slice(indice, indice + 200), deck: item.destino });
+      }
+      const restantesTemporario = await anki<number[]>("findCards", { query: `deck:"${temporario}"` });
+      if (restantesTemporario.length > 0) {
+        throw new Error(`A migracao segura foi interrompida: ${restantesTemporario.length} cartao(oes) ainda estao no deck temporario ${temporario}.`);
+      }
+      await anki("deleteDecks", { decks: [temporario], cardsToo: true });
+      console.log(`[anki] ${cards.length} cartao(oes) migrado(s) com capitalizacao corrigida: ${item.origem} -> ${item.destino}.`);
+      continue;
+    }
+    await garantirDeck(item.destino);
     for (let indice = 0; indice < cards.length; indice += 200) {
       await anki("changeDeck", { cards: cards.slice(indice, indice + 200), deck: item.destino });
     }
+    const restantes = limparVazios
+      ? await anki<number[]>("findCards", { query: `deck:"${item.origem}"` })
+      : [];
     // Anki 2.1.28+ requires cardsToo=true to delete a deck. The guard above
     // proves this deck has no cards, so this cannot remove a card.
-    if (limparVazios && cards.length === 0) await anki("deleteDecks", { decks: [item.origem], cardsToo: true });
+    if (limparVazios && restantes.length === 0) await anki("deleteDecks", { decks: [item.origem], cardsToo: true });
     console.log(`[anki] ${cards.length} cartao(oes) movido(s): ${item.origem} -> ${item.destino}.`);
   }
   try {

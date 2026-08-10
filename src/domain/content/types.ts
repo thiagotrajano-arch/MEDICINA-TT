@@ -98,6 +98,8 @@ export interface Questao {
   estilo: EstiloQuestao;
   tags: string[];
   fonte?: string;
+  /** Figura(s) do registro público, exibida(s) junto ao enunciado. */
+  figura?: string | string[];
 }
 
 /**

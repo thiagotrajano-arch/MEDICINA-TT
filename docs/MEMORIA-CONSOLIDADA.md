@@ -232,3 +232,21 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - Estado final: 108 decks totais, 16 decks Codex monitorados, 1.703 cartões;
   `card_delta = 0`.
 - Snapshot final: `exports/anki/progresso-after-cleanup.json`.
+
+## Neuropsiquiatria, currículo e imagens comerciais — 2026-08-09
+
+- Quatro PDFs recebidos nesta semana foram convertidos para Markdown privado
+  antes da leitura (378 páginas; sem OCR necessário). A seleção visual final
+  tem 46 imagens comerciais, importadas somente para `Minha mídia` autenticada,
+  com fonte, página, classificação e hash; nenhum binário protegido foi para o
+  GitHub Pages.
+- A matriz curricular privada contém 37 componentes sincronizados: 30
+  concluídos e 7 atuais. O site deve usar esses vínculos para orientar a semana,
+  sem inferir matéria não confirmada e sem publicar dados acadêmicos pessoais.
+- O conteúdo público local alcançou 234 resumos, 56 casos e 1.332 questões. O
+  lote adicionou 8 resumos neuropsiquiátricos, 36 questões e 4 diagramas
+  autorais. Atalhos de teclado e contador de progresso foram validados.
+- QA móvel em 390 × 844, typecheck, lint, auditoria editorial/privacidade e build
+  de 408 páginas passaram. Permanecem: deploy/checagem remota deste lote,
+  migration e QA autenticada, Lighthouse/axe e restauração compatível do backup
+  que contém `supabase_vault`.

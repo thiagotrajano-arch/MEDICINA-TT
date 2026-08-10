@@ -4,50 +4,58 @@
 
 /* ─────────────────────────────────────────────
    Design tokens — Codex Medicus
-   Editorial clínico calmo. Light + dark.
+   Azul clínico + aqua: original, profissional e orientado à ação.
    ───────────────────────────────────────────── */
 :root {
-  --bg: #f4f6f3;
+  --bg: #f3f7fb;
   --surface: #ffffff;
-  --surface-2: #edf1ee;
-  --surface-3: #e4eae6;
-  --border: #d5ded8;
-  --border-strong: #b9c8c0;
-  --text: #16241e;
-  --text-muted: #506159;
-  --text-faint: #687970;
-  --accent: #1f705f;
-  --accent-hover: #18594c;
-  --accent-soft: #dcece7;
+  --surface-2: #edf4f8;
+  --surface-3: #e4eef5;
+  --border: #d5e2ec;
+  --border-strong: #b7cad9;
+  --text: #10283f;
+  --text-muted: #50697e;
+  --text-faint: #6d8294;
+  --accent: #126f99;
+  --accent-hover: #0d587b;
+  --accent-soft: #dff2f7;
   --accent-contrast: #ffffff;
-  --brand: #173f45;
-  --brand-soft: #dce9e7;
-  --brand-contrast: #f7fbf9;
-  --gold: #946719;
-  --danger: #a93f3b;
-  --danger-soft: #f7e7e5;
-  --shadow: 0 1px 2px rgba(22, 36, 30, 0.04), 0 12px 32px rgba(22, 36, 30, 0.06);
-  --shadow-lg: 0 18px 48px rgba(22, 36, 30, 0.12);
+  --brand: #0b3155;
+  --brand-soft: #dceaf5;
+  --brand-contrast: #f7fbff;
+  --aqua: #14aaa8;
+  --aqua-soft: #d8f5f2;
+  --success: #19805d;
+  --success-soft: #def3e9;
+  --gold: #9a6916;
+  --danger: #ad3e46;
+  --danger-soft: #f8e5e8;
+  --shadow: 0 1px 2px rgba(16, 40, 63, 0.04), 0 14px 34px rgba(30, 73, 108, 0.07);
+  --shadow-lg: 0 22px 56px rgba(18, 55, 86, 0.14);
   --sidebar-w: 256px;
 }
 
 .dark {
-  --bg: #101714;
-  --surface: #17201d;
-  --surface-2: #202b27;
-  --surface-3: #283630;
-  --border: #33443d;
-  --border-strong: #475c53;
-  --text: #f1f5f2;
-  --text-muted: #b5c4bd;
-  --text-faint: #92a69c;
-  --accent: #75cbb6;
-  --accent-hover: #8ad8c5;
-  --accent-soft: #203d35;
-  --accent-contrast: #0b211a;
-  --brand: #245148;
-  --brand-soft: #203630;
-  --brand-contrast: #f1faf6;
+  --bg: #081521;
+  --surface: #0e2030;
+  --surface-2: #142a3d;
+  --surface-3: #1b354a;
+  --border: #29445a;
+  --border-strong: #3d5e75;
+  --text: #f2f8fc;
+  --text-muted: #b7c9d7;
+  --text-faint: #8fa8ba;
+  --accent: #61c7e2;
+  --accent-hover: #82d8ec;
+  --accent-soft: #14384a;
+  --accent-contrast: #061b29;
+  --brand: #164d77;
+  --brand-soft: #17364e;
+  --brand-contrast: #f2f9ff;
+  --aqua: #55d5ce;
+  --aqua-soft: #153d3e;
+  --success: #65d2a5;
+  --success-soft: #173f34;
   --gold: #e3b867;
   --danger: #f28b86;
   --danger-soft: #432925;
@@ -71,6 +79,10 @@
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
   --color-brand-contrast: var(--brand-contrast);
+  --color-aqua: var(--aqua);
+  --color-aqua-soft: var(--aqua-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
   --color-gold: var(--gold);
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
@@ -126,8 +138,8 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 .dark .mindmap-violet { color: #c6a8ff; background: #322052; }
 .dark .mindmap-orange { color: #ffb08a; background: #522719; }
 .dark .mindmap-emerald { color: #8ee8b0; background: #103f32; }
-.dashboard-hero { background: radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--brand-soft) 78%, transparent), transparent 38%), linear-gradient(145deg, var(--surface), color-mix(in srgb, var(--accent-soft) 30%, var(--surface))); box-shadow: var(--shadow); }
-.page-hero { background: radial-gradient(circle at 88% 10%, color-mix(in srgb, var(--brand-soft) 74%, transparent), transparent 36%), var(--surface); box-shadow: var(--shadow); }
+.dashboard-hero { background: radial-gradient(circle at 90% 8%, color-mix(in srgb, var(--aqua-soft) 92%, transparent), transparent 39%), radial-gradient(circle at 72% 92%, color-mix(in srgb, var(--accent-soft) 64%, transparent), transparent 38%), linear-gradient(145deg, var(--surface), color-mix(in srgb, var(--brand-soft) 35%, var(--surface))); box-shadow: var(--shadow); }
+.page-hero { background: radial-gradient(circle at 90% 8%, color-mix(in srgb, var(--aqua-soft) 86%, transparent), transparent 38%), linear-gradient(145deg, var(--surface), color-mix(in srgb, var(--accent-soft) 24%, var(--surface))); box-shadow: var(--shadow); }
 .dashboard-page > section { animation: rise-in .45s ease both; }
 @keyframes rise-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .dashboard-page > section { animation: none; } }

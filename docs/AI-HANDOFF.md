@@ -449,3 +449,27 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
   `cardsToo=true` apenas porque as versões atuais do Anki exigem esse campo.
 - Nenhum cartão foi apagado, movido ou duplicado. A operação não toca no site
   público nem expõe o endpoint local.
+
+## Estado transferível — neuropsiquiatria e lote privado — 2026-08-09
+
+- O lote de quatro PDFs desta semana foi processado na ordem obrigatória
+  `PDF → Markdown privado → seleção de páginas → revisão visual → catálogo`.
+  São 378 páginas e 46 imagens comerciais importadas apenas no bucket privado,
+  todas com origem, página e classificação; os binários e manifestos permanecem
+  fora do repositório.
+- O curso privado foi sincronizado com 37 componentes (30 concluídos e 7
+  atuais), sem inserir SISCAD ou dados pessoais na camada pública.
+- O site local contém 234 resumos, 56 casos, 1.332 questões e 408 páginas
+  estáticas. O novo recorte neuropsiquiátrico acrescentou 8 resumos, 36 questões
+  e 4 diagramas autorais. A tela de questões aceita teclado e o contador foi
+  corrigido para não avançar antes da troca de item.
+- Gates locais aprovados: typecheck, lint, auditoria editorial (zero duplicatas,
+  comentários curtos/vazios, fontes ausentes ou contradições), privacidade,
+  build e QA móvel 390 × 844 sem overflow/erros de console.
+- Pendências reais: publicar este lote e confirmar o workflow; aplicar/testar a
+  migration da semana; QA autenticada de login, catálogo privado e URLs
+  assinadas; Lighthouse/axe; e adaptar o restore do backup, atualmente bloqueado
+  no PostgreSQL stock pela extensão `supabase_vault`.
+
+Não interpretar a autorização para imagens comerciais como autorização de
+redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.

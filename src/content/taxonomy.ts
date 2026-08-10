@@ -368,6 +368,7 @@ const neurologia: Disciplina = {
   marca: "NEU",
   omed: true,
   temas: [
+    tema("neuro", "Neuroanatomia clínica", [["Localização neurológica", { altoRendimento: true }]]),
     tema("neuro", "AVC Isquêmico", ["Diagnóstico e conduta"]),
     tema("neuro", "AVC Hemorrágico — HSA e Hemorragia Intraparenquimatosa", ["Diagnóstico e conduta"]),
     tema("neuro", "Crise Convulsiva e Status Epilepticus", ["Diagnóstico e conduta"]),
@@ -483,6 +484,27 @@ const oncologia: Disciplina = {
   ],
 };
 
+const psiquiatria: Disciplina = {
+  id: "psiq",
+  slug: "psiquiatria",
+  nome: "Psiquiatria",
+  grupo: "Psiquiatria & Diagnóstico",
+  marca: "PSI",
+  omed: true,
+  temas: [
+    tema("psiq", "Entrevista e psicopatologia", [["Anamnese e exame do estado mental", { altoRendimento: true }]]),
+    tema("psiq", "Transtornos do humor", [
+      ["Depressão e avaliação de segurança", { altoRendimento: true, dificuldade: "avancada" }],
+      ["Transtorno bipolar", { altoRendimento: true, dificuldade: "avancada" }],
+    ]),
+    tema("psiq", "Ansiedade, pânico e TOC", [["Diagnóstico e abordagem", { altoRendimento: true }]]),
+    tema("psiq", "Psicoses", [["Primeiro episódio psicótico", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("psiq", "Psicofarmacologia", [["Princípios e monitorização", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("psiq", "Sono e hipnosedativos", [["Insônia e uso seguro", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("psiq", "Emergências psiquiátricas", [["Avaliação de segurança e risco suicida", { altoRendimento: true, dificuldade: "avancada" }]]),
+  ],
+};
+
 const otorrinolaringologia: Disciplina = {
   id: "otorrino",
   slug: "otorrinolaringologia",
@@ -535,7 +557,7 @@ const cirurgiaOutras: Disciplina[] = [
 
 const outras: Disciplina[] = [
   scaffold("obstetricia", "Obstetrícia (avançada)", "Materno-Infantil", "OBS", []),
-  scaffold("psiq", "Psiquiatria", "Psiquiatria & Diagnóstico", "PSI", ["Transtornos do humor", "Transtornos de ansiedade", "Psicoses"]),
+  psiquiatria,
   scaffold("radio", "Radiologia", "Psiquiatria & Diagnóstico", "RAD", ["Tórax", "Abdome", "Neurorradiologia"]),
   scaffold("farmaco", "Farmacologia", "Ciências Básicas", "FAR", ["Farmacocinética", "Autonômica", "Antimicrobianos"]),
   scaffold("pato", "Patologia", "Ciências Básicas", "PAT", ["Inflamação", "Neoplasias"]),

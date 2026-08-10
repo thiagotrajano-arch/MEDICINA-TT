@@ -21,6 +21,7 @@ import { CONTEUDOS_REUMATO_EXTRA } from "./conteudos/reumato-extra";
 import { CONTEUDOS_ONCO } from "./conteudos/onco";
 import { CONTEUDOS_OTORRINO } from "./conteudos/otorrino";
 import { CONTEUDOS_DERMA } from "./conteudos/derma";
+import { CONTEUDOS_NEURO_SEMANA, CONTEUDOS_PSIQ } from "./conteudos/neuropsiquiatria-semana";
 import { CONTEUDOS_OMED_EXTRAIDOS } from "./omed-extraidos";
 
 /**
@@ -60,6 +61,8 @@ const CONTEUDOS_BASE: Record<string, ConteudoSubtema> = {
   ...CONTEUDOS_ONCO,
   ...CONTEUDOS_OTORRINO,
   ...CONTEUDOS_DERMA,
+  ...CONTEUDOS_NEURO_SEMANA,
+  ...CONTEUDOS_PSIQ,
 };
 
 export const CONTEUDOS: Record<string, ConteudoSubtema> = Object.fromEntries(

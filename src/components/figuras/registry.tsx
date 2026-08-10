@@ -65,6 +65,8 @@ const C = {
   border: "var(--border-strong)",
   danger: "var(--danger)",
   gold: "var(--gold)",
+  aqua: "var(--aqua)",
+  success: "var(--success)",
 };
 
 const label = (extra?: object) => ({
@@ -605,9 +607,155 @@ function ExantemasPadraoTemporal() {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// Neuropsiquiatria — mapas autorais derivados da síntese clínica
+// ═══════════════════════════════════════════════════════════════
+function MapaExameMental() {
+  const caixas = [
+    [20, 28, "Aparência e atitude", "cuidado · contato · cooperação"],
+    [20, 128, "Psicomotricidade", "agitação · retardo · catatonia"],
+    [20, 228, "Fala", "fluxo · volume · latência"],
+    [500, 28, "Humor e afeto", "subjetivo · observado · congruência"],
+    [500, 128, "Pensamento", "curso · forma · conteúdo"],
+    [500, 228, "Percepção", "alucinação · ilusão · desrealização"],
+    [180, 314, "Cognição", "atenção · orientação · memória"],
+    [380, 314, "Crítica e segurança", "insight · julgamento · risco"],
+  ] as const;
+  return (
+    <svg viewBox="0 0 720 390" role="img" aria-label="Mapa do exame do estado mental com oito domínios clínicos">
+      <defs><marker id="seta-eem" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill={C.accent} /></marker></defs>
+      {caixas.map(([x, y], i) => {
+        const inicioX = i < 3 ? 250 : i < 6 ? 470 : 360;
+        const inicioY = i < 3 ? 170 : i < 6 ? 170 : 250;
+        const fimX = i < 3 ? x + 178 : i < 6 ? x : x + 80;
+        const fimY = y + 32;
+        return <line key={`l-${i}`} x1={inicioX} y1={inicioY} x2={fimX} y2={fimY} stroke={C.accent} strokeWidth="1.7" opacity="0.6" markerEnd="url(#seta-eem)" />;
+      })}
+      <rect x="250" y="118" width="220" height="104" rx="18" fill={C.accent} />
+      <text x="360" y="154" textAnchor="middle" fill="white" fontSize="12" fontWeight="800">EXAME DO ESTADO MENTAL</text>
+      <text x="360" y="177" textAnchor="middle" fill="white" fontSize="10">descrever antes de interpretar</text>
+      <text x="360" y="196" textAnchor="middle" fill="white" fontSize="10">sempre fechar com segurança</text>
+      {caixas.map(([x, y, titulo, detalhe], i) => (
+        <g key={titulo}>
+          <rect x={x} y={y} width={i < 6 ? 178 : 160} height="64" rx="12" fill={C.surface} stroke={i === 7 ? C.danger : C.border} strokeWidth="1.5" />
+          <text x={x + (i < 6 ? 89 : 80)} y={y + 25} textAnchor="middle" style={label({ fill: i === 7 ? C.danger : C.text, fontSize: 10.5, fontWeight: 800 })}>{titulo}</text>
+          <text x={x + (i < 6 ? 89 : 80)} y={y + 44} textAnchor="middle" style={label({ fontSize: 8.5 })}>{detalhe}</text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+function MapaHipnosedativosSeguro() {
+  const passos = [
+    [18, "1 · Definir o problema", "duração · rotina · substâncias"],
+    [190, "2 · Procurar causas", "mania · AOS · dor · fármacos"],
+    [362, "3 · Tratar a base", "TCC-I + higiene contextualizada"],
+    [534, "4 · Se medicar", "alvo · prazo · risco · revisão"],
+  ] as const;
+  return (
+    <svg viewBox="0 0 720 300" role="img" aria-label="Fluxo seguro para avaliação de insônia e uso de hipnosedativos">
+      <defs><marker id="seta-sono" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill={C.aqua} /></marker></defs>
+      {passos.slice(0, -1).map(([x], i) => <line key={x} x1={Number(x) + 154} y1="82" x2={Number(passos[i + 1][0]) - 8} y2="82" stroke={C.aqua} strokeWidth="2.4" markerEnd="url(#seta-sono)" />)}
+      {passos.map(([x, titulo, detalhe], i) => (
+        <g key={titulo}>
+          <rect x={x} y="42" width="150" height="80" rx="14" fill={i === 3 ? C.accent : C.surface} stroke={i === 3 ? C.accent : C.border} strokeWidth="1.5" />
+          <text x={Number(x) + 75} y="70" textAnchor="middle" style={label({ fill: i === 3 ? "white" : C.text, fontSize: 10.5, fontWeight: 800 })}>{titulo}</text>
+          <text x={Number(x) + 75} y="92" textAnchor="middle" style={label({ fill: i === 3 ? "white" : C.muted, fontSize: 8.6 })}>{detalhe}</text>
+        </g>
+      ))}
+      <path d="M609 126 C609 186 520 190 454 190" fill="none" stroke={C.gold} strokeWidth="2" markerEnd="url(#seta-sono)" />
+      <rect x="282" y="164" width="172" height="54" rx="12" fill={C.surface2} stroke={C.gold} />
+      <text x="368" y="187" textAnchor="middle" style={label({ fill: C.gold, fontSize: 10.5, fontWeight: 800 })}>REAVALIAR</text>
+      <text x="368" y="204" textAnchor="middle" style={label({ fontSize: 8.7 })}>benefício · quedas · cognição · retirada</text>
+      <rect x="78" y="242" width="564" height="38" rx="10" fill="var(--danger-soft)" />
+      <text x="360" y="266" textAnchor="middle" style={label({ fill: C.danger, fontSize: 10, fontWeight: 800 })}>Nunca interromper benzodiazepínico crônico abruptamente · retirada é gradual e individualizada</text>
+    </svg>
+  );
+}
+
+function MapaDemenciasOitoPassos() {
+  const passos = [
+    "1 · Tempo e flutuação", "2 · Função perdida", "3 · Domínio cognitivo", "4 · Excluir delirium",
+    "5 · Causas tratáveis", "6 · Exame + imagem", "7 · Etiologia provável", "8 · Segurança e cuidador",
+  ];
+  return (
+    <svg viewBox="0 0 720 300" role="img" aria-label="Algoritmo clínico em oito passos para síndrome demencial">
+      <defs><marker id="seta-dem" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill={C.accent} /></marker></defs>
+      {passos.map((passo, i) => {
+        const coluna = i % 4;
+        const linha = Math.floor(i / 4);
+        const x = 18 + coluna * 174;
+        const y = 42 + linha * 138;
+        return (
+          <g key={passo}>
+            {i !== 3 && i !== 7 && <line x1={x + 150} y1={y + 36} x2={x + 169} y2={y + 36} stroke={C.accent} strokeWidth="2" markerEnd="url(#seta-dem)" />}
+            {i === 3 && <path d={`M${x + 75} ${y + 76} C${x + 75} ${y + 112} 94 ${y + 112} 94 ${y + 132}`} fill="none" stroke={C.accent} strokeWidth="2" markerEnd="url(#seta-dem)" />}
+            <rect x={x} y={y} width="150" height="72" rx="13" fill={i === 3 ? "var(--danger-soft)" : i === 7 ? "var(--success-soft)" : C.surface} stroke={i === 3 ? C.danger : i === 7 ? C.success : C.border} strokeWidth="1.5" />
+            <text x={x + 75} y={y + 42} textAnchor="middle" style={label({ fill: i === 3 ? C.danger : i === 7 ? C.success : C.text, fontSize: 10.2, fontWeight: 800 })}>{passo}</text>
+          </g>
+        );
+      })}
+      <text x="360" y="22" textAnchor="middle" style={label({ fill: C.text, fontSize: 12, fontWeight: 900 })}>DECLÍNIO COGNITIVO: SÍNDROME PRIMEIRO, ETIOLOGIA DEPOIS</text>
+    </svg>
+  );
+}
+
+function MapaLocalizacaoNeurologica() {
+  const niveis = [
+    [28, 42, "Córtex", "afasia · negligência · crise"],
+    [28, 158, "Subcórtex", "lentidão · circuito motor/cognitivo"],
+    [266, 224, "Tronco", "pares cranianos + déficit cruzado"],
+    [504, 42, "Cerebelo", "ataxia · dismetria · nistagmo"],
+    [504, 158, "Medula", "nível sensitivo · piramidal abaixo"],
+    [266, 42, "Periférico", "fraqueza flácida · arreflexia"],
+  ] as const;
+  return (
+    <svg viewBox="0 0 720 320" role="img" aria-label="Mapa para localização clínica de lesões neurológicas">
+      <defs><marker id="seta-loc" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill={C.aqua} /></marker></defs>
+      {niveis.map(([x, y], i) => <line key={`loc-${i}`} x1="360" y1="168" x2={Number(x) + 94} y2={Number(y) + 54} stroke={C.aqua} strokeWidth="1.8" opacity="0.75" markerEnd="url(#seta-loc)" />)}
+      <circle cx="360" cy="162" r="72" fill={C.accent} />
+      <text x="360" y="153" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">ONDE ESTÁ</text>
+      <text x="360" y="173" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">A LESÃO?</text>
+      <text x="360" y="194" textAnchor="middle" fill="white" fontSize="9">padrão antes do exame</text>
+      {niveis.map(([x, y, titulo, detalhe]) => (
+        <g key={titulo}>
+          <rect x={x} y={y} width="188" height="68" rx="13" fill={C.surface} stroke={C.border} strokeWidth="1.5" />
+          <text x={Number(x) + 94} y={Number(y) + 27} textAnchor="middle" style={label({ fill: C.text, fontSize: 10.8, fontWeight: 900 })}>{titulo}</text>
+          <text x={Number(x) + 94} y={Number(y) + 47} textAnchor="middle" style={label({ fontSize: 8.5 })}>{detalhe}</text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
 // Registry
 // ═══════════════════════════════════════════════════════════════
 export const FIGURAS: Record<string, Figura> = {
+  "psiq-exame-mental-map": {
+    id: "psiq-exame-mental-map",
+    titulo: "Exame do estado mental — mapa de domínios",
+    legenda: "Descreva o fenômeno antes de interpretá-lo. Aparência, psicomotricidade, fala, humor/afeto, pensamento, percepção e cognição convergem para crítica, julgamento e avaliação de segurança.",
+    render: () => <MapaExameMental />,
+  },
+  "psiq-hipnosedativos-seguranca-map": {
+    id: "psiq-hipnosedativos-seguranca-map",
+    titulo: "Insônia e hipnosedativos — decisão segura",
+    legenda: "O tratamento começa pela definição do problema e das causas. TCC-I é a base; qualquer fármaco precisa de alvo, prazo e reavaliação. Benzodiazepínicos crônicos não devem ser interrompidos abruptamente.",
+    render: () => <MapaHipnosedativosSeguro />,
+  },
+  "neuro-demencias-algoritmo-map": {
+    id: "neuro-demencias-algoritmo-map",
+    titulo: "Síndrome demencial — algoritmo em oito passos",
+    legenda: "Primeiro caracterize tempo, função e domínio cognitivo; exclua delirium e causas tratáveis; só então atribua etiologia. Segurança, capacidade e suporte ao cuidador fazem parte do diagnóstico útil.",
+    render: () => <MapaDemenciasOitoPassos />,
+  },
+  "neuro-localizacao-clinica-map": {
+    id: "neuro-localizacao-clinica-map",
+    titulo: "Localização neurológica pelo padrão clínico",
+    legenda: "Antes de pedir imagem, localize: sinais corticais, pares cranianos cruzados, nível sensitivo, ataxia ou arreflexia restringem o nível anatômico e tornam o exame complementar interpretável.",
+    render: () => <MapaLocalizacaoNeurologica />,
+  },
   "go-dpp-vs-pp": {
     id: "go-dpp-vs-pp",
     titulo: "DPP × Placenta prévia",
