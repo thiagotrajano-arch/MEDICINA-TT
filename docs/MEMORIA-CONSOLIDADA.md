@@ -15,16 +15,20 @@ O projeto já registra arquitetura Next.js/React/TypeScript/Tailwind, GitHub Pag
 
 O estado quantitativo e as pendências atuais devem ser obtidos de `PROXIMOS-PASSOS.md`, que é a fonte operacional e deve ser atualizado ao fim de cada sessão relevante.
 
-O fechamento de 2026-08-01 do acervo privado, incluindo o catálogo autenticado,
-a triagem do Drive e dos DOCX locais, a segurança aplicada e os limites de
-materialização, está em `docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`.
+O fechamento de 2026-08-01 do acervo privado está em
+`docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`. O estado operacional mais
+recente está em `docs/FECHAMENTO-2026-08-09.md`, `PROXIMOS-PASSOS.md` e nas
+seções finais desta memória.
 
 ## Decisões duradouras
 
 - Preservar o material original do usuário.
 - Complementar com fontes clínicas nomeadas e verificáveis.
 - Conferir gabaritos e comentar alternativas.
-- Usar imagens reais apenas com fonte, autoria e licença verificadas.
+- No site público, usar imagens reais apenas com fonte, autoria e licença
+  verificadas. Capturas comerciais autorizadas pelo usuário ficam somente na
+  biblioteca autenticada, com fonte e página, sem redistribuição pelo GitHub
+  Pages.
 - Em 2026-07-21, o lote visual foi encerrado com 49/60 alvos clínicos atendidos e 11 indisponíveis por ausência de arquivo aberto adequado; nunca preencher essas lacunas com imagem enganosa. O acervo passou a 66 figuras (12 diagramas e 54 registros de imagens reais em 53 arquivos).
 - O progresso de questões e simulados é salvo imediatamente no navegador e alimenta o dashboard. O login público por e-mail/senha está ativo e a sincronização segura com Supabase usa a sessão do próprio usuário e RLS; nunca expor a `service_role` no cliente.
 - Ao autenticar, pendências locais são enviadas à conta. Ao abrir o dashboard, eventos locais e remotos são reconciliados por `client_event_id`, sem duplicação.
@@ -35,7 +39,11 @@ materialização, está em `docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`.
 - Preventiva integra MFC/Atenção Primária; não criar disciplina redundante.
 - Processamento de IA ocorre nas sessões, não como API paga embutida no produto.
 - Obsidian é o segundo cérebro pessoal para dúvidas, conexões e decisões de estudo. O vault local não substitui os arquivos de handoff do repositório e não exige login. Obsidian Sync, caso desejado, é um serviço separado.
-- Backup lógico semanal do Supabase e keep-alive diário estão ativos no GitHub Actions. O primeiro artefato real foi validado em 2026-07-21 com retenção de 90 dias. Em CI, usar Supavisor session mode/IPv4 e cliente PostgreSQL 17; o endpoint direto do plano atual é IPv6 e não é alcançável pelos runners do GitHub.
+- Backup lógico semanal do Supabase e keep-alive diário existem no GitHub
+  Actions. O run `30820647376` gerou dump/artefato, mas o restore em PostgreSQL
+  stock falhou porque a extensão `supabase_vault` não estava disponível; runs
+  diários posteriores executaram somente keep-alive. Não considerar o passo de
+  restauração concluído até haver restore compatível e verificável.
 
 ## Fontes prioritárias
 

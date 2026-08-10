@@ -1,10 +1,10 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-08-01. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o fechamento privado da sessão, consultar também `Analise Integrada - Fechamento 2026-07-28.md` no Obsidian.
+> Atualizado em 2026-08-09. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o estado atual, usar também as seções finais deste arquivo e `docs/FECHAMENTO-2026-08-09.md`.
 
-> Fechamento mais recente: `docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`.
-> O catálogo autenticado já contém os metadados de 22 materiais privados; o
-> documento registra o que foi concluído e os limites ainda verificáveis.
+> Fechamento do acervo de 1º de agosto: `docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`.
+> Fechamento operacional mais recente: `docs/FECHAMENTO-2026-08-09.md` e a
+> seção “Lote neuropsiquiatria, currículo e mídia privada” abaixo.
 
 ## Fechamento e retomada — 2026-07-29
 
@@ -48,16 +48,18 @@
 | | |
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
-| **Disciplinas com conteúdo real** | **16 de 37**: GO, Pediatria, Infectologia, Cirurgia, MFC, Cardiologia, Pneumologia, Neurologia, Gastroenterologia, Oncologia, Otorrinolaringologia, Endocrinologia, Hematologia, Nefrologia, Reumatologia e Dermatologia |
-| **Resumos** | **225** de 293 subtemas |
-| **Questões** | **1072** |
-| **Casos clínicos** | **24** (GO 6 · Ped 7 · Inf 7 · Cir 2 · MFC 1 · **Neuro 1 novo**) |
-| **Figuras** | 73 (12 diagramas SVG + 61 imagens reais licenciadas) · **57 ancoradas a resumos (78%, era 37%)** |
+| **Disciplinas com conteúdo real** | **17 de 37**: GO, Pediatria, Infectologia, Cirurgia, MFC, Cardiologia, Pneumologia, Neurologia, Gastroenterologia, Oncologia, Otorrinolaringologia, Endocrinologia, Hematologia, Nefrologia, Reumatologia, Dermatologia e Psiquiatria |
+| **Resumos** | **234** de 299 subtemas |
+| **Questões** | **1.332** |
+| **Casos clínicos** | **56** |
+| **Figuras públicas** | **77** (16 diagramas SVG + 61 imagens reais licenciadas) · **61 figuras únicas ancoradas a resumos** |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário — **sincronização de resposta_usuario/simulado_resultado corrigida em 2026-07-24 (estava 100% quebrada desde a migration 0003, ver relatório abaixo); progresso_conteudo (resumos/casos) nunca foi afetado** |
 | **Fonte do conteúdo publicado** | Arquivos TS (`src/content/**`), sempre — build não depende mais do Supabase estar sincronizado (corrigido 2026-07-24, ver relatório abaixo) |
 | **Ferramentas** | Dashboard, Simulado, Casos, Mídia, Questões, Biblioteca — todas funcionais, nenhum placeholder |
 
-> Publicação de referência confirmada: o lote sanitizado de proveniência foi enviado em `6a126af` e o GitHub Pages concluiu com sucesso no run `30452513229`. Consulte o histórico Git e o workflow de deploy para a versão mais recente antes de declarar um novo lote em produção. O `npm run seed` não concluiu localmente em 10 min; o GitHub Pages renderiza a partir dos arquivos TS e não depende do seed para publicar.
+> Publicação de referência confirmada: PR #7 em `e502f5a`; registro final em
+> `140e68f`; GitHub Pages runs `31348422663` e `31348600688` aprovados. O site
+> estático renderiza a partir dos arquivos TS e não depende do seed para publicar.
 
 ## O que foi feito nesta sessão (2026-07-27 — Codex, passos 8 a 25)
 
