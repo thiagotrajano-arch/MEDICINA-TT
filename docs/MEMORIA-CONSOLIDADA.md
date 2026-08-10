@@ -60,6 +60,15 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 ## Atualização de continuidade — 2026-07-28
 
 - SISCAD concluído no cofre privado: 37 componentes, 36 planos disponíveis analisados e um indisponível; dados individuais continuam fora do repositório e do site.
+- Em 2026-08-10, a camada privada de semana/agenda foi aplicada ao Supabase e
+  recebeu um ciclo confirmado de 12 semanas: 30 disciplinas concluídas na fila,
+  7 componentes atuais, 4 PDFs neuropsiquiátricos vinculados, 84 eventos, 114
+  tarefas e 36 blocos OMED. A importação é aditiva e não duplica eventos.
+- Rotina semanal padrão: segunda e terça para semestre/PDFs; quarta para revisão
+  OMED; quinta para conteúdo já cursado; sexta para erros OMED; sábado para
+  questões/casos/imagens; domingo para fechamento e reagendamento.
+- O manifesto detalhado permanece no corpus privado e nunca deve entrar no Git.
+  HCPM VI continua sem inferência até o plano do SISCAD ser aprovado/disponível.
 - Estratégia reconciliado: 863 entradas ZIP, 824 nomes iniciais, cinco duplicatas exatas e 34 variantes distintas recuperadas; 858 PDFs distintos preservados. Ainda falta manifesto unificado e seleção por lacuna clínica.
 - LANN, UE, Farmacologia e os 30 arquivos de `RESUMOS` foram triados privadamente. O Drive tem inventário prioritário por metadados, mas exige deduplicação antes de qualquer novo download/lote.
 - Próxima fila: manifesto de fontes, matriz plano–tema–subtema, revisão editorial de Infectologia/GO, mapas mentais individuais e camada privada autenticada de atualização do curso.
