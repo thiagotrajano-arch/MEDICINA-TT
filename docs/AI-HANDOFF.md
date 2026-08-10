@@ -483,3 +483,22 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
   Questões, robots e sitemap retornaram HTTP 200.
 - O lote público está concluído. Permanecem externos: migration/QA autenticada,
   Lighthouse/axe e reparo do teste de restore com `supabase_vault`.
+
+## Estado privado — plano de estudos de 12 semanas — 2026-08-10
+
+- A migration `cria_semana_atual_privada` e a migration de índices relacionais
+  foram aplicadas no Supabase remoto. As quatro tabelas usam RLS por
+  proprietário; não há dados da agenda na camada pública.
+- A conta privada possui um plano aditivo de 12 semanas (10/08–01/11/2026): 84
+  eventos de agenda, 114 tarefas, 28 focos confirmados e zero duplicações.
+- O plano cobre os 7 componentes atuais, distribui as 30 disciplinas concluídas
+  para revisão longitudinal e reserva 3 blocos OMED por semana (36 no total).
+- Os quatro PDFs neuropsiquiátricos foram catalogados e vinculados às semanas
+  1–4 somente por metadados privados. O manifesto real, hashes, Markdown e
+  binários ficam em `Desktop\\MEDICINA\\_private-corpus\\semana-20260809` e não
+  devem ser copiados para Git, logs ou conteúdo público.
+- O importador reproduzível é `npm run curso:plano-private -- --manifest
+  <manifesto-privado> [--apply]`. Ele preserva eventos manuais e evita duplicar
+  agenda/tarefas.
+- QA autenticada no navegador ainda é necessária. HCPM VI permanece como lacuna
+  explícita até o plano do SISCAD ficar disponível; não inferir seu conteúdo.

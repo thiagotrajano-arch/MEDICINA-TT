@@ -64,6 +64,12 @@ em produção. Isso não significa encerrar futuras atualizações médicas.
 - [ ] 27. Exibir, no painel privado, disciplinas, documentos, lacunas, próximos estudos e materiais relacionados, inclusive das matérias já concluídas.
 - [ ] 28. Criar rotinas reutilizáveis de abertura, acompanhamento, encerramento e revisão longitudinal por período/matéria.
 
+> Avanço de 2026-08-10 nos passos 19, 27 e 28: a camada autenticada recebeu um
+> plano idempotente de 12 semanas com os 7 componentes atuais, as 30 disciplinas
+> concluídas distribuídas para revisão, 4 PDFs privados e 36 blocos OMED. Os
+> passos continuam abertos porque ainda faltam a curadoria integral de cada
+> recurso público/privado e a QA autenticada da experiência completa.
+
 > Passo 22 concluído em 2026-07-29: a rota pública de trilhas foi reduzida a
 > ciclos genéricos e passou a ter auditoria estática. O mapa individual segue
 > no cofre privado até existir uma camada autenticada revisada (23–28).

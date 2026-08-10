@@ -1679,6 +1679,33 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
 - [ ] Continuar a revisão clínica aprofundada por diretrizes atuais e a curadoria
   visual privada por lacuna real, sem transformar quantidade em objetivo isolado.
 
+## Plano privado de 12 semanas e revisão OMED — 2026-08-10
+
+- [x] A migration da semana atual foi aplicada no Supabase remoto, com RLS por
+  proprietário; dois índices de cobertura foram acrescentados para as relações
+  de tarefas e materiais.
+- [x] A Agenda privada recebeu um ciclo de 12 semanas, de 10/08 a 01/11/2026,
+  com 84 compromissos e 114 tarefas marcáveis. A importação é aditiva,
+  idempotente e preserva eventos criados manualmente.
+- [x] As 30 disciplinas concluídas foram distribuídas como revisão longitudinal,
+  com seus tópicos curriculares; os 7 componentes atuais orientam o foco do 6º
+  período. HCPM VI continua explicitamente sem conteúdo inferido até o plano do
+  SISCAD ser aprovado/disponibilizado.
+- [x] Os quatro PDFs neuropsiquiátricos já convertidos para Markdown foram
+  catalogados como materiais privados e ligados às semanas 1–4. Binários,
+  Markdown comercial, caminhos locais e hashes permanecem fora do Git.
+- [x] OMED ganhou três blocos por semana: revisão dirigida na quarta, caderno de
+  erros/repetição espaçada na sexta e questões/casos/imagens no sábado. São 36
+  blocos OMED no ciclo, com rotação de Infectologia, Cardio, Neuro/Psiq, Pneumo,
+  GO, Pediatria, Cirurgia, MFC, Nefro/Gastro, Endócrino/Hemato e especialidades.
+- [x] Verificação remota: 12 semanas, 84 eventos, 114 tarefas, 28 focos, 4
+  materiais e 4 vínculos; zero eventos ou tarefas duplicados.
+- [ ] Fazer QA visual autenticada da Agenda e da Semana atual na conta real;
+  ajustar horários conforme aulas/provas, sem apagar a estrutura longitudinal.
+- [ ] Os avisos preexistentes do Supabase permanecem separados: extensões no
+  schema `public`, proteção de senhas vazadas desativada e teste de restore
+  incompatível com PostgreSQL stock por `supabase_vault`.
+
 ### Publicação confirmada
 
 - [x] PR #7 mesclado na `main` pelo commit

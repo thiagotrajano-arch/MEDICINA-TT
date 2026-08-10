@@ -23,6 +23,7 @@
     "media:private-import": "tsx scripts/import-private-media.mts",
     "media:private-triage": "tsx scripts/triage-private-media.mts",
     "curso:sync-private": "tsx scripts/sync-private-curriculum.mts",
+    "curso:plano-private": "tsx scripts/import-private-study-plan.mts",
     "anki:status": "tsx scripts/anki-connect.mts status",
     "anki:organizar": "tsx scripts/anki-connect.mts organizar",
     "anki:progresso": "tsx scripts/anki-connect.mts progresso",
