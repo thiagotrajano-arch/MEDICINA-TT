@@ -1708,6 +1708,16 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
 
 ### Publicação confirmada
 
+- [x] PR #10 mesclado na `main` pelo commit
+  `f68d4b37cc60808683fcc90517ea6e5239581c25`.
+- [x] GitHub Pages run `31354606003` concluiu build e deploy com sucesso.
+- [x] Raiz, Agenda e Meu Curso responderam HTTP 200 sem marcador de erro de
+  aplicação após o deploy.
+- [x] O artefato público contém apenas UI, importador genérico, migration e
+  documentação sanitizada; o plano nominal e o corpus permanecem privados.
+
+### Publicação confirmada
+
 - [x] PR #7 mesclado na `main` pelo commit
   `e502f5a0eba682c2689ed83d8934f07e4a0e438c`.
 - [x] GitHub Pages run `31348422663` concluiu build e deploy com sucesso.

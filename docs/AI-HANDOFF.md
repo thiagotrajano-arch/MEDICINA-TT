@@ -502,3 +502,6 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
   agenda/tarefas.
 - QA autenticada no navegador ainda é necessária. HCPM VI permanece como lacuna
   explícita até o plano do SISCAD ficar disponível; não inferir seu conteúdo.
+- Publicação do suporte concluída pelo PR #10, merge `f68d4b3`, Pages run
+  `31354606003`; raiz, `/agenda/` e `/meu-curso/` responderam HTTP 200. Isso não
+  substitui QA visual com a sessão real.
