@@ -247,6 +247,14 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
   lote adicionou 8 resumos neuropsiquiátricos, 36 questões e 4 diagramas
   autorais. Atalhos de teclado e contador de progresso foram validados.
 - QA móvel em 390 × 844, typecheck, lint, auditoria editorial/privacidade e build
-  de 408 páginas passaram. Permanecem: deploy/checagem remota deste lote,
+  de 408 páginas passaram. A publicação está confirmada abaixo. Permanecem:
   migration e QA autenticada, Lighthouse/axe e restauração compatível do backup
   que contém `supabase_vault`.
+
+### Publicação confirmada
+
+- PR #7 foi mesclado na `main` no commit `e502f5a`; Pages run `31348422663`
+  concluiu com sucesso. Rotas públicas e o novo conteúdo neuropsiquiátrico
+  responderam HTTP 200.
+- As 46 imagens comerciais permaneceram privadas e não fazem parte do artefato
+  do GitHub Pages.

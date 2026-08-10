@@ -1676,3 +1676,13 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
   em PostgreSQL stock falhou pela ausência da extensão `supabase_vault`.
 - [ ] Continuar a revisão clínica aprofundada por diretrizes atuais e a curadoria
   visual privada por lacuna real, sem transformar quantidade em objetivo isolado.
+
+### Publicação confirmada
+
+- [x] PR #7 mesclado na `main` pelo commit
+  `e502f5a0eba682c2689ed83d8934f07e4a0e438c`.
+- [x] GitHub Pages run `31348422663` concluiu build e deploy com sucesso.
+- [x] Raiz, biblioteca de Psiquiatria, resumo de hipnosedativos, Questões,
+  `robots.txt` e `sitemap.xml` responderam HTTP 200 e sem erro de aplicação.
+- [x] As 46 imagens comerciais continuam apenas no bucket privado; o deploy não
+  incluiu PDFs, capturas comerciais, manifestos privados ou credenciais.
