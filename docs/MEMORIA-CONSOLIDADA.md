@@ -71,6 +71,8 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
   HCPM VI continua sem inferência até o plano do SISCAD ser aprovado/disponível.
 - Suporte publicado no PR #10 (`f68d4b3`), Pages run `31354606003`; Agenda e Meu
   Curso responderam HTTP 200. Ainda falta a inspeção visual autenticada.
+- Idempotência final confirmada após normalizar timestamps da Agenda: repetição
+  controlada inseriu 0 eventos e 0 tarefas; banco com 84 eventos e 0 duplicados.
 - Estratégia reconciliado: 863 entradas ZIP, 824 nomes iniciais, cinco duplicatas exatas e 34 variantes distintas recuperadas; 858 PDFs distintos preservados. Ainda falta manifesto unificado e seleção por lacuna clínica.
 - LANN, UE, Farmacologia e os 30 arquivos de `RESUMOS` foram triados privadamente. O Drive tem inventário prioritário por metadados, mas exige deduplicação antes de qualquer novo download/lote.
 - Próxima fila: manifesto de fontes, matriz plano–tema–subtema, revisão editorial de Infectologia/GO, mapas mentais individuais e camada privada autenticada de atualização do curso.

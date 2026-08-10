@@ -1715,6 +1715,10 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
   aplicação após o deploy.
 - [x] O artefato público contém apenas UI, importador genérico, migration e
   documentação sanitizada; o plano nominal e o corpus permanecem privados.
+- [x] Reteste idempotente detectou e corrigiu normalização de fuso na chave da
+  Agenda. As 84 cópias excedentes do teste foram removidas sem tocar eventos
+  manuais; execução final inseriu 0 eventos/0 tarefas e confirmou 84 eventos,
+  zero duplicados.
 
 ### Publicação confirmada
 
