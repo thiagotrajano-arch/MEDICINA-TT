@@ -1,5 +1,6 @@
 import { getFigura } from "./registry";
 import { asset } from "@/lib/asset";
+import { FiguraImagemClient } from "./FiguraImagemClient";
 
 /**
  * Renderiza a figura ancorada a uma seção do resumo — diagrama SVG ou imagem
@@ -39,15 +40,7 @@ export function Figura({ id }: { id: string }) {
 
       {imagem ? (
         <div className="bg-black/[0.03] px-3 py-4 dark:bg-white/[0.02]">
-          {/* Imagem servida do próprio site (public/img). `unoptimized` não é
-              necessário: o build estático já exporta os arquivos como estão. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={asset(imagem.src)}
-            alt={imagem.alt}
-            loading="lazy"
-            className="mx-auto max-h-[420px] w-auto max-w-full rounded-lg"
-          />
+          <FiguraImagemClient src={asset(imagem.src)} alt={imagem.alt} />
         </div>
       ) : (
         <div className="overflow-x-auto px-3 py-4">

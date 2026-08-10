@@ -1615,3 +1615,64 @@ até o workflow terminar.
 
 O lote foi publicado sem PDFs comerciais, imagens privadas, dados curriculares
 individuais ou credenciais. As pendencias externas permanecem registradas.
+
+## Ajuste do Anki — 2026-08-09
+
+- [x] AnkiConnect local confirmado na versão 6 com a coleção aberta.
+- [x] Backup `.apkg` criado antes da alteração: `exports/anki/backup-pre-repair-20260809.apkg`.
+- [x] Snapshot de progresso antes/depois exportado localmente.
+- [x] Organização segura aplicada com `npm run anki:organizar -- --aplicar`.
+- [x] Estilo do modelo `OMED Bonito` atualizado para títulos menores e leitura
+  responsiva; CSS não expõe AnkiConnect ao site.
+- [x] Conferência pós-ajuste: 226 decks monitorados e 1.703 cartões antes e
+  depois; nenhuma contagem mudou e nenhuma duplicata foi criada.
+- [x] Decks curtos por disciplina preservados (`Codex Medicus::...`).
+- [x] Após autorização explícita, os 210 decks legados vazios (209 nomes
+  longos e 1 deck aninhado) foram removidos sem apagar cartões.
+- [ ] Validar visualmente o modelo no Anki e instalar extensões somente se a
+  versão/backup forem confirmados.
+
+## Fechamento da limpeza de títulos do Anki — 2026-08-09
+
+- [x] Autorização explícita registrada para excluir somente decks vazios.
+- [x] Backup imediatamente anterior preservado em
+  `exports/anki/backup-before-deck-cleanup-20260809.apkg`.
+- [x] A API do Anki exigiu `cardsToo=true`; a rotina só o utilizou depois de
+  confirmar `findCards = 0` em cada alvo.
+- [x] Removidos 210 decks legados; nenhum cartão foi excluído ou movido.
+- [x] Verificação pós-operação: 108 decks totais, 16 decks Codex monitorados e
+  1.703 cartões (delta de cartões = 0); nenhum nome legado restante.
+- [x] Snapshot pós-limpeza: `exports/anki/progresso-after-cleanup.json`.
+- [ ] Validar visualmente o Anki e avaliar extensão visual somente depois de
+  confirmar a versão local; a limpeza de nomes está concluída.
+
+## Lote neuropsiquiatria, currículo e mídia privada — 2026-08-09
+
+- [x] Quatro PDFs da semana foram materializados somente no corpus privado,
+  convertidos para Markdown antes da leitura e classificados: Hipnosedativos,
+  Psiquiatria Clínica, Síndromes Demenciais e Neuroanatomia Clínica (378
+  páginas; nenhum OCR necessário neste lote).
+- [x] Foram selecionadas e revisadas visualmente 46 imagens desses PDFs. Todas
+  foram importadas para o bucket privado e para o catálogo autenticado, com
+  arquivo-fonte, página, disciplina, tema, subtema, modalidade e SHA-256. Nada
+  desse material comercial entrou no Git ou no bundle público.
+- [x] A matriz privada recebeu 37 componentes curriculares: 30 concluídos e 7
+  atuais. A sincronização é idempotente e não publica dados do SISCAD.
+- [x] A semana neuropsiquiátrica ganhou 8 resumos de alto rendimento, 36
+  questões comentadas, 4 diagramas autorais e vínculos entre biblioteca,
+  questões e mídia privada. O acervo público agora registra 234 resumos, 56
+  casos e 1.332 questões.
+- [x] Atalhos das questões validados: `1–4`/`A–D` respondem, `Enter`/seta direita
+  avançam, `?` abre ajuda e `Esc` fecha. O contador foi corrigido para avançar
+  somente quando a questão muda.
+- [x] QA móvel em 390 × 844 passou na página inicial, biblioteca de Psiquiatria
+  e questões, sem rolagem horizontal ou erros no console. Typecheck, lint,
+  auditorias de questões/privacidade e build de 408 páginas passaram.
+- [ ] Aplicar/testar a migration da semana no Supabase remoto e executar QA com
+  a conta real: login, persistência, catálogo privado, renovação/expiração da
+  URL assinada, logout e exclusão.
+- [ ] Executar Lighthouse e axe completos; corrigir os achados confirmados.
+- [ ] Corrigir o teste de restauração do backup: o dump foi gerado, mas o restore
+  em PostgreSQL stock falhou pela ausência da extensão `supabase_vault`.
+- [ ] Continuar a revisão clínica aprofundada por diretrizes atuais e a curadoria
+  visual privada por lacuna real, sem transformar quantidade em objetivo isolado.

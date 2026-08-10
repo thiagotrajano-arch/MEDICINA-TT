@@ -428,3 +428,48 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 - Site publicado: https://thiagotrajano-arch.github.io/MEDICINA-TT/
 - Nao confundir deploy com migration remota, QA autenticada, Lighthouse/axe,
   Drive, Anki ou restore; todos continuam como portoes separados.
+
+## Ajuste do Anki — 2026-08-09
+
+- AnkiConnect v6 respondeu com a coleção aberta; o inventário atual tem 318
+  decks, dos quais 226 entram no snapshot do Codex Medicus, com 1.703 cartões.
+- Backup local pré-ajuste: `exports/anki/backup-pre-repair-20260809.apkg`.
+- `anki:organizar -- --aplicar` foi executado e o estilo `OMED Bonito` foi
+  atualizado; a limpeza posterior removeu apenas decks legados vazios, mediante
+  autorização explícita.
+- Snapshots antes/depois têm 1.703 cartões e nenhuma mudança de contagem.
+- Backup pré-limpeza: `exports/anki/backup-before-deck-cleanup-20260809.apkg`.
+- Estado atual: 108 decks totais, 16 decks Codex monitorados, 1.703 cartões e
+  zero nomes legados restantes. Snapshot: `exports/anki/progresso-after-cleanup.json`.
+
+## Limpeza autorizada do Anki — 2026-08-09
+
+- O AnkiConnect v6 respondeu com a coleção aberta.
+- Os 210 alvos tinham `findCards = 0`; a chamada `deleteDecks` usou
+  `cardsToo=true` apenas porque as versões atuais do Anki exigem esse campo.
+- Nenhum cartão foi apagado, movido ou duplicado. A operação não toca no site
+  público nem expõe o endpoint local.
+
+## Estado transferível — neuropsiquiatria e lote privado — 2026-08-09
+
+- O lote de quatro PDFs desta semana foi processado na ordem obrigatória
+  `PDF → Markdown privado → seleção de páginas → revisão visual → catálogo`.
+  São 378 páginas e 46 imagens comerciais importadas apenas no bucket privado,
+  todas com origem, página e classificação; os binários e manifestos permanecem
+  fora do repositório.
+- O curso privado foi sincronizado com 37 componentes (30 concluídos e 7
+  atuais), sem inserir SISCAD ou dados pessoais na camada pública.
+- O site local contém 234 resumos, 56 casos, 1.332 questões e 408 páginas
+  estáticas. O novo recorte neuropsiquiátrico acrescentou 8 resumos, 36 questões
+  e 4 diagramas autorais. A tela de questões aceita teclado e o contador foi
+  corrigido para não avançar antes da troca de item.
+- Gates locais aprovados: typecheck, lint, auditoria editorial (zero duplicatas,
+  comentários curtos/vazios, fontes ausentes ou contradições), privacidade,
+  build e QA móvel 390 × 844 sem overflow/erros de console.
+- Pendências reais: publicar este lote e confirmar o workflow; aplicar/testar a
+  migration da semana; QA autenticada de login, catálogo privado e URLs
+  assinadas; Lighthouse/axe; e adaptar o restore do backup, atualmente bloqueado
+  no PostgreSQL stock pela extensão `supabase_vault`.
+
+Não interpretar a autorização para imagens comerciais como autorização de
+redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.

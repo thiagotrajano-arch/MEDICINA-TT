@@ -26,6 +26,7 @@ import { QUESTOES_DERMA } from "./questoes/derma";
 import { QUESTOES_PED_LOTE_01, QUESTOES_CIR_MFC_LOTE_01, QUESTOES_CARDIO_NEURO_PNEUMO_LOTE_01, QUESTOES_NEFRO_GASTRO_HEMATO_ENDO_LOTE_01 } from "./questoes/lotes-04-a-07";
 import { QUESTOES_CARDIO_LOTE_02, QUESTOES_NEURO_LOTE_02, QUESTOES_PNEUMO_LOTE_02 } from "./questoes/cardio-neuro-pneumo-lote-02";
 import { QUESTOES_CLINICAS_LOTE_20260803 } from "./questoes/clinicas-lote-20260803";
+import { QUESTOES_NEUROPSIQ_SEMANA } from "./questoes/neuropsiquiatria-semana";
 
 /**
  * Banco de questões — agregador.
@@ -70,4 +71,5 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_NEURO_LOTE_02,
   ...QUESTOES_PNEUMO_LOTE_02,
   ...QUESTOES_CLINICAS_LOTE_20260803,
+  ...QUESTOES_NEUROPSIQ_SEMANA,
 ];

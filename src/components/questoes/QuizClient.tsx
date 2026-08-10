@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { Check, X, ChevronRight, RotateCcw, ListChecks, PartyPopper, CalendarClock, History, ChevronDown, Filter } from "lucide-react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
+import { Check, X, ChevronRight, RotateCcw, ListChecks, PartyPopper, CalendarClock, History, ChevronDown, Filter, Keyboard, CircleHelp } from "lucide-react";
 import type { Disciplina, Questao } from "@/domain/content/types";
 import { registrarResposta, lerRespostas, sincronizarProgresso } from "@/lib/progresso";
 import { cn } from "@/lib/cn";
+import { Figuras } from "@/components/figuras/Figura";
 
 /**
  * Interactive quiz. Receives questions + disciplines as props from the server
@@ -37,6 +38,7 @@ export function QuizClient({
   const [escolha, setEscolha] = useState<string | null>(null);
   const [acertos, setAcertos] = useState(0);
   const [respondidas, setRespondidas] = useState(0);
+  const [atalhosAbertos, setAtalhosAbertos] = useState(false);
 
   const disciplinasComQ = useMemo(() => {
     const ids = new Set(questoes.map((q) => q.disciplinaId));
@@ -110,7 +112,7 @@ export function QuizClient({
 
   const questao = fila[0];
 
-  const responder = (letra: string) => {
+  const responder = useCallback((letra: string) => {
     if (escolha || !questao) return;
     const acertou = !!questao.alternativas.find((a) => a.letra === letra)?.correta;
     setEscolha(letra);
@@ -120,12 +122,45 @@ export function QuizClient({
     registrarResposta(questao, acertou);
     setRespondidasBase((base) => new Set(base).add(questao.id));
     setHistorico(lerRespostas());
-  };
+  }, [escolha, questao]);
 
-  const proxima = () => {
+  const proxima = useCallback(() => {
     setEscolha(null);
     setFila((f) => f.slice(1));
-  };
+  }, []);
+
+  useEffect(() => {
+    const aoPressionar = (evento: KeyboardEvent) => {
+      const alvo = evento.target as HTMLElement | null;
+      if (alvo?.matches("input, textarea, select, [contenteditable='true']")) return;
+      if (evento.key === "Escape" && atalhosAbertos) {
+        evento.preventDefault();
+        setAtalhosAbertos(false);
+        return;
+      }
+      if (evento.key === "?" && !evento.ctrlKey && !evento.metaKey && !evento.altKey) {
+        evento.preventDefault();
+        setAtalhosAbertos((aberto) => !aberto);
+        return;
+      }
+      if (evento.ctrlKey || evento.metaKey || evento.altKey) return;
+      if (!escolha && questao) {
+        const indice = /^[1-4]$/.test(evento.key) ? Number(evento.key) - 1 : -1;
+        const letra = /^[a-dA-D]$/.test(evento.key) ? evento.key.toUpperCase() : questao.alternativas[indice]?.letra;
+        if (letra && questao.alternativas.some((alternativa) => alternativa.letra === letra)) {
+          evento.preventDefault();
+          responder(letra);
+        }
+        return;
+      }
+      if (escolha && (evento.key === "Enter" || evento.key === "ArrowRight")) {
+        evento.preventDefault();
+        proxima();
+      }
+    };
+    window.addEventListener("keydown", aoPressionar);
+    return () => window.removeEventListener("keydown", aoPressionar);
+  }, [atalhosAbertos, escolha, proxima, questao, responder]);
 
   const reset = (novoFiltro: string) => {
     setFiltro(novoFiltro);
@@ -177,7 +212,7 @@ export function QuizClient({
 
   return (
     <div className="mx-auto max-w-3xl px-5 py-8 sm:px-8 sm:py-10">
-      <div className="mb-5 flex items-center justify-between gap-4">
+      <div className="mb-5 flex items-start justify-between gap-4">
         <div>
           <h1 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-text">
             <ListChecks className="size-6 text-accent" /> Questões
@@ -195,13 +230,36 @@ export function QuizClient({
             )}
           </p>
         </div>
-        <div className="text-right">
-          <div className="text-2xl font-bold text-text">{pct}%</div>
-          <div className="text-xs text-text-faint">
-            {acertos}/{respondidas} certas
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setAtalhosAbertos((aberto) => !aberto)}
+            aria-expanded={atalhosAbertos}
+            aria-label="Ver atalhos de teclado"
+            className="grid size-10 place-items-center rounded-xl border border-border bg-surface text-text-muted transition-colors hover:border-accent hover:text-accent"
+          >
+            <Keyboard className="size-4" />
+          </button>
+          <div className="text-right">
+            <div className="text-2xl font-bold text-text">{pct}%</div>
+            <div className="text-xs text-text-faint">
+              {acertos}/{respondidas} certas
+            </div>
           </div>
         </div>
       </div>
+
+      {atalhosAbertos && (
+        <aside className="mb-5 rounded-xl border border-accent/30 bg-accent-soft/55 p-4 text-sm text-text-muted" role="status">
+          <p className="flex items-center gap-2 font-bold text-text"><CircleHelp className="size-4 text-accent" /> Atalhos de resposta</p>
+          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs">
+            <span><Tecla>1–4</Tecla> ou <Tecla>A–D</Tecla> responder</span>
+            <span><Tecla>Enter</Tecla> ou <Tecla>→</Tecla> próxima</span>
+            <span><Tecla>?</Tecla> ajuda</span>
+            <span><Tecla>Esc</Tecla> fechar</span>
+          </div>
+        </aside>
+      )}
 
       {/* Filters */}
       <div className="mb-3 flex flex-wrap gap-2" aria-label="Fila de questões">
@@ -247,7 +305,7 @@ export function QuizClient({
       >
         <div className="mb-3 flex items-center gap-2 text-xs">
           <span className="rounded-full bg-surface-2 px-2 py-0.5 font-semibold text-text-muted">
-            {respondidas + 1} / {totalFila}
+            {totalFila - fila.length + 1} / {totalFila}
           </span>
           <span className="rounded-full bg-accent-soft px-2 py-0.5 font-semibold text-accent">
             {questao.estilo}
@@ -259,8 +317,10 @@ export function QuizClient({
 
         <p className="text-[15.5px] leading-relaxed text-text">{questao.enunciado}</p>
 
+        {questao.figura && <div className="mt-5"><Figuras ids={questao.figura} /></div>}
+
         <div className="mt-5 space-y-2.5">
-          {questao.alternativas.map((alt) => {
+          {questao.alternativas.map((alt, indice) => {
             const revelado = escolha !== null;
             const isEscolha = escolha === alt.letra;
             const status = revelado
@@ -275,10 +335,11 @@ export function QuizClient({
                 key={alt.letra}
                 onClick={() => responder(alt.letra)}
                 disabled={revelado}
+                aria-keyshortcuts={`${indice + 1} ${alt.letra}`}
                 className={cn(
                   "w-full rounded-xl border p-3.5 text-left transition-colors",
                   status === "idle" && "border-border bg-surface hover:border-accent hover:bg-accent-soft/40",
-                  status === "correta" && "border-accent bg-accent-soft",
+                  status === "correta" && "border-success bg-success-soft",
                   status === "errada" && "border-danger bg-danger-soft",
                   status === "neutra" && "border-border bg-surface opacity-70"
                 )}
@@ -287,7 +348,7 @@ export function QuizClient({
                   <span
                     className={cn(
                       "grid size-6 flex-none place-items-center rounded-md text-xs font-bold",
-                      status === "correta" && "bg-accent text-accent-contrast",
+                      status === "correta" && "bg-success text-white",
                       status === "errada" && "bg-danger text-white",
                       (status === "idle" || status === "neutra") && "bg-surface-2 text-text-muted"
                     )}
@@ -301,7 +362,10 @@ export function QuizClient({
                     )}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <span className="text-sm text-text">{alt.texto}</span>
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="text-sm text-text">{alt.texto}</span>
+                      {!revelado && <kbd className="hidden rounded border border-border bg-surface-2 px-1.5 py-0.5 text-[10px] font-bold text-text-faint sm:inline">{indice + 1}</kbd>}
+                    </div>
                     {revelado && (
                       <p className="mt-1.5 text-[13px] leading-snug text-text-muted">
                         {alt.comentario}
@@ -321,9 +385,10 @@ export function QuizClient({
             </span>
             <button
               onClick={proxima}
+              aria-keyshortcuts="Enter ArrowRight"
               className="inline-flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-contrast hover:opacity-90"
             >
-              Próxima <ChevronRight className="size-4" />
+              Próxima <span className="hidden text-[10px] font-medium opacity-75 sm:inline">Enter</span><ChevronRight className="size-4" />
             </button>
           </div>
         )}
@@ -337,6 +402,10 @@ export function QuizClient({
       </button>
     </div>
   );
+}
+
+function Tecla({ children }: { children: ReactNode }) {
+  return <kbd className="rounded border border-border-strong bg-surface px-1.5 py-0.5 font-bold text-text">{children}</kbd>;
 }
 
 function FiltroChip({
