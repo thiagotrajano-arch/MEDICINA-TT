@@ -305,7 +305,7 @@ async function main(): Promise<void> {
   const { data: agendaExistenteData, error: agendaExistenteErro } = await db.from("agenda_estudo_usuario")
     .select("titulo,inicio").eq("owner_id", owner).gte("inicio", instante(primeiro, "00:00", plano.utcOffset)).lte("inicio", instante(ultimoFim, "23:59", plano.utcOffset));
   if (agendaExistenteErro) throw new Error(`Agenda existente: ${agendaExistenteErro.message}`);
-  const agendaExistente = new Set((agendaExistenteData ?? []).map((item) => `${item.inicio}|${item.titulo}`));
+  const agendaExistente = new Set((agendaExistenteData ?? []).map((item) => `${new Date(item.inicio).toISOString()}|${item.titulo}`));
   const agendaNova = agenda.filter((item) => !agendaExistente.has(`${new Date(item.inicio).toISOString()}|${item.titulo}`));
   if (agendaNova.length) {
     const { error } = await db.from("agenda_estudo_usuario").insert(agendaNova);

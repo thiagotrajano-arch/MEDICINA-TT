@@ -505,3 +505,7 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
 - Publicação do suporte concluída pelo PR #10, merge `f68d4b3`, Pages run
   `31354606003`; raiz, `/agenda/` e `/meu-curso/` responderam HTTP 200. Isso não
   substitui QA visual com a sessão real.
+- O reteste idempotente expôs diferença `+00:00`/`Z` na comparação dos horários
+  da Agenda. O importador agora normaliza ambos com `toISOString()`; 84 cópias
+  geradas pelo teste foram removidas por marcador/ID, nenhum evento manual foi
+  alterado e o estado final voltou a 84 eventos únicos.
