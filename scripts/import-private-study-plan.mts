@@ -115,6 +115,11 @@ const fimDepois = (inicio: string, minutos: number): string => new Date(new Date
 const tituloPdf = (valor: string): string => valor.replace(/\.pdf$/i, "").replaceAll("_", " ");
 const limparObservacaoCurricular = (valor: string): string =>
   valor.replace(/\[Mapa curricular confirmado[^\]]*\]/g, "").replace(/\s+/g, " ").trim();
+const extrairTopicosCurriculares = (valor: string): string[] => {
+  const texto = limparObservacaoCurricular(valor);
+  const partes = texto.split(/[;\n]+/u).map((item) => item.trim()).filter(Boolean);
+  return partes.length ? partes : [texto];
+};
 
 function validarPlano(plano: Plano, fonte: ManifestoFonte): void {
   if (plano.schemaVersion !== 1 || fonte.schemaVersion < 1) throw new Error("Versão de manifesto não suportada.");
@@ -297,8 +302,12 @@ async function main(): Promise<void> {
       tarefas.push({ owner_id: owner, semana_id: semana.id, data, titulo: limitar(evento.titulo, 180), atividade: evento.atividade, recurso_id: pdf && evento.atividade === "pdf" ? limitar(`pdf:${pdf.filename}`, 180) : "", disciplina_id: limitar(evento.disciplina, 160), tema: limitar(evento.tema, 180), duracao_min: evento.duracao, estado: "pendente", origem: evento.origem });
     }
     for (const curso of anteriores) {
-      const tema = limitar(limparObservacaoCurricular(curso.observacao), 180);
-      tarefas.push({ owner_id: owner, semana_id: semana.id, data: dataSomada(inicio, 3), titulo: limitar(`Revisar ${curso.disciplina_id}: ${tema}`, 180), atividade: "revisao", recurso_id: "", disciplina_id: limitar(curso.disciplina_id, 160), tema, duracao_min: Math.max(20, Math.floor(75 / Math.max(anteriores.length, 1))), estado: "pendente", origem: "curso" });
+      const topicos = extrairTopicosCurriculares(curso.observacao);
+      const duracao = Math.max(10, Math.floor(75 / Math.max(topicos.length, 1)));
+      for (const topico of topicos) {
+        const tema = limitar(topico, 180);
+        tarefas.push({ owner_id: owner, semana_id: semana.id, data: dataSomada(inicio, 3), titulo: limitar(`Revisar ${curso.disciplina_id}: ${tema}`, 180), atividade: "revisao", recurso_id: "", disciplina_id: limitar(curso.disciplina_id, 160), tema, duracao_min: duracao, estado: "pendente", origem: "curso" });
+      }
     }
   }
 

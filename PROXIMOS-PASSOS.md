@@ -1706,6 +1706,28 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
   schema `public`, proteção de senhas vazadas desativada e teste de restore
   incompatível com PostgreSQL stock por `supabase_vault`.
 
+## Fila guiada por tema e agenda revisional — 2026-08-10
+
+- [x] A fila da Semana atual agora recalcula a próxima pendência, percentual e
+  barra de progresso após cada conclusão; o item exibe disciplina, tema e link
+  direto para o melhor resumo público disponível.
+- [x] A Agenda privada ganhou uma fila de "Pendências guiadas" com links para
+  resumos. Concluir na Agenda sincroniza a tarefa correspondente da Semana, e
+  concluir na Semana sincroniza o evento espelho do plano privado.
+- [x] O importador passou a decompor as observações curriculares em temas
+  separados. A conta ficou com 138 tarefas privadas, incluindo 54 revisões
+  granulares identificadas por disciplina e tema; nenhum dado foi para o
+  repositório público.
+- [x] O SISCAD está catalogado em nível de 37 componentes (30 concluídos e 7
+  atuais), com os blocos temáticos registrados nas observações privadas. Isso
+  permite a revisão longitudinal por tema, mas ainda não substitui a validação
+  manual de cada subtema contra o plano de ensino; HCPM VI continua explícito
+  como plano indisponível.
+- [ ] Fazer QA visual autenticada da nova fila, confirmar links de resumo para
+  cada disciplina e ajustar a granularidade caso uma revisão esteja ampla
+  demais. Depois disso, publicar o código sem incluir corpus, SISCAD ou dados
+  pessoais.
+
 ### Publicação confirmada
 
 - [x] PR #10 mesclado na `main` pelo commit
