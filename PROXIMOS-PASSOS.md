@@ -1728,6 +1728,17 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
   demais. Depois disso, publicar o código sem incluir corpus, SISCAD ou dados
   pessoais.
 
+### Publicação da fila guiada — confirmação 2026-08-11
+
+- [x] PR #13 mesclado na `main` pelo commit `3a0783d`.
+- [x] GitHub Pages run `31446358148` concluiu build e deploy com sucesso; o
+  aviso restante é apenas a depreciação futura do Node.js 20 nas actions.
+- [x] `/`, `/agenda/` e `/meu-curso/` responderam HTTP 200 sem erro de
+  aplicação após o deploy.
+- [ ] A validação visual autenticada continua necessária para confirmar os
+  links de cada tema com a conta real; a auditoria automática de rotas local
+  ficou indisponível por falha de rede nesta sessão.
+
 ### Publicação confirmada
 
 - [x] PR #10 mesclado na `main` pelo commit

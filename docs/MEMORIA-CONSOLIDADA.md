@@ -295,3 +295,11 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
   subtema ainda é uma etapa de QA; HCPM VI continua sem plano confirmado.
 - Esta rodada altera somente código e documentação sanitizada. Antes da
   publicação: typecheck, lint, build/rotas e QA visual autenticada.
+
+### Publicação da fila guiada — 2026-08-11
+
+- PR #13 foi mesclado na `main` no commit `3a0783d`.
+- GitHub Pages run `31446358148` passou em build e deploy. As rotas `/`,
+  `/agenda/` e `/meu-curso/` retornaram HTTP 200 sem erro de aplicação.
+- Permanece pendente somente o teste visual com a conta autenticada, incluindo
+  a abertura dos resumos e a sincronização Agenda ↔ Semana.

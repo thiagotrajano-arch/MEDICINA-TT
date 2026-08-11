@@ -528,3 +528,11 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
   plano confirmado.
 - O código desta rodada ainda está local na branch `docs/publicacao-redesign`;
   rodar os gates, conferir a sessão autenticada e só então publicar.
+
+### Publicação confirmada — fila guiada
+
+- PR #13 foi mesclado na `main` pelo commit `3a0783d`.
+- GitHub Pages run `31446358148` concluiu build e deploy; `/`, `/agenda/` e
+  `/meu-curso/` responderam HTTP 200 sem erro de aplicação.
+- A confirmação que falta é visual/autenticada: entrar na conta, concluir uma
+  tarefa na Semana, concluir o espelho na Agenda e abrir os resumos sugeridos.
