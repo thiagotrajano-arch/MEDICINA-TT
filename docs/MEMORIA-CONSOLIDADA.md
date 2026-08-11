@@ -279,3 +279,19 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
   responderam HTTP 200.
 - As 46 imagens comerciais permaneceram privadas e não fazem parte do artefato
   do GitHub Pages.
+
+## Fila guiada por tema — 2026-08-10
+
+- A fila privada da Semana atual agora mostra a próxima pendência, percentual,
+  tema e link para o resumo relacionado; ao marcar uma tarefa, a próxima sobe
+  automaticamente e a Agenda é sincronizada quando houver evento espelho.
+- A Agenda privada também mostra uma fila de pendências guiadas e links diretos
+  para resumos. Eventos manuais não entram na sincronização automática.
+- A rotina de plano separa as observações dos 30 componentes concluídos em
+  revisões por tema. Após a aplicação, a conta ficou com 138 tarefas, incluindo
+  54 revisões granulares; os dados continuam privados.
+- O catálogo curricular confirmado permanece em 37 componentes: 30 concluídos
+  e 7 atuais. Os blocos temáticos foram registrados, mas a validação subtema a
+  subtema ainda é uma etapa de QA; HCPM VI continua sem plano confirmado.
+- Esta rodada altera somente código e documentação sanitizada. Antes da
+  publicação: typecheck, lint, build/rotas e QA visual autenticada.

@@ -509,3 +509,22 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
   da Agenda. O importador agora normaliza ambos com `toISOString()`; 84 cópias
   geradas pelo teste foram removidas por marcador/ID, nenhum evento manual foi
   alterado e o estado final voltou a 84 eventos únicos.
+
+## Fila guiada e revisão longitudinal — 2026-08-10
+
+- A Semana atual passou a exibir progresso, próxima pendência e links diretos
+  para o resumo público relacionado a cada tarefa; a lista se reordena depois
+  da conclusão, sem exigir refresh manual.
+- A Agenda privada ganhou uma fila de pendências guiadas. Eventos gerados pelo
+  plano e tarefas semanais são sincronizados por proprietário, data e título;
+  eventos manuais ficam fora dessa sincronização.
+- O importador privado agora separa observações curriculares por ponto e vírgula
+  em revisões menores. O estado remoto verificado após a aplicação ficou em 138
+  tarefas, incluindo 54 revisões granulares; o corpus e o SISCAD continuam
+  somente no Supabase/cofre privado.
+- A matriz SISCAD confirmada continua em 37 componentes (30 concluídos e 7
+  atuais). Ela está catalogada por blocos temáticos de disciplina; o vínculo
+  subtema a subtema ainda precisa de QA visual/manual e HCPM VI permanece sem
+  plano confirmado.
+- O código desta rodada ainda está local na branch `docs/publicacao-redesign`;
+  rodar os gates, conferir a sessão autenticada e só então publicar.

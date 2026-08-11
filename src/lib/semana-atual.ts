@@ -181,7 +181,19 @@ export async function alternarTarefaSemana(tarefa: TarefaSemana): Promise<Tarefa
   const auth = await sessao();
   if (auth) {
     const { data, error } = await auth.supabase.from("tarefa_estudo_usuario").update({ estado, atualizado_em: atualizado.atualizadoEm }).eq("owner_id", auth.userId).eq("id", tarefa.id).select("id,semana_id,data,titulo,atividade,recurso_id,disciplina_id,tema,duracao_min,estado,origem,criado_em,atualizado_em").single();
-    if (data && !error) return mapearTarefa(data as LinhaTarefa);
+    if (data && !error) {
+      // O plano privado cria um evento de agenda espelho com o mesmo título e
+      // dia. Atualizar os dois lados evita que a fila volte a mostrar algo já
+      // concluído na agenda.
+      const inicioDia = new Date(`${tarefa.data}T00:00:00-03:00`);
+      const fimDia = new Date(inicioDia);
+      fimDia.setUTCDate(fimDia.getUTCDate() + 1);
+      const eventos = await auth.supabase.from("agenda_estudo_usuario").select("id").eq("owner_id", auth.userId).eq("titulo", tarefa.titulo).gte("inicio", inicioDia.toISOString()).lt("inicio", fimDia.toISOString()).like("observacao", "[Plano privado%");
+      if (!eventos.error && eventos.data?.length) {
+        await auth.supabase.from("agenda_estudo_usuario").update({ concluido: estado === "concluida", atualizado_em: atualizado.atualizadoEm }).eq("owner_id", auth.userId).in("id", eventos.data.map((evento) => evento.id));
+      }
+      return mapearTarefa(data as LinhaTarefa);
+    }
     if (error && !tabelaAusente(error)) throw new Error("Não foi possível atualizar o próximo passo.");
   }
   const local = lerLocal(); const tarefas = local.tarefas.map((item) => item.id === tarefa.id ? atualizado : item); gravarLocal({ ...local, tarefas }); return atualizado;

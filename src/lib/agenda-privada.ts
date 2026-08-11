@@ -67,8 +67,18 @@ export async function salvarEventoAgenda(entrada: EntradaAgenda): Promise<void> 
 
 export async function alternarEventoAgenda(item: EventoAgenda): Promise<void> {
   const { supabase, userId } = await autenticacao();
-  const { error } = await supabase.from("agenda_estudo_usuario").update({ concluido: !item.concluido, atualizado_em: new Date().toISOString() }).eq("owner_id", userId).eq("id", item.id);
+  const estado = !item.concluido;
+  const { error } = await supabase.from("agenda_estudo_usuario").update({ concluido: estado, atualizado_em: new Date().toISOString() }).eq("owner_id", userId).eq("id", item.id);
   if (error) throw new Error("Nao foi possivel atualizar o evento.");
+
+  // Eventos gerados pelo plano privado e tarefas semanais representam o mesmo
+  // bloco. Mantemos os dois espelhos sincronizados para que concluir na
+  // agenda também retire a pendência da fila da semana.
+  const data = new Date(item.inicio).toISOString().slice(0, 10);
+  const tarefas = await supabase.from("tarefa_estudo_usuario").select("id").eq("owner_id", userId).eq("data", data).eq("titulo", item.titulo).in("origem", ["agenda", "curso", "pdf"]);
+  if (!tarefas.error && tarefas.data?.length) {
+    await supabase.from("tarefa_estudo_usuario").update({ estado: estado ? "concluida" : "pendente", atualizado_em: new Date().toISOString() }).eq("owner_id", userId).in("id", tarefas.data.map((tarefa) => tarefa.id));
+  }
 }
 
 export async function excluirEventoAgenda(id: string): Promise<void> {
