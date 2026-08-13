@@ -128,6 +128,13 @@ filas paralelas.
 
 ### P1.4 Anki — parcial
 
+- [x] Fechamento operacional para estudo: cartões foram alinhados à rotina do
+  site, o limite de novos foi fixado em 30/dia, FSRS 0,90 e a cadência
+  5 min/5 h/3 d/7 d foram confirmados. As 22 cópias de AVC e 90 notas sem fonte
+  estão suspensas, preservadas e fora da fila. Evidência:
+  `docs/FECHAMENTO-ANKI-2026-08-13.md` e
+  `docs/PLANO-ALINHAMENTO-ANKI-SITE-QUESTOES-2026-08-13.md`.
+
 - [x] Reorganizar os decks existentes sem remover cartões: 2.829 cartões foram
   migrados para `MEDICINA → Ciclo Básico/Clínico → área → disciplina`; os decks
   antigos foram excluídos somente depois de ficarem vazios e o backup `.apkg`

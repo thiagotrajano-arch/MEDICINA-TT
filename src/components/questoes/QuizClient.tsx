@@ -7,6 +7,22 @@ import { registrarResposta, lerRespostas, sincronizarProgresso } from "@/lib/pro
 import { cn } from "@/lib/cn";
 import { Figuras } from "@/components/figuras/Figura";
 
+const INTERVALOS_REVISAO_DIAS = [1, 3, 7, 21, 45, 90] as const;
+
+/** A fila de questões acompanha a cadência de revisão do estudo, sem substituir o FSRS do Anki. */
+function intervaloRevisaoDias(respostas: ReturnType<typeof lerRespostas>): number {
+  const ordenadas = [...respostas].sort((a, b) => a.em - b.em);
+  const ultima = ordenadas.at(-1);
+  if (!ultima || !ultima.correta) return INTERVALOS_REVISAO_DIAS[0];
+
+  let acertosConsecutivos = 0;
+  for (let indice = ordenadas.length - 1; indice >= 0; indice -= 1) {
+    if (!ordenadas[indice].correta) break;
+    acertosConsecutivos += 1;
+  }
+  return INTERVALOS_REVISAO_DIAS[Math.min(acertosConsecutivos - 1, INTERVALOS_REVISAO_DIAS.length - 1)];
+}
+
 /**
  * Interactive quiz. Receives questions + disciplines as props from the server
  * page, so it is fully decoupled from where the data comes from (static/Supabase).
@@ -69,20 +85,22 @@ export function QuizClient({
     const porDisciplina = filtroAtual === "todas" ? questoes : questoes.filter((q) => q.disciplinaId === filtroAtual);
     const porSubtema = subtemaAtual ? porDisciplina.filter((q) => q.subtemaId === subtemaAtual) : porDisciplina;
     const pool = porSubtema.filter((q) => pertenceAoBanco(q, bancoAtual));
-    const maisRecente = new Map<string, ReturnType<typeof lerRespostas>[number]>();
+    const historicoPorQuestao = new Map<string, ReturnType<typeof lerRespostas>>();
     for (const resposta of historicoAtual) {
-      const anterior = maisRecente.get(resposta.questaoId);
-      if (!anterior || resposta.em > anterior.em) maisRecente.set(resposta.questaoId, resposta);
+      const respostasDaQuestao = historicoPorQuestao.get(resposta.questaoId) ?? [];
+      respostasDaQuestao.push(resposta);
+      historicoPorQuestao.set(resposta.questaoId, respostasDaQuestao);
     }
     const agora = Date.now();
     const disponiveis = pool.filter((q) => {
       if (incluirRespondidas || modoAtual === "todas") return true;
-      const resposta = maisRecente.get(q.id);
+      const respostasDaQuestao = historicoPorQuestao.get(q.id) ?? [];
+      const resposta = respostasDaQuestao.reduce<ReturnType<typeof lerRespostas>[number] | undefined>((maisRecente, atual) => !maisRecente || atual.em > maisRecente.em ? atual : maisRecente, undefined);
       if (modoAtual === "novas") return !resposta && !base.has(q.id);
       if (modoAtual === "erros") return resposta ? !resposta.correta : false;
       if (modoAtual === "revisao") {
         if (!resposta) return false;
-        const intervalo = resposta.correta ? 7 : 1;
+        const intervalo = intervaloRevisaoDias(respostasDaQuestao);
         return agora - resposta.em >= intervalo * 24 * 60 * 60 * 1000;
       }
       return true;
@@ -377,7 +395,7 @@ export function QuizClient({
 
       <p className="mb-4 flex items-center gap-1.5 text-xs text-text-faint">
         {modoFila === "revisao" ? <CalendarClock className="size-3.5" /> : <History className="size-3.5" />}
-        A fila é salva neste dispositivo e sincronizada quando sua sessão estiver ativa.
+        A fila é salva neste dispositivo e sincronizada quando sua sessão estiver ativa. Revisões corretas seguem D1, D3, D7, D21 e depois aumentam; erro volta para D1.
       </p>
 
       {/* Card */}
