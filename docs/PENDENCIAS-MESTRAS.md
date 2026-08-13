@@ -134,6 +134,9 @@ filas paralelas.
   estão suspensas, preservadas e fora da fila. Evidência:
   `docs/FECHAMENTO-ANKI-2026-08-13.md` e
   `docs/PLANO-ALINHAMENTO-ANKI-SITE-QUESTOES-2026-08-13.md`.
+- [x] Testar Anki antes de encerrar: conexão, árvore, estilo, FSRS, exportação,
+  backup e restauração de pacote temporário passaram. A fila ativa contém
+  somente 1.847 cartões `OMED Bonito`; o teste não deixou dado técnico ativo.
 
 - [x] Reorganizar os decks existentes sem remover cartões: 2.829 cartões foram
   migrados para `MEDICINA → Ciclo Básico/Clínico → área → disciplina`; os decks

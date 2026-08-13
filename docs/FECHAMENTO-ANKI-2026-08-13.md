@@ -50,3 +50,20 @@ notas sem fonte porque ela mede o acervo preservado, não somente a fila ativa.
   clínico, superfícies azul-petróleo, contraste de leitura e destaque aqua.
   O tema da janela do aplicativo continua responsabilidade do Onigiri/Anki e
   requer uma confirmação visual local após reinício.
+
+## Teste funcional final — 2026-08-13
+
+- AnkiConnect v6 respondeu; a coleção abriu com 25 entradas de deck e 18 decks
+  de estudo exportados. Não há mais deck visível com o título `Codex`.
+- O teste de backup/restauração foi executado em um deck técnico temporário:
+  exportação `.apkg` com agendamento, exclusão do deck temporário, importação,
+  conferência de um cartão restaurado e limpeza final. O pacote de teste tem
+  21.670 bytes e não deixou cartão técnico ativo.
+- Backup final do acervo: `exports/anki/backups/2026-08-13T23-33-40-588Z`.
+  Snapshot final: `exports/anki/progresso.json`.
+- Há 1.847 cartões ativos, todos no modelo `OMED Bonito`. Os 112 cartões
+  editoriais inseguros (22 cópias, 90 sem referência) e o cartão técnico estão
+  suspensos; as buscas confirmaram zero cópia ou nota sem fonte na fila ativa.
+- Onigiri, AnkiConnect, FSRS Helper, Deckhand e Image Occlusion constam como
+  instalados e habilitados. A inspeção visual do tema dentro da janela do Anki
+  ainda depende do controlador gráfico local, não da integridade da coleção.
