@@ -31,6 +31,7 @@
     "anki:reparar-arvore": "tsx scripts/anki-connect.mts reparar-arvore",
     "anki:progresso": "tsx scripts/anki-connect.mts progresso",
     "anki:backup": "tsx scripts/anki-connect.mts backup",
+    "anki:intervalos": "tsx scripts/anki-configurar-intervalos.mts",
     "anki:auditoria": "tsx scripts/anki-connect.mts auditoria",
     "anki:neuro-pendente": "tsx scripts/anki-connect.mts lote-neuro-pendente",
     "anki:resumo": "tsx scripts/anki-connect.mts resumo",
