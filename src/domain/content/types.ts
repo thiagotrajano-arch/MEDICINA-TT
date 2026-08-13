@@ -98,6 +98,11 @@ export interface Questao {
   estilo: EstiloQuestao;
   tags: string[];
   fonte?: string;
+  /** Metadados estruturados para separar bancos sem depender de texto livre. */
+  bancos?: Array<"omed" | "residencia" | "revalida" | "enare" | "usmle" | "institucional">;
+  prova?: string;
+  instituicao?: string;
+  ano?: number;
   /** Figura(s) do registro público, exibida(s) junto ao enunciado. */
   figura?: string | string[];
 }

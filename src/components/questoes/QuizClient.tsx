@@ -24,8 +24,11 @@ export function QuizClient({
   disciplinas: Disciplina[];
 }) {
   type ModoFila = "novas" | "erros" | "revisao" | "todas";
+  type BancoQuestao = "geral" | "imagens" | "omed" | "residencia";
   const CHAVE_FILTROS = "codex:questoes-filtros";
   const [filtro, setFiltro] = useState<string>("todas");
+  const [subtemaFiltro, setSubtemaFiltro] = useState<string>("");
+  const [banco, setBanco] = useState<BancoQuestao>("geral");
   const [modoFila, setModoFila] = useState<ModoFila>("novas");
   const [mostrarRespondidas, setMostrarRespondidas] = useState(false);
   const [disciplinasAbertas, setDisciplinasAbertas] = useState(false);
@@ -45,8 +48,27 @@ export function QuizClient({
     return disciplinas.filter((d) => ids.has(d.id));
   }, [questoes, disciplinas]);
 
-  function montarFila(filtroAtual: string, incluirRespondidas: boolean, base: Set<string>, historicoAtual: ReturnType<typeof lerRespostas>, modoAtual: ModoFila) {
-    const pool = filtroAtual === "todas" ? questoes : questoes.filter((q) => q.disciplinaId === filtroAtual);
+  const subtemaSelecionado = useMemo(() => disciplinas
+    .flatMap((disciplina) => disciplina.temas.flatMap((tema) => tema.subtemas))
+    .find((subtema) => subtema.id === subtemaFiltro), [disciplinas, subtemaFiltro]);
+
+  const totalComImagem = useMemo(() => questoes.filter((questao) => Boolean(questao.figura)).length, [questoes]);
+
+  function pertenceAoBanco(questao: Questao, bancoAtual: BancoQuestao): boolean {
+    if (bancoAtual === "geral") return true;
+    if (bancoAtual === "imagens") return Boolean(questao.figura);
+    const bancos = questao.bancos ?? [];
+    if (bancoAtual === "omed" && bancos.includes("omed")) return true;
+    if (bancoAtual === "residencia" && bancos.some((item) => ["residencia", "revalida", "enare", "usmle", "institucional"].includes(item))) return true;
+    const origem = `${questao.estilo} ${questao.fonte ?? ""} ${questao.tags.join(" ")}`.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    if (bancoAtual === "omed") return origem.includes("omed");
+    return questao.estilo === "residencia" || /residencia|revalida|enare|fuvest|fmusp|usmle/.test(origem);
+  }
+
+  function montarFila(filtroAtual: string, incluirRespondidas: boolean, base: Set<string>, historicoAtual: ReturnType<typeof lerRespostas>, modoAtual: ModoFila, subtemaAtual = "", bancoAtual: BancoQuestao = "geral") {
+    const porDisciplina = filtroAtual === "todas" ? questoes : questoes.filter((q) => q.disciplinaId === filtroAtual);
+    const porSubtema = subtemaAtual ? porDisciplina.filter((q) => q.subtemaId === subtemaAtual) : porDisciplina;
+    const pool = porSubtema.filter((q) => pertenceAoBanco(q, bancoAtual));
     const maisRecente = new Map<string, ReturnType<typeof lerRespostas>[number]>();
     for (const resposta of historicoAtual) {
       const anterior = maisRecente.get(resposta.questaoId);
@@ -59,7 +81,7 @@ export function QuizClient({
       if (modoAtual === "novas") return !resposta && !base.has(q.id);
       if (modoAtual === "erros") return resposta ? !resposta.correta : false;
       if (modoAtual === "revisao") {
-        if (!resposta) return true;
+        if (!resposta) return false;
         const intervalo = resposta.correta ? 7 : 1;
         return agora - resposta.em >= intervalo * 24 * 60 * 60 * 1000;
       }
@@ -77,18 +99,34 @@ export function QuizClient({
   // após montar no cliente, para não divergir da renderização do servidor.
   useEffect(() => {
     let ativo = true;
+    const lerSelecaoInicial = () => {
+      const preferencias = (() => { try { return JSON.parse(window.localStorage.getItem(CHAVE_FILTROS) ?? "{}"); } catch { return {}; } })() as { filtro?: string; modo?: ModoFila; subtema?: string; banco?: BancoQuestao };
+      const parametros = new URLSearchParams(window.location.search);
+      const disciplinaUrl = parametros.get("disciplina") ?? "";
+      const subtemaUrl = parametros.get("subtema") ?? "";
+      const modoUrl = parametros.get("modo") ?? "";
+      const bancoUrl = parametros.get("banco") ?? (parametros.get("imagens") === "1" ? "imagens" : "");
+      const filtroCandidato = disciplinaUrl || preferencias.filtro || "todas";
+      const filtroInicial = filtroCandidato === "todas" || disciplinas.some((d) => d.id === filtroCandidato) ? filtroCandidato : "todas";
+      const subtemaCandidato = subtemaUrl || preferencias.subtema || "";
+      const subtemaInicial = disciplinas.some((disciplina) => (filtroInicial === "todas" || disciplina.id === filtroInicial) && disciplina.temas.some((tema) => tema.subtemas.some((subtema) => subtema.id === subtemaCandidato))) ? subtemaCandidato : "";
+      const modoCandidato = modoUrl || preferencias.modo || "novas";
+      const modoInicial: ModoFila = modoCandidato === "erros" || modoCandidato === "revisao" || modoCandidato === "todas" ? modoCandidato : "novas";
+      const bancoInicial: BancoQuestao = bancoUrl === "imagens" || bancoUrl === "omed" || bancoUrl === "residencia" ? bancoUrl : "geral";
+      return { filtroInicial, subtemaInicial, modoInicial, bancoInicial };
+    };
     void Promise.resolve().then(() => {
       if (!ativo) return;
       const locais = lerRespostas();
-      const preferencias = (() => { try { return JSON.parse(window.localStorage.getItem(CHAVE_FILTROS) ?? "{}"); } catch { return {}; } })() as { filtro?: string; modo?: ModoFila };
-      const filtroInicial = preferencias.filtro && disciplinas.some((d) => d.id === preferencias.filtro) ? preferencias.filtro : "todas";
-      const modoInicial: ModoFila = preferencias.modo === "erros" || preferencias.modo === "revisao" || preferencias.modo === "todas" ? preferencias.modo : "novas";
+      const { filtroInicial, subtemaInicial, modoInicial, bancoInicial } = lerSelecaoInicial();
       setFiltro(filtroInicial);
+      setSubtemaFiltro(subtemaInicial);
       setModoFila(modoInicial);
+      setBanco(bancoInicial);
       setHistorico(locais);
       const base = new Set(locais.map((r) => r.questaoId));
       setRespondidasBase(base);
-      montarFila(filtroInicial, false, base, locais, modoInicial);
+      montarFila(filtroInicial, false, base, locais, modoInicial, subtemaInicial, bancoInicial);
     });
     void sincronizarProgresso().then((p) => {
       if (!ativo) return;
@@ -100,9 +138,14 @@ export function QuizClient({
         ...lerRespostas().map((r) => r.questaoId),
         ...historicoAtual.map((r) => r.questaoId),
       ]);
+      const { filtroInicial, subtemaInicial, modoInicial, bancoInicial } = lerSelecaoInicial();
       setRespondidasBase(base);
       setHistorico(historicoAtual);
-      montarFila(filtro, mostrarRespondidas, base, historicoAtual, modoFila);
+      setFiltro(filtroInicial);
+      setSubtemaFiltro(subtemaInicial);
+      setModoFila(modoInicial);
+      setBanco(bancoInicial);
+      montarFila(filtroInicial, false, base, historicoAtual, modoInicial, subtemaInicial, bancoInicial);
     });
     return () => {
       ativo = false;
@@ -164,28 +207,52 @@ export function QuizClient({
 
   const reset = (novoFiltro: string) => {
     setFiltro(novoFiltro);
+    setSubtemaFiltro("");
     setDisciplinasAbertas(novoFiltro !== "todas");
     setMostrarRespondidas(false);
-    window.localStorage.setItem(CHAVE_FILTROS, JSON.stringify({ filtro: novoFiltro, modo: modoFila }));
-    montarFila(novoFiltro, false, respondidasBase, historico, modoFila);
+    window.localStorage.setItem(CHAVE_FILTROS, JSON.stringify({ filtro: novoFiltro, modo: modoFila, subtema: "", banco }));
+    montarFila(novoFiltro, false, respondidasBase, historico, modoFila, "", banco);
   };
 
   const trocarModo = (novoModo: ModoFila) => {
     setModoFila(novoModo);
     setMostrarRespondidas(false);
-    window.localStorage.setItem(CHAVE_FILTROS, JSON.stringify({ filtro, modo: novoModo }));
-    montarFila(filtro, false, respondidasBase, historico, novoModo);
+    window.localStorage.setItem(CHAVE_FILTROS, JSON.stringify({ filtro, modo: novoModo, subtema: subtemaFiltro, banco }));
+    montarFila(filtro, false, respondidasBase, historico, novoModo, subtemaFiltro, banco);
+  };
+
+  const trocarBanco = (novoBanco: BancoQuestao) => {
+    setBanco(novoBanco);
+    setMostrarRespondidas(false);
+    window.localStorage.setItem(CHAVE_FILTROS, JSON.stringify({ filtro, modo: modoFila, subtema: subtemaFiltro, banco: novoBanco }));
+    montarFila(filtro, false, respondidasBase, historico, modoFila, subtemaFiltro, novoBanco);
   };
 
   const revisarRespondidas = () => {
     setMostrarRespondidas(true);
-    montarFila(filtro, true, respondidasBase, historico, "todas");
+    montarFila(filtro, true, respondidasBase, historico, "todas", subtemaFiltro, banco);
+  };
+
+  const limparSelecao = () => {
+    setFiltro("todas");
+    setSubtemaFiltro("");
+    setBanco("geral");
+    setModoFila("novas");
+    setMostrarRespondidas(false);
+    window.localStorage.setItem(CHAVE_FILTROS, JSON.stringify({ filtro: "todas", modo: "novas", subtema: "", banco: "geral" }));
+    window.history.replaceState(null, "", window.location.pathname);
+    montarFila("todas", false, respondidasBase, historico, "novas", "", "geral");
   };
 
   const ocultas = totalNaSelecao - totalFila;
 
   if (!questao) {
-    const tudoRespondido = totalNaSelecao > 0 && !mostrarRespondidas;
+    const tudoRespondido = totalNaSelecao > 0 && modoFila === "novas" && !mostrarRespondidas;
+    const estadoVazio = modoFila === "erros"
+      ? "Nenhum erro nesta seleção."
+      : modoFila === "revisao"
+        ? "Nenhuma revisão está vencida nesta seleção."
+        : "Nenhuma questão nesta seleção. Isso registra uma lacuna real do banco, sem inventar correspondências.";
     return (
       <div className="mx-auto max-w-3xl px-5 py-16 text-center">
         {tudoRespondido ? (
@@ -202,7 +269,10 @@ export function QuizClient({
             </button>
           </>
         ) : (
-          <p className="text-text-muted">Nenhuma questão nesta seleção.</p>
+          <>
+            <p className="text-text-muted">{estadoVazio}</p>
+            <button onClick={limparSelecao} className="mt-4 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-text-muted hover:border-accent hover:text-accent">Limpar filtros</button>
+          </>
         )}
       </div>
     );
@@ -268,6 +338,18 @@ export function QuizClient({
         <FiltroChip label="Revisão" active={modoFila === "revisao"} onClick={() => trocarModo("revisao")} />
         <FiltroChip label="Todas" active={modoFila === "todas"} onClick={() => trocarModo("todas")} />
       </div>
+      <div className="mb-3 flex flex-wrap gap-2" aria-label="Origem e formato do banco">
+        <FiltroChip label="Banco geral" active={banco === "geral"} onClick={() => trocarBanco("geral")} />
+        <FiltroChip label={`Imagens (${totalComImagem})`} active={banco === "imagens"} onClick={() => trocarBanco("imagens")} />
+        <FiltroChip label="Prioridade OMED" active={banco === "omed"} onClick={() => trocarBanco("omed")} />
+        <FiltroChip label="Residência / Revalida" active={banco === "residencia"} onClick={() => trocarBanco("residencia")} />
+      </div>
+      {subtemaFiltro && (
+        <div className="mb-3 flex items-center justify-between gap-3 rounded-xl border border-accent/30 bg-accent-soft/45 px-3 py-2 text-xs text-text-muted">
+          <span><strong className="text-text">Subtema:</strong> {subtemaSelecionado?.nome ?? subtemaFiltro}</span>
+          <button type="button" onClick={limparSelecao} className="shrink-0 font-bold text-accent hover:underline">Limpar vínculo</button>
+        </div>
+      )}
       <div className="mb-6 rounded-2xl border border-border bg-surface p-3 sm:p-4" aria-label="Filtrar por disciplina">
         <div className="flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2.5">

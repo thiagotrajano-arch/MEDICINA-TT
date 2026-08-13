@@ -3,7 +3,6 @@ import type { CasoClinico } from "@/domain/content/types";
 // Lote autoral clínico 2026-08-03: casos inéditos, estruturados para raciocínio em etapas.
 type Spec = [string,string,string,string,string,string,string,string,string];
 const subtemaPublicado = (id: string): string => ({
-  "nefro--disturbios-hidroeletroliticos-e-acido-base--diagnostico-e-conduta": "nefro--injuria-renal-aguda-e-doenca-renal-cronica--diagnostico-e-conduta",
   "reumato--artrite-reumatoide--diagnostico-e-tratamento": "reumato--artrites--artrite-reumatoide",
   "derma--dermatoses-inflamatorias--psoriase-e-dermatite": "derma--dermatoses-inflamatorias--geral",
   "derma--infeccoes-e-infestacoes--micoses-e-escabiose": "derma--dermatoses-inflamatorias--geral",

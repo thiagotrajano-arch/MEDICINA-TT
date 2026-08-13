@@ -34,6 +34,9 @@ export function MidiaPrivadaClient() {
   const [busca, setBusca] = useState("");
   const [filtroTipo, setFiltroTipo] = useState<"todos" | TipoOrigemMidiaPrivada>("todos");
   const [filtroTriagem, setFiltroTriagem] = useState<"todos" | MidiaPrivada["triagemStatus"]>("todos");
+  const [filtroDisciplina, setFiltroDisciplina] = useState("todas");
+  const [filtroSubtema, setFiltroSubtema] = useState("todos");
+  const [filtroModalidade, setFiltroModalidade] = useState("todas");
   const [selecionado, setSelecionado] = useState<MidiaPrivada | null>(null);
 
   const carregar = async () => {
@@ -47,6 +50,15 @@ export function MidiaPrivadaClient() {
     let ativo = true;
     let cancelar: (() => void) | undefined;
     void import("@/infra/supabase/client").then(async ({ getSupabaseAnon }) => {
+      const parametros = new URLSearchParams(window.location.search);
+      const disciplinaId = parametros.get("disciplina") ?? "";
+      const disciplinaNome = DISCIPLINAS.find((item) => item.id === disciplinaId)?.nome ?? disciplinaId;
+      const subtema = parametros.get("subtema") ?? "";
+      const buscaInicial = parametros.get("busca") ?? subtema;
+      if (buscaInicial) setBusca(buscaInicial);
+      if (disciplinaNome) setFiltroDisciplina(disciplinaNome);
+      if (subtema) setFiltroSubtema(subtema);
+      if (disciplinaNome || subtema) setEntrada((atual) => ({ ...atual, disciplina: disciplinaNome, subtema }));
       const supabase = getSupabaseAnon();
       const { data } = await supabase.auth.getSession();
       if (!ativo) return;
@@ -56,7 +68,8 @@ export function MidiaPrivadaClient() {
       const a = supabase.auth.onAuthStateChange((_evento, sessao) => {
         if (!ativo) return;
         setAutenticado(Boolean(sessao?.user));
-        if (!sessao?.user) setItens([]);
+        if (sessao?.user) void carregar();
+        else setItens([]);
       });
       cancelar = () => a.data.subscription.unsubscribe();
     }).catch(() => { if (ativo) setAutenticado(false); });
@@ -91,10 +104,18 @@ export function MidiaPrivadaClient() {
     return itens.filter((item) => {
       if (filtroTipo !== "todos" && item.tipoOrigem !== filtroTipo) return false;
       if (filtroTriagem !== "todos" && item.triagemStatus !== filtroTriagem) return false;
+      if (filtroDisciplina !== "todas" && item.disciplina !== filtroDisciplina) return false;
+      if (filtroSubtema !== "todos" && item.subtema !== filtroSubtema) return false;
+      if (filtroModalidade !== "todas" && item.modalidade !== filtroModalidade) return false;
       if (!termo) return true;
       return [item.titulo, item.disciplina, item.tema, item.subtema, item.diagnostico, item.modalidade, item.fonte, item.observacao].some((valor) => valor?.toLocaleLowerCase("pt-BR").includes(termo));
     });
-  }, [busca, filtroTipo, filtroTriagem, itens]);
+  }, [busca, filtroDisciplina, filtroModalidade, filtroSubtema, filtroTipo, filtroTriagem, itens]);
+  const opcoes = useMemo(() => ({
+    disciplinas: [...new Set(itens.map((item) => item.disciplina).filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR")),
+    subtemas: [...new Set(itens.filter((item) => filtroDisciplina === "todas" || item.disciplina === filtroDisciplina).map((item) => item.subtema).filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR")),
+    modalidades: [...new Set(itens.map((item) => item.modalidade).filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR")),
+  }), [filtroDisciplina, itens]);
 
   if (autenticado === null) return <div className="mx-auto max-w-4xl px-5 py-12 text-sm text-text-muted">Verificando sua sessão...</div>;
   if (!autenticado) return <Bloqueio />;
@@ -117,7 +138,7 @@ export function MidiaPrivadaClient() {
     {entrada.tipoOrigem === "paciente" && <div className="mt-4 grid gap-3 rounded-xl border border-border bg-surface-2 p-4 text-sm text-text-muted sm:grid-cols-2"><label className="flex gap-3"><input required type="checkbox" checked={entrada.pacienteAnonimizado} onChange={(e) => alterar("pacienteAnonimizado", e.target.checked)} />Imagem completamente anonimizada.</label><label className="flex gap-3"><input required type="checkbox" checked={entrada.autorizacaoPaciente} onChange={(e) => alterar("autorizacaoPaciente", e.target.checked)} />Autorização apropriada confirmada.</label></div>}
     <button disabled={ocupado} className="mt-5 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-bold text-accent-contrast disabled:opacity-60"><ShieldCheck className="size-4" />{ocupado ? "Processando..." : "Salvar na Minha mídia"}</button></form>
     <section className="mt-6 rounded-2xl border border-border bg-surface p-5 sm:p-6"><div className="flex flex-wrap items-end justify-between gap-3"><div><h2 className="flex items-center gap-2 text-lg font-bold text-text"><FileImage className="size-5 text-accent" /> Acervo visual</h2><p className="text-sm text-text-muted">{filtrados.length} de {itens.length} imagem(ns) visível(is) nesta conta.</p></div><button disabled={ocupado} onClick={() => void carregar()} className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-text-muted"><RefreshCw className="size-4" />Atualizar</button></div>
-      <div className="mt-4 grid gap-3 sm:grid-cols-[minmax(0,1fr)_220px_190px]"><label className="relative block"><Search className="pointer-events-none absolute left-3 top-3 size-4 text-text-faint" /><input value={busca} onChange={(e) => setBusca(e.target.value)} placeholder="Buscar título, tema, achado ou fonte" className={`${input} pl-9`} /></label><select value={filtroTipo} onChange={(e) => setFiltroTipo(e.target.value as typeof filtroTipo)} className={input}><option value="todos">Todas as origens</option>{Object.entries(ROTULOS).map(([v, r]) => <option key={v} value={v}>{r}</option>)}</select><select value={filtroTriagem} onChange={(e) => setFiltroTriagem(e.target.value as typeof filtroTriagem)} className={input}><option value="todos">Todas as triagens</option>{Object.entries(STATUS_TRIAGEM).map(([v, r]) => <option key={v} value={v}>{r}</option>)}</select></div>
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-[minmax(220px,1fr)_180px_180px_170px_170px_170px]"><label className="relative block"><Search className="pointer-events-none absolute left-3 top-3 size-4 text-text-faint" /><input value={busca} onChange={(e) => setBusca(e.target.value)} placeholder="Buscar título, tema, achado ou fonte" className={`${input} pl-9`} /></label><select value={filtroDisciplina} onChange={(e) => { setFiltroDisciplina(e.target.value); setFiltroSubtema("todos"); }} className={input}><option value="todas">Todas as disciplinas</option>{opcoes.disciplinas.map((valor) => <option key={valor} value={valor}>{valor}</option>)}</select><select value={filtroSubtema} onChange={(e) => setFiltroSubtema(e.target.value)} className={input}><option value="todos">Todos os subtemas</option>{opcoes.subtemas.map((valor) => <option key={valor} value={valor}>{valor}</option>)}</select><select value={filtroModalidade} onChange={(e) => setFiltroModalidade(e.target.value)} className={input}><option value="todas">Todas as modalidades</option>{opcoes.modalidades.map((valor) => <option key={valor} value={valor}>{valor}</option>)}</select><select value={filtroTipo} onChange={(e) => setFiltroTipo(e.target.value as typeof filtroTipo)} className={input}><option value="todos">Todas as origens</option>{Object.entries(ROTULOS).map(([v, r]) => <option key={v} value={v}>{r}</option>)}</select><select value={filtroTriagem} onChange={(e) => setFiltroTriagem(e.target.value as typeof filtroTriagem)} className={input}><option value="todos">Todas as triagens</option>{Object.entries(STATUS_TRIAGEM).map(([v, r]) => <option key={v} value={v}>{r}</option>)}</select></div>
       {!filtrados.length ? <p className="mt-5 rounded-xl bg-surface-2 p-4 text-sm text-text-muted">{itens.length ? "Nenhuma imagem corresponde aos filtros atuais." : "Nenhuma imagem cadastrada ainda."}</p> : <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{filtrados.map((item) => { const resumo = hrefResumo(item); return <article key={item.id} className="overflow-hidden rounded-xl border border-border bg-surface-2">{item.urlTemporaria ? <button type="button" onClick={() => setSelecionado(item)} className="group relative block w-full cursor-zoom-in bg-bg" aria-label={`Ampliar ${item.titulo}`}><NextImage src={item.urlTemporaria} alt={item.titulo} width={1200} height={900} unoptimized className="aspect-[4/3] w-full object-contain transition-transform group-hover:scale-[1.02]" /><span className="absolute bottom-2 right-2 inline-flex items-center gap-1 rounded-full bg-black/70 px-2.5 py-1 text-[11px] font-semibold text-white"><Maximize2 className="size-3" />Ampliar</span></button> : <div className="grid aspect-[4/3] place-items-center bg-bg text-sm text-text-muted"><ImageIcon className="size-8" />Visualização expirada</div>}<div className="p-4"><div className="flex items-center justify-between gap-2"><p className="text-[10px] font-semibold uppercase text-accent">{ROTULOS[item.tipoOrigem]}</p><span className="rounded-full bg-surface px-2 py-0.5 text-[10px] font-semibold text-text-faint">{STATUS_TRIAGEM[item.triagemStatus]}</span></div><h3 className="mt-1 font-bold text-text">{item.titulo}</h3><p className="mt-2 text-xs text-text-muted">{[item.disciplina, item.tema, item.subtema, item.modalidade].filter(Boolean).join(" · ") || "Sem classificação"}</p>{item.diagnostico && <p className="mt-2 text-xs text-text-muted">Achado: {item.diagnostico}</p>}{item.fonte && <p className="mt-2 text-xs text-text-muted">Origem: {item.fonte}{item.pagina ? `, p. ${item.pagina}` : ""}</p>}<div className="mt-3 flex flex-wrap items-center gap-3 text-xs font-semibold">{resumo && <Link href={resumo} className="inline-flex items-center gap-1 text-accent hover:underline"><BookOpen className="size-3" />Abrir resumo</Link>}<button disabled={ocupado} onClick={() => void excluir(item)} className="inline-flex items-center gap-1 text-red-600"><Trash2 className="size-3" />Remover</button></div></div></article>; })}</div>}
     </section>
     {selecionado && <div role="dialog" aria-modal="true" aria-label={`Imagem ampliada: ${selecionado.titulo}`} className="fixed inset-0 z-[70] grid place-items-center bg-black/80 p-4 backdrop-blur-sm" onClick={() => setSelecionado(null)}><div className="relative flex max-h-[92vh] w-full max-w-7xl flex-col overflow-auto rounded-2xl border border-white/15 bg-surface shadow-2xl lg:flex-row" onClick={(evento) => evento.stopPropagation()}><button type="button" onClick={() => setSelecionado(null)} aria-label="Fechar imagem ampliada" className="absolute right-3 top-3 z-10 grid size-10 place-items-center rounded-full bg-black/60 text-white hover:bg-black/80"><X className="size-5" /></button><div className="grid min-h-[45vh] flex-1 place-items-center bg-black p-4 sm:min-h-[65vh]"><div className="relative max-h-[78vh] max-w-full">{selecionado.urlTemporaria ? <NextImage src={selecionado.urlTemporaria} alt={selecionado.titulo} width={1800} height={1400} unoptimized className="max-h-[78vh] w-auto max-w-full object-contain" /> : <p className="p-8 text-sm text-white/70">URL temporária expirada. Feche e atualize a biblioteca.</p>}</div></div><aside className="w-full shrink-0 border-t border-border p-5 sm:p-6 lg:w-[22rem] lg:border-l lg:border-t-0"><p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">{ROTULOS[selecionado.tipoOrigem]}</p><h2 className="mt-2 text-xl font-bold text-text">{selecionado.titulo}</h2><p className="mt-4 text-sm leading-6 text-text-muted">{[selecionado.disciplina, selecionado.tema, selecionado.subtema, selecionado.modalidade].filter(Boolean).join(" · ") || "Sem classificação"}</p>{selecionado.diagnostico && <p className="mt-3 text-sm text-text-muted"><strong className="text-text">Achado:</strong> {selecionado.diagnostico}</p>}{selecionado.fonte && <p className="mt-3 text-sm text-text-muted"><strong className="text-text">Origem:</strong> {selecionado.fonte}{selecionado.pagina ? `, página ${selecionado.pagina}` : ""}</p>}<p className="mt-3 text-sm text-text-muted"><strong className="text-text">Triagem:</strong> {STATUS_TRIAGEM[selecionado.triagemStatus]}. {selecionado.triagemMotivo}</p>{hrefResumo(selecionado) && <Link href={hrefResumo(selecionado)!} onClick={() => setSelecionado(null)} className="mt-5 inline-flex items-center gap-2 rounded-lg bg-accent px-3 py-2 text-sm font-bold text-accent-contrast"><BookOpen className="size-4" />Abrir resumo relacionado</Link>}</aside></div></div>}

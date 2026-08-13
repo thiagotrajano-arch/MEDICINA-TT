@@ -2,6 +2,7 @@ import type { Disciplina, Subtema } from "@/domain/content/types";
 
 export interface EstudoLink {
   href: string;
+  questoesHref: string;
   subtemaId: string;
   subtemaNome: string;
   disciplinaId: string;
@@ -105,6 +106,7 @@ export function resolverResumoEstudo({
   if (!escolhido) return null;
   return {
     href: `/estudar/${encodeURIComponent(escolhido.item.id)}`,
+    questoesHref: `/questoes?disciplina=${encodeURIComponent(disciplina.item.id)}&subtema=${encodeURIComponent(escolhido.item.id)}&modo=novas`,
     subtemaId: escolhido.item.id,
     subtemaNome: escolhido.item.nome,
     disciplinaId: disciplina.item.id,

@@ -271,3 +271,23 @@ Auditoria atual do banco publico: 1.072 questoes, zero repeticoes, comentarios c
 - Foi criado um plano privado de consolidação em 12 semanas, sem datas fixas, cobrindo todos os componentes, subáreas, questões, casos, mapas, mídia e revisão espaçada. O documento não entra no site público.
 - O próximo bloco do site não é redesign: primeiro deve ligar a matriz curricular privada a disciplinas, subtemas, recursos e lacunas no painel autenticado (passos 19, 27 e 28), mantendo SISCAD/Drive e materiais comerciais fora do Pages.
 - Depois disso, executar a auditoria de publicação do commit de integração do Anki e somente então decidir se ele será publicado; a ponte Anki continua local e não deve ser exposta ao navegador público.
+
+## Reconciliação do plano — 2026-08-10
+
+- O placar documental permanece em 36 passos concluídos e 64 abertos. Não marcar
+  como finalizados os portões clínicos apenas porque a auditoria estrutural está
+  limpa.
+- Passos 19, 27 e 28 avançaram substancialmente: o recorte privado de 26
+  componentes agora possui 55 módulos, 374 subtemas, links reais para 64 resumos
+  e 58 filas de questões, além de Agenda/Semana. Continuam abertos até a QA
+  autenticada, a validação manual dos vínculos e a reconciliação de obsoletos.
+- Passos 74, 75, 81 e 82 avançaram na biblioteca privada: 379 objetos foram
+  reconciliados e o acesso assinado funciona, com novos filtros. Permanecem
+  abertos porque 321 imagens ainda exigem revisão visual e ligação clínica.
+- Passos 88 e 89 permanecem concluídos. Passos 90 e 91 avançaram com backup,
+  decks canônicos, FSRS, Onigiri e auditoria, porém continuam abertos até a
+  revisão dos cartões, o fluxo real por erros e um teste documentado de restore.
+- Passo 13 não está concluído: o dump foi gerado, mas o restore falhou porque o
+  PostgreSQL stock não inclui a extensão `supabase_vault`.
+- Passos 97–100 são recorrentes e devem ser cumpridos novamente para cada lote;
+  este lote só poderá ser marcado depois de gates, push, deploy e QA de produção.
