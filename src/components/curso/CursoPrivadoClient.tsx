@@ -7,6 +7,7 @@ import type { DisciplinaCursoPrivado, EntradaCursoPrivado, EventoCursoPrivado, L
 import type { RecursosPublicosDisciplina } from "@/domain/curso/recursos-publicos";
 import { STATUS_CURSO } from "@/domain/curso/types";
 import { carregarCursoPrivado, criarRascunhoCurso, interpretarImportacaoCurso, lerRascunhoCurso, salvarDisciplinaCurso, salvarRascunhoCurso, validarEntradaCurso } from "@/lib/curso-privado";
+import { MapaCurricularPrivado } from "@/components/curso/MapaCurricularPrivado";
 
 type DisciplinaDisponivel = RecursosPublicosDisciplina;
 type FormatoImportacao = Extract<OrigemCurso, "markdown" | "csv">;
@@ -170,6 +171,8 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
         <Metrica icone={<Brain className="size-4" />} valor={cobertura.casos} legenda="casos" />
         <Metrica icone={<ImageIcon className="size-4" />} valor={cobertura.figuras} legenda="midias ancoradas" />
       </section>
+
+      <MapaCurricularPrivado />
 
       <section className="mt-6 rounded-2xl border border-border bg-surface p-5 sm:p-6" style={{ boxShadow: "var(--shadow)" }}>
         <div className="flex items-start gap-3"><MapPinned className="mt-0.5 size-5 shrink-0 text-accent" /><div><h2 className="text-lg font-bold text-text">Proximos estudos</h2><p className="mt-1 text-sm text-text-muted">Priorizacao local baseada no status e dificuldade que voce registrou, ligada somente ao conteudo publico ja publicado.</p></div></div>

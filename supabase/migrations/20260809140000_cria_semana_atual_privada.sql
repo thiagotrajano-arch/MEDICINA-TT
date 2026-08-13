@@ -38,6 +38,8 @@ create table if not exists public.foco_semana_usuario (
 );
 
 alter table public.foco_semana_usuario
+  drop constraint if exists foco_semana_usuario_owner_fk;
+alter table public.foco_semana_usuario
   add constraint foco_semana_usuario_owner_fk
   foreign key (owner_id, semana_id)
   references public.semana_estudo_usuario(owner_id, id)
@@ -63,6 +65,8 @@ create table if not exists public.tarefa_estudo_usuario (
   atualizado_em timestamptz not null default now()
 );
 
+alter table public.tarefa_estudo_usuario
+  drop constraint if exists tarefa_estudo_usuario_owner_fk;
 alter table public.tarefa_estudo_usuario
   add constraint tarefa_estudo_usuario_owner_fk
   foreign key (owner_id, semana_id)
@@ -90,6 +94,8 @@ create table if not exists public.vinculo_recurso_usuario (
   unique (owner_id, semana_id, recurso_tipo, recurso_id)
 );
 
+alter table public.vinculo_recurso_usuario
+  drop constraint if exists vinculo_recurso_usuario_owner_fk;
 alter table public.vinculo_recurso_usuario
   add constraint vinculo_recurso_usuario_owner_fk
   foreign key (owner_id, semana_id)

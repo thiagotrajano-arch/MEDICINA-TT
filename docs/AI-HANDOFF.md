@@ -1,6 +1,10 @@
 # Handoff para outra IA — Codex Medicus
 
-Atualizado em 2026-08-09.
+Atualizado em 2026-08-10.
+
+> **Pendências operacionais:** consultar primeiro
+> [PENDENCIAS-MESTRAS.md](PENDENCIAS-MESTRAS.md). `PROXIMOS-PASSOS.md` e o
+> Plano de 100 Passos agora são histórico/evidência e não filas paralelas.
 
 **Antes de mais nada, leia `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` e `docs/PLANO-INTEGRACAO-MEDICINA-DESKTOP.md`** — documentos vivos com o
 inventário completo de `Desktop\MEDICINA\`, Downloads e Google Drive, o que já foi mapeado/construído,
@@ -11,7 +15,7 @@ pelo usuário, não perguntar de novo).
 
 O fechamento do acervo de 1º de agosto está em
 `docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`. O estado operacional mais
-recente está em `docs/FECHAMENTO-2026-08-09.md`, em `PROXIMOS-PASSOS.md` e nas
+recente está em `docs/FECHAMENTO-2026-08-10.md`, em `PROXIMOS-PASSOS.md` e nas
 seções finais deste arquivo. Leia-os antes de repetir OAuth, triagem, hashing,
 deduplicação, limpeza do Anki ou importação da semana neuropsiquiátrica.
 
@@ -536,3 +540,136 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
   `/meu-curso/` responderam HTTP 200 sem erro de aplicação.
 - A confirmação que falta é visual/autenticada: entrar na conta, concluir uma
   tarefa na Semana, concluir o espelho na Agenda e abrir os resumos sugeridos.
+
+## Estado transferível — currículo granular e Anki — 2026-08-10
+
+- A visão acadêmica resumida continua com 37 componentes (30 concluídos e 7
+  atuais). Em paralelo, o recorte profundo pedido pelo usuário contém exatamente
+  26 componentes: BBPM I/II/III/IV/VII/VIII, HCPM I–VIII, APS I–VI, Cirurgia
+  I–III e Urgência/Emergência I–III.
+- A migration `20260810183000_cria_mapa_curricular_granular.sql` foi aplicada.
+  Estado remoto confirmado: 26 componentes, 55 módulos, 374 subtemas e 122
+  recursos autenticados. O manifesto privado e dados pessoais não entram no Git.
+- A cobertura pública validada desse mapa é de 64 resumos e 58 filas de questões;
+  276 subtemas continuam como lacunas honestas. HCPM VI segue sem plano aprovado
+  e não pode ser inferido.
+- `MapaCurricularPrivado` consulta os recursos gravados e só oferece resumo ou
+  questões quando existem e não foram rejeitados. O `QuizClient` mantém um
+  subtema sem questões como vazio real, sem expandir para a disciplina.
+- O esquema de `Questao` aceita `bancos`, `prova`, `instituicao` e `ano`, mas a
+  migração editorial do corpus ainda está pendente. O banco de imagens exige
+  `figura` real.
+- O catálogo privado foi testado no runtime: 379 metadados e 379 objetos, zero
+  ausentes, URL assinada e leitura parcial aprovadas. Ainda existem 321 imagens
+  em revisão pendente.
+- O Anki local possui 2.830 cartões preservados. São 2.829 em 16 decks canônicos
+  por disciplina e um piloto separado. Foram movidos 1.126 cartões legados e
+  removidos apenas 89 decks comprovadamente vazios. Backups `.apkg` precedem as
+  mudanças.
+- FSRS foi conferido com retenção 0,90, aprendizagem 1m/10m, reaprendizagem 10m,
+  25 novos/dia e revisões sem limite artificial. Onigiri foi configurado para o
+  perfil local; conferir aparência após reinício normal do Anki.
+- A auditoria Anki marcou, sem excluir: 14 grupos duplicados exatos, 4 frentes
+  ambíguas, 885 versos extensos e 90 notas sem referência. A refatoração deve ser
+  clínica, em lotes por área, preservando IDs e histórico.
+- O próximo lote diário de PDFs deve sempre converter para Markdown privado,
+  registrar hash/metadados e criar D+1, D+7 e D+21 sem despejar todo o backlog no
+  calendário.
+- Restore do Supabase continua aberto: houve dump/artefato real, porém o restore
+  em PostgreSQL stock falhou por ausência de `supabase_vault`.
+- O fechamento completo está em `docs/FECHAMENTO-2026-08-10.md`.
+
+## Plano integrado aguardando aprovação — semestre, OMED, anteriores e Anki
+
+- A agenda atual é utilizável, mas já tem carga relevante: 12 semanas, 84
+  eventos, 138 tarefas, 36 blocos OMED, 90 revisões, 12 blocos de questões e 4
+  blocos de PDF. Não agendar os 374 subtemas de uma vez.
+- Proposta semanal não aplicada: segunda semestre atual (75 min), terça PDF do
+  foco atual (75), quarta OMED (90), quinta semestres anteriores (75), sexta
+  Anki/erros (45), sábado OMED integrado com casos e imagens (90), domingo
+  fechamento (45). Revisões Anki de 15–20 minutos ficam dentro dos blocos, não
+  como uma agenda paralela.
+- Proposta de fases: semanas 1–4 semestre atual + Infectologia/GO/Pediatria/
+  Cirurgia-MFC; semanas 5–8 consolidação + Cardio/Neuro/Pneumo/Nefro/Gastro;
+  semanas 9–12 integração + Endócrino/Hemato-Onco/Derma/Reumato/Psiquiatria.
+- PDF diário: Markdown privado primeiro, vínculo ao foco da semana, depois D0,
+  D1, D7 e D21. Se houver sobrecarga, adiar a revisão antiga de menor prioridade.
+- Antes de aplicar, falta o usuário confirmar horários fixos, plantões,
+  disciplinas do semestre atual e primeiro foco OMED. Não criar cartões nem
+  modificar a agenda enquanto a distribuição estiver apenas proposta.
+
+## Atualização de planejamento — 2026-08-11
+
+O pedido atual prioriza melhorar a leitura visual de conclusão, modo claro,
+resumos e módulos didáticos de Ciências Básicas. O plano completo foi registrado
+em `PROXIMOS-PASSOS.md` sob "Plano de melhoria visual, arquitetura e qualidade
+— 2026-08-11". Executar nesta ordem: gates e QA; design system e progresso;
+piloto de resumos/módulos/mapas; navegação/mídia; conteúdo, Anki, currículo e
+Supabase. Não refazer toda a interface de uma vez nem alterar dados privados.
+
+A QA visual autenticada ainda deve ser repetida: o controlador de navegador da
+sessão não inicializou, o que é limitação de ferramenta e não evidência de erro
+no site. Há uma falha de lint confirmada fora do app em
+`exports/private/inspect-supabase-state.mts` (`prefer-const`); typecheck passou
+na última verificação e os demais gates dependem dessa correção.
+## Auditoria integral em 20 lentes — atualização 2026-08-11
+
+- Fonte consolidada: `docs/AUDITORIA-20-LENTES-2026-08-11.md`.
+- O lote permanece local e não deve ser publicado até o typecheck, build, rotas e fluxos privados passarem.
+- Evidência atual: lint e diff-check passam; 1.332 questões passam na auditoria estrutural; privacidade passa para 241 arquivos públicos e 3 curriculares.
+- Bloqueador atual: `scripts/import-private-curriculum-map.mts` aceita `publicSubthemeId` como possivelmente indefinido ao montar `recurso_id`.
+- Auditoria de rotas foi inconclusiva por indisponibilidade de acesso ao host nesta sessão; não registrar como queda confirmada.
+- Pendências históricas foram consolidadas em P0–P3; não somar caixas de `PROXIMOS-PASSOS.md` e `PLANO-100-PASSOS.md` como tarefas independentes.
+- Mídia exige reconciliação dos universos de 216 canônicas, lote adicional de 282 imagens e 379 registros operacionais antes de declarar conclusão.
+## Retomada principal — 2026-08-13
+
+- Reassumido o trabalho de pendências; a migração para ChatGPT Sites ficou fora do escopo.
+- Fontes universitárias de imagem clínica catalogadas em `docs/FONTES-IMAGEM-CLINICA-UNIVERSITARIAS-2026-08-13.md`.
+- Regra de mídia confirmada: toda imagem do Drive deve carregar documento e página de origem, hash privado, tema, subtema, modalidade, diagnóstico, licença, crédito e destino permitido.
+- Prioridade de fontes: Estratégia MED/acervo autorizado para triagem privada; diretrizes atuais; PubMed/PMC validado; atlas universitários licenciados; equivalentes abertos.
+- Typecheck, lint, auditoria de questões e privacidade passaram.
+- O comando de build ultrapassou o timeout do terminal, mas `.next/export-detail.json` registra `success: true` e `out` foi gerado. Tratar como exportação aparentemente concluída com encerramento anômalo, pendente de validação de artefatos e rotas.
+
+## Validação técnica após liberação de espaço — 2026-08-13
+
+- Disco C: confirmado com 106,8 GB livres.
+- `typecheck`, `lint`, `audit:questoes` e `audit:privacidade` passaram; a auditoria confirmou 1.332 questões e 244 arquivos públicos/3 curriculares dentro do limite de privacidade.
+- A validação mais recente de `npm.cmd run build` concluiu com sucesso em 341,1
+  s: 413 páginas estáticas e exportação confirmada. As rotas lentas observadas
+  anteriormente continuam como pendência de desempenho, mas a geração atual
+  não falhou nem exigiu repetição.
+- A auditoria remota de rotas retornou `fetch failed` para todas as URLs nesta sessão; resultado inconclusivo, sem evidência de indisponibilidade do site.
+- O importador curricular em modo seco não gravou dados, mas excedeu o tempo do ambiente. Não executar `--apply` sem medir/otimizar a validação.
+- AnkiConnect voltou a responder em 2026-08-13. A auditoria editorial leu 1.721
+  notas sem modificar cartões: 14 grupos de duplicata exata, 4 frentes ambíguas,
+  885 versos extensos e nenhuma nota sem referência. O snapshot local de
+  progresso foi exportado; a revisão editorial continua pendente.
+- A organização estrutural do Anki foi aplicada com backup `.apkg` incluindo
+  agendamentos: 2.829 cartões migraram para `MEDICINA → Ciclo Básico/Clínico →
+  área → disciplina`; nenhum cartão foi excluído. Subtemas e eixos clínicos são
+  tags, evitando milhares de subdecks. A próxima rodada deve revisar 14 grupos
+  de duplicata exata, 4 frentes ambíguas e 885 versos extensos em lotes seguros.
+  Ver `docs/ARQUITETURA-ANKI-MEDICINA-2026-08-13.md`.
+- Auditoria adicional cruzando todas as questões contra a taxonomia achou 18 questões em 15 IDs de subtema inexistentes. Não houve remapeamento automático: quatro são candidatos claros (TEP, ICFER/ICFEP, FA e DPOC), enquanto os demais podem representar lacunas taxonômicas/editoriais e exigem matriz de cobertura.
+- A integridade questão–taxonomia foi concluída: os 18 vínculos inicialmente
+  órfãos foram reclassificados ou receberam cinco subtemas explícitos. A
+  verificação aponta 1.332 questões, 304 subtemas e zero vínculos órfãos;
+  typecheck, lint e auditoria de questões passaram. Os cinco novos subtemas com
+  questão continuam honestamente marcados como resumo pendente. Evidências:
+  `docs/AUDITORIA-QUESTOES-TAXONOMIA-2026-08-13.md` e
+  `docs/MATRIZ-COBERTURA-CLINICA-2026-08-13.md`.
+
+## Continuação da triagem de mídia privada — 2026-08-13
+
+- A cópia canônica dos PDFs neuropsiquiátricos foi confirmada em `Desktop\\MEDICINA\\_private-corpus`; a exclusão da cópia em Downloads não perdeu a fonte de trabalho.
+- Demências p. 107--111 foram renderizadas localmente, com hashes SHA-256. A pré-triagem visual marcou p. 107 (RM temporal medial/hipocampal) e p. 110 (RM em HPN) como candidatas privadas de alto valor didático.
+- Nenhuma figura foi enviada ao bucket, ao Git ou ao site. O manifesto privado contém hashes, fonte/página declarada e decisões provisórias; direitos, anonimização e correlação clínica permanecem pendentes.
+- Neuroanatomia p. 55--57 também foi renderizada/revisada. As RMs de anatomia temporal medial são candidatas apenas privadas; as ilustrações que citam fonte interna/Shutterstock não podem ser reaproveitadas publicamente. Uma referência CC BY no material exige obtenção direta da fonte antes de qualquer uso público.
+## Lote privado neuropsiquiatria — 2026-08-13
+
+- Os sete PDFs recebidos (humor, psicofarmacologia, hipnosedativos, psiquiatria, demências e neuroanatomia) foram convertidos integralmente para Markdown privado fora do repositório.
+- Todos apresentaram texto utilizável. Alguns avisos de fonte no extrator não impediram a conversão.
+- O manifesto privado contém fontes, classificação e páginas candidatas de TC/RM/EEG; nenhum PDF, texto bruto ou imagem comercial foi publicado.
+- O site já possui resumos/questões para os subtemas de Psiquiatria; este lote deve preencher somente lacunas comprovadas após revisão de diretriz e direitos.
+- A primeira prévia visual privada foi gerada para Psiquiatria Clínica p. 91--93. As páginas 91--92 foram conferidas: são material de apoio a TC/RM/EEG no diferencial de quadro psiquiátrico com possível causa orgânica. O registro detalhado permanece apenas no manifesto privado; não houve publicação de recortes.
+- A validação seca do importador curricular não alterou banco, mas excedeu o timeout do terminal nesta máquina. Reexecutar em sessão local estável antes de tratá-la como aprovada; não usar `--apply` sem esse portão e QA autenticada.

@@ -17,7 +17,7 @@ O estado quantitativo e as pendências atuais devem ser obtidos de `PROXIMOS-PAS
 
 O fechamento de 2026-08-01 do acervo privado está em
 `docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`. O estado operacional mais
-recente está em `docs/FECHAMENTO-2026-08-09.md`, `PROXIMOS-PASSOS.md` e nas
+recente está em `docs/FECHAMENTO-2026-08-10.md`, `PROXIMOS-PASSOS.md` e nas
 seções finais desta memória.
 
 ## Decisões duradouras
@@ -296,10 +296,34 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
 - Esta rodada altera somente código e documentação sanitizada. Antes da
   publicação: typecheck, lint, build/rotas e QA visual autenticada.
 
-### Publicação da fila guiada — 2026-08-11
+### Publicação da fila guiada — 2026-08-10
 
 - PR #13 foi mesclado na `main` no commit `3a0783d`.
 - GitHub Pages run `31446358148` passou em build e deploy. As rotas `/`,
   `/agenda/` e `/meu-curso/` retornaram HTTP 200 sem erro de aplicação.
 - Permanece pendente somente o teste visual com a conta autenticada, incluindo
   a abertura dos resumos e a sincronização Agenda ↔ Semana.
+
+## Currículo granular, Anki e mídia privada — 2026-08-10
+
+- O histórico acadêmico resumido (37 componentes) e o mapa profundo solicitado
+  (26 componentes) são camadas diferentes e devem coexistir.
+- O mapa privado aprofundado foi aplicado com 55 módulos, 374 subtemas e 122
+  recursos reais: 64 resumos e 58 filas de questões. Há 276 lacunas explícitas;
+  HCPM VI não foi inferida.
+- Agenda e Semana direcionam para resumo e questões do tema. O banco de imagens
+  só aceita questões com figura real; metadados estruturados de prova/banco/ano
+  estão prontos no modelo, mas ainda precisam ser preenchidos no corpus.
+- O catálogo privado tem 379 registros e 379 objetos, sem ausências. Catálogo,
+  URL assinada e leitura foram validados; 321 imagens aguardam triagem visual.
+- O Anki mantém 2.830 cartões: 2.829 em 16 decks por área e 1 piloto. Backups
+  foram feitos; 1.126 cartões legados foram movidos e somente 89 decks vazios
+  foram removidos. FSRS e Onigiri foram configurados localmente.
+- Nenhum cartão foi apagado. A fila editorial é: 14 grupos duplicados exatos, 4
+  frentes ambíguas, 885 versos extensos e 90 notas sem referência.
+- PDFs recebidos diariamente devem virar Markdown privado antes da leitura e
+  alimentar foco atual, D+1, D+7 e D+21 com limite de carga semanal.
+- A auditoria estrutural das 1.332 questões está limpa; revisão clínica por
+  diretriz, cobertura visual real e metadados de provas continuam pendentes.
+- O restore real do Supabase permanece incompleto por incompatibilidade de
+  `supabase_vault` com PostgreSQL stock.

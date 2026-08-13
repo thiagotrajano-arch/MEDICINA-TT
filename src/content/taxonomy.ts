@@ -372,6 +372,7 @@ const neurologia: Disciplina = {
     tema("neuro", "AVC Isquêmico", ["Diagnóstico e conduta"]),
     tema("neuro", "AVC Hemorrágico — HSA e Hemorragia Intraparenquimatosa", ["Diagnóstico e conduta"]),
     tema("neuro", "Crise Convulsiva e Status Epilepticus", ["Diagnóstico e conduta"]),
+    tema("neuro", "Meningites e Encefalites", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
     tema("neuro", "Cefaleias — Primárias e Sinais de Alarme", ["Diagnóstico e conduta"]),
     tema("neuro", "Síndrome de Guillain-Barré", ["Diagnóstico e conduta"]),
     tema("neuro", "Miastenia Gravis", ["Diagnóstico e conduta"]),
@@ -416,6 +417,8 @@ const gastroenterologia: Disciplina = {
   temas: [
     tema("gastro", "Hepatites Virais", [["Diagnóstico e conduta", { altoRendimento: true }]]),
     tema("gastro", "Cirrose e Complicações", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("gastro", "Hemorragia Digestiva", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("gastro", "Doenças Inflamatórias Intestinais", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
     tema("gastro", "Pancreatite Aguda", [["Diagnóstico e conduta", { altoRendimento: true }]]),
     tema("gastro", "Doença de Wilson", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
     tema("gastro", "Doença Hepática Alcoólica", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
@@ -433,6 +436,7 @@ const endocrinologia: Disciplina = {
   omed: true,
   temas: [
     tema("endocrino", "Nódulo e Câncer de Tireoide", [["Diagnóstico e conduta", { altoRendimento: true }]]),
+    tema("endocrino", "Disfunções Tireoidianas", [["Hipotireoidismo e hipertireoidismo", { altoRendimento: true, dificuldade: "avancada" }]]),
     tema("endocrino", "Diabetes Mellitus", ["Geral"]),
     tema("endocrino", "Distúrbios Adrenais", ["Geral"]),
   ],
@@ -466,6 +470,7 @@ const nefrologia: Disciplina = {
     tema("nefro", "Síndromes Glomerulares", [["Nefrítica e Nefrótica", { altoRendimento: true, dificuldade: "avancada" }]]),
     tema("nefro", "Injúria Renal Aguda e Doença Renal Crônica", [["Diagnóstico e conduta", { altoRendimento: true }]]),
     tema("nefro", "Distúrbios Hidroeletrolíticos", ["Geral"]),
+    tema("nefro", "Distúrbios Hidroeletrolíticos e Ácido-Base", [["Diagnóstico e conduta", { altoRendimento: true, dificuldade: "avancada" }]]),
   ],
 };
 

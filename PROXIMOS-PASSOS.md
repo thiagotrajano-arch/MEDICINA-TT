@@ -1,10 +1,14 @@
 # Próximos passos — Codex Medicus
 
-> Atualizado em 2026-08-09. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o estado atual, usar também as seções finais deste arquivo e `docs/FECHAMENTO-2026-08-09.md`.
+> **Fonte operacional canônica:** [[docs/PENDENCIAS-MESTRAS.md](docs/PENDENCIAS-MESTRAS.md)].
+> Este arquivo foi preservado como histórico de sessões, evidências e decisões;
+> não usar suas caixas antigas como uma segunda fila de execução.
+
+> Atualizado em 2026-08-10. O roteiro completo está em `docs/PLANO-100-PASSOS.md`; os documentos `docs/ROADMAP-50-PASSOS.md` e `docs/PLANO-MESTRE-EXTRACAO-E-CURSO.md` preservam o histórico e a fonte operacional. Para o estado atual, usar também as seções finais deste arquivo e `docs/FECHAMENTO-2026-08-10.md`.
 
 > Fechamento do acervo de 1º de agosto: `docs/FECHAMENTO-ACERVO-PRIVADO-2026-08-01.md`.
-> Fechamento operacional mais recente: `docs/FECHAMENTO-2026-08-09.md` e a
-> seção “Lote neuropsiquiatria, currículo e mídia privada” abaixo.
+> Fechamento operacional mais recente: `docs/FECHAMENTO-2026-08-10.md` e as
+> seções finais deste arquivo.
 
 ## Fechamento e retomada — 2026-07-29
 
@@ -1728,7 +1732,7 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
   demais. Depois disso, publicar o código sem incluir corpus, SISCAD ou dados
   pessoais.
 
-### Publicação da fila guiada — confirmação 2026-08-11
+### Publicação da fila guiada — confirmação 2026-08-10
 
 - [x] PR #13 mesclado na `main` pelo commit `3a0783d`.
 - [x] GitHub Pages run `31446358148` concluiu build e deploy com sucesso; o
@@ -1762,3 +1766,237 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
   `robots.txt` e `sitemap.xml` responderam HTTP 200 e sem erro de aplicação.
 - [x] As 46 imagens comerciais continuam apenas no bucket privado; o deploy não
   incluiu PDFs, capturas comerciais, manifestos privados ou credenciais.
+
+## Mapa curricular granular, Anki e mídia — 2026-08-10
+
+- [x] Criada e aplicada a camada privada granular dos 26 componentes solicitados:
+  55 módulos, 374 temas/subtemas e RLS por proprietário.
+- [x] Importação remota validada: 26 componentes, 55 módulos, 374 subtemas e 122
+  recursos reais — 64 resumos e 58 filas de questões. Os 276 itens sem recurso
+  suficiente continuam explicitamente como lacuna.
+- [x] O painel diferencia os 26 componentes aprofundados dos 37 componentes da
+  visão acadêmica resumida; um conjunto não apaga o outro.
+- [x] Resumo e questões só aparecem quando o recurso existe e não foi rejeitado.
+  Links profundos preservam disciplina/subtema; uma fila vazia não se amplia para
+  outra matéria.
+- [x] Agenda, Semana e Mídia recebem contexto de disciplina/subtema. O banco de
+  imagens exige uma figura real, e o modelo de questão já aceita banco, prova,
+  instituição e ano estruturados.
+- [x] Mídia privada testada de ponta a ponta: 379 registros, 379 objetos, zero
+  objetos ausentes, catálogo autenticado e URL assinada funcionais. Há 46 itens
+  úteis, 3 contextuais, 9 não úteis e 321 pendentes de revisão visual.
+- [x] Anki preservado em backup e reorganizado sem apagar cartões: 2.830 cartões,
+  2.829 em 16 decks canônicos por área e 1 piloto. FSRS 0,90, passos 1m/10m,
+  reaprendizagem 10m e 25 novos/dia; Onigiri configurado localmente.
+- [ ] Revisar no Anki, por disciplina, 885 versos extensos, 90 notas sem
+  referência, 14 grupos duplicados exatos e 4 grupos de frente ambígua. Não
+  apagar nem converter em massa sem revisão clínica.
+- [ ] Migrar as 1.332 questões para metadados estruturados de banco/prova/ano e
+  ampliar o banco por imagens somente com figuras realmente triadas.
+- [ ] Reconsultar HCPM VI; nenhuma ementa foi inferida enquanto o plano segue
+  indisponível/não aprovado.
+- [ ] Substituir a ligação Agenda–Semana por uma chave estável e acrescentar
+  reconciliação controlada de registros curriculares obsoletos.
+- [ ] Corrigir o restore do Supabase: o dump foi criado, mas o PostgreSQL stock
+  falhou por não conter `supabase_vault`.
+
+Fonte de verdade detalhada: `docs/FECHAMENTO-2026-08-10.md`.
+
+## Plano integrado de estudo — pendência aguardando aprovação — 2026-08-10
+
+Objetivo: fazer caber, na mesma rotina, o semestre atual, a preparação para a
+OMED, a revisão longitudinal dos semestres anteriores e o Anki, sem transformar
+os 374 subtemas do mapa em uma agenda impossível.
+
+### Leitura da agenda atual
+
+- O plano privado tem 12 semanas, 84 eventos e 138 tarefas. A média registrada
+  é de aproximadamente 10,4 horas semanais; os sete blocos fixos somam cerca de
+  9h15, deixando uma margem para revisões e tarefas já vencidas.
+- Há 36 blocos OMED, 90 tarefas de revisão, 12 blocos de questões e 4 blocos de
+  PDF. A estrutura é suficiente para começar, mas não deve receber todos os
+  subtemas de uma vez.
+- O risco principal é sobrecarga: quando um PDF novo entrar, ele deve ocupar o
+  foco atual e deslocar apenas a revisão de menor prioridade, nunca duplicar o
+  calendário.
+
+### Distribuição semanal proposta — ainda não aplicada
+
+- **Segunda, 75 min:** semestre atual — teoria da semana + questões do próprio
+  subtema.
+- **Terça, 75 min:** PDF novo ou material do semestre atual — Markdown primeiro,
+  leitura dirigida e um caso clínico.
+- **Quarta, 90 min:** OMED — tema de maior peso, resumo curto e questões.
+- **Quinta, 75 min:** revisão de semestres anteriores — uma disciplina antiga,
+  escolhida por lacuna e vínculo curricular.
+- **Sexta, 45 min:** Anki — revisões vencidas e cartões candidatos derivados de
+  erros; não criar cartões automaticamente sem fonte e revisão.
+- **Sábado, 90 min:** OMED integrado — questões, casos e imagens clínicas;
+  separar erros por área.
+- **Domingo, 45 min:** fechamento — corrigir a fila, escolher o próximo foco e
+  preservar uma pequena margem para atraso.
+
+As revisões do Anki devem ser distribuídas em microblocos de 15–20 minutos
+dentro dos blocos existentes, em vez de criar uma segunda agenda paralela.
+
+### Ciclo de 12 semanas proposto
+
+- **Semanas 1–4:** proteger o semestre atual; OMED em Infectologia,
+  GO/Obstetrícia, Pediatria e Cirurgia/MFC.
+- **Semanas 5–8:** consolidar o semestre atual e revisar os primeiros semestres
+  por lacunas; OMED em Cardio, Neuro, Pneumo, Nefro e Gastro.
+- **Semanas 9–12:** integração cumulativa, casos e imagens; OMED em Endócrino,
+  Hemato/Onco, Derma, Reumato, Psiquiatria e especialidades menores.
+
+### Regra para cada PDF novo
+
+1. Converter para Markdown privado antes da leitura.
+2. Registrar origem, hash, páginas, disciplina, tema e subtema.
+3. Associar ao foco da semana atual, sem abrir uma nova frente paralela.
+4. Criar apenas a sequência D0, D1, D7 e D21.
+5. Se a carga semanal exceder a margem, adiar a revisão longitudinal de menor
+   prioridade, preservando semestre atual e OMED.
+
+### Pendências que exigem aprovação antes de executar
+
+- [ ] Aplicar essa distribuição à agenda real sem apagar compromissos manuais.
+- [ ] Recalcular o plano quando o usuário informar a rotina fixa de aulas,
+  plantões e horários indisponíveis.
+- [ ] Definir a primeira disciplina do semestre atual e o primeiro foco OMED.
+- [ ] Criar o fluxo de cartões Anki derivados de erros, após validar o resumo e
+  o gabarito de cada lote.
+- [ ] Importar cada PDF diário pelo fluxo privado PDF → Markdown → D0/D1/D7/D21.
+- [ ] Revisar semanalmente a proporção atual/OMED/anteriores/Anki e reduzir carga
+  se a taxa de conclusão cair.
+
+Não alterar agenda, Anki ou conteúdo clínico desta pendência até o usuário
+aprovar a distribuição.
+
+## Plano de melhoria visual, arquitetura e qualidade — 2026-08-11
+
+Fila de planejamento: não altera dados, agenda, Anki, conteúdo clínico ou mídia
+até cada bloco ser aprovado. Preservar sempre dados privados no Supabase/cofre;
+o repositório público contém apenas UI, conteúdo autoral e mídia permitida.
+
+### Achados confirmados
+
+- [ ] Agenda e Semana mostram conclusão sobretudo por check, cor e texto riscado.
+  Falta estado unificado, data de conclusão, desfazer claro e consulta de histórico.
+- [ ] O mapa curricular inicia com "Só pendentes" ativado, diminuindo a percepção
+  de progresso. Manter o filtro, mas começar com visão de progresso e contadores.
+- [ ] O tema claro possui tokens consistentes, mas não há matriz de contraste,
+  comparação visual nem validação móvel documentadas.
+- [ ] Falta padrão completo de resumo didático e sistema reutilizável de módulos
+  básicos (Anatomia, Fisiologia e demais Ciências Básicas).
+
+### A. Auditoria e defeitos
+
+- [ ] Criar roteiro de QA para início, resumos, questões, agenda, semana, curso,
+  mídia, login/logout, recuperação e sessão expirada.
+- [ ] Rodar typecheck, lint, build, auditorias de questões/privacidade; corrigir
+  primeiro o lint de `exports/private/inspect-supabase-state.mts` (`prefer-const`).
+- [ ] Rodar Lighthouse móvel/desktop, axe/WCAG 2.2, teclado, zoom 200% e testar
+  estados vazio, erro recuperável e carregamento; registrar evidência e regressão.
+- [ ] Retentar QA visual autenticada quando o controlador do navegador estiver
+  disponível; indisponibilidade da ferramenta não é defeito do site.
+
+### B. Modo claro e design system
+
+- [ ] Consolidar tokens semânticos para claro/escuro: fundo, superfícies, texto,
+  borda, ação, sucesso, aviso e erro; remover cores locais fora do sistema.
+- [ ] Ajustar o claro para leitura longa: fundo neutro, hierarquia discreta de
+  cartões, texto escuro estável, menos gradientes e sombras concorrentes.
+- [ ] Validar contraste de texto/bordas/ícones e foco por teclado; foco não pode
+  depender só de cor. Padronizar tipografia, espaçamento, raio e alvos de toque.
+- [ ] Produzir referências desktop/celular antes de aprovar a paleta definitiva,
+  preservando a preferência de tema do usuário.
+
+### C. Progresso, pendências e rotina
+
+- [ ] Criar componente de estados planejado, em andamento, revisão devida,
+  concluído e bloqueado — com ícone, rótulo, cor acessível, contador e desfazer.
+- [ ] Mostrar progresso por tema/disciplina em Agenda, Semana, Meu Curso e
+  Pendências. Concluídos continuam acessíveis em aba/filtro com data de conclusão.
+- [ ] Ao abrir pendência, mostrar objetivo, conteúdo delimitado, estimativa,
+  resumo, questões e próxima revisão; não apenas redirecionar a página ampla.
+- [ ] Substituir a ligação Agenda–Semana por chave estável sem tocar eventos manuais.
+- [ ] Aplicar a agenda de 12 semanas somente após horários fixos, disciplinas
+  atuais e foco OMED; PDF novo entra no foco atual e gera D0/D1/D7/D21.
+
+### D. Resumos, módulos e mapas
+
+- [ ] Criar template: objetivo, pré-requisitos, decisão clínica, sinais,
+  diagnóstico/conduta, armadilhas, integração curricular, fontes/data, mídia e
+  questões contextualizadas.
+- [ ] Implementar leitura progressiva: índice, estimativa, síntese OMED, tabelas
+  responsivas e conclusão por seção, sem reduzir conteúdo sem revisão editorial.
+- [ ] Criar módulos reutilizáveis de Anatomia, Fisiologia, Bioquímica, Histologia,
+  Patologia, Farmacologia, Microbiologia, Imunologia e Epidemiologia, ligados a
+  sistema, aplicação clínica, resumo, questões, mapa e mídia.
+- [ ] Criar biblioteca de diagramas/ícones e mídia licenciada com alt text, legenda
+  e fonte. Arte gerada explica conceitos, mas nunca é prova clínica.
+- [ ] Converter mapas em relações reais: nós curtos, setas nomeadas e ligação para
+  resumo, questão, caso, mídia e referência. Entregar por prioridade OMED/semestre.
+
+### E. Navegação e mídia
+
+- [ ] Reorganizar navegação por "Hoje", "Aprender", "Praticar" e "Revisar";
+  manter Meu Curso como currículo e Minha Mídia como biblioteca de apoio.
+- [ ] Criar busca/filtros persistentes por disciplina, semestre, tema, subtema,
+  prioridade OMED, recurso e estado de estudo.
+- [ ] Reorganizar mídia por modalidade, patologia, contexto, caso e fonte; ampliar
+  em tela cheia com legenda e retorno ao ponto de estudo. Privada continua autenticada.
+- [ ] Otimizar carregamento progressivo, formatos, alt text e estados sem figura.
+
+### F. Conteúdo, dados e liberação
+
+- [ ] Revisão clínica por diretriz das questões/resumos e metadados de banco/prova/
+  instituição/ano antes de afirmar origem.
+- [ ] Triar visualmente os 321 itens privados restantes e vincular figura–subtema.
+- [ ] Anki em lotes clínicos: 14 duplicatas exatas, 4 frentes ambíguas, 885 versos
+  extensos e 90 referências ausentes, preservando IDs, histórico e backup.
+- [ ] Reconsultar HCPM VI, validar currículo manualmente e resolver restore/RLS do
+  Supabase em ambiente compatível com `supabase_vault`.
+- [ ] Publicar somente com gates verdes, QA autenticada e revisão de privacidade.
+
+### Ordem e critério de término
+
+1. A: evidência e segurança. 2. B+C: claro, conclusão e rotina. 3. D em uma
+disciplina-piloto. 4. E. 5. F contínuo. Cada bloco exige testes registrados,
+estados vazio/erro/carregando, teclado/celular, revisão visual e zero perda de dados.
+## Auditoria integral em 20 lentes — 2026-08-11
+
+A revisão consolidada, os bloqueadores, a ordem de execução e os critérios de aceite estão em `docs/AUDITORIA-20-LENTES-2026-08-11.md`.
+
+- [ ] P0: corrigir o typecheck do importador curricular e repetir todos os portões técnicos.
+- [ ] P0: validar autenticação, mídia privada, RLS e restauração de backup ponta a ponta.
+- [ ] P1: unificar agenda, OMED, semestre atual, revisão longitudinal e Anki em um painel canônico.
+- [ ] P1: reconciliar os manifestos de mídia e concluir a triagem visual canônica.
+- [ ] P1: criar a matriz de cobertura antes de produzir novos resumos, questões, casos ou imagens.
+- [ ] P2: prototipar e aprovar a nova arquitetura e o design antes de implementar o redesenho amplo.
+- [ ] P3: aplicar a rotina PDF → Markdown privado → classificação → semana → revisão → destino a toda fonte nova.
+## Fontes universitárias de imagem clínica — 2026-08-13
+
+- [x] Catalogar fontes universitárias de TC, RM, RX, ultrassom e patologia.
+- [ ] Validar licença e créditos por item antes de baixar.
+- [ ] Selecionar imagens abertas para lacunas reais de OMED e currículo.
+- [ ] Relacionar imagens a resumo, questão, caso, disciplina e subtema.
+- [ ] Rodar auditoria de privacidade, direitos e publicação.
+## Continuação das pendências — 2026-08-13
+
+- [x] Catalogar fontes universitárias de TC, RM, RX, ultrassom e patologia.
+- [x] Registrar a regra de proveniência de imagens do Drive (documento e página).
+- [x] Registrar prioridade Estratégia MED, diretrizes atuais e PubMed/PMC validado.
+- [x] Corrigir o bloqueador TypeScript do mapa curricular.
+- [x] Passar typecheck, lint, auditoria de questões e auditoria de privacidade.
+- [ ] Validar os artefatos `out` e as rotas; o manifesto do Next registra exportação com sucesso, mas o processo do terminal excedeu o timeout.
+- [ ] Diagnosticar encerramento anômalo do build antes de publicar.
+- [ ] Retomar PDFs privados, triagem de imagens, resumos, questões e mapas após validação do release.
+## Lote privado neuropsiquiatria — conversão concluída — 2026-08-13
+
+- [x] Converter para Markdown privado os sete PDFs recebidos de psiquiatria e neurologia.
+- [x] Confirmar camada textual utilizável em todos os sete arquivos.
+- [x] Classificar fontes e listar páginas candidatas para TC, RM e EEG no manifesto privado.
+- [~] Renderizar somente as páginas clínicas selecionadas e triá-las por valor didático, origem, página e direitos. Prévia privada concluída para Psiquiatria Clínica p. 91--93; faltam hash SHA-256, confirmação clínica/anonimização e os demais documentos selecionados.
+- [ ] Revisar sínteses autorais contra diretrizes atuais antes de ampliar os resumos públicos.
+- [ ] Criar questões, casos e mapas somente para lacunas comprovadas no mapa de cobertura.
