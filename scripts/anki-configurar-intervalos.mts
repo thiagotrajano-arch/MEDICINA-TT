@@ -3,7 +3,8 @@ const response = await fetch("http://127.0.0.1:8765", {
   headers: { "content-type": "application/json; charset=utf-8" },
   body: JSON.stringify({ action: "getDeckConfig", version: 6, params: { deck: "Codex-Piloto" } }),
 });
-const current = (await response.json()) as { result?: Record<string, any>; error?: string };
+type DeckConfig = { id: number; desiredRetention?: number; new: { delays: number[] }; [key: string]: unknown };
+const current = (await response.json()) as { result?: DeckConfig; error?: string };
 if (current.error || !current.result) throw new Error(current.error ?? "Configuração do Anki não encontrada.");
 
 current.result.new.delays = [5, 300, 4320, 10080];

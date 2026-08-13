@@ -3,13 +3,13 @@ const auditoria = JSON.parse(await readFile("exports/anki/auditoria-editorial.js
 const offset = Number(process.argv[2] ?? 0);
 const limite = Number(process.argv[3] ?? 25);
 const lote = auditoria.queues.longBackNoteIds.slice(offset, offset + limite);
-const call = async (action: string, params: Record<string, unknown>) => {
+const call = async <T,>(action: string, params: Record<string, unknown>): Promise<T> => {
   const res = await fetch("http://127.0.0.1:8765", { method: "POST", headers: { "content-type": "application/json; charset=utf-8" }, body: JSON.stringify({ action, version: 6, params }) });
-  const json = await res.json() as { result?: any; error?: string };
+  const json = await res.json() as { result?: T; error?: string };
   if (json.error) throw new Error(json.error);
-  return json.result;
+  return json.result as T;
 };
-const notes = await call("notesInfo", { notes: lote }) as Array<{ noteId: number; fields: Record<string, { value: string }> }>;
+const notes = await call<Array<{ noteId: number; fields: Record<string, { value: string }> }>>("notesInfo", { notes: lote });
 let changed = 0;
 for (const note of notes) {
   const field = note.fields.Verso ?? note.fields.Back;
