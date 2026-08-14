@@ -1,7 +1,7 @@
 export const ESTADOS_SEMANA = ["ativa", "concluida", "arquivada"] as const;
 export type EstadoSemana = (typeof ESTADOS_SEMANA)[number];
 
-export const ORIGENS_SEMANA = ["manual", "agenda", "curso", "pdf", "atividade"] as const;
+export const ORIGENS_SEMANA = ["manual", "agenda", "curso", "pdf", "atividade", "semestre", "omed", "erro", "revisao"] as const;
 export type OrigemSemana = (typeof ORIGENS_SEMANA)[number];
 
 export const PRIORIDADES_FOCO = ["alta", "media", "baixa"] as const;
@@ -13,8 +13,20 @@ export type EstadoFoco = (typeof ESTADOS_FOCO)[number];
 export const ATIVIDADES_SEMANA = ["resumo", "questoes", "caso", "revisao", "mapa", "pdf", "outro"] as const;
 export type AtividadeSemana = (typeof ATIVIDADES_SEMANA)[number];
 
-export const ESTADOS_TAREFA = ["pendente", "em_andamento", "concluida", "adiada"] as const;
+export const ESTADOS_TAREFA = ["planejado", "em_andamento", "revisao_devida", "concluido", "bloqueado"] as const;
 export type EstadoTarefa = (typeof ESTADOS_TAREFA)[number];
+
+export const PRIORIDADES_TAREFA = ["critica", "alta", "media", "baixa"] as const;
+export type PrioridadeTarefa = (typeof PRIORIDADES_TAREFA)[number];
+
+export interface RecursosTarefa {
+  resumo?: string;
+  questoes?: string;
+  caso?: string;
+  mapa?: string;
+  midia?: string;
+  materialPrivado?: string;
+}
 
 export interface SemanaAtual {
   id: string;
@@ -53,7 +65,17 @@ export interface TarefaSemana {
   recursoId: string;
   disciplinaId: string;
   tema: string;
+  subtema: string;
+  objetivo: string;
+  escopo: string;
   duracaoMin: number | null;
+  prioridade: PrioridadeTarefa;
+  ultimaRevisao: string | null;
+  proximaRevisao: string | null;
+  bloqueioMotivo: string;
+  recursos: RecursosTarefa;
+  reaberturas: number;
+  concluidoEm: string | null;
   estado: EstadoTarefa;
   origem: OrigemSemana;
   criadoEm: string;
@@ -85,7 +107,15 @@ export interface EntradaTarefa {
   recursoId?: string;
   disciplinaId?: string;
   tema?: string;
+  subtema?: string;
+  objetivo?: string;
+  escopo?: string;
   duracaoMin?: number | null;
+  prioridade?: PrioridadeTarefa;
+  ultimaRevisao?: string | null;
+  proximaRevisao?: string | null;
+  bloqueioMotivo?: string;
+  recursos?: RecursosTarefa;
   estado?: EstadoTarefa;
   origem?: OrigemSemana;
 }

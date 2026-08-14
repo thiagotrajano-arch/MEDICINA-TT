@@ -13,6 +13,7 @@
     "audit:privacidade": "tsx scripts/audit-privacidade-publica.mts",
     "audit:figuras": "tsx scripts/audit-public-figure-anchors.mts",
     "audit:cobertura": "tsx scripts/audit-coverage-matrix.mts",
+    "audit:estado-estudo": "tsx scripts/audit-study-state.mts",
     "audit:rotas": "tsx scripts/audit-static-routes.mts",
     "audit:rotas:local": "tsx scripts/audit-static-local-server.mts",
     "seed": "tsx scripts/seed-supabase.mts",

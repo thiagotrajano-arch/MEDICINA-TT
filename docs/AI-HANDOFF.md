@@ -1,5 +1,24 @@
 # Handoff para outra IA — Codex Medicus
 
+## Execução do plano mestre — 2026-08-14
+
+- O primeiro lote do plano mestre unificou o estado de estudo em
+  `planejado`, `em_andamento`, `revisao_devida`, `concluido` e `bloqueado`.
+- Migrations `20260814212304_unifica_estado_estudo_usuario.sql` e
+  `20260814214639_define_padrao_estado_estudo_planejado.sql` foram aplicadas.
+  Auditoria remota: RLS ativa, uma política owner-scoped, 138 tarefas, zero
+  estado/campo inválido, 135 planejadas e 3 concluídas.
+- Agenda e Semana atualizam conclusão/reabertura pelo mesmo `agenda_evento_id`.
+  Eventos manuais continuam preservados.
+- `audit:cobertura` agora cruza resumo, questões, casos, mapas, figuras públicas
+  e fontes por `subtemaId`; semestre/progresso privados não são inferidos.
+- Portões locais: typecheck, lint, 1.332 questões, 77 figuras, privacidade,
+  build 413/413 e oito rotas exportadas passaram.
+- A proteção contra senhas vazadas exige Supabase Pro e fica bloqueada pela regra
+  de custo zero. O restore validado no run `31839733798` não é mais bloqueador.
+- Anki não foi alterado. Próximo lote: QA autenticada do painel e duas sessões,
+  depois currículo granular e matriz privada.
+
 Atualizado em 2026-08-14.
 
 > **Pendências operacionais:** consultar primeiro

@@ -5,8 +5,8 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, CalendarCheck, Check, CircleAlert, Cloud, CloudOff, Plus, RotateCcw, Target } from "lucide-react";
 import type { Disciplina } from "@/domain/content/types";
 import { resolverResumoEstudo } from "@/domain/curso/estudo-links";
-import type { AtividadeSemana, EntradaFoco, SemanaAtualDados, TarefaSemana } from "@/domain/semana/types";
-import { alternarTarefaSemana, carregarSemanaAtual, periodoAtual, salvarFocoSemana, salvarSemanaAtual, salvarTarefaSemana } from "@/lib/semana-atual";
+import type { AtividadeSemana, EntradaFoco, EstadoTarefa, PrioridadeTarefa, SemanaAtualDados, TarefaSemana } from "@/domain/semana/types";
+import { alternarTarefaSemana, atualizarEstadoTarefaSemana, carregarSemanaAtual, periodoAtual, salvarFocoSemana, salvarSemanaAtual, salvarTarefaSemana } from "@/lib/semana-atual";
 import { MateriaisDaSemanaPanel } from "@/components/semana/MateriaisDaSemanaPanel";
 
 const ATIVIDADES: Array<{ id: AtividadeSemana; label: string }> = [
@@ -30,7 +30,7 @@ export function SemanaAtualPanel({ disciplinas, compacto = false }: Props) {
   const [mensagem, setMensagem] = useState("");
   const [semana, setSemana] = useState({ inicio: semanaPadrao.inicio, fim: semanaPadrao.fim, periodo: "", objetivo: "" });
   const [foco, setFoco] = useState({ disciplinaId: "", tema: "", subtema: "", prioridade: "media" as EntradaFoco["prioridade"] });
-  const [tarefa, setTarefa] = useState({ data: semanaPadrao.inicio, titulo: "", atividade: "questoes" as AtividadeSemana, duracaoMin: "" });
+  const [tarefa, setTarefa] = useState({ data: semanaPadrao.inicio, titulo: "", objetivo: "", atividade: "questoes" as AtividadeSemana, duracaoMin: "", prioridade: "media" as PrioridadeTarefa });
 
   const carregar = async () => {
     setCarregando(true);
@@ -51,8 +51,8 @@ export function SemanaAtualPanel({ disciplinas, compacto = false }: Props) {
 
   useEffect(() => { void Promise.resolve().then(() => carregar()); }, []);
 
-  const tarefasOrdenadas = useMemo(() => [...dados.tarefas].sort((a, b) => a.data.localeCompare(b.data) || Number(a.estado === "concluida") - Number(b.estado === "concluida") || a.criadoEm.localeCompare(b.criadoEm)), [dados.tarefas]);
-  const tarefasPendentes = useMemo(() => tarefasOrdenadas.filter((item) => item.estado !== "concluida"), [tarefasOrdenadas]);
+  const tarefasOrdenadas = useMemo(() => [...dados.tarefas].sort((a, b) => Number(a.estado === "concluido") - Number(b.estado === "concluido") || pesoPrioridade(a.prioridade) - pesoPrioridade(b.prioridade) || a.data.localeCompare(b.data) || a.criadoEm.localeCompare(b.criadoEm)), [dados.tarefas]);
+  const tarefasPendentes = useMemo(() => tarefasOrdenadas.filter((item) => item.estado !== "concluido" && item.estado !== "bloqueado"), [tarefasOrdenadas]);
   const tarefasConcluidas = dados.tarefas.length - tarefasPendentes.length;
   const percentual = dados.tarefas.length ? Math.round((tarefasConcluidas / dados.tarefas.length) * 100) : 0;
   const proximaTarefa = tarefasPendentes[0] ?? null;
@@ -86,8 +86,8 @@ export function SemanaAtualPanel({ disciplinas, compacto = false }: Props) {
     setOcupado(true);
     setMensagem("");
     try {
-      await salvarTarefaSemana(dados.semana.id, { data: tarefa.data, titulo: tarefa.titulo, atividade: tarefa.atividade, duracaoMin: tarefa.duracaoMin ? Number(tarefa.duracaoMin) : null, disciplinaId: foco.disciplinaId, tema: foco.tema });
-      setTarefa((atual) => ({ ...atual, titulo: "", duracaoMin: "" }));
+      await salvarTarefaSemana(dados.semana.id, { data: tarefa.data, titulo: tarefa.titulo, objetivo: tarefa.objetivo, atividade: tarefa.atividade, duracaoMin: tarefa.duracaoMin ? Number(tarefa.duracaoMin) : null, disciplinaId: foco.disciplinaId, tema: foco.tema, subtema: foco.subtema, prioridade: tarefa.prioridade });
+      setTarefa((atual) => ({ ...atual, titulo: "", objetivo: "", duracaoMin: "" }));
       await carregar();
       setMensagem("Próximo passo salvo na semana.");
     } catch (erro) {
@@ -105,6 +105,19 @@ export function SemanaAtualPanel({ disciplinas, compacto = false }: Props) {
       await carregar();
     } catch (erro) {
       setMensagem(erro instanceof Error ? erro.message : "Não foi possível atualizar a tarefa.");
+    } finally {
+      setOcupado(false);
+    }
+  };
+
+  const mudarEstado = async (item: TarefaSemana, estado: EstadoTarefa) => {
+    setOcupado(true);
+    setMensagem("");
+    try {
+      await atualizarEstadoTarefaSemana(item, estado);
+      await carregar();
+    } catch (erro) {
+      setMensagem(erro instanceof Error ? erro.message : "Não foi possível atualizar o estado.");
     } finally {
       setOcupado(false);
     }
@@ -139,21 +152,34 @@ export function SemanaAtualPanel({ disciplinas, compacto = false }: Props) {
           <div className="mt-3 h-2 overflow-hidden rounded-full bg-surface"><div className="h-full rounded-full bg-accent transition-all" style={{ width: `${percentual}%` }} /></div>
           {proximaTarefa ? <div className="mt-4 flex items-start gap-3"><span className="grid size-9 shrink-0 place-items-center rounded-lg bg-surface text-accent"><BookOpen className="size-4" /></span><div className="min-w-0"><p className="text-sm font-bold text-text">{proximaTarefa.tema || proximaTarefa.titulo}</p><p className="mt-1 text-xs leading-5 text-text-muted">{proximaTarefa.disciplinaId || "Plano geral"} · {proximaTarefa.titulo}</p>{(() => { const link = resolverResumoEstudo({ disciplinas, disciplinaId: proximaTarefa.disciplinaId, tema: proximaTarefa.tema, titulo: proximaTarefa.titulo, recursoId: proximaTarefa.recursoId }); return link ? <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1"><Link href={link.href} className="inline-flex items-center gap-1 text-xs font-bold text-accent hover:underline">Estudar resumo: {link.subtemaNome}<ArrowRight className="size-3.5" /></Link><Link href={link.questoesHref} className="inline-flex items-center gap-1 text-xs font-bold text-accent hover:underline">Resolver questões<ArrowRight className="size-3.5" /></Link></div> : <p className="mt-2 text-xs text-text-faint">Ainda sem resumo publicado para este vínculo; use o tema como roteiro e registre a lacuna.</p>; })()}</div></div> : <p className="mt-3 text-sm font-semibold text-accent">Tudo concluído nesta semana. Escolha um ponto fraco para revisão espaçada.</p>}
         </div>
-        <div className="mt-5 flex items-center justify-between gap-3"><h3 className="text-sm font-bold text-text">Próximos passos</h3><button type="button" onClick={() => void carregar()} className="inline-flex items-center gap-1.5 text-xs font-semibold text-text-faint hover:text-accent"><RotateCcw className="size-3.5" /> Atualizar</button></div>{!dados.tarefas.length ? <p className="mt-3 rounded-xl bg-surface-2 p-3 text-xs text-text-muted">Nenhum passo planejado. Comece com uma ação pequena e rastreável.</p> : <><div className="mt-3 space-y-2">{(mostrarTodas ? tarefasOrdenadas : tarefasOrdenadas.slice(0, 6)).map((item) => <Tarefa key={item.id} item={item} disciplinas={disciplinas} onToggle={() => void alternar(item)} disabled={ocupado} />)}</div>{dados.tarefas.length > 6 && <button type="button" onClick={() => setMostrarTodas((atual) => !atual)} className="mt-3 text-xs font-bold text-accent hover:underline">{mostrarTodas ? "Mostrar menos" : `Ver todos os ${dados.tarefas.length} passos`}</button>}</>}
+        <div className="mt-5 flex items-center justify-between gap-3"><h3 className="text-sm font-bold text-text">Próximos passos</h3><button type="button" onClick={() => void carregar()} className="inline-flex items-center gap-1.5 text-xs font-semibold text-text-faint hover:text-accent"><RotateCcw className="size-3.5" /> Atualizar</button></div>{!dados.tarefas.length ? <p className="mt-3 rounded-xl bg-surface-2 p-3 text-xs text-text-muted">Nenhum passo planejado. Comece com uma ação pequena e rastreável.</p> : <><div className="mt-3 space-y-2">{(mostrarTodas ? tarefasOrdenadas : tarefasOrdenadas.slice(0, 6)).map((item) => <Tarefa key={item.id} item={item} disciplinas={disciplinas} onToggle={() => void alternar(item)} onEstado={(estado) => void mudarEstado(item, estado)} disabled={ocupado} />)}</div>{dados.tarefas.length > 6 && <button type="button" onClick={() => setMostrarTodas((atual) => !atual)} className="mt-3 text-xs font-bold text-accent hover:underline">{mostrarTodas ? "Mostrar menos" : `Ver todos os ${dados.tarefas.length} passos`}</button>}</>}
       </div>
-      <form onSubmit={adicionarTarefa} className="rounded-xl border border-border bg-surface-2 p-4"><h3 className="flex items-center gap-2 text-sm font-bold text-text"><Plus className="size-4 text-accent" /> Adicionar próximo passo</h3><div className="mt-3 grid gap-3"><Campo label="Título"><input required maxLength={180} value={tarefa.titulo} onChange={(e) => setTarefa({ ...tarefa, titulo: e.target.value })} placeholder="Ex.: revisar 10 questões de valvopatias" className={input} /></Campo><div className="grid grid-cols-2 gap-3"><Campo label="Data"><input required type="date" value={tarefa.data} onChange={(e) => setTarefa({ ...tarefa, data: e.target.value })} className={input} /></Campo><Campo label="Duração"><input type="number" min="1" max="720" value={tarefa.duracaoMin} onChange={(e) => setTarefa({ ...tarefa, duracaoMin: e.target.value })} placeholder="min" className={input} /></Campo></div><Campo label="Atividade"><select value={tarefa.atividade} onChange={(e) => setTarefa({ ...tarefa, atividade: e.target.value as AtividadeSemana })} className={input}>{ATIVIDADES.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select></Campo><button disabled={ocupado} className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-sm font-semibold text-text-muted hover:border-accent hover:text-accent disabled:opacity-60"><Plus className="size-4" /> Salvar passo</button></div></form>
+      <form onSubmit={adicionarTarefa} className="rounded-xl border border-border bg-surface-2 p-4">
+        <h3 className="flex items-center gap-2 text-sm font-bold text-text"><Plus className="size-4 text-accent" /> Adicionar próximo passo</h3>
+        <div className="mt-3 grid gap-3">
+          <Campo label="Título"><input required maxLength={180} value={tarefa.titulo} onChange={(e) => setTarefa({ ...tarefa, titulo: e.target.value })} placeholder="Ex.: revisar 10 questões de valvopatias" className={input} /></Campo>
+          <Campo label="Objetivo" extra="Opcional"><input maxLength={500} value={tarefa.objetivo} onChange={(e) => setTarefa({ ...tarefa, objetivo: e.target.value })} placeholder="O que precisa ficar claro ao final" className={input} /></Campo>
+          <div className="grid grid-cols-2 gap-3"><Campo label="Data"><input required type="date" value={tarefa.data} onChange={(e) => setTarefa({ ...tarefa, data: e.target.value })} className={input} /></Campo><Campo label="Duração"><input type="number" min="1" max="720" value={tarefa.duracaoMin} onChange={(e) => setTarefa({ ...tarefa, duracaoMin: e.target.value })} placeholder="min" className={input} /></Campo></div>
+          <div className="grid grid-cols-2 gap-3"><Campo label="Atividade"><select value={tarefa.atividade} onChange={(e) => setTarefa({ ...tarefa, atividade: e.target.value as AtividadeSemana })} className={input}>{ATIVIDADES.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select></Campo><Campo label="Prioridade"><select value={tarefa.prioridade} onChange={(e) => setTarefa({ ...tarefa, prioridade: e.target.value as PrioridadeTarefa })} className={input}><option value="critica">Crítica</option><option value="alta">Alta</option><option value="media">Média</option><option value="baixa">Baixa</option></select></Campo></div>
+          <button disabled={ocupado} className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-sm font-semibold text-text-muted hover:border-accent hover:text-accent disabled:opacity-60"><Plus className="size-4" /> Salvar passo</button>
+        </div>
+      </form>
     </div>}
     {dados.semana && <MateriaisDaSemanaPanel semanaId={dados.semana.id} />}
   </section>;
 }
 
-function Tarefa({ item, disciplinas, onToggle, disabled }: { item: TarefaSemana; disciplinas: Disciplina[]; onToggle: () => void; disabled: boolean }) {
+function Tarefa({ item, disciplinas, onToggle, onEstado, disabled }: { item: TarefaSemana; disciplinas: Disciplina[]; onToggle: () => void; onEstado: (estado: EstadoTarefa) => void; disabled: boolean }) {
   const link = resolverResumoEstudo({ disciplinas, disciplinaId: item.disciplinaId, tema: item.tema, titulo: item.titulo, recursoId: item.recursoId });
-  return <article className={`flex w-full items-start gap-3 rounded-xl border border-border p-3 transition-colors hover:border-accent ${item.estado === "concluida" ? "bg-surface-2" : "bg-surface"}`}>
-    <button type="button" aria-label={item.estado === "concluida" ? "Reabrir tarefa" : "Concluir tarefa"} disabled={disabled} onClick={onToggle} className={`mt-0.5 grid size-5 shrink-0 place-items-center rounded border ${item.estado === "concluida" ? "border-accent bg-accent text-accent-contrast" : "border-border text-transparent"}`}><Check className="size-3.5" /></button>
-    <div className="min-w-0 flex-1"><p className={`text-sm font-semibold ${item.estado === "concluida" ? "text-text-faint line-through" : "text-text"}`}>{item.titulo}</p><p className="mt-1 text-xs text-text-muted">{item.tema || "Conteúdo guiado pelo título"}{item.disciplinaId ? ` · ${item.disciplinaId}` : ""} · {new Date(`${item.data}T12:00:00`).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" })}</p>{link && <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1"><Link href={link.href} className="inline-flex items-center gap-1 text-xs font-bold text-accent hover:underline">{link.fallback ? "Abrir resumo relacionado" : `Estudar ${link.subtemaNome}`}<ArrowRight className="size-3.5" /></Link><Link href={link.questoesHref} className="inline-flex items-center gap-1 text-xs font-bold text-accent hover:underline">Resolver questões<ArrowRight className="size-3.5" /></Link></div>}</div>
+  return <article className={`flex w-full items-start gap-3 rounded-xl border border-border p-3 transition-colors hover:border-accent ${item.estado === "concluido" ? "bg-surface-2" : "bg-surface"}`}>
+    <button type="button" aria-label={item.estado === "concluido" ? "Reabrir tarefa" : "Concluir tarefa"} disabled={disabled || item.estado === "bloqueado"} onClick={onToggle} className={`mt-0.5 grid size-5 shrink-0 place-items-center rounded border ${item.estado === "concluido" ? "border-accent bg-accent text-accent-contrast" : "border-border text-transparent"}`}><Check className="size-3.5" /></button>
+    <div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-2"><p className={`text-sm font-semibold ${item.estado === "concluido" ? "text-text-faint line-through" : "text-text"}`}>{item.titulo}</p><span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${corEstado(item.estado)}`}>{rotuloEstado(item.estado)}</span><span className="rounded-full bg-surface-2 px-2 py-0.5 text-[10px] font-semibold text-text-faint">{item.prioridade}</span></div><p className="mt-1 text-xs text-text-muted">{item.subtema || item.tema || "Conteúdo guiado pelo título"}{item.disciplinaId ? ` · ${item.disciplinaId}` : ""} · {new Date(`${item.data}T12:00:00`).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" })}{item.duracaoMin ? ` · ${item.duracaoMin} min` : ""}</p>{item.objetivo && <p className="mt-1 text-xs leading-5 text-text-faint">{item.objetivo}</p>}<div className="mt-2 flex flex-wrap items-center gap-2"><label className="text-[11px] font-semibold text-text-faint">Estado <select aria-label={`Estado de ${item.titulo}`} disabled={disabled} value={item.estado} onChange={(e) => onEstado(e.target.value as EstadoTarefa)} className="ml-1 rounded-md border border-border bg-bg px-2 py-1 text-xs text-text"><option value="planejado">Planejado</option><option value="em_andamento">Em andamento</option><option value="revisao_devida">Revisão devida</option><option value="concluido">Concluído</option><option value="bloqueado">Bloqueado</option></select></label>{item.proximaRevisao && <span className="text-[11px] text-text-faint">Próxima revisão: {new Date(item.proximaRevisao).toLocaleDateString("pt-BR")}</span>}{item.reaberturas > 0 && <span className="text-[11px] text-text-faint">Reaberta {item.reaberturas}×</span>}</div>{item.bloqueioMotivo && <p className="mt-2 rounded-lg bg-danger/10 px-2.5 py-2 text-xs text-danger">Bloqueio: {item.bloqueioMotivo}</p>}{link && <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1"><Link href={link.href} className="inline-flex items-center gap-1 text-xs font-bold text-accent hover:underline">{link.fallback ? "Abrir resumo relacionado" : `Estudar ${link.subtemaNome}`}<ArrowRight className="size-3.5" /></Link><Link href={link.questoesHref} className="inline-flex items-center gap-1 text-xs font-bold text-accent hover:underline">Resolver questões<ArrowRight className="size-3.5" /></Link></div>}</div>
   </article>;
 }
 
 function Campo({ label, extra, children }: { label: string; extra?: string; children: React.ReactNode }) { return <label className="block text-xs font-semibold text-text-muted">{label}{extra && <span className="ml-1 font-normal text-text-faint">{extra}</span>}{children}</label>; }
 const input = "mt-1 w-full rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-text outline-none focus:border-accent";
+
+function pesoPrioridade(prioridade: PrioridadeTarefa): number { return { critica: 0, alta: 1, media: 2, baixa: 3 }[prioridade]; }
+function rotuloEstado(estado: TarefaSemana["estado"]): string { return { planejado: "Planejado", em_andamento: "Em andamento", revisao_devida: "Revisão devida", concluido: "Concluído", bloqueado: "Bloqueado" }[estado]; }
+function corEstado(estado: TarefaSemana["estado"]): string { return { planejado: "bg-surface-2 text-text-muted", em_andamento: "bg-accent-soft text-accent", revisao_devida: "bg-gold/15 text-gold", concluido: "bg-accent-soft text-accent", bloqueado: "bg-danger/10 text-danger" }[estado]; }

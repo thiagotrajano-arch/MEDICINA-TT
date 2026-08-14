@@ -481,7 +481,7 @@ async function inserirTarefasAusentes(
         disciplina_id: disciplinaId,
         tema: entrada.theme,
         duracao_min: tarefa.duracao,
-        estado: "pendente",
+        estado: "planejado",
         origem: "pdf",
       },
     };

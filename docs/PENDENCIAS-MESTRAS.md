@@ -24,6 +24,17 @@ nominal separado.
 
 ## Reconciliação executada — 2026-08-14
 
+- [~] O plano mestre passou a ter quadro único de execução em
+  `docs/EXECUCAO-PLANO-MESTRE-2026-08-14.md`. Os planos anteriores permanecem
+  somente como histórico; nenhum deles abre uma fila paralela.
+- [~] O painel canônico recebeu o modelo de cinco estados, prioridade, objetivo,
+  escopo, revisões, bloqueio, recursos e histórico de reabertura. Agenda e Semana
+  agora sincronizam conclusão/reabertura pelo mesmo `agenda_evento_id` nos dois
+  sentidos. Falta aplicar a migration e fazer QA autenticada antes de concluir.
+- [~] A matriz estática passou a cruzar também mapas, figuras públicas ancoradas
+  e fontes clínicas por `subtemaId`. Semestre e progresso continuam privados e
+  não são inferidos no relatório público.
+
 - [x] Backup e restauração validados no CI pelo run 31839733798: dump gerado,
   artefato guardado e conteúdo restaurado em PostgreSQL 17 temporário. O teste
   stock omite apenas extensões/objetos gerenciados do Supabase, índices
@@ -125,10 +136,12 @@ reabrem essa tarefa.
 - [~] Revisar RLS e avisos de segurança do Supabase sem expor chave privilegiada
   ao cliente. As extensões `pg_trgm`, `unaccent` e `vector` foram movidas para
   `extensions` pela migration isolada `20260814171017`; o advisor de segurança
-  passou de quatro para um aviso. Resta habilitar no Auth a proteção contra
-  senhas vazadas, configuração administrativa fora das migrations SQL.
-- [ ] Revalidar restauração de backup em ambiente compatível com
-  `supabase_vault`; o dump existe, mas o restore em PostgreSQL comum falhou.
+  passou de quatro para um aviso. A proteção contra senhas vazadas é recurso do
+  plano Supabase Pro; permanece bloqueada pela regra de custo zero, sem reduzir
+  o isolamento por RLS já validado.
+- [x] Restauração do backup validada no run `31839733798`. A incompatibilidade
+  histórica de `supabase_vault` com PostgreSQL stock foi contornada no teste sem
+  alterar o dump original e não é mais bloqueador operacional.
 - [~] Revisão estática de privacidade concluída para a biblioteca privada:
   o bucket `midia-privada` é privado, os caminhos são segregados por `auth.uid`,
   RLS restringe tabela e storage ao proprietário, e a aplicação gera URLs
@@ -146,13 +159,18 @@ reabrem essa tarefa.
 
 ### P1.1 Painel canônico de estudo — parcial
 
-- [ ] Unificar Semana, Agenda, OMED, semestre atual, revisão de semestres e
-  Anki em um painel de prioridade única, sem criar agenda paralela.
+- [~] Unificar Semana, Agenda, OMED, semestre atual e revisão de semestres em um
+  painel de prioridade única, sem criar agenda paralela. O núcleo canônico e a
+  sincronização Agenda–Semana estão implementados e a migration foi aplicada;
+  falta QA visual autenticada. Anki permanece
+  deliberadamente fora enquanto estiver pausado.
 - [~] Tornar o progresso atual visível no mapa curricular: os subtemas dominados
   passam a aparecer por padrão, há métrica própria e o filtro “Só pendentes”
   permanece opcional. Falta unificar isso com Semana, Agenda, OMED e Anki.
-- [ ] Criar estado único para planejado, em andamento, revisão devida, concluído
-  e bloqueado, com data, contador, filtro e opção clara de desfazer.
+- [~] Criar estado único para planejado, em andamento, revisão devida, concluído
+  e bloqueado, com data, contador, filtro e opção clara de desfazer. Schema,
+  migração, compatibilidade com estados antigos e controles visuais estão
+  aplicados; falta QA visual autenticada.
 - [ ] Ao abrir uma pendência, mostrar objetivo, escopo, estimativa, resumo,
   questões, caso/mídia disponível e próxima revisão; não só uma página ampla.
 - [x] Substituir a ligação frágil Agenda–Semana por chave estável, preservando
