@@ -55,11 +55,17 @@ jobs:
             sleep 1
           done
           docker exec restore-check pg_isready -U postgres -d postgres
+          sleep 2
+          docker run --rm \
+            --volume "$PWD:/backup" \
+            --env BACKUP_FILE \
+            postgres:17-alpine \
+            sh -c 'pg_restore --list "/backup/$BACKUP_FILE" | grep -viE "supabase_vault|SCHEMA - vault" > /backup/restore.list'
           docker run --rm --network container:restore-check \
             --volume "$PWD:/backup:ro" \
             --env BACKUP_FILE \
             postgres:17-alpine \
-            sh -c 'pg_restore --exit-on-error --no-owner --no-privileges --dbname=postgresql://postgres:restore-check@localhost:5432/postgres "/backup/$BACKUP_FILE"'
+            sh -c 'pg_restore --exit-on-error --no-owner --no-privileges --use-list="/backup/restore.list" --dbname=postgresql://postgres:restore-check@localhost:5432/postgres "/backup/$BACKUP_FILE"'
       - name: Remover banco temporário de restauração
         if: ${{ always() }}
         run: docker rm --force restore-check || true
