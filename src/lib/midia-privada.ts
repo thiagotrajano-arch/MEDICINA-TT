@@ -8,7 +8,7 @@ export type TipoOrigemMidiaPrivada = "pdf_comercial" | "paciente" | "propria_pri
 export type EntradaMidiaPrivada = {
   titulo: string; tipoOrigem: TipoOrigemMidiaPrivada; disciplina: string;
   tema: string; subtema: string; diagnostico: string; modalidade: string;
-  fonte: string; pagina: number | null; observacao: string;
+  fonte: string; pagina: number | null; periodo: number | null; caso: string; observacao: string;
   pacienteAnonimizado: boolean; autorizacaoPaciente: boolean;
 };
 export type MidiaPrivada = EntradaMidiaPrivada & {
@@ -19,6 +19,7 @@ type Registro = {
   id: string; object_path: string; titulo: string; tipo_origem: TipoOrigemMidiaPrivada;
   disciplina: string; tema: string; subtema: string; diagnostico: string;
   modalidade: string; fonte: string; pagina: number | null; observacao: string;
+  periodo: number | null; caso: string;
   paciente_anonimizado: boolean; autorizacao_paciente: boolean; criado_em: string;
   subtema_id: string | null; triagem_status: MidiaPrivada["triagemStatus"]; triagem_motivo: string;
 };
@@ -35,6 +36,7 @@ function mapear(r: Registro, urlTemporaria: string | null): MidiaPrivada {
   return { id: r.id, objectPath: r.object_path, titulo: r.titulo, tipoOrigem: r.tipo_origem,
     disciplina: r.disciplina, tema: r.tema, subtema: r.subtema, diagnostico: r.diagnostico,
     modalidade: r.modalidade, fonte: r.fonte, pagina: r.pagina, observacao: r.observacao,
+    periodo: r.periodo ?? null, caso: r.caso ?? "",
     pacienteAnonimizado: r.paciente_anonimizado, autorizacaoPaciente: r.autorizacao_paciente,
     criadoEm: r.criado_em, urlTemporaria, subtemaId: r.subtema_id,
     triagemStatus: r.triagem_status, triagemMotivo: r.triagem_motivo };
@@ -43,7 +45,7 @@ function mapear(r: Registro, urlTemporaria: string | null): MidiaPrivada {
 export async function carregarMidiaPrivada(): Promise<MidiaPrivada[]> {
   const { supabase, userId } = await autenticacao();
   const { data, error } = await supabase.from("midia_privada_usuario")
-    .select("id,object_path,titulo,tipo_origem,disciplina,tema,subtema,diagnostico,modalidade,fonte,pagina,observacao,paciente_anonimizado,autorizacao_paciente,criado_em,subtema_id,triagem_status,triagem_motivo")
+    .select("id,object_path,titulo,tipo_origem,disciplina,tema,subtema,diagnostico,modalidade,fonte,pagina,periodo,caso,observacao,paciente_anonimizado,autorizacao_paciente,criado_em,subtema_id,triagem_status,triagem_motivo")
     .eq("owner_id", userId).order("criado_em", { ascending: false });
   if (error) throw new Error(`Nao foi possivel carregar a biblioteca privada: ${error.message}`);
   return Promise.all(((data ?? []) as Registro[]).map(async (r) => {
@@ -76,7 +78,7 @@ export async function salvarMidiaPrivada(arquivo: File, entrada: EntradaMidiaPri
     owner_id: userId, object_path: objectPath, titulo: entrada.titulo.trim(), tipo_origem: entrada.tipoOrigem,
     disciplina: entrada.disciplina.trim(), tema: entrada.tema.trim(), subtema: entrada.subtema.trim(),
     diagnostico: entrada.diagnostico.trim(), modalidade: entrada.modalidade.trim(), fonte: entrada.fonte.trim(),
-    pagina: entrada.pagina, observacao: entrada.observacao.trim(), paciente_anonimizado: entrada.pacienteAnonimizado,
+    pagina: entrada.pagina, periodo: entrada.periodo, caso: entrada.caso.trim(), observacao: entrada.observacao.trim(), paciente_anonimizado: entrada.pacienteAnonimizado,
     autorizacao_paciente: entrada.autorizacaoPaciente,
   });
   if (error) { await supabase.storage.from(BUCKET).remove([objectPath]); throw new Error(`Nao foi possivel registrar a imagem privada: ${error.message}`); }

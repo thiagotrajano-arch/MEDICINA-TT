@@ -327,3 +327,40 @@ Credenciais e permissões históricas não fazem parte desta memória. O `.env.l
   diretriz, cobertura visual real e metadados de provas continuam pendentes.
 - O restore real do Supabase permanece incompleto por incompatibilidade de
   `supabase_vault` com PostgreSQL stock.
+## Fechamento do acervo visual — 2026-08-14
+
+O catálogo privado contém 379 registros e 379 objetos acessíveis no bucket
+privado. A inspeção visual completa classificou 327 como `util`, 21 como
+`contextual` e 31 como `nao_util`; não há pendências visuais neste lote. Trinta
+JP2 foram convertidos para JPEG privado com hashes/origem preservados. A
+curadoria não autoriza redistribuição: PDFs comerciais e imagens sensíveis
+continuam autenticados. Próximas ações são QA de sessão no navegador e
+vínculos editoriais com resumos, questões, casos e mapas.
+## Estado vigente — lote neuropsiquiátrico e mídia — 2026-08-14
+
+- 399 objetos privados catalogados (347 úteis, 21 contextuais, 31 não úteis).
+- 60 itens neuropsiquiátricos estão hasheados, revisados e ligados a subtemas;
+  nenhum recorte comercial foi publicado.
+- Minha mídia filtra disciplina, tema, subtema, patologia/achado, fonte,
+  modalidade, origem/privacidade e triagem; fullscreen, legenda, alt e lazy
+  loading estão ativos.
+- Auditoria pública: 77/77 figuras com vínculo navegável a estudo. QA
+  autenticada de sessão e URLs assinadas continua sendo a única pendência de
+  release deste lote.
+- Reconciliação global concluída: os 347 itens `util` e 21 `contextual`
+  possuem `subtema_id`; dois `nao_util` sem correspondência foram mantidos
+  fora do estudo. O catálogo agora possui metadados opcionais de período e caso,
+  nulos até validação manual.
+- Reteste técnico final: typecheck, lint, auditorias de privacidade/questões/
+  figuras, diff check e build estático (413/413 páginas) passaram. Não houve
+  publicação nesta rodada.
+
+## Matriz de cobertura recalculada — 2026-08-14
+
+- O comando `npm.cmd run audit:cobertura` cruza a taxonomia com resumos,
+  questões e casos pelo `subtemaId`: 304 subtemas, 234 resumos, 1.332 questões
+  e 55 casos vinculados.
+- A fila honesta ficou em 70 subtemas sem resumo, 149 sem questão e 266 sem
+  caso. As prioridades OMED estão em
+  `docs/MATRIZ-COBERTURA-CLINICA-2026-08-14.md`; não ampliar conteúdo sem
+  fonte vigente e QA editorial.
