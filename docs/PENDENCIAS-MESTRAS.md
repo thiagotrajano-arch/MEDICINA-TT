@@ -105,8 +105,11 @@ filas paralelas.
   acesso negado após expiração, remoção de storage e metadados sem resíduo,
   logout e bloqueio entre usuários confirmados. Falta apenas validar os mesmos
   estados pela interface visual autenticada.
-- [ ] Revisar RLS e avisos de segurança do Supabase sem expor chave privilegiada
-  ao cliente; tratar extensões no schema público em migração isolada.
+- [~] Revisar RLS e avisos de segurança do Supabase sem expor chave privilegiada
+  ao cliente. As extensões `pg_trgm`, `unaccent` e `vector` foram movidas para
+  `extensions` pela migration isolada `20260814171017`; o advisor de segurança
+  passou de quatro para um aviso. Resta habilitar no Auth a proteção contra
+  senhas vazadas, configuração administrativa fora das migrations SQL.
 - [ ] Revalidar restauração de backup em ambiente compatível com
   `supabase_vault`; o dump existe, mas o restore em PostgreSQL comum falhou.
 - [~] Revisão estática de privacidade concluída para a biblioteca privada:
@@ -330,6 +333,16 @@ filas paralelas.
   banco sob demanda, com estados acessíveis de carregamento e erro recuperável.
   O HTML estático caiu de aproximadamente 2,52 MB para 153.085 bytes; a fila
   preservou o progresso existente e abriu sem erros no navegador local.
+
+### Publicação do fechamento técnico — 2026-08-14
+
+- [x] Commit `2dbbb28` publicado; GitHub Pages run `31822386904` concluiu build
+  e deploy com sucesso.
+- [x] `/questoes/` abriu em produção com sessão autenticada, 983 questões novas,
+  349 já respondidas preservadas e zero erro de console.
+- [x] `/agenda/` abriu autenticada com as pendências guiadas, links profundos
+  para resumo/questões e zero erro de console. Nenhum progresso foi alterado
+  durante o QA de leitura.
 
 ## P3 — ingestão contínua e manutenção
 

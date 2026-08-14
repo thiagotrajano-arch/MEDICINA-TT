@@ -39,6 +39,12 @@ deduplicação, limpeza do Anki ou importação da semana neuropsiquiátrica.
   do build de 413 páginas, passaram depois das alterações.
 - O Anki permanece pausado por decisão explícita do usuário; não retomar sem
   nova autorização.
+- O commit `2dbbb28` foi publicado pelo Pages no run `31822386904`. Questões e
+  Agenda abriram autenticadas em produção, com 349 respostas anteriores
+  preservadas e sem mensagens de erro no console.
+- O advisor de segurança do Supabase foi reduzido de quatro para um aviso após
+  mover `pg_trgm`, `unaccent` e `vector` para o schema `extensions`. O único
+  aviso restante é habilitar proteção contra senhas vazadas no painel de Auth.
 
 ## Cópia de trabalho
 
