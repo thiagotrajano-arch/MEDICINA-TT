@@ -8,6 +8,12 @@ por disciplina e subtema.
 
 Esta memória resume o contexto duradouro encontrado no ambiente local do Claude. O histórico bruto não foi copiado para evitar repetição, dados temporários e vazamento de segredos.
 
+Registro de 2026-08-14: 37 componentes SISCAD foram reconhecidos em modo
+leitura; 36 planos analisados e HCPM VI integrado ao eixo BBPM VI por decisao
+do usuario. O mapa granular permanece parcial (26 componentes, 374 subtemas)
+e as demandas adicionais estao em PLANO-EXECUCAO-PENDENCIAS-ADICIONAIS-
+2026-08-14.md.
+
 ## Usuário e visão
 
 - Usuário: Thiago, estudante de medicina da UFMS.

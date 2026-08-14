@@ -180,6 +180,16 @@ reabrem essa tarefa.
 - [ ] Criar rotinas reutilizáveis de abertura, acompanhamento, encerramento e
   revisão longitudinal por período.
 
+### Validação SISCAD e mapa granular — estado atual
+
+- [x] Validar o estado dos vínculos SISCAD em modo leitura: 37 componentes
+  reconhecidos, 36 planos analisados e HCPM VI tratado como alias de BBPM VI
+  por decisão curricular do usuário. Relatório:
+  VALIDACAO-VINCULOS-SISCAD-2026-08-14.md.
+- [ ] Completar o mapa granular dos 11 componentes ainda ausentes no manifesto:
+  BBPM V/VI, Bases Complementares I-VI, Tópicos Especiais em Saúde I/IV e
+  Tópicos em Saúde da Mulher. Nenhum vínculo será inferido por nome.
+
 ### P1.3 Conteúdo, resumos e mapas — parcial
 
 - [~] Integridade questão–taxonomia concluída: 1.332 questões apontam para 304
@@ -207,6 +217,27 @@ reabrem essa tarefa.
   Onco/ORL/Reumato/Derma e demais áreas.
 - [ ] Criar ou ampliar resumos, questões, casos e cartões apenas para lacunas
   demonstradas, em lotes pequenos e com fonte primária vigente.
+
+## Pendências adicionais prioritárias — 2026-08-14
+
+As demandas do anexo foram incorporadas sem abrir filas paralelas. O plano
+detalhado e os critérios de aceite estão no documento
+PLANO-EXECUCAO-PENDENCIAS-ADICIONAIS-2026-08-14.md.
+
+- [ ] Ampliar e substituir imagens pouco didáticas, priorizando anatomia,
+  exames, sinais, histologia, patologia e procedimentos com proveniência,
+  licença, legenda, alt text e subtema.
+- [ ] Fechar as lacunas dos semestres anteriores sem reconstruir o que funciona;
+  a auditoria inicial encontrou 11 componentes sem mapa granular e as lacunas
+  clínicas da matriz continuam separadas.
+- [ ] Revisar design, navegação, hierarquia, responsividade, claro/escuro,
+  teclado, zoom, estados de estudo e consistência entre módulos.
+- [ ] Criar cards Anki curtos, atomicos e por eixo clínico, somente depois da
+  autorização que mantém o Anki pausado.
+- [ ] Criar modo de jogo diagnóstico com cinco tentativas, dicas progressivas,
+  explicação final e desempenho por usuário, após validar casos e RLS.
+- [ ] Completar ciências básicas integradas à clínica, sem criar páginas
+  isoladas ou duplicar conteúdo já validado.
 
 ### P1.4 Anki — parcial
 

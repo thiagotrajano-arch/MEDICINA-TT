@@ -40,6 +40,19 @@ omite apenas extensões/objetos gerenciados do Supabase, índices dependentes e
 políticas/ACLs ligados aos papéis do Supabase; o dump original e o banco remoto
 não são modificados. Não tratar mais o restore como bloqueador operacional.
 
+## Demandas adicionais e vinculos SISCAD (2026-08-14)
+
+As novas demandas de imagens, semestres, ciencias basicas, jogo diagnostico,
+design e cards foram registradas no documento
+PLANO-EXECUCAO-PENDENCIAS-ADICIONAIS-2026-08-14.md. Nenhuma implementacao
+desorganizada foi iniciada.
+
+O modo leitura confirmou 37 componentes e 36 planos analisados. O mapa granular
+tem 26 componentes, 55 modulos e 374 subtemas; faltam 11 componentes para
+granularizar. HCPM VI permanece como registro historico integrado a BBPM VI,
+sem ementa inventada. A validacao esta em
+VALIDACAO-VINCULOS-SISCAD-2026-08-14.md.
+
 ## Fechamento técnico de 2026-08-14 — questões e rotina
 
 - A página `/questoes` não serializa mais as 1.332 questões no HTML estático.
