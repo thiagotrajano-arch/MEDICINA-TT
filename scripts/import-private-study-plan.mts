@@ -91,7 +91,7 @@ type TarefaDraft = {
   disciplina_id: string;
   tema: string;
   duracao_min: number;
-  estado: "pendente";
+  estado: "planejado";
   origem: "curso" | "pdf" | "agenda";
   agenda_chave: string;
 };
@@ -300,14 +300,14 @@ async function main(): Promise<void> {
       const inicioIso = instante(data, evento.hora, plano.utcOffset);
       const observacao = limitar(`${marcador}\n${evento.observacao}`, 2000);
       agenda.push({ owner_id: owner, titulo: limitar(evento.titulo, 180), inicio: inicioIso, fim: fimDepois(inicioIso, evento.duracao), tipo: evento.tipo, disciplina_id: limitar(evento.disciplina, 160), tema: limitar(evento.tema, 180), observacao, concluido: false });
-      tarefas.push({ owner_id: owner, semana_id: semana.id, data, titulo: limitar(evento.titulo, 180), atividade: evento.atividade, recurso_id: pdf && evento.atividade === "pdf" ? limitar(`pdf:${pdf.filename}`, 180) : "", disciplina_id: limitar(evento.disciplina, 160), tema: limitar(evento.tema, 180), duracao_min: evento.duracao, estado: "pendente", origem: evento.origem, agenda_chave: `${new Date(inicioIso).toISOString()}|${limitar(evento.titulo, 180)}` });
+      tarefas.push({ owner_id: owner, semana_id: semana.id, data, titulo: limitar(evento.titulo, 180), atividade: evento.atividade, recurso_id: pdf && evento.atividade === "pdf" ? limitar(`pdf:${pdf.filename}`, 180) : "", disciplina_id: limitar(evento.disciplina, 160), tema: limitar(evento.tema, 180), duracao_min: evento.duracao, estado: "planejado", origem: evento.origem, agenda_chave: `${new Date(inicioIso).toISOString()}|${limitar(evento.titulo, 180)}` });
     }
     for (const curso of anteriores) {
       const topicos = extrairTopicosCurriculares(curso.observacao);
       const duracao = Math.max(10, Math.floor(75 / Math.max(topicos.length, 1)));
       for (const topico of topicos) {
         const tema = limitar(topico, 180);
-        tarefas.push({ owner_id: owner, semana_id: semana.id, data: dataSomada(inicio, 3), titulo: limitar(`Revisar ${curso.disciplina_id}: ${tema}`, 180), atividade: "revisao", recurso_id: "", disciplina_id: limitar(curso.disciplina_id, 160), tema, duracao_min: duracao, estado: "pendente", origem: "curso", agenda_chave: "" });
+        tarefas.push({ owner_id: owner, semana_id: semana.id, data: dataSomada(inicio, 3), titulo: limitar(`Revisar ${curso.disciplina_id}: ${tema}`, 180), atividade: "revisao", recurso_id: "", disciplina_id: limitar(curso.disciplina_id, 160), tema, duracao_min: duracao, estado: "planejado", origem: "curso", agenda_chave: "" });
       }
     }
   }

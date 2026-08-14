@@ -7,6 +7,22 @@ import { DISCIPLINAS } from "../src/content/taxonomy";
 import { CONTEUDOS } from "../src/content/conteudos";
 import { QUESTOES } from "../src/content/questoes";
 import { CASOS } from "../src/content/casos";
+import { FIGURAS } from "../src/components/figuras/registry";
+
+const ORDEM_OMED = ["inf", "cardio", "neuro", "pneumo", "go", "ped", "cir", "mfc", "nefro", "gastro", "endo", "hemato", "onco", "reumato", "derma", "otorrino"];
+
+const idsComMapa = new Set(
+  DISCIPLINAS.flatMap((disciplina) => disciplina.temas.flatMap((tema) => tema.subtemas.map((subtema) => ({ disciplina, subtema }))))
+    .filter(({ subtema }) => subtema.temConteudo && CONTEUDOS[subtema.id])
+    .sort((a, b) => {
+      const alto = Number(Boolean(b.subtema.altoRendimento)) - Number(Boolean(a.subtema.altoRendimento));
+      if (alto) return alto;
+      const rank = (id: string) => { const value = ORDEM_OMED.indexOf(id); return value < 0 ? 99 : value; };
+      return rank(a.disciplina.id) - rank(b.disciplina.id) || a.subtema.nome.localeCompare(b.subtema.nome, "pt-BR");
+    })
+    .slice(0, 60)
+    .map(({ subtema }) => subtema.id),
+);
 
 type Row = {
   disciplinaId: string;
@@ -20,9 +36,31 @@ type Row = {
   subtemasComQuestoes: number;
   casos: number;
   subtemasComCasos: number;
+  mapas: number;
+  subtemasComMidiaPublica: number;
+  figurasPublicasAncoradas: number;
+};
+
+type CoverageRow = {
+  disciplinaId: string;
+  disciplina: string;
+  temaId: string;
+  tema: string;
+  subtemaId: string;
+  subtema: string;
+  omed: boolean;
+  altoRendimento: boolean;
+  resumo: boolean;
+  questoes: number;
+  casos: number;
+  mapa: boolean;
+  figurasPublicas: string[];
+  fontesClinicas: number;
+  fila: "omed" | "referencia";
 };
 
 const rows: Row[] = [];
+const cobertura: CoverageRow[] = [];
 const lacunasResumo: Array<{ disciplinaId: string; subtemaId: string; subtema: string; altoRendimento: boolean }> = [];
 
 for (const disciplina of DISCIPLINAS) {
@@ -40,12 +78,39 @@ for (const disciplina of DISCIPLINAS) {
   }
   let resumos = 0;
   let semResumo = 0;
-  for (const subtema of subtemas) {
-    if (CONTEUDOS[subtema.id]) resumos += 1;
+  let mapas = 0;
+  let subtemasComMidiaPublica = 0;
+  let figurasPublicasAncoradas = 0;
+  for (const tema of disciplina.temas) for (const subtema of tema.subtemas) {
+    const conteudo = CONTEUDOS[subtema.id];
+    const figuras = [...new Set((conteudo?.blocos ?? []).flatMap((bloco) => bloco.figura ? (Array.isArray(bloco.figura) ? bloco.figura : [bloco.figura]) : []))];
+    const figurasValidas = figuras.filter((id) => Boolean(FIGURAS[id]));
+    const temMapa = idsComMapa.has(subtema.id);
+    if (conteudo) resumos += 1;
     else {
       semResumo += 1;
       lacunasResumo.push({ disciplinaId: disciplina.id, subtemaId: subtema.id, subtema: subtema.nome, altoRendimento: subtema.altoRendimento === true });
     }
+    if (temMapa) mapas += 1;
+    if (figurasValidas.length) subtemasComMidiaPublica += 1;
+    figurasPublicasAncoradas += figurasValidas.length;
+    cobertura.push({
+      disciplinaId: disciplina.id,
+      disciplina: disciplina.nome,
+      temaId: tema.id,
+      tema: tema.nome,
+      subtemaId: subtema.id,
+      subtema: subtema.nome,
+      omed: disciplina.omed === true,
+      altoRendimento: subtema.altoRendimento === true,
+      resumo: Boolean(conteudo),
+      questoes: questionCounts.get(subtema.id) ?? 0,
+      casos: caseCounts.get(subtema.id) ?? 0,
+      mapa: temMapa,
+      figurasPublicas: figurasValidas,
+      fontesClinicas: conteudo?.referencias.length ?? 0,
+      fila: disciplina.omed || subtema.altoRendimento ? "omed" : "referencia",
+    });
   }
   rows.push({
     disciplinaId: disciplina.id,
@@ -59,6 +124,9 @@ for (const disciplina of DISCIPLINAS) {
     subtemasComQuestoes: questionCounts.size,
     casos: [...caseCounts.values()].reduce((sum, value) => sum + value, 0),
     subtemasComCasos: caseCounts.size,
+    mapas,
+    subtemasComMidiaPublica,
+    figurasPublicasAncoradas,
   });
 }
 
@@ -71,15 +139,25 @@ const totals = rows.reduce(
     casos: acc.casos + row.casos,
     subtemasComQuestoes: acc.subtemasComQuestoes + row.subtemasComQuestoes,
     subtemasComCasos: acc.subtemasComCasos + row.subtemasComCasos,
+    mapas: acc.mapas + row.mapas,
+    subtemasComMidiaPublica: acc.subtemasComMidiaPublica + row.subtemasComMidiaPublica,
+    figurasPublicasAncoradas: acc.figurasPublicasAncoradas + row.figurasPublicasAncoradas,
   }),
-  { subtemas: 0, resumos: 0, semResumo: 0, questoes: 0, casos: 0, subtemasComQuestoes: 0, subtemasComCasos: 0 }
+  { subtemas: 0, resumos: 0, semResumo: 0, questoes: 0, casos: 0, subtemasComQuestoes: 0, subtemasComCasos: 0, mapas: 0, subtemasComMidiaPublica: 0, figurasPublicasAncoradas: 0 }
 );
 
 console.log(JSON.stringify({
   generatedAt: new Date().toISOString(),
-  criterio: "subtemaId da taxonomia; conteudo, questoes e casos somente quando apontam para a mesma chave",
-  fontes: { disciplinas: DISCIPLINAS.length, conteudos: Object.keys(CONTEUDOS).length, questoes: QUESTOES.length, casos: CASOS.length },
+  criterio: "subtemaId da taxonomia; nenhum vinculo e inferido por nome",
+  fontes: { disciplinas: DISCIPLINAS.length, conteudos: Object.keys(CONTEUDOS).length, questoes: QUESTOES.length, casos: CASOS.length, figurasRegistradas: Object.keys(FIGURAS).length },
   totais: { ...totals, subtemasSemQuestao: totals.subtemas - totals.subtemasComQuestoes, subtemasSemCaso: totals.subtemas - totals.subtemasComCasos },
+  filas: {
+    omed: cobertura.filter((item) => item.fila === "omed"),
+    referencia: cobertura.filter((item) => item.fila === "referencia"),
+    semestreAtual: "depende da semana privada confirmada; nao inferido no artefato publico",
+    semestresAnterioresNaoDominados: "depende do progresso privado; nao inferido no artefato publico",
+  },
   lacunasResumo,
+  cobertura,
   porDisciplina: rows,
 }, null, 2));

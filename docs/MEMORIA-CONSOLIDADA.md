@@ -1,5 +1,19 @@
 # Memória consolidada
 
+## 2026-08-14 — início da execução do plano mestre
+
+- O estado canônico das tarefas é `planejado`, `em_andamento`,
+  `revisao_devida`, `concluido` ou `bloqueado`; valores antigos são migrados sem
+  perda. Agenda e Semana compartilham `agenda_evento_id` para conclusão e
+  reabertura nos dois sentidos.
+- A migration foi aplicada e auditada: 138 tarefas preservadas, RLS ativa,
+  política por proprietário e zero valor inválido.
+- A matriz estática passou a incluir mapas, mídia pública e fontes clínicas por
+  `subtemaId`; informações de semestre e progresso continuam privadas.
+- A proteção contra senhas vazadas depende de Supabase Pro e permanece bloqueada
+  pela regra de custo zero. Restore de backup já validado não deve ser reaberto.
+- Anki permanece pausado e não recebeu mutação neste lote.
+
 ## Decisão curricular vigente — 2026-08-14
 
 HCPM VI deve ser tratado junto ao eixo BBPM VI. Não existe mais uma pendência
