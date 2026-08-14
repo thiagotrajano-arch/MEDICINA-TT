@@ -736,3 +736,21 @@ na última verificação e os demais gates dependem dessa correção.
   `31808280211`. A home e `Minha mídia` foram abertas no endereço público sem
   erro de aplicação. Ainda faltam QA autenticada completa, Lighthouse/axe e
   testes entre contas.
+
+## Arquitetura visual por subtema — 2026-08-14
+
+- A biblioteca pública deixou de renderizar uma grade de imagens no índice. Ela
+  agrupa disciplina, tema e subtema e só revela as figuras dentro da rota de
+  estudo correspondente.
+- `Minha mídia` mantém os filtros e URLs assinadas, mas exige seleção explícita
+  do subtema antes de renderizar imagens. Cada item mostra contexto de
+  interpretação, procedência e ligação ao resumo quando disponível.
+- A navegação principal foi consolidada em Hoje, Aprender, Praticar, Revisar e
+  Meu Curso; Mídia pública e privada ficam sob Aprender.
+- A expansão futura está especificada em
+  `docs/PLANO-EXPANSAO-ACERVO-VISUAL-2026-08-14.md`: usar lotes pequenos guiados
+  por lacuna e fonte institucional, com licença e privacidade verificadas por
+  item. Não preencher volume artificial nem republicar imagem comercial.
+- Um protótipo privado no Lovable recebeu a mesma arquitetura usando apenas
+  dados fictícios; ele é referência de interface, não fonte de dados nem novo
+  ambiente oficial.

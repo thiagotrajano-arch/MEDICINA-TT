@@ -2,10 +2,9 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Search, Images, ExternalLink } from "lucide-react";
+import { ArrowRight, Images, Layers3, Search } from "lucide-react";
 import { FIGURAS, type Figura } from "@/components/figuras/registry";
 import { DISCIPLINAS } from "@/content/taxonomy";
-import { asset } from "@/lib/asset";
 import { cn } from "@/lib/cn";
 
 /** Onde cada figura é usada — permite ir da imagem para o estudo. */
@@ -250,7 +249,7 @@ export function MidiaClient() {
         {renderizadas.length < filtradas.length && " · carregamento progressivo"}
       </p>
 
-      {/* galeria, agrupada por tema/subtema — preserva os vínculos "Estudar X" de sempre */}
+      {/* Índice visual: a imagem só aparece dentro do subtema, junto do contexto clínico. */}
       {grupos.map((g) => (
         <section key={g.chave} className="mt-8 first:mt-5">
           <div className="mb-3 flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
@@ -260,9 +259,9 @@ export function MidiaClient() {
               · {g.itens.length} {g.itens.length === 1 ? "figura" : "figuras"}
             </span>
           </div>
-          <div className="grid gap-4 lg:grid-cols-2">
-            {g.itens.map((f) => (
-              <FiguraCard key={f.id} figura={f} onde={ONDE_APARECE[f.id]} />
+          <div className="grid gap-3 lg:grid-cols-2">
+            {subtemasDoGrupo(g.itens).map((grupo) => (
+              <SubtemaVisualCard key={grupo.subtemaId} {...grupo} />
             ))}
           </div>
         </section>
@@ -288,59 +287,48 @@ export function MidiaClient() {
   );
 }
 
-function FiguraCard({
-  figura: f,
-  onde,
-}: {
-  figura: Figura;
-  onde: { subtemaId: string; rotulo: string } | undefined;
-}) {
-  const webp = f.imagem && /\.(jpe?g|png)$/i.test(f.imagem.src) ? `${f.imagem.src}.webp` : null;
+function subtemasDoGrupo(figuras: Figura[]) {
+  const grupos = new Map<string, { subtemaId: string; rotulo: string; figuras: Figura[] }>();
+  for (const figura of figuras) {
+    const onde = ONDE_APARECE[figura.id];
+    const chave = onde?.subtemaId ?? `sem-vinculo:${figura.id}`;
+    const grupo = grupos.get(chave) ?? {
+      subtemaId: onde?.subtemaId ?? "",
+      rotulo: onde?.rotulo ?? "Vínculo editorial pendente",
+      figuras: [],
+    };
+    grupo.figuras.push(figura);
+    grupos.set(chave, grupo);
+  }
+  return Array.from(grupos.values()).sort((a, b) => a.rotulo.localeCompare(b.rotulo, "pt-BR"));
+}
+
+function SubtemaVisualCard({ subtemaId, rotulo, figuras }: { subtemaId: string; rotulo: string; figuras: Figura[] }) {
+  const imagens = figuras.filter((figura) => Boolean(figura.imagem)).length;
+  const diagramas = figuras.length - imagens;
+  const resumo = figuras[0]?.legenda;
   return (
-    <figure className="overflow-hidden rounded-xl border border-border bg-surface-2">
-      <div className="flex items-center justify-between gap-2 border-b border-border px-4 py-2">
-        <span className="text-[11px] font-bold uppercase tracking-wider text-accent">{f.titulo}</span>
-        <span className="flex-none rounded-full bg-surface px-2 py-0.5 text-[10px] font-medium text-text-faint">
-          {areaDe(f.id)}
+    <article className="rounded-xl border border-border bg-surface-2 p-4 transition-colors hover:border-accent/50">
+      <div className="flex items-start gap-3">
+        <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
+          <Layers3 className="size-5" />
         </span>
+        <div className="min-w-0 flex-1">
+          <h3 className="font-bold text-text">{rotulo}</h3>
+          <p className="mt-1 text-xs text-text-faint">
+            {figuras.length} {figuras.length === 1 ? "recurso visual" : "recursos visuais"}
+            {imagens > 0 && ` · ${imagens} ${imagens === 1 ? "imagem clínica" : "imagens clínicas"}`}
+            {diagramas > 0 && ` · ${diagramas} ${diagramas === 1 ? "diagrama" : "diagramas"}`}
+          </p>
+        </div>
       </div>
-      {f.imagem ? (
-        <div className="bg-black/[0.03] px-3 py-4 dark:bg-white/[0.02]">
-          <picture>
-            {webp && <source srcSet={asset(webp)} type="image/webp" />}
-            <img src={asset(f.imagem.src)} alt={f.imagem.alt} loading="lazy" decoding="async" className="mx-auto max-h-[340px] w-auto max-w-full rounded-lg" />
-          </picture>
-        </div>
-      ) : (
-        <div className="overflow-x-auto px-3 py-4">
-          <div className="min-w-[340px]">{f.render?.()}</div>
-        </div>
-      )}
-      <figcaption className="border-t border-border px-4 py-2.5 text-[12.5px] leading-snug text-text-muted">
-        {f.legenda}
-        {f.imagem && (
-          <span className="mt-1.5 block text-[11px] text-text-faint">
-            Fonte: {f.imagem.autor ? `${f.imagem.autor} · ` : ""}
-            {f.imagem.url ? (
-              <a href={f.imagem.url} target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-accent">
-                {f.imagem.fonte}
-              </a>
-            ) : (
-              f.imagem.fonte
-            )}{" "}
-            — {f.imagem.licenca}
-          </span>
-        )}
-        {onde && (
-          <Link
-            href={`/estudar/${encodeURIComponent(onde.subtemaId)}`}
-            className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-accent hover:underline"
-          >
-            Estudar {onde.rotulo} <ExternalLink className="size-3" />
-          </Link>
-        )}
-      </figcaption>
-    </figure>
+      {resumo && <p className="mt-3 line-clamp-3 text-sm leading-6 text-text-muted">{resumo}</p>}
+      <div className="mt-3 flex flex-wrap gap-1.5" aria-label="Conteúdo visual disponível">
+        {figuras.slice(0, 3).map((figura) => <span key={figura.id} className="rounded-full border border-border bg-surface px-2 py-1 text-[11px] text-text-muted">{figura.titulo}</span>)}
+        {figuras.length > 3 && <span className="px-1 py-1 text-[11px] text-text-faint">+{figuras.length - 3}</span>}
+      </div>
+      {subtemaId ? <Link href={`/estudar/${encodeURIComponent(subtemaId)}`} className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-accent hover:underline">Abrir subtema e ver imagens <ArrowRight className="size-4" /></Link> : <p className="mt-4 text-xs font-semibold text-text-faint">Imagem preservada, aguardando vínculo a um resumo específico.</p>}
+    </article>
   );
 }
 

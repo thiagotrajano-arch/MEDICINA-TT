@@ -48,7 +48,8 @@ export function Figura({ id }: { id: string }) {
         </div>
       )}
 
-      <figcaption className="border-t border-border px-4 py-2.5 text-[12.5px] leading-snug text-text-muted">
+      <figcaption className="border-t border-border px-4 py-3 text-[12.5px] leading-relaxed text-text-muted">
+        <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.14em] text-accent">Como interpretar</span>
         {figura.legenda}
         {imagem && (
           <span className="mt-1.5 block text-[11px] text-text-faint">

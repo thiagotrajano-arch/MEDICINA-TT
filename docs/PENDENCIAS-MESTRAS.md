@@ -276,6 +276,16 @@ filas paralelas.
   vínculo foram preservados como rejeitados.
 - [x] Ancorar e auditar as figuras públicas: 77/77 IDs possuem vínculo
   navegável com um subtema em `Minha mídia`, com crédito/licença preservados.
+- [x] Substituir o mosaico público por índice hierárquico disciplina -> tema ->
+  subtema; as imagens agora só aparecem ao abrir o subtema e recebem bloco
+  “Como interpretar”. A biblioteca autenticada também exige a seleção do
+  subtema antes de revelar suas imagens.
+- [x] Registrar a estratégia de expansão, metadados obrigatórios, fontes
+  institucionais e portões de direitos/privacidade em
+  `docs/PLANO-EXPANSAO-ACERVO-VISUAL-2026-08-14.md`.
+- [ ] Executar a fila de expansão em lotes de até 20 candidatos, começando pelas
+  lacunas OMED e do semestre atual; validar licença e interpretação item a item
+  antes de importar.
 - [ ] QA autenticado no navegador para login, logout, expiração de URL, sessão
   de outro usuário e exclusão; os testes de storage/admin confirmam presença e
   HTTP 200, mas não substituem a validação interativa.
@@ -291,7 +301,7 @@ filas paralelas.
   tipografia/espaçamentos consistentes.
 - [ ] Produzir referências desktop/celular e aprovar protótipo antes de um
   redesenho amplo; preservar os dados e fluxos atuais.
-- [ ] Reorganizar navegação em Hoje, Aprender, Praticar e Revisar; manter Meu
+- [x] Reorganizar navegação em Hoje, Aprender, Praticar e Revisar; manter Meu
   Curso como currículo e Minha Mídia como biblioteca.
 - [ ] Criar busca e filtros persistentes por disciplina, semestre, tema, subtema,
   prioridade OMED, recurso e estado de estudo.

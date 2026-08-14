@@ -17,35 +17,36 @@ import {
   Sparkles,
   Stethoscope,
   Timer,
+  RotateCcw,
 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { Disciplina, GrupoDisciplina } from "@/domain/content/types";
 
 const AREAS = [
-  { id: "hoje", href: "/", label: "Hoje", descricao: "Foco e progresso", icon: Home, rotas: ["/", "/agenda"] },
-  { id: "conhecimento", href: "/biblioteca", label: "Conhecimento", descricao: "Resumos, casos e mapas", icon: BookOpen, rotas: ["/biblioteca", "/estudar", "/casos", "/mapas-mentais"] },
-  { id: "treino", href: "/questoes", label: "Treino", descricao: "Questões e simulados", icon: ListChecks, rotas: ["/questoes", "/simulado"] },
-  { id: "acervo", href: "/midia", label: "Acervo", descricao: "Mídia pública e privada", icon: Images, rotas: ["/midia", "/minha-midia"] },
+  { id: "hoje", href: "/", label: "Hoje", descricao: "Foco e progresso", icon: Home, rotas: ["/"] },
+  { id: "aprender", href: "/biblioteca", label: "Aprender", descricao: "Resumos, casos e mídia", icon: BookOpen, rotas: ["/biblioteca", "/estudar", "/casos", "/mapas-mentais", "/midia", "/minha-midia"] },
+  { id: "praticar", href: "/questoes", label: "Praticar", descricao: "Questões e simulados", icon: ListChecks, rotas: ["/questoes", "/simulado"] },
+  { id: "revisar", href: "/agenda", label: "Revisar", descricao: "Agenda e pendências", icon: RotateCcw, rotas: ["/agenda"] },
   { id: "curso", href: "/meu-curso", label: "Meu curso", descricao: "Semestres e disciplinas", icon: GraduationCap, rotas: ["/meu-curso", "/semestres"] },
 ] as const;
 
 const CONTEXTO: Record<string, { href: string; label: string; icon: React.ElementType; privado?: boolean }[]> = {
   hoje: [
     { href: "/", label: "Visão do dia", icon: Home },
+  ],
+  revisar: [
     { href: "/agenda", label: "Agenda", icon: CalendarDays, privado: true },
   ],
-  conhecimento: [
+  aprender: [
     { href: "/biblioteca", label: "Biblioteca", icon: Library },
     { href: "/casos", label: "Casos clínicos", icon: Stethoscope },
     { href: "/mapas-mentais", label: "Mapas mentais", icon: Network },
+    { href: "/midia", label: "Índice visual", icon: Images },
+    { href: "/minha-midia", label: "Minha mídia", icon: LockKeyhole, privado: true },
   ],
-  treino: [
+  praticar: [
     { href: "/questoes", label: "Banco de questões", icon: ListChecks },
     { href: "/simulado", label: "Simulado", icon: Timer },
-  ],
-  acervo: [
-    { href: "/midia", label: "Mídia clínica", icon: Images },
-    { href: "/minha-midia", label: "Minha mídia", icon: LockKeyhole, privado: true },
   ],
   curso: [
     { href: "/meu-curso", label: "Meu curso", icon: GraduationCap, privado: true },
@@ -147,7 +148,7 @@ export function Sidebar({ disciplinas, grupos, onNavigate, collapsed = false, on
             })}
           </div>
 
-          {areaAtiva.id === "conhecimento" && destaquesOmed.length > 0 && (
+          {areaAtiva.id === "aprender" && destaquesOmed.length > 0 && (
             <div className="mt-5">
               <p className="mb-2 flex items-center gap-1.5 px-3 text-[10px] font-bold uppercase tracking-[0.16em] text-text-faint">
                 <Sparkles className="size-3 text-gold" /> Prioridades OMED

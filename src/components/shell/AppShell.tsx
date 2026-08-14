@@ -9,12 +9,12 @@ import {
   Command,
   GraduationCap,
   Home,
-  Images,
   ListChecks,
   Menu,
   Moon,
   Search,
   Sun,
+  RotateCcw,
 } from "lucide-react";
 import { Sidebar } from "./Sidebar";
 import { CommandPalette } from "./CommandPalette";
@@ -24,10 +24,10 @@ import type { Disciplina, GrupoDisciplina } from "@/domain/content/types";
 import { AuthButton } from "@/components/auth/AuthButton";
 
 const AREAS = [
-  { id: "hoje", label: "Hoje", href: "/", rotas: ["/", "/agenda"] },
-  { id: "conhecimento", label: "Conhecimento", href: "/biblioteca", rotas: ["/biblioteca", "/estudar", "/casos", "/mapas-mentais"] },
-  { id: "treino", label: "Treino", href: "/questoes", rotas: ["/questoes", "/simulado"] },
-  { id: "acervo", label: "Acervo", href: "/midia", rotas: ["/midia", "/minha-midia"] },
+  { id: "hoje", label: "Hoje", href: "/", rotas: ["/"] },
+  { id: "aprender", label: "Aprender", href: "/biblioteca", rotas: ["/biblioteca", "/estudar", "/casos", "/mapas-mentais", "/midia", "/minha-midia"] },
+  { id: "praticar", label: "Praticar", href: "/questoes", rotas: ["/questoes", "/simulado"] },
+  { id: "revisar", label: "Revisar", href: "/agenda", rotas: ["/agenda"] },
   { id: "curso", label: "Meu curso", href: "/meu-curso", rotas: ["/meu-curso", "/semestres"] },
 ] as const;
 
@@ -178,9 +178,9 @@ export function AppShell({
           aria-label="Áreas principais"
         >
           <AtalhoMobile href="/" label="Hoje" icon={Home} ativo={area.id === "hoje"} />
-          <AtalhoMobile href="/biblioteca" label="Estudar" icon={BookOpen} ativo={area.id === "conhecimento"} />
-          <AtalhoMobile href="/questoes" label="Treino" icon={ListChecks} ativo={area.id === "treino"} />
-          <AtalhoMobile href="/midia" label="Acervo" icon={Images} ativo={area.id === "acervo"} />
+          <AtalhoMobile href="/biblioteca" label="Aprender" icon={BookOpen} ativo={area.id === "aprender"} />
+          <AtalhoMobile href="/questoes" label="Praticar" icon={ListChecks} ativo={area.id === "praticar"} />
+          <AtalhoMobile href="/agenda" label="Revisar" icon={RotateCcw} ativo={area.id === "revisar"} />
           <AtalhoMobile href="/meu-curso" label="Curso" icon={GraduationCap} ativo={area.id === "curso"} />
         </nav>
       </div>
