@@ -71,3 +71,15 @@ não são inferidos no artefato público.
   concluídos com evidência autenticada real.
 - Nenhum PDF comercial, dado do SISCAD, mídia privada ou credencial entra no Git.
 - Nenhuma mudança no Anki é autorizada neste lote.
+
+## Publicação e produção
+
+- PR `#27`, commit de `main` `0c0c0b7`.
+- GitHub Pages run `31844575458`: build e deploy concluídos.
+- Em produção, a página Hoje carregou “Semana atual” e os cinco estados
+  canônicos, sem erro no console do navegador.
+- A sessão disponível estava deslogada; por isso a QA autenticada de gravação,
+  duas sessões e recuperação continua pendente.
+- O workflow emitiu aviso de depreciação do runtime Node 20 usado internamente
+  por algumas versões de Actions; registrar atualização separada, sem trocar
+  versões às cegas.
