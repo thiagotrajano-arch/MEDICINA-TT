@@ -1,6 +1,6 @@
 # Handoff para outra IA — Codex Medicus
 
-Atualizado em 2026-08-10.
+Atualizado em 2026-08-14.
 
 > **Pendências operacionais:** consultar primeiro
 > [PENDENCIAS-MESTRAS.md](PENDENCIAS-MESTRAS.md). `PROXIMOS-PASSOS.md` e o
@@ -31,6 +31,14 @@ deduplicação, limpeza do Anki ou importação da semana neuropsiquiátrica.
 HCPM VI não é tratado como bloqueio separado. Ele acompanha BBPM VI no mapa
 curricular e na agenda; qualquer lacuna deve ser registrada por subtema com
 fonte, sem aguardar um plano nominal de HCPM VI.
+
+## Evidência nova — backup e restore (2026-08-14)
+
+O run do GitHub Actions 31839733798 concluiu pg_dump, upload do artefato e
+restauração em PostgreSQL 17 temporário. Para compatibilidade, o teste stock
+omite apenas extensões/objetos gerenciados do Supabase, índices dependentes e
+políticas/ACLs ligados aos papéis do Supabase; o dump original e o banco remoto
+não são modificados. Não tratar mais o restore como bloqueador operacional.
 
 ## Fechamento técnico de 2026-08-14 — questões e rotina
 

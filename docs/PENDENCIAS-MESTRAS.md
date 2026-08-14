@@ -24,6 +24,12 @@ nominal separado.
 
 ## Reconciliação executada — 2026-08-14
 
+- [x] Backup e restauração validados no CI pelo run 31839733798: dump gerado,
+  artefato guardado e conteúdo restaurado em PostgreSQL 17 temporário. O teste
+  stock omite apenas extensões/objetos gerenciados do Supabase, índices
+  dependentes e políticas/ACLs ausentes fora do Supabase; o dump original não é
+  alterado.
+
 - [x] Rodar o gate local reproduzível do export (`npm.cmd run
   audit:rotas:local`): oito rotas principais responderam HTTP 200, sem erro de
   aplicação, imagem sem `alt`, botão sem nome ou ID duplicado.
@@ -71,6 +77,10 @@ nominal separado.
   continuam pendentes separadamente.
 
 ## P0 — bloqueadores de segurança e liberação
+
+**Atualização de 2026-08-14:** o restore do backup foi validado no run
+31839733798; menções abaixo ao restore como pendente são históricas e não
+reabrem essa tarefa.
 
 ### P0.1 Espaço e execução local — parcial
 
