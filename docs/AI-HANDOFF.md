@@ -560,8 +560,9 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
   migração editorial do corpus ainda está pendente. O banco de imagens exige
   `figura` real.
 - O catálogo privado foi testado no runtime: 379 metadados e 379 objetos, zero
-  ausentes, URL assinada e leitura parcial aprovadas. Ainda existem 321 imagens
-  em revisão pendente.
+  ausentes, URL assinada e leitura parcial aprovadas. O snapshot anterior de
+  321 imagens pendentes foi encerrado em 2026-08-14; o estado atual é 327 úteis,
+  21 contextuais, 31 não úteis e 0 pendentes.
 - O Anki local possui 2.830 cartões preservados. São 2.829 em 16 decks canônicos
   por disciplina e um piloto separado. Foram movidos 1.126 cartões legados e
   removidos apenas 89 decks comprovadamente vazios. Backups `.apkg` precedem as
@@ -673,3 +674,64 @@ na última verificação e os demais gates dependem dessa correção.
 - O site já possui resumos/questões para os subtemas de Psiquiatria; este lote deve preencher somente lacunas comprovadas após revisão de diretriz e direitos.
 - A primeira prévia visual privada foi gerada para Psiquiatria Clínica p. 91--93. As páginas 91--92 foram conferidas: são material de apoio a TC/RM/EEG no diferencial de quadro psiquiátrico com possível causa orgânica. O registro detalhado permanece apenas no manifesto privado; não houve publicação de recortes.
 - A validação seca do importador curricular não alterou banco, mas excedeu o timeout do terminal nesta máquina. Reexecutar em sessão local estável antes de tratá-la como aprovada; não usar `--apply` sem esse portão e QA autenticada.
+## Atualização de retomada — acervo visual 2026-08-14
+
+- A validação visual do lote privado foi encerrada: 379/379 objetos foram
+  baixados para revisão local, vistos em 19 folhas de contato e classificados.
+- Estado remoto atual: 327 `util`, 21 `contextual`, 31 `nao_util`, 0
+  `revisao_pendente`. O campo de diagnóstico não foi inventado/preenchido por
+  aparência; exige legenda e revisão editorial.
+- 30 JPEG 2000 foram convertidos para JPEG privado, preservando os originais e
+  hashes no manifesto. Nenhum objeto comercial/sensível foi para `public/`.
+- Evidências privadas: `Desktop/MEDICINA/_media-review/20260814-visual-validation/`
+  (catálogo, decisões e backup). Scripts: `triage-private-media.mts`,
+  `download-private-media-review.mts` e `apply-private-media-visual-review.mts`.
+- Portão técnico deste lote: typecheck, lint completo, `audit:privacidade`,
+  `audit:questoes`, `git diff --check` e `next build` passaram. Ainda falta QA
+  autenticado real no navegador e a etapa editorial de ligar cada imagem útil a
+  resumo, questão, caso e mapa.
+## Estado vigente — neuropsiquiatria e mídia — 2026-08-14
+
+- O catálogo remoto tem 399 objetos privados: 347 `util`, 21 `contextual` e
+  31 `nao_util`; os números anteriores são históricos.
+- Todos os 347 itens `util` e 21 `contextual` agora possuem `subtema_id`
+  válido; dois itens `nao_util` sem correspondência foram mantidos
+  explicitamente fora da trilha de estudo. O backup da reconciliação está no
+  corpus privado.
+- O lote neuropsiquiátrico fechou 20 páginas novas e 60 itens totais, com
+  hashes privados, fonte/página, modalidade e `subtema_id` válido. Os 60 são
+  `pdf_comercial` no bucket autenticado; nenhum recorte ou texto comercial foi
+  publicado.
+- `Minha mídia` ganhou filtros de tema, patologia/achado e fonte, mantendo
+  disciplina, subtema, modalidade, origem, triagem, fullscreen, alt text,
+  legenda e carregamento progressivo.
+- A migração `20260814140000_contexto_midia_privada.sql` adicionou os campos
+  opcionais `periodo` e `caso`; a consulta autenticada confirmou que a API
+  os expõe. Os registros antigos permanecem nulos para evitar inferência.
+- `scripts/audit-public-figure-anchors.mts` confirmou 77/77 figuras públicas
+  com âncora navegável para estudo. Resta somente QA interativa autenticada de
+  login/logout, URL expirada, exclusão e isolamento entre contas.
+- Reteste: os 49 `subtemaId` usados pela mídia agora resolvem para rotas em
+  `out/estudar` (0 ausentes); typecheck, lint, auditorias e diff check passaram.
+  O reteste final do `next build` também encerrou normalmente, compilando
+  413/413 páginas estáticas.
+- O gate `npm.cmd run audit:rotas:local` passou nas oito rotas principais
+  (HTTP 200, sem erros de aplicação, alt ausente, botões sem nome ou IDs
+  duplicados). Isso não substitui a auditoria do host nem QA autenticada.
+
+## Estado de cobertura — 2026-08-14
+
+- `npm.cmd run audit:cobertura` agora recalcula a matriz por `subtemaId` sem
+  depender de texto aproximado: 304 subtemas, 234 resumos, 1.332 questões e
+  55 casos vinculados (de 56 declarados).
+- Permanecem 70 subtemas sem resumo, 149 sem questão e 266 sem caso. As
+  lacunas OMED prioritárias foram separadas em
+  `docs/MATRIZ-COBERTURA-CLINICA-2026-08-14.md`; não criar lote genérico antes
+  de usar essa fila com fonte vigente.
+- Um caso pediátrico (`caso-ped-disc-06`) não foi remapeado automaticamente,
+  pois não possui `subtemaId` e a única correspondência evidente está em outra
+  disciplina. Requer validação manual.
+- O lote validado foi commitado como `425fd66` na branch
+  `docs/publicacao-redesign` e está no PR rascunho #26. O workflow do GitHub
+  Pages acompanha `main`; não declarar produção atualizada enquanto o PR não
+  for aceito e a QA autenticada não for concluída.

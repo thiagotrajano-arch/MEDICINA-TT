@@ -42,6 +42,8 @@ type ManifestRow = {
   subtemaId?: string;
   diagnostico?: string;
   modalidade?: string;
+  periodo?: number | null;
+  caso?: string;
   fonte?: string;
   observacao?: string;
 };
@@ -87,6 +89,7 @@ async function main() {
         owner_id: owner, object_path: objectPath, titulo, tipo_origem: "pdf_comercial", disciplina,
         tema: row.tema?.trim() || fonte, subtema: row.subtema?.trim() || "", subtema_id: row.subtemaId?.trim() || null,
         diagnostico: row.diagnostico?.trim() || "", modalidade: row.modalidade?.trim() || "Imagem extraída de PDF",
+        periodo: row.periodo ?? null, caso: row.caso?.trim() || "",
         fonte: `Acervo privado — PDF: ${fonte}`, pagina: row.page,
         observacao: `${row.observacao?.trim() || "Imagem revisada e classificada para estudo privado."} SHA-256: ${row.sha256}`,
         triagem_status: row.visual_review === "approved" ? "util" : "revisao_pendente",

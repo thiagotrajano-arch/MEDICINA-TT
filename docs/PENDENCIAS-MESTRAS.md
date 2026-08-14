@@ -1,6 +1,6 @@
 # Pendências mestras — Codex Medicus
 
-Atualizado em 2026-08-13. Este é o **único documento operacional de pendências**.
+Atualizado em 2026-08-14. Este é o **único documento operacional de pendências**.
 Ele reconcilia `PROXIMOS-PASSOS.md`, `docs/PLANO-100-PASSOS.md`,
 `docs/AUDITORIA-20-LENTES-2026-08-11.md`, o handoff e evidências recentes.
 Os arquivos anteriores permanecem como histórico e evidência; não devem gerar
@@ -14,6 +14,33 @@ filas paralelas.
 - **Bloqueado:** depende de disco, acesso, ambiente ou decisão do usuário.
 - Material comercial, dados do SISCAD e mídia sensível permanecem fora do Git e
   do site público. Conteúdo público novo só nasce de síntese autoral revisada.
+
+## Reconciliação executada — 2026-08-14
+
+- [x] Rodar o gate local reproduzível do export (`npm.cmd run
+  audit:rotas:local`): oito rotas principais responderam HTTP 200, sem erro de
+  aplicação, imagem sem `alt`, botão sem nome ou ID duplicado.
+- [x] Confirmar novamente typecheck, lint, build estático (413/413 páginas),
+  auditoria de questões, privacidade, figuras e integridade do diff.
+- [x] Reconciliar a mídia privada: 347 itens `util` e 21 `contextual` possuem
+  `subtema_id` válido; os dois `nao_util` sem correspondência permanecem fora
+  da trilha.
+- [x] Recalcular a matriz de cobertura por `subtemaId`: 304 subtemas, 234
+  resumos, 1.332 questões e 55 casos vinculados. Há 70 subtemas sem resumo,
+  149 sem questão e 266 sem caso; as lacunas OMED prioritárias estão separadas
+  antes de qualquer novo lote. Evidência:
+  `docs/MATRIZ-COBERTURA-CLINICA-2026-08-14.md` e
+  `npm.cmd run audit:cobertura`.
+- [~] P0.1 ficou reduzido à auditoria do host publicado e ao perfil específico
+  das três páginas que antes ultrapassaram 60 s; o build atual conclui, mas não
+  há evidência suficiente para declarar otimização por rota.
+- [ ] QA autenticada, Lighthouse/axe e testes entre contas continuam
+  bloqueados até uma sessão real no navegador; não são substituídos por
+  typecheck, build ou HTTP local.
+- [x] Lote validado foi versionado no commit `425fd66` e enviado para a branch
+  `docs/publicacao-redesign`; PR rascunho #26 foi aberto contra `main`. O Pages
+  ainda não foi atualizado porque o workflow só publica após entrada em
+  `main` e a QA autenticada continua sendo um gate de release.
 
 ## Evidências já consolidadas
 
@@ -45,7 +72,7 @@ filas paralelas.
   Em 2026-08-13: typecheck, lint, 1.332 questões e privacidade passaram; o
   build mais recente concluiu em 341,1 s, gerou 413 páginas e confirmou
   exportação estática.
-- [ ] Investigar as três páginas que ultrapassaram 60 s na primeira tentativa de
+- [~] Investigar as três páginas que ultrapassaram 60 s na primeira tentativa de
   SSG (`pericardite`, `derrame pleural` e `TEP`) e reduzir seu custo de geração.
 - [ ] Repetir auditoria remota de rotas em uma sessão com acesso ao host. A
   tentativa local retornou `fetch failed` para todas as URLs, portanto não é
@@ -106,11 +133,12 @@ filas paralelas.
   subtemas comprovadamente necessários; os novos que têm somente questão seguem
   marcados como resumo pendente. Evidência:
   `docs/AUDITORIA-QUESTOES-TAXONOMIA-2026-08-13.md`.
-- [ ] Construir a matriz de cobertura por disciplina, subtema, semestre,
+- [~] Construir a matriz de cobertura por disciplina, subtema, semestre,
   prioridade OMED, resumo, questões, caso, mapa, imagem e fonte; ela vem antes
-  de ampliar volume. A primeira leitura clínica foi registrada em
-  `docs/MATRIZ-COBERTURA-CLINICA-2026-08-13.md`; faltam semestre, mapas, imagens
-  e fontes no mesmo nível de detalhe.
+  de ampliar volume. A camada estática de resumo/questão/caso foi concluída;
+  ainda faltam semestre, mapas, imagens, fontes e validação privada no mesmo
+  nível de detalhe. Evidência atual:
+  `docs/MATRIZ-COBERTURA-CLINICA-2026-08-14.md`.
 - [ ] Criar template de resumo: objetivo, pré-requisitos, decisão clínica,
   sinais, diagnóstico/conduta, armadilhas, integração curricular, fontes/data,
   mídia e questões.
@@ -135,8 +163,9 @@ filas paralelas.
   `docs/FECHAMENTO-ANKI-2026-08-13.md` e
   `docs/PLANO-ALINHAMENTO-ANKI-SITE-QUESTOES-2026-08-13.md`.
 - [x] Testar Anki antes de encerrar: conexão, árvore, estilo, FSRS, exportação,
-  backup e restauração de pacote temporário passaram. A fila ativa contém
-  somente 1.847 cartões `OMED Bonito`; o teste não deixou dado técnico ativo.
+  backup e restauração de pacote temporário passaram. Após a depuração editorial
+  e a primeira liberação clínica, a fila estudável contém 934 cartões, todos
+  dentro do padrão curto e com referência; o teste não deixou dado técnico ativo.
 
 - [x] Reorganizar os decks existentes sem remover cartões: 2.829 cartões foram
   migrados para `MEDICINA → Ciclo Básico/Clínico → área → disciplina`; os decks
@@ -148,13 +177,23 @@ filas paralelas.
   versos extensos e nenhuma nota sem referência. O relatório e o snapshot de
   progresso foram salvos localmente; nenhum cartão, histórico ou deck foi
   alterado nesta rodada.
-- [ ] Revisar por disciplina 14 grupos de duplicatas exatas, 4 frentes ambíguas,
-  885 versos extensos e 90 notas sem referência, preservando IDs e histórico.
+- [x] Processar integralmente as 967 notas suspensas por excederem o padrão
+  curto: 133 perguntas reais foram reescritas no próprio ID e mantidas
+  suspensas; 834 itens artificiais/genéricos foram aposentados, sem exclusão.
+  Oito longos remanescentes fora da fila também foram aposentados. A fila ativa
+  ficou com 913 cartões, zero violações 88/170 e zero duplicatas exatas.
+  Evidência: `docs/FILA-REESCRITA-ANKI-2026-08-13.md`.
+- [~] Revalidar clinicamente os 133 candidatos curtos por diretriz vigente:
+  21 foram corrigidos e ativados com fontes oficiais 2025/2026; 112 continuam
+  suspensos e explicitamente bloqueados por fonte genérica. Nenhum foi liberado
+  apenas porque passou no limite de caracteres. Evidência:
+  `exports/anki/liberacao-validada-2026.json`.
 - [ ] Refinar cartões pelo princípio de informação mínima; usar Cloze apenas para
   fatos atômicos e Image Occlusion somente em imagem licenciada/anonimizada.
-- [ ] Transformar gradualmente os 885 versos longos em cartões atômicos por
-  disciplina e subtema; revisar primeiro as 14 duplicatas exatas e as 4 frentes
-  ambíguas, preservando ID, histórico e fonte. Não aplicar reescrita massiva.
+- [ ] Transformar gradualmente as notas suspensas em cartões atômicos por
+  disciplina e subtema, começando pelos temas de maior prioridade OMED e pelas
+  lacunas sem deck ativo. Não aplicar reescrita clínica massiva: cada lote
+  exige diretriz vigente, deduplicação e QA de tamanho antes de reativar.
 - [ ] Implantar cartões por eixo clínico (epidemiologia, fisiopatologia,
   sinais/sintomas, diagnóstico, tratamento e complicações) e cartões de imagem
   somente após o manifesto de direitos/anonimização. A arquitetura e o fluxo
@@ -169,25 +208,46 @@ filas paralelas.
 
 ## P1 — mídia e acervo privado
 
-- [ ] Reconciliar os manifestos de 216 imagens canônicas, lote adicional de 282
-  e 379 registros operacionais antes de alterar a biblioteca.
-- [ ] Triar visualmente os 321 itens privados restantes; para cada aprovado,
-  registrar documento, página, SHA-256, modalidade, contexto, subtema, licença,
-  crédito, anonimização e destino permitido.
-- [~] Completar o lote neuropsiquiátrico: hashes concluídos para Psiquiatria
-  Clínica p. 91--93 e demências p. 107--111; pré-triagem visual aponta p. 91--92
-  e p. 107/110 como candidatas privadas. Neuroanatomia p. 55--57 também foi
-  renderizada e classificada como privada. Faltam revisão das demais páginas,
-  confirmação clínica/anonimização/direitos e seleção final de cada figura.
-- [ ] Converter fontes privadas selecionadas em síntese autoral somente após
-  diretriz atual; nenhum recorte comercial entra no repositório público.
-- [ ] Validar licença/crédito de fontes universitárias por item e buscar imagens
-  abertas apenas para lacunas clínicas reais.
-- [ ] Reorganizar Minha Mídia por disciplina, período, tema, subtema, modalidade,
-  patologia, caso, fonte e privacidade; adicionar tela cheia, legenda, alt text,
-  carregamento progressivo e retorno ao ponto de estudo.
-- [ ] Ancorar cada figura pública ao bloco de resumo/caso correspondente e auditar
-  IDs, arquivos, créditos, licenças, âncoras e privacidade antes de publicar.
+### Atualização operacional — 2026-08-14
+
+- [x] Reprocessar os manifestos canônicos e os dois lotes semanais em modo
+  idempotente: 379 registros/objetos privados confirmados; amostras de URL
+  assinada responderam HTTP 200.
+- [x] Converter os 30 JPEG 2000 canônicos incompatíveis com o navegador para
+  JPEG privado, preservando o arquivo original, o hash de origem e o hash da
+  conversão.
+- [x] Inspeção visual do lote completo: 379/379 objetos vistos nas 19 folhas de
+  contato e classificados sem inventar diagnóstico.
+- [x] Curadoria aplicada no catálogo autenticado: 347 `util`, 21 `contextual`,
+  31 `nao_util`, 0 `revisao_pendente`.
+  Evidência: `docs/FECHAMENTO-ACERVO-VISUAL-2026-08-14.md` e o backup/decisões
+  privados em `Desktop/MEDICINA/_media-review/20260814-visual-validation/`.
+
+- [x] Confirmar metadados editoriais do lote neuropsiquiátrico: 60/60 itens têm
+  disciplina, tema, subtema, `subtema_id`, modalidade, página e motivo de
+  privacidade; a biblioteca mantém tela cheia, legenda, alt text, carregamento
+  progressivo e retorno ao resumo.
+- [x] Completar o lote neuropsiquiátrico: 20 páginas novas foram renderizadas,
+  visualmente revisadas, hasheadas e importadas; somadas às 40 anteriores,
+  nenhuma das 60 linhas permanece em “Acervo privado/Triagem pendente”.
+- [x] Converter as fontes privadas selecionadas em síntese autoral já existente
+  nos conteúdos de Psiquiatria e Neurologia, revisada contra referências de
+  diretriz; nenhum recorte comercial ou texto protegido foi para o repositório
+  público.
+- [x] Validar o destino de direitos do lote: os 60 itens neuropsiquiátricos são
+  `pdf_comercial` e ficam exclusivamente no bucket autenticado; equivalentes
+  abertos só serão buscados se surgir uma lacuna pública real.
+- [x] Reorganizar Minha Mídia por disciplina, tema, subtema, modalidade,
+  patologia/achado, fonte, origem/privacidade, período, caso e estado de
+  triagem; a migração privada mantém período/caso nulos até validação manual.
+- [x] Reconciliar os vínculos técnicos: todos os 347 itens `util` e 21
+  `contextual` agora têm `subtema_id`; apenas dois itens `nao_util` sem
+  vínculo foram preservados como rejeitados.
+- [x] Ancorar e auditar as figuras públicas: 77/77 IDs possuem vínculo
+  navegável com um subtema em `Minha mídia`, com crédito/licença preservados.
+- [ ] QA autenticado no navegador para login, logout, expiração de URL, sessão
+  de outro usuário e exclusão; os testes de storage/admin confirmam presença e
+  HTTP 200, mas não substituem a validação interativa.
 
 ## P2 — experiência, design e acessibilidade
 

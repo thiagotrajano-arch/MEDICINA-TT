@@ -15,6 +15,7 @@ const args = process.argv.slice(2);
 const flag = (nome: string) => { const i = args.indexOf(nome); return i >= 0 ? args[i + 1] : undefined; };
 const manifestPath = resolve(flag("--manifest") ?? "_private-corpus/drive-lote-20260801/image-manifest.json");
 const limite = Number(flag("--limit") ?? "0");
+const deslocamento = Number(flag("--offset") ?? "0");
 const MAX_BYTES = 20 * 1024 * 1024;
 const MIME: Record<string, string> = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp", ".avif": "image/avif", ".jp2": "image/jpeg" };
 
@@ -44,7 +45,7 @@ async function main() {
   const manifesto = JSON.parse(await readFile(manifestPath, "utf8")) as { rows?: ManifestRow[] };
   const base = dirname(manifestPath);
   const rows = (manifesto.rows ?? []).filter((row) => row.canonical !== false && row.destination !== "public" && !row.path.toLowerCase().includes("plano-ensino"));
-  const selecionadas = limite > 0 ? rows.slice(0, limite) : rows;
+  const selecionadas = limite > 0 ? rows.slice(deslocamento, deslocamento + limite) : rows.slice(deslocamento);
   const db = getSupabaseAdmin();
   const { data: catalogo, error: catalogoErro } = await db.from("midia_privada_usuario").select("id,owner_id,object_path").limit(10000) as { data: CatalogoRow[] | null; error: { message: string } | null };
   if (catalogoErro) throw new Error(`catálogo privado: ${catalogoErro.message}`);
@@ -85,7 +86,7 @@ async function main() {
       atualizados += 1;
     } catch (erro) { erros += 1; console.error(`[triagem] ${row.path}: ${erro instanceof Error ? erro.message : String(erro)}`); }
   }
-  console.log(JSON.stringify({ manifest: manifestPath, selecionadas: selecionadas.length, atualizados, convertidos, jp2Pendentes, ignorados, faltantes, erros }, null, 2));
+  console.log(JSON.stringify({ manifest: manifestPath, offset: deslocamento, selecionadas: selecionadas.length, atualizados, convertidos, jp2Pendentes, ignorados, faltantes, erros }, null, 2));
   if (erros > 0) process.exitCode = 1;
 }
 

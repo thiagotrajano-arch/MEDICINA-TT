@@ -1783,8 +1783,9 @@ individuais ou credenciais. As pendencias externas permanecem registradas.
   imagens exige uma figura real, e o modelo de questão já aceita banco, prova,
   instituição e ano estruturados.
 - [x] Mídia privada testada de ponta a ponta: 379 registros, 379 objetos, zero
-  objetos ausentes, catálogo autenticado e URL assinada funcionais. Há 46 itens
-  úteis, 3 contextuais, 9 não úteis e 321 pendentes de revisão visual.
+  objetos ausentes, catálogo autenticado e URL assinada funcionais. Snapshot
+  histórico de 2026-08-10; estado atual está no fechamento de 2026-08-14
+  (327 úteis, 21 contextuais, 31 não úteis, 0 pendentes).
 - [x] Anki preservado em backup e reorganizado sem apagar cartões: 2.830 cartões,
   2.829 em 16 decks canônicos por área e 1 piloto. FSRS 0,90, passos 1m/10m,
   reaprendizagem 10m e 25 novos/dia; Onigiri configurado localmente.
@@ -2000,3 +2001,37 @@ A revisão consolidada, os bloqueadores, a ordem de execução e os critérios d
 - [~] Renderizar somente as páginas clínicas selecionadas e triá-las por valor didático, origem, página e direitos. Prévia privada concluída para Psiquiatria Clínica p. 91--93; faltam hash SHA-256, confirmação clínica/anonimização e os demais documentos selecionados.
 - [ ] Revisar sínteses autorais contra diretrizes atuais antes de ampliar os resumos públicos.
 - [ ] Criar questões, casos e mapas somente para lacunas comprovadas no mapa de cobertura.
+## Atualização operacional — acervo visual 2026-08-14
+
+- [x] Baixar/revisar os 379 objetos privados e gerar 19 folhas de contato.
+- [x] Classificar o lote inteiro: 327 úteis, 21 contextuais, 31 não úteis e
+  nenhum item pendente de inspeção visual.
+- [x] Preservar backup, decisões, hashes e os 30 JP2 convertidos em JPEG
+  privado; nenhum recorte comercial foi publicado.
+- [ ] Confirmar legenda/modalidade e ligar cada imagem útil aos resumos,
+  questões, casos e mapas; depois executar QA autenticado de login/logout,
+  expiração de URL e isolamento entre usuários.
+## Estado vigente — neuropsiquiatria e acervo visual — 2026-08-14
+
+- [x] Fechar revisão visual e hashes do lote neuropsiquiátrico: 20 páginas
+  novas, 60 itens privados, 60 vínculos taxonômicos válidos.
+- [x] Reorganizar Minha mídia por disciplina, tema, subtema, patologia/achado,
+  fonte, modalidade, origem/privacidade e triagem; tela cheia, alt, legenda,
+  lazy loading e retorno ao resumo.
+- [x] Acrescentar período curricular e caso relacionado como filtros/metadados
+  opcionais; itens sem vínculo permanecem explicitamente sem classificação.
+- [x] Reconciliar o acervo existente: 347 itens úteis e 21 contextuais com
+  `subtema_id` válido; dois itens não úteis continuam sem vínculo por decisão
+  de curadoria.
+- [x] Ancorar e auditar 77/77 figuras públicas.
+- [ ] QA autenticada interativa de login/logout, URL expirada, exclusão e
+  isolamento entre contas; não executar publicação adicional antes desse gate.
+
+### Reteste de rotas e build — 2026-08-14
+
+- [x] Corrigir os cinco vínculos que apontavam para subtemas sem página estática;
+  a verificação atual encontrou 0 rotas ausentes entre os 49 IDs da interface.
+- [x] Repassar typecheck, lint, auditoria de figuras (77/77), privacidade,
+  questões e integridade do diff.
+- [x] Confirmar encerramento normal do `next build`: reteste final compilou
+  413/413 páginas estáticas e encerrou com código 0.
