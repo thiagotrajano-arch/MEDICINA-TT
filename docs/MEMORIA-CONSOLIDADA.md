@@ -1,5 +1,11 @@
 # Memória consolidada
 
+## Decisão curricular vigente — 2026-08-14
+
+HCPM VI deve ser tratado junto ao eixo BBPM VI. Não existe mais uma pendência
+separada para aguardar plano de HCPM VI; registrar apenas lacunas verificadas
+por disciplina e subtema.
+
 Esta memória resume o contexto duradouro encontrado no ambiente local do Claude. O histórico bruto não foi copiado para evitar repetição, dados temporários e vazamento de segredos.
 
 ## Usuário e visão

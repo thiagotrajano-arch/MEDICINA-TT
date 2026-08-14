@@ -10,6 +10,10 @@
 > Fechamento operacional mais recente: `docs/FECHAMENTO-2026-08-10.md` e as
 > seções finais deste arquivo.
 
+> **Decisão vigente (2026-08-14):** HCPM VI acompanha BBPM VI e não é uma fila
+> separada. Menções antigas a aguardar um plano nominal de HCPM VI são
+> históricas; usar a matriz por disciplina/subtema como fonte atual.
+
 ## Fechamento e retomada — 2026-07-29
 
 - Publicação confirmada: `cc08b86` e `cac0eae` estão em `main`; GitHub Pages `30482759219` concluiu com sucesso. A raiz e `/meu-curso/` responderam HTTP 200.

@@ -6,6 +6,13 @@ Ele reconcilia `PROXIMOS-PASSOS.md`, `docs/PLANO-100-PASSOS.md`,
 Os arquivos anteriores permanecem como histórico e evidência; não devem gerar
 filas paralelas.
 
+## Decisão curricular vigente — 2026-08-14
+
+HCPM VI não é uma fila ou bloqueio separado. Para fins de estudo e integração,
+ele será tratado junto ao eixo BBPM VI; lacunas serão registradas por
+disciplina/subtema quando houver evidência concreta, sem aguardar um plano
+nominal separado.
+
 ## Leitura de estado
 
 - **Concluído:** existe evidência verificável; não repetir sem motivo.
@@ -153,8 +160,9 @@ filas paralelas.
   seus módulos/subtemas e os recursos públicos/privados.
 - [ ] Completar a visão privada por disciplina: materiais, lacunas, revisões,
   próximos estudos e progresso das matérias concluídas.
-- [ ] Reconsultar o plano de HCPM VI quando estiver disponível; manter ausência
-  explícita até então.
+- [x] Encerrar a fila separada de HCPM VI. O eixo passa a ser acompanhado junto
+  com BBPM VI; nenhuma ementa nova foi inventada e lacunas concretas continuam
+  na matriz curricular.
 - [ ] Validar em ambiente estável o importador curricular em modo seco e só então
   aplicar mudanças remotas com backup e QA autenticada. A tentativa em
   2026-08-13 não gravou dados, mas excedeu o limite de execução; medir e

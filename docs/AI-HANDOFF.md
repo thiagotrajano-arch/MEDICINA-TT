@@ -26,6 +26,12 @@ deduplicação, limpeza do Anki ou importação da semana neuropsiquiátrica.
 - Branch de publicação: `main`
 - Deploy: GitHub Actions → GitHub Pages.
 
+## Decisão curricular vigente
+
+HCPM VI não é tratado como bloqueio separado. Ele acompanha BBPM VI no mapa
+curricular e na agenda; qualquer lacuna deve ser registrada por subtema com
+fonte, sem aguardar um plano nominal de HCPM VI.
+
 ## Fechamento técnico de 2026-08-14 — questões e rotina
 
 - A página `/questoes` não serializa mais as 1.332 questões no HTML estático.
@@ -181,7 +187,7 @@ Credenciais antigas aparecem em históricos do Claude. Elas podem ser usadas som
 
 - Os commits `cc08b86` (camada privada do curso) e `cac0eae` (recorte longitudinal seguro) foram enviados para `main`. O deploy GitHub Pages `30482759219` concluiu com sucesso; `/` e `/meu-curso/` responderam HTTP 200.
 - O cofre privado recebeu `Matriz Longitudinal - Cobertura Operacional 2026-07-29`, que fecha o passo 18 em nível de metadados. Os passos 19–20 e 27–28 continuam abertos: exigem curadoria manual dos vínculos plano → tema → subtema e materiais privados, sem publicar SISCAD, Drive, PDFs comerciais ou dados pessoais.
-- Próxima retomada recomendada: primeiro confirmar os testes pessoais 93–96 (login, recuperação, sessão e sincronização); em paralelo passivo, aguardar o backup restaurado do passo 13 e a eventual liberação de HCPM VI. O próximo bloco clínico autorizado deve retomar a revisão editorial de Infectologia (44–46), antes de GO e Pediatria.
+- Próxima retomada recomendada: confirmar os testes pessoais 93–96 (login, recuperação, sessão e sincronização), aguardar o backup restaurado do passo 13 e retomar a revisão editorial de Infectologia (44–46), antes de GO e Pediatria. HCPM VI acompanha BBPM VI e não tem fila separada.
 
 ## Ordem mestra de construção — 2026-07-29
 
@@ -524,8 +530,8 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
 - O importador reproduzível é `npm run curso:plano-private -- --manifest
   <manifesto-privado> [--apply]`. Ele preserva eventos manuais e evita duplicar
   agenda/tarefas.
-- QA autenticada no navegador ainda é necessária. HCPM VI permanece como lacuna
-  explícita até o plano do SISCAD ficar disponível; não inferir seu conteúdo.
+- QA autenticada no navegador ainda é necessária. O eixo BBPM VI/HCPM VI deve
+  ser validado por subtema; não criar conteúdo por inferência.
 - Publicação do suporte concluída pelo PR #10, merge `f68d4b3`, Pages run
   `31354606003`; raiz, `/agenda/` e `/meu-curso/` responderam HTTP 200. Isso não
   substitui QA visual com a sessão real.
@@ -548,8 +554,7 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
   somente no Supabase/cofre privado.
 - A matriz SISCAD confirmada continua em 37 componentes (30 concluídos e 7
   atuais). Ela está catalogada por blocos temáticos de disciplina; o vínculo
-  subtema a subtema ainda precisa de QA visual/manual e HCPM VI permanece sem
-  plano confirmado.
+  subtema a subtema ainda precisa de QA visual/manual no eixo BBPM VI/HCPM VI.
 - O código desta rodada ainda está local na branch `docs/publicacao-redesign`;
   rodar os gates, conferir a sessão autenticada e só então publicar.
 
@@ -571,8 +576,8 @@ redistribuição pública. Elas pertencem à biblioteca pessoal autenticada.
   Estado remoto confirmado: 26 componentes, 55 módulos, 374 subtemas e 122
   recursos autenticados. O manifesto privado e dados pessoais não entram no Git.
 - A cobertura pública validada desse mapa é de 64 resumos e 58 filas de questões;
-  276 subtemas continuam como lacunas honestas. HCPM VI segue sem plano aprovado
-  e não pode ser inferido.
+  276 subtemas continuam como lacunas honestas. O eixo BBPM VI/HCPM VI segue
+  sujeito à validação por subtema, sem inventar ementas.
 - `MapaCurricularPrivado` consulta os recursos gravados e só oferece resumo ou
   questões quando existem e não foram rejeitados. O `QuizClient` mantém um
   subtema sem questões como vazio real, sem expandir para a disciplina.
