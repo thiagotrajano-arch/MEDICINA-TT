@@ -39,7 +39,10 @@ async function executar() {
 
   for (const config of configuracoes.values()) {
     config.new.delays = [5, 300, 4320, 10080];
-    config.new.perDay = 30;
+    // O usuário solicitou remover o teto diário. O Anki usa 9.999 como teto
+    // técnico; isso não antecipa cartões futuros, apenas deixa todos os novos
+    // já liberados disponíveis.
+    config.new.perDay = REVISOES_SEM_LIMITE_PRATICO;
     config.rev ??= {};
     // O Anki usa 9.999 como teto máximo: na prática, nenhuma revisão vencida
     // fica escondida por um limite diário. Isso não antecipa cartões futuros.
@@ -60,7 +63,7 @@ async function executar() {
     decksVerified: decks.length,
     configIdsUpdated: [...configuracoes.keys()],
     delaysMinutes: [5, 300, 4320, 10080],
-    newCardsPerDay: 30,
+    newCardsPerDay: REVISOES_SEM_LIMITE_PRATICO,
     reviewsPerDay: REVISOES_SEM_LIMITE_PRATICO,
     practicalReviewLimit: "sem limite",
     cardsChanged: 0,

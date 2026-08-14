@@ -22,7 +22,7 @@
 ## Configuração de revisão
 
 - FSRS/retensão desejada: 90%.
-- Novos: 30 por dia.
+- Novos: 9.999 por dia (teto técnico do Anki, sem limite prático).
 - Revisões: 9.999 por dia, teto prático sem limite.
 - Passos: 5 minutos, 5 horas, 3 dias e 7 dias.
 - Histórico de agendamento preservado.
@@ -44,3 +44,32 @@ exclusivamente local e não é chamado pelo site.
   com licença/anonimização verificadas.
 - Remover os dois decks vazios do projeto em uma sessão com o bug UTF-8 do
   AnkiConnect resolvido; nenhum cartão foi afetado por essa falha.
+
+## Atualização final do lote (2026-08-14 23:04 BRT)
+
+Esta seção substitui os números históricos acima quando houver divergência.
+
+- Coleção verificada: 2.064 notas/cartões em 24 decks; 16 decks folha de estudo.
+- A rotina de neurologia encontrou lacunas reais e criou 63 notas idempotentes a
+  partir de resumos existentes. Nenhuma nota foi apagada ou reescrita.
+- 62 notas que ultrapassaram o padrão curto foram preservadas e suspensas para
+  reescrita atômica; nenhum cartão longo permanece ativo.
+- O fechamento editorial suspendeu 120 cartões por duplicata normalizada ou
+  referência ausente. A suspensão é reversível; os campos clínicos foram
+  preservados.
+- Taxonomia curricular aplicada somente por correspondência exata do manifesto:
+  206 notas receberam `semestre::` e `componente::`; 774 receberam
+  `curriculo::semestre-pendente`, sem inferência de semestre.
+- Auditoria final: 19 grupos de duplicata normalizada, 90 notas sem referência,
+  55 notas longas (todas suspensas), zero frente longa e zero duplicata ativa
+  marcada como suspensa.
+- Configuração confirmada: 5 min, 5 h, 3 d e 7 d; novos e revisões em 9.999/dia
+  (teto técnico, sem limite prático); histórico preservado.
+- Backup final: `exports/anki/backups/2026-08-14T23-04-06-703Z` (22 decks).
+- AnkiConnect segue restrito a `127.0.0.1:8765`; o site não acessa a coleção.
+
+Restam apenas etapas que exigem revisão clínica e de direitos: validar as 90
+referências ausentes com fonte primária vigente, reescrever os 62 suspensos,
+resolver os 19 grupos após comparação de conteúdo, e criar Cloze/Image
+Occlusion somente com fatos e imagens aprovados. Elas permanecem suspensas para
+não liberar material sem fonte.

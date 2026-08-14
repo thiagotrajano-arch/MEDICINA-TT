@@ -270,7 +270,7 @@ rotina com backup prévio. O relatório detalhado está em
 - [x] Auditar a coleção presente, aplicar tags operacionais e preservar todos
   os cartões.
 - [x] Suspender reversivelmente 112 cartões duplicados ou sem referência.
-- [x] Aplicar 5 min/5 h/3 d/7 d, FSRS 90%, 30 novos/dia e revisões sem limite
+- [x] Aplicar 5 min/5 h/3 d/7 d, FSRS 90%, novos sem limite prático e revisões sem limite
   prático.
 - [x] Criar backup pós-mudança com agendamento.
 - [ ] Revalidar clinicamente as 90 notas sem referência e produzir cards novos
@@ -473,3 +473,26 @@ rotina com backup prévio. O relatório detalhado está em
 Um item só muda para concluído quando houver: alteração registrada, teste
 proporcional, estado visual quando aplicável, revisão de privacidade/direitos e
 link para a evidência. HTTP 200 isolado não é confirmação de qualidade.
+
+## Atualização Anki — fechamento operacional 2026-08-14
+
+Este registro é aditivo e prevalece sobre os números históricos da seção Anki.
+
+- [x] Conferir a coleção ao vivo: 2.064 notas/cartões, 24 decks, 16 decks folha.
+- [x] Reorganizar a árvore e remover folhas legadas vazias somente após backup;
+  nenhum cartão foi excluído.
+- [x] Aplicar tags curriculares apenas para 206 correspondências exatas de
+  semestre/componente; 774 notas ficaram explicitamente em
+  `curriculo::semestre-pendente`.
+- [x] Rodar a fila de neurologia: 63 notas foram criadas de resumos existentes;
+  62 longas foram suspensas para reescrita curta.
+- [x] Reauditar duplicatas, fontes, tamanho, suspensões e agendamento; nenhum
+  cartão longo permanece ativo.
+- [x] Confirmar novos/revisões sem limite prático (9.999/dia) e passos
+  5 min/5 h/3 d/7 d.
+- [x] Criar backup final em
+  `exports/anki/backups/2026-08-14T23-04-06-703Z`.
+- [ ] Validar clinicamente as 90 notas sem referência antes de reativar.
+- [ ] Reescrever os 62 suspensos em informação mínima, com fonte primária.
+- [ ] Criar Cloze/Image Occlusion somente após QA de fonte, licença e
+  anonimização; AnkiConnect continua local.
