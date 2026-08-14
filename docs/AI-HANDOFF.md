@@ -769,3 +769,11 @@ na última verificação e os demais gates dependem dessa correção.
   413 páginas e auditoria local de rotas passaram. O build precisou repetir a
   geração de `/questoes` uma vez por ultrapassar 60 s, portanto o peso dessa rota
   continua como oportunidade real de performance, não erro funcional.
+- Após o primeiro deploy, Lighthouse confirmou acessibilidade 100, boas práticas
+  100 e SEO 100 na home e em `/midia`; axe-core 4.12.1 encontrou zero violações
+  automáticas nas duas rotas. Performance oscilou entre 70–87 na home e 59–79 em
+  Mídia, portanto não foi marcada como resolvida.
+- O índice de Mídia passou a receber somente metadados serializáveis; o código
+  React dos diagramas permanece nas páginas de estudo e deixou o bundle do
+  índice. O build de verificação gerou 413/413 páginas em 83 s, sem a repetição
+  de `/questoes` observada no build anterior.

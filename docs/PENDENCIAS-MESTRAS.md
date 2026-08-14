@@ -304,8 +304,11 @@ filas paralelas.
   performance/acessibilidade/boas práticas/SEO. Foram corrigidos os quatro
   achados objetivos de acessibilidade (nome de botão, nome da busca, rótulo de
   campo e contraste) e a busca global passou a carregar somente sob demanda.
-  Falta apenas repetir a medição já no commit publicado e completar axe/teclado/
-  zoom, pois o Lighthouse isolado não encerra WCAG.
+  No commit publicado, acessibilidade/boas práticas/SEO chegaram a 100/100/100
+  nas duas rotas e axe-core 4.12.1 encontrou zero violações automáticas. A
+  performance variou entre execuções (home 70–87; mídia 59–79) e continua como
+  trabalho separado; ainda faltam teclado, zoom e teste manual, pois auditoria
+  automática não encerra WCAG.
 - [ ] Consolidar tokens para claro/escuro e redesenhar o claro para leitura longa:
   fundo neutro, contraste auditado, foco visível, menos sombras/gradientes e
   tipografia/espaçamentos consistentes.
@@ -317,6 +320,11 @@ filas paralelas.
   prioridade OMED, recurso e estado de estudo.
 - [ ] Medir bundle, otimizar imagens (WebP/AVIF quando apropriado), lazy loading,
   alt text e formatos antes de instalar dependências novas.
+- [x] Remover do bundle inicial o código integral da paleta de busca e dos
+  diagramas no índice de Mídia: ambos agora carregam somente quando necessários;
+  os 77 recursos e suas âncoras foram preservados. O build voltou a gerar 413/413
+  páginas sem repetir `/questoes`, mas essa rota ainda produz HTML grande e deve
+  ser a próxima otimização estrutural.
 
 ## P3 — ingestão contínua e manutenção
 

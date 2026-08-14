@@ -3,9 +3,16 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Images, Layers3, Search } from "lucide-react";
-import { FIGURAS, type Figura } from "@/components/figuras/registry";
 import { DISCIPLINAS } from "@/content/taxonomy";
 import { cn } from "@/lib/cn";
+
+export interface FiguraIndice {
+  id: string;
+  titulo: string;
+  legenda: string;
+  tipo: "imagem" | "diagrama";
+  licenca: string;
+}
 
 /** Onde cada figura é usada — permite ir da imagem para o estudo. */
 const ONDE_APARECE: Record<string, { subtemaId: string; rotulo: string } | undefined> = {
@@ -131,23 +138,22 @@ interface GrupoFiguras {
   chave: string;
   titulo: string;
   subtitulo?: string;
-  itens: Figura[];
+  itens: FiguraIndice[];
 }
 
-export function MidiaClient() {
+export function MidiaClient({ figuras }: { figuras: FiguraIndice[] }) {
   const [q, setQ] = useState("");
   const [area, setArea] = useState<string>("todas");
   const [modalidade, setModalidade] = useState<"todas" | "imagem" | "diagrama">("todas");
   const [licenca, setLicenca] = useState("todas");
   const [limite, setLimite] = useState(12);
 
-  const figuras = useMemo(() => Object.values(FIGURAS), []);
   const areas = useMemo(
     () => Array.from(new Set(figuras.map((f) => areaDe(f.id)))).sort(),
     [figuras]
   );
   const licencas = useMemo(
-    () => Array.from(new Set(figuras.map((f) => f.imagem?.licenca ?? "Autoral"))).sort((a, b) => a.localeCompare(b, "pt-BR")),
+    () => Array.from(new Set(figuras.map((f) => f.licenca))).sort((a, b) => a.localeCompare(b, "pt-BR")),
     [figuras],
   );
 
@@ -155,9 +161,8 @@ export function MidiaClient() {
     const termo = normalizar(q.trim());
     return figuras.filter((f) => {
       if (area !== "todas" && areaDe(f.id) !== area) return false;
-      if (modalidade === "imagem" && !f.imagem) return false;
-      if (modalidade === "diagrama" && f.imagem) return false;
-      if (licenca !== "todas" && (f.imagem?.licenca ?? "Autoral") !== licenca) return false;
+      if (modalidade !== "todas" && f.tipo !== modalidade) return false;
+      if (licenca !== "todas" && f.licenca !== licenca) return false;
       if (!termo) return true;
       return (
         normalizar(f.titulo).includes(termo) ||
@@ -174,7 +179,7 @@ export function MidiaClient() {
   // em vez de se misturarem soltas entre as organizadas.
   const grupos = useMemo(() => {
     const porTema = new Map<string, GrupoFiguras>();
-    const semTema: Figura[] = [];
+    const semTema: FiguraIndice[] = [];
     for (const f of renderizadas) {
       const onde = ONDE_APARECE[f.id];
       const info = onde ? TEMA_POR_SUBTEMA[onde.subtemaId] : undefined;
@@ -287,8 +292,8 @@ export function MidiaClient() {
   );
 }
 
-function subtemasDoGrupo(figuras: Figura[]) {
-  const grupos = new Map<string, { subtemaId: string; rotulo: string; figuras: Figura[] }>();
+function subtemasDoGrupo(figuras: FiguraIndice[]) {
+  const grupos = new Map<string, { subtemaId: string; rotulo: string; figuras: FiguraIndice[] }>();
   for (const figura of figuras) {
     const onde = ONDE_APARECE[figura.id];
     const chave = onde?.subtemaId ?? `sem-vinculo:${figura.id}`;
@@ -303,8 +308,8 @@ function subtemasDoGrupo(figuras: Figura[]) {
   return Array.from(grupos.values()).sort((a, b) => a.rotulo.localeCompare(b.rotulo, "pt-BR"));
 }
 
-function SubtemaVisualCard({ subtemaId, rotulo, figuras }: { subtemaId: string; rotulo: string; figuras: Figura[] }) {
-  const imagens = figuras.filter((figura) => Boolean(figura.imagem)).length;
+function SubtemaVisualCard({ subtemaId, rotulo, figuras }: { subtemaId: string; rotulo: string; figuras: FiguraIndice[] }) {
+  const imagens = figuras.filter((figura) => figura.tipo === "imagem").length;
   const diagramas = figuras.length - imagens;
   const resumo = figuras[0]?.legenda;
   return (
