@@ -263,6 +263,21 @@ PLANO-EXECUCAO-PENDENCIAS-ADICIONAIS-2026-08-14.md.
 
 ### P1.4 Anki — parcial
 
+**Atualização de 2026-08-14:** a autorização explícita do usuário retomou a
+rotina com backup prévio. O relatório detalhado está em
+`docs/RELATORIO-ANKI-2026-08-14.md`.
+
+- [x] Auditar a coleção presente, aplicar tags operacionais e preservar todos
+  os cartões.
+- [x] Suspender reversivelmente 112 cartões duplicados ou sem referência.
+- [x] Aplicar 5 min/5 h/3 d/7 d, FSRS 90%, 30 novos/dia e revisões sem limite
+  prático.
+- [x] Criar backup pós-mudança com agendamento.
+- [ ] Revalidar clinicamente as 90 notas sem referência e produzir cards novos
+  somente a partir de fontes primárias.
+- [ ] Criar cloze e Image Occlusion apenas para fatos atômicos e imagens
+  permitidas.
+
 > Pausado por decisão do usuário em 2026-08-14. Não executar mutações no Anki
 > até nova autorização explícita; o fechamento atual trata somente do site.
 

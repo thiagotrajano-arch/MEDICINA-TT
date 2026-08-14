@@ -16,6 +16,9 @@
 - Publicação comprovada: PR `#27`, commit `0c0c0b7`, Pages run `31844575458`.
   A home mostrou os cinco estados sem erro no console; QA autenticada permanece
   pendente porque a sessão disponível estava deslogada.
+- Em 2026-08-14 o Anki foi retomado com autorização explícita: 2.001 notas,
+  112 cartões suspensos reversivelmente por duplicata/fonte ausente, intervalos
+  5m/5h/3d/7d e backup pós-mudança; nenhum cartão foi excluído ou reescrito.
 
 ## Decisão curricular vigente — 2026-08-14
 
