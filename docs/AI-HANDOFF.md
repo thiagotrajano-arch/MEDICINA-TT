@@ -18,6 +18,9 @@
   de custo zero. O restore validado no run `31839733798` não é mais bloqueador.
 - Anki não foi alterado. Próximo lote: QA autenticada do painel e duas sessões,
   depois currículo granular e matriz privada.
+- Publicado por PR `#27`, commit `0c0c0b7`, Pages run `31844575458`. A home em
+  produção mostrou o painel e os cinco estados sem erro no console. A sessão do
+  navegador estava deslogada; não marcar QA autenticada como concluída.
 
 Atualizado em 2026-08-14.
 

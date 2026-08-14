@@ -13,6 +13,9 @@
 - A proteção contra senhas vazadas depende de Supabase Pro e permanece bloqueada
   pela regra de custo zero. Restore de backup já validado não deve ser reaberto.
 - Anki permanece pausado e não recebeu mutação neste lote.
+- Publicação comprovada: PR `#27`, commit `0c0c0b7`, Pages run `31844575458`.
+  A home mostrou os cinco estados sem erro no console; QA autenticada permanece
+  pendente porque a sessão disponível estava deslogada.
 
 ## Decisão curricular vigente — 2026-08-14
 

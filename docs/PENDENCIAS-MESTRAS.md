@@ -34,6 +34,10 @@ nominal separado.
 - [~] A matriz estática passou a cruzar também mapas, figuras públicas ancoradas
   e fontes clínicas por `subtemaId`. Semestre e progresso continuam privados e
   não são inferidos no relatório público.
+- [x] O primeiro lote do plano mestre foi publicado no commit `0c0c0b7`, PR
+  `#27`, Pages run `31844575458`. A home exibiu os cinco estados e não registrou
+  erro no console. A sessão estava deslogada, portanto o QA autenticado continua
+  aberto sem falsa conclusão.
 
 - [x] Backup e restauração validados no CI pelo run 31839733798: dump gerado,
   artefato guardado e conteúdo restaurado em PostgreSQL 17 temporário. O teste
@@ -366,6 +370,9 @@ PLANO-EXECUCAO-PENDENCIAS-ADICIONAIS-2026-08-14.md.
   HTTP 200, mas não substituem a validação interativa.
 
 ## P2 — experiência, design e acessibilidade
+
+- [ ] Atualizar, em lote isolado e após conferir compatibilidade, as GitHub
+  Actions que ainda emitem aviso de runtime Node 20 deprecado.
 
 - [ ] Executar QA por roteiro nas rotas de início, resumos, questões, Agenda,
   Semana, Meu Curso, Mídia, autenticação e estados vazio/erro/carregando.
