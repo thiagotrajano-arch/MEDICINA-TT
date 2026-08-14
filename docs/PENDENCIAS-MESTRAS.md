@@ -78,6 +78,13 @@ filas paralelas.
 - [ ] Repetir auditoria remota de rotas em uma sessão com acesso ao host. A
   tentativa local retornou `fetch failed` para todas as URLs, portanto não é
   evidência de queda nem validação de produção.
+- [x] Verificação visual de produção em 2026-08-14: as rotas `/`,
+  `/questoes/`, `/biblioteca/`, `/mapas-mentais/`, `/meu-curso/`, `/agenda/`,
+  `/minha-midia/` e `/semestres/` abriram com um H1 cada, sem tela de erro e
+  sem mensagens no console do navegador. A sessão autenticada já existente
+  permaneceu ativa. Na Minha Mídia, 399 imagens possuem texto alternativo e o
+  carregamento progressivo trouxe imagens visíveis sem arquivo quebrado. Isto
+  não substitui os testes de fluxos que alteram dados descritos em P0.2.
 
 ### P0.2 Autenticação, privacidade e recuperação — pendente
 
@@ -91,6 +98,11 @@ filas paralelas.
   ao cliente; tratar extensões no schema público em migração isolada.
 - [ ] Revalidar restauração de backup em ambiente compatível com
   `supabase_vault`; o dump existe, mas o restore em PostgreSQL comum falhou.
+- [~] Revisão estática de privacidade concluída para a biblioteca privada:
+  o bucket `midia-privada` é privado, os caminhos são segregados por `auth.uid`,
+  RLS restringe tabela e storage ao proprietário, e a aplicação gera URLs
+  assinadas de 300 s. Falta confirmar essas garantias contra o projeto remoto
+  com duas contas e os fluxos de upload, expiração e exclusão.
 
 ## P1 — tornar o site uma rotina de estudo útil
 
