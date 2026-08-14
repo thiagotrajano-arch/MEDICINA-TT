@@ -34,9 +34,11 @@ filas paralelas.
 - [~] P0.1 ficou reduzido à auditoria do host publicado e ao perfil específico
   das três páginas que antes ultrapassaram 60 s; o build atual conclui, mas não
   há evidência suficiente para declarar otimização por rota.
-- [ ] QA autenticada, Lighthouse/axe e testes entre contas continuam
-  bloqueados até uma sessão real no navegador; não são substituídos por
-  typecheck, build ou HTTP local.
+- [~] Aceite operacional de autenticação e progresso: em 2026-08-14 o usuário
+  confirmou uso cotidiano estável do site. Os testes técnicos entre contas e
+  do ciclo de mídia foram concluídos; recuperação visual, persistência após
+  reinício e auditorias Lighthouse/axe permanecem como melhoria de qualidade,
+  não como bloqueio de uso.
 - [x] Lote validado foi versionado nos commits `425fd66`/`a49c975`, merged no
   commit `b1ca7e7` de `main` pelo PR #26, e publicado pelo Pages no run
   `31808280211`. A home e `Minha mídia` foram verificadas no endereço público
@@ -86,7 +88,11 @@ filas paralelas.
   carregamento progressivo trouxe imagens visíveis sem arquivo quebrado. Isto
   não substitui os testes de fluxos que alteram dados descritos em P0.2.
 
-### P0.2 Autenticação, privacidade e recuperação — pendente
+### P0.2 Autenticação, privacidade e recuperação — acompanhamento
+
+- [x] Aceite de uso cotidiano registrado: o usuário confirma login, progresso
+  e uso normal do site em produção. Não repetir testes destrutivos sem uma
+  regressão concreta.
 
 - [~] Login e logout foram exercitados por sessão temporária da conta de teste,
   sem registrar credenciais e com encerramento confirmado. Ainda faltam os
