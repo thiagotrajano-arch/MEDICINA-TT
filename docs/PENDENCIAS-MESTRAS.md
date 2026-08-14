@@ -37,6 +37,10 @@ filas paralelas.
 - [ ] QA autenticada, Lighthouse/axe e testes entre contas continuam
   bloqueados até uma sessão real no navegador; não são substituídos por
   typecheck, build ou HTTP local.
+- [x] Lote validado foi versionado no commit `425fd66` e enviado para a branch
+  `docs/publicacao-redesign`; PR rascunho #26 foi aberto contra `main`. O Pages
+  ainda não foi atualizado porque o workflow só publica após entrada em
+  `main` e a QA autenticada continua sendo um gate de release.
 
 ## Evidências já consolidadas
 

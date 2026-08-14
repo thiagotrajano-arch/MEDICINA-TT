@@ -731,3 +731,7 @@ na última verificação e os demais gates dependem dessa correção.
 - Um caso pediátrico (`caso-ped-disc-06`) não foi remapeado automaticamente,
   pois não possui `subtemaId` e a única correspondência evidente está em outra
   disciplina. Requer validação manual.
+- O lote validado foi commitado como `425fd66` na branch
+  `docs/publicacao-redesign` e está no PR rascunho #26. O workflow do GitHub
+  Pages acompanha `main`; não declarar produção atualizada enquanto o PR não
+  for aceito e a QA autenticada não for concluída.
