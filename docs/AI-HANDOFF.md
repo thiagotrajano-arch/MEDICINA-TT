@@ -754,3 +754,18 @@ na última verificação e os demais gates dependem dessa correção.
 - Um protótipo privado no Lovable recebeu a mesma arquitetura usando apenas
   dados fictícios; ele é referência de interface, não fonte de dados nem novo
   ambiente oficial.
+
+## Auditoria de experiência e pausa do Anki — 2026-08-14
+
+- Por decisão explícita do usuário, o Anki foi retirado do escopo atual. Não
+  alterar decks, cartões, intervalos ou extensões até nova autorização.
+- O Lighthouse de produção mediu home em 87/84/100/100 e `/midia` em
+  79/90/100/100 (performance/acessibilidade/boas práticas/SEO). Os achados
+  reproduzíveis eram contraste do tema claro, nome acessível do login, nome da
+  busca e rótulo do importador local.
+- O tema claro recebeu texto auxiliar mais escuro; botões/campo receberam nomes
+  acessíveis; a paleta de busca global agora é um chunk carregado somente quando
+  aberta. Typecheck, lint, auditorias de questões/figuras/privacidade, build das
+  413 páginas e auditoria local de rotas passaram. O build precisou repetir a
+  geração de `/questoes` uma vez por ultrapassar 60 s, portanto o peso dessa rota
+  continua como oportunidade real de performance, não erro funcional.

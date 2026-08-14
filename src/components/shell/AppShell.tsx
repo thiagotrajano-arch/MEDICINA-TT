@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type CSSProperties } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
   BookOpen,
@@ -17,11 +18,15 @@ import {
   RotateCcw,
 } from "lucide-react";
 import { Sidebar } from "./Sidebar";
-import { CommandPalette } from "./CommandPalette";
 import { cn } from "@/lib/cn";
 import { instalarMonitoramentoGlobal } from "@/lib/monitor";
 import type { Disciplina, GrupoDisciplina } from "@/domain/content/types";
 import { AuthButton } from "@/components/auth/AuthButton";
+
+const CommandPalette = dynamic(
+  () => import("./CommandPalette").then((modulo) => modulo.CommandPalette),
+  { ssr: false },
+);
 
 const AREAS = [
   { id: "hoje", label: "Hoje", href: "/", rotas: ["/"] },
@@ -147,7 +152,7 @@ export function AppShell({
             type="button"
             onClick={() => setPaletteOpen(true)}
             className="flex h-11 min-w-0 flex-1 items-center gap-2.5 rounded-xl border border-border bg-surface px-3 text-sm text-text-faint shadow-sm transition-colors hover:border-accent sm:max-w-xl"
-            aria-label="Abrir busca global"
+            aria-label="Buscar conteúdo, tema ou questão"
           >
             <Search className="size-4 shrink-0" />
             <span className="truncate">Buscar conteúdo, tema ou questão</span>
@@ -185,7 +190,7 @@ export function AppShell({
         </nav>
       </div>
 
-      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
+      {paletteOpen && <CommandPalette open onClose={() => setPaletteOpen(false)} />}
     </div>
   );
 }

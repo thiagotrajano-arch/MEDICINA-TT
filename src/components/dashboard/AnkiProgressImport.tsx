@@ -54,6 +54,7 @@ export function AnkiProgressImport() {
         <input
           ref={inputRef}
           type="file"
+          aria-label="Selecionar relatório do Anki em JSON"
           accept="application/json,.json"
           className="sr-only"
           onChange={(event) => {

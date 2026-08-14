@@ -99,7 +99,7 @@ export function AuthButton() {
 
   return (
     <>
-      <button onClick={() => { setModoDialogo("entrar"); setOpen(true); }} className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-surface px-3 text-xs font-semibold text-text-muted hover:border-accent hover:text-accent">
+      <button aria-label="Entrar na conta" onClick={() => { setModoDialogo("entrar"); setOpen(true); }} className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-surface px-3 text-xs font-semibold text-text-muted hover:border-accent hover:text-accent">
         <LogIn className="size-3.5" /> <span className="hidden sm:inline">Entrar</span>
       </button>
       {open && <AuthDialog key={modoDialogo} modoInicial={modoDialogo} onClose={() => setOpen(false)} />}

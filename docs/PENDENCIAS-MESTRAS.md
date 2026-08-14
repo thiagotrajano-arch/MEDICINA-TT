@@ -187,6 +187,9 @@ filas paralelas.
 
 ### P1.4 Anki — parcial
 
+> Pausado por decisão do usuário em 2026-08-14. Não executar mutações no Anki
+> até nova autorização explícita; o fechamento atual trata somente do site.
+
 - [x] Fechamento operacional para estudo: cartões foram alinhados à rotina do
   site, o limite de novos foi fixado em 30/dia, FSRS 0,90 e a cadência
   5 min/5 h/3 d/7 d foram confirmados. As 22 cópias de AVC e 90 notas sem fonte
@@ -294,12 +297,19 @@ filas paralelas.
 
 - [ ] Executar QA por roteiro nas rotas de início, resumos, questões, Agenda,
   Semana, Meu Curso, Mídia, autenticação e estados vazio/erro/carregando.
-- [ ] Rodar Lighthouse móvel/desktop, axe/WCAG 2.2, teclado, zoom 200% e teste
+- [~] Rodar Lighthouse móvel/desktop, axe/WCAG 2.2, teclado, zoom 200% e teste
   em celular; priorizar achados confirmados.
+- [x] Lighthouse de produção executado em 2026-08-14 na home e em `/midia`:
+  baseline home 87/84/100/100 e mídia 79/90/100/100 em
+  performance/acessibilidade/boas práticas/SEO. Foram corrigidos os quatro
+  achados objetivos de acessibilidade (nome de botão, nome da busca, rótulo de
+  campo e contraste) e a busca global passou a carregar somente sob demanda.
+  Falta apenas repetir a medição já no commit publicado e completar axe/teclado/
+  zoom, pois o Lighthouse isolado não encerra WCAG.
 - [ ] Consolidar tokens para claro/escuro e redesenhar o claro para leitura longa:
   fundo neutro, contraste auditado, foco visível, menos sombras/gradientes e
   tipografia/espaçamentos consistentes.
-- [ ] Produzir referências desktop/celular e aprovar protótipo antes de um
+- [x] Produzir referências desktop/celular e aprovar protótipo antes de um
   redesenho amplo; preservar os dados e fluxos atuais.
 - [x] Reorganizar navegação em Hoje, Aprender, Praticar e Revisar; manter Meu
   Curso como currículo e Minha Mídia como biblioteca.
