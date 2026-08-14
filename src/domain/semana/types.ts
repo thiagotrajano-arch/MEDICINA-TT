@@ -46,6 +46,7 @@ export interface FocoSemana {
 export interface TarefaSemana {
   id: string;
   semanaId: string;
+  agendaEventoId: string | null;
   data: string;
   titulo: string;
   atividade: AtividadeSemana;

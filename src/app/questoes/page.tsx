@@ -1,14 +1,7 @@
-import { getContentRepository } from "@/infra/content";
-import { QuizClient } from "@/components/questoes/QuizClient";
+import { QuizLoader } from "@/components/questoes/QuizLoader";
 
 export const metadata = { title: "Questões · Codex Medicus" };
 
-export default async function QuestoesPage() {
-  const repo = await getContentRepository();
-  const [questoes, disciplinas] = await Promise.all([
-    repo.getQuestoes(),
-    repo.getDisciplinas(),
-  ]);
-
-  return <QuizClient questoes={questoes} disciplinas={disciplinas} />;
+export default function QuestoesPage() {
+  return <QuizLoader />;
 }

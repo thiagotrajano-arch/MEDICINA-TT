@@ -93,6 +93,7 @@ type TarefaDraft = {
   duracao_min: number;
   estado: "pendente";
   origem: "curso" | "pdf" | "agenda";
+  agenda_chave: string;
 };
 
 const aplicar = process.argv.includes("--apply");
@@ -299,14 +300,14 @@ async function main(): Promise<void> {
       const inicioIso = instante(data, evento.hora, plano.utcOffset);
       const observacao = limitar(`${marcador}\n${evento.observacao}`, 2000);
       agenda.push({ owner_id: owner, titulo: limitar(evento.titulo, 180), inicio: inicioIso, fim: fimDepois(inicioIso, evento.duracao), tipo: evento.tipo, disciplina_id: limitar(evento.disciplina, 160), tema: limitar(evento.tema, 180), observacao, concluido: false });
-      tarefas.push({ owner_id: owner, semana_id: semana.id, data, titulo: limitar(evento.titulo, 180), atividade: evento.atividade, recurso_id: pdf && evento.atividade === "pdf" ? limitar(`pdf:${pdf.filename}`, 180) : "", disciplina_id: limitar(evento.disciplina, 160), tema: limitar(evento.tema, 180), duracao_min: evento.duracao, estado: "pendente", origem: evento.origem });
+      tarefas.push({ owner_id: owner, semana_id: semana.id, data, titulo: limitar(evento.titulo, 180), atividade: evento.atividade, recurso_id: pdf && evento.atividade === "pdf" ? limitar(`pdf:${pdf.filename}`, 180) : "", disciplina_id: limitar(evento.disciplina, 160), tema: limitar(evento.tema, 180), duracao_min: evento.duracao, estado: "pendente", origem: evento.origem, agenda_chave: `${new Date(inicioIso).toISOString()}|${limitar(evento.titulo, 180)}` });
     }
     for (const curso of anteriores) {
       const topicos = extrairTopicosCurriculares(curso.observacao);
       const duracao = Math.max(10, Math.floor(75 / Math.max(topicos.length, 1)));
       for (const topico of topicos) {
         const tema = limitar(topico, 180);
-        tarefas.push({ owner_id: owner, semana_id: semana.id, data: dataSomada(inicio, 3), titulo: limitar(`Revisar ${curso.disciplina_id}: ${tema}`, 180), atividade: "revisao", recurso_id: "", disciplina_id: limitar(curso.disciplina_id, 160), tema, duracao_min: duracao, estado: "pendente", origem: "curso" });
+        tarefas.push({ owner_id: owner, semana_id: semana.id, data: dataSomada(inicio, 3), titulo: limitar(`Revisar ${curso.disciplina_id}: ${tema}`, 180), atividade: "revisao", recurso_id: "", disciplina_id: limitar(curso.disciplina_id, 160), tema, duracao_min: duracao, estado: "pendente", origem: "curso", agenda_chave: "" });
       }
     }
   }
@@ -321,12 +322,21 @@ async function main(): Promise<void> {
     if (error) throw new Error(`Agenda: ${error.message}`);
   }
 
+  const { data: agendaVinculadaData, error: agendaVinculadaErro } = await db.from("agenda_estudo_usuario")
+    .select("id,titulo,inicio").eq("owner_id", owner).gte("inicio", instante(primeiro, "00:00", plano.utcOffset)).lte("inicio", instante(ultimoFim, "23:59", plano.utcOffset));
+  if (agendaVinculadaErro) throw new Error(`Vínculos da agenda: ${agendaVinculadaErro.message}`);
+  const idsAgendaPorChave = new Map((agendaVinculadaData ?? []).map((item) => [`${new Date(item.inicio).toISOString()}|${item.titulo}`, item.id as string]));
+  const tarefasComVinculo = tarefas.map(({ agenda_chave: agendaChave, ...tarefa }) => ({
+    ...tarefa,
+    agenda_evento_id: agendaChave ? idsAgendaPorChave.get(agendaChave) ?? null : null,
+  }));
+
   const idsSemanas = [...semanasRemotas.values()].map((item) => item.id);
   const { data: tarefasExistentesData, error: tarefasExistentesErro } = await db.from("tarefa_estudo_usuario")
     .select("semana_id,data,titulo").eq("owner_id", owner).in("semana_id", idsSemanas);
   if (tarefasExistentesErro) throw new Error(`Tarefas existentes: ${tarefasExistentesErro.message}`);
   const tarefasExistentes = new Set((tarefasExistentesData ?? []).map((item) => `${item.semana_id}|${item.data}|${item.titulo}`));
-  const tarefasNovas = tarefas.filter((item) => !tarefasExistentes.has(`${item.semana_id}|${item.data}|${item.titulo}`));
+  const tarefasNovas = tarefasComVinculo.filter((item) => !tarefasExistentes.has(`${item.semana_id}|${item.data}|${item.titulo}`));
   if (tarefasNovas.length) {
     const { error } = await db.from("tarefa_estudo_usuario").insert(tarefasNovas);
     if (error) throw new Error(`Tarefas: ${error.message}`);

@@ -26,6 +26,20 @@ deduplicação, limpeza do Anki ou importação da semana neuropsiquiátrica.
 - Branch de publicação: `main`
 - Deploy: GitHub Actions → GitHub Pages.
 
+## Fechamento técnico de 2026-08-14 — questões e rotina
+
+- A página `/questoes` não serializa mais as 1.332 questões no HTML estático.
+  O banco é carregado no cliente com estados de carregamento/erro e sem mudar a
+  lógica de filtros, fila ou progresso. O artefato caiu de ~2,52 MB para
+  153.085 bytes e foi validado no navegador com progresso existente.
+- A ligação Agenda–Semana passou a usar `agenda_evento_id`, protegido por chave
+  estrangeira composta com `owner_id`. A migration foi aplicada e vinculou os
+  84 espelhos inequívocos entre 138 tarefas; eventos manuais foram preservados.
+- Typecheck, lint, auditorias de 1.332 questões, 77 figuras e privacidade, além
+  do build de 413 páginas, passaram depois das alterações.
+- O Anki permanece pausado por decisão explícita do usuário; não retomar sem
+  nova autorização.
+
 ## Cópia de trabalho
 
 Use um clone local do repositório. O arquivo `.env.local` contém as credenciais necessárias e é ignorado pelo Git. Nunca mostrar, registrar em logs, copiar para documentação ou commitar seu conteúdo.

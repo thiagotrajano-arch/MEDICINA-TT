@@ -22,7 +22,7 @@ const hoje = () => new Date();
 type LocalState = { semana: SemanaAtual | null; focos: FocoSemana[]; tarefas: TarefaSemana[] };
 type LinhaSemana = { id: string; inicio: string; fim: string; periodo: number | null; objetivo: string; estado: SemanaAtual["estado"]; origem: OrigemSemana; confirmada: boolean; criado_em: string; atualizado_em: string };
 type LinhaFoco = { id: string; semana_id: string; disciplina_id: string; tema: string; subtema: string; prioridade: PrioridadeFoco; origem: FocoSemana["origem"]; confianca: number; estado: EstadoFoco; criado_em: string; atualizado_em: string };
-type LinhaTarefa = { id: string; semana_id: string; data: string; titulo: string; atividade: AtividadeSemana; recurso_id: string; disciplina_id: string; tema: string; duracao_min: number | null; estado: EstadoTarefa; origem: OrigemSemana; criado_em: string; atualizado_em: string };
+type LinhaTarefa = { id: string; semana_id: string; agenda_evento_id: string | null; data: string; titulo: string; atividade: AtividadeSemana; recurso_id: string; disciplina_id: string; tema: string; duracao_min: number | null; estado: EstadoTarefa; origem: OrigemSemana; criado_em: string; atualizado_em: string };
 
 function idLocal(): string {
   try { return crypto.randomUUID(); } catch { return `local-${Date.now()}-${Math.random().toString(36).slice(2)}`; }
@@ -68,7 +68,7 @@ function mapearFoco(linha: LinhaFoco): FocoSemana {
 }
 
 function mapearTarefa(linha: LinhaTarefa): TarefaSemana {
-  return { id: linha.id, semanaId: linha.semana_id, data: linha.data, titulo: linha.titulo, atividade: linha.atividade, recursoId: linha.recurso_id, disciplinaId: linha.disciplina_id, tema: linha.tema, duracaoMin: linha.duracao_min, estado: linha.estado, origem: linha.origem, criadoEm: linha.criado_em, atualizadoEm: linha.atualizado_em };
+  return { id: linha.id, semanaId: linha.semana_id, agendaEventoId: linha.agenda_evento_id, data: linha.data, titulo: linha.titulo, atividade: linha.atividade, recursoId: linha.recurso_id, disciplinaId: linha.disciplina_id, tema: linha.tema, duracaoMin: linha.duracao_min, estado: linha.estado, origem: linha.origem, criadoEm: linha.criado_em, atualizadoEm: linha.atualizado_em };
 }
 
 async function sessao(): Promise<{ supabase: SupabaseClient; userId: string } | null> {
@@ -103,7 +103,7 @@ export async function carregarSemanaAtual(): Promise<SemanaAtualDados> {
   const semanaAtual = mapearSemana(semana as LinhaSemana);
   const [focos, tarefas] = await Promise.all([
     auth.supabase.from("foco_semana_usuario").select("id,semana_id,disciplina_id,tema,subtema,prioridade,origem,confianca,estado,criado_em,atualizado_em").eq("owner_id", auth.userId).eq("semana_id", semanaAtual.id).order("prioridade", { ascending: true }),
-    auth.supabase.from("tarefa_estudo_usuario").select("id,semana_id,data,titulo,atividade,recurso_id,disciplina_id,tema,duracao_min,estado,origem,criado_em,atualizado_em").eq("owner_id", auth.userId).eq("semana_id", semanaAtual.id).order("data", { ascending: true }).order("criado_em", { ascending: true }),
+    auth.supabase.from("tarefa_estudo_usuario").select("id,semana_id,agenda_evento_id,data,titulo,atividade,recurso_id,disciplina_id,tema,duracao_min,estado,origem,criado_em,atualizado_em").eq("owner_id", auth.userId).eq("semana_id", semanaAtual.id).order("data", { ascending: true }).order("criado_em", { ascending: true }),
   ]);
   if (focos.error || tarefas.error) return { ...local, remoto: false };
   return { semana: semanaAtual, focos: (focos.data ?? []).map((item) => mapearFoco(item as LinhaFoco)), tarefas: (tarefas.data ?? []).map((item) => mapearTarefa(item as LinhaTarefa)), remoto: true };
@@ -138,7 +138,7 @@ export async function salvarSemanaAtual(entrada: EntradaSemana): Promise<SemanaA
   const semana = mapearSemana(data as LinhaSemana);
   const [focos, tarefas] = await Promise.all([
     auth.supabase.from("foco_semana_usuario").select("id,semana_id,disciplina_id,tema,subtema,prioridade,origem,confianca,estado,criado_em,atualizado_em").eq("owner_id", auth.userId).eq("semana_id", semana.id).order("prioridade", { ascending: true }),
-    auth.supabase.from("tarefa_estudo_usuario").select("id,semana_id,data,titulo,atividade,recurso_id,disciplina_id,tema,duracao_min,estado,origem,criado_em,atualizado_em").eq("owner_id", auth.userId).eq("semana_id", semana.id).order("data", { ascending: true }),
+    auth.supabase.from("tarefa_estudo_usuario").select("id,semana_id,agenda_evento_id,data,titulo,atividade,recurso_id,disciplina_id,tema,duracao_min,estado,origem,criado_em,atualizado_em").eq("owner_id", auth.userId).eq("semana_id", semana.id).order("data", { ascending: true }),
   ]);
   return { semana, focos: (focos.data ?? []).map((item) => mapearFoco(item as LinhaFoco)), tarefas: (tarefas.data ?? []).map((item) => mapearTarefa(item as LinhaTarefa)), remoto: !focos.error && !tarefas.error };
 }
@@ -165,10 +165,10 @@ export async function salvarFocoSemana(semanaId: string, entrada: EntradaFoco): 
 export async function salvarTarefaSemana(semanaId: string, entrada: EntradaTarefa): Promise<TarefaSemana> {
   if (!entrada.titulo.trim()) throw new Error("Dê um título para o próximo passo.");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(entrada.data)) throw new Error("Informe a data do próximo passo.");
-  const agora = new Date().toISOString(); const tarefa: TarefaSemana = { id: idLocal(), semanaId, data: entrada.data, titulo: entrada.titulo.trim(), atividade: entrada.atividade ?? "outro", recursoId: (entrada.recursoId ?? "").trim(), disciplinaId: (entrada.disciplinaId ?? "").trim(), tema: (entrada.tema ?? "").trim(), duracaoMin: entrada.duracaoMin ?? null, estado: entrada.estado ?? "pendente", origem: entrada.origem ?? "manual", criadoEm: agora, atualizadoEm: agora };
+  const agora = new Date().toISOString(); const tarefa: TarefaSemana = { id: idLocal(), semanaId, agendaEventoId: null, data: entrada.data, titulo: entrada.titulo.trim(), atividade: entrada.atividade ?? "outro", recursoId: (entrada.recursoId ?? "").trim(), disciplinaId: (entrada.disciplinaId ?? "").trim(), tema: (entrada.tema ?? "").trim(), duracaoMin: entrada.duracaoMin ?? null, estado: entrada.estado ?? "pendente", origem: entrada.origem ?? "manual", criadoEm: agora, atualizadoEm: agora };
   const auth = await sessao();
   if (auth) {
-    const { data, error } = await auth.supabase.from("tarefa_estudo_usuario").insert({ owner_id: auth.userId, semana_id: semanaId, data: tarefa.data, titulo: tarefa.titulo, atividade: tarefa.atividade, recurso_id: tarefa.recursoId, disciplina_id: tarefa.disciplinaId, tema: tarefa.tema, duracao_min: tarefa.duracaoMin, estado: tarefa.estado, origem: tarefa.origem }).select("id,semana_id,data,titulo,atividade,recurso_id,disciplina_id,tema,duracao_min,estado,origem,criado_em,atualizado_em").single();
+    const { data, error } = await auth.supabase.from("tarefa_estudo_usuario").insert({ owner_id: auth.userId, semana_id: semanaId, data: tarefa.data, titulo: tarefa.titulo, atividade: tarefa.atividade, recurso_id: tarefa.recursoId, disciplina_id: tarefa.disciplinaId, tema: tarefa.tema, duracao_min: tarefa.duracaoMin, estado: tarefa.estado, origem: tarefa.origem }).select("id,semana_id,agenda_evento_id,data,titulo,atividade,recurso_id,disciplina_id,tema,duracao_min,estado,origem,criado_em,atualizado_em").single();
     if (data && !error) return mapearTarefa(data as LinhaTarefa);
     if (error && !tabelaAusente(error)) throw new Error("Não foi possível salvar o próximo passo.");
   }
@@ -180,17 +180,10 @@ export async function alternarTarefaSemana(tarefa: TarefaSemana): Promise<Tarefa
   const atualizado: TarefaSemana = { ...tarefa, estado, atualizadoEm: new Date().toISOString() };
   const auth = await sessao();
   if (auth) {
-    const { data, error } = await auth.supabase.from("tarefa_estudo_usuario").update({ estado, atualizado_em: atualizado.atualizadoEm }).eq("owner_id", auth.userId).eq("id", tarefa.id).select("id,semana_id,data,titulo,atividade,recurso_id,disciplina_id,tema,duracao_min,estado,origem,criado_em,atualizado_em").single();
+    const { data, error } = await auth.supabase.from("tarefa_estudo_usuario").update({ estado, atualizado_em: atualizado.atualizadoEm }).eq("owner_id", auth.userId).eq("id", tarefa.id).select("id,semana_id,agenda_evento_id,data,titulo,atividade,recurso_id,disciplina_id,tema,duracao_min,estado,origem,criado_em,atualizado_em").single();
     if (data && !error) {
-      // O plano privado cria um evento de agenda espelho com o mesmo título e
-      // dia. Atualizar os dois lados evita que a fila volte a mostrar algo já
-      // concluído na agenda.
-      const inicioDia = new Date(`${tarefa.data}T00:00:00-03:00`);
-      const fimDia = new Date(inicioDia);
-      fimDia.setUTCDate(fimDia.getUTCDate() + 1);
-      const eventos = await auth.supabase.from("agenda_estudo_usuario").select("id").eq("owner_id", auth.userId).eq("titulo", tarefa.titulo).gte("inicio", inicioDia.toISOString()).lt("inicio", fimDia.toISOString()).like("observacao", "[Plano privado%");
-      if (!eventos.error && eventos.data?.length) {
-        await auth.supabase.from("agenda_estudo_usuario").update({ concluido: estado === "concluida", atualizado_em: atualizado.atualizadoEm }).eq("owner_id", auth.userId).in("id", eventos.data.map((evento) => evento.id));
+      if (tarefa.agendaEventoId) {
+        await auth.supabase.from("agenda_estudo_usuario").update({ concluido: estado === "concluida", atualizado_em: atualizado.atualizadoEm }).eq("owner_id", auth.userId).eq("id", tarefa.agendaEventoId);
       }
       return mapearTarefa(data as LinhaTarefa);
     }

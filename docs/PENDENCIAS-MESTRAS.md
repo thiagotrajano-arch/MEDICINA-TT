@@ -135,8 +135,10 @@ filas paralelas.
   e bloqueado, com data, contador, filtro e opção clara de desfazer.
 - [ ] Ao abrir uma pendência, mostrar objetivo, escopo, estimativa, resumo,
   questões, caso/mídia disponível e próxima revisão; não só uma página ampla.
-- [ ] Substituir a ligação frágil Agenda–Semana por chave estável, preservando
-  eventos manuais.
+- [x] Substituir a ligação frágil Agenda–Semana por chave estável, preservando
+  eventos manuais. A migration `20260814165421_vincula_tarefa_semana_agenda.sql`
+  foi aplicada: 84/138 tarefas do plano receberam vínculo direto; nenhuma tarefa
+  manual foi alterada. A conclusão agora usa o ID do evento, não título/data.
 - [ ] Aplicar o ciclo de 12 semanas somente após confirmar aulas, plantões,
   horários indisponíveis, disciplina atual e primeiro foco OMED.
 - [ ] Para cada PDF novo: Markdown privado, metadados, vínculo ao foco vigente e
@@ -323,8 +325,11 @@ filas paralelas.
 - [x] Remover do bundle inicial o código integral da paleta de busca e dos
   diagramas no índice de Mídia: ambos agora carregam somente quando necessários;
   os 77 recursos e suas âncoras foram preservados. O build voltou a gerar 413/413
-  páginas sem repetir `/questoes`, mas essa rota ainda produz HTML grande e deve
-  ser a próxima otimização estrutural.
+  páginas sem repetir `/questoes`.
+- [x] Retirar as 1.332 questões do HTML inicial: `/questoes` agora carrega o
+  banco sob demanda, com estados acessíveis de carregamento e erro recuperável.
+  O HTML estático caiu de aproximadamente 2,52 MB para 153.085 bytes; a fila
+  preservou o progresso existente e abriu sem erros no navegador local.
 
 ## P3 — ingestão contínua e manutenção
 
