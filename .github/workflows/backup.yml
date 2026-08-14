@@ -63,7 +63,7 @@ jobs:
             --env BACKUP_FILE \
             --entrypoint sh \
             postgres:17-alpine \
-            -c 'pg_restore --list "/backup/$BACKUP_FILE" | grep -viE "EXTENSION - (supabase_vault|vector|pg_trgm|unaccent)|COMMENT - EXTENSION (supabase_vault|vector|pg_trgm|unaccent)|vault|conteudo_embedding|trgm_ops|imutavel_unaccent" > /backup/restore.list'
+            -c 'pg_restore --list "/backup/$BACKUP_FILE" | grep -viE "EXTENSION - (supabase_vault|vector|pg_trgm|unaccent)|COMMENT - EXTENSION (supabase_vault|vector|pg_trgm|unaccent)|vault|conteudo_embedding|trgm_ops|imutavel_unaccent|INDEX" > /backup/restore.list'
           docker run --rm --network container:restore-check \
             --volume "$PWD:/backup:ro" \
             --env BACKUP_FILE \
