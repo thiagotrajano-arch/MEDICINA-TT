@@ -48,14 +48,16 @@ jobs:
           docker run --detach --name restore-check \
             --env POSTGRES_PASSWORD=restore-check \
             postgres:17-alpine
+          ready=0
           for attempt in $(seq 1 30); do
             if docker exec restore-check pg_isready -U postgres -d postgres; then
+              ready=1
               break
             fi
             sleep 1
           done
-          docker exec restore-check pg_isready -U postgres -d postgres
-          sleep 2
+          test "$ready" -eq 1
+          sleep 3
           docker run --rm \
             --volume "$PWD:/backup" \
             --env BACKUP_FILE \
