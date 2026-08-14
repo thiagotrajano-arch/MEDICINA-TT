@@ -101,8 +101,15 @@ filas paralelas.
 - [~] Revisão estática de privacidade concluída para a biblioteca privada:
   o bucket `midia-privada` é privado, os caminhos são segregados por `auth.uid`,
   RLS restringe tabela e storage ao proprietário, e a aplicação gera URLs
-  assinadas de 300 s. Falta confirmar essas garantias contra o projeto remoto
-  com duas contas e os fluxos de upload, expiração e exclusão.
+  assinadas de 300 s. A confirmação dinâmica entre contas está registrada
+  abaixo; permanecem os fluxos de upload, expiração e exclusão.
+- [~] Isolamento remoto entre contas validado em 2026-08-14, sem expor
+  credenciais: uma sessão de teste autenticada não visualizou linhas de outro
+  proprietário em `progresso_conteudo`, `agenda_estudo_usuario`,
+  `semana_estudo_usuario` ou `tarefa_estudo_usuario`; também não conseguiu
+  gerar URL assinada para uma imagem privada de outro proprietário. A sessão
+  técnica temporária foi encerrada. Ainda faltam os fluxos visuais de upload,
+  expiração, exclusão, recuperação e persistência após reabertura.
 
 ## P1 — tornar o site uma rotina de estudo útil
 
