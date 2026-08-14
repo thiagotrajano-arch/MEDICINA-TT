@@ -88,12 +88,17 @@ filas paralelas.
 
 ### P0.2 Autenticação, privacidade e recuperação — pendente
 
-- [ ] Testar, na conta real e sem registrar credenciais: login, logout,
-  recuperação, persistência e expiração de sessão.
+- [~] Login e logout foram exercitados por sessão temporária da conta de teste,
+  sem registrar credenciais e com encerramento confirmado. Ainda faltam os
+  cenários visuais de recuperação, persistência após reabrir o navegador e
+  expiração prolongada da sessão.
 - [ ] Testar resposta de questão, simulado, resumo, caso, agenda e sincronização
   em duas sessões/dispositivos; conferir conflito e recuperação local.
-- [ ] Testar mídia privada: upload, visualização, URL assinada expirada, logout,
-  exclusão e bloqueio entre usuários.
+- [~] Fluxo técnico de mídia privada validado com arquivo inofensivo e removido
+  na mesma execução: upload aceito, URL assinada legível antes do vencimento,
+  acesso negado após expiração, remoção de storage e metadados sem resíduo,
+  logout e bloqueio entre usuários confirmados. Falta apenas validar os mesmos
+  estados pela interface visual autenticada.
 - [ ] Revisar RLS e avisos de segurança do Supabase sem expor chave privilegiada
   ao cliente; tratar extensões no schema público em migração isolada.
 - [ ] Revalidar restauração de backup em ambiente compatível com
