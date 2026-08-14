@@ -53,6 +53,12 @@ granularizar. HCPM VI permanece como registro historico integrado a BBPM VI,
 sem ementa inventada. A validacao esta em
 VALIDACAO-VINCULOS-SISCAD-2026-08-14.md.
 
+Foi adicionada uma pendencia especifica para triagem dos mapas mentais e
+resumos do Estrategia MED ainda nao analisados: metadata-first, hash,
+deduplicacao, PDF -> Markdown, OCR/renderizacao seletiva, classificacao
+curricular e integracao somente por lacuna comprovada. Originais e recortes
+comerciais continuam privados e fora do GitHub Pages.
+
 ## Fechamento técnico de 2026-08-14 — questões e rotina
 
 - A página `/questoes` não serializa mais as 1.332 questões no HTML estático.

@@ -62,6 +62,25 @@ questao e um link clinico, com fonte atual e sem copiar PDF comercial.
 Conclusao objetiva: nenhum item sem origem ou licenca, todos com ancoragem a
 subtema, legenda, alt text, dimensoes verificadas e QA de acesso.
 
+## Etapa 3A — mapas e resumos do Estrategia MED
+
+Esta fila e privada e separada do conteudo ja integrado. Para cada candidato:
+
+1. inventariar nome, pasta, MIME, tamanho, data e tema;
+2. comparar hash com o acervo local e preservar uma copia canonica;
+3. converter PDF para Markdown antes da leitura;
+4. aplicar OCR/renderizacao apenas em paginas necessarias;
+5. identificar mapas mentais, resumos e figuras clinicas;
+6. classificar por disciplina, periodo, subtema e prioridade OMED;
+7. deduplicar contra resumos, questoes, casos e mapas atuais;
+8. gerar apenas sintese autoral quando houver lacuna real e fonte clinica
+   vigente;
+9. manter o original comercial e seus recortes no armazenamento autenticado.
+
+Conclusao objetiva: cada arquivo tem estado inventariado/convertido/analisado/
+integrado, hash, origem, paginas relevantes, destino permitido e nenhum texto
+comercial bruto no site publico.
+
 ## Etapa 4 — conteudo clinico
 
 Preencher lacunas comprovadas na ordem Infectologia, GO, Pediatria,
@@ -138,4 +157,3 @@ depende de conteudo estavel; redesign amplo fica depois da arquitetura.
 - docs/PENDENCIAS-MESTRAS.md
 - docs/MATRIZ-COBERTURA-CLINICA-2026-08-14.md
 - docs/PLANO-EXPANSAO-ACERVO-VISUAL-2026-08-14.md
-

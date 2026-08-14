@@ -395,6 +395,13 @@ PLANO-EXECUCAO-PENDENCIAS-ADICIONAIS-2026-08-14.md.
 
 ## P3 — ingestão contínua e manutenção
 
+- [ ] Triar os mapas mentais e resumos do Estratégia MED que ainda não foram
+  analisados ou incorporados: inventário metadata-first, comparação por
+  SHA-256, deduplicação, PDF -> Markdown antes da leitura, OCR/renderização
+  seletiva, classificação por disciplina/semestre/subtema/prioridade OMED e
+  vínculo aos resumos, questões, casos e mapas já existentes. Material
+  comercial permanece apenas no acervo privado autenticado; nenhuma cópia
+  bruta será publicada.
 - [ ] Para cada lote aprovado do Drive/local: comparar metadados e SHA-256,
   deduplicar, materializar somente o necessário, converter a Markdown, fazer OCR
   seletivo, renderizar páginas clínicas e classificar por currículo/OMED.
