@@ -21,6 +21,10 @@
 - Publicado por PR `#27`, commit `0c0c0b7`, Pages run `31844575458`. A home em
   produção mostrou o painel e os cinco estados sem erro no console. A sessão do
   navegador estava deslogada; não marcar QA autenticada como concluída.
+- Anki foi retomado após autorização explícita em 2026-08-14: 2.001 notas,
+  auditoria completa, 112 cartões suspensos de forma reversível, intervalos
+  5m/5h/3d/7d, FSRS 90%, backup pós-mudança em
+  `exports/anki/backups/2026-08-14T22-39-42-967Z`. Não foram excluídos cartões.
 
 Atualizado em 2026-08-14.
 
