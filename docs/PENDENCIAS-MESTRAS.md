@@ -496,3 +496,23 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
 - [ ] Reescrever os 62 suspensos em informação mínima, com fonte primária.
 - [ ] Criar Cloze/Image Occlusion somente após QA de fonte, licença e
   anonimização; AnkiConnect continua local.
+-
+## Atualizacao Anki e vinculos curriculares — 2026-08-15
+
+- [x] Validar clinicamente as 90 notas sem referencia primaria: 88 ativas com
+  fontes AHA/ASA, ILAE/AES, NICE, EAN/PNS e AAN; dois placeholders continuam
+  suspensos.
+- [x] Reescrever as 62 notas longas em formato atomico; 55 ativas e 7 suspensas
+  enquanto aguardam fonte especifica.
+- [x] Criar um Cloze auditado sobre TC inicial no AVC isquemico.
+- [ ] Criar Image Occlusion nativo apos validar mascara, licenca e anonimizacao;
+  nenhuma imagem sem proveniencia foi colocada no Anki.
+- [ ] Completar os vinculos de semestre dos 10 subtemas neurologicos ausentes
+  do manifesto SISCAD. O estado atual e explicitamente pendente, sem inferencia.
+### Evidencia pos-aplicacao Anki — 2026-08-15
+
+- [x] Auditoria final: 2.065 notas, zero versos/frentes longos e somente dois
+  placeholders sem referencia, ambos suspensos.
+- [x] Backup pos-aplicacao em `exports/anki/backups/2026-08-15T00-13-04-214Z`.
+- [ ] Image Occlusion nativo e os 10 vinculos SISCAD continuam pendentes por
+  ausencia de formato/prova segura; nao foram inventados dados.

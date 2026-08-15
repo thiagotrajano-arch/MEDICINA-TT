@@ -280,7 +280,12 @@ async function auditarEditorialAnki(aplicarTags: boolean, todosOsDecks = false) 
   const linhas = notas.map((nota) => {
     const frente = nota.fields.Frente?.value ?? nota.fields.Front?.value ?? "";
     const verso = nota.fields.Verso?.value ?? nota.fields.Back?.value ?? "";
-    const referencia = nota.fields.Referencia?.value ?? "";
+    // Modelos nativos de Cloze/Image Occlusion não possuem o campo
+    // `Referencia`; nesses casos a proveniência fica no campo extra do modelo.
+    const referencia = nota.fields.Referencia?.value
+      ?? nota.fields["Verso Extra"]?.value
+      ?? nota.fields.Sources?.value
+      ?? (/(?:^|\n|<br\s*\/?>|<small\s*>)[\s<\/]*Fonte:\s*([^<\n]+)/i.exec(verso)?.[1] ?? "");
     return {
       noteId: nota.noteId,
       frente: textoAuditoria(frente),

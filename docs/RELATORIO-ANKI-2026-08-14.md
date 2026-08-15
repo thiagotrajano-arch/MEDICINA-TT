@@ -73,3 +73,32 @@ referências ausentes com fonte primária vigente, reescrever os 62 suspensos,
 resolver os 19 grupos após comparação de conteúdo, e criar Cloze/Image
 Occlusion somente com fatos e imagens aprovados. Elas permanecem suspensas para
 não liberar material sem fonte.
+-
+## Atualizacao da validacao neurologica — 2026-08-15
+
+- [x] Backup novo antes da mutacao: `exports/anki/backups/2026-08-15T00-02-16-316Z`.
+- [x] As 90 notas sem referencia foram reavaliadas: 88 receberam referencia
+  primaria atual, tags de subtema e foram reativadas; 2 placeholders de vertigem
+  continuam suspensos e marcados como rejeitados.
+- [x] As 62 notas longas foram reescritas no proprio ID em frente curta e uma
+  ideia por verso. 55 foram reativadas com fonte; 7 permanecem suspensas para
+  fonte especifica ainda nao comprovada.
+- [x] Foi criado um Cloze idempotente sobre a TC inicial do AVC isquemico, com
+  fonte AHA/ASA 2026, no deck de Neurologia.
+- [ ] Image Occlusion nativo permanece pendente: o formato de mascara nao foi
+  exposto com seguranca pelo AnkiConnect e nenhuma nota malformada foi criada.
+- [ ] Os 10 subtemas neurologicos ainda nao possuem vinculo exato no manifesto
+  SISCAD. Todos receberam `curriculo::semestre-pendente`; nenhum semestre foi
+  inventado. A conclusao depende de evidencia do plano SISCAD correspondente.
+- [x] Nenhum cartao foi apagado. Relatorios privados: `exports/anki/validacao-neuro-2026.json`,
+  `exports/anki/reescrita-atomica-2026.json` e os snapshots `*-antes-private.json`.
+## Evidencia pos-aplicacao — 2026-08-15 00:13 BRT
+
+- Auditoria Anki: 2.065 notas; zero frente/verso longo; 2 notas sem referencia,
+  correspondentes somente aos placeholders suspensos.
+- 88 notas clinicas validadas estao ativas; 55 notas atomicas reescritas estao
+  ativas; 7 continuam suspensas por fonte especifica pendente.
+- Cloze verificado no modelo `Omissao de Palavras`, com fonte no campo `Verso Extra`.
+- Backup pos-aplicacao: `exports/anki/backups/2026-08-15T00-13-04-214Z`.
+- Typecheck e ESLint direcionado dos scripts alterados passaram. O lint global
+  continua com o aviso preexistente fora deste lote em `exports/private/inspect-supabase-state.mts`.

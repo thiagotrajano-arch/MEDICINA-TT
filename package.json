@@ -49,7 +49,8 @@
     "anki:resumo": "tsx scripts/anki-connect.mts resumo",
     "anki:erros": "tsx scripts/anki-connect.mts erros",
     "anki:csv": "tsx scripts/anki-connect.mts csv-resumo",
-    "anki:curriculo": "tsx scripts/anki-aplicar-taxonomia-curricular.mts"
+    "anki:curriculo": "tsx scripts/anki-aplicar-taxonomia-curricular.mts",
+    "anki:validar-neuro": "tsx scripts/anki-validar-neuro-2026.mts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.6",
