@@ -1,6 +1,7 @@
 import type { CasoClinico } from "@/domain/content/types";
 import { CASOS_EXTRAIDOS } from "./casos-extraidos";
 import { CASOS_CLINICOS_LOTE_20260803 } from "./casos-clinicos-lote-20260803";
+import { CASOS_ANTIBIOTICOTERAPIA } from "./casos-antibioticoterapia";
 
 /**
  * Casos clínicos — formato OMED/Einstein.
@@ -14,6 +15,7 @@ import { CASOS_CLINICOS_LOTE_20260803 } from "./casos-clinicos-lote-20260803";
 export const CASOS: CasoClinico[] = [
   ...CASOS_EXTRAIDOS,
   ...CASOS_CLINICOS_LOTE_20260803,
+  ...CASOS_ANTIBIOTICOTERAPIA,
   // ── GO ────────────────────────────────────────────────────────
   {
     id: "caso-go-01",

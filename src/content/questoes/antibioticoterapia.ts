@@ -1,0 +1,111 @@
+import type { Questao } from "@/domain/content/types";
+
+const SUBTEMA = "inf--antibioticoterapia--principios-de-antibioticoterapia-empirica";
+const IDSA = "IDSA 2024 Guidance on Antimicrobial-Resistant Gram-Negative Infections. https://www.idsociety.org/practice-guideline/amr-guidance";
+const WHO = "WHO AWaRe antibiotic book. https://www.who.int/publications/i/item/9789240062382";
+const ANVISA = "ANVISA PeGASUS — Programa de Gerenciamento de Antimicrobianos. https://www.gov.br/anvisa/pt-br/assuntos/servicosdesaude/prevencao-e-controle-de-infeccao-e-resistencia-microbiana/projetos-gvims/pegasus";
+
+export const QUESTOES_ANTIBIOTICOTERAPIA: Questao[] = [
+  {
+    id: "inf-atb-03",
+    subtemaId: SUBTEMA,
+    disciplinaId: "inf",
+    enunciado: "Paciente com sepse de foco abdominal recebe antibiótico empírico. Após 48 horas, a cultura identifica bactéria sensível a uma opção de espectro mais estreito e o foco foi controlado. Qual conduta representa stewardship adequado?",
+    alternativas: [
+      { letra: "A", texto: "Manter o esquema amplo até a alta para evitar recaída.", correta: false, comentario: "Manter espectro amplo sem indicação aumenta toxicidade e pressão seletiva." },
+      { letra: "B", texto: "Descalonar para o agente mais estreito ativo e revisar via e duração.", correta: true, comentario: "Cultura, controle do foco e estabilidade permitem estreitar o espectro e revisar a duração." },
+      { letra: "C", texto: "Adicionar um segundo antibiótico para prevenir resistência.", correta: false, comentario: "Combinação não é rotina quando há agente ativo e foco controlado." },
+      { letra: "D", texto: "Suspender toda terapia imediatamente, independentemente do quadro.", correta: false, comentario: "A suspensão depende da evidência clínica; aqui ainda há infecção tratável." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    bancos: ["omed", "residencia"],
+    tags: ["antibioticoterapia", "stewardship", "descalonamento"],
+    fonte: ANVISA,
+  },
+  {
+    id: "inf-atb-04",
+    subtemaId: SUBTEMA,
+    disciplinaId: "inf",
+    enunciado: "Homem com pneumonia por MRSA necessita de terapia dirigida. Qual fármaco não deve ser escolhido para pneumonia por causa de sua inativação pelo surfactante pulmonar?",
+    alternativas: [
+      { letra: "A", texto: "Daptomicina.", correta: true, comentario: "A daptomicina é inativada pelo surfactante pulmonar e não é opção para pneumonia." },
+      { letra: "B", texto: "Vancomicina.", correta: false, comentario: "Vancomicina pode ser opção dirigida conforme gravidade, sítio e protocolo." },
+      { letra: "C", texto: "Linezolida.", correta: false, comentario: "Linezolida tem atividade contra MRSA e penetração pulmonar, com monitorização de segurança." },
+      { letra: "D", texto: "Outra opção ativa guiada por sensibilidade.", correta: false, comentario: "A escolha final depende do antibiograma e do contexto clínico." },
+    ],
+    dificuldade: "fixacao",
+    estilo: "conduta",
+    bancos: ["omed", "residencia"],
+    tags: ["antibioticoterapia", "MRSA", "daptomicina", "pneumonia"],
+    fonte: IDSA,
+  },
+  {
+    id: "inf-atb-05",
+    subtemaId: SUBTEMA,
+    disciplinaId: "inf",
+    enunciado: "Paciente com infecção grave e relato antigo de 'alergia à penicilina', descrito apenas como mal-estar, sem urticária, angioedema ou anafilaxia. Qual é a próxima atitude mais segura?",
+    alternativas: [
+      { letra: "A", texto: "Excluir toda a classe de betalactâmicos sem esclarecer o relato.", correta: false, comentario: "Rótulos vagos podem levar a alternativas menos eficazes e mais tóxicas." },
+      { letra: "B", texto: "Caracterizar a reação e, quando indicado, encaminhar para avaliação de alergia ou dessensibilização.", correta: true, comentario: "A história detalhada diferencia intolerância, reação tardia e alergia imediata, orientando um uso mais seguro." },
+      { letra: "C", texto: "Ignorar o relato e administrar a primeira dose sem avaliação.", correta: false, comentario: "Ignorar uma possível alergia também é inseguro." },
+      { letra: "D", texto: "Trocar automaticamente por aminoglicosídeo isolado.", correta: false, comentario: "A alternativa não cobre necessariamente o foco e aumenta toxicidade." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    bancos: ["omed", "residencia"],
+    tags: ["antibioticoterapia", "alergia a betalactâmico", "segurança"],
+    fonte: WHO,
+  },
+  {
+    id: "inf-atb-06",
+    subtemaId: SUBTEMA,
+    disciplinaId: "inf",
+    enunciado: "Qual combinação melhor representa a avaliação diária de um antibiótico em paciente internado?",
+    alternativas: [
+      { letra: "A", texto: "Apenas temperatura e leucócitos.", correta: false, comentario: "Marcadores isolados não definem foco, atividade ou duração adequada." },
+      { letra: "B", texto: "Indicação, foco, agente, sensibilidade, dose, via, toxicidade e duração.", correta: true, comentario: "A revisão estruturada evita manter antibiótico sem indicação e identifica oportunidade de descalonar ou mudar a via." },
+      { letra: "C", texto: "Somente o resultado da cultura, sem considerar o paciente.", correta: false, comentario: "Cultura pode representar colonização e precisa de correlação clínica." },
+      { letra: "D", texto: "Apenas a função renal, mantendo o mesmo esquema.", correta: false, comentario: "Ajuste renal é importante, mas não substitui revisão da indicação e do foco." },
+    ],
+    dificuldade: "fixacao",
+    estilo: "fixacao",
+    bancos: ["omed", "residencia"],
+    tags: ["antibioticoterapia", "stewardship", "reavaliação"],
+    fonte: ANVISA,
+  },
+  {
+    id: "inf-atb-07",
+    subtemaId: SUBTEMA,
+    disciplinaId: "inf",
+    enunciado: "Em relação a um Gram-negativo produtor de ESBL, qual princípio é correto?",
+    alternativas: [
+      { letra: "A", texto: "Escolher terapia apenas pelo nome da bactéria, sem o sítio ou antibiograma.", correta: false, comentario: "A decisão depende de sítio, gravidade e sensibilidade." },
+      { letra: "B", texto: "Usar a orientação específica para resistência, considerando o foco e a sensibilidade; não tratar colonização.", correta: true, comentario: "A orientação IDSA separa mecanismos e sítios e reforça a distinção entre infecção e colonização." },
+      { letra: "C", texto: "Usar polimixina como primeira escolha em todo isolado ESBL.", correta: false, comentario: "Polimixinas têm toxicidade importante e não são resposta universal para ESBL." },
+      { letra: "D", texto: "Manter o antibiótico mais amplo disponível por tempo indefinido.", correta: false, comentario: "A terapia deve ser revista e estreitada quando possível." },
+    ],
+    dificuldade: "avancada",
+    estilo: "conduta",
+    bancos: ["residencia", "usmle"],
+    tags: ["antibioticoterapia", "ESBL", "resistência"],
+    fonte: IDSA,
+  },
+  {
+    id: "inf-atb-08",
+    subtemaId: SUBTEMA,
+    disciplinaId: "inf",
+    enunciado: "Qual princípio de posologia é mais adequado para vancomicina e aminoglicosídeos em infecção grave?",
+    alternativas: [
+      { letra: "A", texto: "Usar dose fixa, sem considerar peso ou rim.", correta: false, comentario: "A exposição e a toxicidade variam com peso, função renal e gravidade." },
+      { letra: "B", texto: "Individualizar dose e intervalo e usar monitorização de exposição quando indicada.", correta: true, comentario: "Monitorização e ajuste reduzem subexposição e nefro/ototoxicidade, respeitando protocolo institucional." },
+      { letra: "C", texto: "Reduzir sempre a dose inicial para evitar qualquer toxicidade.", correta: false, comentario: "Subdose inicial pode atrasar atingir exposição eficaz em infecção grave." },
+      { letra: "D", texto: "Ajustar apenas quando a cultura ficar positiva.", correta: false, comentario: "O ajuste farmacológico deve ocorrer desde o início e acompanhar a evolução." },
+    ],
+    dificuldade: "intermediaria",
+    estilo: "conduta",
+    bancos: ["residencia", "usmle"],
+    tags: ["antibioticoterapia", "PK-PD", "vancomicina", "aminoglicosídeo"],
+    fonte: WHO,
+  },
+];

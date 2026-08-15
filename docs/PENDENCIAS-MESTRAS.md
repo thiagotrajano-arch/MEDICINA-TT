@@ -548,3 +548,23 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
 - [ ] Comprovar no SISCAD o período dos 10 subtemas neurológicos listados em
   `docs/VALIDACAO-VINCULOS-SISCAD-2026-08-14.md`; até lá, mantê-los como
   `curriculo::semestre-pendente`.
+
+## Atualização editorial — resumo padrão e antibioticoterapia — 2026-08-15
+
+- [x] Criar o padrão reutilizável de resumo clínico e leitura progressiva por
+  seção; o estado de cada seção usa a mesma persistência local-first do estudo.
+- [x] Integrar a lacuna comprovada de antibioticoterapia com síntese autoral
+  atualizada, classes, mecanismos, espectro, indicação, posologia/ajuste,
+  resistência, efeitos adversos, profilaxia e stewardship.
+- [x] Acrescentar 6 questões inéditas e 2 casos clínicos do subtema, com fontes
+  IDSA 2024, WHO AWaRe e ANVISA PeGASUS.
+- [ ] Triar os demais mapas/resumos privados de antibióticos; somente conteúdo
+  único e clinicamente validado deve ser incorporado, mantendo a fonte comercial
+  fora do repositório público.
+- [ ] Avançar nas filas gerais de 70 subtemas sem resumo, 149 sem questão e 266
+  sem caso por prioridade OMED/semestre, sem gerar volume artificial.
+
+Auditoria após este lote: 234 resumos, 1.338 questões e 57 casos vinculados a
+subtemas; permanecem 70 subtemas sem resumo, 149 sem questão e 265 sem caso.
+O número histórico de 266 sem caso foi reduzido por dois casos novos, mas um
+caso existente continua sem vínculo e precisa de revisão manual.

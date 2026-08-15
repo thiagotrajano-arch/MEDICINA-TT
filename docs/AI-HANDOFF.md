@@ -864,3 +864,16 @@ adicionados com evidência parcial e sem ementa inventada. Os 276 candidatos de
 vínculo foram revisados e permanecem pendentes de confirmação manual quando não
 há correspondência pública exata. Fontes: `exports/private/curriculo-granular-
 20260815.json` e `exports/private/curriculo-vinculos-review-20260815.json`.
+
+## Atualizacao editorial — 2026-08-15
+
+Foi criado o padrão de resumo em `docs/PADRAO-RESUMO-CLINICO-2026.md`, com
+índice e progresso por seção. O subtema de antibioticoterapia recebeu uma
+síntese autoral, seis questões e dois casos, ancorados em IDSA 2024, WHO AWaRe e
+ANVISA PeGASUS. A triagem dos demais mapas e resumos privados de antibióticos
+continua pendente; nenhum texto comercial foi publicado.
+
+Auditoria de cobertura após o lote: 304 subtemas, 234 resumos, 1.338 questões,
+57 casos vinculados, 70 subtemas sem resumo, 149 sem questão e 265 sem caso.
+O acervo contém 58 casos no total; um permanece sem vínculo de subtema e não foi
+associado automaticamente.

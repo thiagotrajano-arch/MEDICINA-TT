@@ -7,6 +7,8 @@ import { getContentRepository } from "@/infra/content";
 import { MiniMarkdown } from "@/components/content/MiniMarkdown";
 import { Figuras } from "@/components/figuras/Figura";
 import { ProgressoConteudoClient } from "@/components/progresso/ProgressoConteudoClient";
+import { ResumoLeituraClient } from "@/components/content/ResumoLeituraClient";
+import { idSecaoResumo } from "@/domain/content/resumo-padrao";
 
 export async function generateStaticParams() {
   const repo = await getContentRepository();
@@ -91,10 +93,12 @@ export default async function EstudarPage({
             <FileClock className="size-3.5" />
             Atualizado em {conteudo.atualizadoEm} · origem: {origemLabel(conteudo.origem)}
           </div>
+          <ResumoLeituraClient subtemaId={id} secoes={conteudo.blocos.map(({ secao }) => ({ secao }))} />
           <article className="mt-4 space-y-6">
             {conteudo.blocos.map((bloco) => (
               <section
                 key={bloco.secao}
+                id={idSecaoResumo(id, bloco.secao)}
                 className="rounded-2xl border border-border bg-surface p-5"
                 style={{ boxShadow: "var(--shadow)" }}
               >

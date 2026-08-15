@@ -23,6 +23,7 @@ import { CONTEUDOS_OTORRINO } from "./conteudos/otorrino";
 import { CONTEUDOS_DERMA } from "./conteudos/derma";
 import { CONTEUDOS_NEURO_SEMANA, CONTEUDOS_PSIQ } from "./conteudos/neuropsiquiatria-semana";
 import { CONTEUDOS_OMED_EXTRAIDOS } from "./omed-extraidos";
+import { CONTEUDOS_ANTIBIOTICOTERAPIA } from "./conteudos/antibioticoterapia";
 
 /**
  * Resumos — agregador.
@@ -42,6 +43,7 @@ const CONTEUDOS_BASE: Record<string, ConteudoSubtema> = {
   ...CONTEUDOS_GO,
   ...CONTEUDOS_PED,
   ...CONTEUDOS_INF,
+  ...CONTEUDOS_ANTIBIOTICOTERAPIA,
   ...CONTEUDOS_CIR,
   ...CONTEUDOS_MFC,
   ...CONTEUDOS_ESTRATEGIA_GO,
