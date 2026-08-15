@@ -278,8 +278,9 @@ rotina com backup prévio. O relatório detalhado está em
 - [ ] Criar cloze e Image Occlusion apenas para fatos atômicos e imagens
   permitidas.
 
-> Pausado por decisão do usuário em 2026-08-14. Não executar mutações no Anki
-> até nova autorização explícita; o fechamento atual trata somente do site.
+> A pausa de 2026-08-14 foi encerrada pela autorização explícita posterior do
+> usuário. Mutações continuam exigindo backup, fonte e auditoria; exclusão de
+> cartões permanece proibida sem autorização específica.
 
 - [x] Fechamento operacional para estudo: cartões foram alinhados à rotina do
   site, o limite de novos foi fixado em 30/dia, FSRS 0,90 e a cadência
@@ -548,6 +549,27 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
 - [ ] Comprovar no SISCAD o período dos 10 subtemas neurológicos listados em
   `docs/VALIDACAO-VINCULOS-SISCAD-2026-08-14.md`; até lá, mantê-los como
   `curriculo::semestre-pendente`.
+
+## Estado canônico do Anki — 2026-08-15 02:00 UTC
+
+- [x] Auditar a coleção ao vivo, criar backups antes/depois e confirmar 2.085
+  notas/cartões, 1.098 ativos e 987 suspensos.
+- [x] Separar 839 referências do corpo das respostas e confirmar zero resposta
+  longa ativa, sem apagar notas e sem zerar o agendamento.
+- [x] Preencher lacunas comprovadas com 20 cartões curtos e idempotentes:
+  Nefrologia, Endocrinologia, Hematologia e Gastroenterologia, cinco por área.
+- [x] Confirmar zero duplicata normalizada simultaneamente ativa e manter os 42
+  versos longos legados apenas na fila suspensa.
+- [ ] Classificar editorialmente 740 notas ativas sem subtema canônico; 651
+  também não possuem tema canônico. Fazer por correspondência comprovada, não
+  por aproximação textual.
+- [ ] Reescrever em átomos úteis os 42 versos longos legados somente quando a
+  fonte e a necessidade estiverem comprovadas; não reativar material genérico.
+- [ ] Criar Image Occlusion apenas com imagem permitida/anonimizada, proveniência
+  e máscara testada. O AnkiConnect deve continuar exclusivamente local.
+
+Evidência detalhada: `docs/RELATORIO-ANKI-2026-08-14.md`; rotina idempotente:
+`scripts/anki-revisar-colecao-e-lacunas-2026.mts`.
 
 ## Atualização editorial — resumo padrão e antibioticoterapia — 2026-08-15
 

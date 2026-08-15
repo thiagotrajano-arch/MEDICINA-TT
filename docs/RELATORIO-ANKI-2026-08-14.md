@@ -111,3 +111,45 @@ não liberar material sem fonte.
 - Backup mais recente: `exports/anki/backups/2026-08-15T00-24-37-225Z`.
 - Os IDs de subtema foram alinhados aos IDs canônicos existentes no site; os
   10 subtemas sem evidencia curricular continuam `curriculo::semestre-pendente`.
+
+## Revisão integral e lote por lacunas — 2026-08-15 02:00 UTC
+
+Esta seção é a evidência canônica mais recente e substitui contagens históricas
+divergentes deste relatório.
+
+- Coleção ao vivo: 2.085 notas/cartões; 1.098 ativos e 987 suspensos. Há 17
+  decks folha de estudo dentro da árvore médica.
+- Backup anterior à intervenção: `exports/anki/backups/2026-08-15T01-45-53-743Z`.
+  Backup posterior: `exports/anki/backups/2026-08-15T02-00-36-271Z`, com
+  agendamento preservado.
+- 839 fontes que estavam repetidas no corpo do verso foram movidas para o campo
+  de referência, sem perda de texto clínico.
+- Três respostas ativas realmente extensas foram suspensas de modo reversível
+  para reescrita atômica. A auditoria idempotente posterior encontrou zero
+  resposta longa ativa.
+- Foram criados 20 cartões atômicos, cinco por lacuna em Nefrologia,
+  Endocrinologia, Hematologia e Gastroenterologia. Todos têm fonte primária,
+  subtema canônico, eixo clínico e ID estável; uma segunda execução não criou
+  duplicatas.
+- A coleção preserva 42 versos extensos apenas no material legado suspenso. As
+  duas notas sem referência são placeholders rejeitados e também suspensos.
+- Nenhum cartão ou nota foi apagado; nenhum agendamento foi zerado. Não existe
+  grupo de duplicata normalizada com mais de um cartão ativo.
+- A configuração permanece em FSRS 90%, passos 5 min/5 h/3 d/7 d e teto
+  técnico de 9.999 novos e 9.999 revisões por dia.
+
+### Pendência editorial real
+
+- 740 notas ativas ainda não têm `subtema::`; 651 não têm nem `tema::` nem
+  `subtema::`. Isso não torna o conteúdo automaticamente incorreto, mas impede
+  filtragem curricular completa. A maioria é legado de GO, Pediatria,
+  Infectologia, Cirurgia e MFC.
+- A próxima passagem deve mapear tags legadas para IDs canônicos somente quando
+  a correspondência for inequívoca. Cirurgia e MFC exigem leitura do conteúdo,
+  pois não possuem uma tag temática intermediária confiável.
+- Image Occlusion continua pendente até existir imagem permitida, anonimizada e
+  máscara validada. Não foi criado cartão visual malformado apenas para cumprir
+  volume.
+
+Rotina reproduzível: `npm.cmd run anki:revisar-lacunas` para auditoria e
+`npm.cmd run anki:revisar-lacunas -- --aplicar` para um lote aprovado.

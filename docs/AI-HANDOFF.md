@@ -877,3 +877,22 @@ Auditoria de cobertura após o lote: 304 subtemas, 234 resumos, 1.338 questões,
 57 casos vinculados, 70 subtemas sem resumo, 149 sem questão e 265 sem caso.
 O acervo contém 58 casos no total; um permanece sem vínculo de subtema e não foi
 associado automaticamente.
+
+## Atualização Anki por lacunas — 2026-08-15 02:00 UTC
+
+- AnkiConnect local respondeu; coleção: 2.085 notas/cartões, 1.098 ativos e 987
+  suspensos. Nenhuma nota foi apagada e nenhum agendamento foi reiniciado.
+- Backups: `exports/anki/backups/2026-08-15T01-45-53-743Z` antes e
+  `exports/anki/backups/2026-08-15T02-00-36-271Z` depois.
+- 839 fontes foram separadas do verso; zero resposta longa permanece ativa.
+- Foram adicionados 20 cartões atômicos e idempotentes: cinco de Nefrologia
+  (KDIGO 2024), cinco de Endocrinologia (ADA 2026), cinco de Hematologia
+  (ASH/AABB) e cinco de Gastroenterologia (AASLD/Baveno VII).
+- Auditoria posterior: zero duplicata normalizada com duas cópias ativas; 42
+  versos longos permanecem somente no legado suspenso; os dois itens sem fonte
+  são placeholders rejeitados e suspensos.
+- Principal pendência real: 740 notas ativas sem subtema canônico, das quais 651
+  também não têm tema canônico. Mapear por lote e evidência; não inferir
+  Cirurgia/MFC somente pelo texto.
+- Rotina: `npm.cmd run anki:revisar-lacunas` (dry-run) e, após aprovação do
+  lote, `npm.cmd run anki:revisar-lacunas -- --aplicar`.
