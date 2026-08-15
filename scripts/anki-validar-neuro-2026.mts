@@ -84,7 +84,7 @@ function campo(nota: Nota, nome: "frente" | "verso"): [string, string] {
 
 function topico(nota: Nota): keyof typeof FONTES | null {
   const hay = normalizado(`${nota.tags.join(" ")} ${Object.values(nota.fields).map((x) => x.value).join(" ")}`);
-  if (hay.includes("vertigem")) return "vertigo";
+  if (hay.includes("vertigem") || hay.includes("vestibular")) return "vertigo";
   if (hay.includes("avc-isquem") || hay.includes("avc isquem")) return "ais";
   if (hay.includes("avc-hemorrag") || hay.includes("hemorragia intraparenquimatosa") || hay.includes("hsa")) return hay.includes("hsa") ? "sah" : "ich";
   if (hay.includes("crise-convuls") || hay.includes("status epilepticus")) return "status";
@@ -103,17 +103,17 @@ function topico(nota: Nota): keyof typeof FONTES | null {
 function subtema(nota: Nota): string {
   const hay = normalizado(`${nota.tags.join(" ")} ${Object.values(nota.fields).map((x) => x.value).join(" ")}`);
   if (hay.includes("avc-isquem") || hay.includes("avc isquem")) return "neuro--avc-isquemico--diagnostico-e-conduta";
-  if (hay.includes("avc-hemorrag") || hay.includes("hsa") || hay.includes("hemorragia intraparenquimatosa")) return "neuro--avc-hemorragico-hsa-hip--diagnostico-e-conduta";
-  if (hay.includes("crise-convuls") || hay.includes("status epilepticus")) return "neuro--crise-epileptica-e-status--diagnostico-e-conduta";
-  if (hay.includes("cefale") || hay.includes("headache") || hay.includes("vertigem")) return hay.includes("vertigem") ? "neuro--vertigem--diagnostico-e-conduta" : "neuro--cefaleias--diagnostico-e-conduta";
+  if (hay.includes("avc-hemorrag") || hay.includes("hsa") || hay.includes("hemorragia intraparenquimatosa")) return "neuro--avc-hemorragico-hsa-e-hemorragia-intraparenquimatosa--diagnostico-e-conduta";
+  if (hay.includes("crise-convuls") || hay.includes("status epilepticus")) return "neuro--crise-convulsiva-e-status-epilepticus--diagnostico-e-conduta";
+  if (hay.includes("cefale") || hay.includes("headache") || hay.includes("vertigem") || hay.includes("vestibular")) return (hay.includes("vertigem") || hay.includes("vestibular")) ? "neuro--sindromes-vestibulares--diagnostico-e-conduta" : "neuro--cefaleias-primarias-e-sinais-de-alarme--diagnostico-e-conduta";
   if (hay.includes("guillain") || hay.includes("gbs")) return "neuro--sindrome-de-guillain-barre--diagnostico-e-conduta";
   if (hay.includes("miasten") || hay.includes("myasthen")) return "neuro--miastenia-gravis--diagnostico-e-conduta";
-  if (hay.includes("compressao") || hay.includes("cauda equina")) return "neuro--compressao-medular-e-cauda-equina--diagnostico-e-conduta";
-  if (hay.includes("demencia")) return "neuro--demencias--diagnostico-e-conduta";
+  if (hay.includes("compressao") || hay.includes("cauda equina")) return "neuro--compressao-medular-aguda-e-sindrome-de-cauda-equina--diagnostico-e-conduta";
+  if (hay.includes("demencia")) return "neuro--amnesias-e-sindromes-demenciais--diagnostico-e-conduta";
   if (hay.includes("neurossifilis")) return "neuro--neurossifilis--diagnostico-e-conduta";
-  if (hay.includes("postdural") || hay.includes("pos-puncao") || hay.includes("pdp")) return "neuro--cefaleia-pos-puncao--diagnostico-e-conduta";
+  if (hay.includes("postdural") || hay.includes("pos-puncao") || hay.includes("pdp")) return "neuro--cefaleia-pos-puncao-dural--diagnostico-e-conduta";
   if (hay.includes("delirium")) return "neuro--delirium--diagnostico-e-conduta";
-  if (hay.includes("wernicke")) return "neuro--encefalopatia-de-wernicke--diagnostico-e-conduta";
+  if (hay.includes("wernicke")) return "neuro--encefalopatia-de-wernicke-korsakoff--diagnostico-e-conduta";
   if (hay.includes("hipertensao intracraniana") || hay.includes("delirium") || hay.includes("hemorragia intracerebral")) return "neuro--hipertensao-intracraniana-e-delirium--diagnostico-e-conduta";
   return "neuro--revisao-pendente--semestre-nao-comprovado";
 }
@@ -194,7 +194,7 @@ async function main() {
       ...(nota.fields.Referencia ? { Referencia: ref } : {}),
     };
     const add = [`subtema::${st}`, "curriculo::semestre-pendente", "curriculo::subtema-semestre-ausente", "revisao::2026-08"];
-    const remove = ["editorial::fonte-pendente", "codex-auditoria::fonte-pendente"];
+    const remove = [...nota.tags.filter((tag) => tag.startsWith("subtema::")), "editorial::fonte-pendente", "codex-auditoria::fonte-pendente"];
     if (pending) {
       add.push("editorial::rejeitado-placeholder", "editorial::fonte-pendente");
       remove.push("editorial::validado-diretriz-2026", "editorial::curto-atomico");
@@ -202,10 +202,11 @@ async function main() {
       add.push("editorial::validado-diretriz-2026", "editorial::curto-atomico", `fonte-primaria::${fonte}`);
     }
     await atualizarNota(nota, fields, add, remove, !pending);
-    validacao.push({ noteId: nota.noteId, topic: fonte, subtema: st, pending, override: Boolean(override), active: !pending });
+    validacao.push({ noteId: nota.noteId, topic: fonte, subtema: st, pending, override: Boolean(override), active: !pending, sourceAppended: Boolean(adicionarFonte && !pending) });
   }
 
   const atomicos: Array<Record<string, unknown>> = [];
+  const atomicExisting = await anki<number[]>("findNotes", { query: 'tag:"editorial::reescrito-atomico"' });
   for (const nota of longNotes) {
     const [frenteNome, frenteOriginal] = campo(nota, "frente");
     const [versoNome, versoOriginal] = campo(nota, "verso");
@@ -223,7 +224,7 @@ async function main() {
       ...(nota.fields.Referencia ? { Referencia: ref } : {}),
     };
     const add = ["editorial::reescrito-atomico", "editorial::curto-atomico", "curriculo::semestre-pendente", "curriculo::subtema-semestre-ausente", `subtema::${st}`, "revisao::2026-08"];
-    const remove = ["editorial::texto-longo", "editorial::aguarda-reescrita-curta", "codex-auditoria::verso-longo", "editorial::aguarda-validacao-clinica"];
+    const remove = [...nota.tags.filter((tag) => tag.startsWith("subtema::")), "editorial::texto-longo", "editorial::aguarda-reescrita-curta", "codex-auditoria::verso-longo", "editorial::aguarda-validacao-clinica"];
     if (fonte) {
       add.push("editorial::validado-diretriz-2026", `fonte-primaria::${fonte}`);
     } else {
@@ -234,13 +235,37 @@ async function main() {
     atomicos.push({ noteId: nota.noteId, oldFront: texto(frenteOriginal), newFront: novoFrente, newBack: novoVerso, source: ref, subtema: st, sourceValidated: Boolean(fonte), active: Boolean(fonte) });
   }
 
+  // As notas longas já processadas não aparecem mais na fila `texto-longo`.
+  // Retag somente para alinhar os IDs canônicos do site sem tocar no conteúdo.
+  if (APLICAR) {
+    const atomicNotes = await notasEmLotes(atomicExisting);
+    for (const nota of atomicNotes) {
+      const fonte = topico(nota);
+      const st = subtema(nota);
+      const anteriores = nota.tags.filter((tag) => tag.startsWith("subtema::"));
+      if (anteriores.length) await anki("removeTags", { notes: [nota.noteId], tags: anteriores.join(" ") });
+      const [, versoOriginal] = campo(nota, "verso");
+      const ref = fonte ? FONTES[fonte] : "";
+      const [versoNome] = campo(nota, "verso");
+      const fields = fonte && !nota.fields.Referencia && !/\bFonte:/i.test(versoOriginal)
+        ? { [versoNome]: `${versoOriginal}<br><br><small>Fonte: ${ref}</small>` }
+        : {};
+      const add = [`subtema::${st}`, "curriculo::semestre-pendente", "curriculo::subtema-semestre-ausente"];
+      const remove = ["editorial::fonte-pendente", "codex-auditoria::fonte-pendente"];
+      if (fonte) {
+        add.push("editorial::validado-diretriz-2026", `fonte-primaria::${fonte}`);
+      } else {
+        add.push("editorial::fonte-pendente");
+        remove.push("editorial::validado-diretriz-2026");
+      }
+      await atualizarNota(nota, fields, add, remove, Boolean(fonte));
+    }
+  }
+
   const clozeDeck = "MEDICINA::Ciclo Clínico::Clínica Médica::Neurologia";
   const clozeTag = "anki-id::20260815::cloze-avc-tc";
   const clozeQuery = `tag:"${clozeTag}"`;
   const existingCloze = await anki<number[]>("findNotes", { query: clozeQuery });
-  const atomicExisting = await anki<number[]>("findNotes", { query: 'tag:"editorial::reescrito-atomico"' });
-  const atomicActiveCards = await anki<number[]>("findCards", { query: 'tag:"editorial::reescrito-atomico" -is:suspended' });
-  const atomicSourcePending = await anki<number[]>("findNotes", { query: 'tag:"editorial::reescrito-atomico" tag:"editorial::fonte-pendente"' });
   let clozeCreated = false;
   if (!existingCloze.length && APLICAR) {
     await anki("createDeck", { deck: clozeDeck });
@@ -258,6 +283,8 @@ async function main() {
     });
     clozeCreated = Boolean(created);
   }
+  const atomicActiveCardsFinal = await anki<number[]>("findCards", { query: 'tag:"editorial::reescrito-atomico" -is:suspended' });
+  const atomicSourcePendingFinal = await anki<number[]>("findNotes", { query: 'tag:"editorial::reescrito-atomico" tag:"editorial::fonte-pendente"' });
 
   const report = {
     generatedAt: new Date().toISOString(), mode: APLICAR ? "aplicado" : "simulacao",
@@ -267,8 +294,8 @@ async function main() {
     placeholdersKeptSuspended: validacao.filter((x) => x.pending).length,
     longRequested: Math.max(longIds.length, atomicExisting.length),
     longRewrittenAtomically: atomicos.length || atomicExisting.length,
-    longValidatedAndActive: atomicos.length ? atomicos.filter((x) => x.sourceValidated).length : atomicActiveCards.length,
-    longRewrittenSourcePending: atomicos.length ? atomicos.filter((x) => !x.sourceValidated).length : atomicSourcePending.length,
+    longValidatedAndActive: atomicos.length ? atomicos.filter((x) => x.sourceValidated).length : atomicActiveCardsFinal.length,
+    longRewrittenSourcePending: atomicos.length ? atomicos.filter((x) => !x.sourceValidated).length : atomicSourcePendingFinal.length,
     clozeCreated,
     imageOcclusionCreated: false,
     imageOcclusionStatus: "pendente: AnkiConnect não expõe com segurança o formato de máscara nativa; nenhuma nota IO malformada foi criada.",

@@ -102,3 +102,12 @@ não liberar material sem fonte.
 - Backup pos-aplicacao: `exports/anki/backups/2026-08-15T00-13-04-214Z`.
 - Typecheck e ESLint direcionado dos scripts alterados passaram. O lint global
   continua com o aviso preexistente fora deste lote em `exports/private/inspect-supabase-state.mts`.
+## Evidencia final pos-retag — 2026-08-15 00:24 BRT
+
+- Auditoria Anki: 2.065 notas, zero frente/verso longo e somente 2 notas sem
+  referencia (os dois placeholders suspensos).
+- Os 62 cards longos seguem reescritos; 58 estao ativos com fonte e 4 seguem
+  suspensos por fonte especifica pendente.
+- Backup mais recente: `exports/anki/backups/2026-08-15T00-24-37-225Z`.
+- Os IDs de subtema foram alinhados aos IDs canônicos existentes no site; os
+  10 subtemas sem evidencia curricular continuam `curriculo::semestre-pendente`.

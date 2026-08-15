@@ -516,3 +516,11 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
 - [x] Backup pos-aplicacao em `exports/anki/backups/2026-08-15T00-13-04-214Z`.
 - [ ] Image Occlusion nativo e os 10 vinculos SISCAD continuam pendentes por
   ausencia de formato/prova segura; nao foram inventados dados.
+### Estado final do lote Anki — 2026-08-15 00:24 BRT
+
+- [x] Auditoria final com somente os dois placeholders sem fonte, ambos
+  suspensos; nenhum cartao apagado.
+- [x] 62 cards longos reescritos; 58 ativos e 4 aguardando fonte especifica.
+- [x] IDs de subtema alinhados a taxonomia canônica do site.
+- [ ] Image Occlusion nativo e prova SISCAD dos 10 subtemas continuam como
+  pendencias honestas e reversiveis.
