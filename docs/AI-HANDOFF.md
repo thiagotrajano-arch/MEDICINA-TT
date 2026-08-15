@@ -855,3 +855,12 @@ na última verificação e os demais gates dependem dessa correção.
   React dos diagramas permanece nas páginas de estudo e deixou o bundle do
   índice. O build de verificação gerou 413/413 páginas em 83 s, sem a repetição
   de `/questoes` observada no build anterior.
+## Atualizacao SISCAD/curriculo — 2026-08-15
+
+O mapa curricular privado foi reconciliado sem expor dados pessoais. Existem
+37 componentes, 68 módulos, 439 subtemas e 123 vínculos de recursos após a
+aplicação privada. Os 11 componentes antes ausentes no mapa granular foram
+adicionados com evidência parcial e sem ementa inventada. Os 276 candidatos de
+vínculo foram revisados e permanecem pendentes de confirmação manual quando não
+há correspondência pública exata. Fontes: `exports/private/curriculo-granular-
+20260815.json` e `exports/private/curriculo-vinculos-review-20260815.json`.

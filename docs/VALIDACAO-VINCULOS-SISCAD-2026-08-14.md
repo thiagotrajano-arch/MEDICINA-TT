@@ -63,3 +63,43 @@ como subtema especifico, com fonte. Nenhum tema foi inferido nesta rodada.
 
 Dados pessoais, historico individual, URLs do SISCAD e documentos de origem
 continuam fora do repositorio publico.
+## Atualizacao operacional — 2026-08-15
+
+- [x] A camada de componentes foi sincronizada em modo privado: 37 registros,
+  30 concluídos e 7 cursando; os 37 já existentes foram preservados.
+- [x] O mapa granular foi completado estruturalmente para os 37 componentes:
+  68 módulos, 439 subtemas e 123 vínculos de recursos privados/públicos.
+- [x] Os 11 componentes que faltavam no mapa granular foram adicionados com
+  `evidenceStatus: parcial`, a partir da síntese curricular já registrada:
+  BBPM V/VI, Bases Complementares I–VI, Tópicos Especiais em Saúde I/IV e
+  Tópicos em Saúde da Mulher.
+- [x] Os 276 vínculos candidatos foram revisados sem aplicação automática.
+  Nenhum vínculo foi criado somente por semelhança de nome; cada candidato foi
+  marcado para revisão manual ou como sem correspondência pública exata.
+- [x] A aplicação privada terminou sem erro, preservando progresso. O estado
+  pós-aplicação confirmou um proprietário, 27 migrations e mídia privada íntegra
+  (399 registros, 399 objetos, HTTP 206 para assinatura).
+- [ ] Permanecem pendentes os planos oficiais granulares dos 11 componentes e a
+  confirmação manual dos 276 candidatos; a camada está pronta para receber a
+  evidência sem inventar ementas.
+
+### Subtemas neurológicos sem semestre comprovado
+
+Os dez subtemas abaixo foram identificados na auditoria editorial neurológica,
+mas continuam sem prova de período no SISCAD. Eles foram preservados com estado
+`curriculo::semestre-pendente`; nenhum período foi inferido a partir de nome,
+deck, resumo ou semelhança curricular:
+
+1. AVC isquêmico — diagnóstico e conduta;
+2. AVC hemorrágico/HSA e hemorragia intraparenquimatosa — diagnóstico e conduta;
+3. Crise convulsiva e status epilepticus — diagnóstico e conduta;
+4. Cefaleias primárias e sinais de alarme — diagnóstico e conduta;
+5. Síndrome de Guillain-Barré — diagnóstico e conduta;
+6. Miastenia gravis — diagnóstico e conduta;
+7. Compressão medular aguda e síndrome de cauda equina — diagnóstico e conduta;
+8. Delirium — diagnóstico e conduta;
+9. Amnésias e síndromes demenciais — diagnóstico e conduta;
+10. Síndromes vestibulares — diagnóstico e conduta.
+
+Aceite futuro: somente remover o estado pendente quando houver plano/registro
+SISCAD identificável e conferência manual do vínculo.

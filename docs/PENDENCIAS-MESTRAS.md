@@ -533,3 +533,18 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
   resistencia, efeitos adversos e profilaxia.
 - [ ] Integrar somente sintese autoral ao site e vincular cada subtema a resumo,
   questoes, casos, imagens e mapa mental; material comercial permanece privado.
+## Atualizacao curricular/SISCAD — 2026-08-15
+
+- [x] Sincronizar os 37 componentes privados: 30 concluídos e 7 cursando, sem
+  apagar datas, dificuldade ou progresso existente.
+- [x] Completar estruturalmente os 11 componentes que faltavam no mapa granular:
+  68 módulos e 439 subtemas no total.
+- [x] Revisar os 276 vínculos candidatos; nenhum foi aplicado por semelhança de
+  nome. O relatório privado registra cada candidato e a decisão pendente.
+- [x] Validar a aplicação privada: 123 recursos, um proprietário, 27 migrations
+  e acesso de mídia assinado confirmado.
+- [ ] Obter os planos oficiais granulares dos 11 componentes e confirmar os 276
+  vínculos manualmente, mantendo os itens sem prova como lacunas explícitas.
+- [ ] Comprovar no SISCAD o período dos 10 subtemas neurológicos listados em
+  `docs/VALIDACAO-VINCULOS-SISCAD-2026-08-14.md`; até lá, mantê-los como
+  `curriculo::semestre-pendente`.
