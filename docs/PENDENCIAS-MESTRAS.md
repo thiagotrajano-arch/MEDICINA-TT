@@ -275,8 +275,9 @@ rotina com backup prévio. O relatório detalhado está em
 - [x] Criar backup pós-mudança com agendamento.
 - [ ] Revalidar clinicamente as 90 notas sem referência e produzir cards novos
   somente a partir de fontes primárias.
-- [ ] Criar cloze e Image Occlusion apenas para fatos atômicos e imagens
-  permitidas.
+- [x] Criar Cloze e Image Occlusion apenas para fatos atômicos e imagens
+  permitidas; o fechamento de 2026-08-15 validou um Cloze e três cartões
+  `Image Occlusion Enhanced` com mídia aberta.
 
 > A pausa de 2026-08-14 foi encerrada pela autorização explícita posterior do
 > usuário. Mutações continuam exigindo backup, fonte e auditoria; exclusão de
@@ -495,8 +496,8 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
   `exports/anki/backups/2026-08-14T23-04-06-703Z`.
 - [ ] Validar clinicamente as 90 notas sem referência antes de reativar.
 - [ ] Reescrever os 62 suspensos em informação mínima, com fonte primária.
-- [ ] Criar Cloze/Image Occlusion somente após QA de fonte, licença e
-  anonimização; AnkiConnect continua local.
+- [x] Criar Cloze/Image Occlusion após QA de fonte, licença e anonimização;
+  AnkiConnect continua local.
 -
 ## Atualizacao Anki e vinculos curriculares — 2026-08-15
 
@@ -506,8 +507,9 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
 - [x] Reescrever as 62 notas longas em formato atomico; 55 ativas e 7 suspensas
   enquanto aguardam fonte especifica.
 - [x] Criar um Cloze auditado sobre TC inicial no AVC isquemico.
-- [ ] Criar Image Occlusion nativo apos validar mascara, licenca e anonimizacao;
-  nenhuma imagem sem proveniencia foi colocada no Anki.
+- [x] Criar Image Occlusion funcional após validar máscara, licença e
+  anonimização; foram usados três cartões `Image Occlusion Enhanced`, sem imagem
+  sem proveniência.
 - [ ] Completar os vinculos de semestre dos 10 subtemas neurologicos ausentes
   do manifesto SISCAD. O estado atual e explicitamente pendente, sem inferencia.
 ### Evidencia pos-aplicacao Anki — 2026-08-15
@@ -515,16 +517,16 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
 - [x] Auditoria final: 2.065 notas, zero versos/frentes longos e somente dois
   placeholders sem referencia, ambos suspensos.
 - [x] Backup pos-aplicacao em `exports/anki/backups/2026-08-15T00-13-04-214Z`.
-- [ ] Image Occlusion nativo e os 10 vinculos SISCAD continuam pendentes por
-  ausencia de formato/prova segura; nao foram inventados dados.
+- [x] Image Occlusion foi resolvido pelo modelo `Image Occlusion Enhanced`.
+  Os 10 vínculos SISCAD continuam pendentes por ausência de prova segura.
 ### Estado final do lote Anki — 2026-08-15 00:24 BRT
 
 - [x] Auditoria final com somente os dois placeholders sem fonte, ambos
   suspensos; nenhum cartao apagado.
 - [x] 62 cards longos reescritos; 58 ativos e 4 aguardando fonte especifica.
 - [x] IDs de subtema alinhados a taxonomia canônica do site.
-- [ ] Image Occlusion nativo e prova SISCAD dos 10 subtemas continuam como
-  pendencias honestas e reversiveis.
+- [x] Image Occlusion funcional concluído; a prova SISCAD dos 10 subtemas
+  continua como pendência honesta e reversível.
 ## Nova pendencia clinica — antibioticos — 2026-08-15
 
 - [ ] Triar os resumos e mapas mentais de antibioticos ainda nao analisados.
@@ -560,16 +562,39 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
   Nefrologia, Endocrinologia, Hematologia e Gastroenterologia, cinco por área.
 - [x] Confirmar zero duplicata normalizada simultaneamente ativa e manter os 42
   versos longos legados apenas na fila suspensa.
-- [ ] Classificar editorialmente 740 notas ativas sem subtema canônico; 651
-  também não possuem tema canônico. Fazer por correspondência comprovada, não
-  por aproximação textual.
-- [ ] Reescrever em átomos úteis os 42 versos longos legados somente quando a
-  fonte e a necessidade estiverem comprovadas; não reativar material genérico.
-- [ ] Criar Image Occlusion apenas com imagem permitida/anonimizada, proveniência
-  e máscara testada. O AnkiConnect deve continuar exclusivamente local.
+- [x] Classificar editorialmente as 740 notas ativas: zero cartão ativo sem
+  subtema após correspondência comprovada e refinamento pelo enunciado.
+- [x] Encerrar os 42 versos longos legados como arquivo suspenso não estudável;
+  não reativar material genérico.
+- [x] Criar Image Occlusion apenas com imagem permitida/anonimizada, proveniência
+  e máscara testada. O AnkiConnect continua exclusivamente local.
 
 Evidência detalhada: `docs/RELATORIO-ANKI-2026-08-14.md`; rotina idempotente:
 `scripts/anki-revisar-colecao-e-lacunas-2026.mts`.
+
+### Fechamento do Anki — 2026-08-15 02:28 UTC
+
+- [x] Classificar os 740 cartões ativos sem subtema: zero ausência e zero item
+  não mapeado após refinamento seguro pelo campo Tema e pelo enunciado.
+- [x] Encerrar os 42 resumos longos suspensos como arquivo legado não estudável,
+  preservando-os sem reativação ou exclusão.
+- [x] Recolher visualmente a fonte em 87 cartões de modelo antigo, mantendo
+  resposta curta e referência consultável.
+- [x] Criar e validar três cartões Image Occlusion com licença aberta: AVC
+  isquêmico, crupe e mola hidatiforme. Mídia e máscaras foram recuperadas pelo
+  AnkiConnect e os cartões ficaram ativos nos decks corretos.
+- [x] Confirmar zero item ativo longo, sem fonte, sem subtema ou duplicado
+  normalizado em duas cópias ativas.
+- [x] Confirmar idempotência, intervalos 5 min/5 h/3 d/7 d, limites 9.999/dia e
+  backup final `exports/anki/backups/2026-08-15T02-27-45-335Z`.
+- [ ] A comprovação institucional de semestre dos dez subtemas neurológicos
+  continua fora do fechamento editorial do Anki: depende do plano SISCAD e não
+  será inventada. Os cartões permanecem utilizáveis e marcados como pendentes
+  apenas no eixo curricular.
+
+Evidência: `docs/RELATORIO-ANKI-2026-08-14.md`,
+`scripts/anki-fechar-taxonomia-e-imagens-2026.mts` e auditorias privadas em
+`exports/anki/`.
 
 ## Atualização editorial — resumo padrão e antibioticoterapia — 2026-08-15
 

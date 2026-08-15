@@ -52,7 +52,9 @@
     "anki:csv": "tsx scripts/anki-connect.mts csv-resumo",
     "anki:curriculo": "tsx scripts/anki-aplicar-taxonomia-curricular.mts",
     "anki:validar-neuro": "tsx scripts/anki-validar-neuro-2026.mts",
-    "anki:revisar-lacunas": "tsx scripts/anki-revisar-colecao-e-lacunas-2026.mts"
+    "anki:revisar-lacunas": "tsx scripts/anki-revisar-colecao-e-lacunas-2026.mts",
+    "anki:inventario-editorial": "tsx scripts/anki-inventariar-pendencias-editoriais.mts",
+    "anki:fechar-editorial": "tsx scripts/anki-fechar-taxonomia-e-imagens-2026.mts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.6",

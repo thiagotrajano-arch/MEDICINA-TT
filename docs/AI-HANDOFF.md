@@ -896,3 +896,24 @@ associado automaticamente.
   Cirurgia/MFC somente pelo texto.
 - Rotina: `npm.cmd run anki:revisar-lacunas` (dry-run) e, após aprovação do
   lote, `npm.cmd run anki:revisar-lacunas -- --aplicar`.
+
+## Fechamento Anki — 2026-08-15 02:28 UTC
+
+- Estado ao vivo: 2.088 notas/cartões, 1.100 ativos e 988 suspensos.
+- Taxonomia ativa fechada: zero cartão sem subtema e zero item não mapeado. Os
+  740 legados foram organizados por disciplina, tema, tópico e subtema; temas
+  mistos foram refinados pelo próprio enunciado.
+- Zero frente/verso longo ativo, zero fonte ausente ativa e zero grupo de
+  duplicata normalizada com mais de uma cópia ativa. Os totais brutos de 42
+  longos e dois sem fonte pertencem somente a arquivo/placeholders suspensos.
+- 87 referências de modelos antigos agora ficam recolhidas, sem esconder nem
+  apagar a fonte.
+- Três cartões Image Occlusion ativos e idempotentes usam mídia aberta: AVC
+  isquêmico, crupe e mola hidatiforme. Original e máscaras foram confirmados no
+  armazenamento do Anki.
+- Backup final: `exports/anki/backups/2026-08-15T02-27-45-335Z`.
+- Scripts reproduzíveis: `anki:inventario-editorial`, `anki:fechar-editorial`,
+  `anki:auditoria` e `anki:backup`. AnkiConnect permanece apenas local.
+- Única ressalva curricular: os dez vínculos neurológicos de semestre continuam
+  aguardando evidência SISCAD; não afetam a fila de revisão e não foram
+  inferidos.

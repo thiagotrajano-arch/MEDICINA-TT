@@ -153,3 +153,34 @@ divergentes deste relatório.
 
 Rotina reproduzível: `npm.cmd run anki:revisar-lacunas` para auditoria e
 `npm.cmd run anki:revisar-lacunas -- --aplicar` para um lote aprovado.
+
+## Fechamento editorial e visual — 2026-08-15 02:28 UTC
+
+Esta seção substitui a pendência editorial da seção anterior.
+
+- Coleção final: 2.088 notas/cartões; 1.100 ativos e 988 suspensos.
+- Os 740 cartões ativos antes sem subtema foram classificados. O primeiro passe
+  alinhou tema/tópico; o segundo refinou os 185 temas mistos pelo enunciado.
+  Resultado: **zero cartão ativo sem `subtema::`** e zero item não mapeado.
+- Um placeholder corrompido (`AVCIu`) foi suspenso e marcado para não estudar.
+  Nenhuma nota foi apagada.
+- Os 42 resumos extensos legados já suspensos foram marcados como arquivo e
+  `editorial::nao-estudar`; não são uma fila de reescrita obrigatória porque o
+  conteúdo estudável correspondente já está atomizado.
+- 87 cartões de modelo antigo passaram a mostrar a referência dentro de seção
+  recolhível. A resposta clínica permanece curta e a fonte continua acessível.
+- Foram criados e renderizados três cartões `Image Occlusion Enhanced`, com
+  arquivos de mídia recuperáveis pelo AnkiConnect: TC de AVC isquêmico, sinal
+  da torre no crupe e ultrassonografia de mola hidatiforme. As três imagens têm
+  licença aberta registrada e máscara de pergunta/resposta.
+- Auditoria canônica: zero frente longa ativa, zero verso longo ativo, zero
+  referência ausente ativa, zero cartão ativo sem subtema e zero grupo de
+  duplicata normalizada com mais de uma cópia ativa. Os 42 longos e dois itens
+  sem fonte exibidos no total bruto são somente arquivo/placeholders suspensos.
+- Execução repetida confirmou idempotência: zero nova tag, zero novo cartão e
+  zero fonte a recolher.
+- Backup final com agendamento:
+  `exports/anki/backups/2026-08-15T02-27-45-335Z`.
+
+Rotinas: `npm.cmd run anki:inventario-editorial` e
+`npm.cmd run anki:fechar-editorial` (ensaio); a aplicação exige `-- --aplicar`.

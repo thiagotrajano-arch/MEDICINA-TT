@@ -249,7 +249,10 @@ type NotaAnkiInfo = {
   noteId: number;
   tags: string[];
   fields: Record<string, { value: string; order: number }>;
+  cards: number[];
 };
+
+type CartaoAuditoria = { note: number; queue: number };
 
 function textoAuditoria(valor: string): string {
   return valor
@@ -277,6 +280,12 @@ async function auditarEditorialAnki(aplicarTags: boolean, todosOsDecks = false) 
   for (let indice = 0; indice < noteIds.length; indice += 100) {
     notas.push(...await anki<NotaAnkiInfo[]>("notesInfo", { notes: noteIds.slice(indice, indice + 100) }));
   }
+  const cartoes: CartaoAuditoria[] = [];
+  const cardIds = notas.flatMap((nota) => nota.cards);
+  for (let indice = 0; indice < cardIds.length; indice += 100) {
+    cartoes.push(...await anki<CartaoAuditoria[]>("cardsInfo", { cards: cardIds.slice(indice, indice + 100) }));
+  }
+  const notasAtivas = new Set(cartoes.filter((cartao) => cartao.queue !== -1).map((cartao) => cartao.note));
   const linhas = notas.map((nota) => {
     const frente = nota.fields.Frente?.value ?? nota.fields.Front?.value ?? "";
     const verso = nota.fields.Verso?.value ?? nota.fields.Back?.value ?? "";
@@ -285,7 +294,9 @@ async function auditarEditorialAnki(aplicarTags: boolean, todosOsDecks = false) 
     const referencia = nota.fields.Referencia?.value
       ?? nota.fields["Verso Extra"]?.value
       ?? nota.fields.Sources?.value
-      ?? (/(?:^|\n|<br\s*\/?>|<small\s*>)[\s<\/]*Fonte:\s*([^<\n]+)/i.exec(verso)?.[1] ?? "");
+      ?? (/(?:^|\n|<br\s*\/?>|<small\s*>)[\s<\/]*Fonte:\s*([^<\n]+)/i.exec(verso)?.[1]
+        ?? /<summary>\s*Fonte\s*<\/summary>\s*<small>([\s\S]*?)<\/small>/i.exec(verso)?.[1]
+        ?? "");
     return {
       noteId: nota.noteId,
       frente: textoAuditoria(frente),
@@ -313,6 +324,9 @@ async function auditarEditorialAnki(aplicarTags: boolean, todosOsDecks = false) 
   const frentesLongas = linhas.filter((linha) => linha.frente.length > 180).map((linha) => linha.noteId);
   const versosLongos = linhas.filter((linha) => linha.verso.length > 500).map((linha) => linha.noteId);
   const fontesPendentes = linhas.filter((linha) => !linha.referencia).map((linha) => linha.noteId);
+  const versosLongosAtivos = versosLongos.filter((noteId) => notasAtivas.has(noteId));
+  const fontesPendentesAtivas = fontesPendentes.filter((noteId) => notasAtivas.has(noteId));
+  const semSubtemaAtivos = notas.filter((nota) => notasAtivas.has(nota.noteId) && !nota.tags.some((tag) => tag.startsWith("subtema::"))).map((nota) => nota.noteId);
 
   async function marcar(ids: number[], tag: string) {
     if (!aplicarTags || !ids.length) return;
@@ -350,6 +364,7 @@ async function auditarEditorialAnki(aplicarTags: boolean, todosOsDecks = false) 
     tagsApplied: aplicarTags,
     totals: {
       notes: notas.length,
+      activeNotes: notasAtivas.size,
       exactDuplicateGroups: duplicatas.length,
       exactDuplicateNotes: new Set(duplicatas.flat()).size,
       normalizedDuplicateGroups: duplicatasNormalizadas.length,
@@ -358,7 +373,10 @@ async function auditarEditorialAnki(aplicarTags: boolean, todosOsDecks = false) 
       ambiguousFrontNotes: new Set(ambiguas.flat()).size,
       longFrontNotes: frentesLongas.length,
       longBackNotes: versosLongos.length,
+      activeLongBackNotes: versosLongosAtivos.length,
       missingReferenceNotes: fontesPendentes.length,
+      activeMissingReferenceNotes: fontesPendentesAtivas.length,
+      activeWithoutSubthemeNotes: semSubtemaAtivos.length,
     },
     queues: {
       exactDuplicateNoteIds: duplicatas,
@@ -366,7 +384,10 @@ async function auditarEditorialAnki(aplicarTags: boolean, todosOsDecks = false) 
       ambiguousFrontNoteIds: ambiguas,
       longFrontNoteIds: frentesLongas,
       longBackNoteIds: versosLongos,
+      activeLongBackNoteIds: versosLongosAtivos,
       missingReferenceNoteIds: fontesPendentes,
+      activeMissingReferenceNoteIds: fontesPendentesAtivas,
+      activeWithoutSubthemeNoteIds: semSubtemaAtivos,
     },
   };
   const destino = resolve(saidaArg ?? "exports/anki/auditoria-editorial.json");
