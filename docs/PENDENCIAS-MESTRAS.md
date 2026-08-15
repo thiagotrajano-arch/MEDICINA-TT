@@ -524,3 +524,12 @@ Este registro é aditivo e prevalece sobre os números históricos da seção An
 - [x] IDs de subtema alinhados a taxonomia canônica do site.
 - [ ] Image Occlusion nativo e prova SISCAD dos 10 subtemas continuam como
   pendencias honestas e reversiveis.
+## Nova pendencia clinica — antibioticos — 2026-08-15
+
+- [ ] Triar os resumos e mapas mentais de antibioticos ainda nao analisados.
+- [ ] Inventariar fontes privadas, converter PDFs para Markdown antes da leitura,
+  revisar em diretrizes atuais e registrar origem, pagina, hash e destino.
+- [ ] Organizar por classe/mecanismo, espectro, indicacao, dose e ajuste,
+  resistencia, efeitos adversos e profilaxia.
+- [ ] Integrar somente sintese autoral ao site e vincular cada subtema a resumo,
+  questoes, casos, imagens e mapa mental; material comercial permanece privado.
