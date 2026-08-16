@@ -27,6 +27,7 @@ import { QUESTOES_PED_LOTE_01, QUESTOES_CIR_MFC_LOTE_01, QUESTOES_CARDIO_NEURO_P
 import { QUESTOES_CARDIO_LOTE_02, QUESTOES_NEURO_LOTE_02, QUESTOES_PNEUMO_LOTE_02 } from "./questoes/cardio-neuro-pneumo-lote-02";
 import { QUESTOES_CLINICAS_LOTE_20260803 } from "./questoes/clinicas-lote-20260803";
 import { QUESTOES_NEUROPSIQ_SEMANA } from "./questoes/neuropsiquiatria-semana";
+import { QUESTOES_NEUROPSIQ_RECENTES } from "./questoes/neuropsiquiatria-recentes";
 import { QUESTOES_ANTIBIOTICOTERAPIA } from "./questoes/antibioticoterapia";
 
 /**
@@ -74,4 +75,5 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_PNEUMO_LOTE_02,
   ...QUESTOES_CLINICAS_LOTE_20260803,
   ...QUESTOES_NEUROPSIQ_SEMANA,
+  ...QUESTOES_NEUROPSIQ_RECENTES,
 ];

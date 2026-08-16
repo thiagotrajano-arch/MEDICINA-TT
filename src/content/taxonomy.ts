@@ -368,7 +368,10 @@ const neurologia: Disciplina = {
   marca: "NEU",
   omed: true,
   temas: [
-    tema("neuro", "Neuroanatomia clínica", [["Localização neurológica", { altoRendimento: true }]]),
+    tema("neuro", "Neuroanatomia clínica", [
+      ["Localização neurológica", { altoRendimento: true }],
+      ["Vias motoras, sensitivas e síndromes cruzadas", { altoRendimento: true }],
+    ]),
     tema("neuro", "AVC Isquêmico", ["Diagnóstico e conduta"]),
     tema("neuro", "AVC Hemorrágico — HSA e Hemorragia Intraparenquimatosa", ["Diagnóstico e conduta"]),
     tema("neuro", "Crise Convulsiva e Status Epilepticus", ["Diagnóstico e conduta"]),
@@ -378,7 +381,11 @@ const neurologia: Disciplina = {
     tema("neuro", "Miastenia Gravis", ["Diagnóstico e conduta"]),
     tema("neuro", "Compressão Medular Aguda e Síndrome de Cauda Equina", ["Diagnóstico e conduta"]),
     tema("neuro", "Hipertensão Intracraniana e Delirium", ["Diagnóstico e conduta"]),
-    tema("neuro", "Amnésias e Síndromes Demenciais", ["Diagnóstico e conduta"]),
+    tema("neuro", "Amnésias e Síndromes Demenciais", [
+      "Diagnóstico e conduta",
+      ["Delirium versus demência", { altoRendimento: true }],
+      ["Fenótipos demenciais e tratamento", { altoRendimento: true, dificuldade: "avancada" }],
+    ]),
     tema("neuro", "Neuropatias Compressivas Periféricas", ["Diagnóstico e conduta"]),
     tema("neuro", "Síndromes Vestibulares", ["Diagnóstico e conduta"]),
     tema("neuro", "Encefalopatia de Wernicke-Korsakoff", ["Diagnóstico e conduta"]),
@@ -504,8 +511,18 @@ const psiquiatria: Disciplina = {
     ]),
     tema("psiq", "Ansiedade, pânico e TOC", [["Diagnóstico e abordagem", { altoRendimento: true }]]),
     tema("psiq", "Psicoses", [["Primeiro episódio psicótico", { altoRendimento: true, dificuldade: "avancada" }]]),
-    tema("psiq", "Psicofarmacologia", [["Princípios e monitorização", { altoRendimento: true, dificuldade: "avancada" }]]),
-    tema("psiq", "Sono e hipnosedativos", [["Insônia e uso seguro", { altoRendimento: true, dificuldade: "avancada" }]]),
+    tema("psiq", "Psicofarmacologia", [
+      ["Princípios e monitorização", { altoRendimento: true, dificuldade: "avancada" }],
+      ["Antidepressivos, antipsicóticos e estabilizadores", { altoRendimento: true, dificuldade: "avancada" }],
+    ]),
+    tema("psiq", "Sono e hipnosedativos", [
+      ["Insônia e uso seguro", { altoRendimento: true, dificuldade: "avancada" }],
+      ["Retirada de benzodiazepínicos e Z-drugs", { altoRendimento: true, dificuldade: "avancada" }],
+    ]),
+    tema("psiq", "Transtornos por uso de substâncias", [
+      ["Intoxicação e abstinência", { altoRendimento: true, dificuldade: "avancada" }],
+      ["Álcool e sedativos: abordagem clínica", { altoRendimento: true, dificuldade: "avancada" }],
+    ]),
     tema("psiq", "Emergências psiquiátricas", [["Avaliação de segurança e risco suicida", { altoRendimento: true, dificuldade: "avancada" }]]),
   ],
 };
