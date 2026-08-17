@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { ChevronDown, Search, Sparkles } from "lucide-react";
 
 type Mapa = { index: number; disciplina: { id: string; nome: string }; tema: { nome: string }; subtema: { id: string; nome: string; altoRendimento?: boolean }; blocos: string[] };
@@ -9,18 +9,10 @@ const CORES = ["mindmap-amber", "mindmap-pink", "mindmap-sky", "mindmap-violet",
 const RELACOES = ["reconhecer", "confirmar", "tratar", "evitar", "acompanhar", "prova"];
 
 export function MapasMentaisClient({ mapas }: { mapas: Mapa[] }) {
-  const [busca, setBusca] = useState("");
+  const [busca, setBusca] = useState(() => typeof window === "undefined" ? "" : new URLSearchParams(window.location.search).get("subtema") ?? "");
   const [disciplina, setDisciplina] = useState("todas");
   const [alto, setAlto] = useState(false);
   const [limite, setLimite] = useState(8);
-  useEffect(() => {
-    const parametros = new URLSearchParams(window.location.search);
-    const subtema = parametros.get("subtema");
-    if (subtema) {
-      setBusca(subtema);
-      setLimite(8);
-    }
-  }, []);
   const disciplinas = useMemo(() => Array.from(new Map(mapas.map((m) => [m.disciplina.id, m.disciplina.nome])).entries()), [mapas]);
   const filtrados = useMemo(() => {
     const termo = busca.trim().toLocaleLowerCase("pt-BR");
