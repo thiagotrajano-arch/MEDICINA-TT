@@ -2,7 +2,7 @@ import { cache } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, ListChecks, Sparkles, FileClock } from "lucide-react";
+import { ChevronRight, ListChecks, Sparkles, FileClock, Network, Image as ImageIcon } from "lucide-react";
 import { getContentRepository } from "@/infra/content";
 import { MiniMarkdown } from "@/components/content/MiniMarkdown";
 import { Figuras } from "@/components/figuras/Figura";
@@ -75,13 +75,27 @@ export default async function EstudarPage({
       <div className="mt-4 flex flex-wrap gap-2">
         {questoes.length > 0 && (
           <Link
-            href="/questoes"
+            href={`/questoes?subtema=${encodeURIComponent(id)}`}
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text hover:border-border-strong"
           >
             <ListChecks className="size-4 text-accent" />
             {questoes.length} questões
           </Link>
         )}
+        <Link
+          href="/mapas-mentais"
+          className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text hover:border-border-strong"
+        >
+          <Network className="size-4 text-accent" />
+          Mapas mentais relacionados
+        </Link>
+        <Link
+          href="/midia"
+          className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text hover:border-border-strong"
+        >
+          <ImageIcon className="size-4 text-accent" />
+          Acervo visual
+        </Link>
       </div>
 
       <ProgressoConteudoClient tipo="resumo" itemId={id} />
