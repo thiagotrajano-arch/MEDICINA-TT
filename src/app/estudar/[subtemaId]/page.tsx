@@ -83,7 +83,7 @@ export default async function EstudarPage({
           </Link>
         )}
         <Link
-          href="/mapas-mentais"
+          href={`/mapas-mentais?subtema=${encodeURIComponent(subtema.nome)}`}
           className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text hover:border-border-strong"
         >
           <Network className="size-4 text-accent" />
