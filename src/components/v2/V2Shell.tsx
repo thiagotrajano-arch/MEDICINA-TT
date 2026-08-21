@@ -6,6 +6,7 @@ import { listOpenRemediations, listQuestionAttempts, migrateLegacyQuestionHistor
 import { syncV2LocalFirst } from "@/lib/v2/sync";
 import { recommendNext } from "@/domain/v2";
 import type { QuestionConfidence, RecallCardKind, RecallRating } from "@/domain/v2";
+import type { Questao } from "@/domain/content/types";
 
 const areas = ["Hoje", "Aprender", "Praticar", "Recall", "Meu Curso"];
 
@@ -18,6 +19,7 @@ export function V2Shell() {
   const [back, setBack] = useState("");
   const [kind, setKind] = useState<RecallCardKind>("basic");
   const [questionId, setQuestionId] = useState("");
+  const [questoes, setQuestoes] = useState<Questao[]>([]);
   const [correct, setCorrect] = useState(true);
   const [confidence, setConfidence] = useState<QuestionConfidence>("medium");
   const [syncMessage, setSyncMessage] = useState("Não sincronizado nesta sessão.");
@@ -34,6 +36,13 @@ export function V2Shell() {
     counts: { summaries: 0, questions: 0, cases: 0, recall: topicCards.length, media: 0, evidence: 0 },
     mastery: { correctRate: 1, attempts: 0, dueRecall: topicCards.filter((card) => new Date(card.dueAt) <= new Date()).length },
   });
+
+  useEffect(() => {
+    void import("@/content/questoes").then((module) => {
+      setQuestoes(module.QUESTOES);
+      setQuestionId((current) => current || module.QUESTOES[0]?.id || "");
+    }).catch(() => undefined);
+  }, []);
 
   useEffect(() => {
     void migrateLegacyQuestionHistory().then((imported) => {
@@ -126,7 +135,8 @@ export function V2Shell() {
     <section className="mt-6 grid gap-6 lg:grid-cols-2">
       <form onSubmit={recordPractice} className="v2-card p-5 sm:p-6">
         <div className="v2-section-title"><div><p className="v2-eyebrow !text-accent">Prática</p><h2 className="mt-1">Registrar tentativa</h2></div><p>Gera remediação</p></div>
-        <label className="v2-label mt-5 block">ID da questão<input value={questionId} onChange={(event) => setQuestionId(event.target.value)} required className="v2-input mt-2" /></label>
+        <label className="v2-label mt-5 block">Questão real<select value={questionId} onChange={(event) => setQuestionId(event.target.value)} required className="v2-input mt-2"><option value="" disabled>Selecione uma questão</option>{questoes.map((questao) => <option key={questao.id} value={questao.id}>{questao.id} · {questao.disciplinaId}</option>)}</select></label>
+        {questoes.find((questao) => questao.id === questionId) && <div className="mt-3 rounded-xl border border-border bg-surface-2 p-4 text-sm leading-6 text-text-muted">{questoes.find((questao) => questao.id === questionId)?.enunciado}</div>}
         <label className="v2-label mt-3 block">Resultado<select value={String(correct)} onChange={(event) => setCorrect(event.target.value === "true")} className="v2-input mt-2"><option value="true">Acertei</option><option value="false">Errei</option></select></label>
         <label className="v2-label mt-3 block">Confiança<select value={confidence} onChange={(event) => setConfidence(event.target.value as QuestionConfidence)} className="v2-input mt-2"><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option></select></label>
         <button type="submit" className="v2-button-primary mt-4">Registrar tentativa</button>
