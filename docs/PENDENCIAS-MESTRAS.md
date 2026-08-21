@@ -646,3 +646,15 @@ caso existente continua sem vínculo e precisa de revisão manual.
   sem retirar os fluxos existentes.
 - [x] Publicar `cd4cdf1` no deploy Vercel
   `dpl_BaJbgwXZ7kohgUTcwZc9WGVvVZhm` e verificar as rotas principais.
+
+### Runtime privado — 2026-08-21
+
+- [x] Exigir sessão Supabase no proxy para todas as rotas do produto.
+- [x] Criar entrada privada em `/entrar/` e preservar o destino solicitado
+  depois do login.
+- [x] Validar local e remotamente: visitante sem sessão recebe 307 para
+  `/entrar`; a tela de login responde 200; build com 428 páginas e Proxy ativo.
+- [ ] Testar a sessão real do proprietário no navegador, logout, expiração,
+  dois dispositivos e isolamento owner-only.
+- [ ] Configurar e validar a identidade única do proprietário; autenticação
+  geral não deve ser confundida com autorização owner-only.

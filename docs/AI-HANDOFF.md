@@ -965,3 +965,25 @@ associado automaticamente.
   no deploy `dpl_BaJbgwXZ7kohgUTcwZc9WGVvVZhm`, `READY`, alias
   `https://medicina-tt.vercel.app`. Home, `/v2/` e `/questoes/` responderam
   HTTP 200 após a publicação.
+
+## Runtime privado — 2026-08-21
+
+- A exigência do usuário passou a ser: todo o produto deve exigir sessão.
+- `eafb90c` adicionou `@supabase/ssr` fixado, `src/proxy.ts` e a rota
+  `/entrar/`. O proxy valida a sessão Supabase por cookie antes de liberar as
+  rotas do produto, envia `Cache-Control: private, no-store` e redireciona
+  visitantes para o login.
+- O login reutiliza o diálogo existente e retorna ao destino solicitado após
+  autenticar. A exceção `/entrar` e `/entrar/` evita loop de trailing slash.
+- Validação local: typecheck, lint, diff, auditorias de questões/privacidade e
+  build passaram; o build gerou 428 páginas e reconheceu `ƒ Proxy (Middleware)`.
+  Sem sessão, `/` e `/v2/` retornaram 307 para `/entrar`; `/entrar/` retornou
+  200.
+- Produção: deploy Vercel `dpl_83qBjYbY3ujs6irTFSW1F63uApeG`, `READY`, alias
+  `https://medicina-tt.vercel.app`; a mesma matriz sem sessão foi confirmada
+  remotamente.
+- Limitação ainda aberta: a sessão real do proprietário precisa ser testada
+  no navegador, incluindo login, retorno ao destino, logout, expiração e
+  persistência. A checagem de identidade owner-only continua separada da
+  autenticação geral e não deve ser declarada concluída sem o identificador de
+  proprietário configurado e o teste autorizado.
