@@ -658,3 +658,75 @@ caso existente continua sem vínculo e precisa de revisão manual.
   dois dispositivos e isolamento owner-only.
 - [ ] Configurar e validar a identidade única do proprietário; autenticação
   geral não deve ser confundida com autorização owner-only.
+
+## Redesign visual integral — planejamento aprovado para execução — 2026-08-21
+
+**Estado:** planejado; ainda não publicado. O primeiro lote aplicou tokens,
+superfícies e classes compartilhadas, mas não mudou suficientemente a arquitetura
+visual das telas legadas. As alterações locais atuais em `src/app/casos/page.tsx`,
+`src/app/globals.css` e `src/components/midia/MidiaClient.tsx` permanecem
+preservadas e não são evidência de conclusão ou de deploy.
+
+### Lote 0 — baseline e reconciliação
+
+- [ ] Registrar a matriz de rotas, componentes e estados atuais antes de ampliar
+  o redesign.
+- [ ] Revisar as alterações locais já iniciadas e separar o que é token,
+  componente compartilhado, conteúdo e correção funcional.
+- [ ] Definir screenshots de referência para 390, 768 e 1440 px, em claro e
+  escuro, sem publicar antes do gate visual.
+
+### Lote 1 — linguagem visual nova
+
+- [ ] Fechar tokens semânticos de fundo, superfície, texto, borda, foco,
+  destaque, sucesso, alerta, erro e privacidade para claro/escuro.
+- [ ] Aplicar a hierarquia de áreas: Hoje/aqua, Aprender/azul,
+  Praticar/índigo, Revisar/âmbar, Curso/azul-violeta e Privado/violeta.
+- [ ] Padronizar tipografia, escala, espaçamento, raio, elevação, ícones,
+  motion, estados de foco e alvos de toque.
+- [ ] Garantir contraste AA, foco visível e não dependência exclusiva de cor.
+
+### Lote 2 — primitives e telas-piloto
+
+- [ ] Criar primitives reutilizáveis: `ProductPage`, `PageHero`,
+  `ContextBreadcrumb`, `MetricStrip`, `SectionHeader`, `FilterBar`,
+  `ActionCard`, `StatusBadge`, `PrivacyBadge`, `SyncIndicator`,
+  `LoadingSkeleton`, `EmptyState`, `ErrorState`, `OfflineState` e
+  `LockedState`.
+- [ ] Redesenhar `/entrar` como uma experiência própria de autenticação,
+  sem parecer um modal sobre o shell do produto.
+- [ ] Concluir Casos e Estudo como telas-piloto, com hierarquia de conteúdo,
+  timeline/reader, ações primárias e screenshots antes/depois.
+
+### Lote 3 — Aprender e Praticar
+
+- [ ] Aplicar a linguagem visual completa em Biblioteca, Questões, Simulado,
+  Mídia e Minha Mídia.
+- [ ] Diferenciar claramente leitura, resolução, revisão, fonte/licença e
+  conteúdo privado sem expor material protegido.
+- [ ] Validar que loading, vazio, erro, offline, sessão expirada e sucesso
+  funcionam nas rotas assíncronas.
+
+### Lote 4 — Revisar e Curso
+
+- [ ] Aplicar o mesmo padrão em Agenda, Semana atual, Meu Curso, Semestres,
+  progresso e pendências guiadas.
+- [ ] Tornar progresso, próxima ação, sincronização e privacidade legíveis na
+  primeira dobra, sem transformar todas as telas em painéis iguais.
+- [ ] Corrigir responsividade, navegação por teclado, scroll e densidade de
+  informação nas páginas de estudo.
+
+### Lote 5 — QA visual e publicação
+
+- [ ] Testar 390/768/1440 px, claro/escuro, teclado, contraste AA, axe,
+  ausência de scroll horizontal e estados de rede.
+- [ ] Executar typecheck, lint, build, auditoria de privacidade, auditoria de
+  conteúdo e QA visual autenticada rota por rota.
+- [ ] Publicar somente após confirmar owner/non-owner/anon, sessão persistente,
+  sincronização em dois dispositivos e rollback documentado.
+- [ ] Registrar screenshots, commit, deploy, alias de produção e versão de
+  retorno no handoff após cada lote fechado.
+
+**Critério de encerramento:** não considerar o redesign concluído por haver
+tokens ou algumas classes CSS. Todas as telas prioritárias, seus estados,
+responsividade, acessibilidade e QA de produção precisam estar comprovados.
