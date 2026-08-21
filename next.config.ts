@@ -11,7 +11,6 @@ const isPages = process.env.GITHUB_PAGES === "true";
 const repo = "MEDICINA-TT";
 
 const nextConfig: NextConfig = {
-  output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
   basePath: isPages ? `/${repo}` : undefined,
@@ -24,5 +23,11 @@ const nextConfig: NextConfig = {
   // during the build — this keeps the build's memory footprint low.
   typescript: { ignoreBuildErrors: true },
 };
+
+// GitHub Pages remains a static compatibility target, but the private V2
+// runtime must be able to execute server-side authentication and authorization.
+// Keep export mode opt-in to the Pages workflow instead of forcing every local
+// or server deployment into a static build.
+if (isPages) nextConfig.output = "export";
 
 export default nextConfig;
