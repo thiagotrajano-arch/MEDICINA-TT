@@ -20,7 +20,7 @@ export function V2Shell() {
   const [kind, setKind] = useState<RecallCardKind>("basic");
   const [questionId, setQuestionId] = useState("");
   const [questoes, setQuestoes] = useState<Questao[]>([]);
-  const [correct, setCorrect] = useState(true);
+  const [selectedAlternativeLetter, setSelectedAlternativeLetter] = useState("A");
   const [confidence, setConfidence] = useState<QuestionConfidence>("medium");
   const [syncMessage, setSyncMessage] = useState("Não sincronizado nesta sessão.");
   const due = dueRecallCards();
@@ -42,6 +42,7 @@ export function V2Shell() {
     void import("@/content/questoes").then((module) => {
       setQuestoes(module.QUESTOES);
       setQuestionId((current) => current || module.QUESTOES[0]?.id || "");
+      setSelectedAlternativeLetter(module.QUESTOES[0]?.alternativas[0]?.letra ?? "A");
     }).catch(() => undefined);
   }, []);
 
@@ -82,7 +83,9 @@ export function V2Shell() {
   function recordPractice(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!questionId.trim() || !subtemaId.trim()) return;
-    recordQuestionAttempt({ questionId: questionId.trim(), subtemaId: subtemaId.trim(), correct, confidence, attemptedAt: new Date().toISOString() });
+    const selectedAlternative = selectedQuestion?.alternativas.find((alternative) => alternative.letra === selectedAlternativeLetter);
+    if (!selectedAlternative) return;
+    recordQuestionAttempt({ questionId: questionId.trim(), subtemaId: subtemaId.trim(), selectedAlternativeLetter, correct: selectedAlternative.correta, confidence, attemptedAt: new Date().toISOString() });
     setQuestionId("");
     setVersion((value) => value + 1);
   }
@@ -91,6 +94,7 @@ export function V2Shell() {
     setQuestionId(id);
     const question = questoes.find((questao) => questao.id === id);
     if (question?.subtemaId) setSubtemaId(question.subtemaId);
+    setSelectedAlternativeLetter(question?.alternativas[0]?.letra ?? "A");
   }
 
   async function sync() {
@@ -144,7 +148,8 @@ export function V2Shell() {
         <div className="v2-section-title"><div><p className="v2-eyebrow !text-accent">Prática</p><h2 className="mt-1">Registrar tentativa</h2></div><p>Gera remediação</p></div>
         <label className="v2-label mt-5 block">Questão real<select value={questionId} onChange={(event) => selectQuestion(event.target.value)} required className="v2-input mt-2"><option value="" disabled>Selecione uma questão</option>{questoes.map((questao) => <option key={questao.id} value={questao.id}>{questao.id} · {questao.disciplinaId} · {questao.subtemaId ?? "sem subtema"}</option>)}</select></label>
         {selectedQuestion && <div className="mt-3 rounded-xl border border-border bg-surface-2 p-4 text-sm leading-6 text-text-muted"><p>{selectedQuestion.enunciado}</p><p className="mt-2 text-xs font-semibold text-accent">Subtema vinculado automaticamente: {selectedQuestion.subtemaId ?? "não informado"}</p></div>}
-        <label className="v2-label mt-3 block">Resultado<select value={String(correct)} onChange={(event) => setCorrect(event.target.value === "true")} className="v2-input mt-2"><option value="true">Acertei</option><option value="false">Errei</option></select></label>
+        {selectedQuestion && <label className="v2-label mt-3 block">Alternativa marcada<select value={selectedAlternativeLetter} onChange={(event) => setSelectedAlternativeLetter(event.target.value)} className="v2-input mt-2">{selectedQuestion.alternativas.map((alternative) => <option key={alternative.letra} value={alternative.letra}>{alternative.letra} · {alternative.texto}</option>)}</select></label>}
+        <p className="mt-3 rounded-xl border border-border bg-surface-2 p-3 text-xs leading-5 text-text-muted">Resultado calculado pelo gabarito: <strong>{selectedQuestion?.alternativas.find((alternative) => alternative.letra === selectedAlternativeLetter)?.correta ? "acerto" : "erro"}</strong>. A sincronização envia a alternativa e deixa o servidor confirmar o gabarito.</p>
         <label className="v2-label mt-3 block">Confiança<select value={confidence} onChange={(event) => setConfidence(event.target.value as QuestionConfidence)} className="v2-input mt-2"><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option></select></label>
         <button type="submit" className="v2-button-primary mt-4">Registrar tentativa</button>
         <p className="mt-3 text-xs leading-5 text-text-faint">A interface registra a tentativa localmente e cria remediação para erro ou baixa confiança.</p>

@@ -730,3 +730,70 @@ preservadas e não são evidência de conclusão ou de deploy.
 **Critério de encerramento:** não considerar o redesign concluído por haver
 tokens ou algumas classes CSS. Todas as telas prioritárias, seus estados,
 responsividade, acessibilidade e QA de produção precisam estar comprovados.
+
+## Execução das quatro frentes — 2026-08-21
+
+### Sincronização persistente e conflitos offline
+
+- [~] A auditoria confirmou que o sincronizador V2 local-first existia, mas a
+  chamada remota enviava alternativa selecionada nula para um RPC que exige a
+  alternativa marcada; o cliente foi corrigido para registrar a letra escolhida,
+  buscar os IDs das alternativas e deixar o servidor derivar o resultado.
+- [x] A fila local preserva o histórico durante ausência de sessão/rede e as
+  tentativas agora recebem um ID local estável.
+- [ ] QA real em dois dispositivos, offline/online, logout, expiração, conflito
+  de versões e idempotência no servidor.
+- [ ] Criar/validar a política server-side de deduplicação de tentativas; a
+  função remota atual ainda insere uma nova tentativa a cada chamada e não há
+  prova de conflito resolvido.
+- [ ] Validar com a conta owner: as tabelas V2 remotas estavam vazias na última
+  leitura (`question_attempt_v2=0`, `recall_card=0`, `recall_state=0`).
+
+### Reconciliação dos 287 candidatos locais
+
+- [x] Executar `npm run audit:questoes:reconciliar` contra o catálogo remoto,
+  comparando ID, hash SHA-256 normalizado, fonte, tags e subtema.
+- [x] Resultado: 1.359 locais, 1.072 remotas e 287 apenas locais; 287 são
+  candidatos novos, 0 duplicatas por hash e 0 candidatos com falta de fonte,
+  tags ou subtema.
+- [x] Relatório metadata-first preservado fora do Git em
+  `exports/private/reconciliacao-questoes-2026-08-21.json`.
+- [ ] Portão editorial item a item, validação de gabarito e aprovação antes de
+  qualquer inserção/migração no Supabase.
+
+### Lacunas documentais recalculadas
+
+- [x] Auditoria atualizada pelo `audit:coverage` em 2026-08-21: 311 subtemas,
+  241 resumos, 1.359 questões e 61 casos vinculados.
+- [x] Estado atual: 70 subtemas sem resumo, 149 sem questão e 268 sem caso.
+- [ ] Priorizar os gaps por OMED, semestre confirmado e risco clínico; não gerar
+  volume artificial nem copiar material comercial.
+- [ ] Fechar primeiro os subtemas com resumo sem questão/caso e revisar o único
+  caso atualmente sem vínculo antes de ampliar a fila.
+
+### Mídia, Drive, Evidence Engine e currículo
+
+- [x] Mídia privada auditada: 399 registros; 347 úteis, 21 contextuais e 31 não
+  úteis; 397 possuem vínculo de subtema. Nada foi publicado.
+- [~] Drive permanece metadata-first: 6 pastas-raiz em `drive_asset_index`,
+  todas em estado `inventariado`; descendentes ainda não foram percorridos e
+  nenhum binário privado foi publicado.
+- [ ] Reconciliar descendentes do Drive por hash, selecionar lotes aprovados,
+  converter PDF/DOCX para Markdown privado e registrar licença/origem antes de
+  qualquer síntese.
+- [ ] Evidence Engine permanece sem registros em `evidence_review`; falta
+  ingestão de fontes verificadas, revisão clínica, status, vencimento e vínculo
+  por subtema. Não declarar concluído por a tabela existir.
+- [x] Camada curricular privada conferida: 37 componentes, 439 subtemas e 123
+  recursos.
+- [ ] Confirmar manualmente os 276 vínculos curriculares candidatos contra os
+  planos oficiais; itens sem prova permanecem como lacuna explícita.
+
+### Evidência técnica do lote
+
+- [x] `npm run typecheck` passou.
+- [x] `npm run lint` passou.
+- [x] `npm run audit:questoes` passou: 1.359 questões, 0 duplicatas, 0 vazias,
+  0 contraditórias e 0 sem fonte; permanecem 20 comentários curtos em 13 itens.
+- [x] Nenhuma questão, migration, policy, mídia pública ou conteúdo privado foi
+  inserido/publicado neste lote.

@@ -29,8 +29,9 @@ export function listOpenRemediations(): Remediation[] {
 }
 
 export function recordQuestionAttempt(attempt: QuestionAttempt): Remediation | null {
-  write(ATTEMPTS_KEY, [...listQuestionAttempts(), attempt]);
-  const remediation = remediationForAttempt(attempt);
+  const normalizedAttempt = { ...attempt, id: attempt.id ?? crypto.randomUUID() };
+  write(ATTEMPTS_KEY, [...listQuestionAttempts(), normalizedAttempt]);
+  const remediation = remediationForAttempt(normalizedAttempt);
   if (remediation) write(REMEDIATIONS_KEY, [...read<Remediation[]>(REMEDIATIONS_KEY, []), remediation]);
   return remediation;
 }

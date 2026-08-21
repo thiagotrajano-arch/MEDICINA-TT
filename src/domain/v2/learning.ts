@@ -1,8 +1,10 @@
 export type QuestionConfidence = "low" | "medium" | "high";
 
 export interface QuestionAttempt {
+  id?: string;
   questionId: string;
   subtemaId: string;
+  selectedAlternativeLetter?: string;
   correct: boolean;
   confidence?: QuestionConfidence;
   elapsedMs?: number;

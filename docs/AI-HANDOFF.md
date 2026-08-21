@@ -987,3 +987,27 @@ associado automaticamente.
   persistência. A checagem de identidade owner-only continua separada da
   autenticação geral e não deve ser declarada concluída sem o identificador de
   proprietário configurado e o teste autorizado.
+
+## Execução das frentes de sincronização, reconciliação e cobertura — 2026-08-21
+
+- A auditoria atual confirmou 1.359 questões locais contra 1.072 no Supabase.
+  O novo script `npm run audit:questoes:reconciliar` compara os 287 IDs locais
+  ausentes por hash normalizado, fonte, tags e subtema; o relatório privado fica
+  em `exports/private/reconciliacao-questoes-2026-08-21.json`. Resultado: 287
+  candidatos novos, zero duplicatas por hash e zero falhas estruturais. Nenhuma
+  mutação remota foi executada.
+- A prática V2 agora registra a letra da alternativa marcada e o sincronizador
+  busca os IDs reais das alternativas antes de chamar `record_question_attempt_v2`.
+  Tentativas antigas sem alternativa ficam explicitamente pendentes; não são
+  enviadas com `null` para um RPC que rejeita esse formato.
+- A cobertura foi recalculada: 311 subtemas, 241 resumos, 1.359 questões e 61
+  casos vinculados; 70 subtemas sem resumo, 149 sem questão e 268 sem caso.
+- A camada privada tem 399 registros de mídia, 397 com subtema; o inventário
+  Drive remoto continua metadata-first com seis pastas-raiz inventariadas. A
+  camada curricular tem 37 componentes, 439 subtemas e 123 recursos.
+- `evidence_review`, `question_attempt_v2`, `recall_card` e `recall_state` estão
+  vazios na leitura remota atual. O Evidence Engine e a sincronização persistente
+  ainda não podem ser declarados concluídos sem sessão owner real e QA em dois
+  dispositivos, inclusive conflito/offline/idempotência server-side.
+- Typecheck, lint, auditoria de questões e reconciliação passaram. Alterações
+  locais ainda não foram publicadas; os arquivos privados continuam fora do Git.
