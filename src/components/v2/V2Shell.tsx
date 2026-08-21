@@ -26,6 +26,7 @@ export function V2Shell() {
   const due = dueRecallCards();
   const total = listRecallCards().length;
   const current = due[0];
+  const selectedQuestion = questoes.find((questao) => questao.id === questionId);
   const topicCards = recallCardsForTopic(subtemaId);
   const attempts = listQuestionAttempts();
   const remediations = listOpenRemediations();
@@ -86,6 +87,12 @@ export function V2Shell() {
     setVersion((value) => value + 1);
   }
 
+  function selectQuestion(id: string) {
+    setQuestionId(id);
+    const question = questoes.find((questao) => questao.id === id);
+    if (question?.subtemaId) setSubtemaId(question.subtemaId);
+  }
+
   async function sync() {
     setSyncMessage("Sincronizando…");
     try {
@@ -135,8 +142,8 @@ export function V2Shell() {
     <section className="mt-6 grid gap-6 lg:grid-cols-2">
       <form onSubmit={recordPractice} className="v2-card p-5 sm:p-6">
         <div className="v2-section-title"><div><p className="v2-eyebrow !text-accent">Prática</p><h2 className="mt-1">Registrar tentativa</h2></div><p>Gera remediação</p></div>
-        <label className="v2-label mt-5 block">Questão real<select value={questionId} onChange={(event) => setQuestionId(event.target.value)} required className="v2-input mt-2"><option value="" disabled>Selecione uma questão</option>{questoes.map((questao) => <option key={questao.id} value={questao.id}>{questao.id} · {questao.disciplinaId}</option>)}</select></label>
-        {questoes.find((questao) => questao.id === questionId) && <div className="mt-3 rounded-xl border border-border bg-surface-2 p-4 text-sm leading-6 text-text-muted">{questoes.find((questao) => questao.id === questionId)?.enunciado}</div>}
+        <label className="v2-label mt-5 block">Questão real<select value={questionId} onChange={(event) => selectQuestion(event.target.value)} required className="v2-input mt-2"><option value="" disabled>Selecione uma questão</option>{questoes.map((questao) => <option key={questao.id} value={questao.id}>{questao.id} · {questao.disciplinaId} · {questao.subtemaId ?? "sem subtema"}</option>)}</select></label>
+        {selectedQuestion && <div className="mt-3 rounded-xl border border-border bg-surface-2 p-4 text-sm leading-6 text-text-muted"><p>{selectedQuestion.enunciado}</p><p className="mt-2 text-xs font-semibold text-accent">Subtema vinculado automaticamente: {selectedQuestion.subtemaId ?? "não informado"}</p></div>}
         <label className="v2-label mt-3 block">Resultado<select value={String(correct)} onChange={(event) => setCorrect(event.target.value === "true")} className="v2-input mt-2"><option value="true">Acertei</option><option value="false">Errei</option></select></label>
         <label className="v2-label mt-3 block">Confiança<select value={confidence} onChange={(event) => setConfidence(event.target.value as QuestionConfidence)} className="v2-input mt-2"><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option></select></label>
         <button type="submit" className="v2-button-primary mt-4">Registrar tentativa</button>
