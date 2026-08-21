@@ -87,54 +87,57 @@ export function V2Shell() {
     }
   }
 
-  return <main className="mx-auto min-h-screen max-w-7xl bg-slate-50 px-4 py-6 text-slate-950 dark:bg-slate-950 dark:text-slate-50 sm:px-8">
-    <header className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4 dark:border-slate-800">
-      <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Codex Medicus V2</p><h1 className="text-2xl font-semibold">Learning OS privado</h1></div>
-      <div className="flex items-center gap-2"><span className="rounded-md border border-amber-300 bg-amber-50 px-3 py-1 text-xs text-amber-800">MVP local-first</span><button type="button" onClick={() => void sync()} className="rounded-md border border-slate-300 px-3 py-1 text-xs dark:border-slate-700">Sincronizar</button></div>
+  return <main className="v2-shell min-h-screen px-4 py-5 text-text sm:px-8 sm:py-8">
+    <header className="v2-hero mx-auto mb-6 max-w-7xl rounded-[1.5rem] px-5 py-6 sm:px-8 sm:py-8">
+      <div className="flex flex-wrap items-start justify-between gap-6">
+        <div className="max-w-2xl"><p className="v2-eyebrow">Codex Medicus · V2</p><h1 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">Seu estudo, em uma direção clara.</h1><p className="mt-3 max-w-xl text-sm leading-6 text-white/75 sm:text-base">Uma área privada para transformar questões, erros e revisões em próximos passos concretos.</p></div>
+        <div className="flex flex-wrap items-center gap-2"><span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-bold text-white/80">Runtime privado</span><button type="button" onClick={() => void sync()} className="rounded-xl bg-white px-3.5 py-2 text-xs font-extrabold text-brand shadow-lg transition hover:-translate-y-px">Sincronizar agora</button></div>
+      </div>
+      <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/65"><span className="inline-flex items-center gap-2"><span className="size-2 rounded-full bg-aqua" />Local-first ativo</span><span>Histórico preservado</span><span>Owner-only</span></div>
     </header>
-    <p aria-live="polite" className="mb-4 text-xs text-slate-500">{syncMessage}</p>
-    <nav aria-label="Áreas do Codex" className="mb-8 flex flex-wrap gap-2">{areas.map((item) => <button key={item} type="button" onClick={() => setArea(item)} className={`rounded-md border px-3 py-2 text-sm ${area === item ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900"}`}>{item}</button>)}</nav>
-    <section className="grid gap-4 md:grid-cols-3">
-      <article className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"><p className="text-sm text-slate-500">Área ativa</p><p className="mt-2 text-xl font-semibold">{area}</p></article>
-      <article className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"><p className="text-sm text-slate-500">Cards locais</p><p className="mt-2 text-xl font-semibold">{total}</p></article>
-      <article className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"><p className="text-sm text-slate-500">Revisões vencidas</p><p className="mt-2 text-xl font-semibold">{due.length}</p></article>
+    <div className="mx-auto max-w-7xl">
+    <p aria-live="polite" className="mb-4 rounded-xl border border-border bg-surface px-4 py-3 text-xs text-text-muted shadow-sm">{syncMessage}</p>
+    <nav aria-label="Áreas do Codex" className="v2-nav mb-6">{areas.map((item) => <button key={item} type="button" data-active={area === item} onClick={() => setArea(item)}>{item}</button>)}</nav>
+    <section className="mb-7 grid gap-3 sm:grid-cols-3">
+      <article className="v2-kpi"><span>Área ativa</span><strong>{area}</strong><span className="text-accent">Seu foco de hoje</span></article>
+      <article className="v2-kpi"><span>Cards locais</span><strong>{total}</strong><span>Disponíveis no Recall</span></article>
+      <article className="v2-kpi"><span>Revisões vencidas</span><strong>{due.length}</strong><span>{due.length ? "Comece pelo mais antigo" : "Tudo em dia por enquanto"}</span></article>
     </section>
-    <section className="mt-6 rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-      <h2 className="text-lg font-semibold">Recall MVP</h2>
-      {current ? <><p className="mt-4 font-medium">{current.front}</p><details className="mt-3"><summary className="cursor-pointer text-sm text-slate-500">Mostrar resposta</summary><p className="mt-2 text-sm">{current.back}</p></details><div className="mt-5 flex flex-wrap gap-2">{(["again", "hard", "good", "easy"] as RecallRating[]).map((rating) => <button key={rating} type="button" onClick={() => review(rating)} className="rounded-md border border-slate-300 px-3 py-2 text-sm hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800">{rating}</button>)}</div></> : <p className="mt-3 text-sm text-slate-500">Nenhum card vencido no armazenamento local.</p>}
+    <section className="v2-card mb-6 p-5 sm:p-6">
+      <div className="v2-section-title"><div><p className="v2-eyebrow !text-accent">Revisão espaçada</p><h2 className="mt-1">Recall de hoje</h2></div><p>{due.length ? `${due.length} revisão(ões) na fila` : "Fila limpa"}</p></div>
+      {current ? <><p className="mt-5 text-lg font-bold leading-7 text-text">{current.front}</p><details className="mt-4 rounded-xl border border-border bg-surface-2 p-4"><summary className="cursor-pointer text-sm font-bold text-accent">Mostrar resposta</summary><p className="mt-3 text-sm leading-6 text-text-muted">{current.back}</p></details><div className="mt-5 flex flex-wrap gap-2">{(["again", "hard", "good", "easy"] as RecallRating[]).map((rating) => <button key={rating} type="button" onClick={() => review(rating)} className="v2-button-quiet">{rating}</button>)}</div></> : <p className="mt-4 rounded-xl bg-surface-2 p-4 text-sm text-text-muted">Nenhum card vencido no armazenamento local.</p>}
     </section>
-    <section className="mt-6 grid gap-6 lg:grid-cols-2">
-      <form onSubmit={createCard} className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-        <h2 className="text-lg font-semibold">Criar card local</h2>
-        <label className="mt-4 block text-sm">Subtema<input value={subtemaId} onChange={(event) => setSubtemaId(event.target.value)} required className="mt-1 block w-full rounded-md border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700" /></label>
-        <label className="mt-3 block text-sm">Tipo<select value={kind} onChange={(event) => setKind(event.target.value as RecallCardKind)} className="mt-1 block w-full rounded-md border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700"><option value="basic">Basic</option><option value="cloze">Cloze</option></select></label>
-        <label className="mt-3 block text-sm">Frente<textarea value={front} onChange={(event) => setFront(event.target.value)} required className="mt-1 block min-h-20 w-full rounded-md border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700" /></label>
-        <label className="mt-3 block text-sm">Verso<textarea value={back} onChange={(event) => setBack(event.target.value)} required className="mt-1 block min-h-20 w-full rounded-md border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700" /></label>
-        <button type="submit" className="mt-4 rounded-md bg-slate-900 px-4 py-2 text-sm text-white dark:bg-slate-100 dark:text-slate-900">Adicionar à fila</button>
+    <section className="grid gap-6 lg:grid-cols-2">
+      <form onSubmit={createCard} className="v2-card p-5 sm:p-6">
+        <div className="v2-section-title"><div><p className="v2-eyebrow !text-accent">Memória ativa</p><h2 className="mt-1">Criar card local</h2></div><p>Privado</p></div>
+        <label className="v2-label mt-5 block">Subtema<input value={subtemaId} onChange={(event) => setSubtemaId(event.target.value)} required className="v2-input mt-2" /></label>
+        <label className="v2-label mt-3 block">Tipo<select value={kind} onChange={(event) => setKind(event.target.value as RecallCardKind)} className="v2-input mt-2"><option value="basic">Basic</option><option value="cloze">Cloze</option></select></label>
+        <label className="v2-label mt-3 block">Frente<textarea value={front} onChange={(event) => setFront(event.target.value)} required className="v2-input mt-2 min-h-20" /></label>
+        <label className="v2-label mt-3 block">Verso<textarea value={back} onChange={(event) => setBack(event.target.value)} required className="v2-input mt-2 min-h-20" /></label>
+        <button type="submit" className="v2-button-primary mt-4">Adicionar à fila</button>
       </form>
-      <article className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-        <h2 className="text-lg font-semibold">Topic Hub local</h2>
-        <label className="mt-4 block text-sm">Título do subtema<input value={topicTitle} onChange={(event) => setTopicTitle(event.target.value)} className="mt-1 block w-full rounded-md border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700" /></label>
-        <p className="mt-4 text-sm"><span className="text-slate-500">Cards associados:</span> {topicCards.length}</p>
-        <p className="mt-2 text-sm"><span className="text-slate-500">Próxima ação:</span> {recommendation.reason}</p>
-        <p className="mt-2 text-xs text-slate-500">Questões, fontes, mídia e evidências serão conectadas ao adapter privado V2.</p>
+      <article className="v2-card p-5 sm:p-6">
+        <div className="v2-section-title"><div><p className="v2-eyebrow !text-accent">Organização</p><h2 className="mt-1">Topic Hub</h2></div><p>Contexto do foco</p></div>
+        <label className="v2-label mt-5 block">Título do subtema<input value={topicTitle} onChange={(event) => setTopicTitle(event.target.value)} className="v2-input mt-2" /></label>
+        <div className="mt-5 grid grid-cols-2 gap-3"><div className="v2-card-soft p-4"><p className="text-xs text-text-faint">Cards associados</p><p className="mt-1 text-2xl font-black text-text">{topicCards.length}</p></div><div className="v2-card-soft p-4"><p className="text-xs text-text-faint">Próxima ação</p><p className="mt-1 text-sm font-bold text-accent">{recommendation.reason}</p></div></div>
+        <p className="mt-5 text-xs leading-5 text-text-faint">Questões, fontes, mídia e evidências serão conectadas ao adapter privado V2.</p>
       </article>
     </section>
     <section className="mt-6 grid gap-6 lg:grid-cols-2">
-      <form onSubmit={recordPractice} className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-        <h2 className="text-lg font-semibold">Praticar e registrar erro</h2>
-        <label className="mt-4 block text-sm">ID da questão<input value={questionId} onChange={(event) => setQuestionId(event.target.value)} required className="mt-1 block w-full rounded-md border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700" /></label>
-        <label className="mt-3 block text-sm">Resultado<select value={String(correct)} onChange={(event) => setCorrect(event.target.value === "true")} className="mt-1 block w-full rounded-md border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700"><option value="true">Acertei</option><option value="false">Errei</option></select></label>
-        <label className="mt-3 block text-sm">Confiança<select value={confidence} onChange={(event) => setConfidence(event.target.value as QuestionConfidence)} className="mt-1 block w-full rounded-md border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700"><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option></select></label>
-        <button type="submit" className="mt-4 rounded-md bg-slate-900 px-4 py-2 text-sm text-white dark:bg-slate-100 dark:text-slate-900">Registrar tentativa</button>
-        <p className="mt-3 text-xs text-slate-500">A interface registra tentativa e cria remediação para erro ou baixa confiança.</p>
+      <form onSubmit={recordPractice} className="v2-card p-5 sm:p-6">
+        <div className="v2-section-title"><div><p className="v2-eyebrow !text-accent">Prática</p><h2 className="mt-1">Registrar tentativa</h2></div><p>Gera remediação</p></div>
+        <label className="v2-label mt-5 block">ID da questão<input value={questionId} onChange={(event) => setQuestionId(event.target.value)} required className="v2-input mt-2" /></label>
+        <label className="v2-label mt-3 block">Resultado<select value={String(correct)} onChange={(event) => setCorrect(event.target.value === "true")} className="v2-input mt-2"><option value="true">Acertei</option><option value="false">Errei</option></select></label>
+        <label className="v2-label mt-3 block">Confiança<select value={confidence} onChange={(event) => setConfidence(event.target.value as QuestionConfidence)} className="v2-input mt-2"><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option></select></label>
+        <button type="submit" className="v2-button-primary mt-4">Registrar tentativa</button>
+        <p className="mt-3 text-xs leading-5 text-text-faint">A interface registra a tentativa localmente e cria remediação para erro ou baixa confiança.</p>
       </form>
-      <article className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-        <h2 className="text-lg font-semibold">Hoje</h2>
-        <p className="mt-3 text-sm"><span className="text-slate-500">Tentativas locais:</span> {attempts.length}</p>
-        <p className="mt-2 text-sm"><span className="text-slate-500">Remediações abertas:</span> {remediations.length}</p>
-        {remediations.length > 0 ? <ul className="mt-4 space-y-2">{remediations.map((item) => <li key={item.id} className="flex items-center justify-between gap-3 rounded-md border border-slate-200 p-3 text-sm dark:border-slate-800"><span>{item.subtemaId}: {item.reason}</span><button type="button" onClick={() => { resolveRemediation(item.id); setVersion((value) => value + 1); }} className="rounded border border-slate-300 px-2 py-1 text-xs dark:border-slate-700">Concluir</button></li>)}</ul> : <p className="mt-4 text-sm text-slate-500">Sem remediações abertas.</p>}
+      <article className="v2-card p-5 sm:p-6">
+        <div className="v2-section-title"><div><p className="v2-eyebrow !text-accent">Acompanhamento</p><h2 className="mt-1">Hoje</h2></div><p>Sem perder o fio</p></div>
+        <div className="mt-5 grid grid-cols-2 gap-3"><div className="v2-card-soft p-4"><p className="text-xs text-text-faint">Tentativas locais</p><p className="mt-1 text-2xl font-black text-text">{attempts.length}</p></div><div className="v2-card-soft p-4"><p className="text-xs text-text-faint">Remediações abertas</p><p className="mt-1 text-2xl font-black text-text">{remediations.length}</p></div></div>
+        {remediations.length > 0 ? <ul className="mt-4 space-y-2">{remediations.map((item) => <li key={item.id} className="flex items-center justify-between gap-3 rounded-xl border border-border bg-surface-2 p-3 text-sm"><span className="text-text-muted">{item.subtemaId}: {item.reason}</span><button type="button" onClick={() => { resolveRemediation(item.id); setVersion((value) => value + 1); }} className="v2-button-quiet">Concluir</button></li>)}</ul> : <p className="mt-4 rounded-xl bg-surface-2 p-4 text-sm text-text-muted">Sem remediações abertas.</p>}
       </article>
     </section>
+    </div>
   </main>;
 }

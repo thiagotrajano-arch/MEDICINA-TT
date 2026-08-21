@@ -130,7 +130,7 @@ export function AppShell({
       </div>
 
       <div className="flex h-[100dvh] min-w-0 flex-col overflow-hidden transition-[padding] duration-200 lg:h-auto lg:min-h-screen lg:overflow-visible lg:pl-[var(--shell-sidebar-w)]">
-        <header className="z-30 flex min-h-[68px] shrink-0 items-center gap-3 border-b border-border bg-bg/90 px-4 backdrop-blur-xl sm:px-6 lg:sticky lg:top-0">
+        <header className="shell-header z-30 flex min-h-[68px] shrink-0 items-center gap-3 border-b border-border px-4 backdrop-blur-xl sm:px-6 lg:sticky lg:top-0">
           <button
             type="button"
             className="grid size-11 shrink-0 place-items-center rounded-xl text-text-muted hover:bg-surface-2 lg:hidden"
@@ -176,10 +176,10 @@ export function AppShell({
           </div>
         </header>
 
-        <main className="min-h-0 flex-1 overflow-y-auto pb-4 lg:overflow-visible lg:pb-0">{children}</main>
+        <main className="shell-main min-h-0 flex-1 overflow-y-auto pb-4 lg:overflow-visible lg:pb-0">{children}</main>
 
         <nav
-          className="relative z-30 mx-3 mb-[max(0.75rem,env(safe-area-inset-bottom))] grid max-w-md shrink-0 grid-cols-5 rounded-2xl border border-border bg-surface p-1.5 shadow-xl sm:mx-auto sm:w-full lg:hidden"
+          className="shell-mobile-nav relative z-30 mx-3 mb-[max(0.75rem,env(safe-area-inset-bottom))] grid max-w-md shrink-0 grid-cols-5 rounded-2xl border border-border p-1.5 shadow-xl sm:mx-auto sm:w-full lg:hidden"
           aria-label="Áreas principais"
         >
           <AtalhoMobile href="/" label="Hoje" icon={Home} ativo={area.id === "hoje"} />

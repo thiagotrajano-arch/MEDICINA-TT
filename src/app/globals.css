@@ -191,3 +191,44 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* ─────────────────────────────────────────────
+   Design V2 — superfície de produto
+   Uma camada semântica para manter as telas coesas enquanto o conteúdo
+   clínico e os módulos privados continuam evoluindo separadamente.
+   ───────────────────────────────────────────── */
+.shell-header {
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--border) 70%, transparent);
+}
+.shell-main { background: radial-gradient(circle at 78% 0%, color-mix(in srgb, var(--accent-soft) 30%, transparent), transparent 30%), var(--bg); }
+.shell-mobile-nav { backdrop-filter: blur(18px); background: color-mix(in srgb, var(--surface) 90%, transparent); }
+.v2-shell { background: radial-gradient(circle at 88% 0%, color-mix(in srgb, var(--aqua-soft) 75%, transparent), transparent 28%), radial-gradient(circle at 0% 40%, color-mix(in srgb, var(--accent-soft) 35%, transparent), transparent 26%), var(--bg); }
+.v2-hero { position: relative; overflow: hidden; border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border)); background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 96%, #061b29), color-mix(in srgb, var(--accent) 70%, var(--brand))); color: #f6fbff; box-shadow: 0 22px 60px color-mix(in srgb, var(--brand) 18%, transparent); }
+.v2-hero::after { content: ""; position: absolute; width: 22rem; height: 22rem; right: -7rem; top: -10rem; border-radius: 999px; background: radial-gradient(circle, color-mix(in srgb, var(--aqua) 55%, transparent), transparent 68%); pointer-events: none; }
+.v2-hero > * { position: relative; z-index: 1; }
+.v2-eyebrow { color: var(--aqua); font-size: .68rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.v2-card { border: 1px solid var(--border); border-radius: 1.25rem; background: color-mix(in srgb, var(--surface) 94%, transparent); box-shadow: var(--shadow); }
+.v2-card-soft { border: 1px solid var(--border); border-radius: 1.25rem; background: color-mix(in srgb, var(--surface-2) 72%, var(--surface)); }
+.v2-kpi { display: flex; min-height: 7.25rem; flex-direction: column; justify-content: space-between; gap: .65rem; border: 1px solid var(--border); border-radius: 1rem; padding: 1rem; background: var(--surface); box-shadow: var(--shadow); }
+.v2-kpi strong { font-size: 1.65rem; letter-spacing: -.04em; color: var(--text); }
+.v2-kpi span { color: var(--text-faint); font-size: .72rem; font-weight: 700; }
+.v2-section-title { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
+.v2-section-title h2 { color: var(--text); font-size: 1.05rem; font-weight: 800; letter-spacing: -.02em; }
+.v2-section-title p { color: var(--text-faint); font-size: .78rem; }
+.v2-label { color: var(--text-muted); font-size: .76rem; font-weight: 750; }
+.v2-input { width: 100%; border: 1px solid var(--border); border-radius: .8rem; background: var(--bg); color: var(--text); padding: .72rem .85rem; outline: none; transition: border-color .18s ease, box-shadow .18s ease, background .18s ease; }
+.v2-input:focus { border-color: var(--accent); background: var(--surface); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 15%, transparent); }
+.v2-button-primary { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; border-radius: .8rem; background: var(--accent); color: var(--accent-contrast); padding: .68rem 1rem; font-size: .8rem; font-weight: 800; transition: transform .18s ease, filter .18s ease, box-shadow .18s ease; box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 22%, transparent); }
+.v2-button-primary:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.v2-button-quiet { border: 1px solid var(--border); border-radius: .8rem; background: var(--surface); color: var(--text-muted); padding: .65rem .9rem; font-size: .78rem; font-weight: 750; transition: background .18s ease, color .18s ease, border-color .18s ease; }
+.v2-button-quiet:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.v2-nav { display: flex; flex-wrap: wrap; gap: .4rem; border: 1px solid var(--border); border-radius: 1rem; padding: .35rem; background: color-mix(in srgb, var(--surface) 88%, transparent); box-shadow: var(--shadow); }
+.v2-nav button { border-radius: .7rem; padding: .58rem .8rem; color: var(--text-faint); font-size: .78rem; font-weight: 750; transition: background .18s ease, color .18s ease; }
+.v2-nav button[data-active="true"] { background: var(--brand); color: var(--brand-contrast); box-shadow: 0 5px 14px color-mix(in srgb, var(--brand) 20%, transparent); }
+@media (max-width: 640px) {
+  .v2-hero { border-radius: 1.35rem; }
+  .v2-kpi { min-height: 6.5rem; }
+  .v2-nav { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
+  .v2-nav button { flex: none; }
+}
