@@ -1,3 +1,4 @@
+import { createBrowserClient } from "@supabase/ssr";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 export { isSupabaseConfigured } from "./config";
@@ -24,11 +25,13 @@ export function getSupabaseAnon(): SupabaseClient {
     if (!url || !anonKey) {
       throw new Error("Missing public Supabase configuration.");
     }
-    anon = createClient(
-      url,
-      anonKey,
-      { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } }
-    );
+    const auth = { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true };
+    // O cliente que roda no navegador precisa persistir a sessão em cookies
+    // compatíveis com o Proxy SSR. O cliente server-side continua usando o
+    // cliente básico, para não tentar acessar document/cookies do browser.
+    anon = typeof window === "undefined"
+      ? createClient(url, anonKey, { auth })
+      : createBrowserClient(url, anonKey, { auth });
   }
   return anon;
 }
