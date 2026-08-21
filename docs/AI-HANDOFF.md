@@ -944,3 +944,15 @@ associado automaticamente.
   dos 287 candidatos locais de questões e triagem dos subtemas sem resumo,
   questão ou caso. Não declarar o site inteiro como privado até esses gates
   passarem.
+
+### Incremento posterior da retomada
+
+- `b1ea8be` corrigiu a prática V2 para preencher automaticamente o `subtemaId`
+  da questão escolhida no catálogo real; a interface mostra o vínculo antes do
+  registro da tentativa.
+- Typecheck, lint, `git diff --check` e build local passaram; a build gerou
+  427/427 páginas. O deploy de produção `dpl_421EfvBVsAKX6kyDEwnFbi2K3yhE`
+  ficou `READY` e foi aliasado para `https://medicina-tt.vercel.app`.
+- Rotas verificadas após esse deploy: `/`, `/v2/`, `/questoes/` e
+  `/biblioteca/oncologia/`, todas HTTP 200. A inspeção do deploy confirmou
+  target `production` e status `Ready`.

@@ -631,3 +631,11 @@ caso existente continua sem vínculo e precisa de revisão manual.
   privado.
 - [ ] Reconciliar os 287 candidatos locais de questões por ID, fonte, tags,
   subtema e hash; não inserir automaticamente sem evidência.
+
+### Incremento V2 — 2026-08-21
+
+- [x] Associar automaticamente a tentativa V2 ao `subtemaId` da questão real
+  selecionada, preservando a fila local-first e a remediação contextual.
+- [x] Validar typecheck, lint, diff e build de 427 páginas.
+- [x] Publicar o commit `b1ea8be` no deploy Vercel de produção
+  `dpl_421EfvBVsAKX6kyDEwnFbi2K3yhE` e conferir as rotas principais.
