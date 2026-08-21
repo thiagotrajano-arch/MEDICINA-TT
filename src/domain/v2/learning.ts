@@ -7,6 +7,7 @@ export interface QuestionAttempt {
   confidence?: QuestionConfidence;
   elapsedMs?: number;
   attemptedAt: string;
+  legacyResponseId?: string;
 }
 
 export interface Remediation {
@@ -23,4 +24,3 @@ export function remediationForAttempt(attempt: QuestionAttempt): Remediation | n
   if (!reason) return null;
   return { id: `rem-${attempt.questionId}-${attempt.attemptedAt}`, subtemaId: attempt.subtemaId, sourceQuestionId: attempt.questionId, reason, status: "open", createdAt: attempt.attemptedAt };
 }
-

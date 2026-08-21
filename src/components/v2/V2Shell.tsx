@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { dueRecallCards, listRecallCards, recallCardsForTopic, reviewRecallCard, saveRecallCard } from "@/lib/v2/recall-local";
-import { listOpenRemediations, listQuestionAttempts, recordQuestionAttempt, resolveRemediation } from "@/lib/v2/question-local";
+import { listOpenRemediations, listQuestionAttempts, migrateLegacyQuestionHistory, recordQuestionAttempt, resolveRemediation } from "@/lib/v2/question-local";
 import { syncV2LocalFirst } from "@/lib/v2/sync";
 import { recommendNext } from "@/domain/v2";
 import type { QuestionConfidence, RecallCardKind, RecallRating } from "@/domain/v2";
@@ -34,6 +34,15 @@ export function V2Shell() {
     counts: { summaries: 0, questions: 0, cases: 0, recall: topicCards.length, media: 0, evidence: 0 },
     mastery: { correctRate: 1, attempts: 0, dueRecall: topicCards.filter((card) => new Date(card.dueAt) <= new Date()).length },
   });
+
+  useEffect(() => {
+    void migrateLegacyQuestionHistory().then((imported) => {
+      if (imported > 0) {
+        setSyncMessage(`${imported} respostas antigas importadas para a fila V2. Clique em Sincronizar para enviar.`);
+        setVersion((value) => value + 1);
+      }
+    }).catch(() => undefined);
+  }, []);
 
   function review(rating: RecallRating) {
     if (!current) return;

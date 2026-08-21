@@ -54,7 +54,7 @@ export async function syncV2LocalFirst(): Promise<V2SyncResult> {
       p_confidence: attempt.confidence ?? null,
       p_error_type: attempt.correct ? null : "other", p_response_ms: attempt.elapsedMs ?? null,
       p_changed_answer: false, p_clinical_axis: null, p_source_mode: "v2-local-mvp",
-      p_session_id: null, p_legacy_response_id: null, p_metadata: { attempted_at: attempt.attemptedAt },
+      p_session_id: null, p_legacy_response_id: attempt.legacyResponseId ?? null, p_metadata: { attempted_at: attempt.attemptedAt },
     });
     if (error) errors.push(`attempt:${attempt.questionId}:${error.message}`); else syncedAttempts += 1;
   }
