@@ -88,6 +88,9 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
               <Link href="/agenda" className="inline-flex min-h-11 items-center rounded-xl border border-border-strong bg-surface px-5 py-2.5 text-sm font-bold text-text-muted transition-colors hover:border-accent hover:text-accent">
                 Planejar meu dia
               </Link>
+              <Link href="/v2" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-accent/35 bg-accent-soft/50 px-5 py-2.5 text-sm font-bold text-accent transition-colors hover:border-accent hover:bg-accent-soft">
+                Abrir Painel V2 <ArrowRight className="size-4" />
+              </Link>
             </div>
           </div>
 
