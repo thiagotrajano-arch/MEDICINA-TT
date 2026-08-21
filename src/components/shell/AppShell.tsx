@@ -29,7 +29,7 @@ const CommandPalette = dynamic(
 );
 
 const AREAS = [
-  { id: "hoje", label: "Hoje", href: "/", rotas: ["/"] },
+  { id: "hoje", label: "Hoje", href: "/", rotas: ["/", "/v2"] },
   { id: "aprender", label: "Aprender", href: "/biblioteca", rotas: ["/biblioteca", "/estudar", "/casos", "/mapas-mentais", "/midia", "/minha-midia"] },
   { id: "praticar", label: "Praticar", href: "/questoes", rotas: ["/questoes", "/simulado"] },
   { id: "revisar", label: "Revisar", href: "/agenda", rotas: ["/agenda"] },
@@ -212,6 +212,7 @@ function nomeDaRota(pathname: string): string {
     "/semestres": "Semestres",
     "/meu-curso": "Meu curso",
     "/estudar": "Leitura",
+    "/v2": "Painel V2",
   };
   if (pathname === "/") return "Hoje";
   return Object.entries(mapa).find(([prefixo]) => pathname.startsWith(prefixo))?.[1] ?? "Conhecimento";

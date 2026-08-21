@@ -23,7 +23,7 @@ import { cn } from "@/lib/cn";
 import type { Disciplina, GrupoDisciplina } from "@/domain/content/types";
 
 const AREAS = [
-  { id: "hoje", href: "/", label: "Hoje", descricao: "Foco e progresso", icon: Home, rotas: ["/"] },
+  { id: "hoje", href: "/", label: "Hoje", descricao: "Foco e progresso", icon: Home, rotas: ["/", "/v2"] },
   { id: "aprender", href: "/biblioteca", label: "Aprender", descricao: "Resumos, casos e mídia", icon: BookOpen, rotas: ["/biblioteca", "/estudar", "/casos", "/mapas-mentais", "/midia", "/minha-midia"] },
   { id: "praticar", href: "/questoes", label: "Praticar", descricao: "Questões e simulados", icon: ListChecks, rotas: ["/questoes", "/simulado"] },
   { id: "revisar", href: "/agenda", label: "Revisar", descricao: "Agenda e pendências", icon: RotateCcw, rotas: ["/agenda"] },
@@ -33,6 +33,7 @@ const AREAS = [
 const CONTEXTO: Record<string, { href: string; label: string; icon: React.ElementType; privado?: boolean }[]> = {
   hoje: [
     { href: "/", label: "Visão do dia", icon: Home },
+    { href: "/v2", label: "Painel V2", icon: Sparkles },
   ],
   revisar: [
     { href: "/agenda", label: "Agenda", icon: CalendarDays, privado: true },
