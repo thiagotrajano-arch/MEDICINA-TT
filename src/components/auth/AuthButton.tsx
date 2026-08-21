@@ -20,6 +20,11 @@ async function sincronizarTudo(): Promise<void> {
   ]);
 }
 
+function destinoDepoisDoLogin(): string {
+  const destino = new URLSearchParams(window.location.search).get("next");
+  return destino && destino.startsWith("/") && !destino.startsWith("//") ? destino : "/";
+}
+
 function comPrazo<T>(operacao: PromiseLike<T>, milissegundos = 15000): Promise<T> {
   return new Promise((resolve, reject) => {
     const timer = window.setTimeout(
@@ -107,7 +112,7 @@ export function AuthButton() {
   );
 }
 
-function AuthDialog({ onClose, modoInicial }: { onClose: () => void; modoInicial: ModoAuth }) {
+export function AuthDialog({ onClose, modoInicial }: { onClose: () => void; modoInicial: ModoAuth }) {
   const [modo, setModo] = useState<ModoAuth>(modoInicial);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -128,7 +133,7 @@ function AuthDialog({ onClose, modoInicial }: { onClose: () => void; modoInicial
         if (error) setMensagem(error.message === "Invalid login credentials" ? "E-mail ou senha inválidos." : error.message);
         else {
           await sincronizarTudo();
-          window.location.reload();
+          window.location.assign(destinoDepoisDoLogin());
         }
       } else if (modo === "criar") {
         const { data, error } = await comPrazo(
@@ -138,7 +143,7 @@ function AuthDialog({ onClose, modoInicial }: { onClose: () => void; modoInicial
         else if (!data.session) setMensagem("Cadastro criado. Confirme o e-mail recebido e depois entre.");
         else {
           await sincronizarTudo();
-          window.location.reload();
+          window.location.assign(destinoDepoisDoLogin());
         }
       } else if (modo === "recuperar") {
         const { error } = await comPrazo(
