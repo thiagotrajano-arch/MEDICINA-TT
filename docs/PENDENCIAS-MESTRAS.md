@@ -615,3 +615,19 @@ Auditoria após este lote: 234 resumos, 1.338 questões e 57 casos vinculados a
 subtemas; permanecem 70 subtemas sem resumo, 149 sem questão e 265 sem caso.
 O número histórico de 266 sem caso foi reduzido por dois casos novos, mas um
 caso existente continua sem vínculo e precisa de revisão manual.
+
+## Estado executado — 2026-08-21
+
+- [x] Publicar o shell e o dashboard V2 com o design system aplicado.
+- [x] Conectar a prática V2 ao catálogo real de 1.359 questões.
+- [x] Expor o Painel V2 na navegação principal e corrigir a identificação da
+  área na rota `/v2`.
+- [x] Gerar e publicar 427 páginas no deploy de produção atual.
+- [ ] Aplicar o redesign às rotas legadas restantes, começando por Biblioteca,
+  Questões e Casos.
+- [ ] Executar QA real owner/non-owner/anon no navegador e confirmar a
+  persistência em dois dispositivos.
+- [ ] Fechar o guard server-side e só então declarar o runtime integralmente
+  privado.
+- [ ] Reconciliar os 287 candidatos locais de questões por ID, fonte, tags,
+  subtema e hash; não inserir automaticamente sem evidência.

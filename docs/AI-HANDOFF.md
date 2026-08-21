@@ -917,3 +917,30 @@ associado automaticamente.
 - Única ressalva curricular: os dez vínculos neurológicos de semestre continuam
   aguardando evidência SISCAD; não afetam a fila de revisão e não foram
   inferidos.
+
+## Retomada V2 — 2026-08-21
+
+- A branch ativa é `codex/f0-v2-diagnostico`; o checkout estava limpo após o
+  commit `77287f8`.
+- `65d0fe4` conectou a prática V2 ao catálogo real de 1.359 questões. O
+  formulário V2 agora seleciona a questão pelo ID/disciplina e exibe uma
+  prévia do enunciado; a migração do histórico legado continua sem apagar a
+  fonte antiga nem duplicar respostas.
+- `e8a919f` aplicou o design system V2 ao shell e ao dashboard; `77287f8`
+  tornou o Painel V2 descobrível na navegação principal e corrigiu o estado da
+  área quando a rota é `/v2`.
+- O commit `77287f8` foi enviado ao GitHub e publicado em produção no deploy
+  Vercel `dpl_Bbbo5GrAuPAx5HTYu5jiP5kjmNhj`; o alias atual continua
+  `https://medicina-tt.vercel.app`.
+- Verificação pública pós-deploy: `/`, `/v2/` e
+  `/biblioteca/oncologia/` responderam HTTP 200; a build remota gerou 427/427
+  páginas. A build local também passou e `git diff --check` ficou limpo.
+- O redesign integral das rotas legadas ainda não está concluído: shell e V2
+  estão atualizados, mas Biblioteca, Questões, Casos, Agenda e Curso ainda
+  precisam receber a mesma camada visual de forma progressiva.
+- Pendências que continuam bloqueando o fechamento do produto: guard de
+  autenticação server-side/owner-only, QA autenticada em navegador e dois
+  dispositivos, persistência Supabase verificada ao vivo, reconciliação segura
+  dos 287 candidatos locais de questões e triagem dos subtemas sem resumo,
+  questão ou caso. Não declarar o site inteiro como privado até esses gates
+  passarem.
