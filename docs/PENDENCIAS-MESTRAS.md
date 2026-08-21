@@ -639,3 +639,10 @@ caso existente continua sem vínculo e precisa de revisão manual.
 - [x] Validar typecheck, lint, diff e build de 427 páginas.
 - [x] Publicar o commit `b1ea8be` no deploy Vercel de produção
   `dpl_421EfvBVsAKX6kyDEwnFbi2K3yhE` e conferir as rotas principais.
+
+### Acabamento da home — 2026-08-21
+
+- [x] Adicionar o link explícito para o Painel V2 na primeira dobra da home,
+  sem retirar os fluxos existentes.
+- [x] Publicar `cd4cdf1` no deploy Vercel
+  `dpl_BaJbgwXZ7kohgUTcwZc9WGVvVZhm` e verificar as rotas principais.

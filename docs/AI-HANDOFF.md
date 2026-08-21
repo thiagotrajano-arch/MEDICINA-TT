@@ -956,3 +956,12 @@ associado automaticamente.
 - Rotas verificadas após esse deploy: `/`, `/v2/`, `/questoes/` e
   `/biblioteca/oncologia/`, todas HTTP 200. A inspeção do deploy confirmou
   target `production` e status `Ready`.
+
+### Acabamento da home — 2026-08-21
+
+- `cd4cdf1` adicionou o acesso explícito ao Painel V2 no primeiro bloco da
+  home, mantendo o fluxo legado de Questões e Agenda.
+- Typecheck, lint, diff e build passaram novamente; a produção foi atualizada
+  no deploy `dpl_BaJbgwXZ7kohgUTcwZc9WGVvVZhm`, `READY`, alias
+  `https://medicina-tt.vercel.app`. Home, `/v2/` e `/questoes/` responderam
+  HTTP 200 após a publicação.
