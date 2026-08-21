@@ -14,21 +14,24 @@ export default async function CasosPage() {
   const marcaDisc = (id: string) => disciplinas.find((d) => d.id === id)?.marca ?? "";
 
   return (
-    <div className="mx-auto max-w-4xl px-5 py-8 sm:px-8 sm:py-10">
-      <h1 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-text">
+    <div className="legacy-page">
+      <header className="legacy-hero">
+      <p className="legacy-eyebrow">Raciocínio clínico guiado</p>
+      <h1 className="mt-2 flex items-center gap-2 text-2xl font-bold tracking-tight text-text sm:text-3xl">
         <Stethoscope className="size-6 text-accent" /> Casos clínicos
       </h1>
-      <p className="mt-1.5 max-w-2xl text-[15px] text-text-muted">
+      <p className="mt-2 max-w-2xl text-[15px] leading-6 text-text-muted">
         Formato das provas do Einstein: o caso é revelado por etapas e, a cada
         uma, você decide antes de ver a resposta. Treina o raciocínio, não a memória.
       </p>
+      </header>
 
-      <div className="mt-7 grid gap-3 sm:grid-cols-2">
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
         {casos.map((c) => (
           <Link
             key={c.id}
             href={`/casos/${c.id}`}
-            className="group flex flex-col rounded-2xl border border-border bg-surface p-5 transition-all hover:border-accent"
+            className="legacy-card group flex flex-col p-5"
             style={{ boxShadow: "var(--shadow)" }}
           >
             <div className="mb-2 flex items-center gap-2">
@@ -52,7 +55,7 @@ export default async function CasosPage() {
       </div>
 
       {casos.length === 0 && (
-        <p className="mt-10 text-center text-sm text-text-faint">Nenhum caso clínico ainda.</p>
+        <p className="legacy-empty mt-6 text-center">Nenhum caso clínico ainda.</p>
       )}
     </div>
   );

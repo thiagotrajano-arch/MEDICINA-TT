@@ -155,13 +155,13 @@ export function MidiaPrivadaClient() {
     );
   }, [filtroDisciplina, filtroTema, itens]);
 
-  if (autenticado === null) return <div className="mx-auto max-w-4xl px-5 py-12 text-sm text-text-muted">Verificando sua sessão...</div>;
+  if (autenticado === null) return <div className="legacy-page max-w-4xl"><p role="status" aria-live="polite" className="legacy-loading">Verificando sua sessão...</p></div>;
   if (!autenticado) return <Bloqueio />;
-  return <div className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-10">
-    <header className="rounded-2xl border border-border bg-surface p-6 sm:p-8" style={{ boxShadow: "var(--shadow)" }}>
-      <div className="flex items-start gap-4"><span className="rounded-xl bg-accent p-3 text-accent-contrast"><LockKeyhole className="size-7" /></span><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Biblioteca da sua conta</p><h1 className="mt-2 text-3xl font-bold text-text">Minha mídia</h1><p className="mt-3 max-w-3xl text-sm leading-6 text-text-muted">Todo material que você importar fica reunido aqui, com disciplina, subtema, achado e referência de origem. O acesso é somente seu e cada visualização usa um link temporário.</p></div></div>
+  return <div className="legacy-page max-w-6xl">
+    <header className="legacy-hero p-6 sm:p-8">
+      <div className="flex items-start gap-4"><span className="rounded-xl bg-accent p-3 text-accent-contrast"><LockKeyhole className="size-7" /></span><div><p className="legacy-eyebrow">Biblioteca da sua conta</p><h1 className="mt-2 text-3xl font-bold text-text">Minha mídia</h1><p className="mt-3 max-w-3xl text-sm leading-6 text-text-muted">Todo material que você importar fica reunido aqui, com disciplina, subtema, achado e referência de origem. O acesso é somente seu e cada visualização usa um link temporário.</p></div></div>
     </header>
-    {mensagem && <p role="status" className="mt-5 rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-text-muted">{mensagem}</p>}
+    {mensagem && <p role="status" aria-live="polite" className="legacy-section mt-5 bg-surface-2 px-4 py-3 text-sm text-text-muted">{mensagem}</p>}
     <section className="mt-6 grid gap-4 md:grid-cols-3"><Regra titulo="Um só lugar" texto="Imagem aberta, própria, comercial ou de estudo fica na mesma biblioteca autenticada, organizada por filtros." /><Regra titulo="Proveniência visível" texto="A origem e a página ficam registradas para você revisar e citar corretamente." /><Regra titulo="Proteção mantida" texto="A referência não transforma material restrito em público: a biblioteca continua protegida e fora do GitHub Pages." /></section>
     <section className="mt-6 rounded-2xl border border-border bg-surface p-5 sm:p-6"><div className="flex items-start gap-3"><span className="rounded-xl bg-surface-2 p-2.5 text-accent"><ShieldCheck className="size-5" /></span><div><h2 className="text-lg font-bold text-text">Curadoria automática</h2><p className="mt-2 max-w-3xl text-sm leading-6 text-text-muted">Nos lotes de acervo, o Codex identifica imagens clinicamente úteis, registra a fonte e correlaciona disciplina, tema, subtema, achado e modalidade. A biblioteca pública continua reservada a conteúdo com permissão de redistribuição; aqui você pode manter seu acervo de estudo completo.</p></div></div></section>
     <CatalogoMateriaisPrivados />

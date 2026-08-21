@@ -154,8 +154,8 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
   if (!autenticado) return <BloqueioPrivado />;
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-10">
-      <header className="rounded-2xl border border-border bg-surface p-6 sm:p-8" style={{ boxShadow: "var(--shadow)" }}>
+    <div className="legacy-page max-w-6xl">
+      <header className="legacy-hero p-6 sm:p-8">
         <div className="flex items-start gap-4"><span className="rounded-xl bg-accent p-3 text-accent-contrast"><LockKeyhole className="size-7" /></span><div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Espaco autenticado</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-text">Meu curso privado</h1>
@@ -163,7 +163,7 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
         </div></div>
       </header>
 
-      {mensagem && <p role="status" className="mt-5 rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-text-muted">{mensagem}</p>}
+      {mensagem && <p role="status" aria-live="polite" className="legacy-section mt-5 bg-surface-2 px-4 py-3 text-sm text-text-muted">{mensagem}</p>}
 
       <section aria-label="Cobertura publica das disciplinas registradas" className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Metrica icone={<BookOpen className="size-4" />} valor={cobertura.resumos} legenda="resumos" />
@@ -174,7 +174,7 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
 
       <MapaCurricularPrivado />
 
-      <section className="mt-6 rounded-2xl border border-border bg-surface p-5 sm:p-6" style={{ boxShadow: "var(--shadow)" }}>
+      <section className="legacy-section p-5 sm:p-6">
         <div className="flex items-start gap-3"><MapPinned className="mt-0.5 size-5 shrink-0 text-accent" /><div><h2 className="text-lg font-bold text-text">Proximos estudos</h2><p className="mt-1 text-sm text-text-muted">Priorizacao local baseada no status e dificuldade que voce registrou, ligada somente ao conteudo publico ja publicado.</p></div></div>
         {!prioridades.length ? <p className="mt-4 text-sm text-text-muted">Registre uma disciplina para receber sugestoes de revisao com links diretos.</p> : <div className="mt-4 grid gap-3 lg:grid-cols-3">{prioridades.map(({ registro, recurso }) => {
           const topico = recurso.topicosRecomendados[0];
@@ -183,7 +183,7 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
       </section>
 
       <section className="mt-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(340px,0.85fr)]">
-        <form onSubmit={salvarManual} className="rounded-2xl border border-border bg-surface p-5 sm:p-6" style={{ boxShadow: "var(--shadow)" }}>
+        <form onSubmit={salvarManual} className="legacy-section p-5 sm:p-6">
           <h2 className="flex items-center gap-2 text-lg font-bold text-text"><Plus className="size-5 text-accent" /> Atualizacao manual</h2>
           <p className="mt-1 text-sm text-text-muted">O rascunho fica neste dispositivo ate voce salvar ou trocar de registro.</p>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -198,7 +198,7 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
           <button disabled={salvando} className="mt-5 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-bold text-accent-contrast disabled:opacity-60"><Save className="size-4" /> {salvando ? "Salvando..." : "Confirmar e salvar"}</button>
         </form>
 
-        <section className="rounded-2xl border border-border bg-surface p-5 sm:p-6" style={{ boxShadow: "var(--shadow)" }}>
+        <section className="legacy-section p-5 sm:p-6">
           <h2 className="flex items-center gap-2 text-lg font-bold text-text"><FileUp className="size-5 text-accent" /> Importar com revisao</h2>
           <p className="mt-1 text-sm text-text-muted">Cole uma tabela Markdown ou CSV. Arquivos e texto nao sao enviados ate a confirmacao final.</p>
           <div className="mt-4 flex flex-wrap gap-3"><label className="text-xs font-semibold text-text-muted">Formato<select value={formatoImportacao} onChange={(e) => { setFormatoImportacao(e.target.value as FormatoImportacao); setPreview([]); }} className={`${input} mt-1`}><option value="markdown">Markdown</option><option value="csv">CSV</option></select></label><label className="cursor-pointer text-xs font-semibold text-accent">Ler arquivo local<input type="file" accept=".md,.markdown,.csv,text/markdown,text/csv" className="sr-only" onChange={lerArquivo} /></label></div>
@@ -208,12 +208,12 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
         </section>
       </section>
 
-      <section className="mt-6 rounded-2xl border border-border bg-surface p-5 sm:p-6" style={{ boxShadow: "var(--shadow)" }}>
+      <section className="legacy-section p-5 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-3"><h2 className="flex items-center gap-2 text-lg font-bold text-text"><BookOpen className="size-5 text-accent" /> Disciplinas registradas</h2>{disciplinas.length > 0 && <div className="flex flex-wrap items-center gap-1 rounded-lg bg-surface-2 p-1 text-xs"><ListFilter className="ml-1 size-3 text-text-faint" />{(["todos", ...STATUS_CURSO] as FiltroStatus[]).map((status) => <button key={status} aria-pressed={filtroStatus === status} onClick={() => salvarFiltros(status, filtroPeriodo)} className={`rounded-md px-2 py-1 font-semibold ${filtroStatus === status ? "bg-surface text-accent shadow-sm" : "text-text-muted hover:text-text"}`}>{status === "todos" ? "Todas" : STATUS_LABEL[status]}</button>)}<label className="sr-only" htmlFor="filtro-periodo">Filtrar período</label><select id="filtro-periodo" value={filtroPeriodo} onChange={(e) => salvarFiltros(filtroStatus, e.target.value)} className="rounded-md border border-border bg-surface px-2 py-1 text-xs text-text"><option value="todos">Todos os períodos</option>{Array.from({ length: 12 }, (_, i) => String(i + 1)).map((periodo) => <option key={periodo} value={periodo}>{periodo}º período</option>)}</select></div>}</div>
         {!disciplinas.length ? <p className="mt-3 text-sm text-text-muted">Nenhuma disciplina privada registrada ainda.</p> : !disciplinasFiltradas.length ? <p className="mt-3 text-sm text-text-muted">Nenhuma disciplina com este status.</p> : <div className="mt-4 grid gap-3 md:grid-cols-2">{disciplinasFiltradas.map((item) => { const disciplina = porId.get(item.disciplinaId); return <article key={item.disciplinaId} className="rounded-xl border border-border bg-surface-2 p-4"><div className="flex items-start gap-3"><span className="grid size-8 place-items-center rounded-lg bg-accent-soft text-xs font-bold text-accent">{disciplina?.marca ?? "CM"}</span><div className="min-w-0 flex-1"><h3 className="font-semibold text-text">{disciplina?.nome ?? item.disciplinaId}</h3><p className="mt-1 text-xs text-text-muted">{item.periodo ? `${item.periodo}o periodo` : "Periodo nao informado"} - {STATUS_LABEL[item.status]}{item.dificuldade ? ` - dificuldade ${item.dificuldade}/5` : ""}</p>{disciplina && <p className="mt-2 text-xs leading-5 text-text-muted">{disciplina.resumos} resumos · {disciplina.questoes} questoes · {disciplina.casos} casos · {disciplina.figuras} midias ancoradas</p>}{disciplina && <p className="mt-1 text-xs text-text-faint">{disciplina.lacunasDeConteudo ? `${disciplina.lacunasDeConteudo} topico(s) ainda sem resumo publicado.` : "Cobertura de resumos completa para a taxonomia atual."}</p>}{item.observacao && <p className="mt-2 line-clamp-2 text-xs leading-5 text-text-muted">{item.observacao}</p>}</div></div><div className="mt-3 flex gap-3 text-xs font-semibold"><button onClick={() => editar(item)} className="text-accent hover:underline">Editar</button>{disciplina && <Link href={`/biblioteca/${disciplina.slug}`} className="text-text-muted hover:text-accent hover:underline">Ver conteudo</Link>}</div></article>; })}</div>}
       </section>
 
-      <section className="mt-6 rounded-2xl border border-dashed border-border bg-surface-2 p-5 text-sm text-text-muted"><div className="flex gap-3"><ShieldCheck className="size-5 shrink-0 text-accent" /><div><h2 className="font-bold text-text">Historico privado minimo</h2><p className="mt-1">O historico registra apenas data, origem e campos alterados; nao copia suas observacoes nem documentos privados.</p>{eventos.length > 0 && <ul className="mt-3 space-y-1 text-xs">{eventos.slice(0, 5).map((evento) => <li key={evento.id}>{evento.tipo} - {evento.disciplinaId} - {new Date(evento.criadoEm).toLocaleDateString("pt-BR")}</li>)}</ul>}</div></div></section>
+      <section className="legacy-empty mt-6 text-sm"><div className="flex gap-3"><ShieldCheck className="size-5 shrink-0 text-accent" /><div><h2 className="font-bold text-text">Historico privado minimo</h2><p className="mt-1">O historico registra apenas data, origem e campos alterados; nao copia suas observacoes nem documentos privados.</p>{eventos.length > 0 && <ul className="mt-3 space-y-1 text-xs">{eventos.slice(0, 5).map((evento) => <li key={evento.id}>{evento.tipo} - {evento.disciplinaId} - {new Date(evento.criadoEm).toLocaleDateString("pt-BR")}</li>)}</ul>}</div></div></section>
     </div>
   );
 }
@@ -221,5 +221,5 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
 const input = "mt-1 w-full rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-text outline-none focus:border-accent";
 function Metrica({ icone, valor, legenda }: { icone: React.ReactNode; valor: number; legenda: string }) { return <div className="rounded-xl border border-border bg-surface px-3 py-3"><span className="flex items-center gap-1.5 text-accent">{icone}<strong className="text-lg text-text">{valor}</strong></span><p className="mt-1 text-xs text-text-muted">{legenda}</p></div>; }
 function Campo({ label, extra, children }: { label: string; extra?: string; children: React.ReactNode }) { return <label className="block text-xs font-semibold text-text-muted">{label}{extra && <span className="ml-1 font-normal text-text-faint">{extra}</span>}{children}</label>; }
-function Carregando() { return <div className="mx-auto max-w-4xl px-5 py-12 text-sm text-text-muted">Carregando seu espaco privado...</div>; }
-function BloqueioPrivado() { return <div className="mx-auto max-w-3xl px-5 py-12"><section className="rounded-2xl border border-border bg-surface p-6" style={{ boxShadow: "var(--shadow)" }}><LockKeyhole className="size-7 text-accent" /><h1 className="mt-3 text-2xl font-bold text-text">Meu curso privado</h1><p className="mt-2 text-sm leading-6 text-text-muted">Entre pela opcao no cabecalho para acessar e salvar seus registros. Nenhum dado individual e mostrado nesta pagina sem uma sessao autenticada.</p></section></div>; }
+function Carregando() { return <div className="legacy-page max-w-4xl"><p role="status" aria-live="polite" className="legacy-loading">Carregando seu espaço privado...</p></div>; }
+function BloqueioPrivado() { return <div className="legacy-page max-w-3xl"><section className="legacy-hero p-6"><LockKeyhole className="size-7 text-accent" /><h1 className="mt-3 text-2xl font-bold text-text">Meu curso privado</h1><p className="mt-2 text-sm leading-6 text-text-muted">Entre pela opcao no cabecalho para acessar e salvar seus registros. Nenhum dado individual e mostrado nesta pagina sem uma sessao autenticada.</p></section></div>; }

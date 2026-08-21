@@ -211,22 +211,25 @@ export function MidiaClient({ figuras }: { figuras: FiguraIndice[] }) {
   }, [renderizadas]);
 
   return (
-    <div className="mx-auto max-w-5xl px-5 py-8 sm:px-8 sm:py-10">
-      <h1 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-text">
+    <div className="legacy-page">
+      <header className="legacy-hero">
+      <p className="legacy-eyebrow">Acervo clínico contextualizado</p>
+      <h1 className="mt-2 flex items-center gap-2 text-2xl font-bold tracking-tight text-text sm:text-3xl">
         <Images className="size-6 text-accent" /> Biblioteca visual
       </h1>
-      <p className="mt-1.5 max-w-2xl text-[15px] text-text-muted">
+      <p className="mt-2 max-w-2xl text-[15px] leading-6 text-text-muted">
         Diagramas originais dos resumos — fluxogramas, comparativos e esquemas.
         Cada um leva ao tema onde é usado.
       </p>
+      </header>
 
-      <div className="mt-5 flex flex-wrap gap-2 rounded-xl border border-border bg-surface p-2" aria-label="Camadas de mídia">
+      <div className="legacy-toolbar mt-5 flex flex-wrap gap-2 p-2" aria-label="Camadas de mídia">
         <Link href="/midia" className="rounded-lg bg-accent-soft px-3 py-2 text-sm font-semibold text-accent">Pública e licenciada</Link>
         <Link href="/minha-midia" className="rounded-lg px-3 py-2 text-sm font-semibold text-text-muted hover:bg-surface-2 hover:text-text">Minha mídia privada <span className="ml-1 text-[10px] text-text-faint">login</span></Link>
       </div>
 
       {/* busca + filtros */}
-      <div className="mt-6 flex flex-col gap-3">
+      <div className="legacy-toolbar mt-4 flex flex-col gap-3 p-3">
         <div className="flex h-10 flex-1 items-center gap-2.5 rounded-lg border border-border bg-surface px-3">
           <Search className="size-4 flex-none text-text-faint" />
           <input
@@ -256,7 +259,7 @@ export function MidiaClient({ figuras }: { figuras: FiguraIndice[] }) {
 
       {/* Índice visual: a imagem só aparece dentro do subtema, junto do contexto clínico. */}
       {grupos.map((g) => (
-        <section key={g.chave} className="mt-8 first:mt-5">
+        <section key={g.chave} className="mt-7 first:mt-5">
           <div className="mb-3 flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
             <h2 className="text-[13px] font-bold uppercase tracking-wide text-text">{g.titulo}</h2>
             {g.subtitulo && <span className="text-xs text-text-faint">{g.subtitulo}</span>}
@@ -273,12 +276,12 @@ export function MidiaClient({ figuras }: { figuras: FiguraIndice[] }) {
       ))}
 
       {filtradas.length === 0 && (
-        <p className="mt-12 text-center text-sm text-text-faint">Nenhuma figura encontrada para “{q}”.</p>
+        <p className="legacy-empty mt-6 text-center">Nenhuma figura encontrada para “{q}”.</p>
       )}
 
       {renderizadas.length < filtradas.length && <button onClick={() => setLimite((n) => n + 12)} className="mx-auto mt-7 flex rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text-muted hover:border-accent hover:text-accent">Carregar mais imagens</button>}
 
-      <p className="mt-10 rounded-xl border border-border bg-surface-2 p-4 text-xs leading-relaxed text-text-muted">
+      <p className="legacy-section mt-8 p-4 text-xs leading-relaxed text-text-muted">
         <strong className="text-text">Sobre as imagens:</strong> os{" "}
         <strong className="text-text">diagramas</strong> são desenhados originalmente para esta
         plataforma — livres de direitos autorais e adaptados ao tema claro/escuro. As{" "}
@@ -313,7 +316,7 @@ function SubtemaVisualCard({ subtemaId, rotulo, figuras }: { subtemaId: string; 
   const diagramas = figuras.length - imagens;
   const resumo = figuras[0]?.legenda;
   return (
-    <article className="rounded-xl border border-border bg-surface-2 p-4 transition-colors hover:border-accent/50">
+    <article className="legacy-card p-4">
       <div className="flex items-start gap-3">
         <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
           <Layers3 className="size-5" />

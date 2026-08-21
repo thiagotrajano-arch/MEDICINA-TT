@@ -54,7 +54,7 @@ export default async function EstudarPage({
   ]);
 
   return (
-    <div className="mx-auto max-w-3xl px-5 py-8 sm:px-8 sm:py-10">
+    <div className="legacy-page max-w-3xl">
       {/* Breadcrumb */}
       <nav className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-text-faint">
         <Link href={`/biblioteca/${disciplina.slug}`} className="hover:text-text">
@@ -64,6 +64,8 @@ export default async function EstudarPage({
         <span>{tema.nome}</span>
       </nav>
 
+      <header className="legacy-hero mt-2">
+      <p className="legacy-eyebrow">Leitura clínica</p>
       <div className="flex items-start justify-between gap-4">
         <h1 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-text sm:text-3xl">
           {subtema.nome}
@@ -97,6 +99,7 @@ export default async function EstudarPage({
           Acervo visual
         </Link>
       </div>
+      </header>
 
       <ProgressoConteudoClient tipo="resumo" itemId={id} />
 
@@ -113,7 +116,7 @@ export default async function EstudarPage({
               <section
                 key={bloco.secao}
                 id={idSecaoResumo(id, bloco.secao)}
-                className="rounded-2xl border border-border bg-surface p-5"
+                className="legacy-section p-5"
                 style={{ boxShadow: "var(--shadow)" }}
               >
                 <h2 className="mb-2 text-[13px] font-bold uppercase tracking-wider text-accent">
@@ -126,7 +129,7 @@ export default async function EstudarPage({
           </article>
 
           {conteudo.referencias.length > 0 && (
-            <section className="mt-6 rounded-2xl border border-border bg-surface-2 p-5">
+            <section className="legacy-section mt-6 bg-surface-2 p-5">
               <h2 className="mb-2 text-[13px] font-bold uppercase tracking-wider text-text-faint">
                 Referências
               </h2>
@@ -157,7 +160,7 @@ function origemLabel(o: string): string {
 
 function PlaceholderConteudo() {
   return (
-    <div className="mt-8 rounded-2xl border border-dashed border-border-strong bg-surface p-8 text-center">
+    <div className="legacy-empty mt-8 p-8 text-center">
       <div className="mx-auto mb-3 grid size-11 place-items-center rounded-xl bg-surface-2">
         <FileClock className="size-5 text-text-faint" />
       </div>
