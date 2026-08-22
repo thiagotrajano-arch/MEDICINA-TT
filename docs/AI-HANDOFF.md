@@ -1034,3 +1034,23 @@ associado automaticamente.
   fontes atuais; só depois preparar inserção remota idempotente. Em paralelo,
   falta QA do proprietário em navegador, logout/expiração, dois dispositivos,
   conflito offline e isolamento owner-only.
+
+## Lote clínico e ingestão privada — 2026-08-22 (continuação)
+
+- O subtema de acidentes por animais peçonhentos recebeu 4 questões e 1 caso
+  autorais, com fontes do Ministério da Saúde/CONITEC e condutas dependentes do
+  PCDT vigente. A auditoria passou: 1.363 questões, zero duplicidades, zero
+  fontes vazias, zero comentários vazios e zero gabaritos contraditórios.
+- A cobertura atual passou a 70 subtemas sem resumo, 148 sem questão e 267 sem
+  caso. O catálogo tem 63 casos totais, dos quais 62 estão vinculados a
+  subtema; esses números são o snapshot corrente, não uma promessa de cobertura
+  clínica completa.
+- Foram convertidos localmente 15 PDFs adicionais (12 texto, 1 parcial, 2 com
+  estrutura inválida) e o lote `block-200-20260801` (139 arquivos: 70 texto,
+  56 parciais, 1 imagem e 12 erros). Tudo permanece no corpus privado.
+- O inventário remoto do Drive continua bloqueado por configuração ausente de
+  conector; nenhum segredo foi impresso ou criado. O lote privado de mídia já
+  triado permanece sem publicação.
+- A reconciliação privada agora registra 291 candidatas locais ausentes do
+  catálogo remoto. As 4 novas questões do lote clínico também aguardam revisão
+  editorial e não foram sincronizadas automaticamente.

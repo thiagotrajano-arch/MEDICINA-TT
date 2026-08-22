@@ -1994,6 +1994,12 @@ A revisão consolidada, os bloqueadores, a ordem de execução e os critérios d
   sem vínculo seguro de subtema.
 - [ ] Publicar somente após revisão editorial, QA autenticada e confirmação de
   produção; o commit `646defd` permanece local.
+- [x] Fechar o micro-lote Infectologia de acidentes por animais peçonhentos:
+  4 questões e 1 caso com fontes do Ministério da Saúde/CONITEC.
+- [ ] Revisar e liberar esse micro-lote pelo release audit antes de sincronizar
+  as 4 questões com o Supabase.
+- [ ] Resolver os 2 registros privados sem `subtema_id` e renderizar somente
+  as páginas classificadas como parciais ou imagem nos manifestos privados.
 ## Fontes universitárias de imagem clínica — 2026-08-13
 
 - [x] Catalogar fontes universitárias de TC, RM, RX, ultrassom e patologia.

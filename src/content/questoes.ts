@@ -29,6 +29,7 @@ import { QUESTOES_CLINICAS_LOTE_20260803 } from "./questoes/clinicas-lote-202608
 import { QUESTOES_NEUROPSIQ_SEMANA } from "./questoes/neuropsiquiatria-semana";
 import { QUESTOES_NEUROPSIQ_RECENTES } from "./questoes/neuropsiquiatria-recentes";
 import { QUESTOES_ANTIBIOTICOTERAPIA } from "./questoes/antibioticoterapia";
+import { QUESTOES_ANIMAIS_PECONHENTOS } from "./questoes/animais-peconhentos";
 
 /**
  * Banco de questões — agregador.
@@ -47,6 +48,7 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_CIR,
   ...QUESTOES_INF,
   ...QUESTOES_ANTIBIOTICOTERAPIA,
+  ...QUESTOES_ANIMAIS_PECONHENTOS,
   ...QUESTOES_INF_LOTE_01,
   ...QUESTOES_MFC,
   ...QUESTOES_OMED_EXTRAIDAS,

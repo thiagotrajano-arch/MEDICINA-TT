@@ -1,42 +1,37 @@
-# Revisão editorial — Infectologia, lote 4
+# Revisão de Infectologia — lote 4 — 2026-08-22
 
-Data: 2026-07-29
+## Escopo fechado
 
-## Escopo
+Lacuna comprovada pela matriz de cobertura:
 
-Cinco questões foram revisadas sem importar material privado e sem alterar a
-alternativa correta. O foco foi ampliar comentários curtos, distinguir
-distratores e trocar a referência genérica por fonte oficial específica.
+- disciplina: Infectologia;
+- subtema: `inf--acidentes-por-animais-peconhentos--reconhecimento-e-soroterapia`;
+- antes do lote: 0 questões e 0 casos vinculados;
+- depois do lote: 4 questões e 1 caso clínico.
 
-| ID | Tema | Fonte vigente usada |
-|---|---|---|
-| `inf-hiv-024` | PEP para HIV | Ministério da Saúde — PEP (2025) |
-| `inf-zc-01` | Síndrome congênita do Zika | Ministério da Saúde — Zika Vírus |
-| `inf-cong-13` | Sífilis congênita tardia | PCDT de transmissão vertical |
-| `inf-cong-src-18` | Transmissão vertical do HCV | PCDT de transmissão vertical |
-| `inf-cong-src-36` | Chikungunya periparto | Guia de Manejo Clínico de Chikungunya, 2025 |
+## Conteúdo criado
 
-## Decisões editoriais
+- `inf-peconhentos-001`: distinção entre animais peçonhentos e venenosos;
+- `inf-peconhentos-002`: primeiros cuidados no acidente ofídico;
+- `inf-peconhentos-003`: classificação clínica do acidente botrópico;
+- `inf-peconhentos-004`: monitorização clínica e laboratorial;
+- `caso-inf-animais-peconhentos-01`: caso em etapas com edema progressivo,
+  classificação, encaminhamento e acompanhamento.
 
-- PEP: manter a janela máxima de 72 horas e a duração de 28 dias; a redação
-  agora evita tratar duas horas como um limite normativo.
-- Zika: apresentar microcefalia como manifestação marcante de um espectro de
-  anomalias, não como a única repercussão possível.
-- HCV: preservar a ausência de via de parto preferencial para prevenção da
-  transmissão, o caráter permitido do aleitamento sem lesão sangrante e o
-  papel da coinfecção pelo HIV entre os fatores de risco.
-- Chikungunya: registrar a apresentação neonatal descrita em guia brasileiro
-  atual, sem confundi-la com a síndrome congênita do Zika.
+## Fontes usadas
 
-## Limite
+- [Ministério da Saúde — Acidentes por animais peçonhentos](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/animais-peconhentos)
+- [Ministério da Saúde — Acidentes ofídicos](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/animais-peconhentos/acidentes-ofidicos)
+- [Ministério da Saúde — Tratamento dos acidentes ofídicos](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/animais-peconhentos/acidentes-ofidicos/tratamento/tratamento)
+- [CONITEC — PCDT de acidentes ofídicos](https://www.gov.br/conitec/pt-br/midias/protocolos/pcdt-acidentes-ofidicos)
+- [Ministério da Saúde — FAQ sobre acidentes ofídicos](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/animais-peconhentos/acidentes-ofidicos/faq/faq)
 
-Itens de meningite, sepse, malária, tuberculose congênita e intervenções
-fetais invasivas continuam fora deste lote até haver diretriz específica e
-revisão individual rastreável.
+## Portão de qualidade
 
-## Publicação confirmada
-
-- Commit publicado: `31b3a36`.
-- Produção conferida: `/`, `/semestres/` e `/questoes/` responderam HTTP 200.
-- A checagem de conteúdo de `/semestres/` confirmou a trilha pública nova e a
-  ausência do marcador individual legado.
+- vínculo taxonômico: aprovado;
+- fonte declarada em todas as questões: aprovado;
+- alternativa correta única e comentários distintos: aprovado pela auditoria;
+- texto comercial copiado: não;
+- mídia clínica: não utilizada;
+- dose de antiveneno: dependente da versão vigente do PCDT e do protocolo local;
+- publicação/sincronização remota: pendente de release audit e revisão clínica.

@@ -78,18 +78,18 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
 
 ### Snapshot verificável de conteúdo — 2026-08-22
 
-- A auditoria local encontrou **1.359 questões** no catálogo atual, não 1.072.
+- A auditoria local encontrou **1.363 questões** no catálogo atual, não 1.072.
 - A estrutura está sem duplicidades exatas/normalizadas, sem comentários vazios,
   sem fonte ausente e sem gabarito correto contraditório automático.
 - Permanecem 20 comentários curtos em 13 questões, concentrados em Neurologia e
   Psiquiatria; isso é pendência editorial, não motivo para alterar o banco em massa.
-- A matriz atual registra 311 subtemas: 70 sem resumo, 149 sem questão e 268 sem
+- A matriz atual registra 311 subtemas: 70 sem resumo, 148 sem questão e 267 sem
   caso. Esses números são do snapshot local de hoje e devem orientar a próxima
   curadoria, sem inventar conteúdo para preencher contagem.
 - As 77 figuras públicas auditadas estão ancoradas; a cobertura por subtema ainda
   precisa de curadoria clínica e não equivale a 77 subtemas completos.
-- A reconciliação local/remota encontrou **287 candidatas locais** ausentes no
-  banco remoto; as 287 têm subtema válido, fonte, tags e gabarito estruturalmente
+- A reconciliação local/remota encontrou **291 candidatas locais** ausentes no
+  banco remoto; as 291 têm subtema válido, fonte, tags e gabarito estruturalmente
   válido, sem duplicata por conteúdo. Elas continuam fora do banco até passarem
   pelo portão editorial/proveniência; nenhuma foi publicada automaticamente.
 - A fila privada `fila-conteudo-privada-2026-08-22.json` foi gerada com as 287
@@ -102,6 +102,14 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
   `contextual` ou `revisao_pendente` conforme a regra conservadora da rotina.
   Restam 2 registros privados sem `subtema_id` que não puderam ser vinculados
   com segurança e exigem revisão humana.
+- O lote editorial de Infectologia para acidentes por animais peçonhentos foi
+  fechado com 4 questões e 1 caso, todos vinculados ao subtema e auditados com
+  fontes do Ministério da Saúde/PCDT. O lote continua aguardando release audit
+  antes de qualquer sincronização remota.
+- Foram convertidos para Markdown privado 15 PDFs adicionais (12 texto, 1
+  parcial, 2 inválidos) e atualizado o lote privado de 139 PDFs (70 texto, 56
+  parciais, 1 imagem, 12 inválidos). Nenhum PDF, Markdown ou texto comercial
+  entrou no Git público.
 
 ## P7 — Anki, somente manutenção controlada
 
