@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, useSyncExternalStore, type FormEvent } from "react";
 import { dueRecallCards, listRecallCards, recallCardsForTopic, reviewRecallCard, saveRecallCard } from "@/lib/v2/recall-local";
 import { listOpenRemediations, listQuestionAttempts, migrateLegacyQuestionHistory, recordQuestionAttempt, resolveRemediation } from "@/lib/v2/question-local";
 import { syncV2LocalFirst } from "@/lib/v2/sync";
@@ -9,10 +9,12 @@ import type { QuestionConfidence, RecallCardKind, RecallRating } from "@/domain/
 import type { Questao } from "@/domain/content/types";
 
 const areas = ["Hoje", "Aprender", "Praticar", "Recall", "Meu Curso"];
+const subscribeToHydration = () => () => undefined;
 
 export function V2Shell() {
   const [area, setArea] = useState("Hoje");
   const [, setVersion] = useState(0);
+  const hydrated = useSyncExternalStore(subscribeToHydration, () => true, () => false);
   const [subtemaId, setSubtemaId] = useState("geral");
   const [topicTitle, setTopicTitle] = useState("Novo subtema");
   const [front, setFront] = useState("");
@@ -23,13 +25,13 @@ export function V2Shell() {
   const [selectedAlternativeLetter, setSelectedAlternativeLetter] = useState("A");
   const [confidence, setConfidence] = useState<QuestionConfidence>("medium");
   const [syncMessage, setSyncMessage] = useState("Não sincronizado nesta sessão.");
-  const due = dueRecallCards();
-  const total = listRecallCards().length;
+  const due = hydrated ? dueRecallCards() : [];
+  const total = hydrated ? listRecallCards().length : 0;
   const current = due[0];
   const selectedQuestion = questoes.find((questao) => questao.id === questionId);
-  const topicCards = recallCardsForTopic(subtemaId);
-  const attempts = listQuestionAttempts();
-  const remediations = listOpenRemediations();
+  const topicCards = hydrated ? recallCardsForTopic(subtemaId) : [];
+  const attempts = hydrated ? listQuestionAttempts() : [];
+  const remediations = hydrated ? listOpenRemediations() : [];
   const recommendation = recommendNext({
     subtemaId,
     title: topicTitle,
