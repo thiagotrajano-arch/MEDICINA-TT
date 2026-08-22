@@ -1127,3 +1127,25 @@ associado automaticamente.
 - O cache privado do Drive permanece fora do Git. Há 71 conversões com erro,
   50 imagem-only e 4 acima de 250 MB; recuperação seletiva está registrada em
   `C:/Users/Adm/Desktop/MEDICINA/_private-corpus/conversion-recovery-20260822.md`.
+
+## Continuação autônoma — lotes GO — 2026-08-22
+
+- Fechados `go--urgencias-ginecologicas--abdome-agudo` e
+  `go--assistencia-a-vitima-de-violencia-sexual--atendimento-integral-e-profilaxias`.
+- Cada subtema recebeu 1 resumo, 3 questões e 1 caso em etapas, com fontes
+  FEBRASGO/Ministério da Saúde. O lote de violência sexual foi escrito com
+  foco em privacidade, acolhimento e não revitimização.
+- Estado local: 1.389 questões, 247 resumos e 71 casos totais; os módulos
+  continuam fora do Supabase e da publicação.
+- QA: typecheck, lint, auditoria de questões, privacidade, superfície anônima,
+  conflitos, estado de estudo e build passaram. Build com 437 páginas.
+
+## Lote final da rodada — rotura prematura de membranas — 2026-08-22
+
+- Fechado `go--rotura-prematura-de-membranas--diagnostico-e-conduta` com 1
+  resumo, 3 questões e 1 caso em etapas, usando FEBRASGO 2024 e Ministério da
+  Saúde.
+- Estado local: 1.392 questões, 246 resumos e 72 casos; a matriz registra 71
+  casos vinculados, 143 subtemas sem questão e 258 sem caso.
+- Build aprovado com 438 páginas estáticas. Nenhum conteúdo foi enviado ao
+  Supabase ou publicado; a branch segue local e à frente do remoto.

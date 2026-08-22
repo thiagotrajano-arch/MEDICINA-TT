@@ -153,3 +153,30 @@ Os lotes são autorais, possuem fonte, tags, gabarito e vínculo exato por
 - `npm.cmd run build` passou com 435 páginas estáticas.
 - `npm.cmd run audit:rotas:local` passou nas oito rotas verificadas: HTTP 200,
   sem imagens sem alt, botões sem nome, IDs duplicados ou erros estruturais.
+
+### Lotes GO adicionais — 2026-08-22
+
+Foi fechado o subtema `go--urgencias-ginecologicas--abdome-agudo` com 1
+resumo, 3 questões e 1 caso em etapas. O recorte cobre teste de gravidez na
+dor pélvica, gravidez ectópica com instabilidade/hemoperitônio e torção
+anexial, usando protocolo oficial FEBRASGO e material do Ministério da Saúde.
+
+Em seguida, foi fechado o subtema
+`go--assistencia-a-vitima-de-violencia-sexual--atendimento-integral-e-profilaxias`
+com 1 resumo, 3 questões e 1 caso em etapas. O recorte cobre acolhimento
+privativo, ausência de exigência de BO, PEP, contracepção de emergência,
+notificação e seguimento, usando páginas e normas oficiais do Ministério da
+Saúde. O conteúdo evita dados pessoais e linguagem revitimizante.
+
+Estado local após os lotes: 1.389 questões, 247 resumos e 71 casos totais;
+nenhum lote foi sincronizado no Supabase ou publicado.
+
+### Lote GO adicional: rotura prematura de membranas — 2026-08-22
+
+Foi fechado `go--rotura-prematura-de-membranas--diagnostico-e-conduta` com 1
+resumo, 3 questões e 1 caso em etapas, usando o Protocolo FEBRASGO nº 18
+(2024) e o fluxograma do Ministério da Saúde. O recorte cobre confirmação,
+infecção intra-amniótica, manejo expectante pré-termo e critérios de resolução.
+
+Estado atualizado: 1.392 questões, 246 resumos e 72 casos no agregador;
+nenhum lote foi sincronizado no Supabase ou publicado.

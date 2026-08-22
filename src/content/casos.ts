@@ -10,6 +10,9 @@ import { CASOS_DISFUNCOES_TIREOIDIANAS } from "./casos-disfuncoes-tireoidianas";
 import { CASOS_HEMORRAGIA_DIGESTIVA } from "./casos-hemorragia-digestiva";
 import { CASOS_DOENCAS_INFLAMATORIAS_INTESTINAIS } from "./casos-doencas-inflamatorias-intestinais";
 import { CASOS_MENINGITES_ENCEFALITES } from "./casos-meningites-encefalites";
+import { CASOS_ABDOMEN_AGUDO_GINECOLOGICO } from "./casos-abdome-agudo-ginecologico";
+import { CASOS_VIOLENCIA_SEXUAL } from "./casos-violencia-sexual";
+import { CASOS_ROTURA_PREMATURA_MEMBRANAS } from "./casos-rotura-prematura-membranas";
 
 /**
  * Casos clínicos — formato OMED/Einstein.
@@ -32,6 +35,9 @@ export const CASOS: CasoClinico[] = [
   ...CASOS_HEMORRAGIA_DIGESTIVA,
   ...CASOS_DOENCAS_INFLAMATORIAS_INTESTINAIS,
   ...CASOS_MENINGITES_ENCEFALITES,
+  ...CASOS_ABDOMEN_AGUDO_GINECOLOGICO,
+  ...CASOS_VIOLENCIA_SEXUAL,
+  ...CASOS_ROTURA_PREMATURA_MEMBRANAS,
   // ── GO ────────────────────────────────────────────────────────
   {
     id: "caso-go-01",

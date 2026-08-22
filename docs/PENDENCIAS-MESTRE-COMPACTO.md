@@ -181,3 +181,27 @@ commit identificável e, se houver publicação autorizada, verificação em pro
 - Conversão privada: 1.449 arquivos autorizados catalogados; 71 continuam com
   erro estrutural, 50 são imagem-only e 4 excedem 250 MB. Permanecem privados
   e aguardam recuperação seletiva, sem OCR/regravação em massa.
+
+### Atualização final desta rodada — 2026-08-22
+
+- Fechado também `go--rotura-prematura-de-membranas--diagnostico-e-conduta`
+  com 1 resumo, 3 questões e 1 caso em etapas.
+- Estado do agregador: **1.392 questões, 246 resumos e 72 casos**; a matriz
+  contabiliza 71 casos vinculados a subtema, 143 subtemas sem questão e 258
+  sem caso.
+- `audit:cobertura` passou; o build passou gerando **438 páginas estáticas**.
+- Permanecem 291 candidatas locais fora do banco remoto, 65 subtemas sem
+  resumo e a validação owner-only em navegador/dois dispositivos.
+
+### Atualização após os lotes GO — 2026-08-22
+
+- Catálogo local: **1.389 questões**, 247 resumos e 71 casos totais, com 70
+  casos vinculados na matriz de cobertura.
+- O subtema de abdome agudo ginecológico e o subtema de atendimento à pessoa
+  em situação de violência sexual receberam, cada um, 1 resumo, 3 questões e
+  1 caso em etapas.
+- QA dos lotes: typecheck, lint, auditoria de questões, privacidade,
+  superfície anônima, conflitos, estado de estudo e build passaram. O build
+  gerou 437 páginas estáticas.
+- Permanecem 291 candidatas locais fora do banco remoto; a publicação e a
+  sincronização continuam separadas do trabalho editorial.

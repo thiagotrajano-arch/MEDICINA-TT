@@ -28,6 +28,9 @@ import { CONTEUDOS_ANTIBIOTICOTERAPIA } from "./conteudos/antibioticoterapia";
 import { CONTEUDOS_GASTRO_HEMORRAGIA } from "./conteudos/gastro-hemorragia";
 import { CONTEUDOS_DOENCAS_INFLAMATORIAS_INTESTINAIS } from "./conteudos/doencas-inflamatorias-intestinais";
 import { CONTEUDOS_MENINGITES_ENCEFALITES } from "./conteudos/meningites-encefalites";
+import { CONTEUDOS_ABDOMEN_AGUDO_GINECOLOGICO } from "./conteudos/abdome-agudo-ginecologico";
+import { CONTEUDOS_VIOLENCIA_SEXUAL } from "./conteudos/violencia-sexual";
+import { CONTEUDOS_ROTURA_PREMATURA_MEMBRANAS } from "./conteudos/rotura-prematura-membranas";
 
 /**
  * Resumos — agregador.
@@ -51,6 +54,9 @@ const CONTEUDOS_BASE: Record<string, ConteudoSubtema> = {
   ...CONTEUDOS_GASTRO_HEMORRAGIA,
   ...CONTEUDOS_DOENCAS_INFLAMATORIAS_INTESTINAIS,
   ...CONTEUDOS_MENINGITES_ENCEFALITES,
+  ...CONTEUDOS_ABDOMEN_AGUDO_GINECOLOGICO,
+  ...CONTEUDOS_VIOLENCIA_SEXUAL,
+  ...CONTEUDOS_ROTURA_PREMATURA_MEMBRANAS,
   ...CONTEUDOS_CIR,
   ...CONTEUDOS_MFC,
   ...CONTEUDOS_ESTRATEGIA_GO,

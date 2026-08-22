@@ -36,6 +36,9 @@ import { QUESTOES_DISFUNCOES_TIREOIDIANAS } from "./questoes/disfuncoes-tireoidi
 import { QUESTOES_HEMORRAGIA_DIGESTIVA } from "./questoes/hemorragia-digestiva";
 import { QUESTOES_DOENCAS_INFLAMATORIAS_INTESTINAIS } from "./questoes/doencas-inflamatorias-intestinais";
 import { QUESTOES_MENINGITES_ENCEFALITES } from "./questoes/meningites-encefalites";
+import { QUESTOES_ABDOMEN_AGUDO_GINECOLOGICO } from "./questoes/abdome-agudo-ginecologico";
+import { QUESTOES_VIOLENCIA_SEXUAL } from "./questoes/violencia-sexual";
+import { QUESTOES_ROTURA_PREMATURA_MEMBRANAS } from "./questoes/rotura-prematura-membranas";
 
 /**
  * Banco de questões — agregador.
@@ -61,6 +64,9 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_HEMORRAGIA_DIGESTIVA,
   ...QUESTOES_DOENCAS_INFLAMATORIAS_INTESTINAIS,
   ...QUESTOES_MENINGITES_ENCEFALITES,
+  ...QUESTOES_ABDOMEN_AGUDO_GINECOLOGICO,
+  ...QUESTOES_VIOLENCIA_SEXUAL,
+  ...QUESTOES_ROTURA_PREMATURA_MEMBRANAS,
   ...QUESTOES_INF_LOTE_01,
   ...QUESTOES_MFC,
   ...QUESTOES_OMED_EXTRAIDAS,
