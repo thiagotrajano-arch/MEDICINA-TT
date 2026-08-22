@@ -4,6 +4,7 @@ import { CASOS_CLINICOS_LOTE_20260803 } from "./casos-clinicos-lote-20260803";
 import { CASOS_ANTIBIOTICOTERAPIA } from "./casos-antibioticoterapia";
 import { CASOS_NEUROPSIQ_RECENTES } from "./casos-neuropsiquiatria-recentes";
 import { CASOS_ANIMAIS_PECONHENTOS } from "./casos-animais-peconhentos";
+import { CASOS_INFECCOES_CONGENITAS_GO } from "./casos-infeccoes-congenitas-go";
 
 /**
  * Casos clínicos — formato OMED/Einstein.
@@ -20,6 +21,7 @@ export const CASOS: CasoClinico[] = [
   ...CASOS_ANTIBIOTICOTERAPIA,
   ...CASOS_NEUROPSIQ_RECENTES,
   ...CASOS_ANIMAIS_PECONHENTOS,
+  ...CASOS_INFECCOES_CONGENITAS_GO,
   // ── GO ────────────────────────────────────────────────────────
   {
     id: "caso-go-01",

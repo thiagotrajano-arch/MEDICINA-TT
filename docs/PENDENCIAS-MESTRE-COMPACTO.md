@@ -1,6 +1,6 @@
 # Codex Medicus — pendências mestre compactas
 
-> Backlog operacional único, atualizado em 2026-08-16. Os planos de 100 passos,
+> Backlog operacional único, atualizado em 2026-08-22. Os planos de 100 passos,
 > handoffs e relatórios antigos continuam como histórico e evidência; não devem
 > ser usados para recriar tarefas já encerradas.
 
@@ -78,12 +78,12 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
 
 ### Snapshot verificável de conteúdo — 2026-08-22
 
-- A auditoria local encontrou **1.363 questões** no catálogo atual, não 1.072.
+- A auditoria local encontrou **1.367 questões** no catálogo atual, não 1.072.
 - A estrutura está sem duplicidades exatas/normalizadas, sem comentários vazios,
   sem fonte ausente e sem gabarito correto contraditório automático.
 - Permanecem 20 comentários curtos em 13 questões, concentrados em Neurologia e
   Psiquiatria; isso é pendência editorial, não motivo para alterar o banco em massa.
-- A matriz atual registra 311 subtemas: 70 sem resumo, 148 sem questão e 267 sem
+- A matriz atual registra 311 subtemas: 70 sem resumo, 147 sem questão e 266 sem
   caso. Esses números são do snapshot local de hoje e devem orientar a próxima
   curadoria, sem inventar conteúdo para preencher contagem.
 - As 77 figuras públicas auditadas estão ancoradas; a cobertura por subtema ainda
@@ -92,7 +92,7 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
   banco remoto; as 291 têm subtema válido, fonte, tags e gabarito estruturalmente
   válido, sem duplicata por conteúdo. Elas continuam fora do banco até passarem
   pelo portão editorial/proveniência; nenhuma foi publicada automaticamente.
-- A fila privada `fila-conteudo-privada-2026-08-22.json` foi gerada com as 287
+- A fila privada `fila-conteudo-privada-2026-08-22.json` foi gerada com as 291
   candidatas e uma ordenação explícita das lacunas por OMED, alto rendimento,
   ausência de resumo, questão e caso. A rotina é somente de preparação: não
   altera o banco remoto e não cria conteúdo clínico.
@@ -106,6 +106,11 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
   fechado com 4 questões e 1 caso, todos vinculados ao subtema e auditados com
   fontes do Ministério da Saúde/PCDT. O lote continua aguardando release audit
   antes de qualquer sincronização remota.
+- O lote editorial de GO para infecções congênitas (STORCH) foi fechado com 4
+  questões e 1 caso, todos vinculados ao subtema exato. As fontes usadas foram
+  páginas/notas do Ministério da Saúde sobre sífilis gestacional/congênita,
+  toxoplasmose e síndrome da rubéola congênita. O lote ainda aguarda release
+  audit e revisão editorial final antes de qualquer sincronização remota.
 - Foram convertidos para Markdown privado 15 PDFs adicionais (12 texto, 1
   parcial, 2 inválidos) e atualizado o lote privado de 139 PDFs (70 texto, 56
   parciais, 1 imagem, 12 inválidos). Nenhum PDF, Markdown ou texto comercial
@@ -131,3 +136,14 @@ commit identificável e, se houver publicação autorizada, verificação em pro
 2. Remover duplicações e excesso de carga.
 3. Confirmar uma semana de estudo real.
 4. Só depois selecionar a primeira lacuna clínica do semestre/OMED.
+
+## Atualização operacional — lote GO/STORCH — 2026-08-22
+
+- Catálogo local: 1.367 questões; remoto: 1.072; candidatas locais fora do
+  remoto: 291.
+- Cobertura: 311 subtemas, 241 resumos, 147 sem questão e 266 sem caso; 63
+  casos totais vinculados a subtema.
+- O subtema OMED de infecções congênitas passou de 0 para 4 questões e 1 caso.
+- `typecheck`, `audit:questoes`, `audit:cobertura`, `audit:privacidade` e
+  `audit:sync-conflict` passaram.
+- O conteúdo novo permanece local e não foi inserido no Supabase nem publicado.

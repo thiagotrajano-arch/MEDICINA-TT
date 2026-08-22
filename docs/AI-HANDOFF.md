@@ -1054,3 +1054,21 @@ associado automaticamente.
 - A reconciliação privada agora registra 291 candidatas locais ausentes do
   catálogo remoto. As 4 novas questões do lote clínico também aguardam revisão
   editorial e não foram sincronizadas automaticamente.
+
+## Lote GO/STORCH e estado de cobertura — 2026-08-22
+
+- Foi fechado o subtema OMED `go--infeccoes-congenitas-storch--sifilis-toxoplasmose-cmv-rubeola`
+  com 4 questões autorais e 1 caso clínico em etapas. O lote cobre rastreio e
+  tratamento da sífilis na gestação, interpretação contextualizada da sorologia
+  para toxoplasmose e prevenção da síndrome da rubéola congênita.
+- Fontes públicas usadas: páginas e protocolos do Ministério da Saúde. Não foi
+  criado conteúdo de CMV neste lote sem fonte clínica específica validada.
+- O catálogo passou a 1.367 questões e 63 casos vinculados; a matriz registra
+  70 subtemas sem resumo, 147 sem questão e 266 sem caso. A fila privada contém
+  291 candidatas locais ainda fora do banco remoto.
+- QA do lote: typecheck, auditoria de questões, cobertura, privacidade pública
+  e conflito de sincronização passaram. O lote é local, ainda não foi publicado
+  nem sincronizado no Supabase.
+- Próxima ação segura: release audit do lote, revisão editorial final e só então
+  preparar inserção remota idempotente. Persistem os gates do proprietário em
+  navegador, logout/expiração, dois dispositivos, offline/conflito e owner-only.

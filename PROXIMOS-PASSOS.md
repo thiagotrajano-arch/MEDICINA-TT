@@ -14,6 +14,21 @@
 > separada. Menções antigas a aguardar um plano nominal de HCPM VI são
 > históricas; usar a matriz por disciplina/subtema como fonte atual.
 
+> Atualização operacional vigente em 2026-08-22: usar os números e gates de
+> `docs/PENDENCIAS-MESTRE-COMPACTO.md` e `docs/EXECUCAO-CONTEUDO-2026-08-22.md`.
+
+## Continuação executada — 2026-08-22
+
+- Conteúdo local atual: 1.367 questões e 63 casos vinculados.
+- A lacuna OMED de GO/STORCH foi fechada localmente com 4 questões e 1 caso,
+  usando fontes oficiais do Ministério da Saúde. O lote aguarda release audit;
+  não foi publicado nem sincronizado remotamente.
+- Pendências de cobertura atuais: 70 subtemas sem resumo, 147 sem questão e
+  266 sem caso. Permanecem 291 candidatas locais fora do Supabase.
+- Próxima sequência: release audit do lote GO/STORCH, depois a próxima lacuna
+  OMED da fila (`mfc--rastreamentos--rastreamentos-populacionais`) somente com
+  fonte primária vigente.
+
 ## Fechamento e retomada — 2026-07-29
 
 - Publicação confirmada: `cc08b86` e `cac0eae` estão em `main`; GitHub Pages `30482759219` concluiu com sucesso. A raiz e `/meu-curso/` responderam HTTP 200.
