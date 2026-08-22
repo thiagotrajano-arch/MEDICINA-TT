@@ -71,7 +71,7 @@ export function Sidebar({ disciplinas, grupos, onNavigate, collapsed = false, on
   return (
     <div role="navigation" aria-label="Navegação lateral" className="flex h-full flex-col">
       <div className={cn("flex min-h-[76px] items-center border-b border-border", collapsed ? "flex-col justify-center gap-1 px-2 py-3" : "gap-2.5 px-4")}>
-        <div className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand font-black text-brand-contrast shadow-sm">C</div>
+        <div className="shell-brand-mark grid size-10 shrink-0 place-items-center rounded-xl bg-brand font-black text-brand-contrast shadow-sm">C</div>
         {!collapsed && (
           <div className="min-w-0 flex-1 leading-tight">
             <div className="truncate text-sm font-bold text-text">Codex Medicus</div>

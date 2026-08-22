@@ -272,7 +272,7 @@ export function QuizClient({
         ? "Nenhuma revisão está vencida nesta seleção."
         : "Nenhuma questão nesta seleção. Isso registra uma lacuna real do banco, sem inventar correspondências.";
     return (
-      <div className="mx-auto max-w-3xl px-5 py-16 text-center">
+      <div className="product-page max-w-3xl text-center">
         {tudoRespondido ? (
           <>
             <PartyPopper className="mx-auto mb-3 size-8 text-accent" />
@@ -299,8 +299,8 @@ export function QuizClient({
   const pct = respondidas ? Math.round((acertos / respondidas) * 100) : 0;
 
   return (
-    <div className="mx-auto max-w-3xl px-5 py-8 sm:px-8 sm:py-10">
-      <div className="mb-5 flex items-start justify-between gap-4">
+    <div className="product-page max-w-3xl">
+      <header className="product-hero product-hero--compact mb-5 flex items-start justify-between gap-4">
         <div>
           <h1 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-text">
             <ListChecks className="size-6 text-accent" /> Questões
@@ -335,7 +335,7 @@ export function QuizClient({
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       {atalhosAbertos && (
         <aside className="mb-5 rounded-xl border border-accent/30 bg-accent-soft/55 p-4 text-sm text-text-muted" role="status">
@@ -400,7 +400,7 @@ export function QuizClient({
 
       {/* Card */}
       <div
-        className="rounded-2xl border border-border bg-surface p-6"
+        className="study-card p-6"
         style={{ boxShadow: "var(--shadow)" }}
       >
         <div className="mb-3 flex items-center gap-2 text-xs">

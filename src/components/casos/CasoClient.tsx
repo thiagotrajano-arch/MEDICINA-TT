@@ -51,18 +51,20 @@ export function CasoClient({ caso }: { caso: CasoClinico }) {
   }, [caso.id, total]);
 
   return (
-    <div className="mx-auto max-w-3xl px-5 py-8 sm:px-8">
+    <div className="study-page max-w-3xl">
       <Link href="/casos" className="mb-4 inline-flex items-center gap-1.5 text-sm text-text-faint hover:text-text">
         <ChevronLeft className="size-4" /> Casos clínicos
       </Link>
 
-      <h1 className="text-2xl font-bold tracking-tight text-text sm:text-3xl">{caso.titulo}</h1>
-      <div className="mt-2 flex flex-wrap items-center gap-2">
+      <header className="study-heading">
+      <p className="mb-2 text-[10px] font-black uppercase tracking-[0.18em] text-accent">Caso clínico interativo</p>
+      <h1 className="font-black text-text">{caso.titulo}</h1>
+      <div className="mt-3 flex flex-wrap items-center gap-2">
         <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-semibold text-accent">{caso.dificuldade}</span>
         {caso.tags.map((t) => (
           <span key={t} className="rounded-full bg-surface-2 px-2.5 py-0.5 text-xs text-text-muted">{t}</span>
         ))}
-      </div>
+      </div></header>
 
       <ProgressoConteudoClient tipo="caso" itemId={caso.id} />
 
@@ -80,7 +82,7 @@ export function CasoClient({ caso }: { caso: CasoClinico }) {
           const Icon = ICONE[etapa.tipo];
           const respondida = respostas.has(i);
           return (
-            <section key={i} className="rounded-2xl border border-border bg-surface p-5" style={{ boxShadow: "var(--shadow)" }}>
+            <section key={i} className="study-card p-5">
               <h2 className="mb-3 flex items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-accent">
                 <Icon className="size-4" /> {etapa.titulo}
               </h2>

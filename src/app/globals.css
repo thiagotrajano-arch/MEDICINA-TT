@@ -3,57 +3,57 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ─────────────────────────────────────────────
-   Design tokens — Codex Medicus
-   Azul clínico + aqua: original, profissional e orientado à ação.
+   Design system — Codex Medicus / Clinical Atelier
+   Papel quente + tinta clínica + azul elétrico + jade.
    ───────────────────────────────────────────── */
 :root {
-  --bg: #f3f7fb;
-  --surface: #ffffff;
-  --surface-2: #edf4f8;
-  --surface-3: #e4eef5;
-  --border: #d5e2ec;
-  --border-strong: #b7cad9;
-  --text: #10283f;
-  --text-muted: #50697e;
-  --text-faint: #566f83;
-  --accent: #126f99;
-  --accent-hover: #0d587b;
-  --accent-soft: #dff2f7;
+  --bg: #f6f5f1;
+  --surface: #fffefa;
+  --surface-2: #eeeee8;
+  --surface-3: #e4e6df;
+  --border: #d9dcd5;
+  --border-strong: #b7c0b9;
+  --text: #172338;
+  --text-muted: #526176;
+  --text-faint: #6d7888;
+  --accent: #315efb;
+  --accent-hover: #2348d8;
+  --accent-soft: #e7ecff;
   --accent-contrast: #ffffff;
-  --brand: #0b3155;
-  --brand-soft: #dceaf5;
-  --brand-contrast: #f7fbff;
-  --aqua: #14aaa8;
-  --aqua-soft: #d8f5f2;
-  --success: #19805d;
-  --success-soft: #def3e9;
-  --gold: #9a6916;
-  --danger: #ad3e46;
-  --danger-soft: #f8e5e8;
-  --shadow: 0 1px 2px rgba(16, 40, 63, 0.04), 0 14px 34px rgba(30, 73, 108, 0.07);
-  --shadow-lg: 0 22px 56px rgba(18, 55, 86, 0.14);
+  --brand: #13233f;
+  --brand-soft: #e2e8f2;
+  --brand-contrast: #f9fbff;
+  --aqua: #0b9f8c;
+  --aqua-soft: #d9f2ed;
+  --success: #147a55;
+  --success-soft: #def2e9;
+  --gold: #a46716;
+  --danger: #bd4050;
+  --danger-soft: #fae5e8;
+  --shadow: 0 1px 2px rgba(23, 35, 56, 0.05), 0 12px 32px rgba(23, 35, 56, 0.07);
+  --shadow-lg: 0 28px 72px rgba(23, 35, 56, 0.16);
   --sidebar-w: 256px;
 }
 
 .dark {
-  --bg: #081521;
-  --surface: #0e2030;
-  --surface-2: #142a3d;
-  --surface-3: #1b354a;
-  --border: #29445a;
-  --border-strong: #3d5e75;
-  --text: #f2f8fc;
-  --text-muted: #b7c9d7;
-  --text-faint: #a7bbc9;
-  --accent: #61c7e2;
-  --accent-hover: #82d8ec;
-  --accent-soft: #14384a;
-  --accent-contrast: #061b29;
-  --brand: #164d77;
-  --brand-soft: #17364e;
-  --brand-contrast: #f2f9ff;
-  --aqua: #55d5ce;
-  --aqua-soft: #153d3e;
+  --bg: #0b111c;
+  --surface: #121c2b;
+  --surface-2: #192638;
+  --surface-3: #223249;
+  --border: #2b3b50;
+  --border-strong: #435873;
+  --text: #f4f6fb;
+  --text-muted: #bcc6d5;
+  --text-faint: #98a7ba;
+  --accent: #7d9cff;
+  --accent-hover: #9ab0ff;
+  --accent-soft: #202f59;
+  --accent-contrast: #091125;
+  --brand: #182b4d;
+  --brand-soft: #1b2c47;
+  --brand-contrast: #f7f9ff;
+  --aqua: #51cfbd;
+  --aqua-soft: #173a39;
   --success: #65d2a5;
   --success-soft: #173f34;
   --gold: #e3b867;
@@ -100,7 +100,9 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 82% -8%, color-mix(in srgb, var(--accent-soft) 68%, transparent), transparent 30rem),
+    var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -231,11 +233,26 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
    Uma camada semântica para manter as telas coesas enquanto o conteúdo
    clínico e os módulos privados continuam evoluindo separadamente.
    ───────────────────────────────────────────── */
-.shell-header {
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--border) 70%, transparent);
+.shell-sidebar {
+  color-scheme: dark;
+  border-color: rgba(255,255,255,.09) !important;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(49,94,251,.32), transparent 16rem),
+    linear-gradient(180deg, #152541 0%, #101a2d 58%, #0d1525 100%) !important;
+  box-shadow: 18px 0 50px rgba(16, 26, 45, .14);
 }
-.shell-main { background: radial-gradient(circle at 78% 0%, color-mix(in srgb, var(--accent-soft) 30%, transparent), transparent 30%), var(--bg); }
+.shell-sidebar * { --text: #f4f7ff; --text-muted: #c4cddd; --text-faint: #91a0b7; --surface-2: rgba(255,255,255,.08); --border: rgba(255,255,255,.09); --accent: #92a9ff; --accent-soft: rgba(125,156,255,.16); --brand: #315efb; --brand-contrast: #fff; }
+.shell-brand-mark { position: relative; overflow: hidden; background: linear-gradient(145deg, #5f80ff, #315efb 56%, #0b9f8c); box-shadow: 0 10px 24px rgba(49,94,251,.35); }
+.shell-brand-mark::after { content: "+"; position: absolute; right: 4px; top: 1px; font-size: .55rem; font-weight: 900; opacity: .78; }
+.shell-header {
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--border) 72%, transparent), 0 10px 30px rgba(23,35,56,.04);
+}
+.shell-route-chip { border-left: 3px solid var(--accent); padding-left: .75rem; }
+.shell-search { background: color-mix(in srgb, var(--surface) 82%, transparent); box-shadow: inset 0 0 0 1px rgba(255,255,255,.24), var(--shadow); }
+.shell-main { position: relative; background: linear-gradient(180deg, color-mix(in srgb, var(--accent-soft) 22%, transparent), transparent 15rem), var(--bg); }
+.shell-main::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .28; background-image: linear-gradient(color-mix(in srgb, var(--border) 42%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--border) 42%, transparent) 1px, transparent 1px); background-size: 32px 32px; mask-image: linear-gradient(to bottom, #000, transparent 24rem); }
+.shell-main > * { position: relative; }
 .shell-mobile-nav { backdrop-filter: blur(18px); background: color-mix(in srgb, var(--surface) 90%, transparent); }
 .v2-shell { background: radial-gradient(circle at 88% 0%, color-mix(in srgb, var(--aqua-soft) 75%, transparent), transparent 28%), radial-gradient(circle at 0% 40%, color-mix(in srgb, var(--accent-soft) 35%, transparent), transparent 26%), var(--bg); }
 .v2-hero { position: relative; overflow: hidden; border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border)); background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 96%, #061b29), color-mix(in srgb, var(--accent) 70%, var(--brand))); color: #f6fbff; box-shadow: 0 22px 60px color-mix(in srgb, var(--brand) 18%, transparent); }
@@ -265,4 +282,60 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
   .v2-kpi { min-height: 6.5rem; }
   .v2-nav { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
   .v2-nav button { flex: none; }
+}
+
+/* Clinical Atelier: primitives shared by every product route. */
+.product-page, .study-page {
+  position: relative;
+  isolation: isolate;
+  width: min(100% - 2rem, 74rem);
+  margin-inline: auto;
+  padding-block: clamp(1.25rem, 3vw, 2.5rem) 4rem;
+}
+.product-page > *, .study-page > * { animation: atelier-rise .42s cubic-bezier(.2,.7,.2,1) both; }
+.product-page > *:nth-child(2), .study-page > *:nth-child(2) { animation-delay: .04s; }
+.product-page > *:nth-child(3), .study-page > *:nth-child(3) { animation-delay: .08s; }
+.product-hero, .legacy-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: clamp(1.35rem, 2.4vw, 2rem);
+  padding: clamp(1.35rem, 4vw, 2.75rem);
+  background:
+    radial-gradient(circle at 86% 4%, rgba(81,207,189,.34), transparent 17rem),
+    radial-gradient(circle at 60% 110%, rgba(125,156,255,.34), transparent 20rem),
+    linear-gradient(135deg, #142540, #192f52 55%, #153d4b);
+  box-shadow: 0 30px 80px rgba(19,35,63,.22);
+}
+.product-hero::before, .legacy-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .17; background-image: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px); background-size: 28px 28px; mask-image: radial-gradient(circle at 80% 20%, #000, transparent 65%); }
+.product-hero > *, .legacy-hero > * { position: relative; z-index: 1; }
+.product-hero h1, .legacy-hero h1 { color: #f8fbff !important; letter-spacing: -.04em; text-wrap: balance; }
+.product-hero h2, .legacy-hero h2 { color: #f8fbff !important; }
+.product-hero p:not(.legacy-eyebrow), .legacy-hero p:not(.legacy-eyebrow), .product-hero span, .legacy-hero span { color: #c9d5e8; }
+.product-hero .text-accent, .legacy-hero .text-accent, .legacy-eyebrow { color: #71dfcf !important; }
+.product-hero--compact { min-height: 0; padding-block: 1.35rem; }
+.product-toolbar, .legacy-toolbar { border: 1px solid color-mix(in srgb, var(--border) 88%, transparent); border-radius: 1.15rem; background: color-mix(in srgb, var(--surface) 91%, transparent); box-shadow: var(--shadow); backdrop-filter: blur(16px); }
+.product-card, .legacy-card, .study-card { border: 1px solid var(--border); border-radius: 1.15rem; background: color-mix(in srgb, var(--surface) 96%, transparent); box-shadow: var(--shadow); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.product-card:hover, .legacy-card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 48%, var(--border)); box-shadow: 0 18px 44px rgba(23,35,56,.12); }
+.legacy-section { border-radius: 1.2rem; background: color-mix(in srgb, var(--surface) 96%, transparent); box-shadow: var(--shadow); }
+.legacy-statline span { border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.09); color: #d8e2f0; }
+.legacy-hero-panel { border-color: rgba(255,255,255,.15); background: rgba(255,255,255,.08); backdrop-filter: blur(12px); }
+.legacy-hero-panel strong { color: #fff; }
+.state-panel, .legacy-empty, .legacy-loading { border: 1px dashed color-mix(in srgb, var(--accent) 34%, var(--border)); border-radius: 1.2rem; background: color-mix(in srgb, var(--accent-soft) 35%, var(--surface)); box-shadow: var(--shadow); }
+.auth-dialog-card::before { content: ""; position: absolute; inset: 0 0 auto; height: .32rem; background: linear-gradient(90deg, var(--accent), var(--aqua), var(--gold)); }
+.auth-dialog-card { background: linear-gradient(180deg, color-mix(in srgb, var(--accent-soft) 34%, var(--surface)), var(--surface) 32%); }
+.study-heading { border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; }
+.study-heading h1 { max-width: 52rem; font-size: clamp(1.75rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -.045em; }
+input, select, textarea { transition: border-color .18s ease, box-shadow .18s ease, background .18s ease; }
+input:focus, select:focus, textarea:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 13%, transparent); }
+button { transition-property: color, background-color, border-color, opacity, transform, box-shadow; transition-duration: .18s; }
+button:active { transform: translateY(1px); }
+@keyframes atelier-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) {
+  .product-page, .study-page { width: min(100% - 1rem, 74rem); padding-block: .75rem 2rem; }
+  .product-hero, .legacy-hero { border-radius: 1.1rem; }
+  .shell-main::before { background-size: 24px 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-page > *, .study-page > * { animation: none; }
 }

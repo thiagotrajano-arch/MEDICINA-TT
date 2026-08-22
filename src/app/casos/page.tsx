@@ -14,7 +14,7 @@ export default async function CasosPage() {
   const marcaDisc = (id: string) => disciplinas.find((d) => d.id === id)?.marca ?? "";
 
   return (
-    <div className="legacy-page">
+    <div className="product-page">
       <header className="legacy-hero legacy-hero-layout">
       <div>
       <p className="legacy-eyebrow">Raciocínio clínico guiado</p>

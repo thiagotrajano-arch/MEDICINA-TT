@@ -95,7 +95,7 @@ export function AppShell({
   return (
     <div className="min-h-screen bg-bg" style={shellStyle}>
       <aside
-        className="fixed inset-y-0 left-0 z-40 hidden overflow-hidden border-r border-border bg-surface transition-[width] duration-200 lg:block"
+        className="shell-sidebar fixed inset-y-0 left-0 z-40 hidden overflow-hidden border-r border-border bg-surface transition-[width] duration-200 lg:block"
         style={{ width: "var(--shell-sidebar-w)" }}
       >
         <Sidebar
@@ -118,7 +118,7 @@ export function AppShell({
           aria-label="Fechar menu"
         />
         <div
-          className={cn("absolute inset-y-0 left-0 border-r border-border bg-surface shadow-2xl transition-transform duration-200", mobileOpen ? "translate-x-0" : "-translate-x-full")}
+          className={cn("shell-sidebar absolute inset-y-0 left-0 border-r border-border bg-surface shadow-2xl transition-transform duration-200", mobileOpen ? "translate-x-0" : "-translate-x-full")}
           style={{ width: "min(88vw, 304px)" }}
         >
           <Sidebar
@@ -140,7 +140,7 @@ export function AppShell({
             <Menu className="size-5" />
           </button>
 
-          <div className="hidden min-w-40 leading-tight lg:block">
+          <div className="shell-route-chip hidden min-w-40 leading-tight lg:block">
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent">{area.label}</p>
             <div className="mt-1 flex items-center gap-1 text-sm font-semibold text-text">
               <span className="truncate">{nomeDaRota(pathname)}</span>
@@ -151,7 +151,7 @@ export function AppShell({
           <button
             type="button"
             onClick={() => setPaletteOpen(true)}
-            className="flex h-11 min-w-0 flex-1 items-center gap-2.5 rounded-xl border border-border bg-surface px-3 text-sm text-text-faint shadow-sm transition-colors hover:border-accent sm:max-w-xl"
+            className="shell-search flex h-11 min-w-0 flex-1 items-center gap-2.5 rounded-xl border border-border bg-surface px-3 text-sm text-text-faint shadow-sm transition-colors hover:border-accent sm:max-w-xl"
             aria-label="Buscar conteúdo, tema ou questão"
           >
             <Search className="size-4 shrink-0" />

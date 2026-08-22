@@ -1,5 +1,21 @@
 # Handoff para outra IA — Codex Medicus
 
+## Redesign Clinical Atelier — 2026-08-22
+
+- Sistema visual unificado aplicado ao produto: sidebar escura, cabeçalho
+  translúcido, papel clínico quente, azul elétrico, jade, heróis de alto
+  contraste, cards e estados semânticos.
+- Escopo: shell, Hoje/V2, biblioteca, estudo, mapas, mídia, questões, simulado,
+  casos, curso, Agenda, semestres, login e estados globais.
+- QA aprovado: typecheck, lint, privacidade, auditoria local de oito rotas e
+  build 438/438.
+- O lote é somente de interface: não altera conteúdo clínico, Supabase, RLS,
+  autenticação ou sincronização.
+- Continua pendente antes da publicação: screenshot/QA visual em navegador real,
+  claro/escuro, celular, zoom 200%, teclado, axe e Lighthouse. O navegador
+  interno não anexou a webview localhost nesta rodada.
+- Evidência detalhada: `docs/DESIGN-SYSTEM-CLINICAL-ATELIER-2026-08-22.md`.
+
 ## Atualização operacional — 2026-08-22
 
 - Estado local de conteúdo: 1.374 questões, 243 resumos, 66 casos totais

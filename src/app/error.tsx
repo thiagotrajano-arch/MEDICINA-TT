@@ -7,7 +7,7 @@ import { registrarErro } from "@/lib/monitor";
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => { registrarErro("app-boundary", error.message, { tipo: "boundary", codigo: error.digest }); }, [error]);
   return (
-    <div className="mx-auto max-w-xl px-5 py-16 text-center" role="alert">
+    <div className="product-page max-w-xl text-center" role="alert">
       <TriangleAlert className="mx-auto size-9 text-danger" />
       <h1 className="mt-4 text-xl font-bold text-text">Não foi possível carregar esta área</h1>
       <p className="mt-2 text-sm leading-6 text-text-muted">Seu progresso local foi preservado. Tente novamente ou volte ao início.</p>

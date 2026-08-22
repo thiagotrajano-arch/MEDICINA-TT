@@ -12,7 +12,7 @@ const QuizClient = dynamic(
 
 function EstadoCarregando() {
   return (
-    <div className="mx-auto flex min-h-[45vh] max-w-3xl flex-col items-center justify-center px-5 py-16 text-center" role="status" aria-live="polite">
+    <div className="product-page flex min-h-[45vh] max-w-3xl flex-col items-center justify-center text-center" role="status" aria-live="polite">
       <LoaderCircle className="mb-3 size-7 animate-spin text-accent" aria-hidden="true" />
       <h1 className="text-xl font-bold text-text">Preparando suas questões</h1>
       <p className="mt-2 text-sm text-text-muted">Carregando o banco e reconciliando seu progresso.</p>

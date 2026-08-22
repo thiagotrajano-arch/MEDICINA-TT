@@ -69,12 +69,25 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
 
 ## P6 — acessibilidade, performance e design
 
-- [ ] Auditar claro/escuro, celular, teclado, zoom 200%, foco e leitor de tela.
-- [ ] Melhorar estados concluído, vazio, carregando e erro recuperável.
-- [ ] Reduzir poluição visual e manter filtros persistentes.
-- [ ] Medir bundle antes de dependências novas.
+- [x] Unificar shell, cores, hierarquia, cards e navegação no Clinical Atelier.
+- [x] Aplicar o sistema às rotas públicas, estudo, prática, curso e áreas privadas.
+- [x] Melhorar estados vazio, carregando, bloqueado e erro recuperável.
+- [x] Reduzir poluição visual e preservar filtros persistentes.
+- [x] Evitar dependências visuais novas; o lote usa CSS e ícones já instalados.
+- [ ] Auditar claro/escuro, celular, teclado, zoom 200%, foco e leitor de tela em navegador real.
 - [ ] Rodar Lighthouse e axe nas rotas públicas e autenticadas.
 - [ ] Verificar sitemap/robots no artefato publicado.
+
+### Fechamento de design — Clinical Atelier — 2026-08-22
+
+- O redesign foi aplicado em 23 arquivos, cobrindo shell, dashboard, biblioteca,
+  estudo, mapas, mídia, questões, simulado, casos, curso, Agenda, semestres,
+  autenticação e estados globais.
+- Typecheck, lint, privacidade, oito rotas locais e build 438/438 passaram.
+- Nenhum conteúdo clínico, migration, dado privado ou dependência foi alterado.
+- A inspeção visual automatizada ficou bloqueada pelo navegador interno não
+  anexar a webview local. QA visual em celular real, axe e Lighthouse ainda
+  precisam ocorrer antes de declarar o gate de publicação totalmente fechado.
 
 ### Snapshot verificável de conteúdo — 2026-08-22
 

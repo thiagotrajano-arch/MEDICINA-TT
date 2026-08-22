@@ -69,7 +69,7 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
   const anotacoes = conteudos.filter((item) => item.anotacao.trim()).length;
 
   return (
-    <div className="dashboard-page mx-auto max-w-[1180px] px-5 py-7 sm:px-8 sm:py-10">
+    <div className="dashboard-page product-page max-w-[1180px]">
       <section className="dashboard-hero overflow-hidden rounded-[2rem] border border-border p-6 sm:p-8 lg:p-10" aria-labelledby="titulo-hoje">
         <div className="grid gap-7 lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,.72fr)] lg:items-stretch">
           <div className="flex flex-col justify-center">

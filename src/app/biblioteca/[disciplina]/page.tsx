@@ -41,14 +41,14 @@ export default async function DisciplinaPage({
   const cobertura = subtemas.length ? Math.round((prontos / subtemas.length) * 100) : 0;
 
   return (
-    <div className="mx-auto max-w-4xl px-5 py-8 sm:px-8 sm:py-10">
+    <div className="product-page max-w-4xl">
       <nav className="mb-4 flex items-center gap-1.5 text-sm text-text-faint">
         <Link href="/biblioteca" className="hover:text-text">Biblioteca</Link>
         <ChevronRight className="size-3.5" />
         <span className="text-text-muted">{disciplina.grupo}</span>
       </nav>
 
-      <header className="page-hero rounded-3xl border border-border p-6 sm:p-8">
+      <header className="product-hero">
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-start">
           <div className="flex items-center gap-4">
             <span className="grid size-13 place-items-center rounded-2xl bg-brand text-sm font-black text-brand-contrast shadow-sm">

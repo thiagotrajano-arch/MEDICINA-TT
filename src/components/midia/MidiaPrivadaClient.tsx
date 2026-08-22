@@ -155,9 +155,9 @@ export function MidiaPrivadaClient() {
     );
   }, [filtroDisciplina, filtroTema, itens]);
 
-  if (autenticado === null) return <div className="legacy-page max-w-4xl"><p role="status" aria-live="polite" className="legacy-loading">Verificando sua sessão...</p></div>;
+  if (autenticado === null) return <div className="product-page max-w-4xl"><p role="status" aria-live="polite" className="legacy-loading">Verificando sua sessão...</p></div>;
   if (!autenticado) return <Bloqueio />;
-  return <div className="legacy-page max-w-6xl">
+  return <div className="product-page max-w-6xl">
     <header className="legacy-hero p-6 sm:p-8">
       <div className="flex items-start gap-4"><span className="rounded-xl bg-accent p-3 text-accent-contrast"><LockKeyhole className="size-7" /></span><div><p className="legacy-eyebrow">Biblioteca da sua conta</p><h1 className="mt-2 text-3xl font-bold text-text">Minha mídia</h1><p className="mt-3 max-w-3xl text-sm leading-6 text-text-muted">Todo material que você importar fica reunido aqui, com disciplina, subtema, achado e referência de origem. O acesso é somente seu e cada visualização usa um link temporário.</p></div></div>
     </header>
@@ -186,4 +186,4 @@ export function MidiaPrivadaClient() {
 const input = "mt-1 w-full rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-text outline-none focus:border-accent";
 function Campo({ label, children }: { label: string; children: ReactNode }) { return <label className="block text-xs font-semibold text-text-muted">{label}{children}</label>; }
 function Regra({ titulo, texto }: { titulo: string; texto: string }) { return <article className="rounded-xl border border-border bg-surface p-4"><h2 className="font-bold text-text">{titulo}</h2><p className="mt-1 text-sm leading-6 text-text-muted">{texto}</p></article>; }
-function Bloqueio() { return <div className="mx-auto max-w-3xl px-5 py-12"><section className="rounded-2xl border border-border bg-surface p-6"><LockKeyhole className="size-7 text-accent" /><h1 className="mt-3 text-2xl font-bold text-text">Minha mídia</h1><p className="mt-2 text-sm text-text-muted">Entre pelo cabeçalho. Sem sessão, nenhum arquivo ou metadado da sua biblioteca é solicitado.</p><Link href="/midia" className="mt-4 inline-flex text-sm font-semibold text-accent">Abrir biblioteca pública</Link></section></div>; }
+function Bloqueio() { return <div className="product-page max-w-3xl"><section className="product-hero"><LockKeyhole className="size-7 text-accent" /><h1 className="mt-3 text-2xl font-bold">Minha mídia</h1><p className="mt-2 text-sm">Entre pelo cabeçalho. Sem sessão, nenhum arquivo ou metadado da sua biblioteca é solicitado.</p><Link href="/midia" className="mt-4 inline-flex text-sm font-semibold text-accent">Abrir biblioteca pública</Link></section></div>; }

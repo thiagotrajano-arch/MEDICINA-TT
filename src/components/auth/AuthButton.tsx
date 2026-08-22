@@ -170,7 +170,7 @@ export function AuthDialog({ onClose, modoInicial }: { onClose: () => void; modo
   return (
     <div className="fixed inset-0 z-[80] grid place-items-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-label="Acessar conta">
       <button className="absolute inset-0" onClick={onClose} aria-label="Fechar" />
-      <div className="relative w-full max-w-sm rounded-2xl border border-border bg-surface p-6" style={{ boxShadow: "var(--shadow-lg)" }}>
+      <div className="auth-dialog-card relative w-full max-w-sm overflow-hidden rounded-3xl border border-border bg-surface p-6" style={{ boxShadow: "var(--shadow-lg)" }}>
         <button onClick={onClose} className="absolute right-3 top-3 grid size-8 place-items-center rounded-lg text-text-faint hover:bg-surface-2" aria-label="Fechar"><X className="size-4" /></button>
         <UserRound className="mb-3 size-7 text-accent" />
         <h2 className="text-xl font-bold text-text">{tituloModo(modo)}</h2>

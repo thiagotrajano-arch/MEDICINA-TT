@@ -154,7 +154,7 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
   if (!autenticado) return <BloqueioPrivado />;
 
   return (
-    <div className="legacy-page max-w-6xl">
+    <div className="product-page max-w-6xl">
       <header className="legacy-hero p-6 sm:p-8">
         <div className="flex items-start gap-4"><span className="rounded-xl bg-accent p-3 text-accent-contrast"><LockKeyhole className="size-7" /></span><div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Espaco autenticado</p>
@@ -221,5 +221,5 @@ export function CursoPrivadoClient({ disciplinasDisponiveis }: { disciplinasDisp
 const input = "mt-1 w-full rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-text outline-none focus:border-accent";
 function Metrica({ icone, valor, legenda }: { icone: React.ReactNode; valor: number; legenda: string }) { return <div className="rounded-xl border border-border bg-surface px-3 py-3"><span className="flex items-center gap-1.5 text-accent">{icone}<strong className="text-lg text-text">{valor}</strong></span><p className="mt-1 text-xs text-text-muted">{legenda}</p></div>; }
 function Campo({ label, extra, children }: { label: string; extra?: string; children: React.ReactNode }) { return <label className="block text-xs font-semibold text-text-muted">{label}{extra && <span className="ml-1 font-normal text-text-faint">{extra}</span>}{children}</label>; }
-function Carregando() { return <div className="legacy-page max-w-4xl"><p role="status" aria-live="polite" className="legacy-loading">Carregando seu espaço privado...</p></div>; }
-function BloqueioPrivado() { return <div className="legacy-page max-w-3xl"><section className="legacy-hero p-6"><LockKeyhole className="size-7 text-accent" /><h1 className="mt-3 text-2xl font-bold text-text">Meu curso privado</h1><p className="mt-2 text-sm leading-6 text-text-muted">Entre pela opcao no cabecalho para acessar e salvar seus registros. Nenhum dado individual e mostrado nesta pagina sem uma sessao autenticada.</p></section></div>; }
+function Carregando() { return <div className="product-page max-w-4xl"><p role="status" aria-live="polite" className="legacy-loading">Carregando seu espaço privado...</p></div>; }
+function BloqueioPrivado() { return <div className="product-page max-w-3xl"><section className="legacy-hero p-6"><LockKeyhole className="size-7 text-accent" /><h1 className="mt-3 text-2xl font-bold text-text">Meu curso privado</h1><p className="mt-2 text-sm leading-6 text-text-muted">Entre pela opcao no cabecalho para acessar e salvar seus registros. Nenhum dado individual e mostrado nesta pagina sem uma sessao autenticada.</p></section></div>; }

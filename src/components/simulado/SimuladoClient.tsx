@@ -127,7 +127,7 @@ export function SimuladoClient({
   const respondidas = Object.keys(respostas).length;
 
   return (
-    <div className="mx-auto max-w-3xl px-5 py-6 sm:px-8">
+    <div className="study-page max-w-3xl py-6">
       {/* Barra fixa: cronômetro e progresso */}
       <div className="sticky top-14 z-20 -mx-5 mb-5 border-b border-border bg-bg/90 px-5 py-3 backdrop-blur sm:-mx-8 sm:px-8">
         <div className="flex items-center justify-between gap-3">
@@ -169,7 +169,7 @@ export function SimuladoClient({
       </div>
 
       {/* Questão */}
-      <div className="rounded-2xl border border-border bg-surface p-6" style={{ boxShadow: "var(--shadow)" }}>
+      <div className="study-card p-6">
         <div className="mb-3 flex items-center gap-2">
           <span className="rounded-full bg-surface-2 px-2 py-0.5 text-xs font-semibold text-text-muted">
             {idx + 1} / {prova.length}
@@ -262,8 +262,9 @@ function Config({
   const real = Math.min(qtd, disponiveis);
 
   return (
-    <div className="mx-auto max-w-2xl px-5 py-10 sm:px-8">
-      <div className="mb-6">
+    <div className="product-page max-w-2xl">
+      <header className="product-hero mb-6">
+        <p className="legacy-eyebrow">Ambiente de prova</p>
         <h1 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-text">
           <Timer className="size-6 text-accent" /> Modo Simulado
         </h1>
@@ -271,9 +272,9 @@ function Config({
           Prova cronometrada, questões embaralhadas e sem gabarito até o fim — como na prova real.
           Correção e análise por disciplina ao finalizar.
         </p>
-      </div>
+      </header>
 
-      <div className="space-y-5 rounded-2xl border border-border bg-surface p-6" style={{ boxShadow: "var(--shadow)" }}>
+      <div className="product-card space-y-5 p-6">
         <div>
           <label className="mb-2 block text-sm font-semibold text-text">Disciplinas</label>
           <div className="flex flex-wrap gap-2">
@@ -371,9 +372,9 @@ function Resultado({
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-5 py-8 sm:px-8">
+    <div className="product-page max-w-3xl">
       {/* Placar */}
-      <div className="rounded-2xl border border-border bg-surface p-6 text-center" style={{ boxShadow: "var(--shadow)" }}>
+      <div className="product-hero p-6 text-center">
         <Trophy className={cn("mx-auto size-8", pct >= 70 ? "text-gold" : "text-text-faint")} />
         <div className="mt-2 text-5xl font-bold tabular-nums text-text">{pct}%</div>
         <p className="mt-1 text-sm text-text-muted">

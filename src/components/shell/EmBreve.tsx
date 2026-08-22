@@ -11,7 +11,7 @@ export function EmBreve({
   fase: string;
 }) {
   return (
-    <div className="mx-auto max-w-2xl px-5 py-16 text-center sm:py-24">
+    <div className="product-page max-w-2xl text-center">
       <span className="inline-block rounded-full border border-border bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wider text-text-faint">
         {fase}
       </span>

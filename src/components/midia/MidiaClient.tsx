@@ -211,7 +211,7 @@ export function MidiaClient({ figuras }: { figuras: FiguraIndice[] }) {
   }, [renderizadas]);
 
   return (
-    <div className="legacy-page">
+    <div className="product-page">
       <header className="legacy-hero">
       <p className="legacy-eyebrow">Acervo clínico contextualizado</p>
       <h1 className="mt-2 flex items-center gap-2 text-2xl font-bold tracking-tight text-text sm:text-3xl"><Images className="size-6 text-accent" /> Biblioteca visual</h1>

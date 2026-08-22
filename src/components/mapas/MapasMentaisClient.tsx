@@ -24,7 +24,7 @@ export function MapasMentaisClient({ mapas }: { mapas: Mapa[] }) {
   }, [alto, busca, disciplina, mapas]);
   const visiveis = filtrados.slice(0, limite);
   return <>
-    <div className="mt-6 grid gap-3 rounded-2xl border border-border bg-surface p-4 sm:grid-cols-[minmax(0,1fr)_auto_auto]">
+    <div className="product-toolbar mt-6 grid gap-3 p-4 sm:grid-cols-[minmax(0,1fr)_auto_auto]">
       <label className="flex h-10 items-center gap-2 rounded-lg border border-border bg-bg px-3"><Search className="size-4 text-text-faint" /><span className="sr-only">Buscar mapas</span><input value={busca} onChange={(e) => { setBusca(e.target.value); setLimite(8); }} placeholder="Buscar diagnóstico, conceito ou ramo" className="w-full bg-transparent text-sm text-text outline-none placeholder:text-text-faint" /></label>
       <label className="sr-only" htmlFor="mapa-disciplina">Disciplina</label><select id="mapa-disciplina" value={disciplina} onChange={(e) => { setDisciplina(e.target.value); setLimite(8); }} className="h-10 rounded-lg border border-border bg-bg px-3 text-sm text-text"><option value="todas">Todas as disciplinas</option>{disciplinas.map(([id, nome]) => <option key={id} value={id}>{nome}</option>)}</select>
       <button onClick={() => { setAlto((v) => !v); setLimite(8); }} className={`h-10 rounded-lg border px-3 text-sm font-semibold ${alto ? "border-accent bg-accent-soft text-accent" : "border-border bg-bg text-text-muted"}`} aria-pressed={alto}><Sparkles className="mr-1 inline size-3.5" />Alto rendimento</button>

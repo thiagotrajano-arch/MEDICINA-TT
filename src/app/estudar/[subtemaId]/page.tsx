@@ -54,7 +54,7 @@ export default async function EstudarPage({
   ]);
 
   return (
-    <div className="legacy-page max-w-3xl">
+    <div className="product-page max-w-3xl">
       {/* Breadcrumb */}
       <nav className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-text-faint">
         <Link href={`/biblioteca/${disciplina.slug}`} className="hover:text-text">
