@@ -214,13 +214,9 @@ export function MidiaClient({ figuras }: { figuras: FiguraIndice[] }) {
     <div className="legacy-page">
       <header className="legacy-hero">
       <p className="legacy-eyebrow">Acervo clínico contextualizado</p>
-      <h1 className="mt-2 flex items-center gap-2 text-2xl font-bold tracking-tight text-text sm:text-3xl">
-        <Images className="size-6 text-accent" /> Biblioteca visual
-      </h1>
-      <p className="mt-2 max-w-2xl text-[15px] leading-6 text-text-muted">
-        Diagramas originais dos resumos — fluxogramas, comparativos e esquemas.
-        Cada um leva ao tema onde é usado.
-      </p>
+      <h1 className="mt-2 flex items-center gap-2 text-2xl font-bold tracking-tight text-text sm:text-3xl"><Images className="size-6 text-accent" /> Biblioteca visual</h1>
+      <p className="mt-2 max-w-2xl text-[15px] leading-6 text-text-muted">Diagramas originais dos resumos — fluxogramas, comparativos e esquemas. Cada um leva ao tema onde é usado.</p>
+      <div className="legacy-statline"><span>{figuras.length} recursos visuais</span><span>{areas.length} áreas clínicas</span><span>{licencas.length} tipos de licença</span></div>
       </header>
 
       <div className="legacy-toolbar mt-5 flex flex-wrap gap-2 p-2" aria-label="Camadas de mídia">

@@ -36,20 +36,29 @@ export function DashboardClient({ disciplinas, totalQuestoes, totalResumos, tota
 
   useEffect(() => {
     let ativo = true;
+    const sincronizar = () => {
+      void Promise.all([sincronizarProgresso(), sincronizarProgressoConteudos()]).then(([progresso, leitura]) => {
+        if (!ativo) return;
+        setStats(calcularEstatisticas(progresso.respostas));
+        setSimulados(progresso.simulados);
+        setConteudos(leitura.conteudos);
+        setSincronizado(progresso.sincronizado && leitura.sincronizado);
+      });
+    };
     void Promise.resolve().then(() => {
       if (!ativo) return;
       setStats(calcularEstatisticas(lerRespostas()));
       setSimulados(lerSimulados());
       setConteudos(lerProgressoConteudos());
     });
-    void Promise.all([sincronizarProgresso(), sincronizarProgressoConteudos()]).then(([progresso, leitura]) => {
-      if (!ativo) return;
-      setStats(calcularEstatisticas(progresso.respostas));
-      setSimulados(progresso.simulados);
-      setConteudos(leitura.conteudos);
-      setSincronizado(progresso.sincronizado && leitura.sincronizado);
-    });
-    return () => { ativo = false; };
+    sincronizar();
+    window.addEventListener("online", sincronizar);
+    document.addEventListener("visibilitychange", sincronizar);
+    return () => {
+      ativo = false;
+      window.removeEventListener("online", sincronizar);
+      document.removeEventListener("visibilitychange", sincronizar);
+    };
   }, []);
 
   const nomeDisc = (id: string) => disciplinas.find((d) => d.id === id)?.nome ?? id;

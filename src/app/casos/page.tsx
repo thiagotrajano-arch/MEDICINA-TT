@@ -15,15 +15,14 @@ export default async function CasosPage() {
 
   return (
     <div className="legacy-page">
-      <header className="legacy-hero">
+      <header className="legacy-hero legacy-hero-layout">
+      <div>
       <p className="legacy-eyebrow">Raciocínio clínico guiado</p>
-      <h1 className="mt-2 flex items-center gap-2 text-2xl font-bold tracking-tight text-text sm:text-3xl">
-        <Stethoscope className="size-6 text-accent" /> Casos clínicos
-      </h1>
-      <p className="mt-2 max-w-2xl text-[15px] leading-6 text-text-muted">
-        Formato das provas do Einstein: o caso é revelado por etapas e, a cada
-        uma, você decide antes de ver a resposta. Treina o raciocínio, não a memória.
-      </p>
+      <h1 className="mt-2 flex items-center gap-2 text-2xl font-bold tracking-tight text-text sm:text-3xl"><Stethoscope className="size-6 text-accent" /> Casos clínicos</h1>
+      <p className="mt-2 max-w-2xl text-[15px] leading-6 text-text-muted">Formato das provas do Einstein: o caso é revelado por etapas e, a cada uma, você decide antes de ver a resposta. Treina o raciocínio, não a memória.</p>
+      <div className="legacy-statline"><span>{casos.length} casos disponíveis</span><span>{casos.reduce((total, caso) => total + caso.etapas.length, 0)} etapas de decisão</span><span>Resposta por etapas</span></div>
+      </div>
+      <aside className="legacy-hero-panel"><span>Como estudar</span><strong>Leia. Decida. Reavalie.</strong><span>O caso libera dados progressivamente para treinar sua conduta clínica.</span></aside>
       </header>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">

@@ -38,7 +38,7 @@ type MetadataQueryClient = {
 
 const PAGE_SIZE = 1000;
 const outputDir = join(process.cwd(), "exports", "private");
-const outputFile = join(outputDir, "reconciliacao-questoes-2026-08-21.json");
+const outputFile = join(outputDir, `reconciliacao-questoes-${new Date().toISOString().slice(0, 10)}.json`);
 
 function normalized(value: string): string {
   return value.trim().replace(/\s+/g, " ").toLocaleLowerCase("pt-BR");
