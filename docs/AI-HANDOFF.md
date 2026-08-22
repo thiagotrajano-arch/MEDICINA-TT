@@ -11,9 +11,13 @@
   build 438/438.
 - O lote é somente de interface: não altera conteúdo clínico, Supabase, RLS,
   autenticação ou sincronização.
-- Continua pendente antes da publicação: screenshot/QA visual em navegador real,
-  claro/escuro, celular, zoom 200%, teclado, axe e Lighthouse. O navegador
-  interno não anexou a webview localhost nesta rodada.
+- QA visual no navegador interno passou para login e cinco famílias de rotas
+  internas em desktop/móvel e claro/escuro. A busca da Biblioteca, que ficava
+  comprimida no desktop, foi corrigida; os tokens claros também foram ajustados
+  até o Lighthouse local atingir acessibilidade 100 e contraste aprovado.
+- Continua pendente antes do cutover definitivo: sessão owner real, zoom 200%,
+  leitor de tela, rotas autenticadas e Lighthouse no domínio Vercel. A prévia
+  estática usada na inspeção não comprova middleware ou privacidade.
 - Evidência detalhada: `docs/DESIGN-SYSTEM-CLINICAL-ATELIER-2026-08-22.md`.
 
 ## Atualização operacional — 2026-08-22

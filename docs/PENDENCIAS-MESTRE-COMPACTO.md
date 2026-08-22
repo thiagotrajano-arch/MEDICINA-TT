@@ -85,9 +85,14 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
   autenticação e estados globais.
 - Typecheck, lint, privacidade, oito rotas locais e build 438/438 passaram.
 - Nenhum conteúdo clínico, migration, dado privado ou dependência foi alterado.
-- A inspeção visual automatizada ficou bloqueada pelo navegador interno não
-  anexar a webview local. QA visual em celular real, axe e Lighthouse ainda
-  precisam ocorrer antes de declarar o gate de publicação totalmente fechado.
+- QA visual no navegador interno cobriu login, Biblioteca, Casos, Questões,
+  Semestres e Mapas em desktop/móvel e claro/escuro, sem overflow horizontal.
+  A busca comprimida da Biblioteca foi corrigida.
+- Lighthouse local da Biblioteca fechou acessibilidade 100, SEO 100, contraste
+  aprovado e CLS 0. O resultado de performance 71 e boas práticas 96 não é
+  representativo da Vercel por limitações do servidor estático temporário.
+- O gate continua aberto para sessão owner real, zoom 200%, leitor de tela,
+  rotas autenticadas e Lighthouse no domínio publicado.
 
 ### Snapshot verificável de conteúdo — 2026-08-22
 

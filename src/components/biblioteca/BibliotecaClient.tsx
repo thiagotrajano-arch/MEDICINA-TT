@@ -34,7 +34,7 @@ export function BibliotecaClient({ disciplinas, grupos }: { disciplinas: Discipl
         </div>
       </section>
 
-      <section className="product-toolbar mt-6 grid gap-3 p-4 sm:grid-cols-[minmax(0,1fr)_auto]">
+      <section className="product-toolbar mt-6 grid gap-3 p-4">
         <label className="flex min-h-11 items-center gap-2 rounded-xl border border-border bg-bg px-3">
           <Search className="size-4 text-text-faint" />
           <span className="sr-only">Buscar na biblioteca</span>

@@ -31,14 +31,23 @@ privacidade.
 
 - `npm.cmd run typecheck`: aprovado.
 - `npm.cmd run lint`: aprovado.
-- `npm.cmd run audit:privacidade`: 366 arquivos públicos e 3 curriculares
+- `npm.cmd run audit:privacidade`: 367 arquivos públicos e 3 curriculares
   aprovados.
 - `npm.cmd run audit:rotas:local`: oito rotas críticas com HTTP 200, zero
   imagens sem alt, zero botões sem nome, zero IDs duplicados e zero erros.
 - `npm.cmd run build`: aprovado, 438/438 páginas estáticas.
-- A inspeção automatizada por screenshot no navegador interno ficou bloqueada
-  porque a webview local não anexou. Lighthouse, axe e conferência visual em
-  celular real continuam como gate de publicação, não como falha do build.
+- Inspeção visual no navegador interno aprovada para login, Biblioteca, Casos,
+  Questões, Semestres e Mapas Mentais em desktop e viewport móvel, com temas
+  claro/escuro e sem overflow horizontal. O teste detectou a busca da Biblioteca
+  comprimida no desktop; a grade foi corrigida e reconstruída.
+- Lighthouse local final na Biblioteca: acessibilidade 100, SEO 100, boas
+  práticas 96, performance 71 e CLS 0. O contraste passou após o ajuste dos
+  tokens `text-faint` e `accent`. Performance e boas práticas não são evidência
+  de produção: o servidor HTTP temporário não usa cache/compressão e não serve
+  corretamente alguns prefetches RSC do export estático.
+- Permanecem como gate de cutover a QA autenticada do proprietário, zoom 200%,
+  leitor de tela e Lighthouse no domínio Vercel. A prévia estática local foi
+  usada somente para QA visual; ela desativa middleware e não foi publicada.
 
 ## Rollback
 
