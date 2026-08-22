@@ -16,6 +16,7 @@
     "audit:sync-conflict": "tsx scripts/audit-sync-conflict.mts",
     "audit:figuras": "tsx scripts/audit-public-figure-anchors.mts",
     "audit:cobertura": "tsx scripts/audit-coverage-matrix.mts",
+    "content:prepare-queues": "tsx scripts/prepare-content-queues.mts",
     "audit:estado-estudo": "tsx scripts/audit-study-state.mts",
     "audit:rotas": "tsx scripts/audit-static-routes.mts",
     "audit:rotas:local": "tsx scripts/audit-static-local-server.mts",

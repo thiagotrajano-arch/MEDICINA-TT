@@ -92,6 +92,16 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
   banco remoto; as 287 têm subtema válido, fonte, tags e gabarito estruturalmente
   válido, sem duplicata por conteúdo. Elas continuam fora do banco até passarem
   pelo portão editorial/proveniência; nenhuma foi publicada automaticamente.
+- A fila privada `fila-conteudo-privada-2026-08-22.json` foi gerada com as 287
+  candidatas e uma ordenação explícita das lacunas por OMED, alto rendimento,
+  ausência de resumo, questão e caso. A rotina é somente de preparação: não
+  altera o banco remoto e não cria conteúdo clínico.
+- A triagem privada do manifesto canônico `drive-lote-20260801` atualizou 215
+  imagens no catálogo privado, sem erro, sem faltantes e sem publicação. As
+  imagens não foram consideradas clinicamente validadas: permanecem como
+  `contextual` ou `revisao_pendente` conforme a regra conservadora da rotina.
+  Restam 2 registros privados sem `subtema_id` que não puderam ser vinculados
+  com segurança e exigem revisão humana.
 
 ## P7 — Anki, somente manutenção controlada
 
