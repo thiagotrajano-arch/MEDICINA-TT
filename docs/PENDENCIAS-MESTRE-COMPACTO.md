@@ -78,12 +78,12 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
 
 ### Snapshot verificável de conteúdo — 2026-08-22
 
-- A auditoria local encontrou **1.371 questões** no catálogo atual, não 1.072.
+- A auditoria local encontrou **1.374 questões** no catálogo atual, não 1.072.
 - A estrutura está sem duplicidades exatas/normalizadas, sem comentários vazios,
   sem fonte ausente e sem gabarito correto contraditório automático.
 - Permanecem 20 comentários curtos em 13 questões, concentrados em Neurologia e
   Psiquiatria; isso é pendência editorial, não motivo para alterar o banco em massa.
-- A matriz atual registra 311 subtemas: 69 sem resumo, 146 sem questão e 265 sem
+- A matriz atual registra 311 subtemas: 68 sem resumo, 146 sem questão e 264 sem
   caso. Esses números são do snapshot local de hoje e devem orientar a próxima
   curadoria, sem inventar conteúdo para preencher contagem.
 - As 77 figuras públicas auditadas estão ancoradas; a cobertura por subtema ainda
@@ -115,6 +115,19 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
   com 1 resumo, 4 questões e 1 caso. O recorte usa Ministério da Saúde e INCA,
   cobre princípios, DNA-HPV, mamografia e danos do excesso de rastreamento, e
   deixou o colorretal para uma diretriz nacional consolidada.
+- O lote de Endocrinologia para disfunções tireoidianas foi fechado localmente
+  com 1 resumo, 3 questões e 1 caso, usando fontes oficiais do Ministério da
+  Saúde/CONITEC; permanece fora do Supabase até o release audit.
+- O Drive autenticado foi consultado por metadados. Em até cinco páginas foram
+  inventariados 302 documentos com “medicina”, 179 com “livro” e 426 imagens;
+  as buscas iniciais de “atlas” e “manual” retornaram 36 e 41 itens. Há mais
+  páginas em medicina e imagens. Nenhum item foi compartilhado, movido,
+  apagado ou publicado.
+- A conversão privada foi concluída para 1.449 PDFs/DOCX autorizados: 981
+  texto, 343 parciais, 50 imagem-only, 71 erros estruturais e 4 acima do limite
+  seguro, totalizando 86.072 páginas. O manifesto e o cache ficam em
+  `C:/Users/Adm/Desktop/MEDICINA`, fora do Git. Livros/atlas comerciais são
+  somente orientação privada; não são fonte pública.
 - Foram convertidos para Markdown privado 15 PDFs adicionais (12 texto, 1
   parcial, 2 inválidos) e atualizado o lote privado de 139 PDFs (70 texto, 56
   parciais, 1 imagem, 12 inválidos). Nenhum PDF, Markdown ou texto comercial
@@ -143,9 +156,9 @@ commit identificável e, se houver publicação autorizada, verificação em pro
 
 ## Atualização operacional — lote GO/STORCH — 2026-08-22
 
-- Catálogo local: 1.371 questões; remoto: 1.072; candidatas locais fora do
+- Catálogo local: 1.374 questões; remoto: 1.072; candidatas locais fora do
   remoto: 291.
-- Cobertura: 311 subtemas, 242 resumos, 146 sem questão e 265 sem caso; 64
+- Cobertura: 311 subtemas, 243 resumos, 146 sem questão e 264 sem caso; 65
   casos totais vinculados a subtema.
 - O subtema OMED de infecções congênitas passou de 0 para 4 questões e 1 caso.
 - `typecheck`, `audit:questoes`, `audit:cobertura`, `audit:privacidade` e

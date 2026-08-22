@@ -6,6 +6,7 @@ import { CASOS_NEUROPSIQ_RECENTES } from "./casos-neuropsiquiatria-recentes";
 import { CASOS_ANIMAIS_PECONHENTOS } from "./casos-animais-peconhentos";
 import { CASOS_INFECCOES_CONGENITAS_GO } from "./casos-infeccoes-congenitas-go";
 import { CASOS_RASTREAMENTOS_MFC } from "./casos-rastreamentos-mfc";
+import { CASOS_DISFUNCOES_TIREOIDIANAS } from "./casos-disfuncoes-tireoidianas";
 
 /**
  * Casos clínicos — formato OMED/Einstein.
@@ -24,6 +25,7 @@ export const CASOS: CasoClinico[] = [
   ...CASOS_ANIMAIS_PECONHENTOS,
   ...CASOS_INFECCOES_CONGENITAS_GO,
   ...CASOS_RASTREAMENTOS_MFC,
+  ...CASOS_DISFUNCOES_TIREOIDIANAS,
   // ── GO ────────────────────────────────────────────────────────
   {
     id: "caso-go-01",

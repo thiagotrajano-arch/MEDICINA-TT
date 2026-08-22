@@ -8,6 +8,43 @@ import type { ConteudoSubtema } from "@/domain/content/types";
  * base de estudo e recorte de tema, não de texto copiado.
  */
 export const CONTEUDOS_ENDOCRINO: Record<string, ConteudoSubtema> = {
+  "endocrino--disfuncoes-tireoidianas--hipotireoidismo-e-hipertireoidismo": {
+    subtemaId: "endocrino--disfuncoes-tireoidianas--hipotireoidismo-e-hipertireoidismo",
+    titulo: "Hipotireoidismo e hipertireoidismo",
+    atualizadoEm: "2026-08-22",
+    origem: "atualizacao_diretriz",
+    blocos: [
+      {
+        secao: "Abertura diagnóstica",
+        corpo: "A avaliação começa pelo contexto clínico e pela função tireoidiana. Em suspeita de disfunção primária, o TSH é o exame inicial mais útil; o T4 livre define se a alteração é manifesta ou subclínica. Sintomas isolados são inespecíficos e não substituem confirmação laboratorial.",
+      },
+      {
+        secao: "Hipotireoidismo primário",
+        corpo: "**TSH elevado + T4 livre reduzido** indica hipotireoidismo primário manifesto. A causa mais comum em adultos é a tireoidite autoimune, mas medicamentos, cirurgia, radioiodo e outras condições devem ser considerados. O tratamento e o ajuste devem seguir o PCDT vigente e o contexto individual.",
+      },
+      {
+        secao: "Forma subclínica",
+        corpo: "**TSH elevado + T4 livre normal** caracteriza hipotireoidismo subclínico. A decisão terapêutica não é automática: deve considerar magnitude e persistência do TSH, idade, sintomas, anticorpos, risco cardiovascular, comorbidades, gestação e preferências. Confirmar persistência e revisar interferentes pode ser necessário.",
+      },
+      {
+        secao: "Tireotoxicose e hipertireoidismo",
+        corpo: "**TSH reduzido + T4 livre e/ou T3 elevados** indica tireotoxicose manifesta. O laboratório identifica o excesso hormonal, mas não define sozinho a etiologia. Graves, doença nodular autônoma, tireoidites e exposição exógena seguem caminhos diferentes; a história, o exame e testes dirigidos organizam a investigação.",
+      },
+      {
+        secao: "Tratamento e monitoramento",
+        corpo: "Não se deve iniciar, suspender ou ajustar hormônio por conta própria. Levotiroxina é usada na reposição do hipotireoidismo quando indicada; a resposta deve ser acompanhada com intervalo adequado, considerando adesão, interações, absorção e mudanças de dose. Na tireotoxicose, o tratamento depende da causa e da gravidade, com atenção a sinais de descompensação.",
+      },
+      {
+        secao: "Pontos de prova e segurança",
+        corpo: "- TSH alto + T4 livre baixo: hipotireoidismo primário manifesto.\n- TSH alto + T4 livre normal: hipotireoidismo subclínico.\n- TSH baixo + hormônios elevados: tireotoxicose manifesta.\n- TSH baixo + hormônios normais: forma subclínica, a interpretar no contexto.\n- TSH inadequadamente normal/baixo com T4 livre baixo sugere hipótese central e exige avaliação específica.\n- Biotina, medicamentos, doença aguda e gestação podem modificar a interpretação; revisar o contexto antes de concluir.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde/CONITEC — Protocolo Clínico e Diretrizes Terapêuticas do Hipotireoidismo: https://www.gov.br/conitec/pt-br/midias/relatorios/2021/20210423_pcdt_hipotireoidismo_586.pdf",
+      "Ministério da Saúde/UFRGS — Protocolos de Endocrinologia: https://bvsms.saude.gov.br/bvs/publicacoes/protocolos_atencao_basica_atencao_especializada_endocrinologia.pdf",
+      "Ministério da Saúde — Protocolos Clínicos e Diretrizes Terapêuticas: https://www.gov.br/saude/pt-br/assuntos/pcdt/pcdt",
+    ],
+  },
   "endocrino--nodulo-e-cancer-de-tireoide--diagnostico-e-conduta": {
     subtemaId: "endocrino--nodulo-e-cancer-de-tireoide--diagnostico-e-conduta",
     titulo: "Nódulo e Câncer de Tireoide",

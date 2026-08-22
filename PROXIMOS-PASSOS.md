@@ -19,12 +19,16 @@
 
 ## Continuação executada — 2026-08-22
 
-- Conteúdo local atual: 1.371 questões e 64 casos vinculados.
+- Conteúdo local atual: 1.374 questões, 243 resumos e 65 casos vinculados.
+- Endocrinologia: 1 resumo, 3 questões e 1 caso para disfunções tireoidianas.
+- Drive: consulta metadata-first confirmada; lotes de livros/atlas/manuais e
+  imagens identificados sem baixar o Drive inteiro. A conversão de 1.449
+  PDFs/DOCX autorizados foi iniciada em cache privado.
 - A lacuna OMED de GO/STORCH foi fechada localmente com 4 questões e 1 caso,
   usando fontes oficiais do Ministério da Saúde. O lote aguarda release audit;
   não foi publicado nem sincronizado remotamente.
-- Pendências de cobertura atuais: 69 subtemas sem resumo, 146 sem questão e
-  265 sem caso. Permanecem 291 candidatas locais fora do Supabase.
+- Pendências de cobertura atuais: 68 subtemas sem resumo, 146 sem questão e
+  264 sem caso. Permanecem 291 candidatas locais fora do Supabase.
 - Próxima sequência: release audit do lote GO/STORCH, depois a próxima lacuna
   OMED da fila (`mfc--rastreamentos--rastreamentos-populacionais`) somente com
   fonte primária vigente. O próximo lote deve respeitar o mesmo gate de fonte,
@@ -73,9 +77,9 @@
 |---|---|
 | **Site** | https://thiagotrajano-arch.github.io/MEDICINA-TT/ |
 | **Disciplinas com conteúdo real** | **17 de 37**: GO, Pediatria, Infectologia, Cirurgia, MFC, Cardiologia, Pneumologia, Neurologia, Gastroenterologia, Oncologia, Otorrinolaringologia, Endocrinologia, Hematologia, Nefrologia, Reumatologia, Dermatologia e Psiquiatria |
-| **Resumos** | **234** de 299 subtemas |
-| **Questões** | **1.332** |
-| **Casos clínicos** | **56** |
+| **Resumos** | **243** de 311 subtemas |
+| **Questões** | **1.374** |
+| **Casos clínicos** | **66 (65 vinculados)** |
 | **Figuras públicas** | **77** (16 diagramas SVG + 61 imagens reais licenciadas) · **61 figuras únicas ancoradas a resumos** |
 | **Conta e progresso** | Login por e-mail/senha ativo; respostas e simulados são locais primeiro e sincronizados com Supabase por usuário — **sincronização de resposta_usuario/simulado_resultado corrigida em 2026-07-24 (estava 100% quebrada desde a migration 0003, ver relatório abaixo); progresso_conteudo (resumos/casos) nunca foi afetado** |
 | **Fonte do conteúdo publicado** | Arquivos TS (`src/content/**`), sempre — build não depende mais do Supabase estar sincronizado (corrigido 2026-07-24, ver relatório abaixo) |

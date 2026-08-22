@@ -7,7 +7,7 @@ inventar material clínico e sem expor mídia privada.
 
 ### Questões
 
-- Catálogo local: 1.371.
+- Catálogo local: 1.374.
 - Catálogo remoto: 1.072.
 - Candidatas locais ausentes no remoto: 291.
 - Estado da reconciliação: 291 `novo`, 0 duplicadas por conteúdo e 0 em revisão
@@ -55,6 +55,37 @@ divulgada pelo INCA em 2025 e os riscos de falso positivo e sobrediagnóstico.
 O rastreamento colorretal foi deixado fora deste lote porque a diretriz
 nacional ainda está em consolidação/consulta pública no snapshot consultado.
 
+### Micro-lote adicional: Endocrinologia
+
+Foi fechado o subtema comprovadamente vazio
+`endocrino--disfuncoes-tireoidianas--hipotireoidismo-e-hipertireoidismo` com:
+
+- 1 resumo-base;
+- 3 questões autorais comentadas;
+- 1 caso clínico em etapas;
+- vínculo taxonômico, tags, gabaritos e fontes oficiais do Ministério da Saúde/
+  CONITEC.
+
+O lote permanece local até o release audit e a revisão editorial final.
+
+### Drive, livros e mídia privada
+
+- O conector autenticado foi consultado em metadata-first, sem download em
+  massa. Em até cinco páginas foram inventariados 302 documentos para
+  “medicina”, 179 para “livro” e 426 imagens; as buscas de “atlas” e “manual”
+  retornaram 36 e 41 itens na primeira página. Há continuação em medicina e
+  imagens; esses números ainda não representam o total do Drive.
+- O registro privado detalhado está em
+  `C:/Users/Adm/Desktop/MEDICINA/_private-corpus/drive-inventory-20260822.md`.
+- Foi concluída a conversão privada de 1.449 PDFs/DOCX do corpus autorizado
+  para `C:/Users/Adm/Desktop/MEDICINA/_md-cache/catalogo-2026-08-22`.
+  O manifesto registra 981 texto, 343 parciais, 50 imagem-only, 71 erros
+  estruturais e 4 acima do limite seguro, em 86.072 páginas.
+- O manifesto privado de mídia contém 692 entradas e 216 cópias canônicas;
+  a triagem clínica anterior já atualizou 215 imagens elegíveis sem erro ou
+  faltante. Nenhuma foi publicada; imagens comerciais, de paciente ou sem
+  licença permanecem privadas/revisão pendente.
+
 ### Mídia privada e fontes convertidas
 
 - Manifesto canônico examinado: `drive-lote-20260801/image-manifest.json`.
@@ -76,15 +107,21 @@ nacional ainda está em consolidação/consulta pública no snapshot consultado.
 - `npm.cmd run audit:questoes` — passou; sem duplicidades, comentários vazios,
   fonte ausente ou gabarito contraditório automático; permanecem 20 comentários
   curtos em 13 questões.
-- `npm.cmd run audit:privacidade` — passou; 346 arquivos públicos e 3
+- `npm.cmd run audit:privacidade` — passou; 348 arquivos públicos e 3
   curriculares verificados.
 - `npm.cmd run audit:anon-surface` — passou; 4 tabelas privadas retornaram 401
   e zero linhas para anônimo.
 - `npm.cmd run audit:sync-conflict` — passou.
 - `npm.cmd run audit:estado-estudo` — passou; RLS ativa, 138 registros, um
   proprietário e estados válidos.
-- `npm.cmd run audit:cobertura` — passou; 311 subtemas, 242 resumos, 1.371
-  questões e 64 casos vinculados.
+- `npm.cmd run audit:cobertura` — passou; 311 subtemas, 243 resumos, 1.374
+  questões e 66 casos totais, 65 vinculados.
+- `npm.cmd run build` — passou; 432 páginas estáticas.
+- `npm.cmd run audit:rotas` — a aplicação local respondeu HTTP 200, mas as
+  rotas públicas redirecionaram para `/entrar` sem sessão; isso é compatível
+  com o corte privado, porém o script atual exige um `h1` público e marcou
+  essas rotas como FAIL. As rotas autenticadas passaram. Não foi tratado como
+  prova de QA autenticada real.
 
 ## Próximo passo bloqueado por curadoria
 

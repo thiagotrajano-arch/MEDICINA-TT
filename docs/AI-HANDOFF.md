@@ -1,5 +1,26 @@
 # Handoff para outra IA — Codex Medicus
 
+## Atualização operacional — 2026-08-22
+
+- Estado local de conteúdo: 1.374 questões, 243 resumos, 66 casos totais
+  (65 vinculados) e 311 subtemas.
+- O lote local de Endocrinologia fechou 1 resumo, 3 questões e 1 caso para
+  disfunções tireoidianas; aguarda release audit e não foi sincronizado.
+- O conector autenticado do Drive respondeu em metadata-first. Em até cinco
+  páginas foram inventariados 302 documentos com “medicina”, 179 com “livro” e
+  426 imagens; há continuação nas buscas de medicina e imagens. Não houve
+  download em massa, alteração ou publicação.
+- A conversão privada foi concluída para 1.449 PDFs/DOCX autorizados em
+  `C:/Users/Adm/Desktop/MEDICINA/_md-cache/catalogo-2026-08-22`: 981 texto,
+  343 parciais, 50 imagem-only, 71 erros estruturais e 4 acima do limite
+  seguro, em 86.072 páginas.
+- O manifesto privado de imagens contém 692 entradas e 216 canônicas; 215
+  elegíveis já foram triadas sem erro/faltante, mantendo material comercial,
+  paciente ou sem licença verificável fora do site público.
+- Registro privado do inventário: `C:/Users/Adm/Desktop/MEDICINA/_private-corpus/drive-inventory-20260822.md`.
+- Próximo gate: concluir o manifesto de conversão, revisar imagens por licença
+  e vínculo clínico, rodar release audit e só então decidir sincronização.
+
 ## Execução do plano mestre — 2026-08-14
 
 - O primeiro lote do plano mestre unificou o estado de estudo em
