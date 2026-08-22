@@ -25,6 +25,9 @@ import { CONTEUDOS_NEURO_SEMANA, CONTEUDOS_PSIQ } from "./conteudos/neuropsiquia
 import { CONTEUDOS_NEUROPSIQ_RECENTES } from "./conteudos/neuropsiquiatria-recentes";
 import { CONTEUDOS_OMED_EXTRAIDOS } from "./omed-extraidos";
 import { CONTEUDOS_ANTIBIOTICOTERAPIA } from "./conteudos/antibioticoterapia";
+import { CONTEUDOS_GASTRO_HEMORRAGIA } from "./conteudos/gastro-hemorragia";
+import { CONTEUDOS_DOENCAS_INFLAMATORIAS_INTESTINAIS } from "./conteudos/doencas-inflamatorias-intestinais";
+import { CONTEUDOS_MENINGITES_ENCEFALITES } from "./conteudos/meningites-encefalites";
 
 /**
  * Resumos — agregador.
@@ -45,6 +48,9 @@ const CONTEUDOS_BASE: Record<string, ConteudoSubtema> = {
   ...CONTEUDOS_PED,
   ...CONTEUDOS_INF,
   ...CONTEUDOS_ANTIBIOTICOTERAPIA,
+  ...CONTEUDOS_GASTRO_HEMORRAGIA,
+  ...CONTEUDOS_DOENCAS_INFLAMATORIAS_INTESTINAIS,
+  ...CONTEUDOS_MENINGITES_ENCEFALITES,
   ...CONTEUDOS_CIR,
   ...CONTEUDOS_MFC,
   ...CONTEUDOS_ESTRATEGIA_GO,

@@ -164,3 +164,20 @@ commit identificável e, se houver publicação autorizada, verificação em pro
 - `typecheck`, `audit:questoes`, `audit:cobertura`, `audit:privacidade` e
   `audit:sync-conflict` passaram.
 - O conteúdo novo permanece local e não foi inserido no Supabase nem publicado.
+
+### Atualização após três lotes clínicos — 2026-08-22
+
+- Catálogo local: **1.383 questões**, 245 resumos e 68 casos totais, dos quais
+  67 estão vinculados a subtema.
+- Lacunas atuais: **66 sem resumo, 146 sem questão e 262 sem caso**. A fila
+  ainda contém 291 candidatas locais ausentes do banco remoto; elas continuam
+  fora do Supabase até revisão editorial e proveniência.
+- Foram fechados localmente hemorragia digestiva, doenças inflamatórias
+  intestinais e meningites/encefalites, cada um com resumo, 3 questões e caso.
+- QA pós-lotes: typecheck, lint, auditorias de questões, cobertura, privacidade,
+  superfície anônima, conflitos e estado de estudo passaram. Build passou com
+  435 páginas estáticas; rotas locais passaram com HTTP 200 e sem falhas
+  estruturais de acessibilidade.
+- Conversão privada: 1.449 arquivos autorizados catalogados; 71 continuam com
+  erro estrutural, 50 são imagem-only e 4 excedem 250 MB. Permanecem privados
+  e aguardam recuperação seletiva, sem OCR/regravação em massa.

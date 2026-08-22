@@ -33,6 +33,9 @@ import { QUESTOES_ANIMAIS_PECONHENTOS } from "./questoes/animais-peconhentos";
 import { QUESTOES_INFECCOES_CONGENITAS_GO } from "./questoes/infeccoes-congenitas-go";
 import { QUESTOES_RASTREAMENTOS_MFC } from "./questoes/rastreamentos-mfc";
 import { QUESTOES_DISFUNCOES_TIREOIDIANAS } from "./questoes/disfuncoes-tireoidianas";
+import { QUESTOES_HEMORRAGIA_DIGESTIVA } from "./questoes/hemorragia-digestiva";
+import { QUESTOES_DOENCAS_INFLAMATORIAS_INTESTINAIS } from "./questoes/doencas-inflamatorias-intestinais";
+import { QUESTOES_MENINGITES_ENCEFALITES } from "./questoes/meningites-encefalites";
 
 /**
  * Banco de questões — agregador.
@@ -55,6 +58,9 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_INFECCOES_CONGENITAS_GO,
   ...QUESTOES_RASTREAMENTOS_MFC,
   ...QUESTOES_DISFUNCOES_TIREOIDIANAS,
+  ...QUESTOES_HEMORRAGIA_DIGESTIVA,
+  ...QUESTOES_DOENCAS_INFLAMATORIAS_INTESTINAIS,
+  ...QUESTOES_MENINGITES_ENCEFALITES,
   ...QUESTOES_INF_LOTE_01,
   ...QUESTOES_MFC,
   ...QUESTOES_OMED_EXTRAIDAS,

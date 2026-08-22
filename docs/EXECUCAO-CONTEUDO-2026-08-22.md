@@ -128,3 +128,28 @@ O lote permanece local até o release audit e a revisão editorial final.
 O próximo lote clínico deve começar pelos itens de maior prioridade da fila,
 com fontes atuais e revisão editorial individual. A publicação das 291 questões
 e a validação clínica das imagens não devem ser automatizadas em massa.
+
+### Lotes adicionais: Gastroenterologia e Neurologia
+
+Foram fechadas três lacunas OMED de alta prioridade, com fontes primárias
+atuais e sem copiar material privado:
+
+- `gastro--hemorragia-digestiva--diagnostico-e-conduta`: 1 resumo, 3 questões
+  e 1 caso em etapas, usando ESGE 2021 e protocolo público do SAMU.
+- `gastro--doencas-inflamatorias-intestinais--diagnostico-e-conduta`: 1 resumo,
+  3 questões e 1 caso em etapas, usando ACG 2025.
+- `neuro--meningites-e-encefalites--diagnostico-e-conduta`: 1 resumo, 3
+  questões e 1 caso em etapas, usando OMS 2025.
+
+Os lotes são autorais, possuem fonte, tags, gabarito e vínculo exato por
+`subtemaId`. Ainda não foram sincronizados no Supabase nem publicados.
+
+### QA atualizado
+
+- Catálogo: 1.383 questões, 245 resumos e 68 casos totais, 67 vinculados.
+- Lacunas: 66 sem resumo, 146 sem questão e 262 sem caso.
+- `typecheck`, `lint`, auditorias de questões, cobertura, privacidade,
+  superfície anônima, conflitos e estado de estudo passaram.
+- `npm.cmd run build` passou com 435 páginas estáticas.
+- `npm.cmd run audit:rotas:local` passou nas oito rotas verificadas: HTTP 200,
+  sem imagens sem alt, botões sem nome, IDs duplicados ou erros estruturais.

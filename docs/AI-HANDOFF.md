@@ -1107,3 +1107,23 @@ associado automaticamente.
   locais continuam fora do banco remoto.
 - `typecheck`, `audit:questoes`, `audit:cobertura` e `audit:privacidade`
   passaram. O lote ainda não foi publicado nem sincronizado no Supabase.
+
+## Lotes Gastro/Neuro e QA final — 2026-08-22
+
+- Foram fechados três subtemas OMED: `gastro--hemorragia-digestiva--diagnostico-e-conduta`,
+  `gastro--doencas-inflamatorias-intestinais--diagnostico-e-conduta` e
+  `neuro--meningites-e-encefalites--diagnostico-e-conduta`.
+- Cada subtema recebeu 1 resumo, 3 questões e 1 caso em etapas. As fontes são
+  ESGE, ACG 2025 e OMS 2025, respectivamente; o conteúdo privado do Drive não
+  foi copiado para esses módulos.
+- Estado local: 1.383 questões, 245 resumos e 68 casos totais (67 vinculados);
+  lacunas: 66 sem resumo, 146 sem questão e 262 sem caso.
+- QA final: `typecheck`, `lint`, `audit:questoes`, `audit:cobertura`,
+  `audit:privacidade`, `audit:anon-surface`, `audit:sync-conflict`,
+  `audit:estado-estudo`, `build` e `audit:rotas:local` passaram. Build com 435
+  páginas estáticas.
+- A branch `codex/f0-v2-diagnostico` segue local e à frente do remoto; não houve
+  push, sincronização no Supabase ou publicação automática nesta rodada.
+- O cache privado do Drive permanece fora do Git. Há 71 conversões com erro,
+  50 imagem-only e 4 acima de 250 MB; recuperação seletiva está registrada em
+  `C:/Users/Adm/Desktop/MEDICINA/_private-corpus/conversion-recovery-20260822.md`.

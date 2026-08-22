@@ -7,6 +7,9 @@ import { CASOS_ANIMAIS_PECONHENTOS } from "./casos-animais-peconhentos";
 import { CASOS_INFECCOES_CONGENITAS_GO } from "./casos-infeccoes-congenitas-go";
 import { CASOS_RASTREAMENTOS_MFC } from "./casos-rastreamentos-mfc";
 import { CASOS_DISFUNCOES_TIREOIDIANAS } from "./casos-disfuncoes-tireoidianas";
+import { CASOS_HEMORRAGIA_DIGESTIVA } from "./casos-hemorragia-digestiva";
+import { CASOS_DOENCAS_INFLAMATORIAS_INTESTINAIS } from "./casos-doencas-inflamatorias-intestinais";
+import { CASOS_MENINGITES_ENCEFALITES } from "./casos-meningites-encefalites";
 
 /**
  * Casos clínicos — formato OMED/Einstein.
@@ -26,6 +29,9 @@ export const CASOS: CasoClinico[] = [
   ...CASOS_INFECCOES_CONGENITAS_GO,
   ...CASOS_RASTREAMENTOS_MFC,
   ...CASOS_DISFUNCOES_TIREOIDIANAS,
+  ...CASOS_HEMORRAGIA_DIGESTIVA,
+  ...CASOS_DOENCAS_INFLAMATORIAS_INTESTINAIS,
+  ...CASOS_MENINGITES_ENCEFALITES,
   // ── GO ────────────────────────────────────────────────────────
   {
     id: "caso-go-01",
