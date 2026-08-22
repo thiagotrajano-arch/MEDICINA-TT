@@ -223,8 +223,15 @@ export async function sincronizarProgresso(): Promise<{
   return { respostas, simulados, sincronizado: true };
 }
 
-function unirPorId<T extends { id: string; em: number }>(a: T[], b: T[]): T[] {
-  return [...new Map([...a, ...b].map((item) => [item.id, item])).values()].sort((x, y) => x.em - y.em);
+export function unirPorId<T extends { id: string; em: number }>(a: T[], b: T[]): T[] {
+  const porId = new Map<string, T>();
+  for (const item of [...a, ...b]) {
+    const existente = porId.get(item.id);
+    // Um retorno remoto atrasado não pode sobrescrever um evento local mais
+    // novo durante a reconciliação depois de um período offline.
+    if (!existente || item.em >= existente.em) porId.set(item.id, item);
+  }
+  return [...porId.values()].sort((x, y) => x.em - y.em);
 }
 
 export async function limparProgresso(): Promise<void> {

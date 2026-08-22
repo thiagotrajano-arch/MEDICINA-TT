@@ -12,6 +12,8 @@
     "audit:questoes:reconciliar": "tsx scripts/reconcile-question-candidates.mts",
     "fix:feedback-questoes": "tsx scripts/normalizar-feedback-questoes.mts",
     "audit:privacidade": "tsx scripts/audit-privacidade-publica.mts",
+    "audit:anon-surface": "tsx scripts/audit-anon-surface.mts",
+    "audit:sync-conflict": "tsx scripts/audit-sync-conflict.mts",
     "audit:figuras": "tsx scripts/audit-public-figure-anchors.mts",
     "audit:cobertura": "tsx scripts/audit-coverage-matrix.mts",
     "audit:estado-estudo": "tsx scripts/audit-study-state.mts",
