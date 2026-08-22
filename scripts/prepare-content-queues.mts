@@ -97,9 +97,11 @@ async function main() {
     if (motivos.length) coverage.push({ ...row, prioridade: score(row), motivos });
   }
   coverage.sort((a, b) => b.prioridade - a.prioridade || a.disciplina.localeCompare(b.disciplina, "pt-BR") || a.subtema.localeCompare(b.subtema, "pt-BR"));
+  const priorityBySubtema = new Map(coverage.map((row) => [row.subtemaId, row]));
 
   const questionQueue = reconciliation.candidates.map((candidate) => {
     const taxonomy = findTaxonomyRow(candidate.subtemaId);
+    const gap = priorityBySubtema.get(candidate.subtemaId);
     return {
       id: candidate.id,
       disciplinaId: candidate.disciplinaId,
@@ -112,9 +114,12 @@ async function main() {
       tagsCount: candidate.tagsCount,
       hasSource: candidate.hasSource,
       validSubtopic: candidate.validSubtopic,
+      prioridadeSubtema: gap?.prioridade ?? 0,
+      motivosDaLacuna: gap?.motivos ?? [],
+      estadoEditorial: "aguarda_revisao_clinica",
       acao: "revisao_editorial_manual; nenhuma insercao automatica",
     };
-  });
+  }).sort((a, b) => b.prioridadeSubtema - a.prioridadeSubtema || a.disciplina.localeCompare(b.disciplina, "pt-BR") || (a.subtema ?? "").localeCompare(b.subtema ?? "", "pt-BR"));
 
   const report = {
     generatedAt: new Date().toISOString(),

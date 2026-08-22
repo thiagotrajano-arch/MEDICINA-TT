@@ -1980,6 +1980,20 @@ A revisão consolidada, os bloqueadores, a ordem de execução e os critérios d
 - [ ] P1: criar a matriz de cobertura antes de produzir novos resumos, questões, casos ou imagens.
 - [ ] P2: prototipar e aprovar a nova arquitetura e o design antes de implementar o redesenho amplo.
 - [ ] P3: aplicar a rotina PDF → Markdown privado → classificação → semana → revisão → destino a toda fonte nova.
+
+## Atualização operacional — 2026-08-22
+
+- [x] Reconciliar as 287 candidatas locais contra o catálogo remoto e gerar fila
+  editorial privada sem mutação automática.
+- [x] Recalcular lacunas por `subtemaId`: 70 sem resumo, 149 sem questão e 268
+  sem caso; a fila privada registra 273 subtemas com pelo menos uma lacuna.
+- [x] Triar o manifesto canônico privado do lote `drive-lote-20260801`: 215
+  imagens atualizadas no catálogo privado, sem publicação.
+- [ ] Revisar clinicamente o primeiro micro-lote de questões com fontes atuais.
+- [ ] Validar visualmente as mídias ainda pendentes e resolver os 2 registros
+  sem vínculo seguro de subtema.
+- [ ] Publicar somente após revisão editorial, QA autenticada e confirmação de
+  produção; o commit `646defd` permanece local.
 ## Fontes universitárias de imagem clínica — 2026-08-13
 
 - [x] Catalogar fontes universitárias de TC, RM, RX, ultrassom e patologia.

@@ -1011,3 +1011,26 @@ associado automaticamente.
   dispositivos, inclusive conflito/offline/idempotência server-side.
 - Typecheck, lint, auditoria de questões e reconciliação passaram. Alterações
   locais ainda não foram publicadas; os arquivos privados continuam fora do Git.
+
+## Continuação de conteúdo e mídia privada — 2026-08-22
+
+- A reconciliação foi atualizada: 1.359 questões locais, 1.072 remotas e 287
+  candidatas locais. Todas possuem fonte, tags e subtema válido no recorte
+  estrutural; continuam aguardando revisão editorial individual e não foram
+  inseridas no banco remoto.
+- Foi criado o comando `npm.cmd run content:prepare-queues`, que materializa
+  uma fila privada das candidatas e das lacunas por `subtemaId`, com prioridade
+  OMED, alto rendimento, ausência de resumo, questão e caso. O artefato fica em
+  `exports/private/fila-conteudo-privada-2026-08-22.json`, fora do Git.
+- A triagem do manifesto canônico privado `drive-lote-20260801` atualizou 215
+  imagens no catálogo privado, sem erro ou arquivo faltante. A classificação é
+  conservadora (`contextual` ou `revisao_pendente`); isso não equivale a
+  validação clínica nem autoriza publicação. Dois registros continuam sem
+  subtema seguro.
+- O commit local `646defd` registra a fila, o relatório e a atualização do
+  backlog. A branch continua `codex/f0-v2-diagnostico`; este lote ainda não foi
+  enviado ao GitHub/Vercel.
+- Próxima ordem: revisar clinicamente um micro-lote de maior prioridade com
+  fontes atuais; só depois preparar inserção remota idempotente. Em paralelo,
+  falta QA do proprietário em navegador, logout/expiração, dois dispositivos,
+  conflito offline e isolamento owner-only.
