@@ -5,6 +5,7 @@ import { CASOS_ANTIBIOTICOTERAPIA } from "./casos-antibioticoterapia";
 import { CASOS_NEUROPSIQ_RECENTES } from "./casos-neuropsiquiatria-recentes";
 import { CASOS_ANIMAIS_PECONHENTOS } from "./casos-animais-peconhentos";
 import { CASOS_INFECCOES_CONGENITAS_GO } from "./casos-infeccoes-congenitas-go";
+import { CASOS_RASTREAMENTOS_MFC } from "./casos-rastreamentos-mfc";
 
 /**
  * Casos clínicos — formato OMED/Einstein.
@@ -22,6 +23,7 @@ export const CASOS: CasoClinico[] = [
   ...CASOS_NEUROPSIQ_RECENTES,
   ...CASOS_ANIMAIS_PECONHENTOS,
   ...CASOS_INFECCOES_CONGENITAS_GO,
+  ...CASOS_RASTREAMENTOS_MFC,
   // ── GO ────────────────────────────────────────────────────────
   {
     id: "caso-go-01",

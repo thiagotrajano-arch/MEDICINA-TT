@@ -78,12 +78,12 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
 
 ### Snapshot verificável de conteúdo — 2026-08-22
 
-- A auditoria local encontrou **1.367 questões** no catálogo atual, não 1.072.
+- A auditoria local encontrou **1.371 questões** no catálogo atual, não 1.072.
 - A estrutura está sem duplicidades exatas/normalizadas, sem comentários vazios,
   sem fonte ausente e sem gabarito correto contraditório automático.
 - Permanecem 20 comentários curtos em 13 questões, concentrados em Neurologia e
   Psiquiatria; isso é pendência editorial, não motivo para alterar o banco em massa.
-- A matriz atual registra 311 subtemas: 70 sem resumo, 147 sem questão e 266 sem
+- A matriz atual registra 311 subtemas: 69 sem resumo, 146 sem questão e 265 sem
   caso. Esses números são do snapshot local de hoje e devem orientar a próxima
   curadoria, sem inventar conteúdo para preencher contagem.
 - As 77 figuras públicas auditadas estão ancoradas; a cobertura por subtema ainda
@@ -111,6 +111,10 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
   páginas/notas do Ministério da Saúde sobre sífilis gestacional/congênita,
   toxoplasmose e síndrome da rubéola congênita. O lote ainda aguarda release
   audit e revisão editorial final antes de qualquer sincronização remota.
+- O primeiro recorte editorial de MFC/Rastreamentos populacionais foi fechado
+  com 1 resumo, 4 questões e 1 caso. O recorte usa Ministério da Saúde e INCA,
+  cobre princípios, DNA-HPV, mamografia e danos do excesso de rastreamento, e
+  deixou o colorretal para uma diretriz nacional consolidada.
 - Foram convertidos para Markdown privado 15 PDFs adicionais (12 texto, 1
   parcial, 2 inválidos) e atualizado o lote privado de 139 PDFs (70 texto, 56
   parciais, 1 imagem, 12 inválidos). Nenhum PDF, Markdown ou texto comercial
@@ -139,9 +143,9 @@ commit identificável e, se houver publicação autorizada, verificação em pro
 
 ## Atualização operacional — lote GO/STORCH — 2026-08-22
 
-- Catálogo local: 1.367 questões; remoto: 1.072; candidatas locais fora do
+- Catálogo local: 1.371 questões; remoto: 1.072; candidatas locais fora do
   remoto: 291.
-- Cobertura: 311 subtemas, 241 resumos, 147 sem questão e 266 sem caso; 63
+- Cobertura: 311 subtemas, 242 resumos, 146 sem questão e 265 sem caso; 64
   casos totais vinculados a subtema.
 - O subtema OMED de infecções congênitas passou de 0 para 4 questões e 1 caso.
 - `typecheck`, `audit:questoes`, `audit:cobertura`, `audit:privacidade` e

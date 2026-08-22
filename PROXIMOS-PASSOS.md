@@ -19,15 +19,16 @@
 
 ## Continuação executada — 2026-08-22
 
-- Conteúdo local atual: 1.367 questões e 63 casos vinculados.
+- Conteúdo local atual: 1.371 questões e 64 casos vinculados.
 - A lacuna OMED de GO/STORCH foi fechada localmente com 4 questões e 1 caso,
   usando fontes oficiais do Ministério da Saúde. O lote aguarda release audit;
   não foi publicado nem sincronizado remotamente.
-- Pendências de cobertura atuais: 70 subtemas sem resumo, 147 sem questão e
-  266 sem caso. Permanecem 291 candidatas locais fora do Supabase.
+- Pendências de cobertura atuais: 69 subtemas sem resumo, 146 sem questão e
+  265 sem caso. Permanecem 291 candidatas locais fora do Supabase.
 - Próxima sequência: release audit do lote GO/STORCH, depois a próxima lacuna
   OMED da fila (`mfc--rastreamentos--rastreamentos-populacionais`) somente com
-  fonte primária vigente.
+  fonte primária vigente. O próximo lote deve respeitar o mesmo gate de fonte,
+  QA e não-publicação automática.
 
 ## Fechamento e retomada — 2026-07-29
 

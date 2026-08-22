@@ -1072,3 +1072,17 @@ associado automaticamente.
 - Próxima ação segura: release audit do lote, revisão editorial final e só então
   preparar inserção remota idempotente. Persistem os gates do proprietário em
   navegador, logout/expiração, dois dispositivos, offline/conflito e owner-only.
+
+## Lote MFC/Rastreamentos — 2026-08-22
+
+- Foi fechado o subtema `mfc--rastreamentos--rastreamentos-populacionais` com 1
+  resumo, 4 questões e 1 caso em etapas.
+- O lote usa fontes oficiais do Ministério da Saúde e INCA, diferenciando
+  rastreamento de investigação diagnóstica, registrando DNA-HPV no colo do
+  útero, mamografia prioritária de 50–74 anos a cada dois anos e riscos de
+  falsos positivos/sobrediagnóstico.
+- O catálogo passou a 1.371 questões e 64 casos vinculados; a matriz registra
+  69 subtemas sem resumo, 146 sem questão e 265 sem caso. As 291 candidatas
+  locais continuam fora do banco remoto.
+- `typecheck`, `audit:questoes`, `audit:cobertura` e `audit:privacidade`
+  passaram. O lote ainda não foi publicado nem sincronizado no Supabase.

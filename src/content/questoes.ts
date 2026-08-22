@@ -31,6 +31,7 @@ import { QUESTOES_NEUROPSIQ_RECENTES } from "./questoes/neuropsiquiatria-recente
 import { QUESTOES_ANTIBIOTICOTERAPIA } from "./questoes/antibioticoterapia";
 import { QUESTOES_ANIMAIS_PECONHENTOS } from "./questoes/animais-peconhentos";
 import { QUESTOES_INFECCOES_CONGENITAS_GO } from "./questoes/infeccoes-congenitas-go";
+import { QUESTOES_RASTREAMENTOS_MFC } from "./questoes/rastreamentos-mfc";
 
 /**
  * Banco de questões — agregador.
@@ -51,6 +52,7 @@ export const QUESTOES: Questao[] = [
   ...QUESTOES_ANTIBIOTICOTERAPIA,
   ...QUESTOES_ANIMAIS_PECONHENTOS,
   ...QUESTOES_INFECCOES_CONGENITAS_GO,
+  ...QUESTOES_RASTREAMENTOS_MFC,
   ...QUESTOES_INF_LOTE_01,
   ...QUESTOES_MFC,
   ...QUESTOES_OMED_EXTRAIDAS,

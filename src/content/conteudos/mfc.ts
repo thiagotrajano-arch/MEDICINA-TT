@@ -7,6 +7,44 @@ import type { ConteudoSubtema } from "@/domain/content/types";
  */
 
 export const CONTEUDOS_MFC: Record<string, ConteudoSubtema> = {
+  "mfc--rastreamentos--rastreamentos-populacionais": {
+    subtemaId: "mfc--rastreamentos--rastreamentos-populacionais",
+    titulo: "Rastreamentos populacionais",
+    atualizadoEm: "2026-08-22",
+    origem: "atualizacao_diretriz",
+    blocos: [
+      {
+        secao: "O que é — e o que não é",
+        corpo: "Rastreamento aplica um teste a pessoas **assintomáticas** de uma população-alvo definida para identificar doença pré-clínica ou lesões precursoras. Não é sinônimo de investigar sintomas: quem tem queixa precisa de avaliação diagnóstica. Um programa responsável também precisa prever confirmação, tratamento e seguimento para resultados alterados.",
+      },
+      {
+        secao: "Organizado versus oportunístico",
+        corpo: "O rastreamento **organizado** define população-alvo, convocação, periodicidade, registro e fluxo de cuidado. O oportunístico ocorre durante atendimentos por outras razões e pode perder pessoas que não acessam o serviço, além de concentrar exames em quem já procura a rede. A existência de um exame disponível não significa que toda pessoa deva fazê-lo em qualquer intervalo.",
+      },
+      {
+        secao: "Colo do útero — atualização nacional",
+        corpo: "A diretriz brasileira aprovada em 2025 incorporou o teste molecular para detecção de DNA-HPV oncogênico como exame primário do rastreamento organizado. A citologia pode participar do fluxo complementar após resultado positivo, conforme a diretriz e a implantação local da rede. A periodicidade depende do método e do protocolo vigente; não se deve transformar a prática em repetição anual automática.",
+      },
+      {
+        secao: "Mama — faixa prioritária",
+        corpo: "A atualização do INCA divulgada em 2025 passou a priorizar mamografia de rastreamento para mulheres de **50 a 74 anos**, a cada dois anos, como estratégia com maior comprovação de redução de mortalidade. Fora da faixa prioritária, a decisão deve considerar contexto individual, benefícios, falsos positivos, exames adicionais e sobrediagnóstico.",
+      },
+      {
+        secao: "Benefícios, vieses e danos",
+        corpo: "O desfecho mais importante é reduzir a **mortalidade específica**, não apenas aumentar a sobrevida contada a partir do diagnóstico. O lead-time pode fazer a sobrevida aparente crescer sem adiar o óbito; o length-time seleciona doenças de evolução mais lenta; e o sobrediagnóstico detecta alterações que nunca causariam dano. Falsos positivos podem gerar ansiedade e procedimentos desnecessários.",
+      },
+      {
+        secao: "Pontos de prova",
+        corpo: "- Pessoa sintomática: investigação diagnóstica, não rastreamento.\n- Resultado positivo: achado de triagem, não diagnóstico confirmado.\n- Todo programa precisa de confirmação e tratamento acessíveis.\n- A periodicidade é parte da recomendação; fazer mais exames não garante mais benefício.\n- Decisão compartilhada deve apresentar benefícios e danos, respeitando a diretriz nacional e a organização local do SUS.",
+      },
+    ],
+    referencias: [
+      "Ministério da Saúde — Como funciona o rastreamento do câncer no SUS?: https://www.gov.br/saude/pt-br/composicao/saes/atencao-ao-cancer/faq/faq/como-funciona-o-rastreamento-do",
+      "Ministério da Saúde/CONITEC — Diretriz Brasileira para Rastreamento do Câncer do Colo do Útero (2025): https://www.gov.br/saude/pt-br/assuntos/pcdt/r/rastreamento-cancer-do-colo-do-utero/view",
+      "INCA — Detecção precoce do câncer de mama (atualização de 2025): https://www.gov.br/inca/pt-br/assuntos/cancer/tipos/mama/versao-para-profissionais-de-saude",
+      "Ministério da Saúde — Câncer: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/saude-de-a-z/c/cancer",
+    ],
+  },
   "mfc--epidemiologia--testes-diagnosticos-sensibilidade-e-especificidade": {
     subtemaId: "mfc--epidemiologia--testes-diagnosticos-sensibilidade-e-especificidade",
     titulo: "Testes diagnósticos — sensibilidade, especificidade e valores preditivos",

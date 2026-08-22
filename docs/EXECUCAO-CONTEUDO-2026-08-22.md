@@ -7,7 +7,7 @@ inventar material clínico e sem expor mídia privada.
 
 ### Questões
 
-- Catálogo local: 1.367.
+- Catálogo local: 1.371.
 - Catálogo remoto: 1.072.
 - Candidatas locais ausentes no remoto: 291.
 - Estado da reconciliação: 291 `novo`, 0 duplicadas por conteúdo e 0 em revisão
@@ -21,10 +21,10 @@ inventar material clínico e sem expor mídia privada.
 
 A fila foi calculada pelo `subtemaId` exato, sem inferência por nome:
 
-- 70 subtemas sem resumo;
-- 147 sem questão;
-- 266 sem caso;
-- 271 subtemas com pelo menos uma dessas lacunas.
+- 69 subtemas sem resumo;
+- 146 sem questão;
+- 265 sem caso;
+- 270 subtemas com pelo menos uma dessas lacunas.
 
 A prioridade registrada no artefato é OMED + alto rendimento + ausência de
 resumo + ausência de questão + ausência de caso. Isso organiza o trabalho, mas
@@ -47,6 +47,14 @@ tratamento adequado, interpretação contextualizada de sorologia para
 toxoplasmose e vacinação contra rubéola; não foi usado para preencher lacunas
 de CMV sem fonte específica no mesmo lote.
 
+Na sequência, foi fechado o primeiro recorte de MFC/Rastreamentos
+populacionais: resumo-base, 4 questões e 1 caso clínico. O recorte atualiza a
+diferença entre rastreamento e investigação diagnóstica, registra a diretriz
+brasileira de DNA-HPV para colo do útero, a faixa prioritária de mamografia
+divulgada pelo INCA em 2025 e os riscos de falso positivo e sobrediagnóstico.
+O rastreamento colorretal foi deixado fora deste lote porque a diretriz
+nacional ainda está em consolidação/consulta pública no snapshot consultado.
+
 ### Mídia privada e fontes convertidas
 
 - Manifesto canônico examinado: `drive-lote-20260801/image-manifest.json`.
@@ -68,15 +76,15 @@ de CMV sem fonte específica no mesmo lote.
 - `npm.cmd run audit:questoes` — passou; sem duplicidades, comentários vazios,
   fonte ausente ou gabarito contraditório automático; permanecem 20 comentários
   curtos em 13 questões.
-- `npm.cmd run audit:privacidade` — passou; 344 arquivos públicos e 3
+- `npm.cmd run audit:privacidade` — passou; 346 arquivos públicos e 3
   curriculares verificados.
 - `npm.cmd run audit:anon-surface` — passou; 4 tabelas privadas retornaram 401
   e zero linhas para anônimo.
 - `npm.cmd run audit:sync-conflict` — passou.
 - `npm.cmd run audit:estado-estudo` — passou; RLS ativa, 138 registros, um
   proprietário e estados válidos.
-- `npm.cmd run audit:cobertura` — passou; 311 subtemas, 241 resumos, 1.367
-  questões e 63 casos vinculados.
+- `npm.cmd run audit:cobertura` — passou; 311 subtemas, 242 resumos, 1.371
+  questões e 64 casos vinculados.
 
 ## Próximo passo bloqueado por curadoria
 
