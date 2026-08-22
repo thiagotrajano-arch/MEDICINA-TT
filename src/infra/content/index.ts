@@ -24,7 +24,12 @@ let cached: ContentRepository | null = null;
 
 export async function getContentRepository(): Promise<ContentRepository> {
   if (cached) return cached;
-  if (process.env.CONTENT_SOURCE === "supabase" && isSupabaseConfigured()) {
+  // A geração estática não deve depender de PostgREST: cada worker pode abrir
+  // uma tentativa de rede e transformar uma falha transitória em páginas
+  // incompletas. O catálogo local é a fonte determinística do artefato; o
+  // espelho Supabase continua disponível para execução fora do build.
+  const duranteBuild = process.env.NEXT_PHASE === "phase-production-build";
+  if (!duranteBuild && process.env.CONTENT_SOURCE === "supabase" && isSupabaseConfigured()) {
     try {
       const { SupabaseContentRepository } = await import("./supabase-repository");
       const repo = new SupabaseContentRepository();
