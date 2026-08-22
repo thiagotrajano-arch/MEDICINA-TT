@@ -91,8 +91,14 @@ Ordem editorial: Infectologia → GO/Pediatria → Cirurgia/MFC → Cardio/Neuro
 - Lighthouse local da Biblioteca fechou acessibilidade 100, SEO 100, contraste
   aprovado e CLS 0. O resultado de performance 71 e boas práticas 96 não é
   representativo da Vercel por limitações do servidor estático temporário.
-- O gate continua aberto para sessão owner real, zoom 200%, leitor de tela,
-  rotas autenticadas e Lighthouse no domínio publicado.
+- O gate continua aberto para zoom 200%, leitor de tela e Lighthouse autenticado
+  no domínio publicado.
+- A sessão owner real foi validada em produção para Home, Biblioteca, Questões,
+  Painel V2 e Minha mídia; o histórico mostrou 489 respostas preservadas. O erro
+  de hidratação encontrado no V2 foi corrigido e o reteste fechou com zero erro
+  de console. Acesso anônimo a Home, Questões e Biblioteca redirecionou ao login.
+- Ainda faltam zoom 200%, leitor de tela, logout, recuperação, expiração,
+  conta não-owner e conflito real entre dois dispositivos.
 
 ### Snapshot verificável de conteúdo — 2026-08-22
 

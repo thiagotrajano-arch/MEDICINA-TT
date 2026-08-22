@@ -45,9 +45,16 @@ privacidade.
   tokens `text-faint` e `accent`. Performance e boas práticas não são evidência
   de produção: o servidor HTTP temporário não usa cache/compressão e não serve
   corretamente alguns prefetches RSC do export estático.
-- Permanecem como gate de cutover a QA autenticada do proprietário, zoom 200%,
-  leitor de tela e Lighthouse no domínio Vercel. A prévia estática local foi
+- Permanecem como gate de cutover zoom 200%, leitor de tela e Lighthouse
+  autenticado no domínio Vercel. A prévia estática local foi
   usada somente para QA visual; ela desativa middleware e não foi publicada.
+- Pós-deploy, a sessão owner real abriu Home, Biblioteca, Questões, Painel V2 e
+  Minha mídia no domínio canônico. A Home confirmou 489 questões respondidas e
+  progresso sincronizado; uma divergência de hidratação no Painel V2 foi
+  detectada, corrigida no commit `8f76afc` e retestada sem erros de console.
+- Uma sessão HTTP sem credenciais recebeu 307 para `/entrar` em Home, Questões e
+  Biblioteca. Logout, recuperação, expiração, conta não-owner e dois dispositivos
+  continuam fora deste lote visual.
 
 ## Rollback
 

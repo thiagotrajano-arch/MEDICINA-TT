@@ -15,9 +15,16 @@
   internas em desktop/móvel e claro/escuro. A busca da Biblioteca, que ficava
   comprimida no desktop, foi corrigida; os tokens claros também foram ajustados
   até o Lighthouse local atingir acessibilidade 100 e contraste aprovado.
-- Continua pendente antes do cutover definitivo: sessão owner real, zoom 200%,
-  leitor de tela, rotas autenticadas e Lighthouse no domínio Vercel. A prévia
+- Continua pendente antes do cutover definitivo: zoom 200%, leitor de tela e
+  Lighthouse autenticado no domínio Vercel. A prévia
   estática usada na inspeção não comprova middleware ou privacidade.
+- Produção `https://medicina-tt.vercel.app` foi atualizada até `8f76afc`. Sessão
+  owner real abriu Home, Biblioteca, Questões, V2 e Minha mídia; a Home exibiu
+  489 respostas preservadas e progresso sincronizado. O erro React de hidratação
+  encontrado no V2 foi corrigido e o reteste em aba limpa terminou sem logs.
+- Cliente anônimo recebeu 307 para `/entrar` em Home, Questões e Biblioteca.
+  Permanecem sem evidência: logout, recuperação, expiração, conta não-owner,
+  dois dispositivos, zoom 200%, leitor de tela e Lighthouse autenticado remoto.
 - Evidência detalhada: `docs/DESIGN-SYSTEM-CLINICAL-ATELIER-2026-08-22.md`.
 
 ## Atualização operacional — 2026-08-22
